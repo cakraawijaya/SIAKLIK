@@ -12,7 +12,7 @@ Program magang ini telah kami laksanakan selama kurang lebih enam bulan secara h
 ## Kebutuhan Proyek
 | Bagian | Deskripsi |
 | --- | --- |
-| Fitur | Masuk<br>• Pendaftaran<br>• Antrian<br>• Ekspor<br>• Grafik<br>• Paginasi<br>• Pencarian<br>• Buat<br>• Baca<br>• Perbarui<br>• Hapus<br>• Captcha<br>• Hak Akses<br>• DLL |
+| Fitur | • Masuk<br>• Pendaftaran<br>• Antrian<br>• Ekspor<br>• Grafik<br>• Paginasi<br>• Pencarian<br>• Buat<br>• Baca<br>• Perbarui<br>• Hapus<br>• Captcha<br>• Hak Akses<br>• DLL |
 | Kerangka Kerja | • Bootstrap 4<br>• Font-Awesome |
 | Peralatan | • Visual Studio Code<br>• Xampp |
 
