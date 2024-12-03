@@ -12,10 +12,9 @@ We have carried out this internship program for approximately six months on a hy
 ## Project Requirements
 | Part | Description |
 | --- | --- |
-| Features | Login, Register, Queue, Export, Chart, Pagination, Search, Create, Read, Update, Delete, Captcha, Access Rights, ETC  |
-| Code | PHP, HTML, CSS, JS, SQL |
-| Framework | Bootstrap 4 |
-| Tools | Visual Studio Code, XAMPP (PHP Version 5+) |
+| Features | • Login<br>• Register<br>• Queue<br>• Export<br>• Chart<br>• Pagination<br>• Search<br>• Create<br>• Read<br>• Update<br>• Delete<br>• Captcha<br>• Access Rights<br>• ETC |
+| Framework | • Bootstrap 4<br>• Font-Awesome |
+| Tools | • Visual Studio Code<br>• Xampp |
 
 <br><br>
 
