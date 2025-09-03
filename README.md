@@ -13,7 +13,7 @@ We have carried out this internship program for approximately six months on a hy
 | Part | Description |
 | --- | --- |
 | Features | • Login<br>• Register<br>• Queue<br>• Export<br>• Chart<br>• Pagination<br>• Search<br>• Create<br>• Read<br>• Update<br>• Delete<br>• Captcha<br>• Access Rights<br>• ETC |
-| Framework | • Bootstrap 4<br>• Font-Awesome |
+| Framework | • Bootstrap 3<br>• Font-Awesome |
 | Tools | • Visual Studio Code<br>• Xampp |
 
 <br><br>
