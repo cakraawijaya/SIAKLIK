@@ -131,11 +131,11 @@ If you want to reset the auto-increment on the riwayat_antrean table, simply do 
 
    <table><tr><td width="810">
       
-      ```sql
+   ```sql
       SET  @num := 0;
       UPDATE your_table SET id = @num := (@num+1);
       ALTER TABLE your_table AUTO_INCREMENT =1;
-      ```
+   ```
    </td></tr></table>
 
 <br><br>
