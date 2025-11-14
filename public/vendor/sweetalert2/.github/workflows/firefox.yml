@@ -1,0 +1,21 @@
+name: Test Firefox
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  Firefox:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v5
+      - uses: oven-sh/setup-bun@v2
+
+      - run: bun install
+
+      - run: bun run build
+
+      - run: bun run test --browser firefox

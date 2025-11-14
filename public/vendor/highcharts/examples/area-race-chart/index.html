@@ -1,0 +1,476 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Highcharts Example</title>
+
+		<style type="text/css">
+@import url("https://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
+
+figure {
+    margin: 0;
+}
+
+#play-controls {
+    max-width: 600px;
+    margin: 1em auto;
+}
+
+#container {
+    height: 600px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#csv {
+    display: none;
+}
+
+#play-pause-button {
+    margin-left: 10px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border: 1px solid rgba(2, 117, 255, 1);
+    border-radius: 25px;
+    color: white;
+    background-color: rgba(2, 117, 255, 1);
+    transition: background-color 250ms;
+}
+
+#play-pause-button:hover {
+    background-color: rgba(2, 117, 255, 0.5);
+}
+
+#play-range {
+    transform: translateY(2.5px);
+    width: calc(100% - 90px);
+    background: #f8f8f8;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #141414;
+        color: #ddd;
+    }
+    a {
+        color: #2caffe;
+    }
+}
+		</style>
+	</head>
+	<body>
+<script src="../../code/highcharts.js"></script>
+<script src="../../code/modules/annotations.js"></script>
+<script src="../../code/modules/data.js"></script>
+<script src="../../code/modules/exporting.js"></script>
+<script src="../../code/modules/export-data.js"></script>
+<script src="../../code/modules/accessibility.js"></script>
+<script src="../../code/themes/adaptive.js"></script>
+
+<figure class="highcharts-figure">
+  <div id="parent-container">
+    <div id="play-controls">
+      <button id="play-pause-button" class="fa fa-play" title="play"></button>
+      <input id="play-range" type="range" value="1973" min="1973" max="2025" />
+    </div>
+    <div id="container"></div>
+  </div>
+</figure>
+<pre id="csv" style="display:none">
+# Data from RIAA
+year	LpEp	Vinyl	Cassette	CD	Downloads	Streams
+1973	1.200	0.190	0.076
+1974	1.400	0.194	0.087
+1975	1.500	0.212	0.099
+1976	1.700	0.245	0.146
+1977	2.200	0.245	0.250
+1978	2.500	0.260	0.450
+1979	2.100	0.354	0.581
+1980	2.200	0.250	0.705
+1981	2.300	0.256	1.100
+1982	1.900	0.283	1.400	0
+1983	1.700	0.269	1.800	0.017
+1984	1.500	0.299	2.400	0.103
+1985	1.300	0.281	2.400	0.390
+1986	0.983	0.228	2.500	0.930
+1987	0.793	0.203	3.000	1.600
+1988	0.532	0.180	3.400	2.100
+1989	0.220	0.116	3.300	2.600
+1990	0.086	0.094	3.500	3.500
+1991	0.029	0.064	3.000	4.300
+1992	0.014	0.066	3.100	5.300
+1993	0.011	0.051	2.900	6.500
+1994	0.018	0.047	3.000	8.500
+1995	0.025	0.047	2.300	9.400
+1996	0.036	0.048	1.900	9.900
+1997	0.033	0	1.500	9.900
+1998	0.034		1.400	11.400
+1999	0.032		1.100	12.800
+2000	0.028		0.626	13.200
+2001	0.027		0.363	12.900
+2002	0.021		0.210	12.000
+2003	0.022		0.108	11.200	0
+2004	0.019		0.023	11.400	0.138	0
+2005	0.014		0	10.500	0.921	0.149
+2006	0.016			9.400	1.631	0.206
+2007	0.023			7.500	2.408	0.234
+2008	0.057			5.500	2.612	0.321
+2009	0.064			4.300	2.647	0.362
+2010	0.089			3.400	2.620	0.461
+2011	0.119			3.100	2.876	0.654
+2012	0.161			2.500	2.946	1.033
+2013	0.211			2.100	2.898	1.454
+2014	0.244			1.800	2.500	1.827
+2015	0.333			1.400	2.300	2.375
+2016	0.355			1.100	1.769	3.818
+2017	0.389			1.000	1.318	5.459
+2018	0.419			0.696	0.945	7.255
+2019	0.480			0.931	0.775	8.853
+2020	0.644			0.483	0.622	10.078
+2021	1.000			0.584	0.538	12.509
+2022	1.200			0.489	0.457	13.285
+2023	1.400			0.537	0.396	14.358
+2024	1.400			0.541	0.329	14.900
+</pre>
+
+
+
+		<script type="text/javascript">
+const btn = document.getElementById('play-pause-button'),
+    input = document.getElementById('play-range'),
+    startYear = 1973,
+    endYear = 2024,
+    animationDuration = 400;
+
+// General helper functions
+const arrToAssociative = arr => {
+    const tmp = {};
+    arr.forEach(item => {
+        tmp[item[0]] = item[1];
+    });
+
+    return tmp;
+};
+
+function getSubtitle() {
+    return `<span style='font-size: 60px'>${input.value}</span>`;
+}
+
+const formatRevenue = [];
+
+const chart = Highcharts.chart('container', {
+    chart: {
+        events: {
+            // Some annotation labels need to be rotated to make room
+            load: function () {
+                const labels = this.annotations[0].labels;
+                labels
+                    .find(a => a.options.id === 'vinyl-label')
+                    .graphic.attr({
+                        rotation: -20
+                    });
+            }
+        },
+        type: 'area',
+        marginTop: 100,
+        animation: {
+            duration: animationDuration,
+            easing: t => t
+        }
+    },
+    title: {
+        text: 'Music revenue race chart'
+    },
+    subtitle: {
+        text: getSubtitle(),
+        floating: true,
+        align: 'right',
+        verticalAlign: 'middle',
+        x: -100,
+        y: -110
+    },
+    data: {
+        csv: document.getElementById('csv').innerHTML,
+        itemDelimiter: '\t',
+        complete: function (options) {
+            for (let i = 0; i < options.series.length; i++) {
+                formatRevenue[i] = arrToAssociative(options.series[i].data);
+                options.series[i].data = null;
+            }
+        }
+    },
+    xAxis: {
+        allowDecimals: false,
+        min: startYear,
+        max: endYear
+    },
+    yAxis: {
+        reversedStacks: false,
+        max: 20,
+        title: {
+            text: 'Revenue in the U.S.'
+        },
+        labels: {
+            format: '${text} B'
+        }
+    },
+    tooltip: {
+        split: true,
+        headerFormat: '<span style="font-size: 1.2em">{point.x}</span>',
+        pointFormat:
+            '{series.name}: <b>${point.y:,.1f} B</b> ({point.percentage:.1f}%)',
+        crosshairs: true
+    },
+    plotOptions: {
+        area: {
+            stacking: 'normal',
+            pointStart: startYear,
+            marker: {
+                enabled: false
+            }
+        }
+    },
+    annotations: [
+        {
+            labelOptions: {
+                borderWidth: 0,
+                backgroundColor: undefined,
+                verticalAlign: 'middle',
+                allowOverlap: true,
+                style: {
+                    pointerEvents: 'none',
+                    opacity: 0,
+                    transition: 'opacity 500ms'
+                }
+            },
+            labels: [
+                {
+                    text: 'Vinyl',
+                    verticalAlign: 'top',
+                    point: {
+                        x: 1975,
+                        xAxis: 0,
+                        y: 1.45,
+                        yAxis: 0
+                    },
+                    style: {
+                        fontSize: '0.8em',
+                        color: '#000'
+                    },
+                    id: 'vinyl-label'
+                },
+                {
+                    text: 'LP-EP',
+                    point: {
+                        x: 1980,
+                        xAxis: 0,
+                        y: 0.2,
+                        yAxis: 0
+                    },
+                    style: {
+                        fontSize: '1.4em',
+                        color: '#ffffff'
+                    },
+                    id: 'lpep-label'
+                },
+                {
+                    text: 'Cass',
+                    point: {
+                        x: 1987,
+                        xAxis: 0,
+                        y: 2,
+                        yAxis: 0
+                    },
+                    style: {
+                        fontSize: '1.5em',
+                        color: '#ffffff'
+                    },
+                    id: 'cassettes-label'
+                },
+                {
+                    text: 'CD',
+                    point: {
+                        x: 1999,
+                        xAxis: 0,
+                        y: 6,
+                        yAxis: 0
+                    },
+                    style: {
+                        fontSize: '4em',
+                        color: '#ffffff'
+                    },
+                    id: 'cd-label'
+                },
+                {
+                    text: 'DL',
+                    point: {
+                        x: 2011,
+                        xAxis: 0,
+                        y: 4,
+                        yAxis: 0
+                    },
+                    style: {
+                        fontSize: '1.2em',
+                        color: '#ffffff'
+                    },
+                    id: 'dl-label'
+                },
+                {
+                    text: 'Strm',
+                    point: {
+                        x: 2018,
+                        xAxis: 0,
+                        y: 5,
+                        yAxis: 0
+                    },
+                    style: {
+                        fontSize: '1.5em',
+                        color: '#ffffff'
+                    },
+                    id: 'streams-label'
+                }
+            ]
+        }
+    ],
+
+    responsive: {
+        rules: [
+            {
+                condition: {
+                    maxWidth: 500
+                },
+                chartOptions: {
+                    title: {
+                        align: 'left'
+                    },
+                    subtitle: {
+                        y: -150,
+                        x: -20
+                    },
+                    yAxis: {
+                        labels: {
+                            align: 'left',
+                            x: 0,
+                            y: -3
+                        },
+                        tickLength: 0,
+                        title: {
+                            align: 'high',
+                            reserveSpace: false,
+                            rotation: 0,
+                            textAlign: 'left',
+                            y: -20
+                        }
+                    }
+                }
+            }
+        ]
+    }
+});
+
+function pause(button) {
+    button.title = 'play';
+    button.className = 'fa fa-play';
+    clearTimeout(chart.sequenceTimer);
+    chart.sequenceTimer = undefined;
+}
+
+function update(sliderClicked) {
+    chart.update(
+        {
+            subtitle: {
+                text: getSubtitle()
+            }
+        },
+        false,
+        false,
+        false
+    );
+
+    const series = chart.series,
+        labels = chart.annotations[0].labels,
+        yearIndex = input.value - startYear,
+        dataLength = series[0].options.data.length;
+
+    // If slider moved back in time
+    if (yearIndex < dataLength - 1) {
+        for (let i = 0; i < series.length; i++) {
+            const seriesData = series[i].options.data.slice(0, yearIndex);
+            series[i].setData(seriesData, false);
+        }
+    }
+
+    // If slider moved forward in time
+    if (yearIndex > dataLength - 1) {
+        const remainingYears = yearIndex - dataLength;
+        for (let i = 0; i < series.length; i++) {
+            for (let j = input.value - remainingYears; j < input.value; j++) {
+                series[i].addPoint([formatRevenue[i][j]], false);
+            }
+        }
+    }
+
+    // Add current year
+    for (let i = 0; i < series.length; i++) {
+        const newY = formatRevenue[i][input.value];
+        series[i].addPoint([newY], false);
+    }
+
+    labels.forEach(label => {
+        label
+            .graphic
+            .css({
+                opacity: input.value >= label.options.point.x | 0
+            });
+    });
+
+    if (sliderClicked) {
+        chart.redraw(false);
+    } else {
+        chart.redraw();
+    }
+
+    input.value = parseInt(input.value, 10) + 1;
+
+    if (input.value > endYear) {
+        // Auto-pause
+        pause(btn);
+    }
+}
+
+function play(button) {
+    // Reset slider at the end
+    if (input.value > endYear) {
+        input.value = startYear;
+    }
+    button.title = 'pause';
+    button.className = 'fa fa-pause';
+    chart.sequenceTimer = setInterval(function () {
+        update(false);
+    }, animationDuration);
+}
+
+btn.addEventListener('click', function () {
+    if (chart.sequenceTimer) {
+        pause(this);
+    } else {
+        play(this);
+    }
+});
+
+play(btn);
+
+// Trigger the update on the range bar click.
+input.addEventListener('click', function () {
+    update(true);
+});
+// Stop animation when clicking and dragging range bar
+input.addEventListener('input', function () {
+    pause(btn);
+});
+
+		</script>
+	</body>
+</html>

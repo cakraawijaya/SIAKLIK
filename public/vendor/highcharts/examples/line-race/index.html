@@ -1,0 +1,354 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Highcharts Example</title>
+
+		<style type="text/css">
+@import url("https://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
+
+figure {
+    margin: 0;
+}
+
+#play-controls {
+    max-width: 600px;
+    margin: 1em auto;
+}
+
+#container {
+    height: 600px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#csv {
+    display: none;
+}
+
+#play-pause-button {
+    margin-left: 10px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border: 1px solid rgba(2, 117, 255, 1);
+    border-radius: 25px;
+    color: white;
+    background-color: rgba(2, 117, 255, 1);
+    transition: background-color 250ms;
+}
+
+#play-pause-button:hover {
+    background-color: rgba(2, 117, 255, 0.5);
+}
+
+#play-range {
+    transform: translateY(2.5px);
+    width: calc(100% - 90px);
+    background: #f8f8f8;
+}
+
+pre#csv {
+    display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #141414;
+        color: #ddd;
+    }
+    a {
+        color: #2caffe;
+    }
+}
+		</style>
+	</head>
+	<body>
+<script src="../../code/highcharts.js"></script>
+<script src="../../code/modules/annotations.js"></script>
+<script src="../../code/modules/data.js"></script>
+<script src="../../code/modules/accessibility.js"></script>
+<script src="../../code/themes/adaptive.js"></script>
+
+<figure class="highcharts-figure">
+  <div id="parent-container">
+    <div id="play-controls">
+      <button id="play-pause-button" class="fa fa-play" title="play"></button>
+      <input id="play-range" type="range" value="0" min="0" max="21" />
+    </div>
+    <div id="container"></div>
+  </div>
+</figure>
+<pre id="csv">
+round	Sebastien Vettel	Fernando Alonso	Kimi Raikkonen	Lewis Hamilton	Jenson Button	Mark Webber	Felipe Massa	Romain Grosjean	Nico Rosberg	Sergio Perez
+0	0	0	0	0	0	0	0	0	0	0
+1	18	10	6	15	25	12	0	0	0	4
+2	18	35	16	30	25	24	0	0	0	22
+3	28	37	16	45	43	36	0	8	25	22
+4	53	43	34	49	43	48	2	23	35	22
+5	61	61	49	53	45	48	2	35	41	22
+6	73	76	51	63	45	73	10	35	59	22
+7	85	86	55	88	45	79	11	53	67	37
+8	85	111	73	88	49	91	11	53	75	39
+9	100	129	83	92	50	116	23	61	75	39
+10	110	154	98	92	68	120	23	61	76	47
+11	122	164	116	117	76	124	25	76	77	47
+12	140	164	131	117	101	132	35	76	77	47
+13	140	179	141	142	101	132	47	76	83	65
+14	165	194	149	142	119	132	51	82	93	66
+15	190	194	157	152	131	134	69	82	93	66
+16	215	209	167	153	131	152	81	88	93	66
+17	240	227	173	165	141	167	89	90	93	66
+18	255	245	198	165	153	167	95	90	93	66
+19	273	260	206	190	163	167	107	96	93	66
+20	281	278	207	190	188	179	122	96	93	66
+</pre>
+
+
+
+		<script type="text/javascript">
+const btn = document.getElementById('play-pause-button'),
+    input = document.getElementById('play-range'),
+    startRound = 0,
+    endRound = 20,
+    animationDuration = 1000;
+
+// General helper functions
+const arrToAssociative = arr => {
+    const tmp = {};
+    arr.forEach(item => {
+        tmp[item[0]] = item[1];
+    });
+
+    return tmp;
+};
+
+const formatPoints = [];
+
+const chart = Highcharts.chart('container', {
+    chart: {
+        type: 'line',
+        marginRight: 110,
+        animation: {
+            duration: animationDuration,
+            easing: t => t
+        }
+    },
+    title: {
+        text: 'F1 2012 Top Ten Drivers',
+        floating: true,
+        align: 'left',
+        x: 70,
+        y: 50
+    },
+    data: {
+        csv: document.getElementById('csv').innerText,
+        itemDelimiter: '\t',
+        complete: function (options) {
+            // Store the data for later use, and remove it from the series
+            for (let i = 0; i < options.series.length; i++) {
+                formatPoints[i] = arrToAssociative(options.series[i].data);
+                options.series[i].data = null;
+            }
+        }
+    },
+    xAxis: {
+        allowDecimals: false,
+        min: startRound,
+        max: endRound,
+        title: {
+            text: 'Round #',
+            align: 'high',
+            textAlign: 'left',
+            x: 20,
+            y: -20
+        }
+    },
+    yAxis: {
+        reversedStacks: false,
+        max: 300,
+        title: {
+            text: 'Points'
+        }
+    },
+    tooltip: {
+        split: true,
+        headerFormat: '<span style="font-size: 1.2em">{point.x}</span>',
+        pointFormat: '{series.name}: {point.y} Points',
+        crosshairs: true
+    },
+    plotOptions: {
+        line: {
+            animation: false,
+            pointStart: startRound,
+            marker: {
+                enabled: false
+            }
+        }
+    },
+    annotations: [
+        {
+            crop: false,
+            labelOptions: {
+                borderWidth: 0,
+                backgroundColor: undefined,
+                align: 'left',
+                verticalAlign: 'middle',
+                overflow: 'allow',
+                style: {
+                    pointerEvents: 'none',
+                    transition: 'opacity 0.5s'
+                },
+                x: -8,
+                y: -1
+            },
+            labels: new Array(10).fill({
+                text: 0,
+                point: {
+                    x: 0,
+                    xAxis: 0,
+                    y: 0,
+                    yAxis: 0
+                }
+            })
+        }
+    ],
+
+    responsive: {
+        rules: [
+            {
+                condition: {
+                    maxWidth: 500
+                },
+                chartOptions: {
+                    chart: {
+                        marginTop: 80
+                    },
+                    title: {
+                        floating: false,
+                        x: 0,
+                        y: 20
+                    },
+                    yAxis: {
+                        labels: {
+                            align: 'left',
+                            x: 0,
+                            y: -3
+                        },
+                        tickLength: 0,
+                        title: {
+                            align: 'high',
+                            reserveSpace: false,
+                            rotation: 0,
+                            textAlign: 'left',
+                            y: -20
+                        }
+                    }
+                }
+            }
+        ]
+    }
+});
+
+function pause(button) {
+    button.title = 'play';
+    button.className = 'fa fa-play';
+    clearTimeout(chart.sequenceTimer);
+    chart.sequenceTimer = undefined;
+}
+
+function update(sliderClicked) {
+
+    const series = chart.series,
+        labels = chart.annotations[0].labels,
+        yearIndex = input.value - startRound,
+        dataLength = series[0].options.data.length;
+
+    // If slider moved back in time
+    if (yearIndex < dataLength - 1) {
+        for (let i = 0; i < series.length; i++) {
+            const seriesData = series[i].options.data.slice(0, yearIndex);
+            series[i].setData(seriesData, false);
+        }
+    }
+
+    // If slider moved forward in time
+    if (yearIndex > dataLength - 1) {
+        const remainingYears = yearIndex - dataLength;
+        for (let i = 0; i < series.length; i++) {
+            for (let j = input.value - remainingYears; j < input.value; j++) {
+                series[i].addPoint([formatPoints[i][j]], false);
+            }
+        }
+    }
+
+    const nextnums = [];
+    // Add current year if applicable, and update labels
+    for (let i = 0; i < series.length; i++) {
+        const newY = formatPoints[i][input.value];
+        labels[i].options.point.x = yearIndex;
+        labels[i].options.point.y = newY;
+
+        if (yearIndex === 0) {
+            labels[i].options.text =
+                `<span style="color:${series[i].color}">●</span>
+                ${series[i].name}</span>`;
+        }
+        nextnums.push(newY);
+        if (series[i].options.data.length <= yearIndex) {
+            series[i].addPoint(newY, false);
+        }
+    }
+
+    if (sliderClicked) {
+        chart.redraw(false);
+    } else {
+        chart.redraw();
+    }
+
+    input.value = parseInt(input.value, 10) + 1;
+
+    if (input.value > endRound) {
+        // Auto-pause
+        pause(btn);
+    }
+}
+
+function play(button) {
+    // Reset slider at the end
+    if (input.value > endRound) {
+        input.value = startRound;
+    }
+    button.title = 'pause';
+    button.className = 'fa fa-pause';
+    chart.sequenceTimer = setInterval(function () {
+        update(false);
+    }, animationDuration);
+}
+
+btn.addEventListener('click', function () {
+    if (chart.sequenceTimer) {
+        pause(this);
+    } else {
+        play(this);
+    }
+});
+
+update(true); // Move to initial position
+update(false); // Animate to the first point immediately
+play(btn); // Start the animation
+
+// Trigger the update on the range bar click.
+input.addEventListener('click', function () {
+    update(true);
+});
+// Stop animation when clicking and dragging range bar
+input.addEventListener('input', function () {
+    pause(btn);
+    update(true);
+});
+
+		</script>
+	</body>
+</html>
