@@ -1,0 +1,676 @@
+.bg-warning-custom, .btn-warning-custom {
+  background-color: #e0a800;
+}
+
+.btn-warning-custom:hover {
+  background-color: #b38600;
+}
+
+#modalLoginPasien .modal-content,
+#modalLoginPekerjaAdmin .modal-content,
+#modalRegistration .modal-content,
+#modalForgotPassword .modal-content,
+#modalResetPassword .modal-content,
+#modalAddPasien .modal-content,
+#modalEditPasien .modal-content,
+#modalDeletePasien .modal-content,
+#modalAntreInternal .modal-content,
+#modalAntreBPJS .modal-content,
+#modalAntreUmum .modal-content,
+#modalAddPenggunaPasien .modal-content,
+#modalAddPenggunaPekerja .modal-content,
+#modalAddPenggunaAdmin .modal-content,
+#modalEditPenggunaPasien .modal-content,
+#modalEditPenggunaPekerja .modal-content,
+#modalEditPenggunaAdmin .modal-content,
+#modalDeletePenggunaPasien .modal-content,
+#modalDeletePenggunaPekerja .modal-content,
+#modalDeletePenggunaAdmin .modal-content {
+  border-radius: 1rem;
+  overflow: hidden !important;
+}
+
+#modalLoginPasien .modal-content button,
+#modalLoginPekerjaAdmin .modal-content button,
+#modalRegistration .modal-content button,
+#modalForgotPassword .modal-content button,
+#modalResetPassword .modal-content button,
+#modalAddPasien .modal-content button,
+#modalEditPasien .modal-content button,
+#modalDeletePasien .modal-content button,
+#modalAntreInternal .modal-content button,
+#modalAntreBPJS .modal-content button,
+#modalAntreUmum .modal-content button,
+#modalAddPenggunaPasien .modal-content button,
+#modalAddPenggunaPekerja .modal-content button,
+#modalAddPenggunaAdmin .modal-content button,
+#modalEditPenggunaPasien .modal-content button,
+#modalEditPenggunaPekerja .modal-content button,
+#modalEditPenggunaAdmin .modal-content button,
+#modalDeletePenggunaPasien .modal-content button,
+#modalDeletePenggunaPekerja .modal-content button,
+#modalDeletePenggunaAdmin .modal-content button,
+#modalLoginPasien .modal-content .form-group label,
+#modalLoginPekerjaAdmin .modal-content .form-group label,
+#modalRegistration .modal-content .form-group label,
+#modalForgotPassword .modal-content .form-group label,
+#modalResetPassword .modal-content .form-group label,
+#modalAddPasien .modal-content .form-group label,
+#modalEditPasien .modal-content .form-group label,
+#modalDeletePasien .modal-content .form-group label,
+#modalAntreInternal .modal-content .form-group label,
+#modalAntreBPJS .modal-content .form-group label,
+#modalAntreUmum .modal-content .form-group label,
+#modalAddPenggunaPasien .modal-content .form-group label,
+#modalAddPenggunaPekerja .modal-content .form-group label,
+#modalAddPenggunaAdmin .modal-content .form-group label,
+#modalEditPenggunaPasien .modal-content .form-group label,
+#modalEditPenggunaPekerja .modal-content .form-group label,
+#modalEditPenggunaAdmin .modal-content .form-group label,
+#modalDeletePenggunaPasien .modal-content .form-group label,
+#modalDeletePenggunaPekerja .modal-content .form-group label,
+#modalDeletePenggunaAdmin .modal-content .form-group label {
+  font-size: 0.9rem;
+}
+
+#modalLoginPasien .modal-header,
+#modalLoginPekerjaAdmin .modal-header,
+#modalRegistration .modal-header,
+#modalForgotPassword .modal-header,
+#modalResetPassword .modal-header,
+#modalAddPasien .modal-header,
+#modalEditPasien .modal-header,
+#modalDeletePasien .modal-header,
+#modalAntreInternal .modal-header,
+#modalAntreBPJS .modal-header,
+#modalAntreUmum .modal-header,
+#modalAddPenggunaPasien .modal-header,
+#modalAddPenggunaPekerja .modal-header,
+#modalAddPenggunaAdmin .modal-header,
+#modalEditPenggunaPasien .modal-header,
+#modalEditPenggunaPekerja .modal-header,
+#modalEditPenggunaAdmin .modal-header,
+#modalDeletePenggunaPasien .modal-header,
+#modalDeletePenggunaPekerja .modal-header,
+#modalDeletePenggunaAdmin .modal-header {
+  display: flex;
+  justify-content: space-between;   /* Judul di kiri, tombol di kanan */
+  align-items: center;              /* Semua item vertikal center */
+  padding: 0.4rem 1.5rem;           /* Bisa sesuaikan */
+}
+
+#modalAddPasien .modal-title i,
+#modalEditPasien .modal-title i,
+#modalDeletePasien .modal-title i,
+#modalAddPenggunaPasien .modal-title i,
+#modalAddPenggunaPekerja .modal-title i,
+#modalAddPenggunaAdmin .modal-title i,
+#modalEditPenggunaPasien .modal-title i,
+#modalEditPenggunaPekerja .modal-title i,
+#modalEditPenggunaAdmin .modal-title i,
+#modalDeletePenggunaPasien .modal-title i,
+#modalDeletePenggunaPekerja .modal-title i,
+#modalDeletePenggunaAdmin .modal-title i {
+  margin-right: 0.5rem;             /* Jarak ikon ke teks */
+  font-size: 1.2rem;                /* Ukuran ikon */
+  line-height: 1;                   /* Supaya sejajar teks */
+}
+
+#modalLoginPasien .modal-header h5,
+#modalLoginPekerjaAdmin .modal-header h5,
+#modalRegistration .modal-header h5,
+#modalForgotPassword .modal-header h5,
+#modalResetPassword .modal-header h5,
+#modalAntreInternal .modal-header h5,
+#modalAntreBPJS .modal-header h5,
+#modalAntreUmum .modal-header h5 {
+  font-size: 1.1rem;
+  font-weight: 800;                 /* Teks dibuat tebal (bold) */
+}
+
+#modalLoginPasien .modal-header h5 {
+  padding: 0rem 0rem 0.5rem 2.5rem;   /* Agar teks agak menengah */
+}
+
+#modalLoginPekerjaAdmin .modal-header h5,
+#modalRegistration .modal-header h5,
+#modalForgotPassword .modal-header h5,
+#modalResetPassword .modal-header h5 {
+  padding: 0rem 0rem 0.5rem 2rem;   /* Agar teks agak menengah */
+}
+
+#modalAntreInternal .modal-header h5 {
+  padding: 0rem 0rem 0.5rem 6.5rem;   /* Agar teks agak menengah */
+}
+
+#modalAntreBPJS .modal-header h5 {
+  padding: 0rem 0rem 0.5rem 8rem;   /* Agar teks agak menengah */
+}
+
+#modalAntreUmum .modal-header h5 {
+  padding: 0rem 0rem 0.5rem 7.5rem;   /* Agar teks agak menengah */
+}
+
+#modalAddPasien .modal-header h5,
+#modalEditPasien .modal-header h5,
+#modalDeletePasien .modal-header h5,
+#modalAddPenggunaPasien .modal-header h5,
+#modalAddPenggunaPekerja .modal-header h5,
+#modalAddPenggunaAdmin .modal-header h5,
+#modalEditPenggunaPasien .modal-header h5,
+#modalEditPenggunaPekerja .modal-header h5,
+#modalEditPenggunaAdmin .modal-header h5,
+#modalDeletePenggunaPasien .modal-header h5,
+#modalDeletePenggunaPekerja .modal-header h5,
+#modalDeletePenggunaAdmin .modal-header h5 {
+  font-size: 1.1rem;
+  font-weight: 800;                 /* Teks dibuat tebal (bold) */
+  padding: 0rem 0rem 0.5rem 0rem;
+}
+
+#modalLoginPasien .modal-header .close,
+#modalLoginPekerjaAdmin .modal-header .close,
+#modalRegistration .modal-header .close,
+#modalForgotPassword .modal-header .close,
+#modalResetPassword .modal-header .close,
+#modalAddPasien .modal-header .close,
+#modalEditPasien .modal-header .close,
+#modalDeletePasien .modal-header .close,
+#modalAntreInternal .modal-header .close,
+#modalAntreBPJS .modal-header .close,
+#modalAntreUmum .modal-header .close,
+#modalAddPenggunaPasien .modal-header .close,
+#modalAddPenggunaPekerja .modal-header .close,
+#modalAddPenggunaAdmin .modal-header .close,
+#modalEditPenggunaPasien .modal-header .close,
+#modalEditPenggunaPekerja .modal-header .close,
+#modalEditPenggunaAdmin .modal-header .close,
+#modalDeletePenggunaPasien .modal-header .close,
+#modalDeletePenggunaPekerja .modal-header .close,
+#modalDeletePenggunaAdmin .modal-header .close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;                /* Ukuran lebih besar */
+  line-height: 1.5;                 /* Agar vertikal center */
+  padding: 0.2rem 0.8rem;
+  margin: 0.2rem;
+  color: #fff;                      /* Warna putih */
+  border: 1px solid transparent;
+  opacity: 1;                       /* Tidak transparan */
+  border: none;
+  transition: all 0.2s ease-in-out; /* animasi smooth */
+}
+
+#modalLoginPasien .modal-header .close:hover,
+#modalLoginPekerjaAdmin .modal-header .close:hover,
+#modalRegistration .modal-header .close:hover,
+#modalForgotPassword .modal-header .close:hover,
+#modalResetPassword .modal-header .close:hover,
+#modalAddPasien .modal-header .close:hover,
+#modalEditPasien .modal-header .close:hover,
+#modalDeletePasien .modal-header .close:hover,
+#modalAntreInternal .modal-header .close:hover,
+#modalAntreBPJS .modal-header .close:hover,
+#modalAntreUmum .modal-header .close:hover,
+#modalAddPenggunaPasien .modal-header .close:hover,
+#modalAddPenggunaPekerja .modal-header .close:hover,
+#modalAddPenggunaAdmin .modal-header .close:hover,
+#modalEditPenggunaPasien .modal-header .close:hover,
+#modalEditPenggunaPekerja .modal-header .close:hover,
+#modalEditPenggunaAdmin .modal-header .close:hover,
+#modalDeletePenggunaPasien .modal-header .close:hover,
+#modalDeletePenggunaPekerja .modal-header .close:hover,
+#modalDeletePenggunaAdmin .modal-header .close:hover {
+  transform: scale(1.1);            /* sedikit membesar */
+  color: #fff;                      /* pastikan tetap putih */
+  text-decoration: none;
+}
+
+#modalLoginPasien .modal-header .close:focus,
+#modalLoginPekerjaAdmin .modal-header .close:focus,
+#modalRegistration .modal-header .close:focus,
+#modalForgotPassword .modal-header .close:focus,
+#modalResetPassword .modal-header .close:focus,
+#modalAddPasien .modal-header .close:focus,
+#modalEditPasien .modal-header .close:focus,
+#modalDeletePasien .modal-header .close:focus,
+#modalAntreInternal .modal-header .close:focus,
+#modalAntreBPJS .modal-header .close:focus,
+#modalAntreUmum .modal-header .close:focus,
+#modalAddPenggunaPasien .modal-header .close:focus,
+#modalAddPenggunaPekerja .modal-header .close:focus,
+#modalAddPenggunaAdmin .modal-header .close:focus,
+#modalEditPenggunaPasien .modal-header .close:focus,
+#modalEditPenggunaPekerja .modal-header .close:focus,
+#modalEditPenggunaAdmin .modal-header .close:focus,
+#modalDeletePenggunaPasien .modal-header .close:focus,
+#modalDeletePenggunaPekerja .modal-header .close:focus,
+#modalDeletePenggunaAdmin .modal-header .close:focus {
+  outline: none;
+}
+
+#modalAddPasien .form-alamat {
+  margin-top: 2.39rem;
+}
+
+#modalAddPasien .form-pekerjaan,
+#modalAddPasien .form-status,
+#modalAddPasien .form-layanan {
+  margin-top: 1.73rem;
+}
+
+#modalEditPasien .form-pekerjaan,
+#modalEditPasien .form-status,
+#modalEditPasien .form-layanan {
+  margin-top: 2.03rem;
+}
+
+#modalAddPasien .form-nim-nip, 
+#modalAddPasien .form-no-bpjs,
+#modalAddPasien .form-keterangan {
+  margin-top: 1.7rem;
+}
+
+
+#modalEditPasien .form-nim-nip, 
+#modalEditPasien .form-no-bpjs,
+#modalEditPasien .form-keterangan {
+  margin-top: 1.99rem;
+}
+
+#modalAddPenggunaPasien .form-upload-file,
+#modalAddPenggunaPekerja .form-upload-file,
+#modalAddPenggunaAdmin .form-upload-file,
+#modalEditPenggunaPasien .form-upload-file,
+#modalEditPenggunaPekerja .form-upload-file,
+#modalEditPenggunaAdmin .form-upload-file {
+  margin-top: 0.9rem;
+}
+
+#modalAddPenggunaPasien .form-konfirmasi-password,
+#modalAddPenggunaPekerja .form-konfirmasi-password,
+#modalAddPenggunaAdmin .form-konfirmasi-password,
+#modalAddPenggunaPasien .form-verifikasi-captcha,
+#modalAddPenggunaPekerja .form-verifikasi-captcha,
+#modalAddPenggunaAdmin .form-verifikasi-captcha,
+#modalEditPenggunaPasien .form-konfirmasi-password,
+#modalEditPenggunaPekerja .form-konfirmasi-password,
+#modalEditPenggunaAdmin .form-konfirmasi-password,
+#modalEditPenggunaPasien .form-verifikasi-captcha,
+#modalEditPenggunaPekerja .form-verifikasi-captcha,
+#modalEditPenggunaAdmin .form-verifikasi-captcha {
+  margin-top: 1.55rem;
+}
+
+#modalLoginPasien input.form-control,
+#modalLoginPekerjaAdmin input.form-control,
+#modalRegistration input.form-control,
+#modalForgotPassword input.form-control,
+#modalResetPassword input.form-control,
+#modalAddPasien input.form-control,
+#modalEditPasien input.form-control,
+#modalAntreInternal input.form-control,
+#modalAntreBPJS input.form-control,
+#modalAntreUmum input.form-control,
+#modalAddPenggunaPasien input.form-control,
+#modalAddPenggunaPekerja input.form-control,
+#modalAddPenggunaAdmin input.form-control,
+#modalEditPenggunaPasien input.form-control,
+#modalEditPenggunaPekerja input.form-control,
+#modalEditPenggunaAdmin input.form-control {
+  padding: 0.25rem 0.5rem !important;
+}
+
+#modalAddPenggunaPasien input[type="file"],
+#modalAddPenggunaPekerja input[type="file"],
+#modalAddPenggunaAdmin input[type="file"],
+#modalEditPenggunaPasien input[type="file"],
+#modalEditPenggunaPekerja input[type="file"],
+#modalEditPenggunaAdmin input[type="file"] {
+  padding: 0.10rem 0.5rem !important;
+}
+
+#modalAddPenggunaPasien .file-input-custom,
+#modalAddPenggunaPekerja .file-input-custom,
+#modalAddPenggunaAdmin .file-input-custom,
+#modalEditPenggunaPasien .file-input-custom,
+#modalEditPenggunaPekerja .file-input-custom,
+#modalEditPenggunaAdmin .file-input-custom {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #cfd3d7;
+  border-radius: 4.5px;
+  width: 100%;
+  max-width: 260px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+#modalAddPenggunaPasien .btn-choose,
+#modalAddPenggunaPekerja .btn-choose,
+#modalAddPenggunaAdmin .btn-choose,
+#modalEditPenggunaPasien .btn-choose,
+#modalEditPenggunaPekerja .btn-choose,
+#modalEditPenggunaAdmin .btn-choose {
+  background-color: #efefef;
+  border: 1.5px solid #b5b5b5;
+  font-size: 0.9rem;
+  color: #000;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 4px 12px;
+}
+
+#modalAddPenggunaPasien .btn-choose:focus-within,
+#modalAddPenggunaPekerja .btn-choose:focus-within,
+#modalAddPenggunaAdmin .btn-choose:focus-within,
+#modalEditPenggunaPasien .btn-choose:focus-within,
+#modalEditPenggunaPekerja .btn-choose:focus-within,
+#modalEditPenggunaAdmin .btn-choose:focus-within {
+  outline: none;
+}
+
+#modalAddPenggunaPasien span#file-name-add-pasien,
+#modalAddPenggunaPekerja span#file-name-add-pekerja,
+#modalAddPenggunaAdmin span#file-name-add-admin,
+#modalEditPenggunaPasien span#file-name-edit-pasien,
+#modalEditPenggunaPekerja span#file-name-edit-pekerja,
+#modalEditPenggunaAdmin span#file-name-edit-admin {
+  flex: 1;
+  padding: 4px 8px;
+  font-size: 0.9rem;
+  text-align: left;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#modalAddPenggunaPasien .file-input-custom:focus-within,
+#modalAddPenggunaPekerja .file-input-custom:focus-within,
+#modalAddPenggunaAdmin .file-input-custom:focus-within,
+#modalEditPenggunaPasien .file-input-custom:focus-within,
+#modalEditPenggunaPekerja .file-input-custom:focus-within,
+#modalEditPenggunaAdmin .file-input-custom:focus-within {
+  outline: 0.5px solid #80bdff;
+}
+
+#modalAddPasien select.form-control,
+#modalEditPasien select.form-control,
+#modalAntreInternal select.form-control,
+#modalAntreBPJS select.form-control,
+#modalAntreUmum select.form-control {
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
+  padding-left: 0.5rem !important;
+  padding-right: 2rem !important; /* sisakan ruang untuk panah */
+  line-height: 1.73;
+  height: auto !important;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23666' viewBox='0 0 16 16'%3E%3Cpath d='M3.204 5h9.592L8 10.481 3.204 5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 0.65rem auto;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+}
+
+#modalLoginPasien input,
+#modalLoginPekerjaAdmin input,
+#modalRegistration input,
+#modalForgotPassword input,
+#modalResetPassword input,
+#modalAddPasien input,
+#modalEditPasien input,
+#modalAntreInternal input,
+#modalAntreBPJS input,
+#modalAntreUmum input,
+#modalAddPenggunaPasien input,
+#modalAddPenggunaPekerja input,
+#modalAddPenggunaAdmin input,
+#modalEditPenggunaPasien input,
+#modalEditPenggunaPekerja input,
+#modalEditPenggunaAdmin input {
+  box-shadow: none !important;
+}
+
+#modalEditPasien input[readonly],
+#modalAntreInternal input[readonly],
+#modalAntreBPJS input[readonly],
+#modalAntreUmum input[readonly],
+#modalEditPenggunaPasien input[readonly],
+#modalEditPenggunaPekerja input[readonly],
+#modalEditPenggunaAdmin input[readonly] {
+  background-color: #e9ecef !important; /* warna abu lembut */
+  pointer-events: none;                 /* tidak bisa di-klik */
+  box-shadow: none !important;          /* hilangkan glow biru */
+  cursor: default;                      /* kursor normal */
+}
+
+#modalLoginPasien input::placeholder,
+#modalLoginPekerjaAdmin input::placeholder,
+#modalRegistration input::placeholder,
+#modalForgotPassword input::placeholder,
+#modalResetPassword input::placeholder,
+#modalAddPasien input::placeholder,
+#modalEditPasien input::placeholder,
+#modalAddPenggunaPasien input::placeholder,
+#modalAddPenggunaPekerja input::placeholder,
+#modalAddPenggunaAdmin input::placeholder,
+#modalEditPenggunaPasien input::placeholder,
+#modalEditPenggunaPekerja input::placeholder,
+#modalEditPenggunaAdmin input::placeholder,
+#modalAntreInternal .form-control,
+#modalAntreBPJS .form-control,
+#modalAntreUmum .form-control,
+#modalAddPasien select.form-control,
+#modalEditPasien select.form-control,
+#modalAddPasien textarea.form-control,
+#modalEditPasien textarea.form-control,
+#modalAddPenggunaPasien textarea.form-control,
+#modalAddPenggunaPekerja textarea.form-control,
+#modalAddPenggunaAdmin textarea.form-control,
+#modalEditPenggunaPasien textarea.form-control,
+#modalEditPenggunaPekerja textarea.form-control,
+#modalEditPenggunaAdmin textarea.form-control,
+#modalEditPasien span#edit_id_display,
+#modalEditPenggunaPasien span#edit_email_display,
+#modalEditPenggunaPekerja span#edit_email_display,
+#modalEditPenggunaAdmin span#edit_email_display,
+#modalAddPenggunaPasien input[type="file"],
+#modalAddPenggunaPekerja input[type="file"],
+#modalAddPenggunaAdmin input[type="file"],
+#modalEditPenggunaPasien input[type="file"],
+#modalEditPenggunaPekerja input[type="file"],
+#modalEditPenggunaAdmin input[type="file"] {
+  font-size: 0.9rem;
+}
+
+#modalAddPasien textarea.form-control,
+#modalEditPasien textarea.form-control,
+#modalAddPenggunaPasien textarea.form-control,
+#modalAddPenggunaPekerja textarea.form-control,
+#modalAddPenggunaAdmin textarea.form-control,
+#modalEditPenggunaPasien textarea.form-control,
+#modalEditPenggunaPekerja textarea.form-control,
+#modalEditPenggunaAdmin textarea.form-control {
+  padding-left: 0.5rem !important;
+}
+
+#modalAddPasien textarea.form-control,
+#modalEditPasien textarea.form-control,
+#modalAddPenggunaPasien textarea.form-control,
+#modalAddPenggunaPekerja textarea.form-control,
+#modalAddPenggunaAdmin textarea.form-control,
+#modalEditPenggunaPasien textarea.form-control,
+#modalEditPenggunaPekerja textarea.form-control,
+#modalEditPenggunaAdmin textarea.form-control,
+#modalAddPasien select.form-control,
+#modalEditPasien select.form-control {
+  box-shadow: none !important;
+}
+
+#modalLoginPasien .input-group-text:hover,
+#modalLoginPekerjaAdmin .input-group-text:hover,
+#modalRegistration .input-group-text:hover,
+#modalResetPassword .input-group-text:hover,
+#modalAddPenggunaPasien .input-group-text:hover,
+#modalAddPenggunaPekerja .input-group-text:hover,
+#modalAddPenggunaAdmin .input-group-text:hover,
+#modalEditPenggunaPasien .input-group-text:hover,
+#modalEditPenggunaPekerja .input-group-text:hover,
+#modalEditPenggunaAdmin .input-group-text:hover {
+  background-color: #007bff;
+}
+
+#modalLoginPasien .input-group-text i,
+#modalLoginPekerjaAdmin .input-group-text i,
+#modalRegistration .input-group-text i,
+#modalResetPassword .input-group-text i,
+#modalAddPenggunaPasien .input-group-text i,
+#modalAddPenggunaPekerja .input-group-text i,
+#modalAddPenggunaAdmin .input-group-text i,
+#modalEditPenggunaPasien .input-group-text i,
+#modalEditPenggunaPekerja .input-group-text i,
+#modalEditPenggunaAdmin .input-group-text i {
+  color: #007bff;
+  transition: all 0.25s ease;
+}
+
+#modalLoginPasien .input-group-text:hover i,
+#modalLoginPekerjaAdmin .input-group-text:hover i,
+#modalRegistration .input-group-text:hover i,
+#modalResetPassword .input-group-text:hover i,
+#modalAddPenggunaPasien .input-group-text:hover i,
+#modalAddPenggunaPekerja .input-group-text:hover i,
+#modalAddPenggunaAdmin .input-group-text:hover i,
+#modalEditPenggunaPasien .input-group-text:hover i,
+#modalEditPenggunaPekerja .input-group-text:hover i,
+#modalEditPenggunaAdmin .input-group-text:hover i {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+#modalLoginPasien .form-group .d-flex,
+#modalLoginPekerjaPasien .form-group .d-flex,
+#modalRegistration .form-group .d-flex,
+#modalAddPenggunaPasien .form-group .d-flex,
+#modalAddPenggunaPekerja .form-group .d-flex,
+#modalAddPenggunaAdmin .form-group .d-flex,
+#modalEditPenggunaPasien .form-group .d-flex,
+#modalEditPenggunaPekerja .form-group .d-flex,
+#modalEditPenggunaAdmin .form-group .d-flex {
+  display: flex;
+  align-items: center;
+}
+
+#modalLoginPasien .form-group img,
+#modalLoginPekerjaAdmin .form-group img,
+#modalRegistration .form-group img {
+  height: calc(1.8rem + 4px);
+  width: 120px;
+  border: 1px solid #007bff;
+  border-right: none;
+  border-radius: .25rem 0 0 .25rem;
+  object-fit: cover;
+  display: block;
+}
+
+#modalAddPenggunaPasien .form-group img,
+#modalAddPenggunaPekerja .form-group img,
+#modalAddPenggunaAdmin .form-group img,
+#modalEditPenggunaPasien .form-group img,
+#modalEditPenggunaPekerja .form-group img,
+#modalEditPenggunaAdmin .form-group img {
+  height: calc(1.8rem + 4px);
+  width: 130px;
+  border: 1px solid #007bff;
+  border-right: none;
+  border-radius: .25rem 0 0 .25rem;
+  object-fit: cover;
+  display: block;
+}
+
+#modalLoginPasien .input-captcha,
+#modalLoginPekerjaAdmin .input-captcha,
+#modalRegistration .input-captcha,
+#modalAddPenggunaPasien .input-captcha,
+#modalAddPenggunaPekerja .input-captcha,
+#modalAddPenggunaAdmin .input-captcha,
+#modalEditPenggunaPasien .input-captcha,
+#modalEditPenggunaPekerja .input-captcha,
+#modalEditPenggunaAdmin .input-captcha {
+  padding: 0.25rem 0.5rem;
+}
+
+#modalDeletePasien #delete_show_nama,
+#modalDeletePenggunaPasien #delete_show_nama,
+#modalDeletePenggunaPekerja #delete_show_nama,
+#modalDeletePenggunaAdmin #delete_show_nama {
+  font-size: 1.5rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+#modalDeletePasien #delete_show_id,
+#modalDeletePenggunaPasien #delete_show_email,
+#modalDeletePenggunaPekerja #delete_show_email,
+#modalDeletePenggunaAdmin #delete_show_email {
+  display: block;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  margin: 5px 0px 15px 0px;
+}
+
+#modalLoginPasien .form-group button,
+#modalLoginPekerjaAdmin .form-group button,
+#modalRegistration .form-group button,
+#modalAddPenggunaPasien .form-group button,
+#modalAddPenggunaPekerja .form-group button,
+#modalAddPenggunaAdmin .form-group button,
+#modalEditPenggunaPasien .form-group button,
+#modalEditPenggunaPekerja .form-group button,
+#modalEditPenggunaAdmin .form-group button,
+#modalDeletePenggunaPasien .form-group button,
+#modalDeletePenggunaPekerja .form-group button,
+#modalDeletePenggunaAdmin .form-group button {
+  border-radius: 0 .25rem .25rem 0;
+  height: calc(1.8rem + 4px);
+  padding: 0.25rem 0.5rem;
+  line-height: 1;
+  margin: 0;
+  box-shadow: none !important;
+}
+
+#modalLoginPasien .modal-footer,
+#modalLoginPekerjaAdmin .modal-footer,
+#modalRegistration .modal-footer,
+#modalForgotPassword .modal-footer,
+#modalResetPassword .modal-footer {
+  background-color: #d6d6d6;
+  font-size: 0.85rem;
+}
+
+#modalLoginPasien .modal-footer p span,
+#modalLoginPekerjaAdmin .modal-footer p span,
+#modalRegistration .modal-footer p span,
+#modalForgotPassword .modal-footer p span,
+#modalResetPassword .modal-footer p span {
+  color: #1656a5;
+  font-weight: 600;
+  padding-left: 3px;
+  text-decoration: underline;
+  transition: all 0.25s ease;
+}
+
+#modalLoginPasien .modal-footer p span:hover,
+#modalLoginPekerjaAdmin .modal-footer p span:hover,
+#modalRegistration .modal-footer p span:hover,
+#modalForgotPassword .modal-footer p span:hover,
+#modalResetPassword .modal-footer p span:hover {
+  color: #1d6fe3;
+}

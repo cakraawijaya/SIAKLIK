@@ -1,0 +1,92 @@
+/* Background Footer */
+.footer-section {
+    background-color: #4e4d4d;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Judul Footer */
+.footer-title {
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.footer-icons {
+    padding-right: 10px;
+    font-size: 18px;
+}
+
+/* Paragraf Footer */
+.footer-section p {
+    color: #f0f0f0;          /* paragraf terang */
+    font-size: 14px;          /* ukuran font modern */
+    line-height: 1.6;         /* spasi antar baris nyaman */
+    margin-bottom: 10px;
+}
+
+/* Links */
+.footer-section a {
+    color: greenyellow;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #ddff00;           /* link kuning neon */    
+    text-decoration: underline;
+}
+
+/* Social Media Icons */
+.footer-section .social-icon {
+    display: inline-block;
+    font-size: 18px;
+    margin-right: 12px;
+    transition: color 0.3s, transform 0.2s;
+}
+
+.footer-section .social-icon:hover {
+    transform: scale(1.2);
+}
+
+.container {
+    display: flex;
+    justify-content: center; /* posisikan konten di tengah */
+    flex-wrap: wrap;         /* agar responsif */
+}
+
+.container .col-center ul li {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.container .col-left,
+.container .col-center,
+.container .col-right {
+    text-align: left;        /* isi kolom rata kiri */
+    margin: 0 15px;          /* jarak antar kolom */
+    flex: 1 1 200px;         /* lebar fleksibel minimum 200px */
+    max-width: 450px;        /* optional, batas lebar kolom */
+}
+
+.container .col-left {
+    padding-left: 40px;
+}
+
+.container .col-left .maps-link {
+    text-decoration: none;
+}
+
+.container .col-center {
+    padding-left: 90px;
+}
+
+.container .col-right {
+    padding-left: 75px;
+}
+
+/* Copyright */
+.footer-copyright {
+    font-size: 15px;
+    color: #f0f0f0;
+}
