@@ -18,12 +18,12 @@
         // Tambahkan trailing slash
         $projectFolder = rtrim($projectFolder, '/') . '/';
 
-        // ✅ Definisikan BASE_URL (URL absolut)
+        // Definisikan BASE_URL (URL absolut)
         define('BASE_URL', $protocol . $host . $projectFolder);
     }
 
     if (!defined('BASE_PATH')) {
-        // ✅ Definisikan BASE_PATH (path absolut di server)
+        // Definisikan BASE_PATH (path absolut di server)
         define('BASE_PATH', realpath(__DIR__ . '/..'));
     }
 
