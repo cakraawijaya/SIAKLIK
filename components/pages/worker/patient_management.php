@@ -1,6 +1,6 @@
 <?php
     $require_login = true;
-    include __DIR__ . '/../../features/worker_auth_check.php';
+    include __DIR__ . '/../../features/auth/authorization/worker.php';
     include __DIR__ . '/../../../config/config.php';
 
     // ======================== SEARCH ========================
@@ -21,7 +21,7 @@
                 <button type="button" class="btn btn-success text-white mr-3" data-toggle="modal" data-target="#modalAddPasien">
                     <i class="fa fa-plus mr-1" aria-hidden="true"></i> Pasien
                 </button>
-                <a href="<?= BASE_URL ?>components/features/history_export.php" class="btn btn-info text-white">
+                <a href="<?= BASE_URL ?>components/features/export/history_data/patient_history.php" class="btn btn-info text-white">
                     <i class="fa fa-download mr-1" aria-hidden="true"></i> Export
                 </a>
             </div>
@@ -77,7 +77,7 @@
     </section>
 </main>
 
-<?php include __DIR__ . '/../../modal/modal_patient.php'; ?>
+<?php include __DIR__ . '/../../modal/patient.php'; ?>
 
 <script>
     var activeTab = 'all';

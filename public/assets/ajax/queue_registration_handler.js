@@ -43,7 +43,7 @@ $(document).ready(function() {
     });
 
     $.ajax({
-      url: BASE_URL + "components/data_ajax/ajax_queue_registration.php",
+      url: BASE_URL + "components/data/ajax_queue_registration.php",
       type: "POST",
       dataType: "json",
       data: {

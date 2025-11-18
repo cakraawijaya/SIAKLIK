@@ -4,7 +4,7 @@ $(document).ready(function(){
         var search = searchOnly ? $('input[name="search"]').val() : '';
         
         $.ajax({
-            url: BASE_URL + "components/data_ajax/ajax_queue_status.php",
+            url: BASE_URL + "components/data/ajax_queue_status.php",
             type: "GET",
             data: {
                 tab: activeTab,
@@ -15,6 +15,22 @@ $(document).ready(function(){
             success: function(res){
                 var data = res.queues[activeTab];
                 var tbody = $('#' + activeTab + ' tbody');
+
+                // Jika halaman kosong dan ada halaman lain, pindah otomatis
+                if(data.data.length === 0){
+                    if(currentPage[activeTab] < (data.total_page || 1)){
+                        // Naik ke halaman berikutnya
+                        currentPage[activeTab]++;
+                        loadQueueData(searchOnly);
+                        return;
+                    } else if(currentPage[activeTab] > 1){
+                        // Turun ke halaman sebelumnya
+                        currentPage[activeTab]--;
+                        loadQueueData(searchOnly);
+                        return;
+                    }
+                }
+
                 tbody.empty();
 
                 if(!data || data.data.length === 0){

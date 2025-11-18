@@ -2,7 +2,7 @@
 
     // pengecekan otentikasi
     $require_login = true; // harus login
-    include __DIR__ . '/../../features/worker_auth_check.php';
+    include __DIR__ . '/../../features/auth/authorization/worker.php';
 
     // muat konfigurasi untuk akses BASE_URL & Koneksi
     include __DIR__ . '/../../../config/config.php';

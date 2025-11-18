@@ -1,7 +1,7 @@
 <?php
     // pengecekan otentikasi
     $require_login = true; // harus login
-    include __DIR__ . '/../../features/admin_auth_check.php';
+    include __DIR__ . '/../../features/auth/authorization/admin.php';
 
     // muat konfigurasi untuk akses BASE_URL & Koneksi
     include __DIR__ . '/../../../config/config.php';
@@ -98,7 +98,7 @@
     </section>
 </main>
 
-<?php include __DIR__ . '/../../modal/modal_user_management.php'; ?>
+<?php include __DIR__ . '/../../modal/user_management.php'; ?>
 
 <!-- Definisi Awal User Handler -->
 <script>

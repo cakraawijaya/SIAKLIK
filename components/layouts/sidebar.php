@@ -9,7 +9,7 @@
         </div>
         <ul class="brand">
             <li class="brand-child">
-                <img class="brand-logo select-none" src="<?= BASE_URL ?>public/assets/img/brand/logo.png" alt="logo-upn">
+                <img class="brand-logo select-none" src="<?= BASE_URL ?>public/assets/img/favicon/logo.png" alt="logo-upn">
             </li>
             <li class="brand-child">
                 <a class="brand-text" href="<?= BASE_URL ?>">
@@ -207,7 +207,7 @@
 
                 <?php if ($is_logged_in): ?> 
                     <li>
-                        <a href="<?= BASE_URL ?>components/features/logout.php" class="custom-mb-sidebar">
+                        <a href="<?= BASE_URL ?>components/features/auth/authentication/logout.php" class="custom-mb-sidebar">
                             <i class="fas fa-sign-out-alt mr-2" aria-hidden="true"></i> 
                             <span>Keluar</span>
                         </a>

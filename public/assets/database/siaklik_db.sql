@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 14 Nov 2025 pada 15.20
+-- Waktu pembuatan: 17 Nov 2025 pada 22.08
 -- Versi server: 10.4.27-MariaDB
 -- Versi PHP: 8.1.12
 
@@ -44,7 +44,7 @@ INSERT INTO `akun_pasien` (`email`, `foto`, `username`, `nama`, `password`, `rol
 ('pasien10@gmail.com', 'default.png', 'pasien10', 'Junaedi Tito Bagaswara', '$2y$10$RkBCT2k0pUHU41xfkBqgiubiNImMpp0GrTHcMJmXS74wniZkP62xC', 3),
 ('pasien1@gmail.com', 'default.png', 'pasien1', 'Alam Santoso', '$2y$10$eEDzN57vxB09.TI3CC4QVOFyuHtJfVIW0MgChjXU1vvRrrW.yUsB.', 3),
 ('pasien2@gmail.com', 'default.png', 'pasien2', 'David Junanto Putra', '$2y$10$GcHw9MnyvQch4r82vYehq.q09JAE3.v6mVcV3YYK3SsPNz41BA27K', 3),
-('pasien3@gmail.com', 'user_6916e97c4de5a.png', 'pasien3', 'Cecillia Putri Sagara', '$2y$10$CE4sH2JCZv/rVEUPQR3ScOEXicjU.HcuIzMsLHmyF8JqRMoXMh76i', 3),
+('pasien3@gmail.com', 'default.png', 'pasien3', 'Cecillia Putri Sagara', '$2y$10$CE4sH2JCZv/rVEUPQR3ScOEXicjU.HcuIzMsLHmyF8JqRMoXMh76i', 3),
 ('pasien4@gmail.com', 'default.png', 'pasien4', 'Zairah Yana Humairoh', '$2y$10$eFE1SMXIVRynUdx76pLRceSuI4yX4RWh/c78Id.gzM.a84GtjDpsG', 3),
 ('pasien5@gmail.com', 'default.png', 'pasien5', 'Parjo Winarno', '$2y$10$ZF3s16C2KFGMmJvGTIOLOuqJNh5IUNguiLWIOjl1BkyDnAAPRQEHy', 3),
 ('pasien6@gmail.com', 'default.png', 'pasien6', 'Zahra Amanda Wijaya', '$2y$10$nnXNHRpwvb5TZyOsdI/O4O30m1FZZDks9Qw8dbQaRni0vpZo1SVWi', 3),
@@ -83,7 +83,7 @@ INSERT INTO `akun_pekerja` (`email`, `foto`, `username`, `nama`, `password`, `ro
 ('admin8@poliklinik.upnvjatim.ac.id', 'default.png', 'admin8', 'Kurnia Mega', '$2y$10$7u58nTYDmf3XKnYhGvMm7uvhIOmsgdEVVcuWQb3qq8i/vlqa4rSGa', 1),
 ('admin9@poliklinik.upnvjatim.ac.id', 'default.png', 'admin9', 'Muhammad Sholeh Alrizky', '$2y$10$hpDLhSfWfUmdXHQyddAjTuXXbSWUW8a1jI59RtuSjvGbdFAcEAODi', 1),
 ('pekerja10@poliklinik.upnvjatim.ac.id', 'default.png', 'pekerja10', 'Hidayat Rahman', '$2y$10$H3dDqtCBVPshFiRZMCsRAuADYvugCl1Xy5veEmFejZ.WB6nbB634.', 2),
-('pekerja1@poliklinik.upnvjatim.ac.id', 'user_69170e8f2690c.jpg', 'pekerja1', 'Sugeng Raharjo', '$2y$10$uwNQOxF24/jQiJr/JW1NKuM1ibE3qSc7Cxyrs3f5kloX73MN0Fyi.', 2),
+('pekerja1@poliklinik.upnvjatim.ac.id', 'default.png', 'pekerja1', 'Sugeng Raharjo', '$2y$10$uwNQOxF24/jQiJr/JW1NKuM1ibE3qSc7Cxyrs3f5kloX73MN0Fyi.', 2),
 ('pekerja2@poliklinik.upnvjatim.ac.id', 'default.png', 'pekerja2', 'Andreas Angkasa Wirabumi', '$2y$10$9ky0RDkZpS0w3EAxO8/7XeQVTuP8g5QlrQh4BmKQ1BZjMU.03S8SC', 2),
 ('pekerja3@poliklinik.upnvjatim.ac.id', 'default.png', 'pekerja3', 'Nicko Syahputra', '$2y$10$PURXyY.qY91h3Yvfi24em.QV/QKhPUXmM3RGqGsm44qJGNWms5hsu', 2),
 ('pekerja4@poliklinik.upnvjatim.ac.id', 'default.png', 'pekerja4', 'Wiranto Santoso', '$2y$10$pfgqU2vgmAXFocJdm6DXeuT1LsSKUtC4SltZVU34OnXZ6/24i4vzO', 2),
@@ -315,9 +315,9 @@ CREATE TABLE `hitung_antrean` (
 --
 
 INSERT INTO `hitung_antrean` (`kategori`, `last_number`, `last_reset`) VALUES
-('INTERNAL', 20, '2025-11-14'),
-('BPJS', 30, '2025-11-14'),
-('UMUM', 30, '2025-11-14');
+('INTERNAL', 20, '2025-11-18'),
+('BPJS', 30, '2025-11-18'),
+('UMUM', 30, '2025-11-18');
 
 -- --------------------------------------------------------
 
@@ -335,7 +335,7 @@ CREATE TABLE `hitung_pasien` (
 --
 
 INSERT INTO `hitung_pasien` (`id_pasien`, `last_number`) VALUES
-('PS-2025', 0);
+('PS-2025', 25);
 
 -- --------------------------------------------------------
 
@@ -425,108 +425,33 @@ CREATE TABLE `riwayat_pasien` (
 INSERT INTO `riwayat_pasien` (`id`, `nama`, `umur`, `alamat`, `pekerjaan`, `status`, `jenis_kelamin`, `nim_nip`, `no_bpjs`, `layanan`, `keterangan`, `waktu`) VALUES
 ('PS-2025-001', 'Bambang Nugroho Hadi', 35, 'Jl. Merdeka 10, Surabaya', 'Pegawai', 'Rawat Jalan', 'L', '19800101-01', NULL, 'Poli Gigi', 'Pihak Internal', '2025-11-14 18:59:35'),
 ('PS-2025-002', 'Nurlaili Fatimah', 28, 'Jl. Diponegoro 15, Surabaya', 'Pegawai', 'Rawat Inap', 'P', '19850205-01', NULL, 'Poli Umum', 'Pihak Internal', '2025-11-14 19:07:33'),
-('PS-2025-003', 'Sugeng Raharjo', 40, 'Jl. Ahmad Yani 23, Surabaya', 'Dokter', '', 'L', '19790110-01', NULL, 'Poli Umum', 'Pihak Internal', '2025-11-14 19:12:02'),
-('PS-2025-004', 'Andreas Angkasa Wirabumi', 32, 'Jl. Pahlawan 45, Surabaya', 'Dokter', '', 'L', '19890312-01', NULL, 'Poli Gigi', 'Pihak Internal', '2025-11-14 19:15:38'),
-('PS-2025-005', 'Nicko Syahputra', 29, 'Jl. Kenanga 12, Surabaya', 'Dokter', '', 'L', '19950120-01', NULL, 'Poli Umum', 'Pihak Internal', '2025-11-14 19:25:20'),
+('PS-2025-003', 'Sugeng Raharjo', 40, 'Jl. Ahmad Yani 23, Surabaya', 'Dokter', 'Rawat Jalan', 'L', '', '', 'Poli Umum', 'Pihak Internal', '2025-11-14 19:12:02'),
+('PS-2025-004', 'Andreas Angkasa Wirabumi', 32, 'Jl. Pahlawan 45, Surabaya', 'Dokter', 'Rawat Jalan', 'L', '', '', 'Poli Gigi', 'Pihak Internal', '2025-11-14 19:15:38'),
+('PS-2025-005', 'Nicko Syahputra', 29, 'Jl. Kenanga 12, Surabaya', 'Dokter', 'Observasi', 'L', '', '', 'Poli Umum', 'Pihak Internal', '2025-11-14 19:25:20'),
 ('PS-2025-006', 'Wiranto Santoso', 45, 'Jl. Kencana 7, Surabaya', 'Dokter', 'Rawat Jalan', 'L', '19781111-01', NULL, 'Poli Gigi', 'Pihak Internal', '2025-11-14 19:27:10'),
-('PS-2025-007', 'Miranda Oktaviani', 30, 'Jl. Melati 8, Surabaya', 'Perawat', '', 'P', '19930303-01', NULL, 'Poli Gigi', 'Pihak Internal', '2025-11-14 19:28:46'),
-('PS-2025-008', 'Lidya Wistyawati', 27, 'Jl. Anggrek 5, Surabaya', 'Perawat', '', 'P', '19960115-01', NULL, 'Poli Umum', 'Pihak Internal', '2025-11-14 19:32:45'),
-('PS-2025-009', 'Mutmainah Zahra Nur Jannah', 31, 'Jl. Sakura 11, Surabaya', 'Pegawai', '', 'P', '19920122-01', NULL, 'Poli Gigi', 'Pihak Internal', '2025-11-14 19:34:48'),
+('PS-2025-007', 'Miranda Oktaviani', 30, 'Jl. Melati 8, Surabaya', 'Perawat', 'Rawat Jalan', 'P', '', '', 'Poli Gigi', 'Pihak Internal', '2025-11-14 19:28:46'),
+('PS-2025-008', 'Lidya Wistyawati', 27, 'Jl. Anggrek 5, Surabaya', 'Perawat', 'Pasca Rawat Inap', 'P', '', '', 'Poli Umum', 'Pihak Internal', '2025-11-14 19:32:45'),
+('PS-2025-009', 'Mutmainah Zahra Nur Jannah', 31, 'Jl. Sakura 11, Surabaya', 'Pegawai', 'Observasi', 'P', '', '', 'Poli Gigi', 'Pihak Internal', '2025-11-14 19:34:48'),
 ('PS-2025-010', 'Nanda Pricila Yustianingrum', 29, 'Jl. Flamboyan 3, Surabaya', 'Pegawai', 'Rawat Inap', 'P', '19940130-01', NULL, 'Poli Gigi', 'Pihak Internal', '2025-11-14 19:38:58'),
-('PS-2025-011', 'Nabilla Nur Hidayah', 26, 'Jl. Cemara 9, Surabaya', 'Perawat', '', 'P', '19980112-01', NULL, 'Poli Gigi', 'Pihak Internal', '2025-11-14 19:49:29'),
-('PS-2025-012', 'Ellyana Puspita Sari', 33, 'Jl. Kenanga 20, Surabaya', 'Perawat', '', 'P', '19920120-01', NULL, 'Poli Umum', 'Pihak Internal', '2025-11-14 19:55:37'),
+('PS-2025-011', 'Nabilla Nur Hidayah', 26, 'Jl. Cemara 9, Surabaya', 'Perawat', 'Rawat Jalan', 'P', '', '', 'Poli Gigi', 'Pihak Internal', '2025-11-14 19:49:29'),
+('PS-2025-012', 'Ellyana Puspita Sari', 33, 'Jl. Kenanga 20, Surabaya', 'Perawat', 'Rawat Inap', 'P', '', '', 'Poli Umum', 'Pihak Internal', '2025-11-14 19:55:37'),
 ('PS-2025-013', 'Adit Setya Budi', 36, 'Jl. Dahlia 4, Surabaya', 'Dokter', 'Rawat Jalan', 'L', '19890101-01', NULL, 'Poli Umum', 'Pihak Internal', '2025-11-14 19:57:44'),
-('PS-2025-014', 'Millati Putri Setya Cahyaningsih', 29, 'Jl. Anggrek 12, Surabaya', 'Perawat', '', 'P', '19940315-01', NULL, 'Poli Gigi', 'Pihak Internal', '2025-11-14 19:59:22'),
-('PS-2025-015', 'Hidayat Rahman', 31, 'Jl. Melati 6, Surabaya', 'Dokter', '', 'L', '19920110-01', NULL, 'Poli Umum', 'Pihak Internal', '2025-11-14 20:00:36'),
-('PS-2025-016', 'Robbi Jatinagara', 38, 'Jl. Mawar 2, Surabaya', 'Pegawai', '', 'L', '19870112-01', NULL, 'Poli Gigi', 'Pihak Internal', '2025-11-14 20:02:54'),
+('PS-2025-014', 'Millati Putri Setya Cahyaningsih', 29, 'Jl. Anggrek 12, Surabaya', 'Perawat', 'Observasi', 'P', '', '', 'Poli Gigi', 'Pihak Internal', '2025-11-14 19:59:22'),
+('PS-2025-015', 'Hidayat Rahman', 31, 'Jl. Melati 6, Surabaya', 'Dokter', 'Pasca Rawat Inap', 'L', '', '', 'Poli Umum', 'Pihak Internal', '2025-11-14 20:00:36'),
+('PS-2025-016', 'Robbi Jatinagara', 38, 'Jl. Mawar 2, Surabaya', 'Pegawai', 'Rawat Jalan', 'L', '', '', 'Poli Gigi', 'Pihak Internal', '2025-11-14 20:02:54'),
 ('PS-2025-017', 'Reza Adi Bwahana', 34, 'Jl. Teratai 6, Surabaya', 'Pegawai', 'Rawat Jalan', 'L', '19890123-01', NULL, 'Poli Umum', 'Pihak Internal', '2025-11-14 20:03:51'),
-('PS-2025-018', 'Kurnia Mega', 28, 'Jl. Kenanga 3, Surabaya', 'Pegawai', '', 'P', '19950215-01', NULL, 'Poli Gigi', 'Pihak Internal', '2025-11-14 20:06:40'),
-('PS-2025-019', 'Muhammad Sholeh Alrizky', 30, 'Jl. Flamboyan 10, Surabaya', 'Pegawai', '', 'L', '19940102-01', NULL, 'Poli Umum', 'Pihak Internal', '2025-11-14 20:07:47'),
-('PS-2025-020', 'Dito Alfredo', 37, 'Jl. Merpati 7, Surabaya', 'Pegawai', '', 'L', '19860105-01', NULL, 'Poli Gigi', 'Pihak Internal', '2025-11-14 20:09:57'),
+('PS-2025-018', 'Kurnia Mega', 28, 'Jl. Kenanga 3, Surabaya', 'Pegawai', 'Observasi', 'P', '', '', 'Poli Gigi', 'Pihak Internal', '2025-11-14 20:06:40'),
+('PS-2025-019', 'Muhammad Sholeh Alrizky', 30, 'Jl. Flamboyan 10, Surabaya', 'Pegawai', 'Rawat Jalan', 'L', '', '', 'Poli Umum', 'Pihak Internal', '2025-11-14 20:07:47'),
+('PS-2025-020', 'Dito Alfredo', 37, 'Jl. Merpati 7, Surabaya', 'Pegawai', 'Observasi', 'L', '', '', 'Poli Gigi', 'Pihak Internal', '2025-11-14 20:09:57'),
 ('PS-2025-021', 'Alam Santoso', 33, 'Jl. Melati 14, Surabaya', 'Mahasiswa', 'Rawat Jalan', 'L', NULL, '1234567890123', 'Poli Gigi', 'Pihak Eksternal', '2025-11-14 19:03:22'),
 ('PS-2025-022', 'David Junanto Putra', 25, 'Jl. Kenari 21, Surabaya', 'Mahasiswa', 'Rawat Inap', 'L', NULL, '1234567890124', 'Poli Umum', 'Pihak Eksternal', '2025-11-14 19:04:49'),
-('PS-2025-023', 'Cecillia Putri Sagara', 27, 'Jl. Anggrek 2, Surabaya', 'Mahasiswa', '', 'P', NULL, '1234567890125', 'Poli Umum', 'Pihak Eksternal', '2025-11-14 19:17:50'),
-('PS-2025-024', 'Zairah Yana Humairoh', 26, 'Jl. Melati 9, Surabaya', 'Mahasiswa', '', 'P', NULL, '1234567890126', 'Poli Umum', 'Pihak Eksternal', '2025-11-14 19:20:03'),
-('PS-2025-025', 'Parjo Winarno', 38, 'Jl. Kenanga 15, Surabaya', 'Mahasiswa', '', 'L', NULL, '1234567890127', 'Poli Gigi', 'Pihak Eksternal', '2025-11-14 19:23:30'),
-('PS-2025-026', 'Zahra Amanda Wijaya', 24, 'Jl. Dahlia 8, Surabaya', 'Mahasiswa', 'Rawat Jalan', 'P', NULL, '1234567890128', 'Poli Gigi', 'Pihak Eksternal', '2025-11-14 19:41:31'),
-('PS-2025-027', 'Hanifah Rahma Yulia', 29, 'Jl. Melati 12, Surabaya', 'Mahasiswa', 'Rawat Inap', 'P', NULL, '1234567890129', 'Poli Umum', 'Pihak Eksternal', '2025-11-14 19:43:29'),
-('PS-2025-028', 'Putra Ardiansyah', 31, 'Jl. Anggrek 6, Surabaya', 'Mahasiswa', '', 'L', NULL, '1234567890130', 'Poli Gigi', 'Pihak Eksternal', '2025-11-14 19:44:56'),
-('PS-2025-029', 'Christie Agatha', 27, 'Jl. Kenanga 8, Surabaya', 'Mahasiswa', '', 'P', NULL, '1234567890131', 'Poli Gigi', 'Pihak Eksternal', '2025-11-14 19:45:53'),
-('PS-2025-030', 'Junaedi Tito Bagaswara', 35, 'Jl. Melati 1, Surabaya', 'Mahasiswa', '', 'L', NULL, '1234567890132', 'Poli Umum', 'Pihak Eksternal', '2025-11-14 19:47:19'),
-('PS-2025-031', 'Hadi Prasetyo', 28, 'Jl. Anggrek 9, Surabaya', 'Pegawai', 'Rawat Jalan', 'L', '19950228-01', NULL, 'Poli Umum', 'Pihak Internal', '2025-11-14 20:11:45'),
-('PS-2025-032', 'Siti Aisyah', 26, 'Jl. Melati 5, Surabaya', 'Pegawai', 'Rawat Inap', 'P', '19970103-01', NULL, 'Poli Umum', 'Pihak Internal', '2025-11-14 20:13:10'),
-('PS-2025-033', 'Rian Aditya', 30, 'Jl. Kenanga 16, Surabaya', 'Pegawai', '', 'L', '19940114-01', NULL, 'Poli Umum', 'Pihak Internal', '2025-11-14 20:14:55'),
-('PS-2025-034', 'Dewi Lestari', 32, 'Jl. Merpati 8, Surabaya', 'Perawat', '', 'P', '19920119-01', NULL, 'Poli Umum', 'Pihak Internal', '2025-11-14 20:16:12'),
-('PS-2025-035', 'Agus Santoso', 40, 'Jl. Melati 3, Surabaya', 'Dokter', '', 'L', '19831202-01', NULL, 'Poli Umum', 'Pihak Internal', '2025-11-14 20:17:45'),
-('PS-2025-036', 'Vina Oktaviani', 29, 'Jl. Anggrek 11, Surabaya', 'Perawat', 'Rawat Jalan', 'P', '19940120-01', NULL, 'Poli Umum', 'Pihak Internal', '2025-11-14 20:19:01'),
-('PS-2025-037', 'Herman Wijaya', 36, 'Jl. Kenanga 17, Surabaya', 'Pegawai', 'Rawat Inap', 'L', '19890105-01', NULL, 'Poli Umum', 'Pihak Internal', '2025-11-14 20:20:15'),
-('PS-2025-038', 'Rizki Maulana', 27, 'Jl. Melati 7, Surabaya', 'Mahasiswa', '', 'L', NULL, '1234567890133', 'Poli Umum', 'Pihak Eksternal', '2025-11-14 20:21:28'),
-('PS-2025-039', 'Nadia Putri', 25, 'Jl. Anggrek 13, Surabaya', 'Mahasiswa', '', 'P', NULL, '1234567890134', 'Poli Umum', 'Pihak Eksternal', '2025-11-14 20:22:35'),
-('PS-2025-040', 'Fajar Pratama', 30, 'Jl. Kenanga 18, Surabaya', 'Mahasiswa', '', 'L', NULL, '1234567890135', 'Poli Umum', 'Pihak Eksternal', '2025-11-14 20:23:47'),
-('PS-2025-041', 'Anisa Salsabila', 28, 'Jl. Dahlia 9, Surabaya', 'Pegawai', 'Rawat Jalan', 'P', '19950122-01', NULL, 'Poli Umum', 'Pihak Internal', '2025-11-14 20:24:50'),
-('PS-2025-042', 'Galih Prasetya', 35, 'Jl. Kenanga 19, Surabaya', 'Pegawai', 'Rawat Inap', 'L', '19890112-01', NULL, 'Poli Umum', 'Pihak Internal', '2025-11-14 20:25:44'),
-('PS-2025-043', 'Siska Amalia', 27, 'Jl. Anggrek 14, Surabaya', 'Perawat', '', 'P', '19940215-01', NULL, 'Poli Umum', 'Pihak Internal', '2025-11-14 20:26:39'),
-('PS-2025-044', 'Yoga Pratama', 31, 'Jl. Melati 10, Surabaya', 'Dokter', '', 'L', '19900102-01', NULL, 'Poli Umum', 'Pihak Internal', '2025-11-14 20:27:55'),
-('PS-2025-045', 'Fitria Handayani', 29, 'Jl. Kenanga 21, Surabaya', 'Perawat', '', 'P', '19940303-01', NULL, 'Poli Umum', 'Pihak Internal', '2025-11-14 20:28:47'),
-('PS-2025-046', 'Denny Santoso', 33, 'Jl. Melati 11, Surabaya', 'Pegawai', 'Rawat Jalan', 'L', '19890228-01', NULL, 'Poli Umum', 'Pihak Internal', '2025-11-14 20:29:50'),
-('PS-2025-047', 'Cahya Anggraini', 26, 'Jl. Dahlia 10, Surabaya', 'Pegawai', 'Rawat Inap', 'P', '19960215-01', NULL, 'Poli Umum', 'Pihak Internal', '2025-11-14 20:30:44'),
-('PS-2025-048', 'Rafli Ramadhan', 30, 'Jl. Anggrek 15, Surabaya', 'Mahasiswa', '', 'L', NULL, '1234567890136', 'Poli Umum', 'Pihak Eksternal', '2025-11-14 20:31:33'),
-('PS-2025-049', 'Melati Putri', 28, 'Jl. Melati 13, Surabaya', 'Mahasiswa', '', 'P', NULL, '1234567890137', 'Poli Umum', 'Pihak Eksternal', '2025-11-14 20:32:27'),
-('PS-2025-050', 'Fadli Pratama', 31, 'Jl. Kenanga 22, Surabaya', 'Mahasiswa', '', 'L', NULL, '1234567890138', 'Poli Umum', 'Pihak Eksternal', '2025-11-14 20:33:19'),
-('PS-2025-051', 'Rina Sari', 27, 'Jl. Dahlia 11, Surabaya', 'Mahasiswa', 'Rawat Jalan', 'P', NULL, '1234567890139', 'Poli Umum', 'Pihak Eksternal', '2025-11-14 20:34:10'),
-('PS-2025-052', 'Fadlan Akbar', 29, 'Jl. Anggrek 16, Surabaya', 'Mahasiswa', 'Rawat Inap', 'L', NULL, '1234567890140', 'Poli Umum', 'Pihak Eksternal', '2025-11-14 20:35:01'),
-('PS-2025-053', 'Tasya Amalia', 26, 'Jl. Melati 14, Surabaya', 'Mahasiswa', '', 'P', NULL, '1234567890141', 'Poli Umum', 'Pihak Eksternal', '2025-11-14 20:35:52'),
-('PS-2025-054', 'Bayu Adi', 33, 'Jl. Kenanga 23, Surabaya', 'Pegawai', '', 'L', '19890105-01', NULL, 'Poli Umum', 'Pihak Internal', '2025-11-14 20:36:43'),
-('PS-2025-055', 'Citra Permata', 28, 'Jl. Dahlia 12, Surabaya', 'Pegawai', '', 'P', '19950228-01', NULL, 'Poli Umum', 'Pihak Internal', '2025-11-14 20:37:35'),
-('PS-2025-056', 'Rendi Santoso', 36, 'Jl. Anggrek 17, Surabaya', 'Pegawai', 'Rawat Jalan', 'L', '19890111-01', NULL, 'Poli Umum', 'Pihak Internal', '2025-11-14 20:38:24'),
-('PS-2025-057', 'Nadia Fitri', 25, 'Jl. Melati 15, Surabaya', 'Perawat', 'Rawat Inap', 'P', '19960402-01', NULL, 'Poli Umum', 'Pihak Internal', '2025-11-14 20:39:15'),
-('PS-2025-058', 'Fikri Ramadhan', 30, 'Jl. Kenanga 24, Surabaya', 'Pegawai', '', 'L', '19940110-01', NULL, 'Poli Umum', 'Pihak Internal', '2025-11-14 20:40:03'),
-('PS-2025-059', 'Viona Melati', 27, 'Jl. Dahlia 13, Surabaya', 'Perawat', '', 'P', '19950305-01', NULL, 'Poli Umum', 'Pihak Internal', '2025-11-14 20:40:54'),
-('PS-2025-060', 'Rizal Fauzan', 32, 'Jl. Anggrek 18, Surabaya', 'Pegawai', '', 'L', '19890215-01', NULL, 'Poli Umum', 'Pihak Internal', '2025-11-14 20:41:46'),
-('PS-2025-061', 'Cindy Putri', 28, 'Jl. Melati 16, Surabaya', 'Mahasiswa', 'Rawat Jalan', 'P', NULL, '1234567890142', 'Poli Umum', 'Pihak Eksternal', '2025-11-14 20:42:39'),
-('PS-2025-062', 'Denny Prasetya', 35, 'Jl. Kenanga 25, Surabaya', 'Mahasiswa', 'Rawat Inap', 'L', NULL, '1234567890143', 'Poli Umum', 'Pihak Eksternal', '2025-11-14 20:43:28'),
-('PS-2025-063', 'Rika Amalia', 26, 'Jl. Dahlia 14, Surabaya', 'Mahasiswa', '', 'P', NULL, '1234567890144', 'Poli Umum', 'Pihak Eksternal', '2025-11-14 20:44:10'),
-('PS-2025-064', 'Fadil Ramadhan', 31, 'Jl. Anggrek 19, Surabaya', 'Mahasiswa', '', 'L', NULL, '1234567890145', 'Poli Umum', 'Pihak Eksternal', '2025-11-14 20:44:55'),
-('PS-2025-065', 'Intan Sari', 27, 'Jl. Melati 17, Surabaya', 'Mahasiswa', '', 'P', NULL, '1234567890146', 'Poli Umum', 'Pihak Eksternal', '2025-11-14 20:45:47'),
-('PS-2025-066', 'Rifqi Maulana', 30, 'Jl. Kenanga 26, Surabaya', 'Mahasiswa', 'Rawat Jalan', 'L', NULL, '1234567890147', 'Poli Umum', 'Pihak Eksternal', '2025-11-14 20:46:36'),
-('PS-2025-067', 'Nina Amalia', 28, 'Jl. Dahlia 15, Surabaya', 'Mahasiswa', 'Rawat Inap', 'P', NULL, '1234567890148', 'Poli Umum', 'Pihak Eksternal', '2025-11-14 20:47:28'),
-('PS-2025-068', 'Aditya Prasetyo', 32, 'Jl. Anggrek 20, Surabaya', 'Pegawai', '', 'L', '19890120-01', NULL, 'Poli Umum', 'Pihak Internal', '2025-11-14 20:48:14'),
-('PS-2025-069', 'Tasya Amirah', 27, 'Jl. Melati 18, Surabaya', 'Perawat', '', 'P', '19950228-01', NULL, 'Poli Umum', 'Pihak Internal', '2025-11-14 20:49:02'),
-('PS-2025-070', 'Fajar Nugroho', 33, 'Jl. Kenanga 27, Surabaya', 'Pegawai', '', 'L', '19890103-01', NULL, 'Poli Umum', 'Pihak Internal', '2025-11-14 20:49:52'),
-('PS-2025-071', 'Lina Salsabila', 26, 'Jl. Dahlia 16, Surabaya', 'Perawat', 'Rawat Jalan', 'P', '19960310-01', NULL, 'Poli Umum', 'Pihak Internal', '2025-11-14 20:50:47'),
-('PS-2025-072', 'Rizal Maulana', 30, 'Jl. Anggrek 21, Surabaya', 'Pegawai', 'Rawat Inap', 'L', '19940205-01', NULL, 'Poli Umum', 'Pihak Internal', '2025-11-14 20:51:36'),
-('PS-2025-073', 'Maya Putri', 28, 'Jl. Melati 19, Surabaya', 'Perawat', '', 'P', '19950112-01', NULL, 'Poli Umum', 'Pihak Internal', '2025-11-14 20:52:22'),
-('PS-2025-074', 'Dani Pratama', 32, 'Jl. Kenanga 28, Surabaya', 'Pegawai', '', 'L', '19890118-01', NULL, 'Poli Umum', 'Pihak Internal', '2025-11-14 20:53:11'),
-('PS-2025-075', 'Fitria Salsabila', 27, 'Jl. Dahlia 17, Surabaya', 'Perawat', '', 'P', '19950205-01', NULL, 'Poli Umum', 'Pihak Internal', '2025-11-14 20:54:02'),
-('PS-2025-076', 'Galih Ramadhan', 30, 'Jl. Anggrek 22, Surabaya', 'Mahasiswa', 'Rawat Jalan', 'L', NULL, '1234567890149', 'Poli Umum', 'Pihak Eksternal', '2025-11-14 20:54:55'),
-('PS-2025-077', 'Nabila Putri', 28, 'Jl. Melati 20, Surabaya', 'Mahasiswa', 'Rawat Inap', 'P', NULL, '1234567890150', 'Poli Umum', 'Pihak Eksternal', '2025-11-14 20:55:42'),
-('PS-2025-078', 'Reza Aditya', 31, 'Jl. Kenanga 29, Surabaya', 'Mahasiswa', '', 'L', NULL, '1234567890151', 'Poli Umum', 'Pihak Eksternal', '2025-11-14 20:56:31'),
-('PS-2025-079', 'Citra Melati', 27, 'Jl. Dahlia 18, Surabaya', 'Mahasiswa', '', 'P', NULL, '1234567890152', 'Poli Umum', 'Pihak Eksternal', '2025-11-14 20:57:20'),
-('PS-2025-080', 'Fikri Prasetya', 30, 'Jl. Anggrek 23, Surabaya', 'Mahasiswa', 'Rawat Jalan', 'L', '129391240292321231', '1234567890123', 'Poli Umum', 'Pihak Eksternal', '2025-11-14 20:58:12');
+('PS-2025-023', 'Cecillia Putri Sagara', 27, 'Jl. Anggrek 2, Surabaya', 'Mahasiswa', 'Observasi', 'P', '', '1234567890125', 'Poli Umum', 'Pihak Eksternal', '2025-11-14 19:17:50'),
+('PS-2025-024', 'Zairah Yana Humairoh', 26, 'Jl. Melati 9, Surabaya', 'Mahasiswa', 'Rawat Inap', 'P', '', '1234567890126', 'Poli Umum', 'Pihak Eksternal', '2025-11-14 19:20:03'),
+('PS-2025-025', 'Parjo Winarno', 38, 'Jl. Kenanga 15, Surabaya', 'Mahasiswa', 'Observasi', 'L', '', '1234567890127', 'Poli Gigi', 'Pihak Eksternal', '2025-11-14 19:23:30');
 
 --
 -- Trigger `riwayat_pasien`
 --
-DELIMITER $$
-CREATE TRIGGER `trg_riwayat_before_insert` BEFORE INSERT ON `riwayat_pasien` FOR EACH ROW BEGIN
-    DECLARE v_layanan ENUM('Poli Umum','Poli Gigi');
-
-    -- Ambil layanan terbaru dari antrean berdasarkan nama
-    SELECT layanan INTO v_layanan
-    FROM antrean
-    WHERE nama = NEW.nama
-    ORDER BY waktu_daftar DESC
-    LIMIT 1;
-
-    -- Jika tidak ada antrian, gunakan default 'Poli Umum'
-    IF v_layanan IS NULL THEN
-        SET NEW.layanan = 'Poli Umum';
-    ELSE
-        SET NEW.layanan = v_layanan;
-    END IF;
-END
-$$
-DELIMITER ;
 DELIMITER $$
 CREATE TRIGGER `trg_riwayat_pasien_after_delete` AFTER DELETE ON `riwayat_pasien` FOR EACH ROW BEGIN
     DECLARE total INT;

@@ -78,7 +78,7 @@
                             <div class="dropdown-divider"></div>
 
                             <?php if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true): ?> 
-                                <a class="dropdown-item custom-dropdown" href="<?= BASE_URL ?>components/features/logout.php">
+                                <a class="dropdown-item custom-dropdown" href="<?= BASE_URL ?>components/features/auth/authentication/logout.php">
                                     <i class="fas fa-sign-out-alt mr-2" aria-hidden="true"></i>
                                     Keluar
                                 </a>

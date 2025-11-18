@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="icon" href="<?= BASE_URL ?>public/assets/img/brand/favicon-32x32.png">
+        <link rel="icon" href="<?= BASE_URL ?>public/assets/img/favicon/favicon-32x32.png">
 
         <title>SIAKLIK</title>
         <meta name="description" content="Website SIAKLIK">

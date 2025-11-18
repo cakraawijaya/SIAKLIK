@@ -1,6 +1,6 @@
 <?php
     // pengecekan otentikasi
-    include __DIR__ . '/../../../features/patient_auth_check.php';
+    include __DIR__ . '/../../../features/auth/authorization/patient.php';
 ?>
 
 <main>

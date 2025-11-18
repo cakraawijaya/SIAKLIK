@@ -16,7 +16,7 @@
 		mysqli_set_charset($koneksi, "utf8");
 	} catch (mysqli_sql_exception $e) {
 		$_SESSION['error_message'] = $e->getMessage();
-		header("Location: " . BASE_URL . "components/features/error_db_notification.php");
+		header("Location: " . BASE_URL . "components/pages/error/database_notification.php");
 		exit;
 	}
 

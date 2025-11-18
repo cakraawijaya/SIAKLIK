@@ -59,16 +59,16 @@
                 <a href="#" class="vanillatop"><i class="fas fa-angle-up" aria-hidden="true"></i></a>
 
                 <!-- Modal Login -->
-                <?php include __DIR__ . '/../modal/modal_login.php'; ?>
+                <?php include __DIR__ . '/../modal/login.php'; ?>
 
                 <!-- Modal Register -->
-                <?php include __DIR__ . '/../modal/modal_registration.php'; ?>
+                <?php include __DIR__ . '/../modal/registration.php'; ?>
 
                 <!-- Modal Forgot Password -->
-                <?php include __DIR__ . '/../modal/modal_forgot_password.php'; ?>
+                <?php include __DIR__ . '/../modal/forgot_password.php'; ?>
 
                 <!-- Modal Reset Password -->
-                <?php include __DIR__ . '/../modal/modal_reset_password.php'; ?>
+                <?php include __DIR__ . '/../modal/reset_password.php'; ?>
 
             </div>
             <!-- End of Page Main Body Page Content  -->
@@ -84,7 +84,7 @@
         <script src="<?= BASE_URL ?>public/vendor/malihu/jquery.mCustomScrollbar.concat.min.js"></script>
         
         <!-- Sidebar Handler -->
-        <script src="<?= BASE_URL ?>public/assets/js/others/sidebar.js"></script>
+        <script src="<?= BASE_URL ?>public/assets/js/ui/global/sidebar.js"></script>
         
         <!-- Highcharts -->
         <script src="<?= BASE_URL ?>public/vendor/highcharts/code/highcharts.js"></script>
@@ -97,25 +97,25 @@
         <script src="<?= BASE_URL ?>public/vendor/vanillatop/dist/vanillatop.min.js"></script>
         
         <!-- Register Handler -->
-        <script src="<?= BASE_URL ?>public/assets/js/actions/registration_handler.js"></script>
+        <script src="<?= BASE_URL ?>public/assets/js/auth/registration_handler.js"></script>
         
         <!-- Login Handler -->
-        <script src="<?= BASE_URL ?>public/assets/js/actions/login_handler.js"></script>
+        <script src="<?= BASE_URL ?>public/assets/js/auth/login_handler.js"></script>
         
         <!-- Forgot Password Handler -->
-        <script src="<?= BASE_URL ?>public/assets/js/actions/forgot_password_handler.js"></script>
+        <script src="<?= BASE_URL ?>public/assets/js/auth/forgot_password_handler.js"></script>
         
         <!-- Reset Password Handler -->
-        <script src="<?= BASE_URL ?>public/assets/js/actions/reset_password_handler.js"></script>
+        <script src="<?= BASE_URL ?>public/assets/js/auth/reset_password_handler.js"></script>
         
         <!-- Toggle Password -->
-        <script src="<?= BASE_URL ?>public/assets/js/actions/toggle_password.js"></script>
+        <script src="<?= BASE_URL ?>public/assets/js/auth/toggle_password.js"></script>
         
         <!-- Reload Captcha -->
-        <script src="<?= BASE_URL ?>public/assets/js/actions/reload_captcha.js"></script>
+        <script src="<?= BASE_URL ?>public/assets/js/auth/reload_captcha.js"></script>
 
         <!-- Reset Modal -->
-        <script src="<?= BASE_URL ?>public/assets/js/actions/reset_modal.js"></script>
+        <script src="<?= BASE_URL ?>public/assets/js/auth/reset_modal.js"></script>
 
         <!-- Definisi BASE-URL untuk AJAX -->
         <script>
@@ -126,7 +126,7 @@
         <script src="<?= BASE_URL ?>public/assets/ajax/auth_handler.js"></script>
         
         <!-- Notifikasi Login & Register -->
-        <?php include __DIR__ . '/../features/access_notification.php'; ?>
+        <?php include __DIR__ . '/../features/notification/access.php'; ?>
         
         <!-- SweetAlert2 -->
         <script src="<?= BASE_URL ?>public/vendor/sweetalert2/sweetalert2.all.min.js"></script>
@@ -145,33 +145,33 @@
             data-timer="<?= $swal['timer'] ?? '' ?>"
             data-redirect="<?= $swal['redirect'] ?? '' ?>">
         </div>
-        <script src="<?= BASE_URL ?>public/assets/js/actions/swal_handler.js"></script>
+        <script src="<?= BASE_URL ?>public/assets/js/utils/swal_handler.js"></script>
         
         <!-- Calendar -->
-        <script src="<?= BASE_URL ?>public/assets/js/others/calendar.js"></script>
+        <script src="<?= BASE_URL ?>public/assets/js/ui/home/calendar.js"></script>
         
         <!-- Resize Header Article -->
-        <script src="<?= BASE_URL ?>public/assets/js/others/resize_header_article.js"></script>
+        <script src="<?= BASE_URL ?>public/assets/js/ui/home/resize_header_article.js"></script>
 
         <!-- Script Khusus Berdasarkan Halaman -->
         <?php if ($page == 'patient/chart/chart_gender'): ?>
-            <script src="<?= BASE_URL ?>public/assets/js/highcharts/chart_bar_gender.js"></script>
+            <script src="<?= BASE_URL ?>public/assets/js/ui/highcharts/chart_gender.js"></script>
         <?php elseif ($page == 'patient/chart/chart_2013'): ?>
-            <script src="<?= BASE_URL ?>public/assets/js/highcharts/chart_bar_2013.js"></script>
+            <script src="<?= BASE_URL ?>public/assets/js/ui/highcharts/chart_2013.js"></script>
         <?php elseif ($page == 'patient/chart/chart_2014'): ?>
-            <script src="<?= BASE_URL ?>public/assets/js/highcharts/chart_bar_2014.js"></script>
+            <script src="<?= BASE_URL ?>public/assets/js/ui/highcharts/chart_2014.js"></script>
         <?php elseif ($page == 'patient/chart/chart_2015'): ?>
-            <script src="<?= BASE_URL ?>public/assets/js/highcharts/chart_bar_2015.js"></script>
+            <script src="<?= BASE_URL ?>public/assets/js/ui/highcharts/chart_2015.js"></script>
         <?php elseif ($page == 'patient/chart/chart_2016'): ?>
-            <script src="<?= BASE_URL ?>public/assets/js/highcharts/chart_bar_2016.js"></script>
+            <script src="<?= BASE_URL ?>public/assets/js/ui/highcharts/chart_2016.js"></script>
         <?php elseif ($page == 'patient/chart/chart_2017'): ?>
-            <script src="<?= BASE_URL ?>public/assets/js/highcharts/chart_bar_2017.js"></script>
+            <script src="<?= BASE_URL ?>public/assets/js/ui/highcharts/chart_2017.js"></script>
         <?php elseif ($page == 'patient/chart/chart_2018'): ?>
-            <script src="<?= BASE_URL ?>public/assets/js/highcharts/chart_bar_2018.js"></script>
+            <script src="<?= BASE_URL ?>public/assets/js/ui/highcharts/chart_2018.js"></script>
         <?php elseif ($page == 'patient/chart/chart_2019'): ?>
-            <script src="<?= BASE_URL ?>public/assets/js/highcharts/chart_bar_2019.js"></script>
+            <script src="<?= BASE_URL ?>public/assets/js/ui/highcharts/chart_2019.js"></script>
         <?php elseif ($page == 'patient/chart/chart_2020'): ?>
-            <script src="<?= BASE_URL ?>public/assets/js/highcharts/chart_bar_2020.js"></script>
+            <script src="<?= BASE_URL ?>public/assets/js/ui/highcharts/chart_2020.js"></script>
         <?php elseif ($page == 'admin/user_management'): ?>
             <script src="<?= BASE_URL ?>public/assets/ajax/user_management_handler.js"></script>
         <?php elseif ($page == 'worker/patient_management'): ?>

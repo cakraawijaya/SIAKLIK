@@ -1,13 +1,13 @@
 $(document).ready(function(){
 
     // ==============================================
-    // 🔹 Fungsi Load Data Pasien
+    // Fungsi Load Data Pasien
     // ==============================================
     function loadPatients(searchOnly = false){
         var search = $('input[name="search"]').val();
 
         $.ajax({
-            url: BASE_URL + "components/data_ajax/ajax_patient_management.php",
+            url: BASE_URL + "components/data/ajax_patient_management.php",
             type: "GET",
             data: { 
                 action: 'list',
@@ -17,15 +17,43 @@ $(document).ready(function(){
             dataType: "json",
             success: function(res){
                 var tbody = $('#patientTableBody');
+
+                // Urutkan data berdasarkan angka terakhir ID
+                if(res.data && res.data.length > 0){
+                    res.data.sort((a, b) => {
+                        const getNum = id => {
+                            if(!id) return 0;
+                            const parts = id.trim().split('-');
+                            const last = parts.pop();
+                            const n = parseInt(last, 10);
+                            return isNaN(n) ? 0 : n;
+                        };
+                        return getNum(a.id) - getNum(b.id);
+                    });
+                }
+
+                // Jika halaman kosong dan ada halaman lain, pindah otomatis
+                if(res.data.length === 0){
+                    if(currentPage[activeTab] < (res.totalPage || 1)){
+                        currentPage[activeTab]++;
+                        loadPatients(searchOnly);
+                        return;
+                    } else if(currentPage[activeTab] > 1){
+                        currentPage[activeTab]--;
+                        loadPatients(searchOnly);
+                        return;
+                    }
+                }
+
                 tbody.empty();
 
                 if(!res.data || res.data.length === 0){
                     $('th:last-child').hide(); // sembunyikan header aksi
-                    tbody.append('<tr><td colspan="12" class="text-center align-middle">Data tidak ditemukan</td></tr>');
+                    tbody.append('<tr><td colspan="13" class="text-center align-middle">Data tidak ditemukan</td></tr>');
                 } else {
                     $('th:last-child').show(); // tampilkan header aksi jika ada data
                     res.data.forEach(function(p){
-                        var highlightClass = (lastUpdatedPatient.id === p.id && lastUpdatedPatient.waktu === p.waktu) ? 'table-success' : '';
+                        var highlightClass = (lastUpdatedPatient.id === p.id) ? 'table-success' : '';
                         tbody.append(
                             `<tr class="${highlightClass}">
                                 <td class="text-center align-middle">${p.id}</td>
@@ -51,12 +79,18 @@ $(document).ready(function(){
                     });
                 }
 
+                // Scroll ke row baru jika ada highlight
+                setTimeout(() => {
+                    const newRow = $('#patientTableBody tr.table-success');
+                    if(newRow.length){
+                        $('html, body').animate({ scrollTop: newRow.offset().top - 100 }, 300);
+                    }
+                }, 100);
+
                 // Hapus highlight otomatis setelah 5 detik
                 setTimeout(() => {
                     $('#patientTableBody tr.table-success').removeClass('table-success');
-
-                    // Reset agar tidak highlight lagi di refresh berikutnya
-                    lastUpdatedPatient = { id: null, waktu: null };
+                    lastUpdatedPatient = { id: null };
                 }, 5000);
 
                 // ======================== INFO TEXT ========================
@@ -71,7 +105,6 @@ $(document).ready(function(){
 
                 $('#patient-info').text(infoText + ' ');
                 $('#patient-count').text(' ' + countText);
-
 
                 totalPage[activeTab] = res.totalPage || 1;
 
@@ -110,7 +143,7 @@ $(document).ready(function(){
     $('#searchForm').on('submit', function(e){
         e.preventDefault();
         currentPage[activeTab] = 1;
-        lastUpdatedPatient = { id: null, waktu: null };
+        lastUpdatedPatient = { id: null };
         loadPatients(true);
     });
 
@@ -144,14 +177,12 @@ $(document).ready(function(){
         }
     }, 10000);
 
-
     // ===================================================
-    // 🔹 MODAL ADD, EDIT, DELETE Pasien (AJAX CRUD)
+    // MODAL ADD, EDIT, DELETE Pasien (AJAX CRUD)
     // ===================================================
     $('#formAddPasien').on('submit', function(e){
         e.preventDefault();
 
-        // Tampilkan loading modal processing
         Swal.fire({
             title: 'Memproses...',
             text: 'Mohon tunggu sebentar',
@@ -159,22 +190,24 @@ $(document).ready(function(){
             didOpen: () => Swal.showLoading()
         });
 
-        $.post(BASE_URL + "components/data_ajax/ajax_patient_management.php", $(this).serialize() + '&action=create', function(res){
-            // Delay tutup swal biar sempat tampil
+        $.post(BASE_URL + "components/data/ajax_patient_management.php", $(this).serialize() + '&action=create', function(res){
             setTimeout(() => {
                 Swal.close();
 
                 if(res.success){
                     $('#modalAddPasien').modal('hide');
 
-                    // Set lastUpdatedPatient untuk highlight (gunakan inserted_id & inserted_time)
-                    lastUpdatedPatient = { id: res.inserted_id, waktu: res.inserted_time };
+                    lastUpdatedPatient = { id: res.inserted_id };
 
-                    loadPatients();
+                    // Pindah ke halaman terakhir agar data baru terlihat
+                    $.get(BASE_URL + "components/data/ajax_patient_management.php", { action: 'list', page: 1 }, function(listRes){
+                        totalPage[activeTab] = listRes.totalPage || 1;
+                        currentPage[activeTab] = totalPage[activeTab];
+                        loadPatients();
+                    }, 'json');
+
                     $('#formAddPasien')[0].reset();
 
-                    // Toast data sukses ditambahkan
-                    // Delay sebentar agar modal tertutup dulu
                     setTimeout(() => {
                         Swal.fire({
                             toast: true,
@@ -187,7 +220,6 @@ $(document).ready(function(){
                         });
                     }, 200);
                 } else {
-                    // Toast error
                     Swal.fire({
                         icon: 'error',
                         title: 'Gagal',
@@ -207,18 +239,18 @@ $(document).ready(function(){
 
     $(document).on('click', '.edit-btn', function(){
         const id = $(this).data('id');
-        $.get(BASE_URL + "components/data_ajax/ajax_patient_management.php", { action: 'get', id }, function(res){
+        $.get(BASE_URL + "components/data/ajax_patient_management.php", { action: 'get', id }, function(res){
             if(res.success){
                 const p = res.data;
-                $('#edit_id_display').text(p.id); // tampilkan di UI
-                $('#edit_id').val(p.id); // simpan ke input hidden agar ikut terkirim ke backend
+                $('#edit_id_display').text(p.id);
+                $('#edit_id').val(p.id);
                 $('#edit_nama').val(p.nama);
                 $('#edit_umur').val(p.umur);
                 $('#edit_alamat').val(p.alamat);
                 $('#edit_pekerjaan').val(p.pekerjaan);
                 $('#edit_status').val(p.status);
                 $('#edit_layanan').val(p.layanan);                
-                
+
                 const jk = (p.jenis_kelamin || '').toString().trim().toUpperCase();
                 if (jk === 'L' || jk === 'LAKI-LAKI') {
                     $('#edit_laki').prop('checked', true);
@@ -263,21 +295,17 @@ $(document).ready(function(){
             didOpen: () => Swal.showLoading()
         });
 
-        $.post(BASE_URL + "components/data_ajax/ajax_patient_management.php", $(this).serialize() + '&action=update', function(res){
-            // Delay tutup swal biar sempat tampil
+        $.post(BASE_URL + "components/data/ajax_patient_management.php", $(this).serialize() + '&action=update', function(res){
             setTimeout(() => {
                 Swal.close();
-                
+
                 if(res.success){
                     $('#modalEditPasien').modal('hide');
 
-                    // Set lastUpdatedPatient untuk highlight (gunakan updated_id & updated_time)
-                    lastUpdatedPatient = { id: res.updated_id, waktu: res.updated_time };
+                    lastUpdatedPatient = { id: res.updated_id };
 
                     loadPatients();
 
-                    // Toast data sukses diperbarui
-                    // Delay sebentar agar modal tertutup dulu
                     setTimeout(() => {
                         Swal.fire({
                             toast: true,
@@ -314,7 +342,7 @@ $(document).ready(function(){
         const tampilNamaLengkap = `<strong>${nama}</strong>`;
         const tampilID = `(<strong>ID:</strong> ${id})`;
 
-        $('#delete_id').val($(this).data('id'));
+        $('#delete_id').val(id);
         $('#delete_show_nama').html(tampilNamaLengkap);
         $('#delete_show_id').html(tampilID);
         $('#modalDeletePasien').modal('show');
@@ -330,17 +358,14 @@ $(document).ready(function(){
             didOpen: () => Swal.showLoading()
         });
 
-        $.post(BASE_URL + "components/data_ajax/ajax_patient_management.php", $(this).serialize() + '&action=delete', function(res){
-            // Delay tutup swal biar sempat tampil
+        $.post(BASE_URL + "components/data/ajax_patient_management.php", $(this).serialize() + '&action=delete', function(res){
             setTimeout(() => {
                 Swal.close();
-                
+
                 if(res.success){
                     $('#modalDeletePasien').modal('hide');
                     loadPatients();
 
-                    // Toast data sukses dihapus
-                    // Delay sebentar agar modal tertutup dulu
                     setTimeout(() => {
                         Swal.fire({
                             toast: true,
@@ -369,80 +394,69 @@ $(document).ready(function(){
         });
     });
 
-
     // ===================================================
-    // 🔹 FUNGSI OPSI STATUS vs LAYANAN (LOGIKA VANILLA)
+    // FUNGSI OPSI STATUS vs LAYANAN
     // ===================================================
-    function setStatusOptions(selectElem, allowedValues, allOptions) {
+    function setSelectOptions(selectElem, allowedValues, allOptions, placeholderText = "Pilih") {
         const currentVal = selectElem.value;
-        const placeholderOption = allOptions.find(opt => opt.value === "");
         selectElem.innerHTML = "";
 
-        if (placeholderOption) {
-            const option = document.createElement("option");
-            option.value = "";
-            option.textContent = placeholderOption.text;
-            option.disabled = true;
-            option.selected = true;
-            selectElem.appendChild(option);
-        }
+        // Tambahkan placeholder
+        const option = document.createElement("option");
+        option.value = "";
+        option.textContent = placeholderText;
+        option.disabled = true;
+        option.selected = !allowedValues.includes(currentVal) || currentVal === "";
+        selectElem.appendChild(option);
 
+        // Tambahkan opsi yang diizinkan
         allOptions.forEach(opt => {
             if (allowedValues.includes(opt.value)) {
-                const option = document.createElement("option");
-                option.value = opt.value;
-                option.textContent = opt.text;
-                selectElem.appendChild(option);
+                const newOpt = document.createElement("option");
+                newOpt.value = opt.value;
+                newOpt.textContent = opt.text;
+                selectElem.appendChild(newOpt);
             }
         });
 
-        // Paksa browser reflow (mencegah glitch visual)
-        selectElem.offsetHeight;
-
+        // Set value kembali jika masih valid
         if (allowedValues.includes(currentVal)) {
             selectElem.value = currentVal;
         }
     }
 
+    // ======================
     // ADD MODAL
+    // ======================
     const layananAdd = document.querySelector("select[name='layanan']");
     const statusAdd = document.querySelector("select[name='status']");
-    const allStatusAdd = Array.from(statusAdd.options).map(opt => ({value: opt.value, text: opt.text}));
+    const allStatusAdd = Array.from(statusAdd.options).map(opt => ({ value: opt.value, text: opt.text }));
 
     layananAdd.addEventListener("change", function() {
         if (this.value === "Poli Gigi") {
-            setStatusOptions(statusAdd, ["Rawat Jalan", "Observasi"], allStatusAdd);
+            setSelectOptions(statusAdd, ["Rawat Jalan", "Observasi"], allStatusAdd, "Pilih Status");
+        } else if (this.value === "Poli Umum") {
+            setSelectOptions(statusAdd, ["Rawat Inap", "Rawat Jalan", "Observasi", "Pasca Rawat Inap"], allStatusAdd, "Pilih Status");
         } else {
-            setStatusOptions(statusAdd, ["Rawat Inap", "Rawat Jalan", "Observasi", "Pasca Rawat Inap"], allStatusAdd);
+            // Jika belum memilih
+            setSelectOptions(statusAdd, [], allStatusAdd, "Pilih Status");
         }
     });
 
-    statusAdd.addEventListener("change", function() {
-        if (["Rawat Inap", "Pasca Rawat Inap"].includes(this.value)) {
-            layananAdd.value = "Poli Umum";
-            setStatusOptions(statusAdd, ["Rawat Inap", "Rawat Jalan", "Observasi", "Pasca Rawat Inap"], allStatusAdd);
-            statusAdd.value = this.value;
-        }
-    });
-
+    // ======================
     // EDIT MODAL
+    // ======================
     const layananEdit = document.getElementById("edit_layanan");
     const statusEdit = document.getElementById("edit_status");
-    const allStatusEdit = Array.from(statusEdit.options).map(opt => ({value: opt.value, text: opt.text}));
+    const allStatusEdit = Array.from(statusEdit.options).map(opt => ({ value: opt.value, text: opt.text }));
 
     layananEdit.addEventListener("change", function() {
         if (this.value === "Poli Gigi") {
-            setStatusOptions(statusEdit, ["Rawat Jalan", "Observasi"], allStatusEdit);
+            setSelectOptions(statusEdit, ["Rawat Jalan", "Observasi"], allStatusEdit, "Pilih Status");
+        } else if (this.value === "Poli Umum") {
+            setSelectOptions(statusEdit, ["Rawat Inap", "Rawat Jalan", "Observasi", "Pasca Rawat Inap"], allStatusEdit, "Pilih Status");
         } else {
-            setStatusOptions(statusEdit, ["Rawat Inap", "Rawat Jalan", "Observasi", "Pasca Rawat Inap"], allStatusEdit);
-        }
-    });
-
-    statusEdit.addEventListener("change", function() {
-        if (["Rawat Inap", "Pasca Rawat Inap"].includes(this.value)) {
-            layananEdit.value = "Poli Umum";
-            setStatusOptions(statusEdit, ["Rawat Inap", "Rawat Jalan", "Observasi", "Pasca Rawat Inap"], allStatusEdit);
-            statusEdit.value = this.value;
+            setSelectOptions(statusEdit, [], allStatusEdit, "Pilih Status");
         }
     });
 
@@ -451,12 +465,14 @@ $(document).ready(function(){
         const currentStatus = statusEdit.value;
 
         if (currentLayanan === "Poli Gigi") {
-            setStatusOptions(statusEdit, ["Rawat Jalan", "Observasi"], allStatusEdit);
+            setSelectOptions(statusEdit, ["Rawat Jalan", "Observasi"], allStatusEdit, "Pilih Status");
+        } else if (currentLayanan === "Poli Umum") {
+            setSelectOptions(statusEdit, ["Rawat Inap", "Rawat Jalan", "Observasi", "Pasca Rawat Inap"], allStatusEdit, "Pilih Status");
         } else {
-            setStatusOptions(statusEdit, ["Rawat Inap", "Rawat Jalan", "Observasi", "Pasca Rawat Inap"], allStatusEdit);
+            setSelectOptions(statusEdit, [], allStatusEdit, "Pilih Status");
         }
 
-        statusEdit.value = currentStatus;
+        statusEdit.value = currentStatus || "";
     });
 
     // Validasi sebelum submit
@@ -481,30 +497,5 @@ $(document).ready(function(){
 
     formAdd.addEventListener("submit", validateSelects);
     formEdit.addEventListener("submit", validateSelects);
-
-
-
-    // ===================================================
-    // 🔹 RESET FORM & STATUS SELECT SAAT MODAL DITUTUP
-    // ===================================================
-    $('#modalAddPasien').on('hidden.bs.modal', function () {
-        const form = $('#formAddPasien')[0];
-        if (form) form.reset();
-
-        const statusSelect = $(form).find("select[name='status']");
-        if (statusSelect.length) {
-            statusSelect.val('');
-        }
-    });
-
-    $('#modalEditPasien').on('hidden.bs.modal', function () {
-        const form = $('#formEditPasien')[0];
-        if (form) form.reset();
-
-        const statusSelect = $(form).find("select[name='status']");
-        if (statusSelect.length) {
-            statusSelect.val('');
-        }
-    });
 
 });

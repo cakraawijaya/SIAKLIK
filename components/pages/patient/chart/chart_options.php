@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . '/../../../features/patient_auth_check.php';
+include __DIR__ . '/../../../features/auth/authorization/patient.php';
 
 $charts = [    
     ['color' => '#24252d', 'label' => 'SATKER 2015', 'icon' => 'fas fa-notes-medical', 'link' => 'chart_2015'],

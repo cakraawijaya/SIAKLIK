@@ -3,7 +3,7 @@
 // Pastikan file ini berada di lokasi yang sama seperti sebelumnya.
 
 $require_login = true;
-include __DIR__ . '/../../../features/patient_auth_check.php';
+include __DIR__ . '/../../../features/auth/authorization/patient.php';
 include __DIR__ . '/../../../../config/config.php';
 ?>
 
@@ -56,7 +56,7 @@ include __DIR__ . '/../../../../config/config.php';
 </main>
 
 <!-- Modal Antrean -->
-<?php include __DIR__ . '/../../../modal/modal_queue.php'; ?>
+<?php include __DIR__ . '/../../../modal/queue.php'; ?>
 
 <style>
 .queue-card {

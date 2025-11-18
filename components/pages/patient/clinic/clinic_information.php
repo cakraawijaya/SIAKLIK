@@ -1,7 +1,7 @@
 <?php
 
     // pengecekan otentikasi
-    include __DIR__ . '/../../../features/patient_auth_check.php';
+    include __DIR__ . '/../../../features/auth/authorization/patient.php';
 
 ?>
 
@@ -54,7 +54,7 @@
                             <p class="text-justify text-secondary mt-4 mb-0 select-none">
                                 Pasien dapat <strong>mendaftar secara online dengan langkah yang mudah</strong>. Jika belum memiliki akun, 
                                 pasien cukup <strong>membuat akun terlebih dahulu</strong>, lalu <strong>login ke SIAKLIK</strong>. 
-                                Setelah berhasil masuk, pilih menu <strong>“Registrasi Antrean Klinik”</strong>, lalu tentukan <strong>jenis antrean</strong> 
+                                Setelah berhasil masuk, pilih menu <strong>“Registrasi Antrean Poliklinik”</strong>, lalu tentukan <strong>jenis antrean</strong> 
                                 sesuai kebutuhan: <strong>INTERNAL</strong>, <strong>BPJS</strong>, atau <strong>UMUM</strong>. Selanjutnya, pilih 
                                 <strong>Poli/Layanan</strong> yang diinginkan untuk mendapatkan <strong>kuota antrean</strong>. Setelah proses registrasi selesai, 
                                 pasien perlu datang ke <strong>Poliklinik</strong> untuk <strong>verifikasi data</strong>, kemudian menunggu di ruang tunggu 

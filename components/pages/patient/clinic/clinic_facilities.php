@@ -1,7 +1,7 @@
 <?php
 
     // pengecekan otentikasi
-    include __DIR__ . '/../../../features/patient_auth_check.php';
+    include __DIR__ . '/../../../features/auth/authorization/patient.php';
 
 ?>
 
@@ -98,7 +98,7 @@
         <hr>
         <div class="d-flex justify-content-center">
             <article id="1" class="select-none">
-                <iframe src="https://drive.google.com/file/d/1ivsepiB74OEQZ21k2jZKMy8iqf-3W3Wt/preview" width="670" height="800"></iframe>
+                <iframe src="https://drive.google.com/file/d/1TGsMHdIzngdeNEo2uTu_bxApgXFIHD_d/preview" width="670" height="800"></iframe>
             </article>
         </div>
     </section>

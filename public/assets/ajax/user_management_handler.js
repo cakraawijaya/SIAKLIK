@@ -6,7 +6,7 @@ $(document).ready(function () {
         if (highlightPage) currentPage[activeTab] = highlightPage;
 
         $.ajax({
-            url: BASE_URL + "components/data_ajax/ajax_user_management.php",
+            url: BASE_URL + "components/data/ajax_user_management.php",
             type: "GET",
             data: {
                 tab: activeTab,
@@ -57,7 +57,7 @@ $(document).ready(function () {
                     // ===== Tampilkan data ke tabel =====
                     data.data.forEach(function (row) {
                         var foto = row.foto || 'default.png';
-                        var fotoSrc = BASE_URL + 'public/assets/img/user_photo/' + foto;
+                        var fotoSrc = BASE_URL + 'public/assets/img/photo/' + foto;
                         var highlightClass = (lastEditedUser.username === row.username) ? 'table-success' : '';
                         var disableDelete = (row.username === CURRENT_USER_USERNAME) ? 'disabled' : '';
 
@@ -205,9 +205,9 @@ $(document).ready(function () {
     $('#btnExport').on('click', function () {
         let exportUrl = '';
         switch (activeTab) {
-            case 'pasien': exportUrl = BASE_URL + 'components/features/patient_export.php'; break;
-            case 'pekerja': exportUrl = BASE_URL + 'components/features/worker_export.php'; break;
-            case 'admin': exportUrl = BASE_URL + 'components/features/admin_export.php'; break;
+            case 'pasien': exportUrl = BASE_URL + 'components/features/export/user_data/patient.php'; break;
+            case 'pekerja': exportUrl = BASE_URL + 'components/features/export/user_data/worker.php'; break;
+            case 'admin': exportUrl = BASE_URL + 'components/features/export/user_data/admin.php'; break;
             default: Swal.fire('Oops!', 'Kategori tidak dikenal untuk export.', 'warning'); return;
         }
         const search = $('input[name="search"]').val();
@@ -268,7 +268,7 @@ $(document).ready(function () {
             }
 
             $.ajax({
-                url: BASE_URL + "components/data_ajax/ajax_user_management.php",
+                url: BASE_URL + "components/data/ajax_user_management.php",
                 type: "POST",
                 data: formData,
                 processData: false,

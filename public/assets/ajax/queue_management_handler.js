@@ -5,7 +5,7 @@ $(document).ready(function(){
         var search = searchOnly ? $('input[name="search"]').val() : '';
         
         $.ajax({
-            url: BASE_URL + "components/data_ajax/ajax_queue_management.php",
+            url: BASE_URL + "components/data/ajax_queue_management.php",
             type: "GET",
             data: {
                 tab: activeTab,
@@ -68,7 +68,7 @@ $(document).ready(function(){
                 // ======================== INFO TEXT ========================
                 var labelText = '(' + activeTab.toUpperCase() + ')';
                 var infoText = '';
-                var countText = data.total_data || 0;
+                var countText = data.total_active || 0;
 
                 if (search === '') {
                     infoText = 'Jumlah data antrean aktif pasien';
@@ -212,7 +212,7 @@ $(document).ready(function(){
                 });
 
                 $.ajax({
-                    url: BASE_URL + "components/data_ajax/ajax_queue_management.php",
+                    url: BASE_URL + "components/data/ajax_queue_management.php",
                     type: "POST",
                     data: { action: action, kode_antrean: id },
                     dataType: "json",
