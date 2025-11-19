@@ -9,7 +9,7 @@
                                     Alamat Poliklinik
                                 </h5>
                                 <p>Jl. Rungkut Madya No.1, Gn. Anyar, Kec. Gn. Anyar, Kota SBY, Jawa Timur</p>
-                                <a href="https://www.google.com/maps?ll=-7.333339,112.788588&z=16&t=m&hl=en&gl=ID&mapclient=embed&cid=12854831982186720929" 
+                                <a href="https://maps.app.goo.gl/MCWaaT6fg1CZRLd89" 
                                 target="_blank" class="maps-link d-block mt-3">
                                     <i class="fas fa-map-marked-alt mr-1" aria-hidden="true"></i>
                                     Lihat di Google Maps

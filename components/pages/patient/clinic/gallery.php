@@ -59,7 +59,7 @@
         <hr>
         <div class="video-wrapper">
             <video controls autoplay>
-                <source src="<?= BASE_URL ?>public/assets/video/upn_view.mp4" type="video/mp4"/>
+                <source src="<?= BASE_URL ?>public/assets/video/poliklinik_upn_jatim.mp4" type="video/mp4"/>
             </video>
         </div>
     </section>
