@@ -11,6 +11,12 @@
     $logoPath = __DIR__ . '/../../../../public/assets/img/favicon/logo.png';
     $logoData = base64_encode(file_get_contents($logoPath));
 
+    function safe($value) {
+        if (is_null($value)) return '-';
+        if (trim($value) === '') return '-';
+        return $value;
+    }
+
     $html = '<html><head>
     <style>
         body { font-family: Arial, Helvetica, sans-serif; font-size: 12px; margin: 20px; }
@@ -23,11 +29,13 @@
         .header .text-group h1 { margin: 0; font-size: 24px; text-transform: uppercase; }
         .header .text-group p { margin: 2px 0 0 0; font-size: 14px; }
         /* Tabel data pasien */
+        thead { display: table-header-group; }
         table { border-collapse: collapse; width: 100%; margin-top: 10px; }
         table th, table td { border: 1px solid #ddd; padding: 8px; font-size: 11px; }
         table th { background-color: #639c1f; color: white; text-transform: uppercase; }
         table tr:nth-child(even){background-color: #f2f2f2;}
         table td { text-align: left; }
+        tfoot { display: table-footer-group; }
         /* Footer */
         .footer { width: 100%; margin-top: 20px; font-size: 12px; }
         .footer p { margin: 5px 0; }
@@ -45,22 +53,28 @@
     </div>';
 
     $html .= '<table>
-        <tr>
-            <th>ID</th>
-            <th>NAMA</th>
-            <th>UMUR</th>
-            <th>ALAMAT</th>
-            <th>PEKERJAAN</th>
-            <th>STATUS</th>
-            <th>JK</th>
-            <th>NIM/NIP</th>
-            <th>NO BPJS</th>
-            <th>LAYANAN</th>
-            <th>KET</th>
-            <th>WAKTU PENCATATAN</th>
-        </tr>';
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NAMA</th>
+                <th>UMUR</th>
+                <th>ALAMAT</th>
+                <th>PEKERJAAN</th>
+                <th>STATUS</th>
+                <th>JK</th>
+                <th>NIM/NIP</th>
+                <th>NO BPJS</th>
+                <th>LAYANAN</th>
+                <th>KATEGORI</th>
+                <th>KET</th>
+                <th>WAKTU PENCATATAN</th>
+            </tr>
+        </thead>
+        <tbody>
+    ';
 
     while ($row = mysqli_fetch_array($query)) {
+
         $html .= "<tr>
             <td>".$row['id']."</td>
             <td>".$row['nama']."</td>
@@ -69,10 +83,11 @@
             <td>".$row['pekerjaan']."</td>
             <td>".$row['status']."</td>
             <td>".$row['jenis_kelamin']."</td>
-            <td>".$row['nim_nip']."</td>
-            <td>".$row['no_bpjs']."</td>
+            <td>".safe($row['nim_nip'])."</td>
+            <td>".safe($row['no_bpjs'])."</td>
             <td>".$row['layanan']."</td>
-            <td>".$row['keterangan']."</td>
+            <td>".$row['kategori']."</td>
+            <td>".safe($row['keterangan'])."</td>
             <td>".$row['waktu']."</td>
         </tr>";
     }
@@ -86,11 +101,11 @@
     $thn = date('Y');
     $hr  = $hari[date('w')];
 
-    $html .= '</table>';
+    $html .= '</tbody></table>';
 
     $html .= '<div class="footer">
         <p class="right">Jumlah data pasien : <b>'.$count.'</b></p>
-        <p class="right">Tanggal : <b>'.$hr.', '.$tgl.' '.$bln.' '.$thn.'</b></p>
+        <p class="right">Tanggal: <b>'.$hr.', '.$tgl.' '.$bln.' '.$thn.'</b></p>
     </div>';
 
     $html .= '</body></html>';

@@ -66,7 +66,8 @@ $(document).ready(function(){
                                 <td class="text-center align-middle">${p.nim_nip || '-'}</td>
                                 <td class="text-center align-middle">${p.no_bpjs || '-'}</td>
                                 <td class="text-center align-middle">${p.layanan}</td>
-                                <td class="text-center align-middle">${p.keterangan}</td>
+                                <td class="text-center align-middle">${p.kategori}</td>
+                                <td class="text-center align-middle">${p.keterangan || '-'}</td>
                                 <td class="text-center align-middle">${p.waktu}</td>
                                 <td class="text-center align-middle">
                                     <div class="btn-group">
@@ -261,12 +262,14 @@ $(document).ready(function(){
                 $('#edit_nim_nip').val(p.nim_nip);
                 $('#edit_no_bpjs').val(p.no_bpjs);
 
-                const ket = (p.keterangan || '').toString().trim().toLowerCase();
-                if (ket.includes('eksternal')) {
-                    $('#edit_keterangan_eksternal').prop('checked', true);
-                } else if (ket.includes('internal')) {
-                    $('#edit_keterangan_internal').prop('checked', true);
+                const kategori = (p.kategori || '').toString().trim().toLowerCase();
+                if (kategori.includes('eksternal')) {
+                    $('#edit_kategori_eksternal').prop('checked', true);
+                } else if (kategori.includes('internal')) {
+                    $('#edit_kategori_internal').prop('checked', true);
                 }
+
+                $('#edit_keterangan').val(p.keterangan);
 
                 $('#modalEditPasien').modal('show');
             } else {
@@ -425,9 +428,9 @@ $(document).ready(function(){
         }
     }
 
-    // ======================
-    // ADD MODAL
-    // ======================
+    // ================================================
+    // ADD MODAL -> Filter Layanan dan Status
+    // ================================================
     const layananAdd = document.querySelector("select[name='layanan']");
     const statusAdd = document.querySelector("select[name='status']");
     const allStatusAdd = Array.from(statusAdd.options).map(opt => ({ value: opt.value, text: opt.text }));
@@ -443,9 +446,9 @@ $(document).ready(function(){
         }
     });
 
-    // ======================
-    // EDIT MODAL
-    // ======================
+    // ================================================
+    // EDIT MODAL -> Filter Layanan dan Status
+    // ================================================
     const layananEdit = document.getElementById("edit_layanan");
     const statusEdit = document.getElementById("edit_status");
     const allStatusEdit = Array.from(statusEdit.options).map(opt => ({ value: opt.value, text: opt.text }));
@@ -458,21 +461,6 @@ $(document).ready(function(){
         } else {
             setSelectOptions(statusEdit, [], allStatusEdit, "Pilih Status");
         }
-    });
-
-    $('#modalEditPasien').on('shown.bs.modal', function() {
-        const currentLayanan = layananEdit.value;
-        const currentStatus = statusEdit.value;
-
-        if (currentLayanan === "Poli Gigi") {
-            setSelectOptions(statusEdit, ["Rawat Jalan", "Observasi"], allStatusEdit, "Pilih Status");
-        } else if (currentLayanan === "Poli Umum") {
-            setSelectOptions(statusEdit, ["Rawat Inap", "Rawat Jalan", "Observasi", "Pasca Rawat Inap"], allStatusEdit, "Pilih Status");
-        } else {
-            setSelectOptions(statusEdit, [], allStatusEdit, "Pilih Status");
-        }
-
-        statusEdit.value = currentStatus || "";
     });
 
     // Validasi sebelum submit

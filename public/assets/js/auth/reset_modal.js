@@ -26,7 +26,7 @@ $(document).ready(function() {
         if ($modal.is('#modalAddPasien')) {
             exceptions = [
                 'input[name="jenis_kelamin"]',
-                'input[name="keterangan"]'
+                'input[name="kategori"]'
             ];
         }
 

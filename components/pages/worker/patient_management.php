@@ -48,6 +48,7 @@
                         <th class="text-center align-middle">NIM/NIP</th>
                         <th class="text-center align-middle">NO BPJS</th>
                         <th class="text-center align-middle">LAYANAN</th>
+                        <th class="text-center align-middle">KATEGORI</th>
                         <th class="text-center align-middle">KET</th>
                         <th class="text-center align-middle">WAKTU PENCATATAN</th>
                         <th class="text-center align-middle">AKSI</th>

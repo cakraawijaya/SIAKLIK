@@ -51,16 +51,23 @@
     $html = '<html><head>
     <style>
         body { font-family: Arial, Helvetica, sans-serif; font-size: 12px; margin: 20px; }
+        /* Header utama */
         .header { display: flex; align-items: center; margin-bottom: 20px; }
+        /* Logo */
         .header img { height: 80px; width: 80px; margin-right: 15px; }
+        /* Grup teks judul dan subjudul */
         .header .text-group { display: flex; flex-direction: column; justify-content: center; }
         .header .text-group h1 { margin: 0; font-size: 24px; text-transform: uppercase; }
         .header .text-group p { margin: 2px 0 0 0; font-size: 14px; }
+        /* Tabel data admin */
+        thead { display: table-header-group; }
         table { border-collapse: collapse; width: 100%; margin-top: 10px; }
         table th, table td { border: 1px solid #ddd; padding: 8px; font-size: 11px; }
         table th { background-color: #639c1f; color: white; text-transform: uppercase; }
         table tr:nth-child(even){background-color: #f2f2f2;}
         table td { text-align: left; vertical-align: middle; }
+        tfoot { display: table-footer-group; }
+        /* Footer */
         .footer { width: 100%; margin-top: 20px; font-size: 12px; }
         .footer p { margin: 5px 0; }
         .right { text-align: right; }
@@ -68,6 +75,7 @@
     </style>
     </head><body>';
 
+    // Header: logo + judul + subjudul di kiri, vertical center
     $html .= '<div class="header">
         <img src="data:image/png;base64,' . $logoData . '" alt="Logo">
         <div class="text-group">
@@ -77,12 +85,16 @@
     </div>';
 
     $html .= '<table>
-        <tr>
-            <th style="width:5%;">FOTO</th>
-            <th style="width:25%;">EMAIL</th>
-            <th style="width:20%;">USERNAME</th>
-            <th style="width:50%;">NAMA</th>
-        </tr>';
+        <thead>
+            <tr>
+                <th style="width:5%;">FOTO</th>
+                <th style="width:25%;">EMAIL</th>
+                <th style="width:20%;">USERNAME</th>
+                <th style="width:50%;">NAMA</th>
+            </tr>
+        </thead>
+        <tbody>
+    ';
 
     $basePath = __DIR__ . '/../../../../public/assets/img/photo/';
     $defaultPath = $basePath . 'default.png';
@@ -107,7 +119,8 @@
                 <td>{$row['email']}</td>
                 <td>{$row['username']}</td>
                 <td>{$row['nama']}</td>
-            </tr>";
+            </tr>
+        ";
     }
 
     $count = count($dataUsers);
@@ -119,12 +132,14 @@
     $thn = date('Y');
     $hr  = $hari[date('w')];
 
-    $html .= '</table>
-    <div class="footer">
+    $html .= '</tbody></table>';
+
+    $html .= '<div class="footer">
         <p class="right">Jumlah data user (Admin): <b>' . $count . '</b></p>
         <p class="right">Tanggal: <b>' . $hr . ', ' . $tgl . ' ' . $bln . ' ' . $thn . '</b></p>
-    </div>
-    </body></html>';
+    </div>';
+
+    $html .= '</body></html>';
 
     $dompdf->loadHtml($html);
     $dompdf->setPaper('A4', 'landscape');

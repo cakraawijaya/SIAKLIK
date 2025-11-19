@@ -126,6 +126,7 @@ try {
         $nim_nip = trim($_POST['nim_nip'] ?? '');
         $no_bpjs = trim($_POST['no_bpjs'] ?? '');
         $layanan = trim($_POST['layanan'] ?? '');
+        $kategori = trim($_POST['kategori'] ?? '');
         $keterangan = trim($_POST['keterangan'] ?? '');
 
         if ($nama === '' || $umur === '' || $alamat === '') {
@@ -135,8 +136,8 @@ try {
         // === Generate ID baru ===
         $id = generate_id($koneksi);
 
-        $stmt = $koneksi->prepare("INSERT INTO riwayat_pasien (id, nama, umur, alamat, pekerjaan, status, jenis_kelamin, nim_nip, no_bpjs, layanan, keterangan, waktu) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())");
-        $stmt->bind_param("sssssssssss", $id, $nama, $umur, $alamat, $pekerjaan, $status, $jenis_kelamin, $nim_nip, $no_bpjs, $layanan, $keterangan);
+        $stmt = $koneksi->prepare("INSERT INTO riwayat_pasien (id, nama, umur, alamat, pekerjaan, status, jenis_kelamin, nim_nip, no_bpjs, layanan, kategori, keterangan, waktu) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())");
+        $stmt->bind_param("ssssssssssss", $id, $nama, $umur, $alamat, $pekerjaan, $status, $jenis_kelamin, $nim_nip, $no_bpjs, $layanan, $kategori, $keterangan);
         if (!$stmt->execute()) {
             throw new Exception('Gagal menambah data pasien: ' . $stmt->error);
         }
@@ -168,10 +169,11 @@ try {
         $nim_nip = trim($_POST['nim_nip'] ?? '');
         $no_bpjs = trim($_POST['no_bpjs'] ?? '');
         $layanan = trim($_POST['layanan'] ?? '');
+        $kategori = trim($_POST['kategori'] ?? '');
         $keterangan = trim($_POST['keterangan'] ?? '');
 
-        $stmt = $koneksi->prepare("UPDATE riwayat_pasien SET nama=?, umur=?, alamat=?, pekerjaan=?, status=?, jenis_kelamin=?, nim_nip=?, no_bpjs=?, layanan=?, keterangan=? WHERE id=?");
-        $stmt->bind_param("sssssssssss", $nama, $umur, $alamat, $pekerjaan, $status, $jenis_kelamin, $nim_nip, $no_bpjs, $layanan, $keterangan, $id);
+        $stmt = $koneksi->prepare("UPDATE riwayat_pasien SET nama=?, umur=?, alamat=?, pekerjaan=?, status=?, jenis_kelamin=?, nim_nip=?, no_bpjs=?, layanan=?, kategori=?, keterangan=? WHERE id=?");
+        $stmt->bind_param("ssssssssssss", $nama, $umur, $alamat, $pekerjaan, $status, $jenis_kelamin, $nim_nip, $no_bpjs, $layanan, $kategori, $keterangan, $id);
         if (!$stmt->execute()) {
             throw new Exception('Gagal memperbarui data pasien: ' . $stmt->error);
         }

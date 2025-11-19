@@ -86,16 +86,20 @@
                     <label class="select-none"><strong>No BPJS</strong></label>
                     <input type="number" name="no_bpjs" class="form-control select-none" placeholder="Masukkan No BPJS" oninput="if(this.value.length > 13) this.value = this.value.slice(0, 13)">
                   </div>
-                  <div class="form-group form-keterangan">
-                    <label class="select-none"><strong>Keterangan</strong></label><br>
+                  <div class="form-group form-kategori">
+                    <label class="select-none"><strong>Kategori</strong></label><br>
                     <div class="form-check select-none">
-                      <input class="form-check-input" type="radio" name="keterangan" value="Pihak Eksternal" id="keterangan_eksternal" checked>
-                      <label class="form-check-label" for="keterangan_eksternal">Pihak Eksternal</label>
+                      <input class="form-check-input" type="radio" name="kategori" value="Pihak Eksternal" id="kategori_eksternal" checked>
+                      <label class="form-check-label" for="kategori_eksternal">Pihak Eksternal</label>
                     </div>
                     <div class="form-check select-none mt-1">
-                      <input class="form-check-input" type="radio" name="keterangan" value="Pihak Internal" id="keterangan_internal">
-                      <label class="form-check-label" for="keterangan_internal">Pihak Internal</label>
+                      <input class="form-check-input" type="radio" name="kategori" value="Pihak Internal" id="kategori_internal">
+                      <label class="form-check-label" for="kategori_internal">Pihak Internal</label>
                     </div>
+                  </div>            
+                  <div class="form-group form-keterangan">
+                    <label class="select-none"><strong>Keterangan</strong></label>
+                    <input type="text" name="keterangan" class="form-control select-none" placeholder="Masukkan Keterangan">
                   </div>
                 </div>
               </div>
@@ -199,16 +203,20 @@
                     <label class="select-none"><strong>No BPJS</strong></label>
                     <input type="number" id="edit_no_bpjs" name="no_bpjs" class="form-control select-none" placeholder="Masukkan No BPJS" oninput="if(this.value.length > 13) this.value = this.value.slice(0, 13)">
                   </div>
-                  <div class="form-group form-keterangan">
-                    <label class="select-none"><strong>Keterangan</strong></label><br>
+                  <div class="form-group form-kategori">
+                    <label class="select-none"><strong>kategori</strong></label><br>
                     <div class="form-check select-none">
-                      <input class="form-check-input" type="radio" name="keterangan" value="Pihak Eksternal" id="edit_keterangan_eksternal">
-                      <label class="form-check-label" for="edit_keterangan_eksternal">Pihak Eksternal</label>
+                      <input class="form-check-input" type="radio" name="kategori" value="Pihak Eksternal" id="edit_kategori_eksternal">
+                      <label class="form-check-label" for="edit_kategori_eksternal">Pihak Eksternal</label>
                     </div>
                     <div class="form-check select-none mt-1">
-                      <input class="form-check-input" type="radio" name="keterangan" value="Pihak Internal" id="edit_keterangan_internal">
-                      <label class="form-check-label" for="edit_keterangan_internal">Pihak Internal</label>
+                      <input class="form-check-input" type="radio" name="kategori" value="Pihak Internal" id="edit_kategori_internal">
+                      <label class="form-check-label" for="edit_kategori_internal">Pihak Internal</label>
                     </div>
+                  </div>                  
+                  <div class="form-group form-keterangan">
+                    <label class="select-none"><strong>Keterangan</strong></label>
+                    <input type="text" id="edit_keterangan" name="keterangan" class="form-control select-none" placeholder="Masukkan Keterangan">
                   </div>
                 </div>
               </div>

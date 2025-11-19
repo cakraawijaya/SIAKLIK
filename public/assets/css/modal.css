@@ -268,13 +268,14 @@
 
 #modalAddPasien .form-nim-nip, 
 #modalAddPasien .form-no-bpjs,
+#modalAddPasien .form-kategori,
 #modalAddPasien .form-keterangan {
   margin-top: 1.7rem;
 }
 
-
 #modalEditPasien .form-nim-nip, 
 #modalEditPasien .form-no-bpjs,
+#modalEditPasien .form-kategori,
 #modalEditPasien .form-keterangan {
   margin-top: 1.99rem;
 }
