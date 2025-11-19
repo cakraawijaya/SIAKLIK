@@ -133,8 +133,8 @@ Jika ingin mengatur ulang auto-increment pada tabel riwayat_antrean, cukup lakuk
       
    ```sql
       SET @num := 0;
-      UPDATE your_table SET id = @num := (@num+1);
-      ALTER TABLE your_table AUTO_INCREMENT =1;
+      UPDATE riwayat_antrean SET id = @num := (@num+1);
+      ALTER TABLE riwayat_antrean AUTO_INCREMENT =1;
    ```
    </td></tr></table>
 
