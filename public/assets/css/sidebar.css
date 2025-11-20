@@ -14,6 +14,10 @@
   transition: all 0.3s;
 }
 
+#sidebar a:hover {
+  cursor: pointer;
+}
+
 #sidebar.active {
   margin-left: -300px;
 }
@@ -36,14 +40,6 @@
 
 .close-sidebar {
   display: none;
-}
-
-.close-button {
-  padding: 18px 24px;
-  background: #24252d;
-  border: none;
-  font-size: 24px;
-  color: white;
 }
 
 .brand {
@@ -216,9 +212,10 @@ ul ul li a span,
 ul ul li a {
   grid-column: 2;
   display: block;
-  text-align: justify;
+  text-align: left;
   text-justify: inter-word;
   line-height: 1.8;
+  word-spacing: 0.15rem;
 }
 
 ul ul li a:hover {
@@ -261,9 +258,10 @@ ul ul ul li a span,
 ul ul ul li a {
   grid-column: 2;
   display: block;
-  text-align: justify;
+  text-align: left;
   text-justify: inter-word;
   line-height: 1.8;
+  word-spacing: 0.15rem;
 }
 
 ul ul ul li a:hover {
@@ -280,37 +278,163 @@ ul ul ul li a.custom-mb-sidebar-child {
 }
 
 
-@media (max-width: 768px) {
+/* TABLET */
+@media (max-width: 1024px) {
   #sidebar {
-    margin-left: -300px;
+    width: 300px;
   }
   #sidebar.active {
-    margin-left: 0;
+    margin-left: -300px;
   }
+  .brand-logo {
+    width: 90px;
+    height: 90px;
+  }
+  .brand-text .title {
+    font-size: 24px;
+  }
+  .brand-text .sub-title {
+    font-size: 16px;
+  }
+  ul ul li a,
+  ul ul ul li a {
+    padding-left: 30px !important;
+    padding-right: 20px !important;
+  }
+}
+
+
+/* HP BESAR */
+@media (max-width: 768px) {
+
+  /* SIDEBAR MENJADI OVERLAY */
+  #sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100vh;
+    background: #24252d;
+    z-index: 9999;
+    transform: translateX(-260px); /* sembunyikan */
+    transition: transform 0.35s ease;
+  }
+
+  /* MOBILE MODE menggunakan .show */
+  #sidebar.show {
+    transform: translateX(0); /* tampil */
+  }
+
+  /* CONTENT JANGAN IKUT GESER DI MOBILE */
+  #content,
+  #content.active {
+    width: 100% !important;
+    margin-left: 0 !important;
+    transition: none !important;
+  }
+
   .shadow-sidebar {
     display: block;
   }
-  .sidebar-header {
-    padding-top: 0px;
-  }
+
+  /* HEADER */
   .close-sidebar {
-    display: flex;
+    display: flex !important;
     flex-direction: row-reverse;
   }
-  #content {
-    width: 100%;
+
+  .close-button {
+    padding: 18px 24px;
+    background: #24252d;
+    border: none;
+    font-size: 24px;
+    color: white;
   }
-  #content.active {
-    width: 100%;
+
+  .close-button:focus {
+    box-shadow: none;
+    outline: none;
+    border: none;
   }
+
+  /* LOGO */
+  .brand-logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  /* TEKS BRAND */
+  .brand-text .title {
+    font-size: 22px;
+  }
+  .brand-text .sub-title {
+    font-size: 15px;
+  }
+
+  /* MENU LEVEL 1 */
+  #sidebar .custom-menu-sidebar a {
+    padding: 12px 16px !important;
+    font-size: 15px;
+  }
+
+  /* MENU LEVEL 2 */
+  ul ul li a {
+    padding: 8px 22px 8px 35px !important;
+    font-size: 0.85em !important;
+  }
+
+  /* MENU LEVEL 3 */
+  ul ul ul li a {
+    padding: 6px 20px 6px 50px !important;
+    font-size: 0.8em !important;
+  }
+
   #sidebarCollapse span {
     display: none;
   }
-  a.custom-text-light {
-    padding: 15px 0;
-    border-bottom: 1px solid white;
+}
+
+
+/* HP KECIL (≤ 480px) */
+@media (max-width: 480px) {
+
+  #sidebar {
+    width: 230px;
+    transform: translateX(-230px);
   }
-  .vertical-divider:before, .vertical-divider:after {
-    display: none;
+
+  #sidebar.show {
+    transform: translateX(0);
+  }
+
+  .brand-logo {
+    width: 65px;
+    height: 65px;
+  }
+
+  .brand-text .title {
+    font-size: 18px;
+  }
+
+  .brand-text .sub-title {
+    font-size: 14px;
+  }
+
+  .role {
+    font-size: 16px;
+  }
+
+  .nama-user {
+    font-size: 12px;
+  }
+
+  ul ul li a {
+    padding: 6px 18px 6px 25px !important;
+    font-size: 0.78em !important;
+  }
+
+  ul ul ul li a {
+    padding: 4px 16px 4px 40px !important;
+    font-size: 0.75em !important;
   }
 }

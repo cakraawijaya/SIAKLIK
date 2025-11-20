@@ -64,17 +64,17 @@
         <!-- Footer -->
         <div class="modal-footer text-center flex-column">
           <p class="mb-1 select-none">Login sebagai Pekerja atau Admin? 
-            <a href="#" id="switchToPekerjaFromPasien">
+            <a onclick="openLink('#', false)" id="switchToPekerjaFromPasien">
               <span>Klik di sini</span>
             </a>
           </p>
           <p class="mb-1 select-none">Belum punya akun? 
-            <a href="#" id="switchToRegistration">
+            <a onclick="openLink('#', false)" id="switchToRegistration">
               <span>Daftar</span>
             </a>
           </p>
           <p class="mb-0 select-none">Lupa Password? 
-            <a href="#" id="switchToForgotPassword">
+            <a onclick="openLink('#', false)" id="switchToForgotPassword">
               <span>Klik di sini</span>
             </a>
           </p>
@@ -146,12 +146,12 @@
         <!-- Footer -->
         <div class="modal-footer text-center flex-column">
           <p class="mb-1 select-none">Login sebagai pasien? 
-            <a href="#" id="switchToPasienFromPekerja">
+            <a onclick="openLink('#', false)" id="switchToPasienFromPekerja">
               <span>Klik di sini</span>
             </a>
           </p>
           <p class="mb-0 select-none">Lupa Password? 
-            <a href="<?= BASE_URL ?>index.php?page=admin/user_management">
+            <a onclick="openLink('<?= BASE_URL ?>index.php?page=admin/user_management', false)">
               <span>Klik di sini</span>
             </a>
           </p>

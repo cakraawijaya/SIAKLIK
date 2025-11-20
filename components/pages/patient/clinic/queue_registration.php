@@ -21,7 +21,8 @@ include __DIR__ . '/../../../../config/config.php';
         <div class="container-fluid mt-5 mb-3 px-4 pb-2">
             <div class="row text-center justify-content-center" style="gap:30px;">
                 <div class="col">
-                <a href="#modalAntreInternal" data-toggle="modal" class="d-block mx-1 queue-link select-none" data-kategori="INTERNAL">
+                <a onclick="openLink('#modalAntreInternal', false)" data-toggle="modal" 
+                class="d-block mx-1 queue-link select-none" data-kategori="INTERNAL" style="cursor:pointer;">
                     <div class="card bg-primary text-white queue-card h-100">
                     <div class="card-body d-flex flex-column justify-content-center align-items-center">
                         <i class="fas fa-hospital-user mb-3" aria-hidden="true"></i>
@@ -31,7 +32,8 @@ include __DIR__ . '/../../../../config/config.php';
                 </a>
                 </div>
                 <div class="col">
-                <a href="#modalAntreBPJS" data-toggle="modal" class="d-block mx-1 queue-link select-none" data-kategori="BPJS">
+                <a onclick="openLink('#modalAntreBPJS', false)" data-toggle="modal" 
+                class="d-block mx-1 queue-link select-none" data-kategori="BPJS" style="cursor:pointer;">
                     <div class="card bg-success text-white queue-card h-100">
                     <div class="card-body d-flex flex-column justify-content-center align-items-center">
                         <i class="fas fa-id-card mb-3" aria-hidden="true"></i>
@@ -41,7 +43,8 @@ include __DIR__ . '/../../../../config/config.php';
                 </a>
                 </div>
                 <div class="col">
-                <a href="#modalAntreUmum" data-toggle="modal" class="d-block mx-1 queue-link select-none" data-kategori="UMUM">
+                <a onclick="openLink('#modalAntreUmum', false)" data-toggle="modal" 
+                class="d-block mx-1 queue-link select-none" data-kategori="UMUM" style="cursor:pointer;">
                     <div class="card bg-info text-white queue-card h-100">
                     <div class="card-body d-flex flex-column justify-content-center align-items-center">
                         <i class="fas fa-user-friends mb-3" aria-hidden="true"></i>

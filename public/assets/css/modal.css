@@ -571,12 +571,13 @@
 #modalEditPenggunaAdmin .form-group .d-flex {
   display: flex;
   align-items: center;
+  margin-top: -0.6px;
 }
 
 #modalLoginPasien .form-group img,
 #modalLoginPekerjaAdmin .form-group img,
 #modalRegistration .form-group img {
-  height: calc(1.8rem + 4px);
+  height: calc(1.75rem + 4px);
   width: 120px;
   border: 1px solid #007bff;
   border-right: none;
@@ -609,8 +610,16 @@
 #modalEditPenggunaPasien .input-captcha,
 #modalEditPenggunaPekerja .input-captcha,
 #modalEditPenggunaAdmin .input-captcha {
-  margin-top: 18px;
   padding: 0.25rem 0.5rem;
+}
+
+#modalAddPenggunaPasien .input-captcha,
+#modalAddPenggunaPekerja .input-captcha,
+#modalAddPenggunaAdmin .input-captcha,
+#modalEditPenggunaPasien .input-captcha,
+#modalEditPenggunaPekerja .input-captcha,
+#modalEditPenggunaAdmin .input-captcha {
+  margin-top: 19px;
 }
 
 #modalDeletePasien #delete_show_nama,
@@ -634,18 +643,23 @@
 
 #modalLoginPasien .form-group button,
 #modalLoginPekerjaAdmin .form-group button,
-#modalRegistration .form-group button,
+#modalRegistration .form-group button {
+  height: calc(1.75rem + 4px);
+  border-radius: 0 .25rem .25rem 0;
+  padding: 0.25rem 0.5rem;
+  line-height: 1;
+  margin: 0;
+  box-shadow: none !important;
+}
+
 #modalAddPenggunaPasien .form-group button,
 #modalAddPenggunaPekerja .form-group button,
 #modalAddPenggunaAdmin .form-group button,
 #modalEditPenggunaPasien .form-group button,
 #modalEditPenggunaPekerja .form-group button,
-#modalEditPenggunaAdmin .form-group button,
-#modalDeletePenggunaPasien .form-group button,
-#modalDeletePenggunaPekerja .form-group button,
-#modalDeletePenggunaAdmin .form-group button {
+#modalEditPenggunaAdmin .form-group button {
+  height: calc(1.78rem + 4px);
   border-radius: 0 .25rem .25rem 0;
-  height: calc(1.8rem + 4px);
   padding: 0.25rem 0.5rem;
   line-height: 1;
   margin: 0;
@@ -679,4 +693,5 @@
 #modalForgotPassword .modal-footer p span:hover,
 #modalResetPassword .modal-footer p span:hover {
   color: #1d6fe3;
+  cursor: pointer;
 }

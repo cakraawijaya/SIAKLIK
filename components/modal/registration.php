@@ -92,7 +92,7 @@
         <!-- Footer -->
         <div class="modal-footer text-center flex-column">
           <p class="mb-0 select-none">Sudah punya akun? 
-            <a href="#" id="switchToPasienFromRegistration">
+            <a onclick="openLink('#', false)" id="switchToPasienFromRegistration">
               <span>Masuk</span>
             </a>
           </p>

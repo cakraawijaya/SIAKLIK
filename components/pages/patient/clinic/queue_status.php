@@ -22,7 +22,8 @@
             <ul class="nav nav-tabs mt-4" style="border-bottom:0;">
                 <?php foreach($tab_labels as $label=>$text): ?>
                     <li class="nav-item">
-                        <a class="nav-link text-dark select-none <?= $active_tab===$label?'active':'' ?>" href="#<?= $label ?>" data-tab="<?= $label ?>">
+                        <a class="nav-link text-dark select-none <?= $active_tab===$label?'active':'' ?>" 
+                        onclick="openLink('#<?= $label ?>', false)" data-tab="<?= $label ?>" style="cursor:pointer;">
                             <?= $text ?>
                         </a>
                     </li>

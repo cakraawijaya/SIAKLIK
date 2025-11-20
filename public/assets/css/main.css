@@ -97,6 +97,11 @@ header, .carousel-wrapper, .carousel-content, .carousel-item {
     margin: 0 auto;
 }
 
+a.carousel-control-prev:hover,
+a.carousel-control-next:hover {
+    cursor: pointer;
+}
+
 .carousel-content img {
     display: block;       /* hilangkan space bawah gambar */
     width: 100vw;         /* lebar viewport penuh */
@@ -250,6 +255,15 @@ header, .carousel-wrapper, .carousel-content, .carousel-item {
     width: 100vw;         /* lebar viewport penuh */
     max-height: 170px;    /* tinggi */
     object-fit: fill;     /* stretch penuh */
+}
+
+.article-section .carousel-wrapper .carousel-controls a {
+    color: #fff;
+}
+
+.article-section .carousel-wrapper .carousel-controls a:hover,
+.article-section .carousel-wrapper .card-footer a:hover {
+    cursor: pointer;
 }
 
 /* Pastikan semua card fleksibel penuh dan footer di bawah */

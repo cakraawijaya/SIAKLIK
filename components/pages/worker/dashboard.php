@@ -29,7 +29,8 @@
                 ?>
                     <!-- Card 1 -->
                     <div class="col select-none">
-                        <a href="<?= BASE_URL ?>index.php?page=admin/user_management" class="card-link">
+                        <a onclick="openLink('<?= BASE_URL ?>index.php?page=admin/user_management', false)" 
+                        class="card-link" style="cursor:pointer;">
                             <div class="card bg-secondary text-white interactive-card h-100">
                                 <div class="card-body d-flex flex-column justify-content-center align-items-center">
                                     <i class="fas fa-user-cog mb-3" aria-hidden="true"></i>
@@ -42,7 +43,8 @@
 
                 <!-- Card 2 -->
                 <div class="col select-none">
-                    <a href="<?= BASE_URL ?>index.php?page=worker/patient_management" class="card-link">
+                    <a onclick="openLink('<?= BASE_URL ?>index.php?page=worker/patient_management', false)" 
+                    class="card-link" style="cursor:pointer;">
                         <div class="card bg-primary text-white interactive-card h-100">
                             <div class="card-body d-flex flex-column justify-content-center align-items-center">
                                 <i class="fas fa-book mb-3" aria-hidden="true"></i>
@@ -54,7 +56,8 @@
                 
                 <!-- Card 3 -->
                 <div class="col select-none">
-                    <a href="<?= BASE_URL ?>index.php?page=worker/queue_management" class="card-link">
+                    <a onclick="openLink('<?= BASE_URL ?>index.php?page=worker/queue_management', false)" 
+                    class="card-link" style="cursor:pointer;">
                         <div class="card bg-info text-white interactive-card h-100">
                             <div class="card-body d-flex flex-column justify-content-center align-items-center">
                                 <i class="fas fa-tasks mb-3" aria-hidden="true"></i>
@@ -66,7 +69,8 @@
                 
                 <!-- Card 4 -->
                 <div class="col select-none">
-                    <a href="<?= BASE_URL ?>index.php?page=patient/chart/chart_options" class="card-link">
+                    <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/chart/chart_options', false)" 
+                    class="card-link" style="cursor:pointer;">
                         <div class="card bg-success text-white interactive-card h-100">
                             <div class="card-body d-flex flex-column justify-content-center align-items-center">
                                 <i class="fas fa-chart-bar mb-3" aria-hidden="true"></i>

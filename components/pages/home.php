@@ -73,11 +73,13 @@
             </div>
 
             <!-- Controls -->
-            <a class="carousel-control-prev" href="#carousel-captions" role="button" data-slide="prev">
+            <a class="carousel-control-prev" onclick="openLink('#carousel-captions', false)" 
+            role="button" data-target="#carousel-captions" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
             </a>
-            <a class="carousel-control-next" href="#carousel-captions" role="button" data-slide="next">
+            <a class="carousel-control-next" onclick="openLink('#carousel-captions', false)" 
+            role="button" data-target="#carousel-captions" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
@@ -132,10 +134,12 @@
                         <div class="carousel-controls-title select-none">
                             <p class="font-weight-light mb-3">Geser untuk memilih artikel</p>
                         </div>
-                        <a class="btn btn-success mr-2" href="#carousel-indicators2" role="button" data-slide="prev">
+                        <a class="btn btn-success mr-2" onclick="openLink('#carousel-indicators2', false)" 
+                        role="button" data-target="#carousel-indicators2" data-slide="prev">
                             <i class="fa fa-arrow-left" aria-hidden="true"></i>
                         </a>
-                        <a class="btn btn-success" href="#carousel-indicators2" role="button" data-slide="next">
+                        <a class="btn btn-success" onclick="openLink('#carousel-indicators2', false)" 
+                        role="button" data-target="#carousel-indicators2" data-slide="next">
                             <i class="fa fa-arrow-right" aria-hidden="true"></i>
                         </a>
                     </div>
@@ -162,8 +166,7 @@
                                                 </p>
                                             </div>
                                             <div class="card-footer text-center border-0 mt-auto">
-                                                <a href="https://drive.google.com/file/d/1IUDjC2UDmxYaZn8Jzari8G7tagSactuT/preview"
-                                                    target="_blank" rel="noopener noreferrer" class="text-success font-weight-bold">
+                                                <a onclick="openLink('https://drive.google.com/file/d/1IUDjC2UDmxYaZn8Jzari8G7tagSactuT/preview', true)" class="text-success font-weight-bold">
                                                     Baca Selengkapnya<i class="fas fa-external-link-alt ml-1" aria-hidden="true"></i>
                                                 </a>
                                             </div>
@@ -185,8 +188,7 @@
                                                 </p>
                                             </div>
                                             <div class="card-footer text-center border-0 mt-auto">
-                                                <a href="https://drive.google.com/file/d/13aN5HJiE0dy-oL_VX7scSd5IIbAyJfL9/preview"
-                                                    target="_blank" rel="noopener noreferrer" class="text-success font-weight-bold">
+                                                <a onclick="openLink('https://drive.google.com/file/d/13aN5HJiE0dy-oL_VX7scSd5IIbAyJfL9/preview', true)" class="text-success font-weight-bold">
                                                     Baca Selengkapnya<i class="fas fa-external-link-alt ml-1" aria-hidden="true"></i>
                                                 </a>
                                             </div>
@@ -208,8 +210,7 @@
                                                 </p>
                                             </div>
                                             <div class="card-footer text-center border-0 mt-auto">
-                                                <a href="https://drive.google.com/file/d/1L_rULKmC9Lg8PCmSWz2VxJ3XpytEDL4o/preview"
-                                                    target="_blank" rel="noopener noreferrer" class="text-success font-weight-bold">
+                                                <a onclick="openLink('https://drive.google.com/file/d/1L_rULKmC9Lg8PCmSWz2VxJ3XpytEDL4o/preview', true)" class="text-success font-weight-bold">
                                                     Baca Selengkapnya<i class="fas fa-external-link-alt ml-1" aria-hidden="true"></i>
                                                 </a>
                                             </div>
@@ -236,8 +237,7 @@
                                                 </p>
                                             </div>
                                             <div class="card-footer text-center border-0 mt-auto">
-                                                <a href="https://drive.google.com/file/d/1ugoq8IDg2wiIEDX3LCMjDK7863xCdYA0/preview"
-                                                    target="_blank" rel="noopener noreferrer" class="text-success font-weight-bold">
+                                                <a onclick="openLink('https://drive.google.com/file/d/1ugoq8IDg2wiIEDX3LCMjDK7863xCdYA0/preview', true)" class="text-success font-weight-bold">
                                                     Baca Selengkapnya<i class="fas fa-external-link-alt ml-1" aria-hidden="true"></i>
                                                 </a>
                                             </div>
@@ -259,8 +259,7 @@
                                                 </p>
                                             </div>
                                             <div class="card-footer text-center border-0 mt-auto">
-                                                <a href="https://drive.google.com/file/d/1PpQgSf7SEhG4xo_-KhbGr_RwsXzTzJQr/preview"
-                                                    target="_blank" rel="noopener noreferrer" class="text-success font-weight-bold">
+                                                <a onclick="openLink('https://drive.google.com/file/d/1PpQgSf7SEhG4xo_-KhbGr_RwsXzTzJQr/preview', true)" class="text-success font-weight-bold">
                                                     Baca Selengkapnya<i class="fas fa-external-link-alt ml-1" aria-hidden="true"></i>
                                                 </a>
                                             </div>
@@ -282,8 +281,7 @@
                                                 </p>
                                             </div>
                                             <div class="card-footer text-center border-0 mt-auto">
-                                                <a href="https://drive.google.com/file/d/15MP8PG4tTvAvhI2rAtL94eLkxOX88kxi/preview"
-                                                    target="_blank" rel="noopener noreferrer" class="text-success font-weight-bold">
+                                                <a onclick="openLink('https://drive.google.com/file/d/15MP8PG4tTvAvhI2rAtL94eLkxOX88kxi/preview', true)" class="text-success font-weight-bold">
                                                     Baca Selengkapnya<i class="fas fa-external-link-alt ml-1" aria-hidden="true"></i>
                                                 </a>
                                             </div>
@@ -310,8 +308,7 @@
                                                 </p>
                                             </div>
                                             <div class="card-footer text-center border-0 mt-auto">
-                                                <a href="https://drive.google.com/file/d/16cio4CNtYGz1Q2eht0Z7h8RXt77J50RQ/preview"
-                                                    target="_blank" rel="noopener noreferrer" class="text-success font-weight-bold">
+                                                <a onclick="openLink('https://drive.google.com/file/d/16cio4CNtYGz1Q2eht0Z7h8RXt77J50RQ/preview', true)" class="text-success font-weight-bold">
                                                     Baca Selengkapnya<i class="fas fa-external-link-alt ml-1" aria-hidden="true"></i>
                                                 </a>
                                             </div>
@@ -333,8 +330,7 @@
                                                 </p>
                                             </div>
                                             <div class="card-footer text-center border-0 mt-auto">
-                                                <a href="https://drive.google.com/file/d/1XNv2ch2kjCIQZ_1eK2iTu3jnHGp39Pkw/preview"
-                                                    target="_blank" rel="noopener noreferrer" class="text-success font-weight-bold">
+                                                <a onclick="openLink('https://drive.google.com/file/d/1XNv2ch2kjCIQZ_1eK2iTu3jnHGp39Pkw/preview', true)" class="text-success font-weight-bold">
                                                     Baca Selengkapnya<i class="fas fa-external-link-alt ml-1" aria-hidden="true"></i>
                                                 </a>
                                             </div>
@@ -356,8 +352,7 @@
                                                 </p>
                                             </div>
                                             <div class="card-footer text-center border-0 mt-auto">
-                                                <a href="https://drive.google.com/file/d/1jiIc5jOHaAaTKqqtn1-Trpg4XaShhbFx/preview"
-                                                    target="_blank" rel="noopener noreferrer" class="text-success font-weight-bold">
+                                                <a onclick="openLink('https://drive.google.com/file/d/1jiIc5jOHaAaTKqqtn1-Trpg4XaShhbFx/preview', true)" class="text-success font-weight-bold">
                                                     Baca Selengkapnya<i class="fas fa-external-link-alt ml-1" aria-hidden="true"></i>
                                                 </a>
                                             </div>
@@ -384,8 +379,7 @@
                                                 </p>
                                             </div>
                                             <div class="card-footer text-center border-0 mt-auto">
-                                                <a href="https://drive.google.com/file/d/1fsEQ7-fsJjv8GUbRs48i4GWch8kuU5RG/preview"
-                                                    target="_blank" rel="noopener noreferrer" class="text-success font-weight-bold">
+                                                <a onclick="openLink('https://drive.google.com/file/d/1fsEQ7-fsJjv8GUbRs48i4GWch8kuU5RG/preview', true)" class="text-success font-weight-bold">
                                                     Baca Selengkapnya<i class="fas fa-external-link-alt ml-1" aria-hidden="true"></i>
                                                 </a>
                                             </div>
@@ -407,8 +401,7 @@
                                                 </p>
                                             </div>
                                             <div class="card-footer text-center border-0 mt-auto">
-                                                <a href="https://drive.google.com/file/d/1POFy5khk9UL_wJXCcr9SNxtFvEqv-xLW/preview"
-                                                    target="_blank" rel="noopener noreferrer" class="text-success font-weight-bold">
+                                                <a onclick="openLink('https://drive.google.com/file/d/1POFy5khk9UL_wJXCcr9SNxtFvEqv-xLW/preview', true)" class="text-success font-weight-bold">
                                                     Baca Selengkapnya<i class="fas fa-external-link-alt ml-1" aria-hidden="true"></i>
                                                 </a>
                                             </div>
@@ -430,8 +423,7 @@
                                                 </p>
                                             </div>
                                             <div class="card-footer text-center border-0 mt-auto">
-                                                <a href="https://drive.google.com/file/d/1SB-uLNL_aXWlb5fZD_YkLlZhLcpO1f33/preview"
-                                                    target="_blank" rel="noopener noreferrer" class="text-success font-weight-bold">
+                                                <a onclick="openLink('https://drive.google.com/file/d/1SB-uLNL_aXWlb5fZD_YkLlZhLcpO1f33/preview', true)" class="text-success font-weight-bold">
                                                     Baca Selengkapnya<i class="fas fa-external-link-alt ml-1" aria-hidden="true"></i>
                                                 </a>
                                             </div>

@@ -9,7 +9,7 @@
                                     Alamat Poliklinik
                                 </h5>
                                 <p>Jl. Rungkut Madya No.1, Gn. Anyar, Kec. Gn. Anyar, Kota SBY, Jawa Timur</p>
-                                <a href="https://maps.app.goo.gl/MCWaaT6fg1CZRLd89" 
+                                <a onclick="openLink('https://maps.app.goo.gl/MCWaaT6fg1CZRLd89', true)"
                                 target="_blank" class="maps-link d-block mt-3">
                                     <i class="fas fa-map-marked-alt mr-1" aria-hidden="true"></i>
                                     Lihat di Google Maps
@@ -28,10 +28,10 @@
                                 </ul>
                                 <!-- Sosial Media -->
                                 <div class="mt-3">
-                                    <a href="#" class="social-icon" onclick="event.preventDefault();"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-                                    <a href="#" class="social-icon" onclick="event.preventDefault();"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-                                    <a href="#" class="social-icon" onclick="event.preventDefault();"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                                    <a href="#" class="social-icon" onclick="event.preventDefault();"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                                    <a onclick="openLink('#', false)" class="social-icon"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                                    <a onclick="openLink('#', false)" class="social-icon"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                                    <a onclick="openLink('#', false)" class="social-icon"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                                    <a onclick="openLink('#', false)" class="social-icon"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                                 </div>
                             </div>
 
@@ -56,7 +56,7 @@
                 <!-- END Footer -->
 
                 <!-- Tombol Scroll Up -->
-                <a href="#" class="vanillatop"><i class="fas fa-angle-up" aria-hidden="true"></i></a>
+                <a onclick="openLink('#', false)" class="vanillatop"><i class="fas fa-angle-up" aria-hidden="true"></i></a>
 
                 <!-- Modal Login -->
                 <?php include __DIR__ . '/../modal/login.php'; ?>
@@ -85,6 +85,9 @@
         
         <!-- Sidebar Handler -->
         <script src="<?= BASE_URL ?>public/assets/js/ui/global/sidebar.js"></script>
+
+        <!-- Kelola URL -->
+        <script src="<?= BASE_URL ?>public/assets/js/utils/url_handler.js"></script>
         
         <!-- Highcharts -->
         <script src="<?= BASE_URL ?>public/vendor/highcharts/code/highcharts.js"></script>

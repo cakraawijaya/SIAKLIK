@@ -40,4 +40,4 @@
 
     <body data-loggedin="<?= isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true ? 'true' : 'false' ?>">
         <div class="wrapper">
-            <div id="content" >
+            <div id="content">

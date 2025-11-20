@@ -26,15 +26,19 @@
 }
 
 /* Links */
-.footer-section a {
+.footer-section a.maps-link,
+.footer-section a.social-icon {
     color: greenyellow;
     text-decoration: none;
     transition: color 0.3s;
 }
 
-.footer-section a:hover {
+.footer-section a.maps-link:hover,
+.footer-section a.social-icon:hover {
     color: #ddff00;           /* link kuning neon */    
-    text-decoration: underline;
+    text-decoration: none;
+    cursor: pointer;    
+    transition: color 0.3s;
 }
 
 /* Social Media Icons */

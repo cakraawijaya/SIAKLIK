@@ -34,7 +34,7 @@ $secondRow = array_slice($charts, 4);
             <div class="row text-center justify-content-center mb-4 flex-row-wrap">
                 <?php foreach ($firstRow as $chart) : ?>
                     <div class="chart-col chart-col-4">
-                        <a href="<?= BASE_URL ?>index.php?page=patient/chart/<?= $chart['link'] ?>" class="card-link">
+                        <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/chart/<?= $chart['link'] ?>', false)" class="card-link">
                             <div class="card interactive-card" style="--card-color: <?= $chart['color'] ?>;">
                                 <div class="card-body d-flex flex-column justify-content-center align-items-center">
                                     <i class="<?= $chart['icon'] ?>" aria-hidden="true"></i>
@@ -50,7 +50,7 @@ $secondRow = array_slice($charts, 4);
             <div class="row text-center justify-content-center flex-row-wrap">
                 <?php foreach ($secondRow as $chart) : ?>
                     <div class="chart-col chart-col-5">
-                        <a href="<?= BASE_URL ?>index.php?page=patient/chart/<?= $chart['link'] ?>" class="card-link">
+                        <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/chart/<?= $chart['link'] ?>', false)" class="card-link">
                             <div class="card interactive-card" style="--card-color: <?= $chart['color'] ?>;">
                                 <div class="card-body d-flex flex-column justify-content-center align-items-center">
                                     <i class="<?= $chart['icon'] ?>" aria-hidden="true"></i>

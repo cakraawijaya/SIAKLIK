@@ -58,7 +58,7 @@
           <!-- Footer -->
           <div class="modal-footer text-center flex-column">
             <p class="mb-0 select-none">Sudah ingat password? 
-              <a href="<?= BASE_URL ?>components/features/auth/recovery/delete_reset_token.php?email=<?= urlencode($_GET['email'] ?? '') ?>">
+              <a onclick="openLink('<?= BASE_URL ?>components/features/auth/recovery/delete_reset_token.php?email=<?= urlencode($_GET['email'] ?? '') ?>', false)">
                 <span>Login sekarang</span>
               </a>
             </p>

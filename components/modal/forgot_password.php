@@ -30,7 +30,7 @@
         <!-- Footer -->
         <div class="modal-footer text-center flex-column">
           <p class="mb-0 select-none">Ingat password?
-            <a href="#" id="switchToPasienFromForgotPassword">
+            <a onclick="openLink('#', false)" id="switchToPasienFromForgotPassword">
               <span>Kembali ke Login</span>
             </a>
           </p>

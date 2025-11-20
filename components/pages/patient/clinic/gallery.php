@@ -34,7 +34,7 @@
                 foreach ($photos as $index => $photo) :
             ?>
             <div class="gallery-item select-none">
-                <a href="<?= BASE_URL ?>public/assets/img/gallery/<?= $photo[1] ?>" target="_blank">
+                <a onclick="openLink('#', false)">
                     <img src="<?= BASE_URL ?>public/assets/img/gallery/<?= $photo[1] ?>" alt="<?= strtolower(str_replace(' ', '-', $photo[0])) ?>">
                     <div class="overlay">
                         <div class="overlay-text">
