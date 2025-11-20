@@ -4,7 +4,7 @@ $require_login = true;
 include __DIR__ . '/../features/auth/authorization/worker.php';
 include __DIR__ . '/../../config/config.php';
 
-$per_page = 4;
+$per_page = 5;
 
 // ======================== FUNCTION HELPER ========================
 function get_paginated_data($kategori, $per_page, $page_param, $search = '') {

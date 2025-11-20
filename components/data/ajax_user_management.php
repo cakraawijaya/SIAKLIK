@@ -4,7 +4,7 @@ $require_login = true;
 include __DIR__ . '/../features/auth/authorization/admin.php';
 include __DIR__ . '/../../config/config.php';
 
-$per_page = 3;
+$per_page = 5;
 $upload_dir = __DIR__ . '/../../public/assets/img/photo/';
 $max_file_size = 2 * 1024 * 1024; // 2MB
 $allowed_ext = ['jpg','jpeg','png','gif'];

@@ -6,6 +6,10 @@
   background-color: #b38600;
 }
 
+.text-success-custom {
+  color: #198754 !important;
+}
+
 #modalLoginPasien .modal-content,
 #modalLoginPekerjaAdmin .modal-content,
 #modalRegistration .modal-content,
@@ -250,34 +254,34 @@
   outline: none;
 }
 
-#modalAddPasien .form-alamat {
-  margin-top: 2.39rem;
+#modalEditPasien .form-nama,
+#modalEditPasien .form-alamat {
+  margin-top: 1.33rem;
 }
 
-#modalAddPasien .form-pekerjaan,
 #modalAddPasien .form-status,
-#modalAddPasien .form-layanan {
-  margin-top: 1.73rem;
+#modalAddPasien .form-layanan,
+#modalAddPasien .form-keterangan {
+  margin-top: 2.09rem;
 }
 
 #modalEditPasien .form-pekerjaan,
 #modalEditPasien .form-status,
 #modalEditPasien .form-layanan {
-  margin-top: 2.03rem;
+  margin-top: 2.35rem;
 }
 
 #modalAddPasien .form-nim-nip, 
 #modalAddPasien .form-no-bpjs,
-#modalAddPasien .form-kategori,
-#modalAddPasien .form-keterangan {
-  margin-top: 1.7rem;
+#modalAddPasien .form-kategori {
+  margin-top: 2.024rem;
 }
 
 #modalEditPasien .form-nim-nip, 
 #modalEditPasien .form-no-bpjs,
 #modalEditPasien .form-kategori,
 #modalEditPasien .form-keterangan {
-  margin-top: 1.99rem;
+  margin-top: 1.11rem;
 }
 
 #modalAddPenggunaPasien .form-upload-file,
@@ -321,15 +325,7 @@
 #modalEditPenggunaPekerja input.form-control,
 #modalEditPenggunaAdmin input.form-control {
   padding: 0.25rem 0.5rem !important;
-}
-
-#modalAddPenggunaPasien input[type="file"],
-#modalAddPenggunaPekerja input[type="file"],
-#modalAddPenggunaAdmin input[type="file"],
-#modalEditPenggunaPasien input[type="file"],
-#modalEditPenggunaPekerja input[type="file"],
-#modalEditPenggunaAdmin input[type="file"] {
-  padding: 0.10rem 0.5rem !important;
+  font-size: 0.9rem !important;
 }
 
 #modalAddPenggunaPasien .file-input-custom,
@@ -356,11 +352,19 @@
 #modalEditPenggunaAdmin .btn-choose {
   background-color: #efefef;
   border: 1.5px solid #b5b5b5;
-  font-size: 0.9rem;
   color: #000;
   cursor: pointer;
   border-radius: 5px;
-  padding: 4px 12px;
+  padding: 0px 12px;
+}
+
+#modalAddPenggunaPasien .btn-choose span,
+#modalAddPenggunaPekerja .btn-choose span,
+#modalAddPenggunaAdmin .btn-choose span,
+#modalEditPenggunaPasien .btn-choose span,
+#modalEditPenggunaPekerja .btn-choose span,
+#modalEditPenggunaAdmin .btn-choose span {
+  font-size: 0.89rem !important;
 }
 
 #modalAddPenggunaPasien .btn-choose:focus-within,
@@ -379,8 +383,8 @@
 #modalEditPenggunaPekerja span#file-name-edit-pekerja,
 #modalEditPenggunaAdmin span#file-name-edit-admin {
   flex: 1;
-  padding: 4px 8px;
-  font-size: 0.9rem;
+  padding: 0px 8px;
+  font-size: 0.9rem !important;
   text-align: left;
   color: #333;
   white-space: nowrap;
@@ -488,7 +492,7 @@
 #modalEditPenggunaPasien input[type="file"],
 #modalEditPenggunaPekerja input[type="file"],
 #modalEditPenggunaAdmin input[type="file"] {
-  font-size: 0.9rem;
+  font-size: 0.9rem !important;
 }
 
 #modalAddPasien textarea.form-control,
@@ -605,6 +609,7 @@
 #modalEditPenggunaPasien .input-captcha,
 #modalEditPenggunaPekerja .input-captcha,
 #modalEditPenggunaAdmin .input-captcha {
+  margin-top: 18px;
   padding: 0.25rem 0.5rem;
 }
 

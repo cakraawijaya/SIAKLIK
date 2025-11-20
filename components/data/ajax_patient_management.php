@@ -3,7 +3,7 @@ $require_login = true;
 include __DIR__ . '/../features/auth/authorization/worker.php';
 include __DIR__ . '/../../config/config.php';
 
-$per_page = 3; // jumlah data per halaman
+$per_page = 5; // jumlah data per halaman
 
 // ======================== FUNGSI PEMBANTU ========================
 function get_patients_history($per_page, $page_param, $search = '') {

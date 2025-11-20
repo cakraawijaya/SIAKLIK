@@ -15,7 +15,7 @@
           <div class="modal-header bg-success text-white text-center">
             <h5 class="modal-title select-none" id="modalAddPenggunaPasienLabel">
               <i class="fas fa-user-plus mr-2" aria-hidden="true"></i>
-              <span>Tambah Akun Pengguna Pasien</span>
+              <span>Tambah Akun Pasien</span>
             </h5>
             <button type="button" class="close select-none" onclick="$('#modalAddPenggunaPasien').modal('hide')">&times;</button>
           </div>
@@ -28,16 +28,18 @@
               <div class="row">
                 <!-- Kolom Foto (Kiri) -->
                 <div class="col-md-4 col-left mt-2">
-                  <div class="border rounded bg-light" style="height: 205px;">
+                  <div class="border rounded bg-light" style="height: 202px;">
                     <img id="previewFotoAddPasien"
                         class="img-fluid p-2 rounded select-none"
-                        style="max-height: 205px; object-fit: cover; width: 100%;">
+                        style="max-height: 202px; object-fit: cover; width: 100%;">
                   </div>
                   <div class="form-group form-upload-file">
                     <label class="select-none"><strong>Upload Foto</strong></label>
                     <input type="file" class="select-none" id="fileInputAddPasien" name="add-foto" accept="image/*" onchange="updateFileName(this); previewImage(this);" style="display:none;">
                     <div class="file-input-custom select-none" onclick="document.getElementById('fileInputAddPasien').click()">
-                      <button type="button" class="btn-choose">Pilih Berkas</button>
+                      <button type="button" class="btn-choose text-center align-middle">
+                        <span>Pilih Berkas</span>
+                      </button>
                       <span id="file-name-add-pasien">Belum ada berkas</span>
                     </div>
                   </div>
@@ -129,7 +131,7 @@
           <div class="modal-header bg-warning-custom text-white text-center">
             <h5 class="modal-title select-none" id="modalEditPenggunaPasienLabel">
               <i class="fas fa-user-plus mr-2" aria-hidden="true"></i>
-              <span>Edit Akun Pengguna Pasien</span>
+              <span>Edit Akun Pasien</span>
             </h5>
             <button type="button" class="close select-none" onclick="$('#modalEditPenggunaPasien').modal('hide')">&times;</button>
           </div>
@@ -143,16 +145,18 @@
               <div class="row">
                 <!-- Kolom Foto (Kiri) -->
                 <div class="col-md-4 col-left mt-2">
-                  <div class="border rounded bg-light" style="height: 205px;">
+                  <div class="border rounded bg-light" style="height: 202px;">
                     <img id="previewFotoEditPasien"
                         class="img-fluid p-2 rounded select-none"
-                        style="max-height: 205px; object-fit: cover; width: 100%;">
+                        style="max-height: 202px; object-fit: cover; width: 100%;">
                   </div>
                   <div class="form-group form-upload-file">
                     <label class="select-none"><strong>Upload Foto</strong></label>
                     <input type="file" class="select-none" id="fileInputEditPasien" name="edit-foto" accept="image/*" onchange="updateFileName(this); previewImage(this);" style="display:none;">
                     <div class="file-input-custom select-none" onclick="document.getElementById('fileInputEditPasien').click()">
-                      <button type="button" class="btn-choose">Ganti Foto</button>
+                      <button type="button" class="btn-choose text-center align-middle">
+                        <span>Ganti Foto</span>
+                      </button>
                       <span id="file-name-edit-pasien">Belum ada berkas</span>
                     </div>
                   </div>
@@ -247,7 +251,7 @@
             <div class="modal-header bg-danger text-white">
               <h5 class="modal-title select-none" id="modalDeletePenggunaPasienLabel">
                 <i class="fa fa-exclamation-triangle mr-2" aria-hidden="true"></i>
-                <span>Konfirmasi Hapus Pengguna Pasien</span>
+                <span>Konfirmasi Hapus Pasien</span>
               </h5>
               <button type="button" class="close select-none text-white" data-dismiss="modal" aria-label="Tutup">
                 <span aria-hidden="true">&times;</span>
@@ -285,7 +289,7 @@
           <div class="modal-header bg-success text-white text-center">
             <h5 class="modal-title select-none" id="modalAddPenggunaPekerjaLabel">
               <i class="fas fa-user-plus mr-2" aria-hidden="true"></i>
-              <span>Tambah Akun Pengguna Pekerja</span>
+              <span>Tambah Akun Pekerja</span>
             </h5>
             <button type="button" class="close select-none" onclick="$('#modalAddPenggunaPekerja').modal('hide')">&times;</button>
           </div>
@@ -298,16 +302,18 @@
               <div class="row">
                 <!-- Kolom Foto (Kiri) -->
                 <div class="col-md-4 col-left mt-2">
-                  <div class="border rounded bg-light" style="height: 205px;">
+                  <div class="border rounded bg-light" style="height: 202px;">
                     <img id="previewFotoAddPekerja"
                         class="img-fluid p-2 rounded select-none"
-                        style="max-height: 205px; object-fit: cover; width: 100%;">
+                        style="max-height: 202px; object-fit: cover; width: 100%;">
                   </div>
                   <div class="form-group form-upload-file">
                     <label class="select-none"><strong>Upload Foto</strong></label>
                     <input type="file" class="select-none" id="fileInputAddPekerja" name="add-foto" accept="image/*" onchange="updateFileName(this); previewImage(this);" style="display:none;">
                     <div class="file-input-custom select-none" onclick="document.getElementById('fileInputAddPekerja').click()">
-                      <button type="button" class="btn-choose">Pilih Berkas</button>
+                      <button type="button" class="btn-choose text-center align-middle">
+                        <span>Pilih Berkas</span>
+                      </button>
                       <span id="file-name-add-pekerja">Belum ada berkas</span>
                     </div>
                   </div>
@@ -399,7 +405,7 @@
           <div class="modal-header bg-warning-custom text-white text-center">
             <h5 class="modal-title select-none" id="modalEditPenggunaPekerjaLabel">
               <i class="fas fa-user-plus mr-2" aria-hidden="true"></i>
-              <span>Edit Akun Pengguna Pekerja</span>
+              <span>Edit Akun Pekerja</span>
             </h5>
             <button type="button" class="close select-none" onclick="$('#modalEditPenggunaPekerja').modal('hide')">&times;</button>
           </div>
@@ -413,16 +419,18 @@
               <div class="row">
                 <!-- Kolom Foto (Kiri) -->
                 <div class="col-md-4 col-left mt-2">
-                  <div class="border rounded bg-light" style="height: 205px;">
+                  <div class="border rounded bg-light" style="height: 202px;">
                     <img id="previewFotoEditPekerja"
                         class="img-fluid p-2 rounded select-none"
-                        style="max-height: 205px; object-fit: cover; width: 100%;">
+                        style="max-height: 202px; object-fit: cover; width: 100%;">
                   </div>
                   <div class="form-group form-upload-file">
                     <label class="select-none"><strong>Upload Foto</strong></label>
                     <input type="file" class="select-none" id="fileInputEditPekerja" name="edit-foto" accept="image/*" onchange="updateFileName(this); previewImage(this);" style="display:none;">
                     <div class="file-input-custom select-none" onclick="document.getElementById('fileInputEditPekerja').click()">
-                      <button type="button" class="btn-choose">Ganti Foto</button>
+                      <button type="button" class="btn-choose text-center align-middle">
+                        <span>Ganti Foto</span>
+                      </button>
                       <span id="file-name-edit-pekerja">Belum ada berkas</span>
                     </div>
                   </div>
@@ -517,7 +525,7 @@
             <div class="modal-header bg-danger text-white">
               <h5 class="modal-title select-none" id="modalDeletePenggunaPekerjaLabel">
                 <i class="fa fa-exclamation-triangle mr-2" aria-hidden="true"></i>
-                <span>Konfirmasi Hapus Pengguna Pekerja</span>
+                <span>Konfirmasi Hapus Pekerja</span>
               </h5>
               <button type="button" class="close select-none text-white" data-dismiss="modal" aria-label="Tutup">
                 <span aria-hidden="true">&times;</span>
@@ -555,7 +563,7 @@
           <div class="modal-header bg-success text-white text-center">
             <h5 class="modal-title select-none" id="modalAddPenggunaAdminLabel">
               <i class="fas fa-user-plus mr-2" aria-hidden="true"></i>
-              <span>Tambah Akun Pengguna Admin</span>
+              <span>Tambah Akun Admin</span>
             </h5>
             <button type="button" class="close select-none" onclick="$('#modalAddPenggunaAdmin').modal('hide')">&times;</button>
           </div>
@@ -568,16 +576,18 @@
               <div class="row">
                 <!-- Kolom Foto (Kiri) -->
                 <div class="col-md-4 col-left mt-2">
-                  <div class="border rounded bg-light" style="height: 205px;">
+                  <div class="border rounded bg-light" style="height: 202px;">
                     <img id="previewFotoAddAdmin"
                         class="img-fluid p-2 rounded select-none"
-                        style="max-height: 205px; object-fit: cover; width: 100%;">
+                        style="max-height: 202px; object-fit: cover; width: 100%;">
                   </div>
                   <div class="form-group form-upload-file">
                     <label class="select-none"><strong>Upload Foto</strong></label>
                     <input type="file" class="select-none" id="fileInputAddAdmin" name="add-foto" accept="image/*" onchange="updateFileName(this); previewImage(this);" style="display:none;">
                     <div class="file-input-custom select-none" onclick="document.getElementById('fileInputAddAdmin').click()">
-                      <button type="button" class="btn-choose">Pilih Berkas</button>
+                      <button type="button" class="btn-choose text-center align-middle">
+                        <span>Pilih Berkas</span>
+                      </button>
                       <span id="file-name-add-admin">Belum ada berkas</span>
                     </div>
                   </div>
@@ -669,7 +679,7 @@
           <div class="modal-header bg-warning-custom text-white text-center">
             <h5 class="modal-title select-none" id="modalEditPenggunaAdminLabel">
               <i class="fas fa-user-plus mr-2" aria-hidden="true"></i>
-              <span>Edit Akun Pengguna Admin</span>
+              <span>Edit Akun Admin</span>
             </h5>
             <button type="button" class="close select-none" onclick="$('#modalEditPenggunaAdmin').modal('hide')">&times;</button>
           </div>
@@ -683,16 +693,18 @@
               <div class="row">
                 <!-- Kolom Foto (Kiri) -->
                 <div class="col-md-4 col-left mt-2">
-                  <div class="border rounded bg-light" style="height: 205px;">
+                  <div class="border rounded bg-light" style="height: 202px;">
                     <img id="previewFotoEditAdmin"
                         class="img-fluid p-2 rounded select-none"
-                        style="max-height: 205px; object-fit: cover; width: 100%;">
+                        style="max-height: 202px; object-fit: cover; width: 100%;">
                   </div>
                   <div class="form-group form-upload-file">
                     <label class="select-none"><strong>Upload Foto</strong></label>
                     <input type="file" class="select-none" id="fileInputEditAdmin" name="edit-foto" accept="image/*" onchange="updateFileName(this); previewImage(this);" style="display:none;">
                     <div class="file-input-custom select-none" onclick="document.getElementById('fileInputEditAdmin').click()">
-                      <button type="button" class="btn-choose">Ganti Foto</button>
+                      <button type="button" class="btn-choose text-center align-middle">
+                        <span>Ganti Foto</span>
+                      </button>
                       <span id="file-name-edit-admin">Belum ada berkas</span>
                     </div>
                   </div>
@@ -787,7 +799,7 @@
             <div class="modal-header bg-danger text-white">
               <h5 class="modal-title select-none" id="modalDeletePenggunaAdminLabel">
                 <i class="fa fa-exclamation-triangle mr-2" aria-hidden="true"></i>
-                <span>Konfirmasi Hapus Pengguna Admin</span>
+                <span>Konfirmasi Hapus Admin</span>
               </h5>
               <button type="button" class="close select-none text-white" data-dismiss="modal" aria-label="Tutup">
                 <span aria-hidden="true">&times;</span>

@@ -4,7 +4,7 @@ $require_login = true;
 include __DIR__ . '/../features/auth/authorization/patient.php';
 include __DIR__ . '/../../config/config.php';
 
-$per_page = 6;
+$per_page = 5;
 $search = $_GET['search'] ?? '';
 $active_tab = $_GET['tab'] ?? 'internal';
 

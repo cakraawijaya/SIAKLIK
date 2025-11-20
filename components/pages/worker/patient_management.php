@@ -28,7 +28,7 @@
 
             <!-- Search Form -->
             <form class="form-inline" id="searchForm">
-                <input type="text" name="search" class="form-control select-none mr-2" style="width: 360px;" placeholder="Cari data pasien   [ nama / alamat / nip / nim ]" value="<?= htmlspecialchars($search) ?>">
+                <input type="text" name="search" class="form-control select-none mr-2" style="width: 280px;" placeholder="Cari Nama / Alamat / NIP / NIM" value="<?= htmlspecialchars($search) ?>">
                 <button class="btn btn-info text-white" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
             </form>
         </div>

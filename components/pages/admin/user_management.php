@@ -50,7 +50,7 @@
             <form class="form-inline d-flex align-items-center mt-3 mt-md-0" id="searchForm">
                 <input type="text" name="search" 
                     class="form-control select-none mr-2" 
-                    placeholder="Cari data pengguna..." 
+                    placeholder="Cari Data Pengguna" 
                     value="<?= htmlspecialchars($search) ?>"
                     style="min-width: 220px;">
                 <button class="btn btn-info text-white" type="submit">

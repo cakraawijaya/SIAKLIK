@@ -29,7 +29,7 @@
                 <?php endforeach; ?>
             </ul>
             <form class="form-inline mt-4" id="searchForm">
-                <input type="text" name="search" class="form-control select-none mr-2" placeholder="Cari kode antrean..." value="<?= htmlspecialchars($search) ?>">
+                <input type="text" name="search" class="form-control select-none mr-2" placeholder="Cari Kode Antrean" value="<?= htmlspecialchars($search) ?>">
                 <button class="btn btn-info text-white" type="submit"><i class="fa fa-search"></i></button>
             </form>
         </div>

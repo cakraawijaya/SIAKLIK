@@ -27,21 +27,21 @@
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="select-none"><strong>Nama Lengkap</strong></label>
-                    <textarea name="nama" class="form-control select-none" placeholder="Masukkan Nama Pasien" rows="5" required oninput="this.value = this.value.replace(/\b\w/g, char => char.toUpperCase()); if(this.value.length > 60) this.value = this.value.slice(0, 60)"></textarea>
+                    <textarea name="nama" class="form-control select-none" placeholder="Masukkan Nama Pasien" rows="3" required oninput="this.value = this.value.replace(/\b\w/g, char => char.toUpperCase()); if(this.value.length > 60) this.value = this.value.slice(0, 60)"></textarea>
                   </div>              
-                  <div class="form-group form-alamat">
+                  <div class="form-group mt-2">
                     <label class="select-none"><strong>Alamat</strong></label>
                     <textarea name="alamat" class="form-control select-none" placeholder="Masukkan Alamat" rows="5" required oninput="if(this.value.length > 130) this.value = this.value.slice(0, 130)"></textarea>
+                  </div>                  
+                  <div class="form-group mt-2">
+                    <label class="select-none"><strong>Umur</strong></label>
+                    <input type="number" name="umur" class="form-control select-none" placeholder="Masukkan Umur" required oninput="if(this.value.length > 3) this.value = this.value.slice(0, 3)">
                   </div>
                 </div>
 
                 <!-- Kolom 2 -->
                 <div class="col-md-4">
                   <div class="form-group">
-                    <label class="select-none"><strong>Umur</strong></label>
-                    <input type="number" name="umur" class="form-control select-none" placeholder="Masukkan Umur" required oninput="if(this.value.length > 3) this.value = this.value.slice(0, 3)">
-                  </div>
-                  <div class="form-group form-pekerjaan">
                     <label class="select-none"><strong>Pekerjaan</strong></label>
                     <input type="text" name="pekerjaan" class="form-control select-none" placeholder="Masukkan Pekerjaan" required oninput="if(this.value.length > 100) this.value = this.value.slice(0, 100)">
                   </div>
@@ -62,6 +62,10 @@
                           <option value="Poli Umum">Poli Umum</option>
                           <option value="Poli Gigi">Poli Gigi</option>
                       </select>
+                  </div>         
+                  <div class="form-group form-keterangan">
+                    <label class="select-none"><strong>Keterangan</strong></label>
+                    <input type="text" name="keterangan" class="form-control select-none" placeholder="Masukkan Keterangan">
                   </div>
                 </div>
 
@@ -89,18 +93,24 @@
                   <div class="form-group form-kategori">
                     <label class="select-none"><strong>Kategori</strong></label><br>
                     <div class="form-check select-none">
-                      <input class="form-check-input" type="radio" name="kategori" value="Pihak Eksternal" id="kategori_eksternal" checked>
-                      <label class="form-check-label" for="kategori_eksternal">Pihak Eksternal</label>
+                      <input class="form-check-input" type="radio" name="kategori" value="Eksternal" id="kategori_eksternal" checked>
+                      <label class="form-check-label" for="kategori_eksternal">
+                        Eksternal 
+                        <span class="text-muted text-success-custom">
+                          (<small><strong>Non-Civitas Akademika</strong></small>)
+                        </span>
+                      </label>
                     </div>
                     <div class="form-check select-none mt-1">
-                      <input class="form-check-input" type="radio" name="kategori" value="Pihak Internal" id="kategori_internal">
-                      <label class="form-check-label" for="kategori_internal">Pihak Internal</label>
+                      <input class="form-check-input" type="radio" name="kategori" value="Internal" id="kategori_internal">
+                      <label class="form-check-label" for="kategori_internal">
+                        Internal 
+                        <span class="text-muted text-success-custom">
+                          (<small><strong>Civitas Akademika</strong></small>)
+                        </span>
+                      </label>
                     </div>
-                  </div>            
-                  <div class="form-group form-keterangan">
-                    <label class="select-none"><strong>Keterangan</strong></label>
-                    <input type="text" name="keterangan" class="form-control select-none" placeholder="Masukkan Keterangan">
-                  </div>
+                  </div>   
                 </div>
               </div>
             </div>
@@ -144,11 +154,11 @@
                     </span>
                     <input type="hidden" id="edit_id" name="id">
                   </div>
-                  <div class="form-group">
+                  <div class="form-group form-nama">
                     <label class="select-none"><strong>Nama Lengkap</strong></label>
                     <textarea id="edit_nama" name="nama" class="form-control select-none" placeholder="Masukkan Nama Pasien" rows="3" required oninput="this.value = this.value.replace(/\b\w/g, char => char.toUpperCase()); if(this.value.length > 60) this.value = this.value.slice(0, 60)"></textarea>
                   </div>              
-                  <div class="form-group">
+                  <div class="form-group form-alamat">
                     <label class="select-none"><strong>Alamat</strong></label>
                     <textarea id="edit_alamat" name="alamat" class="form-control select-none" placeholder="Masukkan Alamat" rows="5" required oninput="if(this.value.length > 130) this.value = this.value.slice(0, 130)"></textarea>
                   </div>
@@ -204,14 +214,14 @@
                     <input type="number" id="edit_no_bpjs" name="no_bpjs" class="form-control select-none" placeholder="Masukkan No BPJS" oninput="if(this.value.length > 13) this.value = this.value.slice(0, 13)">
                   </div>
                   <div class="form-group form-kategori">
-                    <label class="select-none"><strong>kategori</strong></label><br>
-                    <div class="form-check select-none">
-                      <input class="form-check-input" type="radio" name="kategori" value="Pihak Eksternal" id="edit_kategori_eksternal">
-                      <label class="form-check-label" for="edit_kategori_eksternal">Pihak Eksternal</label>
+                    <label class="select-none"><strong>Kategori</strong></label><br>
+                    <div class="form-check form-check-inline select-none">
+                      <input class="form-check-input" type="radio" name="kategori" value="Eksternal" id="edit_kategori_eksternal">
+                      <label class="form-check-label" for="edit_kategori_eksternal">Eksternal</label>
                     </div>
-                    <div class="form-check select-none mt-1">
-                      <input class="form-check-input" type="radio" name="kategori" value="Pihak Internal" id="edit_kategori_internal">
-                      <label class="form-check-label" for="edit_kategori_internal">Pihak Internal</label>
+                    <div class="form-check form-check-inline select-none">
+                      <input class="form-check-input" type="radio" name="kategori" value="Internal" id="edit_kategori_internal">
+                      <label class="form-check-label" for="edit_kategori_internal">Internal</label>
                     </div>
                   </div>                  
                   <div class="form-group form-keterangan">

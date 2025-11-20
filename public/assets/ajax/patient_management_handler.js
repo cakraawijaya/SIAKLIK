@@ -463,6 +463,21 @@ $(document).ready(function(){
         }
     });
 
+    $('#modalEditPasien').on('shown.bs.modal', function() {
+        const currentLayanan = layananEdit.value;
+        const currentStatus = statusEdit.value;
+
+        if (currentLayanan === "Poli Gigi") {
+            setSelectOptions(statusEdit, ["Rawat Jalan", "Observasi"], allStatusEdit, "Pilih Status");
+        } else if (currentLayanan === "Poli Umum") {
+            setSelectOptions(statusEdit, ["Rawat Inap", "Rawat Jalan", "Observasi", "Pasca Rawat Inap"], allStatusEdit, "Pilih Status");
+        } else {
+            setSelectOptions(statusEdit, [], allStatusEdit, "Pilih Status");
+        }
+
+        statusEdit.value = currentStatus || "";
+    });
+
     // Validasi sebelum submit
     const formAdd = document.querySelector("#formAddPasien");
     const formEdit = document.querySelector("#formEditPasien");
