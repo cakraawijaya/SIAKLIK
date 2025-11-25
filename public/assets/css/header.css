@@ -1,0 +1,282 @@
+/* ============================== DESKTOP (≥ 1366px) ============================= */
+/* ------------------- Pengaturan Global --------------------- */
+header, .carousel-wrapper, .carousel-content, .carousel-item {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.carousel-wrapper {
+    width: 100%;
+    margin: 0 auto;
+}
+
+a.carousel-control-prev:hover,
+a.carousel-control-next:hover {
+    cursor: pointer;
+}
+
+.carousel-content img {
+    display: block;
+    width: 100vw;
+    object-fit: fill;
+}
+
+.carousel-caption {
+    background: rgb(20 20 20 / 50%);
+    border-radius: 5px;
+    border-radius: 15px;
+}
+
+.carousel-caption p {
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    font-weight: 400;    
+}
+
+/* ---------------- Tampilan Sidebar Ditutup ----------------- */
+body.sidebar-collapsed .carousel-content img {
+    height: 600px;
+    width: 100%;
+    object-fit: cover;
+}
+
+body.sidebar-collapsed .carousel-caption {
+    bottom: 2.5rem;
+    margin-bottom: 4rem;
+    padding: 4rem 5rem;
+    width: 70%;
+    left: 50%;
+    border-radius: 35px;
+    transform: translateX(-50%);
+}
+
+body.sidebar-collapsed .carousel-caption h3 {
+    font-size: 3rem;
+}
+
+body.sidebar-collapsed .carousel-caption p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+body.sidebar-collapsed .carousel-indicators {
+    margin-bottom: 7.5rem;
+}
+
+body.sidebar-collapsed .carousel-indicators li {
+    width: 3rem;
+    height: 0.5rem;
+    border-radius: 5px;
+}
+
+/* ----------------- Tampilan Sidebar Dibuka ----------------- */
+body.sidebar-expanded .carousel-content img {
+    height: 495px;
+}
+
+
+/* ======================= SMALL DESKTOP (1024px – 1366px) ======================= */
+@media (min-width: 1024px) and (max-width: 1366px) {
+    /* ------------------- Pengaturan Global --------------------- */
+    .carousel-content img {
+        height: 495px !important;
+        object-fit: cover;
+    }
+
+    .carousel-caption {
+        bottom: 1.6rem;
+        width: 55%;
+        padding: 2rem 2.4rem;
+        border-radius: 24px;
+    }
+
+    .carousel-caption h3 {
+        font-size: 2.4rem;
+    }
+
+    .carousel-caption p {
+        font-size: 1.05rem;
+        line-height: 1.4;
+        margin-bottom: 1.2rem;
+    }
+
+    .carousel-indicators {
+        bottom: 2.2rem;
+    }
+
+    .carousel-indicators li {
+        width: 2rem;
+        height: 0.48rem;
+        border-radius: 7px;
+    }
+
+    /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+    body.sidebar-collapsed .carousel-caption {
+        bottom: 1.2rem !important;
+        width: 58%;
+    }
+
+    body.sidebar-collapsed .carousel-indicators {
+        bottom: 1rem !important;
+    }
+
+    /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+    body.sidebar-expanded .carousel-caption {
+        bottom: 1.8rem !important;
+        width: 68%;
+    }
+
+    body.sidebar-expanded .carousel-indicators {
+        bottom: 2.5rem !important;
+    }
+}
+
+
+/* =========================== TABLET (768px – 991px) ============================ */
+@media (min-width: 768px) and (max-width: 991px) {
+    /* ------------------- Pengaturan Global --------------------- */
+    .carousel-content img {
+        height: 400px !important;
+        object-fit: cover;
+    }
+
+    .carousel-caption {
+        bottom: 1.3rem;
+        padding: 1.6rem 2.2rem;
+        width: 68%;
+        border-radius: 22px;
+    }
+
+    .carousel-caption h3 {
+        font-size: 2rem;
+    }
+
+    .carousel-caption p {
+        font-size: 1rem;
+        line-height: 1.35;
+        margin-bottom: 1rem;
+    }
+
+    .carousel-indicators {
+        bottom: 1rem;
+    }
+
+    .carousel-indicators li {
+        width: 1.8rem;
+        height: 0.45rem;
+        border-radius: 6px;
+    }
+
+    a.carousel-control-prev,
+    a.carousel-control-next {
+        width: 40px;
+    }
+
+    /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+    body.sidebar-collapsed .carousel-caption {
+        bottom: 1rem !important;
+        width: 72%;
+    }
+
+    body.sidebar-collapsed .carousel-content img {
+        height: 420px !important;
+    }
+
+    body.sidebar-collapsed .carousel-indicators {
+        bottom: 0.8rem !important;
+    }
+    
+    /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+    body.sidebar-expanded .carousel-caption {
+        bottom: 2rem !important;
+    }
+
+    body.sidebar-expanded .carousel-indicators {
+        bottom: 1.8rem !important;
+    }
+
+    body.sidebar-expanded .carousel-indicators li {
+        width: 1.8rem;
+        height: 0.45rem;
+        border-radius: 6px;
+    }
+}
+
+
+/* ========================== HP BESAR (576px – 767px) =========================== */
+@media (min-width: 576px) and (max-width: 767px) {
+    /* ------------------- Pengaturan Global --------------------- */
+    .carousel-content img {
+        height: 300px !important;
+        object-fit: cover;
+    }
+
+    .carousel-caption {
+        bottom: 1.8rem;
+        padding: 1.4rem 1.8rem;
+        border-radius: 18px;
+        width: 75%;
+    }
+
+    .carousel-caption h3 {
+        font-size: 1.6rem;
+    }
+
+    .carousel-caption p {
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+    }
+
+    .carousel-indicators {
+        bottom: 1.3rem;
+    }
+
+    .carousel-indicators li {
+        width: 1.2rem;
+        height: 0.4rem;
+        border-radius: 5px;
+    }
+
+    a.carousel-control-prev,
+    a.carousel-control-next {
+        width: 36px;
+    }
+}
+
+
+/* ============================= HP KECIL (≤ 575px) ============================== */
+@media (max-width: 575px) {
+    /* ------------------- Pengaturan Global --------------------- */
+    .carousel-content img {
+        height: 230px !important;
+    }
+
+    .carousel-caption {
+        bottom: 1.2rem;
+        padding: 1rem 1.2rem;
+        border-radius: 14px;
+    }
+
+    .carousel-caption h3 {
+        font-size: 1.2rem;
+    }
+
+    .carousel-caption p {
+        font-size: 0.7rem;
+        margin-bottom: 1rem;
+    }
+
+    .carousel-indicators {
+        bottom: 1rem;
+    }
+
+    .carousel-indicators li {
+        width: 1rem;
+    }
+
+    a.carousel-control-prev,
+    a.carousel-control-next {
+        width: 32px;
+    }
+}

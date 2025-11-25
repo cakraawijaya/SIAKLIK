@@ -1,33 +1,38 @@
-                <!-- Footer -->
-                <footer class="footer-section font-small pt-5 text-light">
-                    <div class="container text-center text-md-left">
-                        <div class="row">
-                            <!-- Alamat Klinik -->
-                            <div class="col-md-4 mb-4 col-left select-none">
-                                <h5 class="footer-title mb-4">
+                <!-- FOOTER -->
+                <footer class="footer-section pt-5 mt-5 text-light select-none">
+                    <div class="container">
+                        <div class="row g-4">
+
+                            <!-- Lokasi -->
+                            <div class="col-md-4 my-3 py-2 select-none">
+                                <h5 class="footer-title">
                                     <i class="footer-icons fas fa-map-marker-alt" aria-hidden="true"></i>
-                                    Alamat Poliklinik
+                                    <span>Lokasi</span>
                                 </h5>
+
                                 <p>Jl. Rungkut Madya No.1, Gn. Anyar, Kec. Gn. Anyar, Kota SBY, Jawa Timur</p>
+
                                 <a onclick="openLink('https://maps.app.goo.gl/MCWaaT6fg1CZRLd89', true)"
-                                target="_blank" class="maps-link d-block mt-3">
-                                    <i class="fas fa-map-marked-alt mr-1" aria-hidden="true"></i>
+                                target="_blank"
+                                class="maps-link d-block mt-2">
+                                    <i class="fas fa-map-marked-alt mr-2" aria-hidden="true"></i>
                                     Lihat di Google Maps
                                 </a>
                             </div>
 
                             <!-- Kontak -->
-                            <div class="col-md-4 mb-4 col-center select-none">
-                                <h5 class="footer-title mb-4">
-                                    <i class="footer-icons fas fa-address-book mr-1" aria-hidden="true"></i>
-                                    Kontak
+                            <div class="col-md-4 my-3 py-2 select-none">
+                                <h5 class="footer-title">
+                                    <i class="footer-icons fas fa-address-book" aria-hidden="true"></i>
+                                    <span>Kontak</span>
                                 </h5>
-                                <ul class="list-unstyled">
-                                    <li><i class="fas fa-phone-alt" aria-hidden="true"></i> 031-8706369</li>
-                                    <li><i class="fas fa-envelope" aria-hidden="true"></i> poliklinik@upnvjatim.ac.id</li>
+
+                                <ul class="list-unstyled footer-list">
+                                    <li><span><i class="fas fa-phone-alt mr-1" aria-hidden="true"></i>031-8706369</span></li>
+                                    <li><span class="footer-email"><i class="fas fa-envelope mr-1" aria-hidden="true"></i>poliklinik@upnvjatim.ac.id</span></li>
                                 </ul>
-                                <!-- Sosial Media -->
-                                <div class="mt-3">
+
+                                <div class="mt-3 social-wrap">
                                     <a onclick="openLink('#', false)" class="social-icon"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
                                     <a onclick="openLink('#', false)" class="social-icon"><i class="fab fa-twitter" aria-hidden="true"></i></a>
                                     <a onclick="openLink('#', false)" class="social-icon"><i class="fab fa-instagram" aria-hidden="true"></i></a>
@@ -35,25 +40,26 @@
                                 </div>
                             </div>
 
-                            <!-- Jam Operasional -->
-                            <div class="col-md-4 mb-4 col-right select-none">
-                                <h5 class="footer-title mb-4">
-                                    <i class="footer-icons fas fa-clock mr-1" aria-hidden="true"></i>
-                                    Jam Operasional
+                            <!-- Praktek -->
+                            <div class="col-md-4 my-3 py-2 select-none">
+                                <h5 class="footer-title">
+                                    <i class="footer-icons fas fa-clock" aria-hidden="true"></i>
+                                    <span>Praktek</span>
                                 </h5>
-                                <p><strong>Senin - Jumat:</strong> 07.30 - 15.30</p>
-                                <p><strong>Sabtu & Minggu:</strong> Libur</p>
+                                
+                                <ul class="list-unstyled footer-list">
+                                    <li><span><strong>Senin - Jumat:</strong> 07.30 – 15.30</span></li>
+                                    <li><span><strong>Sabtu & Minggu:</strong> Libur</span></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Copyright -->
-                    <div class="footer-copyright bg-dark text-light text-center select-none py-3 mt-4">
-                        &copy; 2021-<?= date("Y"); ?> <strong>SIAKLIK (Sistem Pelayanan Klinik Kesehatan)</strong>. All Rights Reserved
+                    <!-- COPYRIGHT -->
+                    <div class="footer-copyright text-center py-3 mt-5 pt-2">
+                        © 2021–<?= date("Y"); ?> <strong>SIAKLIK (Sistem Pelayanan Klinik Kesehatan)</strong>. All Rights Reserved
                     </div>
-
                 </footer>
-                <!-- END Footer -->
 
                 <!-- Tombol Scroll Up -->
                 <a onclick="openLink('#', false)" class="vanillatop"><i class="fas fa-angle-up" aria-hidden="true"></i></a>
@@ -71,7 +77,6 @@
                 <?php include __DIR__ . '/../modal/reset_password.php'; ?>
 
             </div>
-            <!-- End of Page Main Body Page Content  -->
         </div>
 
         <!-- jQuery -->

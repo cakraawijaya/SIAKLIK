@@ -1,29 +1,55 @@
 $(document).ready(function () {
 
-    // ===============================
+    // =============================================================================================
     // Scrollbar sidebar
-    // ===============================
+    // =============================================================================================
     $("#sidebar").mCustomScrollbar({ theme: "minimal" });
 
-    // ===============================
-    // Toggle sidebar buka/tutup
-    // ===============================
+    // =============================================================================================
+    // Cek apakah mobile
+    // =============================================================================================
     function isMobile() { return window.innerWidth <= 768; }
-    $('#sidebarCollapse, #sidebarCollapse2').on('click', function () {
 
+    // =============================================================================================
+    // Set default sidebar desktop → expanded
+    // =============================================================================================
+    if (!isMobile()) {
+        $('body').addClass('sidebar-expanded');
+        $('#sidebar, #content').removeClass('active'); // sidebar & content siap
+    }
+
+    // =============================================================================================
+    // Toggle sidebar buka/tutup
+    // =============================================================================================
+    $('#sidebarCollapse, #sidebarCollapse2').on('click', function () {
         if (isMobile()) {
-            // MODE MOBILE
+            // MODE MOBILE: overlay sidebar
             $('#sidebar').toggleClass('show');
             $('body').toggleClass('sidebar-open');
         } else {
-            // MODE DESKTOP
+            // MODE DESKTOP: sidebar shrink / expand
             $('#sidebar, #content').toggleClass('active');
+            $('body').toggleClass('sidebar-collapsed sidebar-expanded');
         }
     });
 
-    // ===============================
+    // =============================================================================================
+    // Handle resize → otomatis switch mobile/desktop class
+    // =============================================================================================
+    $(window).on('resize', function () {
+        if (isMobile()) {
+            $('body').removeClass('sidebar-collapsed sidebar-expanded').removeClass('sidebar-open');
+            $('#sidebar, #content').removeClass('active show');
+        } else {
+            if (!$('body').hasClass('sidebar-collapsed') && !$('body').hasClass('sidebar-expanded')) {
+                $('body').addClass('sidebar-expanded');
+            }
+        }
+    });
+
+    // =============================================================================================
     // Fungsi expand main-menu + charts
-    // ===============================
+    // =============================================================================================
     const autoExpandMenus = ['#main-menu', '#charts'];
 
     const expandMenu = () => {
@@ -49,9 +75,9 @@ $(document).ready(function () {
         });
     };
 
-    // ===============================
+    // =============================================================================================
     // Auto-expand awal
-    // ===============================
+    // =============================================================================================
     setTimeout(() => {
 
         expandMenu();
@@ -76,9 +102,9 @@ $(document).ready(function () {
         });
     }, 200);
 
-    // ===============================
+    // =============================================================================================
     // Klik dropdown → toggle collapse
-    // ===============================
+    // =============================================================================================
     $('#sidebar ul li.custom-menu-sidebar > a, #sidebar ul li.main-menu-child > a').on('click', function () {
 
         const $link = $(this);
@@ -117,9 +143,9 @@ $(document).ready(function () {
         }
     });
 
-    // ===============================
+    // =============================================================================================
     // Tandai menu aktif berdasarkan URL
-    // ===============================
+    // =============================================================================================
     const currentPath = window.location.pathname + window.location.search + window.location.hash;
 
     $('#sidebar ul li.custom-menu-sidebar a, #sidebar ul li.main-menu-child a').each(function () {

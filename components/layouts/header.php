@@ -26,10 +26,12 @@
         <link rel="stylesheet" href="<?= BASE_URL ?>public/vendor/sweetalert2/sweetalert2.min.css">
         
         <!-- Our Custom CSS -->
-        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/navbar.css">
-        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/sidebar.css">
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/font.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/navbar.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/header.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/sidebar.css">
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/main.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/home.css">
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/table.css">
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/chart.css">
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/gallery.css">
@@ -38,6 +40,6 @@
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/footer.css">
     </head>
 
-    <body data-loggedin="<?= isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true ? 'true' : 'false' ?>">
+    <body class="sidebar-expanded" data-loggedin="<?= isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true ? 'true' : 'false' ?>">
         <div class="wrapper">
             <div id="content">

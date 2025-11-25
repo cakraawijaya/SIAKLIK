@@ -1,7 +1,4 @@
-/* ---------------------------------------------------
-    SIDEBAR STYLE
------------------------------------------------------ */
-
+/* ====================== SMALL DESKTOP & DESKTOP (≥ 1024px) ====================== */
 #sidebar {
   width: 300px;
   position: fixed;
@@ -23,7 +20,7 @@
 }
 
 .sidebar-header {
-  padding-top: 20px;
+  margin-top: 30px;
 }
 
 #sidebar .divider-role {
@@ -231,7 +228,6 @@ ul ul li a.custom-mb-sidebar {
   margin-bottom: 1rem !important;
 }
 
-/* Sub dari Sub Menu */
 ul ul ul li a {
   display: grid !important;
   grid-template-columns: 26px 1fr;
@@ -278,24 +274,29 @@ ul ul ul li a.custom-mb-sidebar-child {
 }
 
 
-/* TABLET */
+/* =============================== TABLET (≤ 1024px) ============================== */
 @media (max-width: 1024px) {
   #sidebar {
     width: 300px;
   }
+  
   #sidebar.active {
     margin-left: -300px;
   }
+  
   .brand-logo {
     width: 90px;
     height: 90px;
   }
+  
   .brand-text .title {
     font-size: 24px;
   }
+  
   .brand-text .sub-title {
     font-size: 16px;
   }
+
   ul ul li a,
   ul ul ul li a {
     padding-left: 30px !important;
@@ -304,10 +305,8 @@ ul ul ul li a.custom-mb-sidebar-child {
 }
 
 
-/* HP BESAR */
+/* ============================== HP BESAR (≤ 768px) ============================== */
 @media (max-width: 768px) {
-
-  /* SIDEBAR MENJADI OVERLAY */
   #sidebar {
     position: fixed;
     top: 0;
@@ -316,16 +315,18 @@ ul ul ul li a.custom-mb-sidebar-child {
     height: 100vh;
     background: #24252d;
     z-index: 9999;
-    transform: translateX(-260px); /* sembunyikan */
+    transform: translateX(-260px);
     transition: transform 0.35s ease;
   }
 
-  /* MOBILE MODE menggunakan .show */
   #sidebar.show {
-    transform: translateX(0); /* tampil */
+    transform: translateX(0);
   }
 
-  /* CONTENT JANGAN IKUT GESER DI MOBILE */
+  .sidebar-header {
+    margin-top: 0;
+  }
+
   #content,
   #content.active {
     width: 100% !important;
@@ -337,14 +338,13 @@ ul ul ul li a.custom-mb-sidebar-child {
     display: block;
   }
 
-  /* HEADER */
   .close-sidebar {
     display: flex !important;
     flex-direction: row-reverse;
   }
 
   .close-button {
-    padding: 18px 24px;
+    padding: 10px 15px;
     background: #24252d;
     border: none;
     font-size: 24px;
@@ -357,33 +357,29 @@ ul ul ul li a.custom-mb-sidebar-child {
     border: none;
   }
 
-  /* LOGO */
   .brand-logo {
     width: 80px;
     height: 80px;
   }
 
-  /* TEKS BRAND */
   .brand-text .title {
     font-size: 22px;
   }
+
   .brand-text .sub-title {
     font-size: 15px;
   }
 
-  /* MENU LEVEL 1 */
   #sidebar .custom-menu-sidebar a {
     padding: 12px 16px !important;
     font-size: 15px;
   }
 
-  /* MENU LEVEL 2 */
   ul ul li a {
     padding: 8px 22px 8px 35px !important;
     font-size: 0.85em !important;
   }
 
-  /* MENU LEVEL 3 */
   ul ul ul li a {
     padding: 6px 20px 6px 50px !important;
     font-size: 0.8em !important;
@@ -395,9 +391,8 @@ ul ul ul li a.custom-mb-sidebar-child {
 }
 
 
-/* HP KECIL (≤ 480px) */
+/* ============================= HP KECIL (≤ 480px) ============================== */
 @media (max-width: 480px) {
-
   #sidebar {
     width: 230px;
     transform: translateX(-230px);
@@ -405,6 +400,10 @@ ul ul ul li a.custom-mb-sidebar-child {
 
   #sidebar.show {
     transform: translateX(0);
+  }
+
+  .close-button {
+    font-size: 18px;
   }
 
   .brand-logo {

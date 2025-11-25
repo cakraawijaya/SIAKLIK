@@ -1,12 +1,12 @@
 <!-- Sidebar  -->
 <nav id="sidebar">
+    <div class="close-sidebar">
+        <button type="button" id="sidebarCollapse2" class="close-button">
+            <i class="fas fa-times" aria-hidden="true"></i>
+            <span></span>
+        </button>
+    </div>
     <div class="sidebar-header">
-        <div class="close-sidebar">
-            <button type="button" id="sidebarCollapse2" class="close-button">
-                <i class="fas fa-times" aria-hidden="true"></i>
-                <span></span>
-            </button>
-        </div>
         <ul class="brand">
             <li class="brand-child">
                 <img class="brand-logo select-none" src="<?= BASE_URL ?>public/assets/img/favicon/logo.png" alt="logo-upn">

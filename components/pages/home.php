@@ -23,49 +23,49 @@
             <div class="carousel-content select-none">
                 <div class="carousel-item active" data-interval="4000">
                     <img height="380" src="<?= BASE_URL ?>public/assets/img/highlights/ambulan.jpg" class="d-block w-100" alt="poli ambulance">
-                    <div class="carousel-caption d-none d-md-block">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center text-center">
                         <h3>Ambulan</h3>
                         <p class="text-light">Layanan Ambulan Siap 24 Jam</p>
                     </div>
                 </div>
                 <div class="carousel-item" data-interval="4000">
                     <img height="380" src="<?= BASE_URL ?>public/assets/img/highlights/fasilitas_poli_gigi.jpg" class="d-block w-100" alt="pemeriksaan gigi">
-                    <div class="carousel-caption d-none d-md-block">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center text-center">
                         <h3>Poli Gigi</h3>
                         <p class="text-light">Pemeriksaan dan Perawatan Gigi Profesional</p>
                     </div>
                 </div>
                 <div class="carousel-item" data-interval="4000">
                     <img height="380" src="<?= BASE_URL ?>public/assets/img/highlights/tindakan_keperawatan.jpg" class="d-block w-100" alt="Poli Umum">
-                    <div class="carousel-caption d-none d-md-block">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center text-center">
                         <h3>Poli Umum</h3>
                         <p class="text-light">Pelayanan Kesehatan Umum dan Keperawatan</p>
                     </div>
                 </div>
                 <div class="carousel-item" data-interval="4000">
                     <img height="380" src="<?= BASE_URL ?>public/assets/img/highlights/bakti_sosial.jpg" class="d-block w-100" alt="Bakti Sosial">
-                    <div class="carousel-caption d-none d-md-block">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center text-center">
                         <h3>Bakti Sosial</h3>
                         <p class="text-light">Kegiatan Sosial untuk Masyarakat</p>
                     </div>
                 </div>
                 <div class="carousel-item" data-interval="4000">
                     <img height="380" src="<?= BASE_URL ?>public/assets/img/highlights/donor_darah.jpg" class="d-block w-100" alt="Donor Darah">
-                    <div class="carousel-caption d-none d-md-block">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center text-center">
                         <h3>Donor Darah</h3>
                         <p class="text-light">Kegiatan Donor Darah Rutin oleh Poliklinik</p>
                     </div>
                 </div>
                 <div class="carousel-item" data-interval="4000">
                     <img height="380" src="<?= BASE_URL ?>public/assets/img/highlights/tes_kesehatan.jpg" class="d-block w-100" alt="Tes Kesehatan">
-                    <div class="carousel-caption d-none d-md-block">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center text-center">
                         <h3>Tes Kesehatan Poliklinik</h3>
                         <p class="text-light">Pemeriksaan Kesehatan Lengkap</p>
                     </div>
                 </div>
                 <div class="carousel-item" data-interval="4000">
                     <img height="380" src="<?= BASE_URL ?>public/assets/img/highlights/khitan_massal.jpg" class="d-block w-100" alt="Khitanan Massal">
-                    <div class="carousel-caption d-none d-md-block">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center text-center">
                         <h3>Khitanan Massal</h3>
                         <p class="text-light">Khitanan Massal Aman dan Terjangkau untuk masyarakat</p>
                     </div>
@@ -87,9 +87,9 @@
     </section>
 </header>
 <main>
-    <section class="about-section my-5 pb-4">
+    <section class="about-section">
         <div class="row d-flex align-items-stretch">
-            <div class="col-md-3 d-flex">
+            <div class="calendar-wrapper col-12 col-sm-4 col-md-3 d-flex">
                 <div class="calendar w-100 select-none">
                     <p id="namaBulan"></p>
 
@@ -102,7 +102,7 @@
             </div>
 
             <!-- Text Column -->
-            <div class="col-md-9">
+            <div class="about-wrapper col-12 col-sm-8 col-md-9">
                 <div class="text-justify about-text select-none">
                     <h2>Tentang SIAKLIK</h2><hr>
                     <p class="mt-2">Sistem Pelayanan Klinik Kesehatan (SIAKLIK) merupakan sebuah website yang digunakan untuk pelayanan kesehatan, adapun fungsinya sebagai berikut :</p>
@@ -115,7 +115,7 @@
         </div>
     </section>
 
-    <section class="article-section mt-5 pt-4">
+    <section class="article-section">
         <div class="custom-header select-none">
             <div class="text-center align-middle article-text">
                 <h2>
@@ -126,13 +126,13 @@
             </div>
         </div>
         <hr>
-        <div class="carousel-wrapper mt-5 position-relative">
+        <div class="carousel-wrapper position-relative">
             <div class="row">
-                <div class="col-12 mb-3">
+                <div class="col-12">
                     <!-- === NAVIGATION TETAP DI BAWAH === -->
                     <div class="carousel-controls text-center">
                         <div class="carousel-controls-title select-none">
-                            <p class="font-weight-light mb-3">Geser untuk memilih artikel</p>
+                            <p class="font-weight-light">Geser untuk memilih artikel</p>
                         </div>
                         <a class="btn btn-success mr-2" onclick="openLink('#carousel-indicators2', false)" 
                         role="button" data-target="#carousel-indicators2" data-slide="prev">
@@ -144,14 +144,14 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-12 mt-3">
+                <div class="col-12 mt-4">
                     <div id="carousel-indicators2" class="carousel carousel-fade" data-ride="carousel">
                         <div class="carousel-content select-none">
 
                             <!-- === SLIDE 1 === -->
                             <div class="carousel-item active" data-interval="5000">
                                 <div class="row d-flex align-items-stretch">
-                                    <div class="col-md-4 mb-3 d-flex">
+                                    <div class="card-wrapper col-md-4 d-flex">
                                         <div class="card h-100 flex-fill d-flex flex-column">
                                             <img class="img-fluid" alt="HIV AIDS" src="<?= BASE_URL ?>public/assets/img/articles/hiv_aids.jpg">
                                             <div class="card-header text-center">
@@ -173,7 +173,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-4 mb-3 d-flex">
+                                    <div class="card-wrapper col-md-4 d-flex">
                                         <div class="card h-100 flex-fill d-flex flex-column">
                                             <img class="img-fluid" alt="Stroke" src="<?= BASE_URL ?>public/assets/img/articles/stroke.jpg">
                                             <div class="card-header text-center">
@@ -195,7 +195,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-4 mb-3 d-flex">
+                                    <div class="card-wrapper col-md-4 d-flex">
                                         <div class="card h-100 flex-fill d-flex flex-column">
                                             <img class="img-fluid" alt="TBC" src="<?= BASE_URL ?>public/assets/img/articles/tbc.jpg">
                                             <div class="card-header text-center">
@@ -222,7 +222,7 @@
                             <!-- === SLIDE 2 === -->
                             <div class="carousel-item" data-interval="5000">
                                 <div class="row d-flex align-items-stretch">
-                                    <div class="col-md-4 mb-3 d-flex">
+                                    <div class="card-wrapper col-md-4 d-flex">
                                         <div class="card h-100 flex-fill d-flex flex-column">
                                             <img class="img-fluid" alt="Hepatitis" src="<?= BASE_URL ?>public/assets/img/articles/hepatitis.jpg">
                                             <div class="card-header text-center">
@@ -244,7 +244,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-4 mb-3 d-flex">
+                                    <div class="card-wrapper col-md-4 d-flex">
                                         <div class="card h-100 flex-fill d-flex flex-column">
                                             <img class="img-fluid" alt="Diare" src="<?= BASE_URL ?>public/assets/img/articles/diare.jpg">
                                             <div class="card-header text-center">
@@ -266,7 +266,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-4 mb-3 d-flex">
+                                    <div class="card-wrapper col-md-4 d-flex">
                                         <div class="card h-100 flex-fill d-flex flex-column">
                                             <img class="img-fluid" alt="Pneumonia" src="<?= BASE_URL ?>public/assets/img/articles/pneumonia.jpg">
                                             <div class="card-header text-center">
@@ -293,7 +293,7 @@
                             <!-- === SLIDE 3 === -->
                             <div class="carousel-item" data-interval="5000">
                                 <div class="row d-flex align-items-stretch">
-                                    <div class="col-md-4 mb-3 d-flex">
+                                    <div class="card-wrapper col-md-4 d-flex">
                                         <div class="card h-100 flex-fill d-flex flex-column">
                                             <img class="img-fluid" alt="Difteri" src="<?= BASE_URL ?>public/assets/img/articles/difteri.jpg">
                                             <div class="card-header text-center">
@@ -315,7 +315,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-4 mb-3 d-flex">
+                                    <div class="card-wrapper col-md-4 d-flex">
                                         <div class="card h-100 flex-fill d-flex flex-column">
                                             <img class="img-fluid" alt="DBD" src="<?= BASE_URL ?>public/assets/img/articles/dbd.jpg">
                                             <div class="card-header text-center">
@@ -337,7 +337,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-4 mb-3 d-flex">
+                                    <div class="card-wrapper col-md-4 d-flex">
                                         <div class="card h-100 flex-fill d-flex flex-column">
                                             <img class="img-fluid" alt="Kanker" src="<?= BASE_URL ?>public/assets/img/articles/kanker.jpg">
                                             <div class="card-header text-center">
@@ -364,7 +364,7 @@
                             <!-- === SLIDE 4 === -->
                             <div class="carousel-item" data-interval="5000">
                                 <div class="row d-flex align-items-stretch">
-                                    <div class="col-md-4 mb-3 d-flex">
+                                    <div class="card-wrapper col-md-4 d-flex">
                                         <div class="card h-100 flex-fill d-flex flex-column">
                                             <img class="img-fluid" alt="Kudis" src="<?= BASE_URL ?>public/assets/img/articles/kudis.jpg">
                                             <div class="card-header text-center">
@@ -386,7 +386,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-4 mb-3 d-flex">
+                                    <div class="card-wrapper col-md-4 d-flex">
                                         <div class="card h-100 flex-fill d-flex flex-column">
                                             <img class="img-fluid" alt="Stunting" src="<?= BASE_URL ?>public/assets/img/articles/stunting.jpg">
                                             <div class="card-header text-center">
@@ -408,7 +408,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-4 mb-3 d-flex">
+                                    <div class="card-wrapper col-md-4 d-flex">
                                         <div class="card h-100 flex-fill d-flex flex-column">
                                             <img class="img-fluid" alt="COVID-19" src="<?= BASE_URL ?>public/assets/img/articles/covid19.jpg">
                                             <div class="card-header text-center">
