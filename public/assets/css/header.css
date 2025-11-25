@@ -43,8 +43,7 @@ body.sidebar-collapsed .carousel-content img {
 
 body.sidebar-collapsed .carousel-caption {
     bottom: 2.5rem;
-    margin-bottom: 4rem;
-    padding: 4rem 5rem;
+    margin-bottom: 1.3rem;
     width: 70%;
     left: 50%;
     border-radius: 35px;
@@ -58,10 +57,11 @@ body.sidebar-collapsed .carousel-caption h3 {
 body.sidebar-collapsed .carousel-caption p {
     font-size: 1.2rem;
     line-height: 1.5;
+    margin-bottom: 3rem;
 }
 
 body.sidebar-collapsed .carousel-indicators {
-    margin-bottom: 7.5rem;
+    margin-bottom: 4rem;
 }
 
 body.sidebar-collapsed .carousel-indicators li {
@@ -73,6 +73,16 @@ body.sidebar-collapsed .carousel-indicators li {
 /* ----------------- Tampilan Sidebar Dibuka ----------------- */
 body.sidebar-expanded .carousel-content img {
     height: 495px;
+}
+
+body.sidebar-expanded .carousel-caption p {
+    margin-bottom: 2rem;
+}
+
+body.sidebar-expanded .carousel-caption {
+    left: 50%;
+    border-radius: 35px;
+    transform: translateX(-50%);
 }
 
 
@@ -119,6 +129,7 @@ body.sidebar-expanded .carousel-content img {
 
     body.sidebar-collapsed .carousel-indicators {
         bottom: 1rem !important;
+        margin-bottom: 3.5rem;
     }
 
     /* ----------------- Tampilan Sidebar Dibuka ----------------- */
@@ -185,6 +196,7 @@ body.sidebar-expanded .carousel-content img {
 
     body.sidebar-collapsed .carousel-indicators {
         bottom: 0.8rem !important;
+        margin-bottom: 3.3rem;
     }
     
     /* ----------------- Tampilan Sidebar Dibuka ----------------- */
@@ -192,8 +204,13 @@ body.sidebar-expanded .carousel-content img {
         bottom: 2rem !important;
     }
 
+    body.sidebar-expanded .carousel-caption p {
+        margin-bottom: 1.5rem !important;
+    }
+
     body.sidebar-expanded .carousel-indicators {
         bottom: 1.8rem !important;
+        margin-bottom: 1.5rem;
     }
 
     body.sidebar-expanded .carousel-indicators li {
