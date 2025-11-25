@@ -1,4 +1,5 @@
 /* ============================== DESKTOP (≥ 1366px) ============================= */
+/* ------------------- Pengaturan Global --------------------- */
 .footer-section {
     background-color: #4e4d4d;
     font-family: 'Segoe UI', sans-serif;
@@ -106,6 +107,16 @@
     font-size: 14px;
 }
 
+/* ---------------- Tampilan Sidebar Ditutup ----------------- */    
+body.sidebar-collapsed .social-icon {
+    margin-right: 25px;
+}
+
+/* ----------------- Tampilan Sidebar Dibuka ----------------- */
+body.sidebar-expanded .social-icon {
+    margin-right: 25px;
+}
+
 
 /* =========================== DESKTOP (1200px – 1366px) ========================= */
 @media (min-width: 1200px) and (max-width: 1366px) {
@@ -113,10 +124,6 @@
     .footer-title {
         text-align: left !important;
         margin-bottom: 25px !important;
-    }
-    
-    .social-icon {
-        margin-right: 25px;
     }
 
     /* ---------------- Tampilan Sidebar Ditutup ----------------- */
