@@ -10,6 +10,16 @@
   color: #198754 !important;
 }
 
+.modal,
+.modal.show,
+.modal-dialog {
+  z-index: 9999 !important;
+}
+
+.modal-backdrop {
+  z-index: 9998 !important;
+}
+
 #modalLoginPasien .modal-content,
 #modalLoginPekerjaAdmin .modal-content,
 #modalRegistration .modal-content,

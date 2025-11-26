@@ -67,7 +67,7 @@
                     <img height="380" src="<?= BASE_URL ?>public/assets/img/highlights/khitan_massal.jpg" class="d-block w-100" alt="Khitanan Massal">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center text-center">
                         <h3>Khitanan Massal</h3>
-                        <p class="text-light">Khitanan Massal Aman dan Terjangkau untuk masyarakat</p>
+                        <p class="text-light">Program Khitanan Massal Aman dan Terjangkau untuk Seluruh Lapisan Masyarakat yang membutuhkan</p>
                     </div>
                 </div>
             </div>

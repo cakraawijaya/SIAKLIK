@@ -1,7 +1,7 @@
                 <!-- FOOTER -->
                 <footer class="footer-section pt-5 mt-5 text-light select-none">
                     <div class="container">
-                        <div class="row g-4">
+                        <div class="row g-3">
 
                             <!-- Lokasi -->
                             <div class="col-md-4 my-3 py-2 select-none">

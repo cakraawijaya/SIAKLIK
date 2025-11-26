@@ -26,18 +26,16 @@
         <link rel="stylesheet" href="<?= BASE_URL ?>public/vendor/sweetalert2/sweetalert2.min.css">
         
         <!-- Our Custom CSS -->
-        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/font.css">
-        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/navbar.css">
-        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/header.css">
-        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/sidebar.css">
-        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/main.css">
-        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/home.css">
-        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/table.css">
-        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/chart.css">
-        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/gallery.css">
-        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/modal.css">
-        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/vanillatop.css">
-        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/footer.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/layouts/navbar.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/layouts/header.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/layouts/sidebar.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/layouts/main.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/layouts/footer.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/global/font.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/global/vanillatop.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/modules/table.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/modules/highcharts.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/modules/modal.css">
     </head>
 
     <body class="sidebar-expanded" data-loggedin="<?= isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true ? 'true' : 'false' ?>">

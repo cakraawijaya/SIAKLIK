@@ -5,20 +5,24 @@ table {
   padding: 0;
   width: 100%;
 }
+
 table caption {
   font-size: 1.5em;
   margin: .25em 0 .75em;
 }
+
 table tr {
   background: #8cc3ff;
   border: 1px solid green;
   padding: .35em;
 }
+
 table th,
 table td {
   padding: .625em;
   text-align: center;
 }
+
 table th {
   font-size: .85em;
   letter-spacing: .1em;
@@ -26,56 +30,64 @@ table th {
   background: #639c1f;
   color: white;
 }
+
 table td img {
   text-align: center;
 }
-
 
 .btn-group-queue form {
     margin: 0;
     padding: 0;
 }
+
 .btn-group-queue .btn {
     border-radius: 0;
     margin: 0;
 }
+
 .btn-group-queue form:first-child .btn {
     border-top-left-radius: 0.2rem;
     border-bottom-left-radius: 0.2rem;
 }
+
 .btn-group-queue form:last-child .btn {
     border-top-right-radius: 0.2rem;
     border-bottom-right-radius: 0.2rem;
 }
 
-
 @media screen and (max-width: 520px) {
   table {
     border: 0;
   }
+
   table caption {
     font-size: 1.3em;
   }
+
   table thead {
     display: none;
   }
+
   table tr {
     border-bottom: 3px solid green;
     display: block;
     margin-bottom: .725em;
   }
+
   table td {
     border-bottom: 1px solid green;
     display: block;
     font-size: .8em;
     text-align: right;
   }
+
   table td:before {
     content: attr(data-label);
     float: left;
     font-weight: bold;
     text-transform: uppercase;
   }
+  
   table td:last-child {
     border-bottom: 0;
   }

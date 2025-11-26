@@ -21,7 +21,7 @@ $secondRow = array_slice($charts, 4);
     <section class="charts-section table-wrap px-4 w-100">
         <div class="custom-header text-center mb-4 charts-text select-none">
             <h2>
-                <i class="far fa-chart-bar mr-3" aria-hidden="true"></i>
+                <i class="far fa-chart-bar" aria-hidden="true"></i>
                 Grafik Kunjungan Pasien
             </h2>
             <p>Daftar grafik kunjungan pasien pada Poliklinik per tahun</p>

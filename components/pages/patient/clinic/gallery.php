@@ -4,14 +4,13 @@
 ?>
 
 <main>
-    <!-- Gallery Foto -->
-    <section id="gallery-foto" class="mb-5 pb-4">
+    <section class="gallery-photo-section">
         <div class="custom-header text-center gallery-foto-text select-none">
             <h2>
                 <i class="fa fa-camera-retro mr-1" aria-hidden="true"></i>
                 Album Foto Poliklinik
             </h2>
-            <p>Potret Kegiatan dan Fasilitas Poliklinik</p>
+            <p>Potret berbagai kegiatan yang telah dilaksanakan serta fasilitas yang dimiliki oleh Poliklinik UPN Veteran Jatim</p>
         </div>
         <hr>
         <div class="gallery-grid">
@@ -47,14 +46,13 @@
         </div>
     </section>
 
-    <!-- Gallery Video -->
-    <section id="gallery-video" class="mt-5 pt-4">
+    <section class="gallery-video-section">
         <div class="custom-header text-center gallery-video-text select-none">
             <h2>
                 <i class="fa fa-video mr-1" aria-hidden="true"></i>
                 Album Video Poliklinik
             </h2>
-            <p>Menampilkan Fasilitas dan Kegiatan Poliklinik Secara Visual</p>
+            <p>Wujud dedikasi dalam memberikan pelayanan kesehatan bermutu bagi Sivitas Akademika dan Masyarakat tersaji melalui cuplikan Video berikut</p>
         </div>
         <hr>
         <div class="video-wrapper">

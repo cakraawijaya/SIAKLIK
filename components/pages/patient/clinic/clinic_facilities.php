@@ -3,6 +3,22 @@
     // pengecekan otentikasi
     include __DIR__ . '/../../../features/auth/authorization/patient.php';
 
+    // nama file PDF
+    $poli_umum_pdf = "poli_umum.pdf";
+    $poli_gigi_pdf = "poli_gigi.pdf";
+    $laboratorium_sederhana_pdf = "laboratorium_sederhana.pdf";
+
+    // base URL PDF.js viewer
+    $viewerUrl = "https://mozilla.github.io/pdf.js/web/viewer.html";
+
+    // base URL folder PDF di GitHub
+    $pdfBaseUrl = "https://raw.githubusercontent.com/cakraawijaya/SIAKLIK/master/public/assets/pdf/";
+
+    // full URL PDF
+    $poli_umum = $pdfBaseUrl . $poli_umum_pdf;
+    $poli_gigi = $pdfBaseUrl . $poli_gigi_pdf;
+    $laboratorium_sederhana = $pdfBaseUrl . $laboratorium_sederhana_pdf;
+
 ?>
 
 <header>
@@ -67,7 +83,7 @@
                     <img height="380" src="<?= BASE_URL ?>public/assets/img/highlights/khitan_massal.jpg" class="d-block w-100" alt="Khitanan Massal">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center text-center">
                         <h3>Khitanan Massal</h3>
-                        <p class="text-light">Khitanan Massal Aman dan Terjangkau untuk masyarakat</p>
+                        <p class="text-light">Program Khitanan Massal Aman dan Terjangkau untuk Seluruh Lapisan Masyarakat yang membutuhkan</p>
                     </div>
                 </div>
             </div>
@@ -87,56 +103,65 @@
     </section>
 </header>
 <main>
-    <section class="general-unit-section my-5 pb-4">
+    <section class="general-unit-section">
         <div class="custom-header select-none">
             <div class="text-center align-middle general-unit-text">
                 <h2>
-                    <i class="fas fa-info-circle mr-2" aria-hidden="true"></i>
+                    <i class="fas fa-info-circle" aria-hidden="true"></i>
                     Poli Umum
                 </h2>
-                <p>Pemeriksaan, Pengobatan, Konsultasi, dan Layanan Kesehatan untuk Semua Usia<p>
+                <p>Pemeriksaan dan Konsultasi, serta Pengobatan Umum untuk Semua Usia<p>
             </div>
         </div>
         <hr>
         <div class="d-flex justify-content-center">
-            <article id="1" class="select-none">
-                <iframe src="https://drive.google.com/file/d/1TGsMHdIzngdeNEo2uTu_bxApgXFIHD_d/preview" width="670" height="800"></iframe>
+            <article class="select-none">
+                <iframe 
+                    src="<?= $viewerUrl ?>?file=<?= urlencode($poli_umum) ?>"
+                    allowfullscreen>
+                </iframe>
             </article>
         </div>
     </section>
 
-    <section class="dental-unit-section my-5 py-4">
+    <section class="dental-unit-section">
         <div class="custom-header select-none">
             <div class="text-center align-middle dental-unit-text">
                 <h2>
                     <i class="fas fa-tooth" aria-hidden="true"></i>
                     Poli Gigi
                 </h2>
-                <p>Perawatan Gigi Profesional untuk Semua Usia<p>
+                <p>Pemeriksaan, Konsultasi, dan Perawatan Gigi Profesional untuk Semua Usia<p>
             </div>
         </div>
         <hr>
         <div class="d-flex justify-content-center">
-            <article id="2" class="select-none">
-                <iframe src="https://drive.google.com/file/d/10AEKd4yHqrzAqw5aEm3NiFLAeCjsl4VO/preview" width="670" height="800"></iframe>
+            <article class="select-none">
+                <iframe 
+                    src="<?= $viewerUrl ?>?file=<?= urlencode($poli_gigi) ?>"
+                    allowfullscreen>
+                </iframe>
             </article>
         </div>
     </section>
 
-    <section class="clinic-lab-section mt-5 pt-4">
+    <section class="clinic-lab-section">
         <div class="custom-header select-none">
             <div class="text-center align-middle clinic-lab-text">
                 <h2>
                     <i class="fas fa-flask" aria-hidden="true"></i>
                     Laboratorium
                 </h2>
-                <p>Deteksi Dini Masalah Kesehatan melalui Tes GDA, Kolesterol, dan Asam Urat<p>
+                <p>Tingkatkan Kewaspadaan Kesehatan Sejak Dini melalui Tes GDA, Kolesterol, dan Asam Urat Terpadu<p>
             </div>
         </div>
         <hr>
         <div class="d-flex justify-content-center">
-            <article id="3" class="select-none">
-                <iframe src="https://drive.google.com/file/d/1WXFaDDK3UWVvJrfFbgdp2Mf578elCYAu/preview" width="670" height="800"></iframe>
+            <article class="select-none">
+                <iframe 
+                    src="<?= $viewerUrl ?>?file=<?= urlencode($laboratorium_sederhana) ?>"
+                    allowfullscreen>
+                </iframe>
             </article>
         </div>
     </section>

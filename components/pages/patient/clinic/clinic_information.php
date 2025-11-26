@@ -3,32 +3,42 @@
     // pengecekan otentikasi
     include __DIR__ . '/../../../features/auth/authorization/patient.php';
 
+    // nama file PDF
+    $rujukan_berjenjang_pdf = "rujukan_berjenjang.pdf";
+
+    // base URL PDF.js viewer
+    $viewerUrl = "https://mozilla.github.io/pdf.js/web/viewer.html";
+
+    // base URL folder PDF di GitHub
+    $pdfBaseUrl = "https://raw.githubusercontent.com/cakraawijaya/SIAKLIK/master/public/assets/pdf/";
+
+    // full URL PDF
+    $rujukan_berjenjang = $pdfBaseUrl . $rujukan_berjenjang_pdf;
+
 ?>
 
 <main>
-    <section class="information-section pb-5">
-        <div class="custom-header text-center mb-4 information-text select-none">
+    <section class="information-section">
+        <div class="custom-header text-center information-text select-none">
             <h2>
-                <i class="fas fa-procedures me-2" aria-hidden="true"></i>
-                Informasi Pelayanan Pasien
+                <i class="fas fa-procedures mr-1" aria-hidden="true"></i>
+                Informasi Pelayanan Poliklinik
             </h2>
-            <p>Panduan pendaftaran dan alur pelayanan pasien secara offline maupun online</p>
+            <p>Panduan pendaftaran dan alur pelayanan Pasien Poliklinik secara Offline maupun Online</p>
         </div><hr>
-        <div class="container mt-5">
-            <div class="text-center mb-4">
-                <img class="img-fluid rounded select-none" src="<?= BASE_URL ?>public/assets/img/others/alur_poli.png" alt="Alur Poli">
-            </div>
-            <div class="row g-4 mt-4">
+        <div class="container">
+            <img class="img-fluid rounded select-none" src="<?= BASE_URL ?>public/assets/img/others/alur_poli.png" alt="Alur Poli">
+            <div class="row g-2 mt-3">
 
                 <!-- Kolom Kiri: Offline -->
-                <div class="col-md-6">
+                <div class="col-md-5 col-left">
                     <div class="card h-100 border-0 shadow-sm card-wrapper">
-                        <div class="card-body p-4">
+                        <div class="card-body">
                             <h4 class="text-center text-success select-none">
                                 <i class="fas fa-street-view" aria-hidden="true"></i>
                                 OFFLINE
                             </h4><hr>
-                            <p class="text-justify text-secondary mt-4 mb-0 select-none">
+                            <p class="text-justify text-secondary select-none">
                                 Pasien bisa datang langsung ke bagian pendaftaran yang ada di <strong>Poliklinik UPN “Veteran” 
                                 Jawa Timur</strong>. Petugas akan membantu melakukan verifikasi data, dan proses ini <strong>
                                 tidak dipungut biaya apa pun</strong>. Setelah selesai mendaftar, pasien dipersilakan 
@@ -44,14 +54,14 @@
                 </div>
 
                 <!-- Kolom Kanan: Online -->
-                <div class="col-md-6">
+                <div class="col-md-6 col-right">
                     <div class="card h-100 border-0 shadow-sm card-wrapper">
-                        <div class="card-body p-4">
+                        <div class="card-body">
                             <h4 class="text-center text-primary select-none">
                               <i class="fas fa-globe" aria-hidden="true"></i>
                               ONLINE
                             </h4><hr>
-                            <p class="text-justify text-secondary mt-4 mb-0 select-none">
+                            <p class="text-justify text-secondary select-none">
                                 Pasien dapat <strong>mendaftar secara online dengan langkah yang mudah</strong>. Jika belum memiliki akun, 
                                 pasien cukup <strong>membuat akun terlebih dahulu</strong>, lalu <strong>login ke SIAKLIK</strong>. 
                                 Setelah berhasil masuk, pilih menu <strong>“Registrasi Antrean Poliklinik”</strong>, lalu tentukan <strong>jenis antrean</strong> 
@@ -71,20 +81,23 @@
         </div>
     </section>
 
-    <section class="referral-section mt-5 pt-4">
+    <section class="referral-section">
         <div class="custom-header select-none">
             <div class="text-center align-middle referral-text">
                 <h2>
-                    <i class="fas fa-ambulance" aria-hidden="true"></i>
-                    Rujukan Berjenjang Ke Rumah Sakit
+                    <i class="fas fa-ambulance mr-1" aria-hidden="true"></i>
+                    Rujukan Medis Berjenjang
                 </h2>
-                <p>Pahami alur rujukan pelayanan kesehatan dari faskes tingkat pertama hingga rumah sakit rujukan<p>
+                <p>Gambaran umum terkait prosedur rujukan berjenjang dari Faskes Tingkat 1 (Poliklinik) ke Rumah Sakit tujuan terdekat (berada di wilayah Surabaya)<p>
             </div>
         </div>
         <hr>
         <div class="d-flex justify-content-center">
-            <article id="1" class="select-none">
-                <iframe src="https://drive.google.com/file/d/1hM6Ln3phLD5pF5_37BLNv7Xo2rnz9duI/preview" width="670" height="800"></iframe>
+            <article class="select-none">
+                <iframe 
+                    src="<?= $viewerUrl ?>?file=<?= urlencode($rujukan_berjenjang) ?>"
+                    allowfullscreen>
+                </iframe>
             </article>
         </div>
     </section>
