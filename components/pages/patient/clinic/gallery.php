@@ -54,11 +54,20 @@
             </h2>
             <p>Wujud dedikasi dalam memberikan pelayanan kesehatan bermutu bagi Sivitas Akademika dan Masyarakat tersaji melalui cuplikan Video berikut</p>
         </div>
-        <hr>
+        <div class="content-divider"><hr></div>
         <div class="video-wrapper">
-            <video controls autoplay>
-                <source src="<?= BASE_URL ?>public/assets/video/poliklinik_upn_jatim.mp4" type="video/mp4"/>
-            </video>
+            <div id="gdrive-video"></div>
+            <script>
+                const Video_ID = '1OTz-z909oK-IRZP884WFaP1aKM2Tn52g';
+                document.getElementById('gdrive-video').innerHTML = `
+                    <iframe
+                        src="https://drive.google.com/file/d/${Video_ID}/preview"
+                        allow="fullscreen"
+                        allowfullscreen
+                        frameborder="0"
+                    ></iframe>
+                `;
+            </script>
         </div>
     </section>
 </main>
