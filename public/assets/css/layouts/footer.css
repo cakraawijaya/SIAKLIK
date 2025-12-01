@@ -75,14 +75,14 @@
   text-align: left;
 }
 
-.footer-section .social-icon {
+.footer-section a.social-icon {
   display: inline-block;
   font-size: 18px;
   margin: 0;
   transition: color 0.3s, transform 0.2s;
 }
 
-.footer-section .social-icon:hover {
+.footer-section a.social-icon:hover {
   transform: scale(1.2);
 }
 
@@ -111,12 +111,12 @@
 }
 
 /* ---------------- Tampilan Sidebar Ditutup ----------------- */    
-body.sidebar-collapsed .social-icon {
+body.sidebar-collapsed a.social-icon {
   margin-right: 25px;
 }
 
 /* ----------------- Tampilan Sidebar Dibuka ----------------- */
-body.sidebar-expanded .social-icon {
+body.sidebar-expanded a.social-icon {
   margin-right: 25px;
 }
 
@@ -147,10 +147,6 @@ body.sidebar-expanded .social-icon {
 
   body.sidebar-collapsed .footer-section p {
     line-height: 1.95;
-  }
-
-  body.sidebar-expanded .social-wrap {
-    padding-top: 2rem;
   }
 
   /* ----------------- Tampilan Sidebar Dibuka ----------------- */
@@ -211,7 +207,7 @@ body.sidebar-expanded .social-icon {
     padding-top: 0.05rem;
   }
 
-  body.sidebar-collapsed .social-icon {
+  body.sidebar-collapsed a.social-icon {
     margin-right: 20px;
   }
 
@@ -235,14 +231,14 @@ body.sidebar-expanded .social-icon {
     padding-top: 1.6rem;
   }
 
-  body.sidebar-expanded .social-icon {
+  body.sidebar-expanded a.social-icon {
     margin-right: 15px;
   }
 }
 
 
-/* ====================== TABLET LANDSCAPE (821px – 991px) ======================= */
-@media (min-width: 821px) and (max-width: 991px) {
+/* ===================== TABLET LANDSCAPE-1 (912px – 991px) ====================== */
+@media (min-width: 912px) and (max-width: 991px) {
   /* ------------------- Pengaturan Global --------------------- */
   .footer-title {
     text-align: left !important;
@@ -256,24 +252,24 @@ body.sidebar-expanded .social-icon {
   /* ---------------- Tampilan Sidebar Ditutup ----------------- */
   body.sidebar-collapsed .footer-section .row > div:nth-child(1) {
     padding-left: 1.8rem !important;
-    padding-right: 2rem !important;
+    padding-right: 2.85rem !important;
   }
 
   body.sidebar-collapsed .footer-section .row > div:nth-child(2) {
-    padding-left: 2.5rem !important;
-    padding-right: 0 !important;
+    padding-left: 2.2rem !important;
+    padding-right: 1.2rem !important;
   }
 
   body.sidebar-collapsed .footer-section .row > div:nth-child(3) {
-    padding-left: 4rem !important;
-    padding-right: 1.6rem !important;
+    padding-left: 3.5rem !important;
+    padding-right: 0 !important;
   }
 
-  body.sidebar-expanded .social-wrap {
-    padding-top: 2rem;
+  body.sidebar-collapsed a.maps-link span {
+    line-height: 1.75;
   }
 
-  body.sidebar-collapsed .social-icon {
+  body.sidebar-collapsed a.social-icon {
     margin-right: 18px;
   }
 
@@ -293,8 +289,16 @@ body.sidebar-expanded .social-icon {
     padding-right: 1.6rem !important;
   }
 
-  body.sidebar-expanded .social-icon {
-    margin-right: 0;
+  body.sidebar-expanded a.maps-link span {
+    line-height: 1.75;
+  }
+
+  body.sidebar-expanded .footer-list li span {
+    line-height: 1.78;
+  }
+
+  body.sidebar-expanded a.social-icon {
+    margin-right: 6px;
   }
 
   body.sidebar-expanded .footer-copyright {
@@ -304,8 +308,88 @@ body.sidebar-expanded .social-icon {
 }
 
 
-/* ======================= TABLET POTRAIT (768px – 820px) ======================== */
-@media (min-width: 768px) and (max-width: 820px) {
+/* ===================== TABLET LANDSCAPE-2 (853px – 911px) ====================== */
+@media (min-width: 853px) and (max-width: 911px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .footer-title {
+    text-align: left !important;
+    margin-bottom: 25px !important;
+  }
+
+  .footer-section p {
+    line-height: 1.9;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .footer-section .row > div:nth-child(1) {
+    padding-left: 1.8rem !important;
+    padding-right: 2.85rem !important;
+  }
+
+  body.sidebar-collapsed .footer-section .row > div:nth-child(2) {
+    padding-left: 2.2rem !important;
+    padding-right: 0 !important;
+  }
+
+  body.sidebar-collapsed .footer-section .row > div:nth-child(3) {
+    padding-left: 3.8rem !important;
+    padding-right: 0 !important;
+  }
+
+  body.sidebar-collapsed a.maps-link span {
+    line-height: 1.85;
+  }
+
+  body.sidebar-collapsed a.social-icon {
+    margin-right: 18px;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .footer-section .row > div:nth-child(1) {
+    padding-left: 1.8rem !important;
+    padding-right: 1.6rem !important;
+  }
+
+  body.sidebar-expanded .footer-section .row > div:nth-child(2) {
+    padding-left: 2.3rem !important;
+    padding-right: 1.6rem !important;
+  }
+
+  body.sidebar-expanded .footer-section .row > div:nth-child(3) {
+    padding-left: 2.5rem !important;
+    padding-right: 1.6rem !important;
+  }
+
+  body.sidebar-expanded a.maps-link span {
+    line-height: 2;
+  }
+
+  body.sidebar-expanded .footer-list li span {
+    line-height: 1.78;
+  }
+
+  body.sidebar-expanded .social-wrap {
+    padding-top: 1.7rem;
+  }
+
+  body.sidebar-expanded .social-wrap > a:nth-child(3),
+  body.sidebar-expanded .social-wrap > a:nth-child(4) {
+    padding-top: 0.6rem;
+  }
+
+  body.sidebar-expanded a.social-icon {
+    margin-right: 25px;
+  }
+
+  body.sidebar-expanded .footer-copyright {
+    padding: 0 2.5rem;
+    line-height: 1.8;
+  }
+}
+
+
+/* ====================== TABLET POTRAIT-1 (820px – 852px) ======================= */
+@media (min-width: 820px) and (max-width: 852px) {
   /* ---------------- Tampilan Sidebar Ditutup ----------------- */
   body.sidebar-collapsed .footer-section .row > div:nth-child(1) {
     padding-left: 1.8rem !important;
@@ -322,11 +406,15 @@ body.sidebar-expanded .social-icon {
     padding-right: 1.6rem !important;
   }
 
-  body.sidebar-collapsed .social-wrap {
-    padding-top: 1.4rem;
+  body.sidebar-collapsed a.maps-link span {
+    line-height: 2;
   }
 
-  body.sidebar-collapsed .social-icon {
+  body.sidebar-collapsed .social-wrap {
+    padding-top: 1.6rem;
+  }
+
+  body.sidebar-collapsed a.social-icon {
     margin-right: 12px;
   }
 
@@ -336,11 +424,57 @@ body.sidebar-expanded .social-icon {
     padding-right: 1.6rem !important;
   }
 
+  body.sidebar-expanded a.maps-link span {
+    line-height: 2;
+  }
+
   body.sidebar-expanded .social-wrap {
     padding-top: 1.8rem;
   }
 
+  body.sidebar-expanded .social-wrap > a:nth-child(3),
+  body.sidebar-expanded .social-wrap > a:nth-child(4) {
+    padding-top: 0.6rem;
+  }
+
   body.sidebar-expanded .footer-copyright {
+    padding: 0 2.5rem;
+    line-height: 1.8;
+  }
+}
+
+
+/* ====================== TABLET POTRAIT-2 (768px – 819px) ======================= */
+@media (min-width: 768px) and (max-width: 819px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .footer-section .row > div:nth-child(1) {
+    padding-left: 1.8rem !important;
+    padding-right: 1.6rem !important;
+  }
+
+  .footer-section .row > div:nth-child(2) {
+    padding-left: 2.5rem !important;
+    padding-right: 0 !important;
+  }
+
+  .footer-section .row > div:nth-child(3) {
+    padding-left: 4.5rem !important;
+    padding-right: 1.6rem !important;
+  }
+
+  a.maps-link span {
+    line-height: 2;
+  }
+
+  .social-wrap {
+    padding-top: 1.6rem;
+  }
+
+  a.social-icon {
+    margin-right: 15px !important;
+  }
+
+  .footer-copyright {
     padding: 0 2.5rem;
     line-height: 1.8;
   }
@@ -417,7 +551,7 @@ body.sidebar-expanded .social-icon {
     padding-top: 1.4rem;
   }
 
-  .social-wrap .social-icon {
+  .social-wrap a.social-icon {
     margin: 0 10px 0 0 !important;
     display: inline-flex !important;
   }
@@ -474,7 +608,7 @@ body.sidebar-expanded .social-icon {
     width: 100%;
   }
 
-  .social-wrap .social-icon {
+  .social-wrap a.social-icon {
     display: inline-flex !important;
     justify-content: center;
     align-items: center;

@@ -25,7 +25,8 @@
                 Informasi Pelayanan Poliklinik
             </h2>
             <p>Panduan pendaftaran dan alur pelayanan Pasien Poliklinik secara Offline maupun Online</p>
-        </div><hr>
+        </div>
+        <div class="content-divider"><hr></div>
         <div class="container">
             <img class="img-fluid rounded select-none" src="<?= BASE_URL ?>public/assets/img/others/alur_poli.png" alt="Alur Poli">
             <div class="row g-2 mt-3">
@@ -88,10 +89,10 @@
                     <i class="fas fa-ambulance mr-1" aria-hidden="true"></i>
                     Rujukan Medis Berjenjang
                 </h2>
-                <p>Gambaran umum terkait prosedur rujukan berjenjang dari Faskes Tingkat 1 (Poliklinik) ke Rumah Sakit tujuan terdekat (berada di wilayah Surabaya)<p>
+                <p>Gambaran umum terkait prosedur rujukan berjenjang dari Faskes Tingkat 1 (Poliklinik) ke Rumah Sakit tujuan terdekat (berada di wilayah Surabaya)</p>
             </div>
         </div>
-        <hr>
+        <div class="content-divider"><hr></div>
         <div class="d-flex justify-content-center">
             <article class="select-none">
                 <iframe 

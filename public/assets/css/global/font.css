@@ -5,7 +5,7 @@
 /* Montserrat 300 */
 @font-face {
     font-family: "Montserrat";
-    src: url("../font/montserrat-font/Montserrat-Thin.ttf") format("truetype");
+    src: url("../../font/montserrat-font/Montserrat-Thin.ttf") format("truetype");
     font-weight: 300;
     font-style: normal;
 }
@@ -13,7 +13,7 @@
 /* Montserrat 400 */
 @font-face {
     font-family: "Montserrat";
-    src: url("../font/montserrat-font/Montserrat-Regular.ttf") format("truetype");
+    src: url("../../font/montserrat-font/Montserrat-Regular.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
 }
@@ -21,7 +21,7 @@
 /* Montserrat 500 */
 @font-face {
     font-family: "Montserrat";
-    src: url("../font/montserrat-font/Montserrat-Medium.ttf") format("truetype");
+    src: url("../../font/montserrat-font/Montserrat-Medium.ttf") format("truetype");
     font-weight: 500;
     font-style: normal;
 }
@@ -29,7 +29,7 @@
 /* Montserrat 600 */
 @font-face {
     font-family: "Montserrat";
-    src: url("../font/montserrat-font/Montserrat-SemiBold.ttf") format("truetype");
+    src: url("../../font/montserrat-font/Montserrat-SemiBold.ttf") format("truetype");
     font-weight: 600;
     font-style: normal;
 }
@@ -37,7 +37,7 @@
 /* Montserrat 700 */
 @font-face {
     font-family: "Montserrat";
-    src: url("../font/montserrat-font/Montserrat-Bold.ttf") format("truetype");
+    src: url("../../font/montserrat-font/Montserrat-Bold.ttf") format("truetype");
     font-weight: 700;
     font-style: normal;
 }
@@ -45,7 +45,7 @@
 /* Montserrat 800 */
 @font-face {
     font-family: "Montserrat";
-    src: url("../font/montserrat-font/Montserrat-Black.ttf") format("truetype");
+    src: url("../../font/montserrat-font/Montserrat-Black.ttf") format("truetype");
     font-weight: 800;
     font-style: normal;
 }
@@ -59,7 +59,7 @@
 /* Roboto 300 */
 @font-face {
     font-family: "Roboto";
-    src: url("../font/roboto-font/Roboto-Thin.ttf") format("truetype");
+    src: url("../../font/roboto-font/Roboto-Thin.ttf") format("truetype");
     font-weight: 300;
     font-style: normal;
 }
@@ -67,7 +67,7 @@
 /* Roboto 400 */
 @font-face {
     font-family: "Roboto";
-    src: url("../font/roboto-font/Roboto-Regular.ttf") format("truetype");
+    src: url("../../font/roboto-font/Roboto-Regular.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
 }
@@ -75,7 +75,7 @@
 /* Roboto 500 */
 @font-face {
     font-family: "Roboto";
-    src: url("../font/roboto-font/Roboto-Medium.ttf") format("truetype");
+    src: url("../../font/roboto-font/Roboto-Medium.ttf") format("truetype");
     font-weight: 500;
     font-style: normal;
 }
@@ -83,7 +83,7 @@
 /* Roboto 700 */
 @font-face {
     font-family: "Roboto";
-    src: url("../font/roboto-font/Roboto-Bold.ttf") format("truetype");
+    src: url("../../font/roboto-font/Roboto-Bold.ttf") format("truetype");
     font-weight: 700;
     font-style: normal;
 }
@@ -91,7 +91,7 @@
 /* Roboto 800 */
 @font-face {
     font-family: "Roboto";
-    src: url("../font/roboto-font/Roboto-Black.ttf") format("truetype");
+    src: url("../../font/roboto-font/Roboto-Black.ttf") format("truetype");
     font-weight: 800;
     font-style: normal;
 }
@@ -105,7 +105,7 @@
 /* Lato 300 */
 @font-face {
     font-family: "Lato";
-    src: url("../font/lato-font/Lato-Thin.ttf") format("truetype");
+    src: url("../../font/lato-font/Lato-Thin.ttf") format("truetype");
     font-weight: 300;
     font-style: normal;
 }
@@ -113,7 +113,7 @@
 /* Lato 400 */
 @font-face {
     font-family: "Lato";
-    src: url("../font/lato-font/Lato-Regular.ttf") format("truetype");
+    src: url("../../font/lato-font/Lato-Regular.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
 }
@@ -121,7 +121,7 @@
 /* Lato 500 */
 @font-face {
     font-family: "Lato";
-    src: url("../font/lato-font/Lato-Medium.ttf") format("truetype");
+    src: url("../../font/lato-font/Lato-Medium.ttf") format("truetype");
     font-weight: 500;
     font-style: normal;
 }
@@ -129,7 +129,7 @@
 /* Lato 600 */
 @font-face {
     font-family: "Lato";
-    src: url("../font/lato-font/Lato-SemiBold.ttf") format("truetype");
+    src: url("../../font/lato-font/Lato-SemiBold.ttf") format("truetype");
     font-weight: 600;
     font-style: normal;
 }
@@ -137,7 +137,7 @@
 /* Lato 700 */
 @font-face {
     font-family: "Lato";
-    src: url("../font/lato-font/Lato-Bold.ttf") format("truetype");
+    src: url("../../font/lato-font/Lato-Bold.ttf") format("truetype");
     font-weight: 700;
     font-style: normal;
 }
@@ -145,7 +145,7 @@
 /* Lato 800 */
 @font-face {
     font-family: "Lato";
-    src: url("../font/lato-font/Lato-Black.ttf") format("truetype");
+    src: url("../../font/lato-font/Lato-Black.ttf") format("truetype");
     font-weight: 800;
     font-style: normal;
 }
@@ -159,7 +159,7 @@
 /* Segoe UI 400 */
 @font-face {
     font-family: "Segoe UI";
-    src: url("../font/segoe-ui-font/SegoeUI-Regular.ttf") format("truetype");
+    src: url("../../font/segoe-ui-font/SegoeUI-Regular.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
 }
@@ -167,7 +167,7 @@
 /* Segoe UI 700 */
 @font-face {
     font-family: "Segoe UI";
-    src: url("../font/segoe-ui-font/SegoeUI-Bold.ttf") format("truetype");
+    src: url("../../font/segoe-ui-font/SegoeUI-Bold.ttf") format("truetype");
     font-weight: 700;
     font-style: normal;
 }

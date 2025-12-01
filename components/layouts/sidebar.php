@@ -14,7 +14,7 @@
             <li class="brand-child">
                 <a class="brand-text" onclick="openLink('<?= BASE_URL ?>', false)">
                     <p class="title select-none">SIAKLIK</p>
-                    <p class="sub-title text-small select-none">Sistem Pelayanan Poliklinik Kesehatan</p>
+                    <p class="sub-title text-small select-none">Sistem Pelayanan Klinik Kesehatan</p>
                 </a>
             </li>
             

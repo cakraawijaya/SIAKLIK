@@ -16,7 +16,7 @@
                                 target="_blank"
                                 class="maps-link d-block mt-2">
                                     <i class="fas fa-map-marked-alt mr-2" aria-hidden="true"></i>
-                                    Lihat di Google Maps
+                                    <span>Lihat di Google Maps</span>
                                 </a>
                             </div>
 
