@@ -121,8 +121,8 @@ body.sidebar-expanded a.social-icon {
 }
 
 
-/* =========================== DESKTOP (1200px – 1366px) ========================= */
-@media (min-width: 1200px) and (max-width: 1366px) {
+/* =========================== DESKTOP (1200px – 1365px) ========================= */
+@media (min-width: 1200px) and (max-width: 1365px) {
   /* ------------------- Pengaturan Global --------------------- */
   .footer-title {
     text-align: left !important;
@@ -308,8 +308,92 @@ body.sidebar-expanded a.social-icon {
 }
 
 
-/* ===================== TABLET LANDSCAPE-2 (853px – 911px) ====================== */
-@media (min-width: 853px) and (max-width: 911px) {
+/* ========================= HP LANDSCAPE (896px – 911px) ======================== */
+@media (min-width: 896px) and (max-width: 911px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .footer-title {
+    text-align: left !important;
+    margin-bottom: 25px !important;
+  }
+
+  .footer-section p {
+    line-height: 1.9;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .footer-section .row > div:nth-child(1) {
+    padding-left: 1.8rem !important;
+    padding-right: 2.85rem !important;
+  }
+
+  body.sidebar-collapsed .footer-section .row > div:nth-child(2) {
+    padding-left: 2.2rem !important;
+    padding-right: 0 !important;
+  }
+
+  body.sidebar-collapsed .footer-section .row > div:nth-child(3) {
+    padding-left: 3.8rem !important;
+    padding-right: 0 !important;
+  }
+
+  body.sidebar-collapsed a.maps-link span {
+    line-height: 1.85;
+  }
+
+  body.sidebar-collapsed a.social-icon {
+    margin-right: 18px;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .footer-section .row > div:nth-child(1) {
+    padding-left: 1.8rem !important;
+    padding-right: 1.6rem !important;
+  }
+
+  body.sidebar-expanded .footer-section .row > div:nth-child(2) {
+    padding-left: 2.3rem !important;
+    padding-right: 1.6rem !important;
+  }
+
+  body.sidebar-expanded .footer-section .row > div:nth-child(3) {
+    padding-left: 2.5rem !important;
+    padding-right: 1.6rem !important;
+  }
+
+  body.sidebar-expanded a.maps-link {
+    padding-top: 1.6rem;
+  }
+
+  body.sidebar-expanded a.maps-link span {
+    line-height: 2;
+  }
+
+  body.sidebar-expanded .footer-list li span {
+    line-height: 1.78;
+  }
+
+  body.sidebar-expanded .social-wrap {
+    padding-top: 1.7rem;
+  }
+
+  body.sidebar-expanded .social-wrap > a:nth-child(3),
+  body.sidebar-expanded .social-wrap > a:nth-child(4) {
+    padding-top: 0.45rem;
+  }
+
+  body.sidebar-expanded a.social-icon {
+    margin-right: 25px;
+  }
+
+  body.sidebar-expanded .footer-copyright {
+    padding: 0 2.5rem;
+    line-height: 1.8;
+  }
+}
+
+
+/* ===================== TABLET LANDSCAPE-2 (853px – 895px) ====================== */
+@media (min-width: 853px) and (max-width: 895px) {
   /* ------------------- Pengaturan Global --------------------- */
   .footer-title {
     text-align: left !important;
@@ -369,12 +453,12 @@ body.sidebar-expanded a.social-icon {
   }
 
   body.sidebar-expanded .social-wrap {
-    padding-top: 1.7rem;
+    padding-top: 1.79rem;
   }
 
   body.sidebar-expanded .social-wrap > a:nth-child(3),
   body.sidebar-expanded .social-wrap > a:nth-child(4) {
-    padding-top: 0.6rem;
+    padding-top: 0.45rem;
   }
 
   body.sidebar-expanded a.social-icon {
@@ -429,12 +513,12 @@ body.sidebar-expanded a.social-icon {
   }
 
   body.sidebar-expanded .social-wrap {
-    padding-top: 1.8rem;
+    padding-top: 1.98rem;
   }
 
   body.sidebar-expanded .social-wrap > a:nth-child(3),
   body.sidebar-expanded .social-wrap > a:nth-child(4) {
-    padding-top: 0.6rem;
+    padding-top: 0.42rem;
   }
 
   body.sidebar-expanded .footer-copyright {

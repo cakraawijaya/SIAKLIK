@@ -38,49 +38,49 @@
             <!-- Slides -->
             <div class="carousel-content select-none">
                 <div class="carousel-item active" data-interval="4000">
-                    <img height="380" src="<?= BASE_URL ?>public/assets/img/highlights/ambulan.jpg" class="d-block w-100" alt="poli ambulance">
+                    <img src="<?= BASE_URL ?>public/assets/img/highlights/ambulan.jpg" class="d-block w-100" alt="poli ambulance">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center text-center">
                         <h3>Ambulan</h3>
                         <p class="text-light">Layanan Ambulan Siap 24 Jam</p>
                     </div>
                 </div>
                 <div class="carousel-item" data-interval="4000">
-                    <img height="380" src="<?= BASE_URL ?>public/assets/img/highlights/fasilitas_poli_gigi.jpg" class="d-block w-100" alt="pemeriksaan gigi">
+                    <img src="<?= BASE_URL ?>public/assets/img/highlights/fasilitas_poli_gigi.jpg" class="d-block w-100" alt="pemeriksaan gigi">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center text-center">
                         <h3>Poli Gigi</h3>
                         <p class="text-light">Pemeriksaan dan Perawatan Gigi Profesional</p>
                     </div>
                 </div>
                 <div class="carousel-item" data-interval="4000">
-                    <img height="380" src="<?= BASE_URL ?>public/assets/img/highlights/tindakan_keperawatan.jpg" class="d-block w-100" alt="Poli Umum">
+                    <img src="<?= BASE_URL ?>public/assets/img/highlights/tindakan_keperawatan.jpg" class="d-block w-100" alt="Poli Umum">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center text-center">
                         <h3>Poli Umum</h3>
                         <p class="text-light">Pelayanan Kesehatan Umum dan Keperawatan</p>
                     </div>
                 </div>
                 <div class="carousel-item" data-interval="4000">
-                    <img height="380" src="<?= BASE_URL ?>public/assets/img/highlights/bakti_sosial.jpg" class="d-block w-100" alt="Bakti Sosial">
+                    <img src="<?= BASE_URL ?>public/assets/img/highlights/bakti_sosial.jpg" class="d-block w-100" alt="Bakti Sosial">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center text-center">
                         <h3>Bakti Sosial</h3>
                         <p class="text-light">Kegiatan Sosial untuk Masyarakat</p>
                     </div>
                 </div>
                 <div class="carousel-item" data-interval="4000">
-                    <img height="380" src="<?= BASE_URL ?>public/assets/img/highlights/donor_darah.jpg" class="d-block w-100" alt="Donor Darah">
+                    <img src="<?= BASE_URL ?>public/assets/img/highlights/donor_darah.jpg" class="d-block w-100" alt="Donor Darah">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center text-center">
                         <h3>Donor Darah</h3>
                         <p class="text-light">Kegiatan Donor Darah Rutin oleh Poliklinik</p>
                     </div>
                 </div>
                 <div class="carousel-item" data-interval="4000">
-                    <img height="380" src="<?= BASE_URL ?>public/assets/img/highlights/tes_kesehatan.jpg" class="d-block w-100" alt="Tes Kesehatan">
+                    <img src="<?= BASE_URL ?>public/assets/img/highlights/tes_kesehatan.jpg" class="d-block w-100" alt="Tes Kesehatan">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center text-center">
                         <h3>Tes Kesehatan Poliklinik</h3>
                         <p class="text-light">Pemeriksaan Kesehatan Lengkap</p>
                     </div>
                 </div>
                 <div class="carousel-item" data-interval="4000">
-                    <img height="380" src="<?= BASE_URL ?>public/assets/img/highlights/khitan_massal.jpg" class="d-block w-100" alt="Khitanan Massal">
+                    <img src="<?= BASE_URL ?>public/assets/img/highlights/khitan_massal.jpg" class="d-block w-100" alt="Khitanan Massal">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center text-center">
                         <h3>Khitanan Massal</h3>
                         <p class="text-light">Program Khitanan Massal Aman dan Terjangkau untuk Seluruh Lapisan Masyarakat yang membutuhkan</p>

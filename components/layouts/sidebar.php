@@ -133,7 +133,7 @@
                 </li>
                 <li class="main-menu-child">
                     <a onclick="openLink('#charts', false)" data-toggle="collapse" aria-expanded="false" data-target="#charts" class="dropdown-toggle">
-                        <i class="far fa-chart-bar mr-2" aria-hidden="true"></i>
+                        <i class="fas fa-chart-line mr-2" aria-hidden="true"></i>
                         <span>Grafik Kunjungan</span>
                     </a>
                     <ul class="collapse list-unstyled" id="charts">
@@ -223,73 +223,73 @@
             </a>
             <ul class="collapse list-unstyled" id="article">
                 <li>
-                    <a onclick="openLink('https://drive.google.com/file/d/1IUDjC2UDmxYaZn8Jzari8G7tagSactuT/preview', true)" class="custom-mt-sidebar">
+                    <a onclick="openLink('https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/cakraawijaya/SIAKLIK/master/public/assets/pdf/hiv.pdf', true)" class="custom-mt-sidebar">
                         <i class="fas fa-book-open mr-2" aria-hidden="true"></i>
                         <span>HIV / AIDS</span>
                     </a>
                 </li>
                 <li>
-                    <a onclick="openLink('https://drive.google.com/file/d/13aN5HJiE0dy-oL_VX7scSd5IIbAyJfL9/preview', true)">
+                    <a onclick="openLink('https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/cakraawijaya/SIAKLIK/master/public/assets/pdf/stroke.pdf', true)">
                         <i class="fas fa-book-open mr-2" aria-hidden="true"></i>
                         <span>Stroke</span>
                     </a>
                 </li>
                 <li>
-                    <a onclick="openLink('https://drive.google.com/file/d/1L_rULKmC9Lg8PCmSWz2VxJ3XpytEDL4o/preview', true)">
+                    <a onclick="openLink('https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/cakraawijaya/SIAKLIK/master/public/assets/pdf/tuberkulosis.pdf', true)">
                         <i class="fas fa-book-open mr-2" aria-hidden="true"></i>
                         <span>TBC (Tuberkulosis)</span>
                     </a>
                 </li>
                 <li>
-                    <a onclick="openLink('https://drive.google.com/file/d/1ugoq8IDg2wiIEDX3LCMjDK7863xCdYA0/preview', true)">
+                    <a onclick="openLink('https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/cakraawijaya/SIAKLIK/master/public/assets/pdf/hepatitis.pdf', true)">
                         <i class="fas fa-book-open mr-2" aria-hidden="true"></i>
                         <span>Hepatitis</span>
                     </a>
                 </li>
                 <li>
-                    <a onclick="openLink('https://drive.google.com/file/d/1PpQgSf7SEhG4xo_-KhbGr_RwsXzTzJQr/preview', true)">
+                    <a onclick="openLink('https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/cakraawijaya/SIAKLIK/master/public/assets/pdf/diare.pdf', true)">
                         <i class="fas fa-book-open mr-2" aria-hidden="true"></i>
                         <span>Diare</span>
                     </a>
                 </li>
                 <li>
-                    <a onclick="openLink('https://drive.google.com/file/d/15MP8PG4tTvAvhI2rAtL94eLkxOX88kxi/preview', true)">
+                    <a onclick="openLink('https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/cakraawijaya/SIAKLIK/master/public/assets/pdf/pneumonia.pdf', true)">
                         <i class="fas fa-book-open mr-2" aria-hidden="true"></i>
                         <span>Pneumonia</span>
                     </a>
                 </li>
                 <li>
-                    <a onclick="openLink('https://drive.google.com/file/d/16cio4CNtYGz1Q2eht0Z7h8RXt77J50RQ/preview', true)">
+                    <a onclick="openLink('https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/cakraawijaya/SIAKLIK/master/public/assets/pdf/difteri.pdf', true)">
                         <i class="fas fa-book-open mr-2" aria-hidden="true"></i>
                         <span>Difteri</span>
                     </a>
                 </li>
                 <li>
-                    <a onclick="openLink('https://drive.google.com/file/d/1XNv2ch2kjCIQZ_1eK2iTu3jnHGp39Pkw/preview', true)">
+                    <a onclick="openLink('https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/cakraawijaya/SIAKLIK/master/public/assets/pdf/dbd.pdf', true)">
                         <i class="fas fa-book-open mr-2" aria-hidden="true"></i>
                         <span>DBD (Demam Berdarah Dengue)</span>
                     </a>
                 </li>
                 <li>
-                    <a onclick="openLink('https://drive.google.com/file/d/1jiIc5jOHaAaTKqqtn1-Trpg4XaShhbFx/preview', true)">
+                    <a onclick="openLink('https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/cakraawijaya/SIAKLIK/master/public/assets/pdf/kanker.pdf', true)">
                         <i class="fas fa-book-open mr-2" aria-hidden="true"></i>
                         <span>Kanker</span>
                     </a>
                 </li>
                 <li>
-                    <a onclick="openLink('https://drive.google.com/file/d/1fsEQ7-fsJjv8GUbRs48i4GWch8kuU5RG/preview', true)">
+                    <a onclick="openLink('https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/cakraawijaya/SIAKLIK/master/public/assets/pdf/kusta.pdf', true)">
                         <i class="fas fa-book-open mr-2" aria-hidden="true"></i>
                         <span>Kusta</span>
                     </a>
                 </li>
                 <li>
-                    <a onclick="openLink('https://drive.google.com/file/d/1POFy5khk9UL_wJXCcr9SNxtFvEqv-xLW/preview', true)">
+                    <a onclick="openLink('https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/cakraawijaya/SIAKLIK/master/public/assets/pdf/stunting.pdf', true)">
                         <i class="fas fa-book-open mr-2" aria-hidden="true"></i>
                         <span>Stunting (Gizi Buruk)</span>
                     </a>
                 </li>
                 <li>
-                    <a onclick="openLink('https://drive.google.com/file/d/1SB-uLNL_aXWlb5fZD_YkLlZhLcpO1f33/preview', true)" class="custom-mb-sidebar">
+                    <a onclick="openLink('https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/cakraawijaya/SIAKLIK/master/public/assets/pdf/covid19.pdf', true)" class="custom-mb-sidebar">
                         <i class="fas fa-book-open mr-2" aria-hidden="true"></i>
                         <span>COVID-19</span>
                     </a>

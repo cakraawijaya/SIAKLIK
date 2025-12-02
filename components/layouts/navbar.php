@@ -72,7 +72,7 @@
                                 <div class="dropdown-menu-child">
                                     <a class="dropdown-item" onclick="openLink('<?= BASE_URL ?>index.php?page=patient/chart/chart_options', false)">
                                         Grafik Kunjungan
-                                        <i class="fas fa-chart-bar ml-1" aria-hidden="true"></i>
+                                        <i class="fas fa-chart-line ml-1" aria-hidden="true"></i>
                                     </a>
                                 </div>
                                 <div class="dropdown-divider"></div>

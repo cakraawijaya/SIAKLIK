@@ -30,10 +30,6 @@ a.carousel-control-next:hover {
   transform: translateX(-50%);
   background: rgb(20 20 20 / 70%);
   border-radius: 24px;
-  -webkit-border-radius: 24px;
-  -moz-border-radius: 24px;
-  -ms-border-radius: 24px;
-  -o-border-radius: 24px;
 }
 
 .carousel-caption h3 {
@@ -52,8 +48,8 @@ a.carousel-control-next:hover {
 }
 
 
-/* =========================== DESKTOP (1200px – 1366px) ========================= */
-@media (min-width: 1200px) and (max-width: 1366px) {
+/* =========================== DESKTOP (1200px – 1368px) ========================= */
+@media (min-width: 1200px) and (max-width: 1368px) {
   /* ------------------- Pengaturan Global --------------------- */
   .carousel-content img {
     height: 494px;
@@ -152,8 +148,8 @@ a.carousel-control-next:hover {
 }
 
 
-/* ===================== TABLET LANDSCAPE (821px – 991px) ======================== */
-@media (min-width: 821px) and (max-width: 991px) {
+/* ===================== TABLET LANDSCAPE (853px – 991px) ======================== */
+@media (min-width: 853px) and (max-width: 991px) {
   /* ------------------- Pengaturan Global --------------------- */
   .carousel-content img {
     height: 380px;
@@ -207,8 +203,8 @@ a.carousel-control-next:hover {
 }
 
 
-/* ====================== TABLET POTRAIT (768px – 820px) ========================= */
-@media (min-width: 768px) and (max-width: 820px) {
+/* ====================== TABLET POTRAIT-1 (820px – 852px) ======================= */
+@media (min-width: 820px) and (max-width: 852px) {
   /* ------------------- Pengaturan Global --------------------- */
   .carousel-content img {
     height: 400px;
@@ -258,6 +254,47 @@ a.carousel-control-next:hover {
 
   body.sidebar-expanded .carousel-indicators {
     bottom: 1.2rem;
+  }
+}
+
+
+/* ====================== TABLET POTRAIT-2 (768px – 819px) ======================= */
+@media (min-width: 768px) and (max-width: 819px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .carousel-content img {
+    height: 400px;
+  }
+
+  a.carousel-control-prev,
+  a.carousel-control-next {
+    width: 40px;
+  }
+
+  .carousel-caption {
+    padding: 1.6rem 2.2rem;
+    width: 60% !important;
+    bottom: 1rem !important;
+  }
+
+  .carousel-caption h3 {
+    font-size: 2rem;
+  }
+
+  .carousel-caption p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1.3rem;
+  }
+
+  .carousel-indicators {
+    bottom: 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .carousel-indicators li {
+    width: 1.8rem;
+    height: 0.4rem;
+    margin: 0 0.38rem;
   }
 }
 

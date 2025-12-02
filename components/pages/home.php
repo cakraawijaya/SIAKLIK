@@ -22,49 +22,49 @@
             <!-- Slides -->
             <div class="carousel-content select-none">
                 <div class="carousel-item active" data-interval="4000">
-                    <img height="380" src="<?= BASE_URL ?>public/assets/img/highlights/ambulan.jpg" class="d-block w-100" alt="poli ambulance">
+                    <img src="<?= BASE_URL ?>public/assets/img/highlights/ambulan.jpg" class="d-block w-100" alt="poli ambulance">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center text-center">
                         <h3>Ambulan</h3>
                         <p class="text-light">Layanan Ambulan Siap 24 Jam</p>
                     </div>
                 </div>
                 <div class="carousel-item" data-interval="4000">
-                    <img height="380" src="<?= BASE_URL ?>public/assets/img/highlights/fasilitas_poli_gigi.jpg" class="d-block w-100" alt="pemeriksaan gigi">
+                    <img src="<?= BASE_URL ?>public/assets/img/highlights/fasilitas_poli_gigi.jpg" class="d-block w-100" alt="pemeriksaan gigi">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center text-center">
                         <h3>Poli Gigi</h3>
                         <p class="text-light">Pemeriksaan dan Perawatan Gigi Profesional</p>
                     </div>
                 </div>
                 <div class="carousel-item" data-interval="4000">
-                    <img height="380" src="<?= BASE_URL ?>public/assets/img/highlights/tindakan_keperawatan.jpg" class="d-block w-100" alt="Poli Umum">
+                    <img src="<?= BASE_URL ?>public/assets/img/highlights/tindakan_keperawatan.jpg" class="d-block w-100" alt="Poli Umum">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center text-center">
                         <h3>Poli Umum</h3>
                         <p class="text-light">Pelayanan Kesehatan Umum dan Keperawatan</p>
                     </div>
                 </div>
                 <div class="carousel-item" data-interval="4000">
-                    <img height="380" src="<?= BASE_URL ?>public/assets/img/highlights/bakti_sosial.jpg" class="d-block w-100" alt="Bakti Sosial">
+                    <img src="<?= BASE_URL ?>public/assets/img/highlights/bakti_sosial.jpg" class="d-block w-100" alt="Bakti Sosial">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center text-center">
                         <h3>Bakti Sosial</h3>
                         <p class="text-light">Kegiatan Sosial untuk Masyarakat</p>
                     </div>
                 </div>
                 <div class="carousel-item" data-interval="4000">
-                    <img height="380" src="<?= BASE_URL ?>public/assets/img/highlights/donor_darah.jpg" class="d-block w-100" alt="Donor Darah">
+                    <img src="<?= BASE_URL ?>public/assets/img/highlights/donor_darah.jpg" class="d-block w-100" alt="Donor Darah">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center text-center">
                         <h3>Donor Darah</h3>
                         <p class="text-light">Kegiatan Donor Darah Rutin oleh Poliklinik</p>
                     </div>
                 </div>
                 <div class="carousel-item" data-interval="4000">
-                    <img height="380" src="<?= BASE_URL ?>public/assets/img/highlights/tes_kesehatan.jpg" class="d-block w-100" alt="Tes Kesehatan">
+                    <img src="<?= BASE_URL ?>public/assets/img/highlights/tes_kesehatan.jpg" class="d-block w-100" alt="Tes Kesehatan">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center text-center">
                         <h3>Tes Kesehatan Poliklinik</h3>
                         <p class="text-light">Pemeriksaan Kesehatan Lengkap</p>
                     </div>
                 </div>
                 <div class="carousel-item" data-interval="4000">
-                    <img height="380" src="<?= BASE_URL ?>public/assets/img/highlights/khitan_massal.jpg" class="d-block w-100" alt="Khitanan Massal">
+                    <img src="<?= BASE_URL ?>public/assets/img/highlights/khitan_massal.jpg" class="d-block w-100" alt="Khitanan Massal">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center text-center">
                         <h3>Khitanan Massal</h3>
                         <p class="text-light">Program Khitanan Massal Aman dan Terjangkau untuk Seluruh Lapisan Masyarakat yang membutuhkan</p>
@@ -166,7 +166,7 @@
                                                 </p>
                                             </div>
                                             <div class="card-footer text-center border-0 mt-auto">
-                                                <a onclick="openLink('https://drive.google.com/file/d/1IUDjC2UDmxYaZn8Jzari8G7tagSactuT/preview', true)" class="text-success font-weight-bold">
+                                                <a onclick="openLink('https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/cakraawijaya/SIAKLIK/master/public/assets/pdf/hiv.pdf', true)" class="text-success font-weight-bold">
                                                     Baca Selengkapnya<i class="fas fa-external-link-alt ml-1" aria-hidden="true"></i>
                                                 </a>
                                             </div>
@@ -188,7 +188,7 @@
                                                 </p>
                                             </div>
                                             <div class="card-footer text-center border-0 mt-auto">
-                                                <a onclick="openLink('https://drive.google.com/file/d/13aN5HJiE0dy-oL_VX7scSd5IIbAyJfL9/preview', true)" class="text-success font-weight-bold">
+                                                <a onclick="openLink('https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/cakraawijaya/SIAKLIK/master/public/assets/pdf/stroke.pdf', true)" class="text-success font-weight-bold">
                                                     Baca Selengkapnya<i class="fas fa-external-link-alt ml-1" aria-hidden="true"></i>
                                                 </a>
                                             </div>
@@ -210,7 +210,7 @@
                                                 </p>
                                             </div>
                                             <div class="card-footer text-center border-0 mt-auto">
-                                                <a onclick="openLink('https://drive.google.com/file/d/1L_rULKmC9Lg8PCmSWz2VxJ3XpytEDL4o/preview', true)" class="text-success font-weight-bold">
+                                                <a onclick="openLink('https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/cakraawijaya/SIAKLIK/master/public/assets/pdf/tuberkulosis.pdf', true)" class="text-success font-weight-bold">
                                                     Baca Selengkapnya<i class="fas fa-external-link-alt ml-1" aria-hidden="true"></i>
                                                 </a>
                                             </div>
@@ -237,7 +237,7 @@
                                                 </p>
                                             </div>
                                             <div class="card-footer text-center border-0 mt-auto">
-                                                <a onclick="openLink('https://drive.google.com/file/d/1ugoq8IDg2wiIEDX3LCMjDK7863xCdYA0/preview', true)" class="text-success font-weight-bold">
+                                                <a onclick="openLink('https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/cakraawijaya/SIAKLIK/master/public/assets/pdf/hepatitis.pdf', true)" class="text-success font-weight-bold">
                                                     Baca Selengkapnya<i class="fas fa-external-link-alt ml-1" aria-hidden="true"></i>
                                                 </a>
                                             </div>
@@ -259,7 +259,7 @@
                                                 </p>
                                             </div>
                                             <div class="card-footer text-center border-0 mt-auto">
-                                                <a onclick="openLink('https://drive.google.com/file/d/1PpQgSf7SEhG4xo_-KhbGr_RwsXzTzJQr/preview', true)" class="text-success font-weight-bold">
+                                                <a onclick="openLink('https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/cakraawijaya/SIAKLIK/master/public/assets/pdf/diare.pdf', true)" class="text-success font-weight-bold">
                                                     Baca Selengkapnya<i class="fas fa-external-link-alt ml-1" aria-hidden="true"></i>
                                                 </a>
                                             </div>
@@ -281,7 +281,7 @@
                                                 </p>
                                             </div>
                                             <div class="card-footer text-center border-0 mt-auto">
-                                                <a onclick="openLink('https://drive.google.com/file/d/15MP8PG4tTvAvhI2rAtL94eLkxOX88kxi/preview', true)" class="text-success font-weight-bold">
+                                                <a onclick="openLink('https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/cakraawijaya/SIAKLIK/master/public/assets/pdf/pneumonia.pdf', true)" class="text-success font-weight-bold">
                                                     Baca Selengkapnya<i class="fas fa-external-link-alt ml-1" aria-hidden="true"></i>
                                                 </a>
                                             </div>
@@ -308,7 +308,7 @@
                                                 </p>
                                             </div>
                                             <div class="card-footer text-center border-0 mt-auto">
-                                                <a onclick="openLink('https://drive.google.com/file/d/16cio4CNtYGz1Q2eht0Z7h8RXt77J50RQ/preview', true)" class="text-success font-weight-bold">
+                                                <a onclick="openLink('https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/cakraawijaya/SIAKLIK/master/public/assets/pdf/difteri.pdf', true)" class="text-success font-weight-bold">
                                                     Baca Selengkapnya<i class="fas fa-external-link-alt ml-1" aria-hidden="true"></i>
                                                 </a>
                                             </div>
@@ -330,7 +330,7 @@
                                                 </p>
                                             </div>
                                             <div class="card-footer text-center border-0 mt-auto">
-                                                <a onclick="openLink('https://drive.google.com/file/d/1XNv2ch2kjCIQZ_1eK2iTu3jnHGp39Pkw/preview', true)" class="text-success font-weight-bold">
+                                                <a onclick="openLink('https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/cakraawijaya/SIAKLIK/master/public/assets/pdf/dbd.pdf', true)" class="text-success font-weight-bold">
                                                     Baca Selengkapnya<i class="fas fa-external-link-alt ml-1" aria-hidden="true"></i>
                                                 </a>
                                             </div>
@@ -352,7 +352,7 @@
                                                 </p>
                                             </div>
                                             <div class="card-footer text-center border-0 mt-auto">
-                                                <a onclick="openLink('https://drive.google.com/file/d/1jiIc5jOHaAaTKqqtn1-Trpg4XaShhbFx/preview', true)" class="text-success font-weight-bold">
+                                                <a onclick="openLink('https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/cakraawijaya/SIAKLIK/master/public/assets/pdf/kanker.pdf', true)" class="text-success font-weight-bold">
                                                     Baca Selengkapnya<i class="fas fa-external-link-alt ml-1" aria-hidden="true"></i>
                                                 </a>
                                             </div>
@@ -379,7 +379,7 @@
                                                 </p>
                                             </div>
                                             <div class="card-footer text-center border-0 mt-auto">
-                                                <a onclick="openLink('https://drive.google.com/file/d/1fsEQ7-fsJjv8GUbRs48i4GWch8kuU5RG/preview', true)" class="text-success font-weight-bold">
+                                                <a onclick="openLink('https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/cakraawijaya/SIAKLIK/master/public/assets/pdf/kusta.pdf', true)" class="text-success font-weight-bold">
                                                     Baca Selengkapnya<i class="fas fa-external-link-alt ml-1" aria-hidden="true"></i>
                                                 </a>
                                             </div>
@@ -401,7 +401,7 @@
                                                 </p>
                                             </div>
                                             <div class="card-footer text-center border-0 mt-auto">
-                                                <a onclick="openLink('https://drive.google.com/file/d/1POFy5khk9UL_wJXCcr9SNxtFvEqv-xLW/preview', true)" class="text-success font-weight-bold">
+                                                <a onclick="openLink('https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/cakraawijaya/SIAKLIK/master/public/assets/pdf/stunting.pdf', true)" class="text-success font-weight-bold">
                                                     Baca Selengkapnya<i class="fas fa-external-link-alt ml-1" aria-hidden="true"></i>
                                                 </a>
                                             </div>
@@ -423,7 +423,7 @@
                                                 </p>
                                             </div>
                                             <div class="card-footer text-center border-0 mt-auto">
-                                                <a onclick="openLink('https://drive.google.com/file/d/1SB-uLNL_aXWlb5fZD_YkLlZhLcpO1f33/preview', true)" class="text-success font-weight-bold">
+                                                <a onclick="openLink('https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/cakraawijaya/SIAKLIK/master/public/assets/pdf/covid19.pdf', true)" class="text-success font-weight-bold">
                                                     Baca Selengkapnya<i class="fas fa-external-link-alt ml-1" aria-hidden="true"></i>
                                                 </a>
                                             </div>
