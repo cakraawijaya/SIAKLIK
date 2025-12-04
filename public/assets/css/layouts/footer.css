@@ -513,12 +513,12 @@ body.sidebar-expanded a.social-icon {
   }
 
   body.sidebar-expanded .social-wrap {
-    padding-top: 1.98rem;
+    padding-top: 1.87rem;
   }
 
   body.sidebar-expanded .social-wrap > a:nth-child(3),
   body.sidebar-expanded .social-wrap > a:nth-child(4) {
-    padding-top: 0.42rem;
+    padding-top: 0.45rem;
   }
 
   body.sidebar-expanded .footer-copyright {
