@@ -1,0 +1,641 @@
+/* ===================================================================================== */
+/* ===                                 GALLERY STYLE                                 === */
+/* ===================================================================================== */
+
+/* ==================================== GLOBAL =================================== */
+.gallery-photo-section {
+  margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
+}
+
+.gallery-video-section {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+}
+
+.gallery-foto-text h2,
+.gallery-video-text h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 2rem;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(36, 37, 45, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.gallery-item:hover .overlay {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.overlay-text {
+  color: #fff;
+  text-align: center;
+  font-size: 1.3rem;
+  padding: 0 15px;
+  max-width: 90%;
+  word-wrap: break-word;
+}
+
+.overlay-text h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-top: 2rem;
+  border-radius: 12px;
+}
+
+.video-wrapper::before {
+  content: '';
+  display: none;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  pointer-events: auto;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  border: 0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  z-index: 1;
+  object-fit: cover;
+}
+
+
+/* =========================== DESKTOP (1200px – 1368px) ========================= */
+@media (min-width: 1200px) and (max-width: 1368px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .gallery-foto-text h2,
+  .gallery-video-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .gallery-foto-text p,
+  .gallery-video-text p {
+    font-size: 0.95rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+  }
+
+  .gallery-item img {
+    height: 190px;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed main {
+    padding: 4rem 5rem 2.5rem 5rem;
+  }
+
+  body.sidebar-collapsed .gallery-photo-section p,
+  body.sidebar-collapsed .gallery-video-section p {
+    line-height: 2;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-collapsed .video-wrapper {
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 15px;
+    margin-top: 1.8rem;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .gallery-photo-section h2,
+  body.sidebar-expanded .gallery-video-section h2 {
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  body.sidebar-expanded .gallery-photo-section p,
+  body.sidebar-expanded .gallery-video-section p {
+    text-align: center;
+    line-height: 1.7;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-expanded .video-wrapper {
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 15px;
+    margin-top: 1.8rem;
+  }
+}
+
+
+/* ======================= SMALL DESKTOP (992px – 1199px) ======================== */
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .gallery-foto-text h2,
+  .gallery-video-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .gallery-foto-text p,
+  .gallery-video-text p {
+    font-size: 0.9rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+  }
+
+  .gallery-item img {
+    height: 190px;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed main {
+    padding: 4rem 5rem 2.5rem 5rem;
+  }
+
+  body.sidebar-collapsed .gallery-photo-section p,
+  body.sidebar-collapsed .gallery-video-section p {
+    line-height: 2;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-collapsed .video-wrapper {
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 15px;
+    margin-top: 1.8rem;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .gallery-photo-section h2,
+  body.sidebar-expanded .gallery-video-section h2 {
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  body.sidebar-expanded .gallery-photo-section p,
+  body.sidebar-expanded .gallery-video-section p {
+    text-align: center;
+    line-height: 1.7;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-expanded .video-wrapper {
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 15px;
+    margin-top: 1.8rem;
+  }
+}
+
+
+/* ===================== TABLET LANDSCAPE-1 (912px – 991px) ====================== */
+@media (min-width: 912px) and (max-width: 991px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .gallery-photo-section 
+  .gallery-video-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .gallery-foto-text h2,
+  .gallery-video-text h2 {
+    font-size: 1.6rem;
+  }
+
+  .gallery-foto-text p,
+  .gallery-video-text p {
+    font-size: 0.9rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
+  .gallery-item img {
+    height: 180px;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .gallery-photo-section p,
+  body.sidebar-collapsed .gallery-video-section p {
+    line-height: 2;
+    margin-top: 1.8rem;
+    padding: 0 1.95rem;
+  }
+
+  body.sidebar-collapsed .video-wrapper {
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 15px;
+    margin-top: 1.8rem;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .gallery-photo-section h2,
+  body.sidebar-expanded .gallery-video-section h2 {
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  body.sidebar-expanded .gallery-photo-section p,
+  body.sidebar-expanded .gallery-video-section p {
+    text-align: center;
+    line-height: 1.7;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-expanded .video-wrapper {
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 15px;
+    margin-top: 1.8rem;
+  }
+}
+
+
+/* ===================== TABLET LANDSCAPE-2 (853px – 911px) ====================== */
+@media (min-width: 853px) and (max-width: 911px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .gallery-photo-section 
+  .gallery-video-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .gallery-foto-text h2,
+  .gallery-video-text h2 {
+    font-size: 1.6rem;
+  }
+
+  .gallery-foto-text p,
+  .gallery-video-text p {
+    font-size: 0.9rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
+  .gallery-item img {
+    height: 180px;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed main {
+    padding: 4rem 6rem 2.5rem 6rem;
+  }
+  
+  body.sidebar-collapsed .gallery-photo-section p,
+  body.sidebar-collapsed .gallery-video-section p {
+    line-height: 2;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-collapsed .video-wrapper {
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 15px;
+    margin-top: 1.8rem;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .gallery-photo-section h2,
+  body.sidebar-expanded .gallery-video-section h2 {
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  body.sidebar-expanded .gallery-photo-section p,
+  body.sidebar-expanded .gallery-video-section p {
+    text-align: center;
+    line-height: 1.7;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-expanded .video-wrapper {
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 15px;
+    margin-top: 1.8rem;
+  }
+}
+
+
+/* ====================== TABLET POTRAIT-1 (820px – 852px) ======================= */
+@media (min-width: 820px) and (max-width: 852px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .gallery-photo-section 
+  .gallery-video-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .gallery-foto-text h2,
+  .gallery-video-text h2 {
+    font-size: 1.6rem;
+  }
+
+  .gallery-foto-text p,
+  .gallery-video-text p {
+    font-size: 0.9rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
+  .gallery-item img {
+    height: 180px;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .gallery-photo-section p,
+  body.sidebar-collapsed .gallery-video-section p {
+    line-height: 2;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-collapsed .video-wrapper {
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 15px;
+    margin-top: 1.8rem;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .gallery-photo-section h2,
+  body.sidebar-expanded .gallery-video-section h2 {
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  body.sidebar-expanded .gallery-photo-section p,
+  body.sidebar-expanded .gallery-video-section p {
+    text-align: center;
+    line-height: 1.7;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-expanded .video-wrapper {
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 15px;
+    margin-top: 1.8rem;
+  }
+}
+
+
+/* ====================== TABLET POTRAIT-2 (768px – 819px) ======================= */
+@media (min-width: 768px) and (max-width: 819px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .gallery-photo-section 
+  .gallery-video-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .gallery-foto-text h2,
+  .gallery-video-text h2 {
+    font-size: 1.6rem;
+  }
+
+  .gallery-foto-text p,
+  .gallery-video-text p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-top: 1.8rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
+  .gallery-item img {
+    height: 180px;
+  }
+
+  .video-wrapper {
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 15px;
+    margin-top: 1.8rem;
+  }
+}
+
+
+/* ========================== HP BESAR (521px – 767px) =========================== */
+@media (min-width: 521px) and (max-width: 767px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .gallery-photo-section,
+  .gallery-video-section {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .gallery-foto-text h2,
+  .gallery-video-text h2 {
+    font-size: 1.5rem;
+    text-align: left;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .gallery-foto-text p,
+  .gallery-video-text p {
+    font-size: 0.9rem;
+    text-align: justify;
+    line-height: 1.7;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 14px;
+  }
+
+  .gallery-item img {
+    height: 160px;
+  }
+
+  .video-wrapper {
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+    margin-top: 25px;
+  }
+
+  .video-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+  }
+}
+
+
+/* ========================== HP KECIL (375px - 520px) =========================== */
+@media (min-width: 375px) and (max-width: 520px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  main {
+    padding: 30px;
+  }
+
+  .gallery-video-section {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .gallery-foto-text h2,
+  .gallery-video-text h2 {
+    font-size: 1.5rem;
+    text-align: left;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .gallery-foto-text p,
+  .gallery-video-text p {
+    font-size: 0.85rem;
+    text-align: justify;
+    line-height: 1.8;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 25px;
+  }
+
+  .gallery-item img {
+    height: 140px;
+  }
+  
+  .video-wrapper {
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 16px;
+    margin-top: 25px;
+  }
+
+  .video-wrapper iframe {
+    width: 108%;
+    height: 102%;
+    border: 0;
+    display: block;
+  }
+}
+
+
+/* ========================== HP PALING KECIL (≤ 374px) ========================== */
+@media (max-width: 374px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  main {
+    padding: 20px;
+  }
+
+  .gallery-video-section {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .gallery-foto-text h2,
+  .gallery-video-text h2 {
+    font-size: 1.5rem;
+    text-align: left;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .gallery-foto-text p,
+  .gallery-video-text p {
+    font-size: 0.85rem;
+    text-align: justify;
+    line-height: 1.8;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 25px;
+  }
+
+  .gallery-item {
+    border-radius: 10px;
+  }
+
+  .gallery-item img {
+    height: 140px;
+  }
+  
+  .video-wrapper {
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+    margin-top: 25px;
+  }
+
+  .video-wrapper iframe {
+    width: 110%;
+    height: 103%;
+    border: 0;
+    display: block;
+  }
+}

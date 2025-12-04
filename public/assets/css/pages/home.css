@@ -1,0 +1,644 @@
+/* ===================================================================================== */
+/* ===                                   HOME STYLE                                  === */
+/* ===================================================================================== */
+
+/* ==================================== GLOBAL =================================== */
+.about-section {
+  padding-bottom: 1.5rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.about-section .row {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.about-section .calendar-wrapper,
+.about-section .about-wrapper {
+  box-sizing: border-box;
+}
+
+.calendar {
+  background: #fff;
+  text-align: center;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 4px 8px 0px #4f7234;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.calendar-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1 1 auto;
+}
+
+.calendar #namaBulan {
+  padding: 10px;
+  background: #289a00;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.calendar #namaHari,
+.calendar #tanggal,
+.calendar #tahun {
+  margin: 5px 0;
+}
+
+.calendar #namaHari{
+  font-size: 25px;
+  font-weight: 600;
+  color: #999;
+}
+
+.calendar #tanggal{
+  line-height: 1em;
+  font-size: 45px;
+  font-weight: 700;
+  color: #333;
+}
+
+.calendar #tahun{
+  font-size: 28px;
+  font-weight: 500;
+  color: #999;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  overflow: visible;
+}
+
+.about-text h2 {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.about-text p {
+  font-family: "Roboto", sans-serif;
+  text-align: justify;
+  margin-bottom: 17px;
+  font-weight: 500;
+}
+
+.about-text ol {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.about-list {
+  text-align: justify;
+  padding-left: 20px;
+  line-height: 1.8;
+  counter-reset: item;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about-list li {
+  counter-increment: item;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.75em;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.about-list li::before {
+  content: counter(item) ".";
+  flex: 0 0 1.8em;
+  text-align: right;
+  margin-right: 0.5em;
+}
+
+.about-list span {
+  padding-left: 8px;
+}
+
+.article-section {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+}
+
+.article-section .carousel-wrapper {
+  position: relative;
+  min-height: 650px;
+  margin-top: 3rem;
+}
+
+.article-section .carousel-wrapper .carousel-controls .carousel-controls-title {
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
+  font-size: 17px;
+}
+
+.article-section .carousel-wrapper .carousel-content {
+  min-height: 600px;
+}
+
+.article-section .carousel-wrapper .carousel-content img {
+  display: block;
+  width: 100vw;
+  object-fit: fill;
+}
+
+.article-section .carousel-wrapper .carousel-controls a {
+  color: #fff;
+}
+
+.article-section .carousel-wrapper .carousel-controls a:hover,
+.article-section .carousel-wrapper .card-footer a:hover {
+  cursor: pointer;
+}
+
+.article-section .carousel-wrapper .card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.article-section .carousel-wrapper .card-header {
+  background: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.75rem;
+}
+
+.article-section .carousel-wrapper .card-body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #dee2e6;
+  text-align: justify;
+}
+
+.article-section .carousel-wrapper .card-footer {
+  margin-top: auto;
+}
+
+.article-section .carousel-wrapper .card-header,
+.article-section .carousel-wrapper .card-footer {
+  background: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.article-section p.card-text {
+  font-size: 14px !important;
+}
+
+/* ---------------- Tampilan Sidebar Ditutup ----------------- */
+body.sidebar-collapsed .calendar-wrapper {
+  padding-right: 3.5rem;
+}
+
+body.sidebar-collapsed .calendar {
+  height: 97%;
+}
+
+body.sidebar-collapsed .carousel-item .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--card-gap-large);
+  margin: 0;
+}
+
+body.sidebar-collapsed .carousel-item .card-wrapper {
+  padding: 0;
+  flex: 1 1 calc(33.333% - var(--card-gap-large));
+}
+
+body.sidebar-collapsed .article-section .carousel-content img {
+  max-height: 250px;
+}
+
+/* ----------------- Tampilan Sidebar Dibuka ----------------- */
+body.sidebar-expanded .calendar {
+  height: 80%;
+}
+
+body.sidebar-expanded .about-wrapper {
+  padding-left: 50px;
+}
+
+body.sidebar-expanded .carousel-item .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--card-gap-small);
+  margin: 0;
+}
+
+body.sidebar-expanded .carousel-item .card-wrapper {
+  padding: 0;
+  flex: 1 1 calc(33.333% - var(--card-gap-small));
+}
+
+body.sidebar-expanded .article-section .carousel-content img {
+  max-height: 170px;
+}
+
+
+/* ========================= SMALL DESKTOP (1024–1366px) ========================= */
+@media (min-width: 1024px) and (max-width: 1366px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .about-section .about-text h2 {
+    margin-top: 0px !important;
+  }
+
+  .about-section .row {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem;
+    margin: 0;
+  }
+
+  .article-section .carousel-wrapper {
+    padding: 0 1.5rem;
+    margin-top: 2.5rem;
+    min-height: auto !important;
+    height: auto !important;
+  }
+
+  .article-section .carousel-content {
+    min-height: auto !important;
+    height: auto !important;
+  }
+
+  .article-section .carousel-item .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 1rem;
+    margin: 0;
+  }
+
+  .article-section .carousel-item .card-wrapper {
+    flex: 0 0 32%;
+    max-width: 32%;
+    padding: 0;
+  }
+
+  .article-section .carousel-content img {
+    width: 100%;
+    height: auto !important;
+    max-height: 200px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .article-section .carousel-wrapper .card {
+    display: flex;
+    flex-direction: column;
+    height: auto !important;
+  }
+
+  .article-section .carousel-wrapper .card-body {
+    flex: 1 1 auto;
+    height: auto !important;
+  }
+
+  .article-section .carousel-wrapper .card-footer {
+    margin-top: auto;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .about-wrapper {
+    flex: 0 0 calc(75% - 0.8rem);
+    max-width: calc(75% - 0.8rem);
+    padding: 0 1rem !important;
+  }
+
+  body.sidebar-collapsed .calendar-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex: 0 0 25%;
+    max-width: 25%;
+    padding: 0 0.8rem !important;
+  }
+
+  body.sidebar-collapsed .calendar {
+    height: 250px !important;
+    max-height: 250px !important;
+  }
+
+  body.sidebar-collapsed .article-section .carousel-wrapper {
+    padding: 0 0.5rem;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .about-wrapper {
+    flex: 0 0 65%;
+    max-width: 65%;
+    padding: 0 1rem !important;
+  }
+
+  body.sidebar-expanded .calendar-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex: 0 0 35%;
+    max-width: 35%;
+    padding: 0 1rem !important;
+  }
+
+  body.sidebar-expanded .calendar {
+    height: 230px !important;
+    max-height: 230px !important;
+  }
+
+  body.sidebar-expanded .article-section .carousel-wrapper {
+    padding: 0;
+  }
+}
+
+
+/* ============================= TABLET (600–1023px) ============================= */
+@media (min-width: 600px) and (max-width: 1023px)  {
+  /* ------------------- Pengaturan Global --------------------- */
+  .about-section .about-text h2 {
+    margin-top: 0px !important;
+  }
+
+  .about-section .row {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .about-section .calendar-wrapper {
+    flex: 0 0 35% !important;
+    max-width: 35% !important;
+    width: 35% !important;
+    padding: 0 0.8rem !important;
+  }
+
+  .about-section .calendar {
+    height: 260px !important;
+    max-height: 260px !important;
+  }
+
+  .calendar #namaBulan { 
+    font-size: 20px; 
+  }
+
+  .about-section .about-wrapper {
+    flex: 0 0 calc(65% - 1.35rem) !important;
+    max-width: calc(65% - 1.35rem) !important;
+    width: calc(65% - 1.35rem) !important;
+    padding: 0 1.35rem !important;
+  }
+
+  .article-section .carousel-content img {
+    height: 200px !important;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .calendar-wrapper {
+    padding: 0 1rem !important;
+  }
+
+  body.sidebar-collapsed .calendar {
+    height: 300px !important;
+    max-height: 300px !important;
+  }
+
+  body.sidebar-collapsed .carousel-item .row {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: center;
+    gap: 1rem !important;
+    margin: 0 1rem !important;
+  }
+
+  body.sidebar-collapsed .carousel-item .card-wrapper {
+    flex: 0 0 calc(33.333% - 1rem) !important;
+    max-width: calc(33.333% - 1rem) !important;
+  }
+
+  body.sidebar-collapsed .article-section .carousel-content img {
+    height: 170px !important;
+    object-fit: cover;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .calendar-wrapper {
+    padding: 0 1rem !important;
+  }
+
+  body.sidebar-expanded .calendar {
+    height: 220px !important;
+    max-height: 220px !important;
+  }
+
+  body.sidebar-expanded .carousel-item .row {
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    gap: 3rem !important;
+    margin: 1.2rem 0 0 0 !important;
+    padding-left: 4rem !important;
+    padding-right: 4rem !important;
+    align-items: center;
+  }
+
+  body.sidebar-expanded .carousel-item .card-wrapper {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  body.sidebar-expanded .article-section .carousel-content img {
+    height: 260px !important;
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+
+/* ============================ HP BESAR (480–600px) ============================= */
+@media (min-width: 480px) and (max-width: 600px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .about-section {
+    padding: 0;
+    margin: 0;
+  }
+
+  .about-section .row,
+  .carousel-item .row {
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    gap: 1.2rem;
+  }
+
+  .about-wrapper,
+  .article-wrapper {
+    padding: 0 2rem !important;
+  }
+
+  .calendar-wrapper {
+    padding: 0 9rem !important;
+  }
+
+  .calendar {
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+  }
+
+  .calendar-body {
+    height: 130px !important;
+  }
+
+  .calendar #namaBulan { font-size: 20px; }
+  .calendar #namaHari { font-size: 17px; }
+  .calendar #tanggal { font-size: 30px; }
+  .calendar #tahun { font-size: 19px; }
+
+  .about-text h2,
+  .article-text h2 {
+    text-align: center;
+    font-size: 1.5rem !important;
+  }
+
+  .about-section .about-text p,
+  .about-section .about-text span,
+  .article-section .article-text p,
+  .article-section .carousel-controls-title p,
+  .article-section .carousel-item .card-body p,
+  .article-section .carousel-item .card-footer a {
+    font-size: 0.9rem !important;
+  }
+
+  .article-section .carousel-wrapper .row {
+    margin: 0 2rem !important;
+  }
+
+  .carousel-item .card-wrapper {
+    flex: 1 1 100%;
+    margin-top: 2rem;
+  }
+
+  .article-section .carousel-content img {
+    max-height: 180px;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .article-section .carousel-item .card-header h5 {
+    font-size: 1rem;
+  }
+}
+
+
+/* ============================= HP KECIL (≤ 480px) ============================== */
+@media (max-width: 480px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .about-section {
+    padding: 0;
+    margin: 0;
+  }
+
+  .about-section .row,
+  .carousel-item .row {
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    gap: 1rem;
+  }
+
+  .about-section .calendar-wrapper,
+  .about-section .about-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .about-section .calendar-wrapper {
+    padding: 0 4rem !important;
+  }
+
+  .about-section .about-wrapper {
+    padding: 0 1rem !important;
+  }
+
+  .calendar {
+    font-size: 0.5rem;
+    margin-bottom: 15px;
+  }
+
+  .calendar-body {
+    height: 120px !important;
+  }
+
+  .calendar #namaBulan { font-size: 20px; }
+  .calendar #namaHari { font-size: 17px; }
+  .calendar #tanggal { font-size: 30px; }
+  .calendar #tahun { font-size: 19px; }
+
+  .about-text h2,
+  .article-text h2 {
+    text-align: center;
+    font-size: 1.5rem !important;
+    font-weight: 700;
+  }
+
+  .about-section .about-text p,
+  .about-section .about-text span,
+  .article-section .article-text p,
+  .article-section .carousel-controls-title p,
+  .article-section .carousel-item .card-body p,
+  .article-section .carousel-item .card-footer a {
+    font-size: 0.85rem !important;
+  }
+
+  .about-section .about-text p,
+  .about-section .about-text span {
+    text-align: justify;
+  }
+
+  .article-wrapper {
+    padding: 0 3rem !important;
+  }
+
+  .carousel-item .card-wrapper {
+    margin-top: 1.5rem;
+    flex: 1 1 100%;
+  }
+
+  .article-section .carousel-content img {
+    max-height: 150px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .article-section .card-header {
+    padding: 0.15rem;
+  }
+
+  .article-section .carousel-item .card-header h5 {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,1336 @@
+/* ===================================================================================== */
+/* ===                            CLINIC FACILITIES STYLE                            === */
+/* ===================================================================================== */
+
+/* ==================================== GLOBAL =================================== */
+.general-unit-section {
+  margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
+}
+
+.dental-unit-section {
+  margin: 3rem 0;
+  padding: 1.5rem 0;
+}
+
+.clinic-lab-section {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+}
+
+.general-unit-section h2,
+.dental-unit-section h2,
+.clinic-lab-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.general-unit-section article,
+.dental-unit-section article,
+.clinic-lab-section article {
+  width: 100%;
+  max-width: 100%;
+}
+
+.general-unit-section iframe,
+.dental-unit-section iframe,
+.clinic-lab-section iframe {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  border: none;
+  margin: 0 auto;
+}
+
+
+/* =========================== DESKTOP (1281px – 1368px) ========================= */
+@media (min-width: 1281px) and (max-width: 1368px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .general-unit-section {
+    margin: 1.5rem 0 3rem 0;
+    padding: 1rem 0.1rem 1.5rem 0.1rem;
+  }
+
+  .dental-unit-section {
+    margin: 1.5rem 0 3rem 0;
+    padding: 1rem 0.1rem 1.5rem 0.1rem;
+  }
+
+  .clinic-lab-section {
+    margin: 1.5rem 0 0 0;
+    padding: 1rem 0.1rem 0 0.1rem;
+  }
+  
+  .general-unit-section h2,
+  .dental-unit-section h2,
+  .clinic-lab-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .general-unit-section p,
+  .dental-unit-section p,
+  .clinic-lab-section p {
+    font-size: 0.95rem;
+  }
+  
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .general-unit-section p,
+  body.sidebar-collapsed .dental-unit-section p,
+  body.sidebar-collapsed .clinic-lab-section p {
+    line-height: 2;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-collapsed .general-unit-section article,
+  body.sidebar-collapsed .dental-unit-section article,
+  body.sidebar-collapsed .clinic-lab-section article {
+    padding: 0 10rem;
+  }
+
+  body.sidebar-collapsed .general-unit-section iframe,
+  body.sidebar-collapsed .dental-unit-section iframe,
+  body.sidebar-collapsed .clinic-lab-section iframe {
+    height: 70.1rem;
+    margin-top: 1.5rem;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .general-unit-section h2,
+  body.sidebar-expanded .dental-unit-section h2,
+  body.sidebar-expanded .clinic-lab-section h2 {
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  body.sidebar-expanded .general-unit-section p,
+  body.sidebar-expanded .dental-unit-section p,
+  body.sidebar-expanded .clinic-lab-section p {
+    text-align: center;
+    line-height: 1.7;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-expanded .general-unit-section article,
+  body.sidebar-expanded .dental-unit-section article,
+  body.sidebar-expanded .clinic-lab-section article {
+    padding: 0 6rem;
+  }
+
+  body.sidebar-expanded .general-unit-section iframe,
+  body.sidebar-expanded .dental-unit-section iframe,
+  body.sidebar-expanded .clinic-lab-section iframe {
+    height: 61.1rem;
+    margin-top: 1.5rem;
+  }
+}
+
+
+/* =========================== DESKTOP (1200px – 1280px) ========================= */
+@media (min-width: 1200px) and (max-width: 1280px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .general-unit-section {
+    margin: 1.5rem 0 3rem 0;
+    padding: 1rem 0.1rem 1.5rem 0.1rem;
+  }
+
+  .dental-unit-section {
+    margin: 1.5rem 0 3rem 0;
+    padding: 1rem 0.1rem 1.5rem 0.1rem;
+  }
+
+  .clinic-lab-section {
+    margin: 1.5rem 0 0 0;
+    padding: 1rem 0.1rem 0 0.1rem;
+  }
+  
+  .general-unit-section h2,
+  .dental-unit-section h2,
+  .clinic-lab-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .general-unit-section p,
+  .dental-unit-section p,
+  .clinic-lab-section p {
+    font-size: 0.95rem;
+  }
+  
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .general-unit-section p,
+  body.sidebar-collapsed .dental-unit-section p,
+  body.sidebar-collapsed .clinic-lab-section p {
+    line-height: 2;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-collapsed .general-unit-section article,
+  body.sidebar-collapsed .dental-unit-section article,
+  body.sidebar-collapsed .clinic-lab-section article {
+    padding: 0 10rem;
+  }
+
+  body.sidebar-collapsed .general-unit-section iframe,
+  body.sidebar-collapsed .dental-unit-section iframe,
+  body.sidebar-collapsed .clinic-lab-section iframe {
+    height: 61.87rem;
+    margin-top: 1.5rem;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .general-unit-section h2,
+  body.sidebar-expanded .dental-unit-section h2,
+  body.sidebar-expanded .clinic-lab-section h2 {
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  body.sidebar-expanded .general-unit-section p,
+  body.sidebar-expanded .dental-unit-section p,
+  body.sidebar-expanded .clinic-lab-section p {
+    text-align: center;
+    line-height: 1.7;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-expanded .general-unit-section article,
+  body.sidebar-expanded .dental-unit-section article,
+  body.sidebar-expanded .clinic-lab-section article {
+    padding: 0 6rem;
+  }
+
+  body.sidebar-expanded .general-unit-section iframe,
+  body.sidebar-expanded .dental-unit-section iframe,
+  body.sidebar-expanded .clinic-lab-section iframe {
+    height: 52.88rem;
+    margin-top: 1.5rem;
+  }
+}
+
+
+/* ======================= SMALL DESKTOP (992px – 1179px) ======================== */
+@media (min-width: 992px) and (max-width: 1179px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .general-unit-section {
+    margin: 1.5rem 0 3rem 0;
+    padding: 1rem 0.1rem 1.5rem 0.1rem;
+  }
+
+  .dental-unit-section {
+    margin: 1.5rem 0 3rem 0;
+    padding: 1rem 0.1rem 1.5rem 0.1rem;
+  }
+
+  .clinic-lab-section {
+    margin: 1.5rem 0 0 0;
+    padding: 1rem 0.1rem 0 0.1rem;
+  }
+  
+  .general-unit-section h2,
+  .dental-unit-section h2,
+  .clinic-lab-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .general-unit-section p,
+  .dental-unit-section p,
+  .clinic-lab-section p {
+    font-size: 0.9rem;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .general-unit-section p,
+  body.sidebar-collapsed .dental-unit-section p,
+  body.sidebar-collapsed .clinic-lab-section p {
+    line-height: 2;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-collapsed .general-unit-section article,
+  body.sidebar-collapsed .dental-unit-section article,
+  body.sidebar-collapsed .clinic-lab-section article {
+    padding: 0 6rem;
+  }
+
+  body.sidebar-collapsed .general-unit-section iframe,
+  body.sidebar-collapsed .dental-unit-section iframe,
+  body.sidebar-collapsed .clinic-lab-section iframe {
+    height: 52.8rem;
+    margin-top: 1.5rem;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .general-unit-section h2,
+  body.sidebar-expanded .dental-unit-section h2,
+  body.sidebar-expanded .clinic-lab-section h2 {
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  body.sidebar-expanded .general-unit-section p,
+  body.sidebar-expanded .dental-unit-section p,
+  body.sidebar-expanded .clinic-lab-section p {
+    text-align: center;
+    line-height: 1.7;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-expanded .general-unit-section article,
+  body.sidebar-expanded .dental-unit-section article,
+  body.sidebar-expanded .clinic-lab-section article {
+    padding: 0 2rem;
+  }
+
+  body.sidebar-expanded .general-unit-section iframe,
+  body.sidebar-expanded .dental-unit-section iframe,
+  body.sidebar-expanded .clinic-lab-section iframe {
+    height: 43.68rem;
+    margin-top: 1.5rem;
+  }
+}
+
+
+/* ==================== TABLET LANDSCAPE-1 (1180px – 1199px) ===================== */
+@media (min-width: 1180px) and (max-width: 1199px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .general-unit-section {
+    margin: 1.5rem 0 3rem 0;
+    padding: 1rem 0.1rem 1.5rem 0.1rem;
+  }
+
+  .dental-unit-section {
+    margin: 1.5rem 0 3rem 0;
+    padding: 1rem 0.1rem 1.5rem 0.1rem;
+  }
+
+  .clinic-lab-section {
+    margin: 1.5rem 0 0 0;
+    padding: 1rem 0.1rem 0 0.1rem;
+  }
+  
+  .general-unit-section h2,
+  .dental-unit-section h2,
+  .clinic-lab-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .general-unit-section p,
+  .dental-unit-section p,
+  .clinic-lab-section p {
+    font-size: 0.9rem;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .general-unit-section p,
+  body.sidebar-collapsed .dental-unit-section p,
+  body.sidebar-collapsed .clinic-lab-section p {
+    line-height: 2;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-collapsed .general-unit-section article,
+  body.sidebar-collapsed .dental-unit-section article,
+  body.sidebar-collapsed .clinic-lab-section article {
+    padding: 0 6rem;
+  }
+
+  body.sidebar-collapsed .general-unit-section iframe,
+  body.sidebar-collapsed .dental-unit-section iframe,
+  body.sidebar-collapsed .clinic-lab-section iframe {
+    height: 65.5rem;
+    margin-top: 1.5rem;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .general-unit-section h2,
+  body.sidebar-expanded .dental-unit-section h2,
+  body.sidebar-expanded .clinic-lab-section h2 {
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  body.sidebar-expanded .general-unit-section p,
+  body.sidebar-expanded .dental-unit-section p,
+  body.sidebar-expanded .clinic-lab-section p {
+    text-align: center;
+    line-height: 1.7;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-expanded .general-unit-section article,
+  body.sidebar-expanded .dental-unit-section article,
+  body.sidebar-expanded .clinic-lab-section article {
+    padding: 0 2rem;
+  }
+
+  body.sidebar-expanded .general-unit-section iframe,
+  body.sidebar-expanded .dental-unit-section iframe,
+  body.sidebar-expanded .clinic-lab-section iframe {
+    height: 56.35rem;
+    margin-top: 1.5rem;
+  }
+}
+
+
+/* ===================== TABLET LANDSCAPE-2 (933px – 991px) ====================== */
+@media (min-width: 933px) and (max-width: 991px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .general-unit-section {
+    margin: 1.5rem 0 3rem 0;
+    padding: 1rem 0.1rem 1.5rem 0.1rem;
+  }
+
+  .dental-unit-section {
+    margin: 1.5rem 0 3rem 0;
+    padding: 1rem 0.1rem 1.5rem 0.1rem;
+  }
+
+  .clinic-lab-section {
+    margin: 1.5rem 0 0 0;
+    padding: 1rem 0.1rem 0 0.1rem;
+  }
+
+  .general-unit-section h2,
+  .dental-unit-section h2,
+  .clinic-lab-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .general-unit-section p,
+  .dental-unit-section p,
+  .clinic-lab-section p {
+    font-size: 0.9rem;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .general-unit-section p,
+  body.sidebar-collapsed .dental-unit-section p,
+  body.sidebar-collapsed .clinic-lab-section p {
+    line-height: 2;
+    margin-top: 1.8rem;
+    padding: 0 1.95rem;
+  }
+
+  body.sidebar-collapsed .general-unit-section article,
+  body.sidebar-collapsed .dental-unit-section article,
+  body.sidebar-collapsed .clinic-lab-section article {
+    padding: 0 2.5rem;
+  }
+
+  body.sidebar-collapsed .general-unit-section iframe,
+  body.sidebar-collapsed .dental-unit-section iframe,
+  body.sidebar-collapsed .clinic-lab-section iframe {
+    height: 57.75rem;
+    margin-top: 1rem;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .general-unit-section h2,
+  body.sidebar-expanded .dental-unit-section h2,
+  body.sidebar-expanded .clinic-lab-section h2 {
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  body.sidebar-expanded .general-unit-section p,
+  body.sidebar-expanded .dental-unit-section p,
+  body.sidebar-expanded .clinic-lab-section p {
+    text-align: center;
+    line-height: 1.7;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-expanded .general-unit-section article,
+  body.sidebar-expanded .dental-unit-section article,
+  body.sidebar-expanded .clinic-lab-section article {
+    padding: 0;
+  }
+
+  body.sidebar-expanded .general-unit-section iframe,
+  body.sidebar-expanded .dental-unit-section iframe,
+  body.sidebar-expanded .clinic-lab-section iframe {
+    height: 39.8rem;
+    margin-top: 1rem;
+  }
+}
+
+
+/* ===================== TABLET LANDSCAPE-3 (853px – 881px) ====================== */
+@media (min-width: 853px) and (max-width: 881px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .general-unit-section {
+    margin: 1.5rem 0 3rem 0;
+    padding: 1rem 0.1rem 1.5rem 0.1rem;
+  }
+
+  .dental-unit-section {
+    margin: 1.5rem 0 3rem 0;
+    padding: 1rem 0.1rem 1.5rem 0.1rem;
+  }
+
+  .clinic-lab-section {
+    margin: 1.5rem 0 0 0;
+    padding: 1rem 0.1rem 0 0.1rem;
+  }
+
+  .general-unit-section h2,
+  .dental-unit-section h2,
+  .clinic-lab-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .general-unit-section p,
+  .dental-unit-section p,
+  .clinic-lab-section p {
+    font-size: 0.9rem;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .general-unit-section p,
+  body.sidebar-collapsed .dental-unit-section p,
+  body.sidebar-collapsed .clinic-lab-section p {
+    line-height: 2;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-collapsed .general-unit-section article,
+  body.sidebar-collapsed .dental-unit-section article,
+  body.sidebar-collapsed .clinic-lab-section article {
+    padding: 0 2.5rem;
+  }
+
+  body.sidebar-collapsed .general-unit-section iframe,
+  body.sidebar-collapsed .dental-unit-section iframe,
+  body.sidebar-collapsed .clinic-lab-section iframe {
+    height: 44.2rem;
+    margin-top: 1rem;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .general-unit-section h2,
+  body.sidebar-expanded .dental-unit-section h2,
+  body.sidebar-expanded .clinic-lab-section h2 {
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  body.sidebar-expanded .general-unit-section p,
+  body.sidebar-expanded .dental-unit-section p,
+  body.sidebar-expanded .clinic-lab-section p {
+    text-align: center;
+    line-height: 1.7;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-expanded .general-unit-section article,
+  body.sidebar-expanded .dental-unit-section article,
+  body.sidebar-expanded .clinic-lab-section article {
+    padding: 0;
+  }
+
+  body.sidebar-expanded .general-unit-section iframe,
+  body.sidebar-expanded .dental-unit-section iframe,
+  body.sidebar-expanded .clinic-lab-section iframe {
+    height: 33.8rem;
+    margin-top: 1rem;
+  }
+}
+
+
+/* ====================== TABLET POTRAIT-1 (820px – 839px) ======================= */
+@media (min-width: 820px) and (max-width: 839px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .general-unit-section {
+    margin: 1.5rem 0 3rem 0;
+    padding: 1rem 0.1rem 1.5rem 0.1rem;
+  }
+
+  .dental-unit-section {
+    margin: 1.5rem 0 3rem 0;
+    padding: 1rem 0.1rem 1.5rem 0.1rem;
+  }
+
+  .clinic-lab-section {
+    margin: 1.5rem 0 0 0;
+    padding: 1rem 0.1rem 0 0.1rem;
+  }
+  
+  .general-unit-section h2,
+  .dental-unit-section h2,
+  .clinic-lab-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .general-unit-section p,
+  .dental-unit-section p,
+  .clinic-lab-section p {
+    font-size: 0.9rem;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .general-unit-section p,
+  body.sidebar-collapsed .dental-unit-section p,
+  body.sidebar-collapsed .clinic-lab-section p {
+    line-height: 2;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-collapsed .general-unit-section article,
+  body.sidebar-collapsed .dental-unit-section article,
+  body.sidebar-collapsed .clinic-lab-section article {
+    padding: 0 2.5rem;
+  }
+
+  body.sidebar-collapsed .general-unit-section iframe,
+  body.sidebar-collapsed .dental-unit-section iframe,
+  body.sidebar-collapsed .clinic-lab-section iframe {
+    height: 50.25rem;
+    margin-top: 1.5rem;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .general-unit-section h2,
+  body.sidebar-expanded .dental-unit-section h2,
+  body.sidebar-expanded .clinic-lab-section h2 {
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  body.sidebar-expanded .general-unit-section p,
+  body.sidebar-expanded .dental-unit-section p,
+  body.sidebar-expanded .clinic-lab-section p {
+    text-align: center;
+    line-height: 1.7;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-expanded .general-unit-section article,
+  body.sidebar-expanded .dental-unit-section article,
+  body.sidebar-expanded .clinic-lab-section article {
+    padding: 0;
+  }
+
+  body.sidebar-expanded .general-unit-section iframe,
+  body.sidebar-expanded .dental-unit-section iframe,
+  body.sidebar-expanded .clinic-lab-section iframe {
+    height: 32.5rem;
+    margin-top: 1.5rem;
+  }
+}
+
+
+/* ====================== TABLET POTRAIT-2 (768px – 819px) ======================= */
+@media (min-width: 768px) and (max-width: 819px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .general-unit-section {
+    margin: 1.5rem 0 3rem 0;
+    padding: 1rem 0.1rem 1.5rem 0.1rem;
+  }
+
+  .dental-unit-section {
+    margin: 1.5rem 0 3rem 0;
+    padding: 1rem 0.1rem 1.5rem 0.1rem;
+  }
+
+  .clinic-lab-section {
+    margin: 1.5rem 0 0 0;
+    padding: 1rem 0.1rem 0 0.1rem;
+  }
+  
+  .general-unit-section h2,
+  .dental-unit-section h2,
+  .clinic-lab-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .general-unit-section p,
+  .dental-unit-section p,
+  .clinic-lab-section p {
+    font-size: 0.9rem;
+  }
+
+  .general-unit-section article,
+  .dental-unit-section article,
+  .clinic-lab-section article {
+    padding: 0;
+  }
+
+  .general-unit-section iframe,
+  .dental-unit-section iframe,
+  .clinic-lab-section iframe {
+    height: 52.5rem;
+    margin-top: 1.5rem;
+  }
+}
+
+
+/* ===================== HP BESAR LANDSCAPE (720px – 739px) ====================== */
+@media (min-width: 720px) and (max-width: 739px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .general-unit-section {
+    margin: 1.5rem 0 3rem 0;
+    padding: 1rem 0.1rem 1.5rem 0.1rem;
+  }
+
+  .dental-unit-section {
+    margin: 1.5rem 0 3rem 0;
+    padding: 1rem 0.1rem 1.5rem 0.1rem;
+  }
+
+  .clinic-lab-section {
+    margin: 1.5rem 0 0 0;
+    padding: 1rem 0.1rem 0 0.1rem;
+  }
+
+  .general-unit-section h2,
+  .dental-unit-section h2,
+  .clinic-lab-section h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .general-unit-section p,
+  .dental-unit-section p,
+  .clinic-lab-section p {
+    font-size: 0.9rem;
+    text-align: center;
+    line-height: 1.7;
+  }
+
+  .general-unit-section article,
+  .dental-unit-section article,
+  .clinic-lab-section article {
+    padding: 0;
+  }
+
+  .general-unit-section iframe,
+  .dental-unit-section iframe,
+  .clinic-lab-section iframe {
+    height: 48.5rem;
+    margin-top: 0.5rem;
+  }
+}
+
+
+/* ===================== HP BESAR POTRAIT (521px – 666px) ======================== */
+@media (min-width: 521px) and (max-width: 666px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .general-unit-section {
+    margin: 1.5rem 0 3rem 0;
+    padding: 1rem 0.1rem 1.5rem 0.1rem;
+  }
+
+  .dental-unit-section {
+    margin: 1.5rem 0 3rem 0;
+    padding: 1rem 0.1rem 1.5rem 0.1rem;
+  }
+
+  .clinic-lab-section {
+    margin: 1.5rem 0 0 0;
+    padding: 1rem 0.1rem 0 0.1rem;
+  }
+
+  .general-unit-section h2,
+  .dental-unit-section h2,
+  .clinic-lab-section h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .general-unit-section p,
+  .dental-unit-section p,
+  .clinic-lab-section p {
+    font-size: 0.9rem;
+    text-align: center;
+    line-height: 1.7;
+  }
+
+  .general-unit-section article,
+  .dental-unit-section article,
+  .clinic-lab-section article {
+    padding: 0;
+  }
+
+  .general-unit-section iframe,
+  .dental-unit-section iframe,
+  .clinic-lab-section iframe {
+    height: 34.1rem;
+    margin-top: 0.5rem;
+  }
+}
+
+
+/* ==================== HP KECIL LANDSCAPE 1 (917px – 932px) ===================== */
+@media (min-width: 917px) and (max-width: 932px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .general-unit-section {
+    margin: 1.5rem 0 3rem 0;
+    padding: 1rem 0.1rem 1.5rem 0.1rem;
+  }
+
+  .dental-unit-section {
+    margin: 1.5rem 0 3rem 0;
+    padding: 1rem 0.1rem 1.5rem 0.1rem;
+  }
+
+  .clinic-lab-section {
+    margin: 1.5rem 0 0 0;
+    padding: 1rem 0.1rem 0 0.1rem;
+  }
+
+  .general-unit-section h2,
+  .dental-unit-section h2,
+  .clinic-lab-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .general-unit-section p,
+  .dental-unit-section p,
+  .clinic-lab-section p {
+    font-size: 0.9rem;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .general-unit-section p,
+  body.sidebar-collapsed .dental-unit-section p,
+  body.sidebar-collapsed .clinic-lab-section p {
+    line-height: 2;
+    margin-top: 1.8rem;
+    padding: 0 1.95rem;
+  }
+
+  body.sidebar-collapsed .general-unit-section article,
+  body.sidebar-collapsed .dental-unit-section article,
+  body.sidebar-collapsed .clinic-lab-section article {
+    padding: 0 2.5rem;
+  }
+
+  body.sidebar-collapsed .general-unit-section iframe,
+  body.sidebar-collapsed .dental-unit-section iframe,
+  body.sidebar-collapsed .clinic-lab-section iframe {
+    height: 59.3rem;
+    margin-top: 1rem;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .general-unit-section h2,
+  body.sidebar-expanded .dental-unit-section h2,
+  body.sidebar-expanded .clinic-lab-section h2 {
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  body.sidebar-expanded .general-unit-section p,
+  body.sidebar-expanded .dental-unit-section p,
+  body.sidebar-expanded .clinic-lab-section p {
+    text-align: center;
+    line-height: 1.7;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-expanded .general-unit-section article,
+  body.sidebar-expanded .dental-unit-section article,
+  body.sidebar-expanded .clinic-lab-section article {
+    padding: 0;
+  }
+
+  body.sidebar-expanded .general-unit-section iframe,
+  body.sidebar-expanded .dental-unit-section iframe,
+  body.sidebar-expanded .clinic-lab-section iframe {
+    height: 41.5rem;
+    margin-top: 1rem;
+  }
+}
+
+
+/* ==================== HP KECIL LANDSCAPE 2 (912px – 916px) ===================== */
+@media (min-width: 912px) and (max-width: 916px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .general-unit-section {
+    margin: 1.5rem 0 3rem 0;
+    padding: 1rem 0.1rem 1.5rem 0.1rem;
+  }
+
+  .dental-unit-section {
+    margin: 1.5rem 0 3rem 0;
+    padding: 1rem 0.1rem 1.5rem 0.1rem;
+  }
+
+  .clinic-lab-section {
+    margin: 1.5rem 0 0 0;
+    padding: 1rem 0.1rem 0 0.1rem;
+  }
+
+  .general-unit-section h2,
+  .dental-unit-section h2,
+  .clinic-lab-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .general-unit-section p,
+  .dental-unit-section p,
+  .clinic-lab-section p {
+    font-size: 0.9rem;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .general-unit-section p,
+  body.sidebar-collapsed .dental-unit-section p,
+  body.sidebar-collapsed .clinic-lab-section p {
+    line-height: 2;
+    margin-top: 1.8rem;
+    padding: 0 1.95rem;
+  }
+
+  body.sidebar-collapsed .general-unit-section article,
+  body.sidebar-collapsed .dental-unit-section article,
+  body.sidebar-collapsed .clinic-lab-section article {
+    padding: 0 2.5rem;
+  }
+
+  body.sidebar-collapsed .general-unit-section iframe,
+  body.sidebar-collapsed .dental-unit-section iframe,
+  body.sidebar-collapsed .clinic-lab-section iframe {
+    height: 57.8rem;
+    margin-top: 1rem;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .general-unit-section h2,
+  body.sidebar-expanded .dental-unit-section h2,
+  body.sidebar-expanded .clinic-lab-section h2 {
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  body.sidebar-expanded .general-unit-section p,
+  body.sidebar-expanded .dental-unit-section p,
+  body.sidebar-expanded .clinic-lab-section p {
+    text-align: center;
+    line-height: 1.7;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-expanded .general-unit-section article,
+  body.sidebar-expanded .dental-unit-section article,
+  body.sidebar-expanded .clinic-lab-section article {
+    padding: 0;
+  }
+
+  body.sidebar-expanded .general-unit-section iframe,
+  body.sidebar-expanded .dental-unit-section iframe,
+  body.sidebar-expanded .clinic-lab-section iframe {
+    height: 40.1rem;
+    margin-top: 1rem;
+  }
+}
+
+
+/* ==================== HP KECIL LANDSCAPE 2 (896px – 911px) ===================== */
+@media (min-width: 896px) and (max-width: 911px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .general-unit-section {
+    margin: 1.5rem 0 3rem 0;
+    padding: 1rem 0.1rem 1.5rem 0.1rem;
+  }
+
+  .dental-unit-section {
+    margin: 1.5rem 0 3rem 0;
+    padding: 1rem 0.1rem 1.5rem 0.1rem;
+  }
+
+  .clinic-lab-section {
+    margin: 1.5rem 0 0 0;
+    padding: 1rem 0.1rem 0 0.1rem;
+  }
+
+  .general-unit-section h2,
+  .dental-unit-section h2,
+  .clinic-lab-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .general-unit-section p,
+  .dental-unit-section p,
+  .clinic-lab-section p {
+    font-size: 0.9rem;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .general-unit-section p,
+  body.sidebar-collapsed .dental-unit-section p,
+  body.sidebar-collapsed .clinic-lab-section p {
+    line-height: 2;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-collapsed .general-unit-section article,
+  body.sidebar-collapsed .dental-unit-section article,
+  body.sidebar-collapsed .clinic-lab-section article {
+    padding: 0 2.5rem;
+  }
+
+  body.sidebar-collapsed .general-unit-section iframe,
+  body.sidebar-collapsed .dental-unit-section iframe,
+  body.sidebar-collapsed .clinic-lab-section iframe {
+    height: 49rem;
+    margin-top: 1rem;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .general-unit-section h2,
+  body.sidebar-expanded .dental-unit-section h2,
+  body.sidebar-expanded .clinic-lab-section h2 {
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  body.sidebar-expanded .general-unit-section p,
+  body.sidebar-expanded .dental-unit-section p,
+  body.sidebar-expanded .clinic-lab-section p {
+    text-align: center;
+    line-height: 1.7;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-expanded .general-unit-section article,
+  body.sidebar-expanded .dental-unit-section article,
+  body.sidebar-expanded .clinic-lab-section article {
+    padding: 0;
+  }
+
+  body.sidebar-expanded .general-unit-section iframe,
+  body.sidebar-expanded .dental-unit-section iframe,
+  body.sidebar-expanded .clinic-lab-section iframe {
+    height: 38.6rem;
+    margin-top: 1rem;
+  }
+}
+
+
+/* ==================== HP KECIL LANDSCAPE 3 (882px – 895px) ===================== */
+@media (min-width: 882px) and (max-width: 895px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .general-unit-section {
+    margin: 1.5rem 0 3rem 0;
+    padding: 1rem 0.1rem 1.5rem 0.1rem;
+  }
+
+  .dental-unit-section {
+    margin: 1.5rem 0 3rem 0;
+    padding: 1rem 0.1rem 1.5rem 0.1rem;
+  }
+
+  .clinic-lab-section {
+    margin: 1.5rem 0 0 0;
+    padding: 1rem 0.1rem 0 0.1rem;
+  }
+
+  .general-unit-section h2,
+  .dental-unit-section h2,
+  .clinic-lab-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .general-unit-section p,
+  .dental-unit-section p,
+  .clinic-lab-section p {
+    font-size: 0.9rem;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .general-unit-section p,
+  body.sidebar-collapsed .dental-unit-section p,
+  body.sidebar-collapsed .clinic-lab-section p {
+    line-height: 2;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-collapsed .general-unit-section article,
+  body.sidebar-collapsed .dental-unit-section article,
+  body.sidebar-collapsed .clinic-lab-section article {
+    padding: 0 2.5rem;
+  }
+
+  body.sidebar-collapsed .general-unit-section iframe,
+  body.sidebar-collapsed .dental-unit-section iframe,
+  body.sidebar-collapsed .clinic-lab-section iframe {
+    height: 47.8rem;
+    margin-top: 1rem;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .general-unit-section h2,
+  body.sidebar-expanded .dental-unit-section h2,
+  body.sidebar-expanded .clinic-lab-section h2 {
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  body.sidebar-expanded .general-unit-section p,
+  body.sidebar-expanded .dental-unit-section p,
+  body.sidebar-expanded .clinic-lab-section p {
+    text-align: center;
+    line-height: 1.7;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-expanded .general-unit-section article,
+  body.sidebar-expanded .dental-unit-section article,
+  body.sidebar-expanded .clinic-lab-section article {
+    padding: 0;
+  }
+
+  body.sidebar-expanded .general-unit-section iframe,
+  body.sidebar-expanded .dental-unit-section iframe,
+  body.sidebar-expanded .clinic-lab-section iframe {
+    height: 37.5rem;
+    margin-top: 1rem;
+  }
+}
+
+
+/* ==================== HP KECIL LANDSCAPE 4 (840px – 852px) ===================== */
+@media (min-width: 840px) and (max-width: 852px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .general-unit-section {
+    margin: 1.5rem 0 3rem 0;
+    padding: 1rem 0.1rem 1.5rem 0.1rem;
+  }
+
+  .dental-unit-section {
+    margin: 1.5rem 0 3rem 0;
+    padding: 1rem 0.1rem 1.5rem 0.1rem;
+  }
+
+  .clinic-lab-section {
+    margin: 1.5rem 0 0 0;
+    padding: 1rem 0.1rem 0 0.1rem;
+  }
+  
+  .general-unit-section h2,
+  .dental-unit-section h2,
+  .clinic-lab-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .general-unit-section p,
+  .dental-unit-section p,
+  .clinic-lab-section p {
+    font-size: 0.9rem;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .general-unit-section p,
+  body.sidebar-collapsed .dental-unit-section p,
+  body.sidebar-collapsed .clinic-lab-section p {
+    line-height: 2;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-collapsed .general-unit-section article,
+  body.sidebar-collapsed .dental-unit-section article,
+  body.sidebar-collapsed .clinic-lab-section article {
+    padding: 0 2.5rem;
+  }
+
+  body.sidebar-collapsed .general-unit-section iframe,
+  body.sidebar-collapsed .dental-unit-section iframe,
+  body.sidebar-collapsed .clinic-lab-section iframe {
+    height: 52.25rem;
+    margin-top: 1.5rem;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .general-unit-section h2,
+  body.sidebar-expanded .dental-unit-section h2,
+  body.sidebar-expanded .clinic-lab-section h2 {
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  body.sidebar-expanded .general-unit-section p,
+  body.sidebar-expanded .dental-unit-section p,
+  body.sidebar-expanded .clinic-lab-section p {
+    text-align: center;
+    line-height: 1.7;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-expanded .general-unit-section article,
+  body.sidebar-expanded .dental-unit-section article,
+  body.sidebar-expanded .clinic-lab-section article {
+    padding: 0;
+  }
+
+  body.sidebar-expanded .general-unit-section iframe,
+  body.sidebar-expanded .dental-unit-section iframe,
+  body.sidebar-expanded .clinic-lab-section iframe {
+    height: 34.35rem;
+    margin-top: 1.5rem;
+  }
+}
+
+
+/* ==================== HP KECIL LANDSCAPE 5 (740px – 767px) ===================== */
+@media (min-width: 740px) and (max-width: 767px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .general-unit-section {
+    margin: 1.5rem 0 3rem 0;
+    padding: 1rem 0.1rem 1.5rem 0.1rem;
+  }
+
+  .dental-unit-section {
+    margin: 1.5rem 0 3rem 0;
+    padding: 1rem 0.1rem 1.5rem 0.1rem;
+  }
+
+  .clinic-lab-section {
+    margin: 1.5rem 0 0 0;
+    padding: 1rem 0.1rem 0 0.1rem;
+  }
+
+  .general-unit-section h2,
+  .dental-unit-section h2,
+  .clinic-lab-section h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .general-unit-section p,
+  .dental-unit-section p,
+  .clinic-lab-section p {
+    font-size: 0.9rem;
+    text-align: center;
+    line-height: 1.7;
+  }
+
+  .general-unit-section article,
+  .dental-unit-section article,
+  .clinic-lab-section article {
+    padding: 0;
+  }
+
+  .general-unit-section iframe,
+  .dental-unit-section iframe,
+  .clinic-lab-section iframe {
+    height: 50.25rem;
+    margin-top: 0.5rem;
+  }
+}
+
+
+/* ==================== HP KECIL LANDSCAPE 6 (667px – 719px) ===================== */
+@media (min-width: 667px) and (max-width: 719px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .general-unit-section {
+    margin: 1.5rem 0 3rem 0;
+    padding: 1rem 0.1rem 1.5rem 0.1rem;
+  }
+
+  .dental-unit-section {
+    margin: 1.5rem 0 3rem 0;
+    padding: 1rem 0.1rem 1.5rem 0.1rem;
+  }
+
+  .clinic-lab-section {
+    margin: 1.5rem 0 0 0;
+    padding: 1rem 0.1rem 0 0.1rem;
+  }
+
+  .general-unit-section h2,
+  .dental-unit-section h2,
+  .clinic-lab-section h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .general-unit-section p,
+  .dental-unit-section p,
+  .clinic-lab-section p {
+    font-size: 0.9rem;
+    text-align: center;
+    line-height: 1.7;
+  }
+
+  .general-unit-section article,
+  .dental-unit-section article,
+  .clinic-lab-section article {
+    padding: 0;
+  }
+
+  .general-unit-section iframe,
+  .dental-unit-section iframe,
+  .clinic-lab-section iframe {
+    height: 44.38rem;
+    margin-top: 0.5rem;
+  }
+}
+
+
+/* ============================= HP KECIL (≤ 520px) ============================== */
+@media (max-width: 520px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .general-unit-section {
+    margin: 1rem 0 3rem 0;
+    padding: 1rem 0 1.5rem 0;
+  }
+
+  .dental-unit-section {
+    margin: 1.5rem 0 3rem 0;
+    padding: 1rem 0 1.5rem 0;
+  }
+
+  .clinic-lab-section {
+    margin: 1.5rem 0 0 0;
+    padding: 1rem 0 0 0;
+  }
+
+  .general-unit-section h2,
+  .dental-unit-section h2,
+  .clinic-lab-section h2 {
+    font-size: 1.5rem;
+    text-align: left;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .general-unit-section p,
+  .dental-unit-section p,
+  .clinic-lab-section p {
+    font-size: 0.85rem;
+    text-align: justify;
+    line-height: 1.8;
+  }
+
+  .general-unit-section iframe,
+  .dental-unit-section iframe,
+  .clinic-lab-section iframe {
+    height: 27.8rem;
+    margin-top: 0.5rem;
+  }
+}

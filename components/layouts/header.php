@@ -26,16 +26,31 @@
         <link rel="stylesheet" href="<?= BASE_URL ?>public/vendor/sweetalert2/sweetalert2.min.css">
         
         <!-- Our Custom CSS -->
+        <!-- Layouts -->
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/layouts/navbar.css">
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/layouts/header.css">
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/layouts/sidebar.css">
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/layouts/main.css">
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/layouts/footer.css">
+        <!-- Global -->
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/global/font.css">
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/global/vanillatop.css">
+        <!-- Modules -->
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/modules/table.css">
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/modules/highcharts.css">
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/modules/modal.css">
+        <!-- Pages -->
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/home.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/patient/chart_options.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/patient/clinic_facilities.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/patient/clinic_information.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/patient/gallery.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/patient/queue_registration.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/patient/queue_status.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/worker/dashboard.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/worker/patient_management.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/worker/queue_management.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/admin/user_management.css">
     </head>
 
     <body class="sidebar-expanded" data-loggedin="<?= isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true ? 'true' : 'false' ?>">

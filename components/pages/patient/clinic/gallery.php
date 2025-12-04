@@ -4,7 +4,7 @@
 ?>
 
 <main>
-    <section class="gallery-photo-section">
+    <section class="gallery-photo-section" id="gallery-photo">
         <div class="custom-header text-center gallery-foto-text select-none">
             <h2>
                 <i class="fa fa-camera-retro mr-1" aria-hidden="true"></i>
@@ -46,7 +46,7 @@
         </div>
     </section>
 
-    <section class="gallery-video-section">
+    <section class="gallery-video-section" id="gallery-video">
         <div class="custom-header text-center gallery-video-text select-none">
             <h2>
                 <i class="fa fa-video mr-1" aria-hidden="true"></i>

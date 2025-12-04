@@ -37,11 +37,7 @@
         <title>SIAKLIK</title>
         <meta name="description" content="Website SIAKLIK">
         <meta name="keywords" content="klinik, bpjs, kesehatan" />
-        <style>
-            body { font-family: Arial; background: #f2f2f2; display: flex; justify-content: center; align-items: center; height: 100vh; }
-            .card { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center; }
-            .error { color: red; font-weight: bold; }
-        </style>
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/error/page_notification.css">
     </head>
     <body>
         <div class="card">

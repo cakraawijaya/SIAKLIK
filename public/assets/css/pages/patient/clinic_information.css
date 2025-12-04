@@ -1,0 +1,1231 @@
+/* ===================================================================================== */
+/* ===                            CLINIC INFORMATION STYLE                           === */
+/* ===================================================================================== */
+
+/* ==================================== GLOBAL =================================== */
+.information-section {
+  margin-bottom: 3rem;
+}
+
+.referral-section {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+}
+
+.information-section h2,
+.referral-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.information-section img {
+  margin-top: 1rem;
+}
+
+.information-section .row {
+  justify-content: center;
+  gap: 30px;
+}
+
+.information-section .col-left, 
+.information-section .col-right {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin-top: 2rem;
+}
+
+.information-section .card-wrapper {
+  border-radius: 16px;
+  overflow: hidden;    
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  outline: 2px #e1e1e1 solid;
+}
+
+.information-section .card-wrapper .card-body, 
+.information-section .card-wrapper .card-body {
+  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+}
+
+.information-section .card-wrapper .card-body p, 
+.information-section .card-wrapper .card-body p {
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+}
+
+.referral-section article {
+  width: 100%;
+  max-width: 100%;
+}
+
+.referral-section iframe {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  border: none;
+  margin: 0 auto;
+}
+
+
+/* =========================== DESKTOP (1200px – 1368px) ========================= */
+@media (min-width: 1200px) and (max-width: 1368px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .information-section {
+    padding: 0;
+  }
+
+  .referral-section {
+    margin-top: 6rem;
+    padding: 0;
+  }
+  
+  .information-section h2,
+  .referral-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .information-section p,
+  .referral-section p {
+    font-size: 0.95rem;
+  }
+
+  .information-section .container {
+    padding: 0;
+  }
+
+  .information-section .card-wrapper {
+    padding: 12px;
+  }
+
+  .information-section h4 {
+    font-size: 1.12rem;
+    letter-spacing: 2px;
+  }
+
+  .referral-section iframe {
+    margin-top: 0.8rem;
+    margin-bottom: 2.5rem;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .information-section {
+    margin-top: 3rem;
+    padding: 0 7rem;
+  }
+
+  body.sidebar-collapsed .referral-section {
+    padding-top: 1rem;
+    padding: 0 7rem;
+  }
+
+  body.sidebar-collapsed .information-section .information-text p,
+  body.sidebar-collapsed .referral-section .referral-text p {
+    line-height: 2;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-collapsed .information-section .content-divider,
+  body.sidebar-collapsed .referral-section .content-divider {
+    padding: 0 0.5rem;
+  }
+  
+  body.sidebar-collapsed .information-section .row {
+    flex-direction: row !important;
+    gap: 35px;
+  }
+
+  body.sidebar-collapsed .referral-section iframe {
+    width: 85%;
+    height: 37.8rem;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .information-section h2,
+  body.sidebar-expanded .referral-section h2 {
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  body.sidebar-expanded .information-section p,
+  body.sidebar-expanded .referral-section p {
+    text-align: center;
+    line-height: 1.7;
+    margin-top: 1.8rem;
+  }
+  
+  body.sidebar-expanded .referral-section iframe {
+    width: 68%;
+    height: 27.4rem;
+  }
+}
+
+
+/* ======================= SMALL DESKTOP (992px – 1179px) ======================== */
+@media (min-width: 992px) and (max-width: 1179px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .information-section {
+    padding: 0;
+  }
+
+  .referral-section {
+    margin-top: 6rem;
+    padding: 0;
+  }
+  
+  .information-section h2,
+  .referral-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .information-section p,
+  .referral-section p {
+    font-size: 0.9rem;
+  }
+
+  .information-section .container {
+    padding: 0;
+  }
+
+  .information-section .card-wrapper {
+    padding: 12px;
+  }
+
+  .information-section h4 {
+    font-size: 1.12rem;
+    letter-spacing: 2px;
+  }
+
+  .referral-section iframe {
+    margin-top: 0.8rem;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .information-section {
+    margin-top: 2rem;
+  }
+
+  body.sidebar-collapsed .referral-section {
+    padding-top: 1rem;
+  }
+
+  body.sidebar-collapsed .information-section .information-text p,
+  body.sidebar-collapsed .referral-section .referral-text p {
+    line-height: 2;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-collapsed .information-section .content-divider,
+  body.sidebar-collapsed .referral-section .content-divider {
+    padding: 0 0.5rem;
+  }
+  
+  body.sidebar-collapsed .information-section .row {
+    flex-direction: row !important;
+    gap: 35px;
+  }
+
+  body.sidebar-collapsed .referral-section iframe {
+    width: 85%;
+    height: 33.9rem;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .information-section h2,
+  body.sidebar-expanded .referral-section h2 {
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  body.sidebar-expanded .information-section p,
+  body.sidebar-expanded .referral-section p {
+    text-align: center;
+    line-height: 1.7;
+    margin-top: 1.8rem;
+  }
+  
+  body.sidebar-expanded .referral-section iframe {
+    width: 93%;
+    height: 26.4rem;
+  }
+}
+
+
+/* ==================== TABLET LANDSCAPE-1 (1180px – 1199px) ===================== */
+@media (min-width: 1180px) and (max-width: 1199px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .information-section {
+    padding: 0;
+  }
+
+  .referral-section {
+    margin-top: 6rem;
+    padding: 0;
+  }
+  
+  .information-section h2,
+  .referral-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .information-section p,
+  .referral-section p {
+    font-size: 0.9rem;
+  }
+
+  .information-section .container {
+    padding: 0;
+  }
+
+  .information-section .card-wrapper {
+    padding: 12px;
+  }
+
+  .information-section h4 {
+    font-size: 1.12rem;
+    letter-spacing: 2px;
+  }
+
+  .referral-section iframe {
+    margin-top: 0.8rem;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .information-section {
+    margin-top: 2rem;
+  }
+
+  body.sidebar-collapsed .referral-section {
+    padding-top: 1rem;
+  }
+
+  body.sidebar-collapsed .information-section .information-text p,
+  body.sidebar-collapsed .referral-section .referral-text p {
+    line-height: 2;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-collapsed .information-section .content-divider,
+  body.sidebar-collapsed .referral-section .content-divider {
+    padding: 0 0.5rem;
+  }
+  
+  body.sidebar-collapsed .information-section .row {
+    flex-direction: row !important;
+    gap: 35px;
+  }
+
+  body.sidebar-collapsed .referral-section iframe {
+    width: 85%;
+    height: 39.4rem;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .information-section h2,
+  body.sidebar-expanded .referral-section h2 {
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  body.sidebar-expanded .information-section p,
+  body.sidebar-expanded .referral-section p {
+    text-align: center;
+    line-height: 1.7;
+    margin-top: 1.8rem;
+  }
+  
+  body.sidebar-expanded .referral-section iframe {
+    width: 93%;
+    height: 32.9rem;
+  }
+}
+
+
+/* ===================== TABLET LANDSCAPE-2 (933px – 991px) ====================== */
+@media (min-width: 933px) and (max-width: 991px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .information-section {
+    padding: 0;
+  }
+
+  .referral-section {
+    margin-top: 6rem;
+    padding: 0;
+  }
+  
+  .information-section h2,
+  .referral-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .information-section p,
+  .referral-section p {
+    font-size: 0.9rem;
+  }
+
+  .information-section .container {
+    padding: 0;
+  }
+
+  .information-section .card-wrapper {
+    padding: 12px;
+  }
+
+  .information-section h4 {
+    font-size: 1.15rem;
+    letter-spacing: 2px;
+  }
+
+  .referral-section iframe {
+    margin-top: 0.8rem;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .information-section {
+    margin-top: 2rem;
+  }
+
+  body.sidebar-collapsed .referral-section {
+    padding-top: 1rem;
+  }
+
+  body.sidebar-collapsed .information-section .information-text p,
+  body.sidebar-collapsed .referral-section .referral-text p {
+    line-height: 2;
+    margin-top: 1.8rem;
+    padding: 0 1.95rem;
+  }
+
+  body.sidebar-collapsed .information-section .content-divider,
+  body.sidebar-collapsed .referral-section .content-divider {
+    padding: 0 2.88rem;
+  }
+  
+  body.sidebar-collapsed .information-section .row {
+    flex-direction: row !important;
+    gap: 35px;
+  }
+
+  body.sidebar-collapsed .referral-section iframe {
+    width: 85%;
+    height: 32rem;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .information-section h2,
+  body.sidebar-expanded .referral-section h2 {
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  body.sidebar-expanded .information-section p,
+  body.sidebar-expanded .referral-section p {
+    text-align: center;
+    line-height: 1.7;
+    margin-top: 1.8rem;
+  }
+  
+  body.sidebar-expanded .information-section .row {
+    flex-direction: column !important;
+    padding: 0 1rem;
+    gap: 10px;
+  }
+
+  body.sidebar-expanded .information-section .col-left,
+  body.sidebar-expanded .information-section .col-right {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+  
+  body.sidebar-expanded .referral-section iframe {
+    width: 100%;
+    height: 23.5rem;
+  }
+}
+
+
+/* ===================== TABLET LANDSCAPE-3 (853px – 881px) ====================== */
+@media (min-width: 853px) and (max-width: 881px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .information-section {
+    padding: 0;
+  }
+
+  .referral-section {
+    margin-top: 6rem;
+    padding: 0;
+  }
+  
+  .information-section h2,
+  .referral-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .information-section p,
+  .referral-section p {
+    font-size: 0.9rem;
+  }
+
+  .information-section .container {
+    padding: 0;
+  }
+
+  .information-section .card-wrapper {
+    padding: 12px;
+  }
+
+  .information-section h4 {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+  }
+
+  .referral-section iframe {
+    margin-top: 1.5rem;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .information-section {
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-collapsed .information-section p,
+  body.sidebar-collapsed .referral-section p {
+    line-height: 2;
+    margin-top: 1.8rem;
+  }
+  
+  body.sidebar-collapsed .information-section .row {
+    flex-direction: row !important;
+    gap: 35px;
+  }
+
+  body.sidebar-collapsed .referral-section iframe {
+    width: 85%;
+    height: 25.8rem;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .information-section h2,
+  body.sidebar-expanded .referral-section h2 {
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  body.sidebar-expanded .information-section p,
+  body.sidebar-expanded .referral-section p {
+    text-align: center;
+    line-height: 1.7;
+    margin-top: 1.8rem;
+  }
+  
+  body.sidebar-expanded .information-section .row {
+    flex-direction: column !important;
+    padding: 0 1rem;
+    gap: 10px;
+  }
+
+  body.sidebar-expanded .information-section .col-left,
+  body.sidebar-expanded .information-section .col-right {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+  
+  body.sidebar-expanded .referral-section iframe {
+    width: 100%;
+    height: 20.3rem;
+  }
+}
+
+
+/* ====================== TABLET POTRAIT-1 (820px – 839px) ======================= */
+@media (min-width: 820px) and (max-width: 839px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .information-section {
+    padding: 0;
+  }
+
+  .referral-section {
+    margin-top: 6rem;
+    padding: 0;
+  }
+  
+  .information-section h2,
+  .referral-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .information-section p,
+  .referral-section p {
+    font-size: 0.9rem;
+  }
+
+  .information-section .container {
+    padding: 0;
+  }
+
+  .information-section .card-wrapper {
+    padding: 12px;
+  }
+
+  .information-section h4 {
+    font-size: 1.15rem;
+    letter-spacing: 2px;
+  }
+
+  .referral-section iframe {
+    margin-top: 1.5rem;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .information-section p,
+  body.sidebar-collapsed .referral-section p {
+    line-height: 2;
+    margin-top: 1.8rem;
+  }
+  
+  body.sidebar-collapsed .information-section .row {
+    flex-direction: row !important;
+    gap: 35px;
+  }
+
+  body.sidebar-collapsed .referral-section iframe {
+    width: 70%;
+    height: 23.3rem;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .information-section h2,
+  body.sidebar-expanded .referral-section h2 {
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  body.sidebar-expanded .information-section p,
+  body.sidebar-expanded .referral-section p {
+    text-align: center;
+    line-height: 1.7;
+    margin-top: 1.8rem;
+  }
+  
+  body.sidebar-expanded .information-section .row {
+    flex-direction: column !important;
+    padding: 0 1rem;
+    gap: 10px;
+  }
+
+  body.sidebar-expanded .information-section .col-left,
+  body.sidebar-expanded .information-section .col-right {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+  
+  body.sidebar-expanded .referral-section iframe {
+    width: 100%;
+    height: 19.5rem;
+  }
+}
+
+
+/* ====================== TABLET POTRAIT-2 (768px – 819px) ======================= */
+@media (min-width: 768px) and (max-width: 819px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .information-section {
+    padding: 0;
+  }
+
+  .referral-section {
+    margin-top: 6rem;
+    padding: 0;
+  }
+
+  .information-section h2,
+  .referral-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .information-section p,
+  .referral-section p {
+    font-size: 0.9rem;
+  }
+
+  .information-section .container {
+    padding: 0;
+  }
+
+  .information-section .row {
+    gap: 35px;
+  }
+
+  .information-section .card-wrapper {
+    padding: 12px;
+  }
+
+  .information-section h4 {
+    font-size: 1.15rem;
+  }
+
+  .referral-section iframe {
+    width: 65%;
+    height: 20.3rem;
+    margin-top: 1.5rem;
+  }
+}
+
+
+/* ===================== HP BESAR LANDSCAPE (720px – 739px) ====================== */
+@media (min-width: 720px) and (max-width: 739px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .information-section {
+    padding: 0 0.5rem;
+  }
+
+  .referral-section {
+    margin-top: 6rem;
+    padding: 0 0.5rem;
+  }
+  
+  .information-section h2,
+  .referral-section h2 {
+    font-size: 1.5rem;
+    text-align: left;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .information-section p,
+  .referral-section p {
+    font-size: 0.9rem;
+    text-align: justify;
+    line-height: 1.7;
+  }
+
+  .information-section .container {
+    padding: 0;
+  }
+
+  .information-section .row {
+    gap: 5px;
+    padding: 14px;
+  }
+
+  .information-section .card-wrapper {
+    padding: 12px;
+  }
+
+  .information-section h4 {
+    font-size: 1.15rem;
+  }
+
+  .referral-section iframe {
+    width: 100%;
+    height: 27.2rem;
+    margin-top: 0.5rem;
+  }
+}
+
+
+/* ===================== HP BESAR POTRAIT (521px – 666px) ======================== */
+@media (min-width: 521px) and (max-width: 666px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .information-section {
+    padding: 0 0.5rem;
+  }
+
+  .referral-section {
+    margin-top: 6rem;
+    padding: 0 0.5rem;
+  }
+  
+  .information-section h2,
+  .referral-section h2 {
+    font-size: 1.5rem;
+    text-align: left;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .information-section p,
+  .referral-section p {
+    font-size: 0.9rem;
+    text-align: justify;
+    line-height: 1.7;
+  }
+
+  .information-section .container {
+    padding: 0;
+  }
+
+  .information-section .row {
+    gap: 5px;
+    padding: 14px;
+  }
+
+  .information-section .card-wrapper {
+    padding: 12px;
+  }
+
+  .information-section h4 {
+    font-size: 1.15rem;
+  }
+
+  .referral-section iframe {
+    width: 100%;
+    height: 19.6rem;
+    margin-top: 0.5rem;
+  }
+}
+
+
+/* ==================== HP KECIL LANDSCAPE 1 (912px – 932px) ===================== */
+@media (min-width: 912px) and (max-width: 932px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .information-section {
+    padding: 0;
+  }
+
+  .referral-section {
+    margin-top: 6rem;
+    padding: 0;
+  }
+  
+  .information-section h2,
+  .referral-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .information-section p,
+  .referral-section p {
+    font-size: 0.9rem;
+  }
+
+  .information-section .container {
+    padding: 0;
+  }
+
+  .information-section .card-wrapper {
+    padding: 12px;
+  }
+
+  .information-section h4 {
+    font-size: 1.15rem;
+    letter-spacing: 2px;
+  }
+
+  .referral-section iframe {
+    margin-top: 0.8rem;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .information-section {
+    margin-top: 2rem;
+  }
+
+  body.sidebar-collapsed .referral-section {
+    padding-top: 1rem;
+  }
+
+  body.sidebar-collapsed .information-section .information-text p,
+  body.sidebar-collapsed .referral-section .referral-text p {
+    line-height: 2;
+    margin-top: 1.8rem;
+    padding: 0 1.95rem;
+  }
+
+  body.sidebar-collapsed .information-section .content-divider,
+  body.sidebar-collapsed .referral-section .content-divider {
+    padding: 0 2.88rem;
+  }
+  
+  body.sidebar-collapsed .information-section .row {
+    flex-direction: row !important;
+    gap: 35px;
+  }
+
+  body.sidebar-collapsed .referral-section iframe {
+    width: 85%;
+    height: 32rem;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .information-section h2,
+  body.sidebar-expanded .referral-section h2 {
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  body.sidebar-expanded .information-section p,
+  body.sidebar-expanded .referral-section p {
+    text-align: center;
+    line-height: 1.7;
+    margin-top: 1.8rem;
+  }
+  
+  body.sidebar-expanded .information-section .row {
+    flex-direction: column !important;
+    padding: 0 1rem;
+    gap: 10px;
+  }
+
+  body.sidebar-expanded .information-section .col-left,
+  body.sidebar-expanded .information-section .col-right {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+  
+  body.sidebar-expanded .referral-section iframe {
+    width: 100%;
+    height: 23.5rem;
+  }
+}
+
+
+/* ==================== HP KECIL LANDSCAPE 2 (882px – 911px) ===================== */
+@media (min-width: 882px) and (max-width: 911px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .information-section {
+    padding: 0;
+  }
+
+  .referral-section {
+    margin-top: 6rem;
+    padding: 0;
+  }
+  
+  .information-section h2,
+  .referral-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .information-section p,
+  .referral-section p {
+    font-size: 0.9rem;
+  }
+
+  .information-section .container {
+    padding: 0;
+  }
+
+  .information-section .card-wrapper {
+    padding: 12px;
+  }
+
+  .information-section h4 {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+  }
+
+  .referral-section iframe {
+    margin-top: 1.5rem;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .information-section {
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-collapsed .information-section p,
+  body.sidebar-collapsed .referral-section p {
+    line-height: 2;
+    margin-top: 1.8rem;
+  }
+  
+  body.sidebar-collapsed .information-section .row {
+    flex-direction: row !important;
+    gap: 35px;
+  }
+
+  body.sidebar-collapsed .referral-section iframe {
+    width: 85%;
+    height: 27.4rem;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .information-section h2,
+  body.sidebar-expanded .referral-section h2 {
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  body.sidebar-expanded .information-section p,
+  body.sidebar-expanded .referral-section p {
+    text-align: center;
+    line-height: 1.7;
+    margin-top: 1.8rem;
+  }
+  
+  body.sidebar-expanded .information-section .row {
+    flex-direction: column !important;
+    padding: 0 1rem;
+    gap: 10px;
+  }
+
+  body.sidebar-expanded .information-section .col-left,
+  body.sidebar-expanded .information-section .col-right {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+  
+  body.sidebar-expanded .referral-section iframe {
+    width: 100%;
+    height: 22rem;
+  }
+}
+
+
+/* ==================== HP KECIL LANDSCAPE 3 (840px – 852px) ===================== */
+@media (min-width: 840px) and (max-width: 852px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .information-section {
+    padding: 0;
+  }
+
+  .referral-section {
+    margin-top: 6rem;
+    padding: 0;
+  }
+  
+  .information-section h2,
+  .referral-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .information-section p,
+  .referral-section p {
+    font-size: 0.9rem;
+  }
+
+  .information-section .container {
+    padding: 0;
+  }
+
+  .information-section .card-wrapper {
+    padding: 12px;
+  }
+
+  .information-section h4 {
+    font-size: 1.15rem;
+    letter-spacing: 2px;
+  }
+
+  .referral-section iframe {
+    margin-top: 1.5rem;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .information-section p,
+  body.sidebar-collapsed .referral-section p {
+    line-height: 2;
+    margin-top: 1.8rem;
+  }
+  
+  body.sidebar-collapsed .information-section .row {
+    flex-direction: row !important;
+    gap: 35px;
+  }
+
+  body.sidebar-collapsed .referral-section iframe {
+    width: 70%;
+    height: 24.6rem;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .information-section h2,
+  body.sidebar-expanded .referral-section h2 {
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  body.sidebar-expanded .information-section p,
+  body.sidebar-expanded .referral-section p {
+    text-align: center;
+    line-height: 1.7;
+    margin-top: 1.8rem;
+  }
+  
+  body.sidebar-expanded .information-section .row {
+    flex-direction: column !important;
+    padding: 0 1rem;
+    gap: 10px;
+  }
+
+  body.sidebar-expanded .information-section .col-left,
+  body.sidebar-expanded .information-section .col-right {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+  
+  body.sidebar-expanded .referral-section iframe {
+    width: 100%;
+    height: 20.5rem;
+  }
+}
+
+
+/* ==================== HP KECIL LANDSCAPE 4 (740px – 767px) ===================== */
+@media (min-width: 740px) and (max-width: 767px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .information-section {
+    padding: 0 0.5rem;
+  }
+
+  .referral-section {
+    margin-top: 6rem;
+    padding: 0 0.5rem;
+  }
+  
+  .information-section h2,
+  .referral-section h2 {
+    font-size: 1.5rem;
+    text-align: left;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .information-section p,
+  .referral-section p {
+    font-size: 0.9rem;
+    text-align: justify;
+    line-height: 1.7;
+  }
+
+  .information-section .container {
+    padding: 0;
+  }
+
+  .information-section .row {
+    gap: 5px;
+    padding: 14px;
+  }
+
+  .information-section .card-wrapper {
+    padding: 12px;
+  }
+
+  .information-section h4 {
+    font-size: 1.15rem;
+  }
+
+  .referral-section iframe {
+    width: 100%;
+    height: 28.5rem;
+    margin-top: 0.5rem;
+  }
+}
+
+
+/* ==================== HP KECIL LANDSCAPE 5 (667px – 719px) ===================== */
+@media (min-width: 667px) and (max-width: 719px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .information-section {
+    padding: 0 0.5rem;
+  }
+
+  .referral-section {
+    margin-top: 6rem;
+    padding: 0 0.5rem;
+  }
+  
+  .information-section h2,
+  .referral-section h2 {
+    font-size: 1.5rem;
+    text-align: left;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .information-section p,
+  .referral-section p {
+    font-size: 0.9rem;
+    text-align: justify;
+    line-height: 1.7;
+  }
+
+  .information-section .container {
+    padding: 0;
+  }
+
+  .information-section .row {
+    gap: 5px;
+    padding: 14px;
+  }
+
+  .information-section .card-wrapper {
+    padding: 12px;
+  }
+
+  .information-section h4 {
+    font-size: 1.15rem;
+  }
+
+  .referral-section iframe {
+    width: 100%;
+    height: 25.2rem;
+    margin-top: 0.5rem;
+  }
+}
+
+
+/* ============================= HP KECIL (≤ 520px) ============================== */
+@media (max-width: 520px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .information-section {
+    padding: 0 0.5rem;
+  }
+
+  .referral-section {
+    margin-top: 4.5rem;
+    padding: 0 0.5rem;
+  }
+  
+  .information-section h2,
+  .referral-section h2 {
+    font-size: 1.5rem;
+    text-align: left;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .information-section p,
+  .referral-section p {
+    font-size: 0.85rem;
+    text-align: justify;
+    line-height: 1.8;
+  }
+
+  .information-section .container {
+    padding: 0;
+  }
+
+  .information-section .row {
+    gap: 5px;
+    padding: 14px;
+  }
+
+  .information-section .card-wrapper {
+    padding: 10px;
+  }
+
+  .information-section h4 {
+    font-size: 1.15rem;
+  }
+
+  .referral-section iframe {
+    width: 100%;
+    height: 16.88rem;
+    margin-top: 0.5rem;
+  }
+}
