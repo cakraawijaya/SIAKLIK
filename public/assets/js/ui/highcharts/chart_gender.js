@@ -1,19 +1,29 @@
-// Create the chart
 Highcharts.chart('container', {
   chart: {
     type: 'column',
     events: {
-      load: function() {
-        var chart = this;
-        setTimeout(function() {
-            var table = document.querySelector('.highcharts-data-table table');
-            if (table) {
-                var thead = table.querySelector('thead tr');
-                if (thead && thead.cells.length >= 2) {
-                    thead.cells[0].textContent = 'Jenis Kelamin';   // kolom kategori
-                    thead.cells[1].textContent = 'Jumlah';  // kolom data
-                }
+      render: function () {
+        var watcher = setInterval(function () {
+          var table = document.querySelector('.highcharts-data-table table');
+          if (table) {
+            // Mengubah header tabel (Satker & Jumlah)
+            var thead = table.querySelector('thead tr');
+            if (thead && thead.cells.length >= 2) {
+              thead.cells[0].textContent = 'Satker';   // Header kolom pertama
+              thead.cells[1].textContent = 'Jumlah';   // Header kolom kedua
             }
+            // Menambahkan class ke kolom Satker
+            var tbody = table.querySelector('tbody');
+            if (tbody) {
+              tbody.querySelectorAll('tr').forEach(function(row) {
+                var firstCell = row.cells[0];
+                if (firstCell) {
+                  firstCell.classList.add('highcharts-label');
+                }
+              });
+            }
+            clearInterval(watcher);
+          }
         }, 100);
       }
     }
@@ -31,7 +41,6 @@ Highcharts.chart('container', {
     title: {
       text: ''
     }
-
   },
   legend: {
     enabled: false
@@ -41,16 +50,17 @@ Highcharts.chart('container', {
       borderWidth: 0,
       dataLabels: {
         enabled: true,
+        allowOverlap: true,
+        crop: false,
+        overflow: 'allow',
         format: '{point.y}'
       }
     }
   },
-
   tooltip: {
     headerFormat: '<span style="font-size:18px;">{series.name}</span><br>',
     pointFormat: '<span style="color:black;">{point.name}</span>: Total (<b>{point.y}</b>)<br/>'
   },
-
   series: [
     {
       name: "Pasien",

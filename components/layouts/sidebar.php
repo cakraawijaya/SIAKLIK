@@ -186,9 +186,21 @@
                             </a>
                         </li>
                         <li>
-                            <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/chart/chart_2020', false)" class="custom-mb-sidebar-child">
+                            <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/chart/chart_2020', false)">
                                 <i class="fas fa-notes-medical mr-2" aria-hidden="true"></i>
                                 <span>SATKER Tahun 2020</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/chart/chart_2021', false)">
+                                <i class="fas fa-notes-medical mr-2" aria-hidden="true"></i>
+                                <span>SATKER Tahun 2021</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/chart/chart_2022', false)" class="custom-mb-sidebar-child">
+                                <i class="fas fa-notes-medical mr-2" aria-hidden="true"></i>
+                                <span>SATKER Tahun 2022</span>
                             </a>
                         </li>
                     </ul>
