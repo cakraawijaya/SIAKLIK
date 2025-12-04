@@ -73,6 +73,10 @@
   color: white !important;
 }
 
+.highcharts-data-table table tr {
+  background: #639c1f !important;
+}
+
 .highcharts-data-table table .highcharts-label,
 .highcharts-data-table table .highcharts-number {
   letter-spacing: .1em !important;
@@ -407,5 +411,11 @@
   .highcharts-data-table table .highcharts-number {
     font-size: 0.9rem;
     font-weight: 600 !important;
+    color: white !important;
+  }
+
+  .highcharts-data-table table tr:nth-child(odd) .highcharts-number,
+  .highcharts-data-table table tr:nth-child(even) .highcharts-number {
+    background: none !important;
   }
 }
