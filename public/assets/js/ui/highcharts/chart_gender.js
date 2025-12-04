@@ -58,11 +58,11 @@ Highcharts.chart('container', {
       data: [
         {
           name: "Laki-Laki",
-          y: 3467
+          y: 3968
         },
         {
           name: "Perempuan",
-          y: 2374
+          y: 2546
         }
       ]
     }

@@ -57,44 +57,60 @@ Highcharts.chart('container', {
       colorByPoint: true,
       data: [
         {
-          name: "FEB",
-          y: 200
-        },
-        {
-          name: "FT",
-          y: 24
+          name: "FTI",
+          y: 43
         },
         {
           name: "FAD",
-          y: 12
+          y: 52
         },
         {
           name: "FH",
-          y: 20
+          y: 137
         },
         {
-          name: "Rektorat",
-          y: 320
+          name: "PASCA",
+          y: 11
         },
         {
-          name: "Pasca",
-          y: 1
-        },
-        {
-          name: "Koperasi",
-          y: 2
+          name: "FE",
+          y: 37
         },
         {
           name: "FISIP",
-          y: 40
-        },
-        {
-          name: "FP",
-          y: 200
+          y: 163
         },
         {
           name: "FIK",
-          y: 25
+          y: 41
+        },
+        {
+          name: "FTSP",
+          y: 3
+        },
+        {
+          name: "FEB",
+          y: 150
+        },
+        {
+          name: "Anak",
+          y: 1
+        },
+        {
+          name: "FT",
+          y: 103
+        },
+        {
+          name: "Rektorat",
+          y: 479
+        },
+        {
+          name: "Koperasi",
+          y: 10
+        },
+        {
+          name: "FP",
+          y: 108
         }
       ]
     }

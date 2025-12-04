@@ -62,11 +62,15 @@ Highcharts.chart('container', {
         },
         {
           name: "FAD",
-          y: 8
+          y: 12
         },
         {
           name: "FH",
-          y: 25
+          y: 13
+        },
+        {
+          name: "FE",
+          y: 1
         },
         {
           name: "PASCA",
@@ -74,39 +78,39 @@ Highcharts.chart('container', {
         },
         {
           name: "FISIP",
-          y: 33
-        },
-        {
-          name: "Idem",
-          y: 1
+          y: 14
         },
         {
           name: "FIK",
-          y: 13
+          y: 12
         },
         {
           name: "FTSP",
-          y: 2
+          y: 1
         },
         {
           name: "FEB",
-          y: 19
+          y: 28
+        },
+        {
+          name: "Anak",
+          y: 1
         },
         {
           name: "FT",
-          y: 23
+          y: 10
         },
         {
           name: "Rektorat",
-          y: 154
+          y: 114
         },
         {
           name: "Koperasi",
-          y: 7
+          y: 5
         },
         {
           name: "FP",
-          y: 12
+          y: 24
         }
       ]
     }
@@ -114,7 +118,7 @@ Highcharts.chart('container', {
   exporting: {
     enabled: true,
     showTable: true,
-    tableCaption: 'Kunjungan Pasien Berdasarkan Satker — 2020',
+    tableCaption: 'Kunjungan Pasien Berdasarkan Satker — 2021',
     csv: {
       columnHeaderFormatter: function(item) {
         if (!item) return 'Satker';  // header pertama

@@ -57,44 +57,8 @@ Highcharts.chart('container', {
       colorByPoint: true,
       data: [
         {
-          name: "FEB",
-          y: 0
-        },
-        {
-          name: "FT",
-          y: 0
-        },
-        {
-          name: "FAD",
-          y: 0
-        },
-        {
           name: "FH",
           y: 3
-        },
-        {
-          name: "Rektorat",
-          y: 0
-        },
-        {
-          name: "Pasca",
-          y: 0
-        },
-        {
-          name: "Koperasi",
-          y: 0
-        },
-        {
-          name: "FISIP",
-          y: 0
-        },
-        {
-          name: "FP",
-          y: 0
-        },
-        {
-          name: "FIK",
-          y: 0
         }
       ]
     }

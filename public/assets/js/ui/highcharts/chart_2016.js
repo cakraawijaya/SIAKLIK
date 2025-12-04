@@ -57,20 +57,8 @@ Highcharts.chart('container', {
       colorByPoint: true,
       data: [
         {
-          name: "FEB",
-          y: 129
-        },
-        {
           name: "Veteran",
           y: 1
-        },
-        {
-          name: "Anak",
-          y: 1
-        },
-        {
-          name: "FT",
-          y: 98
         },
         {
           name: "FAD",
@@ -81,24 +69,36 @@ Highcharts.chart('container', {
           y: 66
         },
         {
-          name: "Rektorat",
-          y: 170
-        },
-        {
-          name: "Pasca",
+          name: "PASCA",
           y: 1
         },
         {
           name: "Anak",
-          y: 1
-        },
-        {
-          name: "Koperasi",
-          y: 5
+          y: 2
         },
         {
           name: "FISIP",
           y: 82
+        },
+        {
+          name: "FIK",
+          y: 1
+        },
+        {
+          name: "FEB",
+          y: 129
+        },
+        {
+          name: "FT",
+          y: 98
+        },
+        {
+          name: "Rektorat",
+          y: 170
+        },
+        {
+          name: "Koperasi",
+          y: 5
         },
         {
           name: "FP",
@@ -106,10 +106,6 @@ Highcharts.chart('container', {
         },
         {
           name: "Swasta",
-          y: 1
-        },
-        {
-          name: "FIK",
           y: 1
         }
       ]

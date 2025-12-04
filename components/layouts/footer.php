@@ -180,6 +180,10 @@
             <script src="<?= BASE_URL ?>public/assets/js/ui/highcharts/chart_2019.js"></script>
         <?php elseif ($page == 'patient/chart/chart_2020'): ?>
             <script src="<?= BASE_URL ?>public/assets/js/ui/highcharts/chart_2020.js"></script>
+        <?php elseif ($page == 'patient/chart/chart_2021'): ?>
+            <script src="<?= BASE_URL ?>public/assets/js/ui/highcharts/chart_2021.js"></script>
+        <?php elseif ($page == 'patient/chart/chart_2022'): ?>
+            <script src="<?= BASE_URL ?>public/assets/js/ui/highcharts/chart_2022.js"></script>
         <?php elseif ($page == 'admin/user_management'): ?>
             <script src="<?= BASE_URL ?>public/assets/ajax/user_management_handler.js"></script>
         <?php elseif ($page == 'worker/patient_management'): ?>

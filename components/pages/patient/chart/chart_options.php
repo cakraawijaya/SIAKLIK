@@ -12,6 +12,8 @@
         ['color' => '#639c1f', 'label' => 'Satker 2018', 'icon' => 'fas fa-notes-medical', 'link' => 'chart_2018'],
         ['color' => '#24252d', 'label' => 'Satker 2019', 'icon' => 'fas fa-notes-medical', 'link' => 'chart_2019'],
         ['color' => '#639c1f', 'label' => 'Satker 2020', 'icon' => 'fas fa-notes-medical', 'link' => 'chart_2020'],
+        ['color' => '#24252d', 'label' => 'Satker 2021', 'icon' => 'fas fa-notes-medical', 'link' => 'chart_2021'],
+        ['color' => '#639c1f', 'label' => 'Satker 2022', 'icon' => 'fas fa-notes-medical', 'link' => 'chart_2022']
     ];
 
 ?>
