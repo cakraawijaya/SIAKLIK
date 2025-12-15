@@ -103,7 +103,7 @@
 
             <!-- Text Column -->
             <div class="about-wrapper col-12 col-sm-8 col-md-9">
-                <div class="text-justify about-text select-none">
+                <div class="about-text select-none">
                     <h2>Tentang SIAKLIK</h2><hr>
                     <p class="mt-2">Sistem Pelayanan Klinik Kesehatan (SIAKLIK) merupakan sebuah website yang digunakan untuk pelayanan kesehatan, adapun fungsinya sebagai berikut :</p>
                     <ol class="about-list">
@@ -162,7 +162,7 @@
                                             <div class="card-body d-flex flex-column">
                                                 <p class="card-text mb-auto">
                                                     HIV merupakan singkatan dari Human Immunodeficiency Virus (HIV) merupakan retrovirus
-                                                    yang menjangkiti sel-sel sistem kekebalan tubuh manusia. . . .
+                                                    yang menjangkiti sel-sel sistem kekebalan tubuh manusia. . .
                                                 </p>
                                             </div>
                                             <div class="card-footer text-center border-0 mt-auto">
@@ -184,7 +184,7 @@
                                             <div class="card-body d-flex flex-column">
                                                 <p class="card-text mb-auto">
                                                     Stroke adalah penyakit atau gangguan fungsional otak akut fokal maupun global akibat
-                                                    terhambatnya peredaran darah ke otak. Gangguan peredaran darah otak berupa. . . .
+                                                    terhambatnya peredaran darah ke otak. Gangguan peredaran darah. . .
                                                 </p>
                                             </div>
                                             <div class="card-footer text-center border-0 mt-auto">
@@ -206,7 +206,7 @@
                                             <div class="card-body d-flex flex-column">
                                                 <p class="card-text mb-auto">
                                                     Tuberkulosis merupakan infeksi yang disebabkan oleh Mycobacterium tuberculosis yang dapat menyerang
-                                                    berbagai organ tubuh mulai dari paru. . . .
+                                                    berbagai organ tubuh mulai dari paru. . .
                                                 </p>
                                             </div>
                                             <div class="card-footer text-center border-0 mt-auto">
@@ -233,7 +233,7 @@
                                             <div class="card-body d-flex flex-column">
                                                 <p class="card-text mb-auto">
                                                     Hepatitis adalah peradangan pada sel hati yang dapat disebabkan oleh infeksi virus, 
-                                                    konsumsi alkohol berlebihan, atau obat-obatan tertentu. Penyakit ini. . . .
+                                                    konsumsi alkohol berlebihan, atau obat-obatan tertentu. Penyakit ini. . .
                                                 </p>
                                             </div>
                                             <div class="card-footer text-center border-0 mt-auto">
@@ -255,7 +255,7 @@
                                             <div class="card-body d-flex flex-column">
                                                 <p class="card-text mb-auto">
                                                     Penyakit diare adalah suatu penyakit yang ditandai dengan perubahan bentuk dan
-                                                    konsistensi tinja yang lembek sampai mencair dan bertambahnya frekuensi. . . .
+                                                    konsistensi tinja yang lembek sampai mencair dan bertambahnya frekuensi. . .
                                                 </p>
                                             </div>
                                             <div class="card-footer text-center border-0 mt-auto">
@@ -277,7 +277,7 @@
                                             <div class="card-body d-flex flex-column">
                                                 <p class="card-text mb-auto">
                                                     Pneumonia adalah peradangan parenkim paru distal dari bronkiolus terminalis yang mencakup
-                                                    bronkiolus respiratorius dan alveoli serta menimbulkan. . . .
+                                                    bronkiolus respiratorius dan alveoli serta menimbulkan. . .
                                                 </p>
                                             </div>
                                             <div class="card-footer text-center border-0 mt-auto">
@@ -304,7 +304,7 @@
                                             <div class="card-body d-flex flex-column">
                                                 <p class="card-text mb-auto">
                                                     Difteri merupakan penyakit infeksi akut yang terutama menyerang tonsil, faring, laring,
-                                                    hidung, dan ada kalanya menyerang selaput. . . .
+                                                    hidung, dan ada kalanya. . .
                                                 </p>
                                             </div>
                                             <div class="card-footer text-center border-0 mt-auto">
@@ -326,7 +326,7 @@
                                             <div class="card-body d-flex flex-column">
                                                 <p class="card-text mb-auto">
                                                     Demam berdarah dengue atau DBD merupakan penyakit arbovirus dari keluarga flavivirus
-                                                    yang memiliki empat serotipe berbeda. . . .
+                                                    yang memiliki empat serotipe. . .
                                                 </p>
                                             </div>
                                             <div class="card-footer text-center border-0 mt-auto">
@@ -348,7 +348,7 @@
                                             <div class="card-body d-flex flex-column">
                                                 <p class="card-text mb-auto">
                                                     Kanker adalah istilah untuk kondisi di mana sel telah kehilangan pengendalian dan mekanisme
-                                                    normalnya sehingga mengalami. . . .
+                                                    normalnya sehingga. . .
                                                 </p>
                                             </div>
                                             <div class="card-footer text-center border-0 mt-auto">
@@ -375,7 +375,7 @@
                                             <div class="card-body d-flex flex-column">
                                                 <p class="card-text mb-auto">
                                                     Kusta merupakan penyakit infeksi kronis yang disebabkan oleh bakteri Mycobacterium leprae, yang menyerang 
-                                                    kulit, saraf tepi, dan selaput lendir. Penyakit ini. . . .
+                                                    kulit, saraf tepi, dan selaput lendir. . .
                                                 </p>
                                             </div>
                                             <div class="card-footer text-center border-0 mt-auto">
@@ -397,7 +397,7 @@
                                             <div class="card-body d-flex flex-column">
                                                 <p class="card-text mb-auto">
                                                     Stunting (Gizi Buruk) merupakan kondisi gagal tumbuh pada anak akibat kekurangan gizi kronis dalam 
-                                                    jangka panjang, terutama pada 1.000 hari pertama kehidupan. . . .
+                                                    jangka panjang, terutama pada 1.000 hari pertama kehidupan. . .
                                                 </p>
                                             </div>
                                             <div class="card-footer text-center border-0 mt-auto">
@@ -419,7 +419,7 @@
                                             <div class="card-body d-flex flex-column">
                                                 <p class="card-text mb-auto">
                                                     COVID-19 merupakan penyakit menular yang disebabkan oleh virus Corona (SARS-CoV-2), yang menyerang 
-                                                    sistem pernapasan dan dapat menimbulkan gejala. . . .
+                                                    sistem pernapasan dan dapat menimbulkan. . .
                                                 </p>
                                             </div>
                                             <div class="card-footer text-center border-0 mt-auto">
