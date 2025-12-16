@@ -43,6 +43,7 @@
             $_SESSION['level'] = $level;
             $_SESSION['username'] = $data['username'];
             $_SESSION['nama'] = $data['nama'];
+            $_SESSION['foto'] = $data['foto'];
             unset($_SESSION["captcha_".$captcha_id]); // hapus captcha setelah login sukses
 
             header("location: " . BASE_URL . "index.php?pesan=login_sukses&modal=pasien");
@@ -83,6 +84,7 @@
             $_SESSION['level'] = $level;
             $_SESSION['username'] = $data['username'];
             $_SESSION['nama'] = $data['nama'];
+            $_SESSION['foto'] = $data['foto'];
             unset($_SESSION["captcha_".$captcha_id]); // hapus captcha setelah login sukses
 
             header("location: " . BASE_URL . "index.php?pesan=login_sukses&modal=pekerja_admin");

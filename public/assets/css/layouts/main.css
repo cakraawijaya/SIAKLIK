@@ -107,12 +107,14 @@ main {
 .charts-text p,
 .gallery-foto-text p,
 .gallery-video-text p,
+.profile-text p,
 .queue-registration-text p,
 .queue-list-text p,
 .dashboard-text p,
 .patient-management-text p,
 .queue-management-text p,
-.user-management-text p {
+.user-management-text p,
+.user-log-text p {
   font-family: "Roboto", sans-serif;
   text-align: center;
   margin-bottom: 17px;
