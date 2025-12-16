@@ -85,7 +85,7 @@
 
 .highcharts-data-table table tr:nth-child(odd) .highcharts-label,
 .highcharts-data-table table tr:nth-child(odd) .highcharts-number {
-  background: #8ed553 !important;
+  background: #b4f46a !important;
 }
 
 .highcharts-data-table table tr:nth-child(even) .highcharts-label,
@@ -93,10 +93,14 @@
   background: #7fcf3a !important;
 }
 
+.highcharts-data-table table tr .highcharts-label,
+.highcharts-data-table table tr .highcharts-number {
+  transition: background-color 0.15s ease-in-out;
+}
+
 .highcharts-data-table table tr:hover .highcharts-label,
 .highcharts-data-table table tr:hover .highcharts-number {
-  background: #b4f46a !important;
-  transition: background .2s ease !important;
+  background-color: rgba(195, 255, 165, 0.55) !important;
 }
 
 

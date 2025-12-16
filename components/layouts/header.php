@@ -51,6 +51,10 @@
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/worker/patient_management.css">
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/worker/queue_management.css">
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/admin/user_management.css">
+        <!-- Under Construction -->
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/admin/profile.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/worker/profile.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/patient/profile.css">
     </head>
 
     <body class="sidebar-expanded" data-loggedin="<?= isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true ? 'true' : 'false' ?>">
