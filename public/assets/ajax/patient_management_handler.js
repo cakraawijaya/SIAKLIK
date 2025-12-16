@@ -52,28 +52,71 @@ $(document).ready(function(){
                     tbody.append('<tr><td colspan="13" class="text-center align-middle">Data tidak ditemukan</td></tr>');
                 } else {
                     $('th:last-child').show(); // tampilkan header aksi jika ada data
+                    
                     res.data.forEach(function(p){
+                        
                         var highlightClass = (lastUpdatedPatient.id === p.id) ? 'table-success' : '';
+
+                        var actionBtns = `
+                            <div class="btn-group">
+                                <button class="btn btn-warning-custom text-white btn-sm edit-btn" data-id="${p.id}"><i class="fa fa-edit"></i></button>
+                                <button class="btn btn-danger btn-sm delete-btn" data-id="${p.id}" data-nama="${p.nama}"><i class="fa fa-trash"></i></button>
+                            </div>
+                        `;
+
                         tbody.append(
                             `<tr class="${highlightClass}">
-                                <td class="text-center align-middle">${p.id}</td>
-                                <td class="text-center align-middle">${p.nama}</td>
-                                <td class="text-center align-middle">${p.umur}</td>
-                                <td class="text-center align-middle">${p.alamat}</td>
-                                <td class="text-center align-middle">${p.pekerjaan}</td>
-                                <td class="text-center align-middle">${p.status}</td>
-                                <td class="text-center align-middle">${p.jenis_kelamin}</td>
-                                <td class="text-center align-middle">${p.nim_nip || '-'}</td>
-                                <td class="text-center align-middle">${p.no_bpjs || '-'}</td>
-                                <td class="text-center align-middle">${p.layanan}</td>
-                                <td class="text-center align-middle">${p.kategori}</td>
-                                <td class="text-center align-middle">${p.keterangan || '-'}</td>
-                                <td class="text-center align-middle">${p.waktu}</td>
-                                <td class="text-center align-middle">
-                                    <div class="btn-group">
-                                        <button class="btn btn-warning-custom text-white btn-sm edit-btn" data-id="${p.id}"><i class="fa fa-edit"></i></button>
-                                        <button class="btn btn-danger btn-sm delete-btn" data-id="${p.id}" data-nama="${p.nama}"><i class="fa fa-trash"></i></button>
-                                    </div>
+                                <td class="text-center align-middle" data-header="ID">
+                                    <div class="td-value">${p.id}</div>
+                                </td>
+
+                                <td class="text-center align-middle" data-header="Nama">
+                                    <div class="td-value">${p.nama}</div>
+                                </td>
+
+                                <td class="text-center align-middle" data-header="Umur">
+                                    <div class="td-value">${p.umur}</div>
+                                </td>
+
+                                <td class="text-center align-middle" data-header="Alamat">
+                                    <div class="td-value">${p.alamat}</div>
+                                </td>
+
+                                <td class="text-center align-middle" data-header="Pekerjaan">
+                                    <div class="td-value">${p.pekerjaan}</div>
+                                </td>
+
+                                <td class="text-center align-middle" data-header="Status">
+                                    <div class="td-value">${p.status}</div>
+                                </td>
+
+                                <td class="text-center align-middle" data-header="JK">
+                                    <div class="td-value">${p.jenis_kelamin}</div>
+                                </td>
+
+                                <td class="text-center align-middle" data-header="NIM/NIP">
+                                    <div class="td-value">${p.nim_nip || '-'}</div>
+                                </td>
+
+                                <td class="text-center align-middle" data-header="No BPJS">
+                                    <div class="td-value">${p.no_bpjs || '-'}</div>
+                                </td>
+
+                                <td class="text-center align-middle" data-header="Layanan">
+                                    <div class="td-value">${p.layanan}</div>
+                                </td>
+
+                                <td class="text-center align-middle" data-header="Kategori">
+                                    <div class="td-value">${p.kategori}</div>
+                                </td>
+                                <td class="text-center align-middle" data-header="Ket">
+                                    <div class="td-value">${p.keterangan || '-'}</div>
+                                </td>
+                                <td class="text-center align-middle" data-header="Waktu Pencatatan">
+                                    <div class="td-value">${p.waktu}</div>
+                                </td>
+                                <td class="text-center align-middle" data-header="Aksi">
+                                    <div class="td-value">${actionBtns}</div>
                                 </td>
                             </tr>`
                         );

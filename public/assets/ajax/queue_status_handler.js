@@ -39,11 +39,25 @@ $(document).ready(function(){
                     data.data.forEach(function(row){
                         tbody.append(
                             '<tr>'+
-                                '<td class="text-center align-middle">'+(row.kode_antrean||'-')+'</td>' +
-                                '<td class="text-center align-middle">'+(row.nama_user||'-')+'</td>'+
-                                '<td class="text-center align-middle">'+(row.layanan_terkini||'-')+'</td>' +
-                                '<td class="text-center align-middle">'+(row.kategori||'-')+'</td>' +
-                                '<td class="text-center align-middle">'+(row.status_antrean||'Menunggu')+'</td>' +
+                                '<td class="text-center align-middle" data-header="Kode Antrean">' +
+                                    '<div class="td-value">' + (row.kode_antrean || '-') + '</div>' +
+                                '</td>' +
+
+                                '<td class="text-center align-middle" data-header="Nama">' +
+                                    '<div class="td-value">' + (row.nama_user || '-') + '</div>' +
+                                '</td>' +
+
+                                '<td class="text-center align-middle" data-header="Layanan">' +
+                                    '<div class="td-value">' + (row.layanan_terkini || '-') + '</div>' +
+                                '</td>' +
+
+                                '<td class="text-center align-middle" data-header="Jenis Antrean">' +
+                                    '<div class="td-value">' + (row.kategori || '-') + '</div>' +
+                                '</td>' +
+
+                                '<td class="text-center align-middle" data-header="Status">' +
+                                    '<div class="td-value">' + (row.status_antrean || 'Menunggu') + '</div>' +
+                                '</td>' +
                             '</tr>'
                         );
                     });

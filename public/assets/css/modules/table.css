@@ -1,14 +1,29 @@
+.btn-group-queue form {
+  margin: 0;
+  padding: 0;
+}
+
+.btn-group-queue .btn {
+  border-radius: 0;
+  margin: 0;
+}
+
+.btn-group-queue form:first-child .btn {
+  border-top-left-radius: 0.2rem;
+  border-bottom-left-radius: 0.2rem;
+}
+
+.btn-group-queue form:last-child .btn {
+  border-top-right-radius: 0.2rem;
+  border-bottom-right-radius: 0.2rem;
+}
+
 table {
   border: 1px solid green;
   border-collapse: collapse;
   margin: 0;
   padding: 0;
   width: 100%;
-}
-
-table caption {
-  font-size: 1.5em;
-  margin: .25em 0 .75em;
 }
 
 table tr {
@@ -35,60 +50,44 @@ table td img {
   text-align: center;
 }
 
-.btn-group-queue form {
-    margin: 0;
-    padding: 0;
-}
-
-.btn-group-queue .btn {
-    border-radius: 0;
-    margin: 0;
-}
-
-.btn-group-queue form:first-child .btn {
-    border-top-left-radius: 0.2rem;
-    border-bottom-left-radius: 0.2rem;
-}
-
-.btn-group-queue form:last-child .btn {
-    border-top-right-radius: 0.2rem;
-    border-bottom-right-radius: 0.2rem;
-}
-
 @media screen and (max-width: 520px) {
-  table {
-    border: 0;
-  }
-
-  table caption {
-    font-size: 1.3em;
-  }
-
-  table thead {
-    display: none;
-  }
-
-  table tr {
-    border-bottom: 3px solid green;
+  table, tbody, tr {
     display: block;
-    margin-bottom: .725em;
+    width: 100%;
+  }
+
+  tr {
+    margin-bottom: 2rem;
+    padding: 0 !important;
+  }
+
+  thead {
+    display: none !important;
   }
 
   table td {
-    border-bottom: 1px solid green;
     display: block;
-    font-size: .8em;
-    text-align: right;
+    width: 100%;
+    padding: 0 !important;
+    border: 0 !important;
   }
 
-  table td:before {
-    content: attr(data-label);
-    float: left;
-    font-weight: bold;
+  table td::before {
+    content: attr(data-header);
+    display: block;
+    background: #639c1f;
+    color: #fff;
+    text-align: center;
+    font-weight: 700;
+    padding: .4em 0;
+    border-bottom: 0;
     text-transform: uppercase;
   }
-  
-  table td:last-child {
-    border-bottom: 0;
+
+  table td .td-value {
+    padding: .7em 0;
+    background: #8cc3ff;
+    text-align: center;
+    line-height: 1.5;
   }
 }

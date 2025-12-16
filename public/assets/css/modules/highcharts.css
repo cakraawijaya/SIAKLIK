@@ -406,16 +406,49 @@
     margin-top: 20px;
   }
 
+  .highcharts-data-table table {
+    border: 0;
+  }
+
+  .highcharts-data-table table thead {
+    display: none;
+  }
+
   .highcharts-data-table table th {
     font-size: 0.75rem;
     font-weight: 800 !important;
     max-width: 100%;
   }
 
+  .highcharts-data-table table tr {
+    display: flex !important;
+    align-items: center !important; 
+    margin-bottom: .725em;
+    padding: .5em !important;
+  }
+
+  .highcharts-data-table table td {
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    justify-content: space-between !important;
+  }
+
+  .highcharts-data-table table tr:nth-child(even) .highcharts-label {
+    background: #b4f46a !important;
+  }
+
+  .highcharts-data-table table tr:hover .highcharts-label {
+    background-color: rgba(195, 255, 165, 0.75) !important;
+  }
+
   .highcharts-data-table table .highcharts-number {
+    margin-left: auto !important;
     font-size: 0.9rem;
     font-weight: 600 !important;
-    color: white !important;
+    color: #fff !important;
+    text-align: right;
+    white-space: nowrap;
   }
 
   .highcharts-data-table table tr:nth-child(odd) .highcharts-number,

@@ -53,13 +53,34 @@ $(document).ready(function(){
 
                         tbody.append(
                             '<tr class="' + highlightClass + '">' +
-                                '<td class="text-center align-middle">'+(row.kode_antrean||'-')+'</td>' +
-                                '<td class="text-center align-middle">'+(row.username||'-')+'</td>' +
-                                '<td class="text-center align-middle">'+(row.nama_user||'-')+'</td>' +
-                                '<td class="text-center align-middle">'+(row.layanan||'-')+'</td>' +
-                                '<td class="text-center align-middle">'+(row.kategori||'-')+'</td>' +
-                                '<td class="text-center align-middle">'+(row.status_antrean||'Menunggu')+'</td>' +
-                                '<td class="text-center align-middle">'+actionBtns+'</td>' +
+
+                                '<td class="text-center align-middle" data-header="Kode Antrean">' +
+                                    '<div class="td-value">' + (row.kode_antrean || '-') + '</div>' +
+                                '</td>' +
+
+                                '<td class="text-center align-middle" data-header="Username">' +
+                                    '<div class="td-value">' + (row.username || '-') + '</div>' +
+                                '</td>' +
+
+                                '<td class="text-center align-middle" data-header="Nama">' +
+                                    '<div class="td-value">' + (row.nama_user || '-') + '</div>' +
+                                '</td>' +
+
+                                '<td class="text-center align-middle" data-header="Layanan">' +
+                                    '<div class="td-value">' + (row.layanan || '-') + '</div>' +
+                                '</td>' +
+
+                                '<td class="text-center align-middle" data-header="Jenis Antrean">' +
+                                    '<div class="td-value">' + (row.kategori || '-') + '</div>' +
+                                '</td>' +
+
+                                '<td class="text-center align-middle" data-header="Status">' +
+                                    '<div class="td-value">' + (row.status_antrean || 'Menunggu') + '</div>' +
+                                '</td>' +
+
+                                '<td class="text-center align-middle" data-header="Aksi">' +
+                                    '<div class="td-value">' + actionBtns + '</div>' +
+                                '</td>' +
                             '</tr>'
                         );
                     });

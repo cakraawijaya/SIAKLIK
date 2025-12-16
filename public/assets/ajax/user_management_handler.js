@@ -65,17 +65,41 @@ $(document).ready(function () {
                             <div class="btn-group">
                                 <button class="btn btn-warning-custom text-white btn-sm edit-btn"><i class="fa fa-edit"></i></button>
                                 <button class="btn btn-danger btn-sm delete-btn" ${disableDelete}><i class="fa fa-trash"></i></button>
-                            </div>`;
+                            </div>
+                        `;
 
                         tbody.append(`
                             <tr class="${highlightClass}">
-                                <td class="text-center align-middle" style="width:120px;">
-                                    <img src="${fotoSrc}" alt="foto" data-username="${row.username}" style="width:64px;height:64px;object-fit:cover;border-radius:6px;">
+                                <td class="text-center align-middle" data-header="Foto">
+                                    <div class="td-value">
+                                        <img src="${fotoSrc}" alt="foto" data-username="${row.username}"
+                                        style="width:64px;height:64px;object-fit:cover;border-radius:6px;">
+                                    </div>
                                 </td>
-                                <td class="text-center align-middle email" data-email="${row.email || ''}">${row.email || '-'}</td>
-                                <td class="text-center align-middle" data-username="${row.username || ''}">${row.username || '-'}</td>
-                                <td class="text-center align-middle">${row.nama || '-'}</td>
-                                <td class="text-center align-middle">${actionBtns}</td>
+
+                                <td class="text-center align-middle email" data-header="Email" data-email="${row.email || ''}">
+                                    <div class="td-value">
+                                        ${row.email || '-'}
+                                    </div>
+                                </td>
+
+                                <td class="text-center align-middle" data-header="Username" data-username="${row.username || ''}">
+                                    <div class="td-value">
+                                        ${row.username || '-'}
+                                    </div>
+                                </td>
+
+                                <td class="text-center align-middle" data-header="Nama">
+                                    <div class="td-value">
+                                        ${row.nama || '-'}
+                                    </div>
+                                </td>
+
+                                <td class="text-center align-middle" data-header="Aksi">
+                                    <div class="td-value">
+                                        ${actionBtns}
+                                    </div>
+                                </td>
                             </tr>
                         `);
                     });
