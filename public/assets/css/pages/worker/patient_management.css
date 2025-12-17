@@ -1,3 +1,149 @@
 /* ===================================================================================== */
 /* ===                           PATIENT MANAGEMENT STYLE                            === */
 /* ===================================================================================== */
+
+/* ==================================== GLOBAL =================================== */
+
+
+/* =========================== DESKTOP (1200px – 1368px) ========================= */
+@media (min-width: 1200px) and (max-width: 1368px) {
+  /* ------------------- Pengaturan Global --------------------- */
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  /* body.sidebar-collapsed {} */
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  /* body.sidebar-expanded {} */
+}
+
+
+/* ======================= SMALL DESKTOP (992px – 1179px) ======================== */
+@media (min-width: 992px) and (max-width: 1179px) {
+  /* ------------------- Pengaturan Global --------------------- */
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  /* body.sidebar-collapsed {} */
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  /* body.sidebar-expanded {} */
+}
+
+
+/* ==================== TABLET LANDSCAPE-1 (1180px – 1199px) ===================== */
+@media (min-width: 1180px) and (max-width: 1199px) {
+  /* ------------------- Pengaturan Global --------------------- */
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  /* body.sidebar-collapsed {} */
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  /* body.sidebar-expanded {} */
+}
+
+
+/* ===================== TABLET LANDSCAPE-2 (933px – 991px) ====================== */
+@media (min-width: 933px) and (max-width: 991px) {
+  /* ------------------- Pengaturan Global --------------------- */
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  /* body.sidebar-collapsed {} */
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  /* body.sidebar-expanded {} */
+}
+
+
+/* ===================== TABLET LANDSCAPE-3 (853px – 881px) ====================== */
+@media (min-width: 853px) and (max-width: 881px) {
+  /* ------------------- Pengaturan Global --------------------- */
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  /* body.sidebar-collapsed {} */
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  /* body.sidebar-expanded {} */
+}
+
+
+/* ====================== TABLET POTRAIT-1 (820px – 839px) ======================= */
+@media (min-width: 820px) and (max-width: 839px) {
+  /* ------------------- Pengaturan Global --------------------- */
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  /* body.sidebar-collapsed {} */
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  /* body.sidebar-expanded {} */
+}
+
+
+/* ====================== TABLET POTRAIT-2 (768px – 819px) ======================= */
+@media (min-width: 768px) and (max-width: 819px) {
+  /* ------------------- Pengaturan Global --------------------- */
+}
+
+
+/* ===================== HP BESAR LANDSCAPE (720px – 739px) ====================== */
+@media (min-width: 720px) and (max-width: 739px) {
+  /* ------------------- Pengaturan Global --------------------- */
+}
+
+
+/* ===================== HP BESAR POTRAIT (521px – 666px) ======================== */
+@media (min-width: 521px) and (max-width: 666px) {
+  /* ------------------- Pengaturan Global --------------------- */
+}
+
+
+/* ==================== HP KECIL LANDSCAPE 1 (912px – 932px) ===================== */
+@media (min-width: 912px) and (max-width: 932px) {
+  /* ------------------- Pengaturan Global --------------------- */
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  /* body.sidebar-collapsed {} */
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  /* body.sidebar-expanded {} */
+}
+
+
+/* ==================== HP KECIL LANDSCAPE 2 (882px – 911px) ===================== */
+@media (min-width: 882px) and (max-width: 911px) {
+  /* ------------------- Pengaturan Global --------------------- */
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  /* body.sidebar-collapsed {} */
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  /* body.sidebar-expanded {} */
+}
+
+
+/* ==================== HP KECIL LANDSCAPE 3 (840px – 852px) ===================== */
+@media (min-width: 840px) and (max-width: 852px) {
+  /* ------------------- Pengaturan Global --------------------- */
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  /* body.sidebar-collapsed {} */
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  /* body.sidebar-expanded {} */
+}
+
+
+/* ==================== HP KECIL LANDSCAPE 4 (740px – 767px) ===================== */
+@media (min-width: 740px) and (max-width: 767px) {
+  /* ------------------- Pengaturan Global --------------------- */
+}
+
+
+/* ==================== HP KECIL LANDSCAPE 5 (667px – 719px) ===================== */
+@media (min-width: 667px) and (max-width: 719px) {
+  /* ------------------- Pengaturan Global --------------------- */
+}
+
+
+/* ============================= HP KECIL (≤ 520px) ============================== */
+@media screen and (max-width: 520px) {
+  /* ------------------- Pengaturan Global --------------------- */
+}

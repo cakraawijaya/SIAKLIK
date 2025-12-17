@@ -18,28 +18,28 @@
         </div><hr>
 
         <!-- Tabs dan Search -->
-        <div class="d-flex justify-content-between align-items-center mt-4 mb-3 pb-2">
-            <ul class="nav nav-tabs mt-4" style="border-bottom:0;">
+        <div class="tab-search-wrapper">
+            <ul class="nav nav-tabs">
                 <?php foreach ($tab_labels as $label=>$text): ?>
                     <li class="nav-item">
                         <a class="nav-link text-dark select-none <?= $active_tab===$label?'active':'' ?>" 
-                        onclick="openLink('#<?= $label ?>', false)" data-tab="<?= $label ?>" style="cursor:pointer;">
+                        onclick="openLink('#<?= $label ?>', false)" data-tab="<?= $label ?>">
                             <?= $text ?>
                         </a>
                     </li>
                 <?php endforeach; ?>
             </ul>
-            <form class="form-inline mt-4" id="searchForm">
+            <form class="form-inline" id="searchForm">
                 <input type="text" name="search" class="form-control select-none mr-2" placeholder="Cari Kode Antrean" value="<?= htmlspecialchars($search) ?>">
-                <button class="btn btn-info text-white" type="submit"><i class="fa fa-search"></i></button>
+                <button class="btn btn-info text-white" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
             </form>
         </div>
 
         <!-- Table Content -->
-        <div class="tab-content mt-3" id="antreanTabContent">
+        <div class="tab-content" id="antreanTabContent">
             <?php foreach ($tab_labels as $label=>$text): ?>
                 <div class="tab-pane select-none fade <?= $active_tab===$label?'show active':'' ?>" id="<?= $label ?>">
-                    <div class="table-responsive mb-3">
+                    <div class="table-responsive">
                         <table class="table table-bordered w-100">
                             <thead>
                                 <tr>
@@ -53,18 +53,22 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><td colspan="8" class="text-center align-middle">Memuat data...</td></tr>
+                                <tr>
+                                    <td colspan="8" class="text-center align-middle" data-header="Pemberitahuan Sistem">
+                                        <div class="td-value">Memuat data...</div>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
 
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="d-flex align-items-center">
-                            <span id="<?= $label ?>-info">Jumlah data antrean aktif pasien</span>&nbsp;
+                    <div class="info-pagination-wrapper">
+                        <div class="count-data">
+                            <span id="<?= $label ?>-info">Jumlah data antrean aktif pasien</span>
                             <strong id="<?= $label ?>-category" class="text-muted">(<?= strtoupper($text) ?>)</strong>
-                            &nbsp;:&nbsp;<b id="<?= $label ?>-count">0</b>
+                            :&nbsp;<b id="<?= $label ?>-count">0</b>
                         </div>
-                        <div class="d-flex align-items-center">
+                        <div class="pagination">
                             <a class="btn btn-success text-white mr-3" id="<?= $label ?>-prev"><i class="fas fa-arrow-left mr-1"></i>Back</a>
                             <a class="btn btn-success text-white" id="<?= $label ?>-next">Next<i class="fas fa-arrow-right ml-1"></i></a>
                         </div>

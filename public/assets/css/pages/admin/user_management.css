@@ -1,3 +1,1067 @@
 /* ===================================================================================== */
 /* ===                            USER MANAGEMENT STYLE                              === */
 /* ===================================================================================== */
+
+/* ==================================== GLOBAL =================================== */
+.user-management-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.user-management-section .tab-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.5rem 0;
+  padding-top: 1.5rem;
+}
+
+.user-management-section .tab-wrapper .nav-tabs {
+  border-bottom: 0;
+}
+
+.user-management-section .tab-wrapper .nav-item .nav-link {
+  cursor: pointer;
+}
+
+.user-management-section .action-bar-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.user-management-section .action-bar-wrapper .add-export {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-management-section .action-bar-wrapper .form-inline {
+  display: flex;
+  align-items: center;
+}
+
+.user-management-section .action-bar-wrapper .form-inline input {
+  min-width: 220px;
+}
+
+.user-management-section .tab-content {
+  margin-top: 1rem;
+}
+
+.user-management-section .tab-content .table-responsive {
+  margin-bottom: 1rem;
+}
+
+.user-management-section .info-pagination-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-management-section .info-pagination-wrapper .count-data,
+.user-management-section .info-pagination-wrapper .pagination {
+  align-items: center;
+}
+
+
+/* =========================== DESKTOP (1200px – 1368px) ========================= */
+@media (min-width: 1200px) and (max-width: 1368px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .user-management-section h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .user-management-section p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .user-management-section .tab-wrapper .nav-link,
+  .user-management-section .action-bar-wrapper .add-export button,
+  .user-management-section .action-bar-wrapper .add-export a,
+  .user-management-section .action-bar-wrapper .form-inline input::placeholder,
+  .user-management-section .info-pagination-wrapper .count-data,
+  .user-management-section .info-pagination-wrapper .pagination a {
+    font-size: 0.95rem;
+  }
+
+  .user-management-section .action-bar-wrapper .form-inline button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 36.5px;
+    white-space: nowrap;
+  }
+}
+
+
+/* ======================= SMALL DESKTOP (992px – 1179px) ======================== */
+@media (min-width: 992px) and (max-width: 1179px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .user-management-section h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .user-management-section p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .user-management-section .tab-wrapper .nav-link,
+  .user-management-section .action-bar-wrapper .add-export button,
+  .user-management-section .action-bar-wrapper .add-export a,
+  .user-management-section .action-bar-wrapper .form-inline input::placeholder,
+  .user-management-section .info-pagination-wrapper .count-data,
+  .user-management-section .info-pagination-wrapper .pagination a {
+    font-size: 0.9rem;
+  }
+
+  .user-management-section .add-export .btn {
+    padding: 0.44rem;
+  }
+}
+
+
+/* ==================== TABLET LANDSCAPE-1 (1180px – 1199px) ===================== */
+@media (min-width: 1180px) and (max-width: 1199px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .user-management-section h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .user-management-section p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .user-management-section .tab-wrapper .nav-link,
+  .user-management-section .action-bar-wrapper .add-export button,
+  .user-management-section .action-bar-wrapper .add-export a,
+  .user-management-section .action-bar-wrapper .form-inline input::placeholder,
+  .user-management-section .info-pagination-wrapper .count-data,
+  .user-management-section .info-pagination-wrapper .pagination a {
+    font-size: 0.9rem;
+  }
+
+  .user-management-section .add-export .btn {
+    padding: 0.44rem;
+  }
+}
+
+
+/* ===================== TABLET LANDSCAPE-2 (933px – 991px) ====================== */
+@media (min-width: 933px) and (max-width: 991px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .user-management-section h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .user-management-section p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .user-management-section .tab-wrapper .nav-link,
+  .user-management-section .action-bar-wrapper .add-export button,
+  .user-management-section .action-bar-wrapper .add-export a,
+  .user-management-section .action-bar-wrapper .form-inline input::placeholder,
+  .user-management-section .info-pagination-wrapper .count-data,
+  .user-management-section .info-pagination-wrapper .pagination a {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* ===================== TABLET LANDSCAPE-3 (853px – 881px) ====================== */
+@media (min-width: 853px) and (max-width: 881px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .user-management-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .user-management-section p,
+  .user-management-section .tab-wrapper .nav-link {
+    font-size: 0.9rem;
+  }
+
+  .user-management-section .action-bar-wrapper .add-export button,
+  .user-management-section .action-bar-wrapper .add-export a,
+  .user-management-section .action-bar-wrapper .form-inline input::placeholder,
+  .user-management-section .info-pagination-wrapper .count-data,
+  .user-management-section .info-pagination-wrapper .pagination a {
+    font-size: 0.85rem;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .user-management-section p {
+    line-height: 2;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-collapsed .user-management-section .add-export .btn {
+    padding: 0.44rem;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .user-management-section h2 {
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  body.sidebar-expanded .user-management-section p {
+    text-align: center;
+    line-height: 1.7;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-expanded .user-management-section .tab-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  body.sidebar-expanded .user-management-section .tab-wrapper .nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    border-bottom: 0;
+  }
+
+  body.sidebar-expanded .user-management-section .tab-wrapper .nav-item {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+  body.sidebar-expanded .user-management-section .tab-wrapper .nav-link {
+    cursor: pointer;
+    border-radius: 0;
+  }
+
+  body.sidebar-expanded .user-management-section .action-bar-wrapper .add-export {
+    display: flex;
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+
+  body.sidebar-expanded .user-management-section .add-export .btn {
+    flex: 1 1 50%;
+    max-width: 50%;
+    padding: 0.55rem;
+  }
+
+  body.sidebar-expanded .user-management-section .action-bar-wrapper .form-inline {
+    display: flex;
+    width: 100%;
+    gap: 0.5rem;
+    margin-top: 0.2rem;
+    margin-bottom: 1rem;
+  }
+
+  body.sidebar-expanded .user-management-section .action-bar-wrapper .form-inline input {
+    flex: 1;
+  }
+
+  body.sidebar-expanded .user-management-section .action-bar-wrapper .form-inline button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 37px;
+    white-space: nowrap;
+  }
+
+  body.sidebar-expanded .user-management-section .tab-content {
+    margin-top: 0.25rem;
+  }
+
+  body.sidebar-expanded .user-management-section .info-pagination-wrapper .count-data {
+    padding-right: 50px;
+  }
+
+  body.sidebar-expanded .user-management-section:has(.action-bar-wrapper input:not(:placeholder-shown))
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
+  }
+}
+
+
+/* ====================== TABLET POTRAIT-1 (820px – 839px) ======================= */
+@media (min-width: 820px) and (max-width: 839px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .user-management-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .user-management-section p,
+  .user-management-section .tab-wrapper .nav-link {
+    font-size: 0.9rem;
+  }
+
+  .user-management-section .action-bar-wrapper .add-export button,
+  .user-management-section .action-bar-wrapper .add-export a,
+  .user-management-section .action-bar-wrapper .form-inline input::placeholder,
+  .user-management-section .info-pagination-wrapper .count-data,
+  .user-management-section .info-pagination-wrapper .pagination a {
+    font-size: 0.85rem;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .user-management-section p {
+    line-height: 2;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-collapsed .user-management-section .add-export .btn {
+    padding: 0.44rem;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .user-management-section h2 {
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  body.sidebar-expanded .user-management-section p {
+    text-align: center;
+    line-height: 1.7;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-expanded .user-management-section .tab-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  body.sidebar-expanded .user-management-section .tab-wrapper .nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    border-bottom: 0;
+  }
+
+  body.sidebar-expanded .user-management-section .tab-wrapper .nav-item {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+  body.sidebar-expanded .user-management-section .tab-wrapper .nav-link {
+    cursor: pointer;
+    border-radius: 0;
+  }
+
+  body.sidebar-expanded .user-management-section .action-bar-wrapper .add-export {
+    display: flex;
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+
+  body.sidebar-expanded .user-management-section .add-export .btn {
+    flex: 1 1 50%;
+    max-width: 50%;
+    padding: 0.55rem;
+  }
+
+  body.sidebar-expanded .user-management-section .action-bar-wrapper .form-inline {
+    display: flex;
+    width: 100%;
+    gap: 0.5rem;
+    margin-top: 0.2rem;
+    margin-bottom: 1rem;
+  }
+
+  body.sidebar-expanded .user-management-section .action-bar-wrapper .form-inline input {
+    flex: 1;
+  }
+
+  body.sidebar-expanded .user-management-section .action-bar-wrapper .form-inline button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 37px;
+    white-space: nowrap;
+  }
+
+  body.sidebar-expanded .user-management-section .tab-content {
+    margin-top: 0.25rem;
+  }
+
+  body.sidebar-expanded .user-management-section .info-pagination-wrapper .count-data {
+    padding-right: 30px;
+  }
+
+  body.sidebar-expanded .user-management-section:has(.action-bar-wrapper input:not(:placeholder-shown))
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
+  }
+}
+
+
+/* ====================== TABLET POTRAIT-2 (768px – 819px) ======================= */
+@media (min-width: 768px) and (max-width: 819px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .user-management-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .user-management-section p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .user-management-section .tab-wrapper .nav-link {
+    font-size: 0.9rem;
+  }
+
+  .user-management-section .action-bar-wrapper .add-export button,
+  .user-management-section .action-bar-wrapper .add-export a,
+  .user-management-section .action-bar-wrapper .form-inline input::placeholder,
+  .user-management-section .info-pagination-wrapper .count-data,
+  .user-management-section .info-pagination-wrapper .pagination a {
+    font-size: 0.85rem;
+  }
+
+  .user-management-section .add-export .btn {
+    padding: 0.44rem;
+  }
+}
+
+
+/* ===================== HP BESAR LANDSCAPE (720px – 739px) ====================== */
+@media (min-width: 720px) and (max-width: 739px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .user-management-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .user-management-section p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .user-management-section .tab-wrapper .nav-link,
+  .user-management-section .action-bar-wrapper .add-export button,
+  .user-management-section .action-bar-wrapper .add-export a,
+  .user-management-section .action-bar-wrapper .form-inline input::placeholder,
+  .user-management-section .info-pagination-wrapper .count-data,
+  .user-management-section .info-pagination-wrapper .pagination a {
+    font-size: 0.85rem;
+  }
+
+  .user-management-section .add-export .btn {
+    padding: 0.45rem;
+  }
+}
+
+
+/* ===================== HP BESAR POTRAIT (521px – 666px) ======================== */
+@media (min-width: 521px) and (max-width: 666px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .user-management-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .user-management-section p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .user-management-section .tab-wrapper .nav-link {
+    font-size: 0.9rem;
+  }
+
+  .user-management-section .action-bar-wrapper .add-export button,
+  .user-management-section .action-bar-wrapper .add-export a,
+  .user-management-section .action-bar-wrapper .form-inline input::placeholder,
+  .user-management-section .info-pagination-wrapper .count-data,
+  .user-management-section .info-pagination-wrapper .pagination a {
+    font-size: 0.85rem;
+  }
+
+  .user-management-section .tab-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .user-management-section .tab-wrapper .nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    border-bottom: 0;
+  }
+
+  .user-management-section .tab-wrapper .nav-item {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+  .user-management-section .tab-wrapper .nav-link {
+    cursor: pointer;
+    border-radius: 0;
+  }
+
+  .user-management-section .action-bar-wrapper .add-export {
+    display: flex;
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+
+  .user-management-section .add-export .btn {
+    flex: 1 1 50%;
+    max-width: 50%;
+    padding: 0.55rem;
+  }
+
+  .user-management-section .action-bar-wrapper .form-inline {
+    display: flex;
+    width: 100%;
+    gap: 0.5rem;
+    margin-top: 0.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .user-management-section .action-bar-wrapper .form-inline input {
+    flex: 1;
+  }
+
+  .user-management-section .action-bar-wrapper .form-inline button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 37px;
+    white-space: nowrap;
+  }
+
+  .user-management-section .tab-content {
+    margin-top: 0.25rem;
+  }
+
+  .user-management-section .info-pagination-wrapper .count-data {
+    padding-right: 50px;
+  }
+
+  .user-management-section:has(.action-bar-wrapper input:not(:placeholder-shown))
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
+  }
+}
+
+
+/* ==================== HP KECIL LANDSCAPE 1 (912px – 932px) ===================== */
+@media (min-width: 912px) and (max-width: 932px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .user-management-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .user-management-section p,
+  .user-management-section .tab-wrapper .nav-link {
+    font-size: 0.9rem;
+  }
+
+  .user-management-section .action-bar-wrapper .add-export button,
+  .user-management-section .action-bar-wrapper .add-export a,
+  .user-management-section .action-bar-wrapper .form-inline input::placeholder,
+  .user-management-section .info-pagination-wrapper .count-data,
+  .user-management-section .info-pagination-wrapper .pagination a {
+    font-size: 0.85rem;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .user-management-section p {
+    line-height: 2;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-collapsed .user-management-section .add-export .btn {
+    padding: 0.48rem;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .user-management-section h2 {
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  body.sidebar-expanded .user-management-section p {
+    text-align: center;
+    line-height: 1.7;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-expanded .user-management-section .tab-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  body.sidebar-expanded .user-management-section .tab-wrapper .nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    border-bottom: 0;
+  }
+
+  body.sidebar-expanded .user-management-section .tab-wrapper .nav-item {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+  body.sidebar-expanded .user-management-section .tab-wrapper .nav-link {
+    cursor: pointer;
+    border-radius: 0;
+  }
+
+  body.sidebar-expanded .user-management-section .action-bar-wrapper .add-export {
+    display: flex;
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+
+  body.sidebar-expanded .user-management-section .add-export .btn {
+    flex: 1 1 50%;
+    max-width: 50%;
+    padding: 0.55rem;
+  }
+
+  body.sidebar-expanded .user-management-section .action-bar-wrapper .form-inline {
+    display: flex;
+    width: 100%;
+    gap: 0.5rem;
+    margin-top: 0.2rem;
+    margin-bottom: 1rem;
+  }
+
+  body.sidebar-expanded .user-management-section .action-bar-wrapper .form-inline input {
+    flex: 1;
+  }
+
+  body.sidebar-expanded .user-management-section .action-bar-wrapper .form-inline button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 37px;
+    white-space: nowrap;
+  }
+
+  body.sidebar-expanded .user-management-section .tab-content {
+    margin-top: 0.25rem;
+  }
+}
+
+
+/* ==================== HP KECIL LANDSCAPE 2 (882px – 911px) ===================== */
+@media (min-width: 882px) and (max-width: 911px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .user-management-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .user-management-section p,
+  .user-management-section .tab-wrapper .nav-link,
+  .user-management-section .action-bar-wrapper .add-export button,
+  .user-management-section .action-bar-wrapper .add-export a,
+  .user-management-section .action-bar-wrapper .form-inline input::placeholder,
+  .user-management-section .info-pagination-wrapper .count-data,
+  .user-management-section .info-pagination-wrapper .pagination a {
+    font-size: 0.9rem;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .user-management-section p {
+    line-height: 2;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-collapsed .user-management-section .add-export .btn {
+    padding: 0.44rem;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .user-management-section h2 {
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  body.sidebar-expanded .user-management-section p {
+    text-align: center;
+    line-height: 1.7;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-expanded .user-management-section .tab-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  body.sidebar-expanded .user-management-section .tab-wrapper .nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    border-bottom: 0;
+  }
+
+  body.sidebar-expanded .user-management-section .tab-wrapper .nav-item {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+  body.sidebar-expanded .user-management-section .tab-wrapper .nav-link {
+    cursor: pointer;
+    border-radius: 0;
+  }
+
+  body.sidebar-expanded .user-management-section .action-bar-wrapper .add-export {
+    display: flex;
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+
+  body.sidebar-expanded .user-management-section .add-export .btn {
+    flex: 1 1 50%;
+    max-width: 50%;
+    padding: 0.55rem;
+  }
+
+  body.sidebar-expanded .user-management-section .action-bar-wrapper .form-inline {
+    display: flex;
+    width: 100%;
+    gap: 0.5rem;
+    margin-top: 0.2rem;
+    margin-bottom: 1rem;
+  }
+
+  body.sidebar-expanded .user-management-section .action-bar-wrapper .form-inline input {
+    flex: 1;
+  }
+
+  body.sidebar-expanded .user-management-section .action-bar-wrapper .form-inline button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 37px;
+    white-space: nowrap;
+  }
+
+  body.sidebar-expanded .user-management-section .tab-content {
+    margin-top: 0.25rem;
+  }
+
+  body.sidebar-expanded .user-management-section .info-pagination-wrapper .count-data {
+    padding-right: 70px;
+  }
+
+  body.sidebar-expanded .user-management-section:has(.action-bar-wrapper input:not(:placeholder-shown))
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
+  }
+}
+
+
+/* ==================== HP KECIL LANDSCAPE 3 (840px – 852px) ===================== */
+@media (min-width: 840px) and (max-width: 852px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .user-management-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .user-management-section p,
+  .user-management-section .tab-wrapper .nav-link,
+  .user-management-section .action-bar-wrapper .add-export button,
+  .user-management-section .action-bar-wrapper .add-export a,
+  .user-management-section .action-bar-wrapper .form-inline input::placeholder,
+  .user-management-section .info-pagination-wrapper .count-data,
+  .user-management-section .info-pagination-wrapper .pagination a {
+    font-size: 0.9rem;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .user-management-section p {
+    line-height: 2;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-collapsed .user-management-section .add-export .btn {
+    padding: 0.44rem;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .user-management-section h2 {
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  body.sidebar-expanded .user-management-section p {
+    text-align: center;
+    line-height: 1.7;
+    margin-top: 1.8rem;
+  }
+
+  body.sidebar-expanded .user-management-section .tab-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  body.sidebar-expanded .user-management-section .tab-wrapper .nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    border-bottom: 0;
+  }
+
+  body.sidebar-expanded .user-management-section .tab-wrapper .nav-item {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+  body.sidebar-expanded .user-management-section .tab-wrapper .nav-link {
+    cursor: pointer;
+    border-radius: 0;
+  }
+
+  body.sidebar-expanded .user-management-section .action-bar-wrapper .add-export {
+    display: flex;
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+
+  body.sidebar-expanded .user-management-section .add-export .btn {
+    flex: 1 1 50%;
+    max-width: 50%;
+    padding: 0.55rem;
+  }
+
+  body.sidebar-expanded .user-management-section .action-bar-wrapper .form-inline {
+    display: flex;
+    width: 100%;
+    gap: 0.5rem;
+    margin-top: 0.2rem;
+    margin-bottom: 1rem;
+  }
+
+  body.sidebar-expanded .user-management-section .action-bar-wrapper .form-inline input {
+    flex: 1;
+  }
+
+  body.sidebar-expanded .user-management-section .action-bar-wrapper .form-inline button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 37px;
+    white-space: nowrap;
+  }
+
+  body.sidebar-expanded .user-management-section .tab-content {
+    margin-top: 0.25rem;
+  }
+
+  body.sidebar-expanded .user-management-section .info-pagination-wrapper .count-data {
+    padding-right: 80px;
+  }
+
+  body.sidebar-expanded .user-management-section:has(.action-bar-wrapper input:not(:placeholder-shown))
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
+  }
+}
+
+
+/* ==================== HP KECIL LANDSCAPE 4 (740px – 767px) ===================== */
+@media (min-width: 740px) and (max-width: 767px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .user-management-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .user-management-section p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .user-management-section .tab-wrapper .nav-link,
+  .user-management-section .action-bar-wrapper .add-export button,
+  .user-management-section .action-bar-wrapper .add-export a,
+  .user-management-section .action-bar-wrapper .form-inline input::placeholder,
+  .user-management-section .info-pagination-wrapper .count-data,
+  .user-management-section .info-pagination-wrapper .pagination a {
+    font-size: 0.85rem;
+  }
+
+  .user-management-section .add-export .btn {
+    padding: 0.46rem;
+  }
+}
+
+
+/* ==================== HP KECIL LANDSCAPE 5 (667px – 719px) ===================== */
+@media (min-width: 667px) and (max-width: 719px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .user-management-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .user-management-section p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .user-management-section .tab-wrapper .nav-link {
+    font-size: 0.9rem;
+  }
+
+  .user-management-section .action-bar-wrapper .add-export button,
+  .user-management-section .action-bar-wrapper .add-export a,
+  .user-management-section .action-bar-wrapper .form-inline input::placeholder,
+  .user-management-section .info-pagination-wrapper .count-data,
+  .user-management-section .info-pagination-wrapper .pagination a {
+    font-size: 0.85rem;
+  }
+
+  .user-management-section .add-export .btn {
+    padding: 0.45rem;
+  }
+}
+
+
+/* ============================= HP KECIL (≤ 520px) ============================== */
+@media screen and (max-width: 520px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .user-management-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .user-management-section p {
+    font-size: 0.85rem;
+    line-height: 1.8;
+  }
+
+  .user-management-section .tab-wrapper .nav-link,
+  .user-management-section .action-bar-wrapper .add-export button,
+  .user-management-section .action-bar-wrapper .add-export a,
+  .user-management-section .action-bar-wrapper .form-inline input::placeholder,
+  .user-management-section .info-pagination-wrapper .count-data,
+  .user-management-section .info-pagination-wrapper .pagination a {
+    font-size: 0.85rem;
+  }
+
+  .user-management-section .tab-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .user-management-section .tab-wrapper .nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    border-bottom: 0;
+  }
+
+  .user-management-section .tab-wrapper .nav-item {
+    flex: 1 0 33.3333%;
+    text-align: center;
+  }
+
+  .user-management-section .tab-wrapper .nav-link {
+    cursor: pointer;
+    border-radius: 0;
+  }
+
+  .user-management-section .action-bar-wrapper .add-export {
+    display: flex;
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+
+  .user-management-section .add-export .btn {
+    flex: 1 1 50%;
+    max-width: 50%;
+    padding: 0.55rem;
+  }
+
+  .user-management-section .action-bar-wrapper .form-inline {
+    display: flex;
+    width: 100%;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .user-management-section .action-bar-wrapper .form-inline input {
+    flex: 1;
+  }
+
+  .user-management-section .action-bar-wrapper .form-inline button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 37px;
+    white-space: nowrap;
+  }
+
+  .user-management-section .tab-content {
+    margin-top: 0.25rem;
+  }
+
+  .user-management-section .info-pagination-wrapper .count-data {
+    padding-right: 80px;
+  }
+
+  .user-management-section:has(.action-bar-wrapper input:not(:placeholder-shown))
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
+  }
+}

@@ -6,7 +6,7 @@
 
 <main>
     <section class="queue-registration-section px-4 w-100">
-        <div class="custom-header about-header text-center queue-registration-text select-none">
+        <div class="custom-header text-center queue-registration-text select-none">
             <h2>
                 <i class="fas fa-user-tag mr-2" aria-hidden="true">
                 </i>Registrasi Antrean Poliklinik

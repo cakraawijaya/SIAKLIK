@@ -49,7 +49,7 @@ $(document).ready(function(){
 
                 if(!res.data || res.data.length === 0){
                     $('th:last-child').hide(); // sembunyikan header aksi
-                    tbody.append('<tr><td colspan="13" class="text-center align-middle">Data tidak ditemukan</td></tr>');
+                    tbody.append('<tr><td colspan="13" class="text-center align-middle" data-header="Pemberitahuan Sistem"><div class="td-value">Data tidak ditemukan</div></td></tr>');
                 } else {
                     $('th:last-child').show(); // tampilkan header aksi jika ada data
                     
@@ -109,12 +109,15 @@ $(document).ready(function(){
                                 <td class="text-center align-middle" data-header="Kategori">
                                     <div class="td-value">${p.kategori}</div>
                                 </td>
+                                
                                 <td class="text-center align-middle" data-header="Ket">
                                     <div class="td-value">${p.keterangan || '-'}</div>
                                 </td>
+
                                 <td class="text-center align-middle" data-header="Waktu Pencatatan">
                                     <div class="td-value">${p.waktu}</div>
                                 </td>
+
                                 <td class="text-center align-middle" data-header="Aksi">
                                     <div class="td-value">${actionBtns}</div>
                                 </td>
@@ -171,7 +174,7 @@ $(document).ready(function(){
             },
             error: function(xhr, status, err){
                 console.error('Error loadPatients:', status, err);
-                $('#patientTableBody').html('<tr><td colspan="13" class="text-center align-middle">Gagal memuat data (lihat console)</td></tr>');
+                $('#patientTableBody').html('<tr><td colspan="13" class="text-center align-middle" data-header="Pemberitahuan Sistem"><div class="td-value">Gagal memuat data (lihat console)</div></td></tr>');
             }
         });
     }
