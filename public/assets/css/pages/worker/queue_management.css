@@ -902,8 +902,8 @@
     display: flex;
     width: 100%;
     gap: 0.5rem;
-    margin-top: 0.8rem;
-    margin-bottom: 1rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
   }
 
   .queue-management-section .tab-search-wrapper .form-inline input {

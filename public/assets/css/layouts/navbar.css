@@ -247,8 +247,152 @@
 }
 
 
-/* ============================= HP KECIL (≤ 520px) ============================== */
-@media (max-width: 520px) {
+/* ========================== HP KECIL (414px - 520px) =========================== */
+@media (min-width: 414px) and (max-width: 520px) {
+  .navbar {
+    position: relative !important;
+    overflow: visible !important;
+    padding: 6px 10px;
+  }
+
+  .navbar .d-flex.w-100 {
+    flex-wrap: nowrap !important;
+  }
+
+  .navbar .navbar-nav {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 15px;
+    margin: 0 !important;
+    width: auto !important;
+    text-align: left !important;
+    padding: 0 !important;
+  }
+
+  .navbar .nav-link {
+    font-size: 13px;
+    padding: 4px 0;
+  }
+
+  .navbar .navbar-divider {
+    width: 1px;
+    height: 22px;
+    background-color: #f4ffe9 !important;
+  }
+
+  .navbar-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ddd;
+  }
+
+  .btn-sidebar {
+    width: 30px !important;
+    height: 28px !important;
+    margin: 0 !important;
+  }
+
+  .navbar .dropdown-menu {
+    position: absolute !important;
+    top: 100%;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    min-width: unset;
+    border-radius: 0 0 12px 12px;
+    margin: 0 !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    z-index: 9999;
+  }
+
+  .navbar .dropdown.show {
+    position: static !important;
+  }
+
+  .navbar .dropdown-item {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+}
+
+
+/* ===================== HP PALING KECIL 1 (361px - 413px) ======================= */
+@media (min-width: 361px) and (max-width: 413px) {
+  .navbar {
+    position: relative !important;
+    overflow: visible !important;
+    padding: 6px 10px;
+  }
+
+  .navbar .d-flex.w-100 {
+    flex-wrap: nowrap !important;
+  }
+
+  .navbar .navbar-nav {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 10px;
+    margin: 0 !important;
+    width: auto !important;
+    text-align: left !important;
+    padding: 0 !important;
+  }
+
+  .navbar .nav-link {
+    font-size: 13px;
+    padding: 4px 0;
+  }
+
+  .navbar .navbar-divider {
+    width: 1px;
+    height: 22px;
+    background-color: #f4ffe9 !important;
+  }
+
+  .navbar-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ddd;
+  }
+
+  .btn-sidebar {
+    width: 30px !important;
+    height: 28px !important;
+    margin: 0 !important;
+  }
+
+  .navbar .dropdown-menu {
+    position: absolute !important;
+    top: 100%;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    min-width: unset;
+    border-radius: 0 0 12px 12px;
+    margin: 0 !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    z-index: 9999;
+  }
+
+  .navbar .dropdown.show {
+    position: static !important;
+  }
+
+  .navbar .dropdown-item {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+}
+
+
+/* ========================= HP PALING KECIL 2 (≤ 360px) ========================= */
+@media (max-width: 360px) {
   .navbar {
     position: relative !important;
     overflow: visible !important;
