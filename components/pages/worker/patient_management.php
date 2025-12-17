@@ -14,28 +14,29 @@
             <p>Memudahkan Poliklinik dalam mengatur data pasien</p>
         </div><hr>
 
-        <!-- Buttons & Search -->
-        <div class="d-flex justify-content-between align-items-center mt-5 mb-3 pb-2 flex-wrap">
-            <!-- Button Group -->
-            <div class="d-flex align-items-center mb-2 mb-md-0">
-                <button type="button" class="btn btn-success text-white mr-3" data-toggle="modal" data-target="#modalAddPasien">
+        <!-- Action bar -->
+        <div class="action-bar-wrapper">
+            <!-- Left side: Add + Export -->
+            <div class="add-export">
+                <button type="button" class="btn add-btn btn-success text-white" data-toggle="modal" data-target="#modalAddPasien">
                     <i class="fa fa-plus mr-1" aria-hidden="true"></i> Pasien
                 </button>
-                <a onclick="openLink('<?= BASE_URL ?>components/features/export/history_data/patient_history.php', false)" 
-                class="btn btn-info text-white" style="cursor:pointer;">
+                <a onclick="openLink('<?= BASE_URL ?>components/features/export/history_data/patient_history.php', false)" class="btn btn-info text-white">
                     <i class="fa fa-download mr-1" aria-hidden="true"></i> Export
                 </a>
             </div>
 
-            <!-- Search Form -->
+            <!-- Right side: Search -->
             <form class="form-inline" id="searchForm">
-                <input type="text" name="search" class="form-control select-none mr-2" style="width: 280px;" placeholder="Cari Nama / Alamat / NIP / NIM" value="<?= htmlspecialchars($search) ?>">
-                <button class="btn btn-info text-white" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                <input type="text" name="search" class="form-control select-none mr-2" placeholder="Cari Nama / Alamat / NIP / NIM" value="<?= htmlspecialchars($search) ?>">
+                <button class="btn btn-info text-white" type="submit">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
             </form>
         </div>
 
         <!-- Table -->
-        <div class="table-responsive select-none mb-3">
+        <div class="table-responsive select-none">
             <table class="table table-bordered w-100">
                 <thead>
                     <tr>
@@ -56,24 +57,23 @@
                     </tr>
                 </thead>
                 <tbody id="patientTableBody">
-                    <tr><td colspan="13" class="text-center align-middle">Memuat data...</td></tr>
+                    <tr>
+                        <td colspan="13" class="text-center align-middle" data-header="Pemberitahuan Sistem">
+                            <div class="td-value">Memuat data...</div>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
 
-        <!-- Pagination Info -->
-        <div class="d-flex justify-content-between align-items-center select-none mt-3 py-3">
-            <div class="d-flex align-items-center">
+        <div class="info-pagination-wrapper">
+            <div class="count-data">
                 <span id="patient-info">Jumlah data pasien</span>
-                &nbsp;:&nbsp;<b id="patient-count">0</b>
+                :&nbsp;<b id="patient-count">0</b>
             </div>
-            <div class="d-flex align-items-center">
-                <a class="btn btn-success text-white mr-3" id="patient-prev">
-                    <i class="fas fa-arrow-left mr-1" aria-hidden="true"></i>Back
-                </a>
-                <a class="btn btn-success text-white" id="patient-next">
-                    Next<i class="fas fa-arrow-right ml-1" aria-hidden="true"></i>
-                </a>
+            <div class="pagination">
+                <a class="btn btn-success text-white mr-3" id="patient-prev"><i class="fas fa-arrow-left mr-1" aria-hidden="true"></i>Back</a>
+                <a class="btn btn-success text-white" id="patient-next">Next<i class="fas fa-arrow-right ml-1" aria-hidden="true"></i></a>
             </div>
         </div>
     </section>
