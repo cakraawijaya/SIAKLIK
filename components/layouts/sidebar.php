@@ -89,7 +89,7 @@
                 ?>
                     <li>
                         <a onclick="openLink('<?= BASE_URL ?>index.php?page=worker/dashboard', false)" class="custom-mt-sidebar">
-                            <i class="fas fa-laptop-medical mr-2" aria-hidden="true"></i>
+                            <i class="fas fa-laptop-house mr-2" aria-hidden="true"></i>
                             <span>Dashboard Poliklinik</span>
                         </a>
                     </li>
@@ -127,7 +127,7 @@
                 
                 <li>
                     <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/clinic/clinic_information', false)">
-                        <i class="fas fa-procedures mr-2" aria-hidden="true"></i>
+                        <i class="fas fa-info-circle mr-2" aria-hidden="true"></i>
                         <span>Informasi Pelayanan</span>
                     </a>
                 </li>
@@ -139,67 +139,67 @@
                     <ul class="collapse list-unstyled" id="charts">
                         <li>
                             <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/chart/chart_gender', false)" class="custom-mt-sidebar-child">
-                                <i class="fas fa-notes-medical mr-2" aria-hidden="true"></i>
+                                <i class="fas fa-procedures mr-2" aria-hidden="true"></i>
                                 <span>Jenis Kelamin</span>
                             </a>
                         </li>
                         <li>
                             <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/chart/chart_2013', false)">
-                                <i class="fas fa-notes-medical mr-2" aria-hidden="true"></i>
+                                <i class="fas fa-procedures mr-2" aria-hidden="true"></i>
                                 <span>SATKER Tahun 2013</span>
                             </a>
                         </li>
                         <li>
                             <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/chart/chart_2014', false)">
-                                <i class="fas fa-notes-medical mr-2" aria-hidden="true"></i>
+                                <i class="fas fa-procedures mr-2" aria-hidden="true"></i>
                                 <span>SATKER Tahun 2014</span>
                             </a>
                         </li>
                         <li>
                             <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/chart/chart_2015', false)">
-                                <i class="fas fa-notes-medical mr-2" aria-hidden="true"></i>
+                                <i class="fas fa-procedures mr-2" aria-hidden="true"></i>
                                 <span>SATKER Tahun 2015</span>
                             </a>
                         </li>
                         <li>
                             <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/chart/chart_2016', false)">
-                                <i class="fas fa-notes-medical mr-2" aria-hidden="true"></i>
+                                <i class="fas fa-procedures mr-2" aria-hidden="true"></i>
                                 <span>SATKER Tahun 2016</span>
                             </a>
                         </li>
                         <li>
                             <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/chart/chart_2017', false)">
-                                <i class="fas fa-notes-medical mr-2" aria-hidden="true"></i>
+                                <i class="fas fa-procedures mr-2" aria-hidden="true"></i>
                                 <span>SATKER Tahun 2017</span>
                             </a>
                         </li>
                         <li>
                             <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/chart/chart_2018', false)">
-                                <i class="fas fa-notes-medical mr-2" aria-hidden="true"></i>
+                                <i class="fas fa-procedures mr-2" aria-hidden="true"></i>
                                 <span>SATKER Tahun 2018</span>
                             </a>
                         </li>
                         <li>
                             <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/chart/chart_2019', false)">
-                                <i class="fas fa-notes-medical mr-2" aria-hidden="true"></i>
+                                <i class="fas fa-procedures mr-2" aria-hidden="true"></i>
                                 <span>SATKER Tahun 2019</span>
                             </a>
                         </li>
                         <li>
                             <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/chart/chart_2020', false)">
-                                <i class="fas fa-notes-medical mr-2" aria-hidden="true"></i>
+                                <i class="fas fa-procedures mr-2" aria-hidden="true"></i>
                                 <span>SATKER Tahun 2020</span>
                             </a>
                         </li>
                         <li>
                             <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/chart/chart_2021', false)">
-                                <i class="fas fa-notes-medical mr-2" aria-hidden="true"></i>
+                                <i class="fas fa-procedures mr-2" aria-hidden="true"></i>
                                 <span>SATKER Tahun 2021</span>
                             </a>
                         </li>
                         <li>
                             <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/chart/chart_2022', false)" class="custom-mb-sidebar-child">
-                                <i class="fas fa-notes-medical mr-2" aria-hidden="true"></i>
+                                <i class="fas fa-procedures mr-2" aria-hidden="true"></i>
                                 <span>SATKER Tahun 2022</span>
                             </a>
                         </li>
@@ -212,7 +212,7 @@
 
                 <li>
                     <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/clinic/clinic_facilities', false)" class="<?= !$is_logged_in ? 'custom-mb-sidebar' : '' ?>">
-                        <i class="fas fa-clinic-medical mr-2" aria-hidden="true"></i>
+                        <i class="fas fa-hand-holding-medical mr-2" aria-hidden="true"></i>
                         <span>Fasilitas Poliklinik</span>
                     </a>
                 </li>

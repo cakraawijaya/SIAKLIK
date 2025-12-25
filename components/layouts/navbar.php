@@ -20,7 +20,7 @@
                             if(isset($_SESSION['level']) && in_array($_SESSION['level'], $allowed_roles)):
                         ?>
                             <a class="nav-link" onclick="openLink('<?= BASE_URL ?>index.php?page=worker/dashboard', false)">
-                                <i class="fas fa-laptop-medical mr-1" aria-hidden="true"></i>
+                                <i class="fas fa-laptop-house mr-1" aria-hidden="true"></i>
                                 Dashboard
                             </a>
                         <?php else: ?>
@@ -41,7 +41,7 @@
                                 <div class="dropdown-menu-child">
                                     <a class="dropdown-item" onclick="openLink('<?= BASE_URL ?>index.php?page=patient/clinic/clinic_information', false)">
                                         Informasi Pelayanan
-                                        <i class="fas fa-procedures ml-1" aria-hidden="true"></i>
+                                        <i class="fas fa-info-circle ml-1" aria-hidden="true"></i>
                                     </a>
                                 </div>
                                 <div class="dropdown-divider"></div>
@@ -55,7 +55,7 @@
                                 <div class="dropdown-menu-child">
                                     <a class="dropdown-item" onclick="openLink('<?= BASE_URL ?>index.php?page=patient/clinic/clinic_facilities', false)">
                                         Fasilitas Poliklinik
-                                        <i class="fas fa-clinic-medical ml-1" aria-hidden="true"></i>
+                                        <i class="fas fa-hand-holding-medical ml-1" aria-hidden="true"></i>
                                     </a>
                                 </div>
                                 <div class="dropdown-divider"></div>

@@ -107,7 +107,7 @@
         <div class="custom-header select-none">
             <div class="text-center align-middle general-unit-text">
                 <h2>
-                    <i class="fas fa-info-circle" aria-hidden="true"></i>
+                    <i class="fas fa-clinic-medical" aria-hidden="true"></i>
                     Poli Umum
                 </h2>
                 <p>Pemeriksaan dan Konsultasi, serta Pengobatan Umum untuk Semua Usia<p>
@@ -149,7 +149,7 @@
         <div class="custom-header select-none">
             <div class="text-center align-middle clinic-lab-text">
                 <h2>
-                    <i class="fas fa-flask" aria-hidden="true"></i>
+                    <i class="fas fa-microscope" aria-hidden="true"></i>
                     Laboratorium
                 </h2>
                 <p>Tingkatkan Kewaspadaan Kesehatan Sejak Dini melalui Tes GDA, Kolesterol, dan Asam Urat Terpadu<p>

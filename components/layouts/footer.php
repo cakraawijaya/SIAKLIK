@@ -1,5 +1,5 @@
                 <!-- FOOTER -->
-                <footer class="footer-section pt-5 mt-5 text-light select-none">
+                <footer class="footer-section text-light select-none">
                     <div class="container">
                         <div class="row g-3">
 

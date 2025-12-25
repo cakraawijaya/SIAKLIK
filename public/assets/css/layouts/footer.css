@@ -4,6 +4,8 @@
 
 /* ==================================== GLOBAL =================================== */
 .footer-section {
+  margin-top: 3rem;
+  padding-top: 3rem;
   background-color: #4e4d4d;
   font-family: 'Segoe UI', sans-serif;
 }
@@ -121,8 +123,8 @@ body.sidebar-expanded a.social-icon {
 }
 
 
-/* =========================== DESKTOP (1200px – 1368px) ========================= */
-@media (min-width: 1200px) and (max-width: 1368px) {
+/* =============================== DESKTOP (≥ 1366px) ============================ */
+@media (min-width: 1366px) {
   /* ------------------- Pengaturan Global --------------------- */
   .footer-title {
     text-align: left !important;
@@ -147,6 +149,64 @@ body.sidebar-expanded a.social-icon {
 
   body.sidebar-collapsed .footer-section p {
     line-height: 1.95;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .footer-section .row > div:nth-child(1) {
+    padding-left: 4rem !important;
+    padding-right: 1.6rem !important;
+  }
+
+  body.sidebar-expanded .footer-section .row > div:nth-child(2) {
+    padding-left: 5.5rem !important;
+    padding-right: 0 !important;
+  }
+
+  body.sidebar-expanded .footer-section .row > div:nth-child(3) {
+    padding-left: 3.8rem !important;
+    padding-right: 1.6rem !important;
+  }
+
+  body.sidebar-expanded .footer-section p {
+    line-height: 1.9;
+  }
+
+  body.sidebar-expanded .social-wrap {
+    padding-top: 0.2rem;
+  }
+}
+
+
+/* =========================== DESKTOP (1200px – 1365px) ========================= */
+@media (min-width: 1200px) and (max-width: 1365px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .footer-title {
+    text-align: left !important;
+    margin-bottom: 25px !important;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .footer-section .row > div:nth-child(1) {
+    padding-left: 2.5rem !important;
+    padding-right: 1.6rem !important;
+  }
+
+  body.sidebar-collapsed .footer-section .row > div:nth-child(2) {
+    padding-left: 8rem !important;
+    padding-right: 0 !important;
+  }
+
+  body.sidebar-collapsed .footer-section .row > div:nth-child(3) {
+    padding-left: 8rem !important;
+    padding-right: 1.6rem !important;
+  }
+
+  body.sidebar-collapsed .footer-section p {
+    line-height: 1.95;
+  }
+
+  body.sidebar-collapsed .social-wrap {
+    padding-top: 0.15rem;
   }
 
   /* ----------------- Tampilan Sidebar Dibuka ----------------- */

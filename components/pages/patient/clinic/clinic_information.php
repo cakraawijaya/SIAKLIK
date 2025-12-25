@@ -21,7 +21,7 @@
     <section class="information-section">
         <div class="custom-header text-center information-text select-none">
             <h2>
-                <i class="fas fa-procedures mr-1" aria-hidden="true"></i>
+                <i class="fas fa-info-circle mr-1" aria-hidden="true"></i>
                 Informasi Pelayanan Poliklinik
             </h2>
             <p>Panduan pendaftaran dan alur pelayanan Pasien Poliklinik secara Offline maupun Online</p>

@@ -2,18 +2,18 @@
 
     include __DIR__ . '/../../../features/auth/authorization/patient.php';
 
-    $charts_data = [    
-        ['color' => '#639c1f', 'label' => 'Jenis Kelamin', 'icon' => 'fas fa-notes-medical', 'link' => 'chart_gender'],
-        ['color' => '#24252d', 'label' => 'Satker 2013', 'icon' => 'fas fa-notes-medical', 'link' => 'chart_2013'],
-        ['color' => '#639c1f', 'label' => 'Satker 2014', 'icon' => 'fas fa-notes-medical', 'link' => 'chart_2014'],
-        ['color' => '#24252d', 'label' => 'Satker 2015', 'icon' => 'fas fa-notes-medical', 'link' => 'chart_2015'],
-        ['color' => '#639c1f', 'label' => 'Satker 2016', 'icon' => 'fas fa-notes-medical', 'link' => 'chart_2016'],
-        ['color' => '#24252d', 'label' => 'Satker 2017', 'icon' => 'fas fa-notes-medical', 'link' => 'chart_2017'],
-        ['color' => '#639c1f', 'label' => 'Satker 2018', 'icon' => 'fas fa-notes-medical', 'link' => 'chart_2018'],
-        ['color' => '#24252d', 'label' => 'Satker 2019', 'icon' => 'fas fa-notes-medical', 'link' => 'chart_2019'],
-        ['color' => '#639c1f', 'label' => 'Satker 2020', 'icon' => 'fas fa-notes-medical', 'link' => 'chart_2020'],
-        ['color' => '#24252d', 'label' => 'Satker 2021', 'icon' => 'fas fa-notes-medical', 'link' => 'chart_2021'],
-        ['color' => '#639c1f', 'label' => 'Satker 2022', 'icon' => 'fas fa-notes-medical', 'link' => 'chart_2022']
+    $charts_data = [
+        ['color' => '#639c1f', 'label' => 'Jenis Kelamin', 'icon' => 'fas fa-procedures', 'link' => 'chart_gender'],
+        ['color' => '#24252d', 'label' => 'Satker 2013', 'icon' => 'fas fa-procedures', 'link' => 'chart_2013'],
+        ['color' => '#639c1f', 'label' => 'Satker 2014', 'icon' => 'fas fa-procedures', 'link' => 'chart_2014'],
+        ['color' => '#24252d', 'label' => 'Satker 2015', 'icon' => 'fas fa-procedures', 'link' => 'chart_2015'],
+        ['color' => '#639c1f', 'label' => 'Satker 2016', 'icon' => 'fas fa-procedures', 'link' => 'chart_2016'],
+        ['color' => '#24252d', 'label' => 'Satker 2017', 'icon' => 'fas fa-procedures', 'link' => 'chart_2017'],
+        ['color' => '#639c1f', 'label' => 'Satker 2018', 'icon' => 'fas fa-procedures', 'link' => 'chart_2018'],
+        ['color' => '#24252d', 'label' => 'Satker 2019', 'icon' => 'fas fa-procedures', 'link' => 'chart_2019'],
+        ['color' => '#639c1f', 'label' => 'Satker 2020', 'icon' => 'fas fa-procedures', 'link' => 'chart_2020'],
+        ['color' => '#24252d', 'label' => 'Satker 2021', 'icon' => 'fas fa-procedures', 'link' => 'chart_2021'],
+        ['color' => '#639c1f', 'label' => 'Satker 2022', 'icon' => 'fas fa-procedures', 'link' => 'chart_2022']
     ];
 
 ?>
