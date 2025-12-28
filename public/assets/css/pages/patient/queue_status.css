@@ -893,8 +893,8 @@
 }
 
 
-/* ============================= HP KECIL (≤ 520px) ============================== */
-@media screen and (max-width: 520px) {
+/* ========================== HP KECIL (430px - 520px) =========================== */
+@media (min-width: 430px) and (max-width: 520px) {
   /* ------------------- Pengaturan Global --------------------- */
   .queue-list-section h2 {
     font-size: 1.5rem;
@@ -906,6 +906,90 @@
   .queue-list-section p {
     font-size: 0.85rem;
     line-height: 1.8;
+    padding: 0 5rem;
+  }
+
+  .queue-list-section .tab-search-wrapper .nav-link {
+    font-size: 0.9rem;
+  }
+
+  .queue-list-section .tab-search-wrapper .form-inline input::placeholder,
+  .queue-list-section .info-pagination-wrapper .count-data,
+  .queue-list-section .info-pagination-wrapper .pagination a {
+    font-size: 0.85rem;
+  }
+
+  .queue-list-section .tab-search-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .queue-list-section .tab-search-wrapper .nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    border-bottom: 0;
+  }
+
+  .queue-list-section .tab-search-wrapper .nav-item {
+    flex: 1 1 auto;
+    width: 50%;
+    text-align: center;
+  }
+
+  .queue-list-section .tab-search-wrapper .nav-link {
+    cursor: pointer;
+    border-radius: 0;
+  }
+
+  .queue-list-section .tab-search-wrapper .form-inline {
+    display: flex;
+    width: 100%;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .queue-list-section .tab-search-wrapper .form-inline input {
+    flex: 1;
+  }
+
+  .queue-list-section .tab-search-wrapper .form-inline button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 37px;
+    white-space: nowrap;
+  }
+
+  .queue-list-section .info-pagination-wrapper .count-data {
+    padding-right: 30px;
+  }
+
+  .queue-list-section:has(.tab-search-wrapper input:not(:placeholder-shown))
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
+  }
+}
+
+
+/* ========================== HP PALING KECIL (≤ 429px) ========================== */
+@media screen and (max-width: 429px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .queue-list-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .queue-list-section p {
+    font-size: 0.85rem;
+    line-height: 1.8;
+    padding: 0 3.4rem;
   }
 
   .queue-list-section .tab-search-wrapper .nav-link {

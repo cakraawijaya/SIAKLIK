@@ -14,7 +14,7 @@
         <div class="custom-header text-center dashboard-text select-none">
             <h2>
                 <i class="fas fa-laptop-house mr-1" aria-hidden="true"></i>
-                Dashboard Poliklinik
+                Dashboard
             </h2>
             <p>Memantau dan mengelola seluruh aktivitas Poliklinik dalam satu layar</p>
         </div><hr>

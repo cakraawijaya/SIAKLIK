@@ -22,7 +22,7 @@
         <div class="custom-header text-center information-text select-none">
             <h2>
                 <i class="fas fa-info-circle mr-1" aria-hidden="true"></i>
-                Informasi Pelayanan Poliklinik
+                Informasi Pelayanan
             </h2>
             <p>Panduan pendaftaran dan alur pelayanan Pasien Poliklinik secara Offline maupun Online</p>
         </div>
@@ -87,9 +87,9 @@
             <div class="text-center align-middle referral-text">
                 <h2>
                     <i class="fas fa-ambulance mr-1" aria-hidden="true"></i>
-                    Rujukan Medis Berjenjang
+                    Rujukan Berjenjang
                 </h2>
-                <p>Gambaran umum terkait prosedur rujukan berjenjang dari Faskes Tingkat 1 (Poliklinik) ke Rumah Sakit tujuan terdekat (berada di wilayah Surabaya)</p>
+                <p>Gambaran umum terkait prosedur rujukan berjenjang dari Faskes Tingkat 1 (Poliklinik) ke Rumah Sakit tujuan terdekat</p>
             </div>
         </div>
         <div class="content-divider"><hr></div>

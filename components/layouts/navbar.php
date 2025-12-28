@@ -85,7 +85,7 @@
                                     <?php if (isset($_SESSION['level']) && $_SESSION['level'] === 'admin'): ?>
                                         <div class="dropdown-menu-child">
                                             <a class="dropdown-item" onclick="openLink('<?= BASE_URL ?>index.php?page=admin/user_log', false)">
-                                                Catatan Aktivitas Poliklinik
+                                                Catatan Aktivitas
                                                 <i class="fas fa-folder-open ml-1" aria-hidden="true"></i>
                                             </a>
                                         </div>
@@ -98,14 +98,14 @@
                                     ?>
                                         <div class="dropdown-menu-child">
                                             <a class="dropdown-item" onclick="openLink('<?= BASE_URL ?>index.php?page=patient/clinic/queue_registration', false)">
-                                                Registrasi Antrean Poliklinik
+                                                Registrasi Antrean
                                                 <i class="fas fa-user-tag ml-1" aria-hidden="true"></i>
                                             </a>
                                         </div>
                                         <div class="dropdown-divider"></div>
                                         <div class="dropdown-menu-child">
                                             <a class="dropdown-item" onclick="openLink('<?= BASE_URL ?>index.php?page=patient/clinic/queue_status', false)">
-                                                Status Antrean Poliklinik
+                                                Status Antrean
                                                 <i class="fas fa-tasks ml-1" aria-hidden="true"></i>
                                             </a>
                                         </div>

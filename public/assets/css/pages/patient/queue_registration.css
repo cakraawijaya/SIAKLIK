@@ -16,8 +16,8 @@
 .queue-registration-section .queue-registration-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 30px;
   margin-top: 3.5rem;
+  gap: 30px;
 }
 
 .queue-registration-section .queue-registration-item {
@@ -104,7 +104,6 @@
   /* ------------------- Pengaturan Global --------------------- */
   .queue-registration-section h2 {
     font-size: 1.8rem;
-    font-weight: 700;
     line-height: 1.5;
     margin-bottom: 1.5rem;
   }
@@ -112,6 +111,10 @@
   .queue-registration-section p {
     font-size: 0.95rem;
     line-height: 1.7;
+  }
+
+  .queue-registration-section .queue-registration-grid {
+    margin-top: 4.5rem;
   }
 
   .queue-registration-section .queue-registration-grid {
@@ -124,12 +127,13 @@
 
   /* ---------------- Tampilan Sidebar Ditutup ----------------- */
   body.sidebar-collapsed .queue-registration-section .queue-registration-grid {
-    gap: 100px;
-    margin-top: 5rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    gap: 120px;
   }
 
   body.sidebar-collapsed .queue-registration-section .card .card-body {
-    height: 270px;
+    height: 220px;
     margin: 0 5rem;
   }
 
@@ -141,8 +145,9 @@
 
   /* ----------------- Tampilan Sidebar Dibuka ----------------- */
   body.sidebar-expanded .queue-registration-section .queue-registration-grid {
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
     gap: 80px;
-    margin-top: 5rem;
   }
 
   body.sidebar-expanded .queue-registration-section .card .card-body span {
@@ -152,7 +157,7 @@
   }
 
   body.sidebar-expanded .queue-registration-section .card .card-body {
-    height: 220px;
+    height: 200px;
     margin: 0 5rem;
   }
 }
@@ -163,7 +168,6 @@
   /* ------------------- Pengaturan Global --------------------- */
   .queue-registration-section h2 {
     font-size: 1.6rem;
-    font-weight: 700;
     line-height: 1.5;
     margin-bottom: 1.5rem;
   }
@@ -193,11 +197,13 @@
   }
 
   body.sidebar-collapsed .queue-registration-section .queue-registration-grid {
-    gap: 80px;
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+    gap: 60px;
   }
 
   body.sidebar-collapsed .queue-registration-section .card .card-body {
-    height: 210px;
+    height: 200px;
     margin: 0 3rem;
   }
 
@@ -209,8 +215,10 @@
 
   /* ----------------- Tampilan Sidebar Dibuka ----------------- */
   body.sidebar-expanded .queue-registration-section .queue-registration-grid {
-    gap: 50px;
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-left: 1rem;
+    margin-right: 1rem;
+    gap: 30px;
   }
 
   body.sidebar-expanded .queue-registration-section .card .card-body {
@@ -231,7 +239,6 @@
   /* ------------------- Pengaturan Global --------------------- */
   .queue-registration-section h2 {
     font-size: 1.6rem;
-    font-weight: 700;
     line-height: 1.5;
     margin-bottom: 1.5rem;
   }
@@ -261,12 +268,13 @@
   }
 
   body.sidebar-collapsed .queue-registration-section .queue-registration-grid {
-    gap: 100px;
-    margin-top: 4.5rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    gap: 120px;
   }
 
   body.sidebar-collapsed .queue-registration-section .card .card-body {
-    height: 230px;
+    height: 200px;
     margin: 0 5rem;
   }
 
@@ -278,12 +286,14 @@
 
   /* ----------------- Tampilan Sidebar Dibuka ----------------- */
   body.sidebar-expanded .queue-registration-section .queue-registration-grid {
-    gap: 60px;
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-left: 2rem;
+    margin-right: 2rem;
+    gap: 70px;
   }
 
   body.sidebar-expanded .queue-registration-section .card .card-body {
-    height: 210px;
+    height: 190px;
     margin: 0 8rem;
   }
 
@@ -300,7 +310,6 @@
   /* ------------------- Pengaturan Global --------------------- */
   .queue-registration-section h2 {
     font-size: 1.6rem;
-    font-weight: 700;
     line-height: 1.5;
     margin-bottom: 1.5rem;
   }
@@ -367,7 +376,6 @@
   /* ------------------- Pengaturan Global --------------------- */
   .queue-registration-section h2 {
     font-size: 1.6rem;
-    font-weight: 700;
     line-height: 1.5;
     margin-bottom: 1.5rem;
   }
@@ -412,6 +420,10 @@
   }
 
   /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .queue-registration-section p {
+    padding: 0 3rem;
+  }
+
   body.sidebar-expanded .queue-registration-section .queue-registration-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -429,7 +441,6 @@
   /* ------------------- Pengaturan Global --------------------- */
   .queue-registration-section h2 {
     font-size: 1.6rem;
-    font-weight: 700;
     line-height: 1.5;
     margin-bottom: 1.5rem;
   }
@@ -479,8 +490,8 @@
   }
 
   body.sidebar-expanded .queue-registration-section .queue-registration-grid {
-    gap: 20px;
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
   }
 
   body.sidebar-expanded .queue-registration-section .card .card-body {
@@ -505,7 +516,6 @@
 
   .queue-registration-section h2 {
     font-size: 1.5rem;
-    font-weight: 700;
     line-height: 1.5;
     margin-bottom: 1.5rem;
   }
@@ -516,12 +526,14 @@
   }
 
   .queue-registration-section .queue-registration-grid {
-    gap: 60px;
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-left: 2rem;
+    margin-right: 2rem;
+    gap: 50px;
   }
 
   .queue-registration-section .card .card-body {
-    height: 185px;
+    height: 170px;
     margin: 0 3.5rem;
   }
 
@@ -561,7 +573,6 @@
 
   .queue-registration-section h2 {
     font-size: 1.5rem;
-    font-weight: 700;
     line-height: 1.5;
     margin-bottom: 1.5rem;
   }
@@ -572,9 +583,9 @@
   }
 
   .queue-registration-section .queue-registration-grid {
-    gap: 50px;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     margin-top: 3.5rem;
+    gap: 50px;
   }
 
   .queue-registration-section .card .card-body {
@@ -614,7 +625,6 @@
 
   .queue-registration-section h2 {
     font-size: 1.5rem;
-    font-weight: 700;
     line-height: 1.5;
     margin-bottom: 1.5rem;
   }
@@ -625,8 +635,8 @@
   }
 
   .queue-registration-section .queue-registration-grid {
-    gap: 50px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 50px;
   }
 
   .queue-registration-section .card .card-body {
@@ -699,20 +709,17 @@
   }
 
   body.sidebar-collapsed .queue-registration-section .queue-registration-grid {
-    gap: 70px;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     margin-top: 4.5rem;
+    gap: 70px;
   }
 
   /* ----------------- Tampilan Sidebar Dibuka ----------------- */
   body.sidebar-expanded .queue-registration-section h2 {
-    text-align: center;
-    font-weight: 700;
-    line-height: 1.3;
+    line-height: 1.5;
   }
 
   body.sidebar-expanded .queue-registration-section p {
-    text-align: center;
     line-height: 1.7;
     margin-top: 1.8rem;
   }
@@ -724,8 +731,8 @@
   }
 
   body.sidebar-expanded .queue-registration-section .queue-registration-grid {
-    gap: 50px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 50px;
   }
 }
 
@@ -778,20 +785,17 @@
   }
 
   body.sidebar-collapsed .queue-registration-section .queue-registration-grid {
-    gap: 50px;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     margin-top: 4.5rem;
+    gap: 50px;
   }
 
   /* ----------------- Tampilan Sidebar Dibuka ----------------- */
   body.sidebar-expanded .queue-registration-section h2 {
-    text-align: center;
-    font-weight: 700;
-    line-height: 1.3;
+    line-height: 1.5;
   }
 
   body.sidebar-expanded .queue-registration-section p {
-    text-align: center;
     line-height: 1.7;
     margin-top: 1.8rem;
   }
@@ -803,8 +807,8 @@
   }
 
   body.sidebar-expanded .queue-registration-section .queue-registration-grid {
-    gap: 50px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 50px;
   }
 }
 
@@ -852,22 +856,20 @@
   }
 
   body.sidebar-collapsed .queue-registration-section .queue-registration-grid {
-    gap: 80px;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     margin-top: 4.5rem;
+    gap: 80px;
   }
 
   /* ----------------- Tampilan Sidebar Dibuka ----------------- */
   body.sidebar-expanded .queue-registration-section h2 {
-    text-align: center;
-    font-weight: 700;
-    line-height: 1.3;
+    line-height: 1.5;
   }
 
   body.sidebar-expanded .queue-registration-section p {
-    text-align: center;
     line-height: 1.7;
     margin-top: 1.8rem;
+    padding: 0 3rem;
   }
 
   body.sidebar-expanded .queue-registration-section .card span {
@@ -877,8 +879,8 @@
   }
 
   body.sidebar-expanded .queue-registration-section .queue-registration-grid {
-    gap: 50px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 50px;
   }
 }
 
@@ -893,7 +895,6 @@
 
   .queue-registration-section h2 {
     font-size: 1.5rem;
-    font-weight: 700;
     line-height: 1.5;
     margin-bottom: 1.5rem;
   }
@@ -904,8 +905,8 @@
   }
 
   .queue-registration-section .queue-registration-grid {
-    gap: 50px;
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 50px;
   }
 
   .queue-registration-section .card .card-body {
@@ -945,7 +946,6 @@
 
   .queue-registration-section h2 {
     font-size: 1.5rem;
-    font-weight: 700;
     line-height: 1.5;
     margin-bottom: 1.5rem;
   }
@@ -956,8 +956,8 @@
   }
 
   .queue-registration-section .queue-registration-grid {
-    gap: 50px;
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 50px;
   }
 
   .queue-registration-section .card .card-body {
@@ -1001,7 +1001,6 @@
 
   .queue-registration-section h2 {
     font-size: 1.5rem;
-    font-weight: 700;
     line-height: 1.5;
     margin-bottom: 1.5rem;
   }
@@ -1009,11 +1008,12 @@
   .queue-registration-section p {
     font-size: 0.85rem;
     line-height: 1.8;
+    padding: 0 1rem;
   }
 
   .queue-registration-section .queue-registration-grid {
-    gap: 35px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 35px;
   }
 
   .queue-registration-section .card .card-body {
@@ -1057,7 +1057,6 @@
 
   .queue-registration-section h2 {
     font-size: 1.5rem;
-    font-weight: 700;
     line-height: 1.5;
     margin-bottom: 1.5rem;
   }
@@ -1068,8 +1067,8 @@
   }
 
   .queue-registration-section .queue-registration-grid {
-    gap: 35px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 35px;
   }
 
   .queue-registration-section .card .card-body {

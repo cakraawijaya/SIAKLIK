@@ -169,10 +169,23 @@
   .navbar .navbar-nav {
     flex-direction: row !important;
     align-items: center !important;
-    gap: 15px !important;
     margin: 0 !important;
     width: auto !important;
     padding: 0 !important;
+  }
+
+  body[data-loggedin="false"] .navbar-nav > li:last-child .nav-link {
+    margin-right: 8px;
+  }
+
+  body[data-loggedin="false"] .navbar .navbar-nav {
+    gap: 30px;
+  }
+
+  body[data-loggedin="true"].role-admin .navbar .navbar-nav,
+  body[data-loggedin="true"].role-pekerja .navbar .navbar-nav,
+  body[data-loggedin="true"].role-pasien .navbar .navbar-nav {
+    gap: 15px;
   }
 
   .navbar .dropdown-menu {
@@ -217,10 +230,21 @@
   .navbar .navbar-nav {
     flex-direction: row !important;
     align-items: center !important;
-    gap: 25px !important;
     margin: 0 !important;
     width: auto !important;
     padding: 0 !important;
+  }
+
+  body[data-loggedin="false"] .navbar-nav > li:last-child .nav-link {
+    margin-right: 20px;
+  }
+
+  body[data-loggedin="false"] .navbar .navbar-nav {
+    gap: 40px;
+  }
+
+  body[data-loggedin="true"] .navbar .navbar-nav {
+    gap: 25px;
   }
 
   .navbar .nav-link {
@@ -247,8 +271,8 @@
 }
 
 
-/* ========================== HP KECIL (414px - 520px) =========================== */
-@media (min-width: 414px) and (max-width: 520px) {
+/* ========================== HP KECIL (412px - 520px) =========================== */
+@media (min-width: 412px) and (max-width: 520px) {
   .navbar {
     position: relative !important;
     overflow: visible !important;
@@ -263,11 +287,27 @@
     flex-direction: row !important;
     align-items: center !important;
     justify-content: flex-start !important;
+    margin: 0 !important;
+    width: auto !important;
+    text-align: left !important;
+    padding: 0 !important;
+  }
+
+  body[data-loggedin="false"] .navbar-nav > li:last-child .nav-link {
+    margin-right: 10px;
+  }
+
+  body[data-loggedin="false"] .navbar .navbar-nav {
+    gap: 25px;
+  }
+
+  body[data-loggedin="true"].role-admin .navbar .navbar-nav,
+  body[data-loggedin="true"].role-pekerja .navbar .navbar-nav {
     gap: 15px;
-    margin: 0 !important;
-    width: auto !important;
-    text-align: left !important;
-    padding: 0 !important;
+  }
+
+  body[data-loggedin="true"].role-pasien .navbar .navbar-nav {
+    gap: 19px;
   }
 
   .navbar .nav-link {
@@ -319,8 +359,8 @@
 }
 
 
-/* ===================== HP PALING KECIL 1 (361px - 413px) ======================= */
-@media (min-width: 361px) and (max-width: 413px) {
+/* ===================== HP PALING KECIL 1 (360px - 411px) ======================= */
+@media (min-width: 360px) and (max-width: 411px) {
   .navbar {
     position: relative !important;
     overflow: visible !important;
@@ -335,11 +375,27 @@
     flex-direction: row !important;
     align-items: center !important;
     justify-content: flex-start !important;
-    gap: 10px;
     margin: 0 !important;
     width: auto !important;
     text-align: left !important;
     padding: 0 !important;
+  }
+
+  body[data-loggedin="false"] .navbar-nav > li:last-child .nav-link {
+    margin-right: 10px;
+  }
+
+  body[data-loggedin="false"] .navbar .navbar-nav {
+    gap: 22px;
+  }
+
+  body[data-loggedin="true"].role-admin .navbar .navbar-nav,
+  body[data-loggedin="true"].role-pekerja .navbar .navbar-nav {
+    gap: 9px;
+  }
+
+  body[data-loggedin="true"].role-pasien .navbar .navbar-nav {
+    gap: 12px;
   }
 
   .navbar .nav-link {
@@ -391,8 +447,8 @@
 }
 
 
-/* ========================= HP PALING KECIL 2 (≤ 360px) ========================= */
-@media (max-width: 360px) {
+/* ========================= HP PALING KECIL 2 (≤ 359px) ========================= */
+@media (max-width: 359px) {
   .navbar {
     position: relative !important;
     overflow: visible !important;
@@ -407,11 +463,27 @@
     flex-direction: row !important;
     align-items: center !important;
     justify-content: flex-start !important;
+    margin: 0 !important;
+    width: auto !important;
+    text-align: left !important;
+    padding: 0 !important;
+  }
+
+  body[data-loggedin="false"] .navbar-nav > li:last-child .nav-link {
+    margin-right: 10px;
+  }
+
+  body[data-loggedin="false"] .navbar .navbar-nav {
+    gap: 18px;
+  }
+
+  body[data-loggedin="true"].role-admin .navbar .navbar-nav,
+  body[data-loggedin="true"].role-pekerja .navbar .navbar-nav {
     gap: 6px;
-    margin: 0 !important;
-    width: auto !important;
-    text-align: left !important;
-    padding: 0 !important;
+  }
+
+  body[data-loggedin="true"].role-pasien .navbar .navbar-nav {
+    gap: 10px;
   }
 
   .navbar .nav-link {

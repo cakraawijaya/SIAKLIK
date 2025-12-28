@@ -23,9 +23,9 @@
         <div class="custom-header text-center charts-text select-none">
             <h2>
                 <i class="fas fa-chart-line" aria-hidden="true"></i>
-                Grafik Kunjungan Pasien
+                Grafik Kunjungan
             </h2>
-            <p>Daftar grafik kunjungan pasien pada Poliklinik per tahun</p>
+            <p>Daftar grafik kunjungan pada Poliklinik per tahun</p>
         </div>
         <hr>
         <div class="charts-grid-container">

@@ -120,3 +120,946 @@ main {
   margin-bottom: 17px;
   font-weight: 500;
 }
+
+
+
+
+/* ===================================================================================== */
+/* ===                                  FONT STYLE                                   === */
+/* ===================================================================================== */
+
+/* ==================================== MONTSERRAT =============================== */
+@font-face { /* Montserrat 300 */
+  font-family: "Montserrat";
+  src: url("../../font/montserrat-font/Montserrat-Thin.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face { /* Montserrat 400 */
+  font-family: "Montserrat";
+  src: url("../../font/montserrat-font/Montserrat-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face { /* Montserrat 500 */
+  font-family: "Montserrat";
+  src: url("../../font/montserrat-font/Montserrat-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face { /* Montserrat 600 */
+  font-family: "Montserrat";
+  src: url("../../font/montserrat-font/Montserrat-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face { /* Montserrat 700 */
+  font-family: "Montserrat";
+  src: url("../../font/montserrat-font/Montserrat-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face { /* Montserrat 800 */
+  font-family: "Montserrat";
+  src: url("../../font/montserrat-font/Montserrat-Black.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+
+/* ====================================== ROBOTO ================================= */
+@font-face { /* Roboto 300 */
+  font-family: "Roboto";
+  src: url("../../font/roboto-font/Roboto-Thin.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face { /* Roboto 400 */
+  font-family: "Roboto";
+  src: url("../../font/roboto-font/Roboto-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face { /* Roboto 500 */
+  font-family: "Roboto";
+  src: url("../../font/roboto-font/Roboto-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face { /* Roboto 700 */
+  font-family: "Roboto";
+  src: url("../../font/roboto-font/Roboto-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face { /* Roboto 800 */
+  font-family: "Roboto";
+  src: url("../../font/roboto-font/Roboto-Black.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+
+/* ======================================= LATO ================================== */
+@font-face { /* Lato 300 */
+  font-family: "Lato";
+  src: url("../../font/lato-font/Lato-Thin.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face { /* Lato 400 */
+  font-family: "Lato";
+  src: url("../../font/lato-font/Lato-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face { /* Lato 500 */
+  font-family: "Lato";
+  src: url("../../font/lato-font/Lato-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face { /* Lato 600 */
+  font-family: "Lato";
+  src: url("../../font/lato-font/Lato-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face { /* Lato 700 */
+  font-family: "Lato";
+  src: url("../../font/lato-font/Lato-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face { /* Lato 800 */
+  font-family: "Lato";
+  src: url("../../font/lato-font/Lato-Black.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+
+/* ===================================== SEGOE UI ================================ */
+@font-face { /* Segoe UI 400 */
+  font-family: "Segoe UI";
+  src: url("../../font/segoe-ui-font/SegoeUI-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face { /* Segoe UI 700 */
+  font-family: "Segoe UI";
+  src: url("../../font/segoe-ui-font/SegoeUI-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+
+
+/* ===================================================================================== */
+/* ===                                VANILLATOP STYLE                               === */
+/* ===================================================================================== */
+
+/* ==================================== GLOBAL =================================== */
+.vanillatop::before {
+  content: none !important;
+}
+
+.vanillatop {
+  width: 50px !important;            
+  height: 50px !important;           
+  border-radius: 5px !important;     
+  background-color: #28a745 !important;
+  display: flex !important;          
+  justify-content: center !important;
+  align-items: center !important;
+  cursor: pointer !important;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+.vanillatop:hover {
+  background-color: #218838 !important;
+  transform: scale(1.1) !important;     
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3) !important; 
+}
+
+.vanillatop i {
+  font-size: 25px !important;
+  color: white !important;
+  line-height: 1 !important;
+  transition: transform 0.3s ease !important; 
+}
+
+
+
+
+/* ===================================================================================== */
+/* ===                                  TABLE STYLE                                  === */
+/* ===================================================================================== */
+
+/* ==================================== GLOBAL =================================== */
+table {
+  border: 1px solid green;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+table th {
+  font-size: 0.9rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  background: #639c1f;
+  color: white;
+}
+
+table th,
+table td {
+  padding: .625em;
+  text-align: center;
+}
+
+table tr {
+  background: #8cc3ff;
+  border: 1px solid green;
+  padding: .35em;
+}
+
+table td img {
+  text-align: center;
+}
+
+table td .td-value {
+  font-size: 0.95rem;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.table-responsive::-webkit-scrollbar {
+  display: none;
+}
+
+.btn-group-queue form {
+  margin: 0;
+  padding: 0;
+}
+
+.btn-group-queue .btn {
+  border-radius: 0;
+  margin: 0;
+}
+
+.btn-group-queue form:first-child .btn {
+  border-top-left-radius: 0.2rem;
+  border-bottom-left-radius: 0.2rem;
+}
+
+.btn-group-queue form:last-child .btn {
+  border-top-right-radius: 0.2rem;
+  border-bottom-right-radius: 0.2rem;
+}
+
+
+/* =========================== DESKTOP (1200px – 1368px) ========================= */
+@media (min-width: 1200px) and (max-width: 1368px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  table th {
+    font-size: 0.9rem;
+  }
+
+  table td .td-value {
+    font-size: 0.95rem;
+  }
+}
+
+
+/* ======================= SMALL DESKTOP (992px – 1179px) ======================== */
+@media (min-width: 992px) and (max-width: 1179px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  table th {
+    font-size: 0.85rem;
+  }
+
+  table td .td-value {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* ==================== TABLET LANDSCAPE-1 (1180px – 1199px) ===================== */
+@media (min-width: 1180px) and (max-width: 1199px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  table th {
+    font-size: 0.85rem;
+  }
+
+  table td .td-value {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* ===================== TABLET LANDSCAPE-2 (933px – 991px) ====================== */
+@media (min-width: 933px) and (max-width: 991px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  table th {
+    font-size: 0.85rem;
+  }
+
+  table td .td-value {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* ===================== TABLET LANDSCAPE-3 (853px – 881px) ====================== */
+@media (min-width: 853px) and (max-width: 881px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  table th,
+  table td .td-value {
+    font-size: 0.85rem;
+  }
+}
+
+
+/* ====================== TABLET POTRAIT-1 (820px – 839px) ======================= */
+@media (min-width: 820px) and (max-width: 839px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  table th,
+  table td .td-value {
+    font-size: 0.85rem;
+  }
+}
+
+
+/* ====================== TABLET POTRAIT-2 (768px – 819px) ======================= */
+@media (min-width: 768px) and (max-width: 819px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  table th,
+  table td .td-value {
+    font-size: 0.85rem;
+  }
+}
+
+
+/* ===================== HP BESAR LANDSCAPE (720px – 739px) ====================== */
+@media (min-width: 720px) and (max-width: 739px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  table th {
+    font-size: 0.75rem;
+  }
+
+  table td .td-value {
+    font-size: 0.8rem;
+  }
+}
+
+
+/* ===================== HP BESAR POTRAIT (521px – 666px) ======================== */
+@media (min-width: 521px) and (max-width: 666px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  table th {
+    font-size: 0.75rem;
+  }
+
+  table td .td-value {
+    font-size: 0.8rem;
+  }
+}
+
+
+/* ==================== HP KECIL LANDSCAPE 1 (912px – 932px) ===================== */
+@media (min-width: 912px) and (max-width: 932px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  table th,
+  table td .td-value {
+    font-size: 0.85rem;
+  }
+}
+
+
+/* ==================== HP KECIL LANDSCAPE 2 (882px – 911px) ===================== */
+@media (min-width: 882px) and (max-width: 911px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  table th {
+    font-size: 0.85rem;
+  }
+
+  table td .td-value {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* ==================== HP KECIL LANDSCAPE 3 (840px – 852px) ===================== */
+@media (min-width: 840px) and (max-width: 852px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  table th {
+    font-size: 0.85rem;
+  }
+
+  table td .td-value {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* ==================== HP KECIL LANDSCAPE 4 (740px – 767px) ===================== */
+@media (min-width: 740px) and (max-width: 767px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  table th {
+    font-size: 0.75rem;
+  }
+
+  table td .td-value {
+    font-size: 0.85rem;
+  }
+}
+
+
+/* ==================== HP KECIL LANDSCAPE 5 (667px – 719px) ===================== */
+@media (min-width: 667px) and (max-width: 719px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  table th {
+    font-size: 0.75rem;
+  }
+
+  table td .td-value {
+    font-size: 0.8rem;
+  }
+}
+
+
+/* ============================= HP KECIL (≤ 520px) ============================== */
+@media screen and (max-width: 520px) {
+  table, tbody, tr {
+    display: block;
+    width: 100%;
+  }
+
+  tr {
+    margin-bottom: 3rem;
+    padding: 0 !important;
+  }
+
+  thead {
+    display: none !important;
+  }
+
+  table th {
+    font-size: 0.4rem !important;
+  }
+
+  table td {
+    display: block;
+    width: 100%;
+    padding: 0 !important;
+    border: 0 !important;
+  }
+
+  table td::before {
+    content: attr(data-header);
+    display: block;
+    background: #639c1f;
+    color: #fff;
+    text-align: center;
+    font-weight: 700;
+    padding: .4em 0;
+    border-bottom: 0;
+    text-transform: uppercase;
+  }
+
+  table td .td-value {
+    font-size: 0.85rem;
+    padding: .7em 0;
+    background: #8cc3ff;
+    text-align: center;
+    line-height: 1.5;
+  }
+}
+
+
+
+
+/* ===================================================================================== */
+/* ===                                HIGHCHARTS STYLE                               === */
+/* ===================================================================================== */
+
+/* ==================================== GLOBAL =================================== */
+.highcharts-figure, .highcharts-data-table table {
+  min-width: 310px; 
+  max-width: 800px;
+  margin: 1em auto;
+}
+
+#container {
+  height: 400px;
+  margin-top: 50px;
+}
+
+.title {
+  margin: 0 auto;
+  text-align: center;
+  line-height: 10px;
+}
+
+.highcharts-data-table {
+  margin-top: 30px;
+}
+
+.highcharts-data-table table {
+  font-family: Montserrat, Roboto, Lato;
+  border-collapse: collapse;
+  border: 1px solid #EBEBEB;
+  margin: 10px auto;
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+.highcharts-data-table caption {
+  display: none;
+  padding: 1em 0;
+  font-size: 1.2em;
+  color: #555;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+  padding: 0.5em;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.highcharts-data-table table,
+.highcharts-data-table table tr,
+.highcharts-data-table table td,
+.highcharts-data-table table th {
+  border: none !important;
+}
+
+.highcharts-data-table table {
+  border-collapse: collapse !important;
+  border-spacing: 0 !important;
+}
+
+.highcharts-data-table table td,
+.highcharts-data-table table th {
+  outline: none !important;
+}
+
+.highcharts-data-table table th {
+  letter-spacing: .1em !important;
+  text-transform: uppercase !important;
+  background: #639c1f !important;
+  color: white !important;
+}
+
+.highcharts-data-table table tr {
+  background: #639c1f !important;
+}
+
+.highcharts-data-table table .highcharts-label,
+.highcharts-data-table table .highcharts-number {
+  letter-spacing: .1em !important;
+  color: black !important;
+}
+
+.highcharts-data-table table tr:nth-child(odd) .highcharts-label,
+.highcharts-data-table table tr:nth-child(odd) .highcharts-number {
+  background: #b4f46a !important;
+}
+
+.highcharts-data-table table tr:nth-child(even) .highcharts-label,
+.highcharts-data-table table tr:nth-child(even) .highcharts-number {
+  background: #7fcf3a !important;
+}
+
+.highcharts-data-table table tr .highcharts-label,
+.highcharts-data-table table tr .highcharts-number {
+  transition: background-color 0.15s ease-in-out;
+}
+
+.highcharts-data-table table tr:hover .highcharts-label,
+.highcharts-data-table table tr:hover .highcharts-number {
+  background-color: rgba(195, 255, 165, 0.55) !important;
+}
+
+
+/* =========================== DESKTOP (1200px – 1368px) ========================= */
+@media (min-width: 1200px) and (max-width: 1368px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  #container {
+    height: 420px;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .highcharts-data-table table th {
+    font-size: 0.95rem;
+    font-weight: 800 !important;
+  }
+
+  body.sidebar-collapsed .highcharts-data-table table .highcharts-label {
+    font-size: 0.85rem;
+    font-weight: 500 !important;
+  }
+
+  body.sidebar-collapsed .highcharts-data-table table .highcharts-number {
+    font-size: 0.9rem;
+    font-weight: 600 !important;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .highcharts-data-table table th {
+    font-size: 0.9rem;
+    font-weight: 800 !important;
+  }
+
+  body.sidebar-expanded .highcharts-data-table table .highcharts-label {
+    font-size: 0.8rem;
+    font-weight: 500 !important;
+  }
+
+  body.sidebar-expanded .highcharts-data-table table .highcharts-number {
+    font-size: 0.85rem;
+    font-weight: 600 !important;
+  }
+}
+
+
+/* ======================== SMALL DESKTOP (992px – 1199px) ======================= */
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  #container {
+    height: 400px;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .highcharts-data-table table th {
+    font-size: 0.95rem;
+    font-weight: 800 !important;
+  }
+
+  body.sidebar-collapsed .highcharts-data-table table .highcharts-label {
+    font-size: 0.85rem;
+    font-weight: 500 !important;
+  }
+
+  body.sidebar-collapsed .highcharts-data-table table .highcharts-number {
+    font-size: 0.9rem;
+    font-weight: 600 !important;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .highcharts-data-table table th {
+    font-size: 0.9rem;
+    font-weight: 800 !important;
+  }
+
+  body.sidebar-expanded .highcharts-data-table table .highcharts-label {
+    font-size: 0.8rem;
+    font-weight: 500 !important;
+  }
+
+  body.sidebar-expanded .highcharts-data-table table .highcharts-number {
+    font-size: 0.85rem;
+    font-weight: 600 !important;
+  }
+}
+
+
+/* ===================== TABLET LANDSCAPE-1 (912px – 991px) ====================== */
+@media (min-width: 912px) and (max-width: 991px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  #container {
+    height: 380px;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .highcharts-data-table table th {
+    font-size: 0.95rem;
+    font-weight: 800 !important;
+  }
+
+  body.sidebar-collapsed .highcharts-data-table table .highcharts-label {
+    font-size: 0.85rem;
+    font-weight: 500 !important;
+  }
+
+  body.sidebar-collapsed .highcharts-data-table table .highcharts-number {
+    font-size: 0.9rem;
+    font-weight: 600 !important;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .highcharts-data-table table th {
+    font-size: 0.9rem;
+    font-weight: 800 !important;
+  }
+
+  body.sidebar-expanded .highcharts-data-table table .highcharts-label {
+    font-size: 0.8rem;
+    font-weight: 500 !important;
+  }
+
+  body.sidebar-expanded .highcharts-data-table table .highcharts-number {
+    font-size: 0.85rem;
+    font-weight: 600 !important;
+  }
+}
+
+
+/* ========================= HP LANDSCAPE (896px – 911px) ======================== */
+@media (min-width: 896px) and (max-width: 911px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  #container {
+    height: 360px;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .highcharts-data-table table th {
+    font-size: 0.95rem;
+    font-weight: 800 !important;
+  }
+
+  body.sidebar-collapsed .highcharts-data-table table .highcharts-label {
+    font-size: 0.85rem;
+    font-weight: 500 !important;
+  }
+
+  body.sidebar-collapsed .highcharts-data-table table .highcharts-number {
+    font-size: 0.9rem;
+    font-weight: 600 !important;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .highcharts-data-table table th {
+    font-size: 0.9rem;
+    font-weight: 800 !important;
+  }
+
+  body.sidebar-expanded .highcharts-data-table table .highcharts-label {
+    font-size: 0.8rem;
+    font-weight: 500 !important;
+  }
+
+  body.sidebar-expanded .highcharts-data-table table .highcharts-number {
+    font-size: 0.85rem;
+    font-weight: 600 !important;
+  }
+}
+
+
+/* ===================== TABLET LANDSCAPE-2 (853px – 895px) ====================== */
+@media (min-width: 853px) and (max-width: 895px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  #container {
+    height: 340px;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .highcharts-data-table table th {
+    font-size: 0.95rem;
+    font-weight: 800 !important;
+  }
+
+  body.sidebar-collapsed .highcharts-data-table table .highcharts-label {
+    font-size: 0.85rem;
+    font-weight: 500 !important;
+  }
+
+  body.sidebar-collapsed .highcharts-data-table table .highcharts-number {
+    font-size: 0.9rem;
+    font-weight: 600 !important;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .highcharts-data-table table th {
+    font-size: 0.9rem;
+    font-weight: 800 !important;
+  }
+
+  body.sidebar-expanded .highcharts-data-table table .highcharts-label {
+    font-size: 0.8rem;
+    font-weight: 500 !important;
+  }
+
+  body.sidebar-expanded .highcharts-data-table table .highcharts-number {
+    font-size: 0.85rem;
+    font-weight: 600 !important;
+  }
+}
+
+
+/* ====================== TABLET POTRAIT-1 (820px – 852px) ======================= */
+@media (min-width: 820px) and (max-width: 852px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  #container {
+    height: 320px;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .highcharts-data-table table th {
+    font-size: 0.9rem;
+    font-weight: 800 !important;
+  }
+
+  body.sidebar-collapsed .highcharts-data-table table .highcharts-label {
+    font-size: 0.8rem;
+    font-weight: 500 !important;
+  }
+
+  body.sidebar-collapsed .highcharts-data-table table .highcharts-number {
+    font-size: 0.85rem;
+    font-weight: 600 !important;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .highcharts-data-table table th {
+    font-size: 0.85rem;
+    font-weight: 800 !important;
+  }
+
+  body.sidebar-expanded .highcharts-data-table table .highcharts-label {
+    font-size: 0.75rem;
+    font-weight: 500 !important;
+  }
+
+  body.sidebar-expanded .highcharts-data-table table .highcharts-number {
+    font-size: 0.8rem;
+    font-weight: 600 !important;
+  }
+}
+
+
+/* ====================== TABLET POTRAIT-2 (768px – 819px) ======================= */
+@media (min-width: 768px) and (max-width: 819px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  #container {
+    height: 300px;
+  }
+
+  .highcharts-data-table table th {
+    font-size: 0.9rem;
+    font-weight: 800 !important;
+  }
+
+  .highcharts-data-table table .highcharts-label {
+    font-size: 0.8rem;
+    font-weight: 500 !important;
+  }
+
+  .highcharts-data-table table .highcharts-number {
+    font-size: 0.85rem;
+    font-weight: 600 !important;
+  }
+}
+
+
+/* ========================= HP BESAR (521px – 767px) ============================ */
+@media (min-width: 521px) and (max-width: 767px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  #container {
+    height: 260px;
+  }
+
+  .highcharts-data-table table th {
+    font-size: 0.9rem;
+    font-weight: 800 !important;
+  }
+
+  .highcharts-data-table table .highcharts-label {
+    font-size: 0.8rem;
+    font-weight: 500 !important;
+  }
+
+  .highcharts-data-table table .highcharts-number {
+    font-size: 0.85rem;
+    font-weight: 600 !important;
+  }
+}
+
+
+/* ============================= HP KECIL (≤ 520px) ============================== */
+@media (max-width: 520px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  #container {
+    height: 230px;
+    margin-top: 20px;
+  }
+
+  .highcharts-data-table table {
+    border: 0;
+  }
+
+  .highcharts-data-table table thead {
+    display: none;
+  }
+
+  .highcharts-data-table table th {
+    font-size: 0.75rem;
+    font-weight: 800 !important;
+    max-width: 100%;
+  }
+
+  .highcharts-data-table table tr {
+    display: flex !important;
+    align-items: center !important; 
+    margin-bottom: .725em;
+    padding: .5em !important;
+  }
+
+  .highcharts-data-table table td {
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    justify-content: space-between !important;
+  }
+
+  .highcharts-data-table table tr:nth-child(even) .highcharts-label {
+    background: #b4f46a !important;
+  }
+
+  .highcharts-data-table table tr:hover .highcharts-label {
+    background-color: rgba(195, 255, 165, 0.75) !important;
+  }
+
+  .highcharts-data-table table .highcharts-label {
+    font-size: 0.75rem !important;
+  }
+
+  .highcharts-data-table table .highcharts-number {
+    margin-left: auto !important;
+    font-size: 0.9rem;
+    font-weight: 600 !important;
+    color: #fff !important;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .highcharts-data-table table tr:nth-child(odd) .highcharts-number,
+  .highcharts-data-table table tr:nth-child(even) .highcharts-number {
+    background: none !important;
+  }
+}

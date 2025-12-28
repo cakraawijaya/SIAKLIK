@@ -32,12 +32,7 @@
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/layouts/sidebar.css">
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/layouts/main.css">
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/layouts/footer.css">
-        <!-- Global -->
-        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/global/font.css">
-        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/global/vanillatop.css">
         <!-- Modules -->
-        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/modules/table.css">
-        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/modules/highcharts.css">
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/modules/modal.css">
         <!-- Pages -->
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/home.css">
@@ -58,6 +53,9 @@
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/patient/profile.css">
     </head>
 
-    <body class="sidebar-expanded" data-loggedin="<?= isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true ? 'true' : 'false' ?>">
+    <body 
+        class="sidebar-expanded <?= isset($_SESSION['level']) ? 'role-' . $_SESSION['level'] : '' ?>"
+        data-loggedin="<?= isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true ? 'true' : 'false' ?>"
+    >
         <div class="wrapper">
             <div id="content">

@@ -90,19 +90,19 @@
                     <li>
                         <a onclick="openLink('<?= BASE_URL ?>index.php?page=worker/dashboard', false)" class="custom-mt-sidebar">
                             <i class="fas fa-laptop-house mr-2" aria-hidden="true"></i>
-                            <span>Dashboard Poliklinik</span>
+                            <span>Dashboard</span>
                         </a>
                     </li>
                     <li>
                         <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/clinic/queue_registration', false)">
                             <i class="fas fa-user-tag mr-2" aria-hidden="true"></i>
-                            <span>Registrasi Antrean Poliklinik</span>
+                            <span>Registrasi Antrean</span>
                         </a>
                     </li>
                     <li>
                         <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/clinic/queue_status', false)">
                             <i class="fas fa-tasks mr-2" aria-hidden="true"></i>
-                            <span>Status Antrean Poliklinik</span>
+                            <span>Status Antrean</span>
                         </a>
                     </li>
                 <?php endif; ?>
@@ -114,13 +114,13 @@
                     <li>
                         <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/clinic/queue_registration', false)" class="custom-mt-sidebar">
                             <i class="fas fa-user-tag mr-2" aria-hidden="true"></i>
-                            <span>Registrasi Antrean Poliklinik</span>
+                            <span>Registrasi Antrean</span>
                         </a>
                     </li>
                     <li>
                         <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/clinic/queue_status', false)">
                             <i class="fas fa-tasks mr-2" aria-hidden="true"></i>
-                            <span>Status Antrean Poliklinik</span>
+                            <span>Status Antrean</span>
                         </a>
                     </li>
                 <?php endif; ?>

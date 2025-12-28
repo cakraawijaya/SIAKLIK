@@ -13,7 +13,7 @@
 <main>
     <section class="queue-list-section">
         <div class="custom-header text-center queue-list-text select-none">
-            <h2><i class="fas fa-tasks mr-2" aria-hidden="true"></i>Status Antrean Poliklinik</h2>
+            <h2><i class="fas fa-tasks mr-2" aria-hidden="true"></i>Status Antrean</h2>
             <p>Informasi antrean terkini di setiap layanan poliklinik</p>
         </div><hr>
 
