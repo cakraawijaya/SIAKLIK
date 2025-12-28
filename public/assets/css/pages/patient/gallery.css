@@ -154,16 +154,14 @@
   /* ----------------- Tampilan Sidebar Dibuka ----------------- */
   body.sidebar-expanded .gallery-photo-section h2,
   body.sidebar-expanded .gallery-video-section h2 {
-    text-align: center;
-    font-weight: 700;
-    line-height: 1.3;
+    line-height: 1.5;
   }
 
   body.sidebar-expanded .gallery-photo-section p,
   body.sidebar-expanded .gallery-video-section p {
-    text-align: center;
     line-height: 1.7;
     margin-top: 1.8rem;
+    padding: 0 10rem;
   }
 
   body.sidebar-expanded .video-wrapper {
@@ -206,6 +204,7 @@
   body.sidebar-collapsed .gallery-video-section p {
     line-height: 2;
     margin-top: 1.8rem;
+    padding: 0 9rem;
   }
 
   body.sidebar-collapsed .video-wrapper {
@@ -218,16 +217,14 @@
   /* ----------------- Tampilan Sidebar Dibuka ----------------- */
   body.sidebar-expanded .gallery-photo-section h2,
   body.sidebar-expanded .gallery-video-section h2 {
-    text-align: center;
-    font-weight: 700;
-    line-height: 1.3;
+    line-height: 1.5;
   }
 
   body.sidebar-expanded .gallery-photo-section p,
   body.sidebar-expanded .gallery-video-section p {
-    text-align: center;
     line-height: 1.7;
     margin-top: 1.8rem;
+    padding: 0 2rem;
   }
 
   body.sidebar-expanded .video-wrapper {
@@ -272,7 +269,7 @@
   body.sidebar-collapsed .gallery-video-section p {
     line-height: 2;
     margin-top: 1.8rem;
-    padding: 0 1.95rem;
+    padding: 0 8rem;
   }
 
   body.sidebar-collapsed .video-wrapper {
@@ -285,14 +282,11 @@
   /* ----------------- Tampilan Sidebar Dibuka ----------------- */
   body.sidebar-expanded .gallery-photo-section h2,
   body.sidebar-expanded .gallery-video-section h2 {
-    text-align: center;
-    font-weight: 700;
-    line-height: 1.3;
+    line-height: 1.5;
   }
 
   body.sidebar-expanded .gallery-photo-section p,
   body.sidebar-expanded .gallery-video-section p {
-    text-align: center;
     line-height: 1.7;
     margin-top: 1.8rem;
   }
@@ -343,6 +337,7 @@
   body.sidebar-collapsed .gallery-video-section p {
     line-height: 2;
     margin-top: 1.8rem;
+    padding: 0 4rem;
   }
 
   body.sidebar-collapsed .video-wrapper {
@@ -355,16 +350,14 @@
   /* ----------------- Tampilan Sidebar Dibuka ----------------- */
   body.sidebar-expanded .gallery-photo-section h2,
   body.sidebar-expanded .gallery-video-section h2 {
-    text-align: center;
-    font-weight: 700;
-    line-height: 1.3;
+    line-height: 1.5;
   }
 
   body.sidebar-expanded .gallery-photo-section p,
   body.sidebar-expanded .gallery-video-section p {
-    text-align: center;
     line-height: 1.7;
     margin-top: 1.8rem;
+    padding: 0 1rem;
   }
 
   body.sidebar-expanded .video-wrapper {
@@ -409,6 +402,7 @@
   body.sidebar-collapsed .gallery-video-section p {
     line-height: 2;
     margin-top: 1.8rem;
+    padding: 0 5rem;
   }
 
   body.sidebar-collapsed .video-wrapper {
@@ -421,16 +415,14 @@
   /* ----------------- Tampilan Sidebar Dibuka ----------------- */
   body.sidebar-expanded .gallery-photo-section h2,
   body.sidebar-expanded .gallery-video-section h2 {
-    text-align: center;
-    font-weight: 700;
-    line-height: 1.3;
+    line-height: 1.5;
   }
 
   body.sidebar-expanded .gallery-photo-section p,
   body.sidebar-expanded .gallery-video-section p {
-    text-align: center;
     line-height: 1.7;
     margin-top: 1.8rem;
+    padding: 0 1rem;
   }
 
   body.sidebar-expanded .video-wrapper {
@@ -461,6 +453,7 @@
     font-size: 1rem;
     line-height: 1.8;
     margin-top: 1.8rem;
+    padding: 0 1rem;
   }
 
   .gallery-grid {
@@ -493,8 +486,6 @@
   .gallery-foto-text h2,
   .gallery-video-text h2 {
     font-size: 1.5rem;
-    text-align: left;
-    font-weight: 700;
     line-height: 1.5;
     margin-bottom: 1.5rem;
   }
@@ -502,8 +493,8 @@
   .gallery-foto-text p,
   .gallery-video-text p {
     font-size: 0.9rem;
-    text-align: justify;
     line-height: 1.7;
+    padding: 0 1rem;
   }
 
   .gallery-grid {
@@ -546,8 +537,6 @@
   .gallery-foto-text h2,
   .gallery-video-text h2 {
     font-size: 1.5rem;
-    text-align: left;
-    font-weight: 700;
     line-height: 1.5;
     margin-bottom: 1.5rem;
   }
@@ -555,7 +544,6 @@
   .gallery-foto-text p,
   .gallery-video-text p {
     font-size: 0.85rem;
-    text-align: justify;
     line-height: 1.8;
   }
   
@@ -584,8 +572,59 @@
 }
 
 
-/* ========================== HP PALING KECIL (≤ 374px) ========================== */
-@media (max-width: 374px) {
+/* ===================== HP PALING KECIL 1 (346px - 374px) ======================= */
+@media (min-width: 346px) and (max-width: 374px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  main {
+    padding: 30px;
+  }
+
+  .gallery-video-section {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .gallery-foto-text h2,
+  .gallery-video-text h2 {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .gallery-foto-text p,
+  .gallery-video-text p {
+    font-size: 0.85rem;
+    line-height: 1.8;
+    padding: 0 0.8rem;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 25px;
+  }
+
+  .gallery-item img {
+    height: 140px;
+  }
+  
+  .video-wrapper {
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 16px;
+    margin-top: 25px;
+  }
+
+  .video-wrapper iframe {
+    width: 108%;
+    height: 102%;
+    border: 0;
+    display: block;
+  }
+}
+
+
+/* ========================= HP PALING KECIL 2 (≤ 345px) ========================= */
+@media (max-width: 345px) {
   /* ------------------- Pengaturan Global --------------------- */
   main {
     padding: 20px;
@@ -599,8 +638,6 @@
   .gallery-foto-text h2,
   .gallery-video-text h2 {
     font-size: 1.5rem;
-    text-align: left;
-    font-weight: 700;
     line-height: 1.5;
     margin-bottom: 1.5rem;
   }
@@ -608,8 +645,8 @@
   .gallery-foto-text p,
   .gallery-video-text p {
     font-size: 0.85rem;
-    text-align: justify;
     line-height: 1.8;
+    padding: 0 1rem;
   }
   
   .gallery-grid {

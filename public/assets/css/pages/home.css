@@ -1658,6 +1658,10 @@
     font-size: 0.9rem;
   }
 
+  .article-section .article-text p {
+    line-height: 1.7;
+  }
+
   .article-section .card-header h5 {
     font-size: 1.1rem;
   }
@@ -1754,6 +1758,11 @@
     margin-top: 3rem;
     padding-top: 2rem;
     text-align: center;
+  }
+
+  body.sidebar-expanded .article-section .article-text p {
+    padding: 0 2rem;
+    line-height: 1.7;
   }
 
   body.sidebar-expanded .calendar-wrapper {
@@ -2047,6 +2056,10 @@
   .about-section .about-text p,
   .about-section .about-text ol {
     text-align: justify;
+  }
+
+  .article-section .article-text p {
+    line-height: 1.7;
   }
 
   .article-section .carousel-item .card-header h5 {

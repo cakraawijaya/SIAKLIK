@@ -98,15 +98,12 @@
   body.sidebar-expanded .general-unit-section h2,
   body.sidebar-expanded .dental-unit-section h2,
   body.sidebar-expanded .clinic-lab-section h2 {
-    text-align: center;
-    font-weight: 700;
-    line-height: 1.3;
+    line-height: 1.5;
   }
 
   body.sidebar-expanded .general-unit-section p,
   body.sidebar-expanded .dental-unit-section p,
   body.sidebar-expanded .clinic-lab-section p {
-    text-align: center;
     line-height: 1.7;
     margin-top: 1.8rem;
   }
@@ -181,15 +178,12 @@
   body.sidebar-expanded .general-unit-section h2,
   body.sidebar-expanded .dental-unit-section h2,
   body.sidebar-expanded .clinic-lab-section h2 {
-    text-align: center;
-    font-weight: 700;
-    line-height: 1.3;
+    line-height: 1.5;
   }
 
   body.sidebar-expanded .general-unit-section p,
   body.sidebar-expanded .dental-unit-section p,
   body.sidebar-expanded .clinic-lab-section p {
-    text-align: center;
     line-height: 1.7;
     margin-top: 1.8rem;
   }
@@ -264,17 +258,15 @@
   body.sidebar-expanded .general-unit-section h2,
   body.sidebar-expanded .dental-unit-section h2,
   body.sidebar-expanded .clinic-lab-section h2 {
-    text-align: center;
-    font-weight: 700;
-    line-height: 1.3;
+    line-height: 1.5;
   }
 
   body.sidebar-expanded .general-unit-section p,
   body.sidebar-expanded .dental-unit-section p,
   body.sidebar-expanded .clinic-lab-section p {
-    text-align: center;
     line-height: 1.7;
     margin-top: 1.8rem;
+    padding: 0 4rem;
   }
 
   body.sidebar-expanded .general-unit-section article,
@@ -347,15 +339,12 @@
   body.sidebar-expanded .general-unit-section h2,
   body.sidebar-expanded .dental-unit-section h2,
   body.sidebar-expanded .clinic-lab-section h2 {
-    text-align: center;
-    font-weight: 700;
-    line-height: 1.3;
+    line-height: 1.5;
   }
 
   body.sidebar-expanded .general-unit-section p,
   body.sidebar-expanded .dental-unit-section p,
   body.sidebar-expanded .clinic-lab-section p {
-    text-align: center;
     line-height: 1.7;
     margin-top: 1.8rem;
   }
@@ -431,15 +420,12 @@
   body.sidebar-expanded .general-unit-section h2,
   body.sidebar-expanded .dental-unit-section h2,
   body.sidebar-expanded .clinic-lab-section h2 {
-    text-align: center;
-    font-weight: 700;
-    line-height: 1.3;
+    line-height: 1.5;
   }
 
   body.sidebar-expanded .general-unit-section p,
   body.sidebar-expanded .dental-unit-section p,
   body.sidebar-expanded .clinic-lab-section p {
-    text-align: center;
     line-height: 1.7;
     margin-top: 1.8rem;
   }
@@ -495,6 +481,7 @@
   body.sidebar-collapsed .clinic-lab-section p {
     line-height: 2;
     margin-top: 1.8rem;
+    padding: 0 4rem;
   }
 
   body.sidebar-collapsed .general-unit-section article,
@@ -514,17 +501,15 @@
   body.sidebar-expanded .general-unit-section h2,
   body.sidebar-expanded .dental-unit-section h2,
   body.sidebar-expanded .clinic-lab-section h2 {
-    text-align: center;
-    font-weight: 700;
-    line-height: 1.3;
+    line-height: 1.5;
   }
 
   body.sidebar-expanded .general-unit-section p,
   body.sidebar-expanded .dental-unit-section p,
   body.sidebar-expanded .clinic-lab-section p {
-    text-align: center;
     line-height: 1.7;
     margin-top: 1.8rem;
+    padding: 0 2rem;
   }
 
   body.sidebar-expanded .general-unit-section article,
@@ -597,17 +582,15 @@
   body.sidebar-expanded .general-unit-section h2,
   body.sidebar-expanded .dental-unit-section h2,
   body.sidebar-expanded .clinic-lab-section h2 {
-    text-align: center;
-    font-weight: 700;
-    line-height: 1.3;
+    line-height: 1.5;
   }
 
   body.sidebar-expanded .general-unit-section p,
   body.sidebar-expanded .dental-unit-section p,
   body.sidebar-expanded .clinic-lab-section p {
-    text-align: center;
     line-height: 1.7;
     margin-top: 1.8rem;
+    padding: 0 2rem;
   }
 
   body.sidebar-expanded .general-unit-section article,
@@ -653,6 +636,7 @@
   .dental-unit-section p,
   .clinic-lab-section p {
     font-size: 0.9rem;
+    padding: 0 4rem;
   }
 
   .general-unit-section article,
@@ -692,8 +676,6 @@
   .dental-unit-section h2,
   .clinic-lab-section h2 {
     font-size: 1.5rem;
-    text-align: center;
-    font-weight: 700;
     line-height: 1.5;
     margin-bottom: 1.5rem;
   }
@@ -702,8 +684,8 @@
   .dental-unit-section p,
   .clinic-lab-section p {
     font-size: 0.9rem;
-    text-align: center;
     line-height: 1.7;
+    padding: 0 3.5rem;
   }
 
   .general-unit-section article,
@@ -743,8 +725,6 @@
   .dental-unit-section h2,
   .clinic-lab-section h2 {
     font-size: 1.5rem;
-    text-align: center;
-    font-weight: 700;
     line-height: 1.5;
     margin-bottom: 1.5rem;
   }
@@ -753,8 +733,8 @@
   .dental-unit-section p,
   .clinic-lab-section p {
     font-size: 0.9rem;
-    text-align: center;
     line-height: 1.7;
+    padding: 0 3rem;
   }
 
   .general-unit-section article,
@@ -828,17 +808,15 @@
   body.sidebar-expanded .general-unit-section h2,
   body.sidebar-expanded .dental-unit-section h2,
   body.sidebar-expanded .clinic-lab-section h2 {
-    text-align: center;
-    font-weight: 700;
-    line-height: 1.3;
+    line-height: 1.5;
   }
 
   body.sidebar-expanded .general-unit-section p,
   body.sidebar-expanded .dental-unit-section p,
   body.sidebar-expanded .clinic-lab-section p {
-    text-align: center;
     line-height: 1.7;
     margin-top: 1.8rem;
+    padding: 0 5rem;
   }
 
   body.sidebar-expanded .general-unit-section article,
@@ -884,6 +862,7 @@
   .dental-unit-section p,
   .clinic-lab-section p {
     font-size: 0.9rem;
+    padding: 0 4rem;
   }
 
   /* ---------------- Tampilan Sidebar Ditutup ----------------- */
@@ -912,15 +891,12 @@
   body.sidebar-expanded .general-unit-section h2,
   body.sidebar-expanded .dental-unit-section h2,
   body.sidebar-expanded .clinic-lab-section h2 {
-    text-align: center;
-    font-weight: 700;
-    line-height: 1.3;
+    line-height: 1.5;
   }
 
   body.sidebar-expanded .general-unit-section p,
   body.sidebar-expanded .dental-unit-section p,
   body.sidebar-expanded .clinic-lab-section p {
-    text-align: center;
     line-height: 1.7;
     margin-top: 1.8rem;
   }
@@ -995,17 +971,15 @@
   body.sidebar-expanded .general-unit-section h2,
   body.sidebar-expanded .dental-unit-section h2,
   body.sidebar-expanded .clinic-lab-section h2 {
-    text-align: center;
-    font-weight: 700;
-    line-height: 1.3;
+    line-height: 1.5;
   }
 
   body.sidebar-expanded .general-unit-section p,
   body.sidebar-expanded .dental-unit-section p,
   body.sidebar-expanded .clinic-lab-section p {
-    text-align: center;
     line-height: 1.7;
     margin-top: 1.8rem;
+    padding: 0 4rem;
   }
 
   body.sidebar-expanded .general-unit-section article,
@@ -1078,17 +1052,15 @@
   body.sidebar-expanded .general-unit-section h2,
   body.sidebar-expanded .dental-unit-section h2,
   body.sidebar-expanded .clinic-lab-section h2 {
-    text-align: center;
-    font-weight: 700;
-    line-height: 1.3;
+    line-height: 1.5;
   }
 
   body.sidebar-expanded .general-unit-section p,
   body.sidebar-expanded .dental-unit-section p,
   body.sidebar-expanded .clinic-lab-section p {
-    text-align: center;
     line-height: 1.7;
     margin-top: 1.8rem;
+    padding: 0 3rem;
   }
 
   body.sidebar-expanded .general-unit-section article,
@@ -1161,17 +1133,15 @@
   body.sidebar-expanded .general-unit-section h2,
   body.sidebar-expanded .dental-unit-section h2,
   body.sidebar-expanded .clinic-lab-section h2 {
-    text-align: center;
-    font-weight: 700;
-    line-height: 1.3;
+    line-height: 1.5;
   }
 
   body.sidebar-expanded .general-unit-section p,
   body.sidebar-expanded .dental-unit-section p,
   body.sidebar-expanded .clinic-lab-section p {
-    text-align: center;
     line-height: 1.7;
     margin-top: 1.8rem;
+    padding: 0 2rem;
   }
 
   body.sidebar-expanded .general-unit-section article,
@@ -1211,8 +1181,6 @@
   .dental-unit-section h2,
   .clinic-lab-section h2 {
     font-size: 1.5rem;
-    text-align: center;
-    font-weight: 700;
     line-height: 1.5;
     margin-bottom: 1.5rem;
   }
@@ -1221,8 +1189,8 @@
   .dental-unit-section p,
   .clinic-lab-section p {
     font-size: 0.9rem;
-    text-align: center;
     line-height: 1.7;
+    padding: 0 4rem;
   }
 
   .general-unit-section article,
@@ -1262,8 +1230,6 @@
   .dental-unit-section h2,
   .clinic-lab-section h2 {
     font-size: 1.5rem;
-    text-align: center;
-    font-weight: 700;
     line-height: 1.5;
     margin-bottom: 1.5rem;
   }
@@ -1272,8 +1238,8 @@
   .dental-unit-section p,
   .clinic-lab-section p {
     font-size: 0.9rem;
-    text-align: center;
     line-height: 1.7;
+    padding: 0 6rem;
   }
 
   .general-unit-section article,
@@ -1291,8 +1257,8 @@
 }
 
 
-/* ============================= HP KECIL (≤ 520px) ============================== */
-@media (max-width: 520px) {
+/* ========================== HP KECIL (430px - 520px) =========================== */
+@media (min-width: 430px) and (max-width: 520px) {
   /* ------------------- Pengaturan Global --------------------- */
   .general-unit-section {
     margin: 1rem 0 3rem 0;
@@ -1313,8 +1279,6 @@
   .dental-unit-section h2,
   .clinic-lab-section h2 {
     font-size: 1.5rem;
-    text-align: left;
-    font-weight: 700;
     line-height: 1.5;
     margin-bottom: 1.5rem;
   }
@@ -1323,8 +1287,50 @@
   .dental-unit-section p,
   .clinic-lab-section p {
     font-size: 0.85rem;
-    text-align: justify;
     line-height: 1.8;
+  }
+
+  .general-unit-section iframe,
+  .dental-unit-section iframe,
+  .clinic-lab-section iframe {
+    height: 27.8rem;
+    margin-top: 0.5rem;
+  }
+}
+
+
+/* ========================== HP PALING KECIL (≤ 429px) ========================== */
+@media (max-width: 429px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .general-unit-section {
+    margin: 1rem 0 3rem 0;
+    padding: 1rem 0 1.5rem 0;
+  }
+
+  .dental-unit-section {
+    margin: 1.5rem 0 3rem 0;
+    padding: 1rem 0 1.5rem 0;
+  }
+
+  .clinic-lab-section {
+    margin: 1.5rem 0 0 0;
+    padding: 1rem 0 0 0;
+  }
+
+  .general-unit-section h2,
+  .dental-unit-section h2,
+  .clinic-lab-section h2 {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .general-unit-section p,
+  .dental-unit-section p,
+  .clinic-lab-section p {
+    font-size: 0.85rem;
+    line-height: 1.8;
+    padding: 0 2rem;
   }
 
   .general-unit-section iframe,

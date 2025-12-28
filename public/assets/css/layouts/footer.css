@@ -526,7 +526,7 @@ body.sidebar-expanded a.social-icon {
   }
 
   body.sidebar-expanded .footer-copyright {
-    padding: 0 2.5rem;
+    padding: 0 6rem;
     line-height: 1.8;
   }
 }
@@ -582,7 +582,7 @@ body.sidebar-expanded a.social-icon {
   }
 
   body.sidebar-expanded .footer-copyright {
-    padding: 0 2.5rem;
+    padding: 0 5rem;
     line-height: 1.8;
   }
 }
@@ -701,7 +701,7 @@ body.sidebar-expanded a.social-icon {
   }
 
   .footer-copyright {
-    padding: 0 3.2rem;
+    padding: 0 4.5rem;
     line-height: 1.8;
   }
 }

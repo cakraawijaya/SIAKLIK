@@ -947,7 +947,7 @@
 
 
 /* ============================= HP KECIL (≤ 520px) ============================== */
-@media screen and (max-width: 520px) {
+@media (max-width: 520px) {
   /* ------------------- Pengaturan Global --------------------- */
   .patient-management-section h2 {
     font-size: 1.5rem;

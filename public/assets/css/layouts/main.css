@@ -551,7 +551,7 @@ table td .td-value {
 
 
 /* ============================= HP KECIL (≤ 520px) ============================== */
-@media screen and (max-width: 520px) {
+@media (max-width: 520px) {
   table, tbody, tr {
     display: block;
     width: 100%;

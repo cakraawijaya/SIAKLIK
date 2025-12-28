@@ -977,7 +977,7 @@
 
 
 /* ========================== HP PALING KECIL (≤ 429px) ========================== */
-@media screen and (max-width: 429px) {
+@media (max-width: 429px) {
   /* ------------------- Pengaturan Global --------------------- */
   .queue-list-section h2 {
     font-size: 1.5rem;
