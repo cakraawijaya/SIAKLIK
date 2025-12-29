@@ -332,6 +332,12 @@
     padding-right: 50px;
   }
 
+  body.sidebar-expanded .patient-management-section:has(.action-bar-wrapper input:placeholder-shown)
+  .patient-management-section:has(tbody tr:only-child .td-value)
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
+  }
+
   body.sidebar-expanded .patient-management-section:has(.action-bar-wrapper input:not(:placeholder-shown))
   .info-pagination-wrapper .count-data {
     padding-right: 0;
@@ -427,6 +433,12 @@
 
   body.sidebar-expanded .patient-management-section .info-pagination-wrapper .count-data {
     padding-right: 30px;
+  }
+
+  body.sidebar-expanded .patient-management-section:has(.action-bar-wrapper input:placeholder-shown)
+  .patient-management-section:has(tbody tr:only-child .td-value)
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
   }
 
   body.sidebar-expanded .patient-management-section:has(.action-bar-wrapper input:not(:placeholder-shown))
@@ -564,6 +576,12 @@
 
   .patient-management-section .info-pagination-wrapper .count-data {
     padding-right: 50px;
+  }
+
+  .patient-management-section:has(.action-bar-wrapper input:placeholder-shown)
+  .patient-management-section:has(tbody tr:only-child .td-value)
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
   }
 
   .patient-management-section:has(.action-bar-wrapper input:not(:placeholder-shown))
@@ -748,6 +766,12 @@
     padding-right: 70px;
   }
 
+  body.sidebar-expanded .patient-management-section:has(.action-bar-wrapper input:placeholder-shown)
+  .patient-management-section:has(tbody tr:only-child .td-value)
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
+  }
+
   body.sidebar-expanded .patient-management-section:has(.action-bar-wrapper input:not(:placeholder-shown))
   .info-pagination-wrapper .count-data {
     padding-right: 0;
@@ -842,6 +866,12 @@
     padding-right: 80px;
   }
 
+  body.sidebar-expanded .patient-management-section:has(.action-bar-wrapper input:placeholder-shown)
+  .patient-management-section:has(tbody tr:only-child .td-value)
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
+  }
+
   body.sidebar-expanded .patient-management-section:has(.action-bar-wrapper input:not(:placeholder-shown))
   .info-pagination-wrapper .count-data {
     padding-right: 0;
@@ -919,8 +949,8 @@
 }
 
 
-/* ========================== HP KECIL (361px - 520px) =========================== */
-@media (min-width: 361px) and (max-width: 520px) {
+/* ========================== HP KECIL (391px - 520px) =========================== */
+@media (min-width: 391px) and (max-width: 520px) {
   /* ------------------- Pengaturan Global --------------------- */
   .patient-management-section h2 {
     font-size: 1.5rem;
@@ -980,7 +1010,13 @@
   }
 
   .patient-management-section .info-pagination-wrapper .count-data {
-    padding-right: 30px;
+    padding-right: 60px;
+  }
+
+  .patient-management-section:has(.action-bar-wrapper input:placeholder-shown)
+  .patient-management-section:has(tbody tr:only-child .td-value)
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
   }
 
   .patient-management-section:has(.action-bar-wrapper input:not(:placeholder-shown))
@@ -990,8 +1026,8 @@
 }
 
 
-/* ========================== HP PALING KECIL (≤ 360px) ========================== */
-@media (max-width: 360px) {
+/* ===================== HP PALING KECIL 1 (361px - 390px) ======================= */
+@media (min-width: 361px) and (max-width: 390px) {
   /* ------------------- Pengaturan Global --------------------- */
   .patient-management-section h2 {
     font-size: 1.5rem;
@@ -1052,6 +1088,89 @@
 
   .patient-management-section .info-pagination-wrapper .count-data {
     padding-right: 30px;
+  }
+
+  .patient-management-section:has(.action-bar-wrapper input:placeholder-shown)
+  .patient-management-section:has(tbody tr:only-child .td-value)
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
+  }
+
+  .patient-management-section:has(.action-bar-wrapper input:not(:placeholder-shown))
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
+  }
+}
+
+
+/* ========================= HP PALING KECIL 2 (≤ 360px) ========================= */
+@media (max-width: 360px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .patient-management-section h2 {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .patient-management-section p {
+    font-size: 0.85rem;
+    line-height: 1.8;
+    padding: 0 3rem;
+  }
+
+  .patient-management-section .action-bar-wrapper .add-export button,
+  .patient-management-section .action-bar-wrapper .add-export a,
+  .patient-management-section .action-bar-wrapper .form-inline input::placeholder,
+  .patient-management-section .info-pagination-wrapper .count-data,
+  .patient-management-section .info-pagination-wrapper .pagination a {
+    font-size: 0.85rem;
+  }
+
+  .patient-management-section .action-bar-wrapper .add-export {
+    display: flex;
+    width: 100%;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .patient-management-section .add-export .btn {
+    flex: 1 1 50%;
+    max-width: 50%;
+    padding: 0.55rem;
+  }
+
+  .patient-management-section .action-bar-wrapper .form-inline {
+    display: flex;
+    width: 100%;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .patient-management-section .action-bar-wrapper .form-inline input {
+    flex: 1;
+  }
+
+  .patient-management-section .action-bar-wrapper .form-inline button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 37px;
+    white-space: nowrap;
+  }
+
+  .patient-management-section .table-responsive {
+    margin-top: 0.25rem;
+  }
+
+  .patient-management-section .info-pagination-wrapper .count-data {
+    padding-right: 20px;
+  }
+
+  .patient-management-section:has(.action-bar-wrapper input:placeholder-shown)
+  .patient-management-section:has(tbody tr:only-child .td-value)
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
   }
 
   .patient-management-section:has(.action-bar-wrapper input:not(:placeholder-shown))

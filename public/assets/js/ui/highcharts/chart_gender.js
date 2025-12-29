@@ -6,13 +6,13 @@ Highcharts.chart('container', {
         var watcher = setInterval(function () {
           var table = document.querySelector('.highcharts-data-table table');
           if (table) {
-            // Mengubah header tabel (Satker & Jumlah)
+            // Mengubah header tabel (Jenis Kelamin & Jumlah)
             var thead = table.querySelector('thead tr');
             if (thead && thead.cells.length >= 2) {
-              thead.cells[0].textContent = 'Satker';   // Header kolom pertama
+              thead.cells[0].textContent = 'Jenis Kelamin';   // Header kolom pertama
               thead.cells[1].textContent = 'Jumlah';   // Header kolom kedua
             }
-            // Menambahkan class ke kolom Satker
+            // Menambahkan class ke kolom Jenis Kelamin
             var tbody = table.querySelector('tbody');
             if (tbody) {
               tbody.querySelectorAll('tr').forEach(function(row) {

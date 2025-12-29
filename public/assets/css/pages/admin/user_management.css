@@ -66,6 +66,7 @@
 }
 
 
+
 /* =========================== DESKTOP (1200px – 1368px) ========================= */
 @media (min-width: 1200px) and (max-width: 1368px) {
   /* ------------------- Pengaturan Global --------------------- */
@@ -369,6 +370,12 @@
     padding-right: 50px;
   }
 
+  body.sidebar-expanded .user-management-section:has(.action-bar-wrapper input:placeholder-shown)
+  .tab-pane:has(tbody tr:only-child .td-value)
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
+  }
+
   body.sidebar-expanded .user-management-section:has(.action-bar-wrapper input:not(:placeholder-shown))
   .info-pagination-wrapper .count-data {
     padding-right: 0;
@@ -480,6 +487,12 @@
 
   body.sidebar-expanded .user-management-section .info-pagination-wrapper .count-data {
     padding-right: 30px;
+  }
+
+  body.sidebar-expanded .user-management-section:has(.action-bar-wrapper input:placeholder-shown)
+  .tab-pane:has(tbody tr:only-child .td-value)
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
   }
 
   body.sidebar-expanded .user-management-section:has(.action-bar-wrapper input:not(:placeholder-shown))
@@ -640,6 +653,12 @@
 
   .user-management-section .info-pagination-wrapper .count-data {
     padding-right: 50px;
+  }
+
+  .user-management-section:has(.action-bar-wrapper input:placeholder-shown)
+  .tab-pane:has(tbody tr:only-child .td-value)
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
   }
 
   .user-management-section:has(.action-bar-wrapper input:not(:placeholder-shown))
@@ -853,7 +872,13 @@
   }
 
   body.sidebar-expanded .user-management-section .info-pagination-wrapper .count-data {
-    padding-right: 70px;
+    padding-right: 90px;
+  }
+
+  body.sidebar-expanded .user-management-section:has(.action-bar-wrapper input:placeholder-shown)
+  .tab-pane:has(tbody tr:only-child .td-value)
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
   }
 
   body.sidebar-expanded .user-management-section:has(.action-bar-wrapper input:not(:placeholder-shown))
@@ -966,6 +991,12 @@
     padding-right: 80px;
   }
 
+  body.sidebar-expanded .user-management-section:has(.action-bar-wrapper input:placeholder-shown)
+  .tab-pane:has(tbody tr:only-child .td-value)
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
+  }
+
   body.sidebar-expanded .user-management-section:has(.action-bar-wrapper input:not(:placeholder-shown))
   .info-pagination-wrapper .count-data {
     padding-right: 0;
@@ -1034,8 +1065,8 @@
 }
 
 
-/* ============================= HP KECIL (≤ 520px) ============================== */
-@media (max-width: 520px) {
+/* ========================== HP KECIL (391px - 520px) =========================== */
+@media (min-width: 391px) and (max-width: 520px) {
   /* ------------------- Pengaturan Global --------------------- */
   .user-management-section h2 {
     font-size: 1.5rem;
@@ -1120,7 +1151,217 @@
   }
 
   .user-management-section .info-pagination-wrapper .count-data {
-    padding-right: 80px;
+    padding-right: 75px;
+  }
+
+  .user-management-section:has(.action-bar-wrapper input:placeholder-shown)
+  .tab-pane:has(tbody tr:only-child .td-value)
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
+  }
+
+  .user-management-section:has(.action-bar-wrapper input:not(:placeholder-shown))
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
+  }
+}
+
+
+/* ===================== HP PALING KECIL 1 (361px - 390px) ======================= */
+@media (min-width: 361px) and (max-width: 390px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .user-management-section h2 {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .user-management-section p {
+    font-size: 0.85rem;
+    line-height: 1.8;
+    padding: 0 1.3rem;
+  }
+
+  .user-management-section .tab-wrapper .nav-link,
+  .user-management-section .action-bar-wrapper .add-export button,
+  .user-management-section .action-bar-wrapper .add-export a,
+  .user-management-section .action-bar-wrapper .form-inline input::placeholder,
+  .user-management-section .info-pagination-wrapper .count-data,
+  .user-management-section .info-pagination-wrapper .pagination a {
+    font-size: 0.85rem;
+  }
+
+  .user-management-section .tab-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .user-management-section .tab-wrapper .nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    border-bottom: 0;
+  }
+
+  .user-management-section .tab-wrapper .nav-item {
+    flex: 1 0 33.3333%;
+    text-align: center;
+  }
+
+  .user-management-section .tab-wrapper .nav-link {
+    cursor: pointer;
+    border-radius: 0;
+  }
+
+  .user-management-section .action-bar-wrapper .add-export {
+    display: flex;
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+
+  .user-management-section .add-export .btn {
+    flex: 1 1 50%;
+    max-width: 50%;
+    padding: 0.55rem;
+  }
+
+  .user-management-section .action-bar-wrapper .form-inline {
+    display: flex;
+    width: 100%;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .user-management-section .action-bar-wrapper .form-inline input {
+    flex: 1;
+  }
+
+  .user-management-section .action-bar-wrapper .form-inline button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 37px;
+    white-space: nowrap;
+  }
+
+  .user-management-section .tab-content {
+    margin-top: 0.25rem;
+  }
+
+  .user-management-section .info-pagination-wrapper .count-data {
+    padding-right: 45px;
+  }
+
+  .user-management-section:has(.action-bar-wrapper input:placeholder-shown)
+  .tab-pane:has(tbody tr:only-child .td-value)
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
+  }
+
+  .user-management-section:has(.action-bar-wrapper input:not(:placeholder-shown))
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
+  }
+}
+
+
+/* ========================== HP PALING KECIL (≤ 360px) ========================== */
+@media (max-width: 360px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .user-management-section h2 {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .user-management-section p {
+    font-size: 0.85rem;
+    line-height: 1.8;
+    padding: 0 1.3rem;
+  }
+
+  .user-management-section .tab-wrapper .nav-link,
+  .user-management-section .action-bar-wrapper .add-export button,
+  .user-management-section .action-bar-wrapper .add-export a,
+  .user-management-section .action-bar-wrapper .form-inline input::placeholder,
+  .user-management-section .info-pagination-wrapper .count-data,
+  .user-management-section .info-pagination-wrapper .pagination a {
+    font-size: 0.85rem;
+  }
+
+  .user-management-section .tab-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .user-management-section .tab-wrapper .nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    border-bottom: 0;
+  }
+
+  .user-management-section .tab-wrapper .nav-item {
+    flex: 1 0 33.3333%;
+    text-align: center;
+  }
+
+  .user-management-section .tab-wrapper .nav-link {
+    cursor: pointer;
+    border-radius: 0;
+  }
+
+  .user-management-section .action-bar-wrapper .add-export {
+    display: flex;
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+
+  .user-management-section .add-export .btn {
+    flex: 1 1 50%;
+    max-width: 50%;
+    padding: 0.55rem;
+  }
+
+  .user-management-section .action-bar-wrapper .form-inline {
+    display: flex;
+    width: 100%;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .user-management-section .action-bar-wrapper .form-inline input {
+    flex: 1;
+  }
+
+  .user-management-section .action-bar-wrapper .form-inline button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 37px;
+    white-space: nowrap;
+  }
+
+  .user-management-section .tab-content {
+    margin-top: 0.25rem;
+  }
+
+  .user-management-section .info-pagination-wrapper .count-data {
+    padding-right: 35px;
+  }
+
+  .user-management-section:has(.action-bar-wrapper input:placeholder-shown)
+  .tab-pane:has(tbody tr:only-child .td-value)
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
   }
 
   .user-management-section:has(.action-bar-wrapper input:not(:placeholder-shown))

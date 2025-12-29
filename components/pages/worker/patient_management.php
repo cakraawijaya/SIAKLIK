@@ -72,8 +72,8 @@
                 :&nbsp;<b id="patient-count">0</b>
             </div>
             <div class="pagination">
-                <a class="btn btn-success text-white mr-3" id="patient-prev"><i class="fas fa-arrow-left mr-1" aria-hidden="true"></i>Back</a>
-                <a class="btn btn-success text-white" id="patient-next">Next<i class="fas fa-arrow-right ml-1" aria-hidden="true"></i></a>
+                <a class="btn btn-success text-white mr-3" id="patient-prev"><i class="fas fa-arrow-left mr-1" aria-hidden="true"></i>Kembali</a>
+                <a class="btn btn-success text-white" id="patient-next">Lanjut<i class="fas fa-arrow-right ml-1" aria-hidden="true"></i></a>
             </div>
         </div>
     </section>

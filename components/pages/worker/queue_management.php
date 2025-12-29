@@ -69,8 +69,8 @@
                             :&nbsp;<b id="<?= $label ?>-count">0</b>
                         </div>
                         <div class="pagination">
-                            <a class="btn btn-success text-white mr-3" id="<?= $label ?>-prev"><i class="fas fa-arrow-left mr-1"></i>Back</a>
-                            <a class="btn btn-success text-white" id="<?= $label ?>-next">Next<i class="fas fa-arrow-right ml-1"></i></a>
+                            <a class="btn btn-success text-white mr-3" id="<?= $label ?>-prev"><i class="fas fa-arrow-left mr-1"></i>Kembali</a>
+                            <a class="btn btn-success text-white" id="<?= $label ?>-next">Lanjut<i class="fas fa-arrow-right ml-1"></i></a>
                         </div>
                     </div>
                 </div>

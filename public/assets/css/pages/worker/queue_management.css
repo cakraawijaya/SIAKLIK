@@ -292,7 +292,13 @@
   }
 
   body.sidebar-expanded .queue-management-section .info-pagination-wrapper .count-data {
-    padding-right: 50px;
+    padding-right: 40px;
+  }
+
+  body.sidebar-expanded .queue-management-section:has(.tab-search-wrapper input:placeholder-shown)
+  .tab-pane:has(tbody tr:only-child .td-value)
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
   }
 
   body.sidebar-expanded .queue-management-section:has(.tab-search-wrapper input:not(:placeholder-shown))
@@ -384,6 +390,12 @@
 
   body.sidebar-expanded .queue-management-section .info-pagination-wrapper .count-data {
     padding-right: 30px;
+  }
+
+  body.sidebar-expanded .queue-management-section:has(.tab-search-wrapper input:placeholder-shown)
+  .tab-pane:has(tbody tr:only-child .td-value)
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
   }
 
   body.sidebar-expanded .queue-management-section:has(.tab-search-wrapper input:not(:placeholder-shown))
@@ -516,6 +528,12 @@
     padding-right: 50px;
   }
 
+  .queue-management-section:has(.tab-search-wrapper input:placeholder-shown)
+  .tab-pane:has(tbody tr:only-child .td-value)
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
+  }
+
   .queue-management-section:has(.tab-search-wrapper input:not(:placeholder-shown))
   .info-pagination-wrapper .count-data {
     padding-right: 0;
@@ -601,6 +619,10 @@
     height: 37px;
     white-space: nowrap;
   }
+
+  .queue-management-section .info-pagination-wrapper .count-data {
+    padding-right: 90px;
+  }
 }
 
 
@@ -683,6 +705,12 @@
 
   body.sidebar-expanded .queue-management-section .info-pagination-wrapper .count-data {
     padding-right: 70px;
+  }
+
+  body.sidebar-expanded .queue-management-section:has(.tab-search-wrapper input:placeholder-shown)
+  .tab-pane:has(tbody tr:only-child .td-value)
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
   }
 
   body.sidebar-expanded .queue-management-section:has(.tab-search-wrapper input:not(:placeholder-shown))
@@ -770,7 +798,13 @@
   }
 
   body.sidebar-expanded .queue-management-section .info-pagination-wrapper .count-data {
-    padding-right: 80px;
+    padding-right: 30px;
+  }
+
+  body.sidebar-expanded .queue-management-section:has(.tab-search-wrapper input:placeholder-shown)
+  .tab-pane:has(tbody tr:only-child .td-value)
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
   }
 
   body.sidebar-expanded .queue-management-section:has(.tab-search-wrapper input:not(:placeholder-shown))
@@ -829,8 +863,8 @@
 }
 
 
-/* ========================== HP KECIL (377px - 520px) =========================== */
-@media (min-width: 377px) and (max-width: 520px) {
+/* ========================== HP KECIL (391px - 520px) =========================== */
+@media (min-width: 391px) and (max-width: 520px) {
   /* ------------------- Pengaturan Global --------------------- */
   .queue-management-section h2 {
     font-size: 1.5rem;
@@ -897,7 +931,13 @@
   }
 
   .queue-management-section .info-pagination-wrapper .count-data {
-    padding-right: 25px;
+    padding-right: 60px;
+  }
+
+  .queue-management-section:has(.tab-search-wrapper input:placeholder-shown)
+  .tab-pane:has(tbody tr:only-child .td-value)
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
   }
 
   .queue-management-section:has(.tab-search-wrapper input:not(:placeholder-shown))
@@ -907,8 +947,92 @@
 }
 
 
-/* ========================== HP PALING KECIL (≤ 376px) ========================== */
-@media (max-width: 376px) {
+/* ===================== HP PALING KECIL 1 (361px - 390px) ======================= */
+@media (min-width: 361px) and (max-width: 390px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .queue-management-section h2 {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .queue-management-section p {
+    font-size: 0.85rem;
+    line-height: 1.8;
+    padding: 0 2rem;
+  }
+
+  .queue-management-section .tab-search-wrapper .nav-link,
+  .queue-management-section .tab-search-wrapper .form-inline input::placeholder,
+  .queue-management-section .info-pagination-wrapper .count-data,
+  .queue-management-section .info-pagination-wrapper .pagination a {
+    font-size: 0.85rem;
+  }
+
+  .queue-management-section .tab-search-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .queue-management-section .tab-search-wrapper .nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    border-bottom: 0;
+  }
+
+  .queue-management-section .tab-search-wrapper .nav-item {
+    flex: 1 0 33.3333%;
+    text-align: center;
+  }
+
+  .queue-management-section .tab-search-wrapper .nav-link {
+    cursor: pointer;
+    border-radius: 0;
+  }
+
+  .queue-management-section .tab-search-wrapper .form-inline {
+    display: flex;
+    width: 100%;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .queue-management-section .tab-search-wrapper .form-inline input {
+    flex: 1;
+  }
+
+  .queue-management-section .tab-search-wrapper .form-inline button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 37px;
+    white-space: nowrap;
+  }
+
+  .queue-management-section .info-pagination-wrapper .count-data {
+    padding-right: 40px;
+  }
+
+  .queue-management-section:has(.tab-search-wrapper input:placeholder-shown)
+  .tab-pane:has(tbody tr:only-child .td-value)
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
+  }
+
+  .queue-management-section:has(.tab-search-wrapper input:not(:placeholder-shown))
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
+  }
+}
+
+
+/* ========================== HP PALING KECIL (≤ 360px) ========================== */
+@media (max-width: 360px) {
   /* ------------------- Pengaturan Global --------------------- */
   .queue-management-section h2 {
     font-size: 1.5rem;
@@ -976,6 +1100,12 @@
 
   .queue-management-section .info-pagination-wrapper .count-data {
     padding-right: 25px;
+  }
+  
+  .queue-management-section:has(.tab-search-wrapper input:placeholder-shown)
+  .tab-pane:has(tbody tr:only-child .td-value)
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
   }
 
   .queue-management-section:has(.tab-search-wrapper input:not(:placeholder-shown))
