@@ -55,7 +55,6 @@
   /* ------------------- Pengaturan Global --------------------- */
   .queue-management-section h2 {
     font-size: 1.8rem;
-    font-weight: 700;
     line-height: 1.5;
     margin-bottom: 1.5rem;
   }
@@ -87,7 +86,6 @@
   /* ------------------- Pengaturan Global --------------------- */
   .queue-management-section h2 {
     font-size: 1.6rem;
-    font-weight: 700;
     line-height: 1.5;
     margin-bottom: 1.5rem;
   }
@@ -111,7 +109,6 @@
   /* ------------------- Pengaturan Global --------------------- */
   .queue-management-section h2 {
     font-size: 1.6rem;
-    font-weight: 700;
     line-height: 1.5;
     margin-bottom: 1.5rem;
   }
@@ -135,7 +132,6 @@
   /* ------------------- Pengaturan Global --------------------- */
   .queue-management-section h2 {
     font-size: 1.6rem;
-    font-weight: 700;
     line-height: 1.5;
     margin-bottom: 1.5rem;
   }
@@ -160,13 +156,10 @@
 
   /* ----------------- Tampilan Sidebar Dibuka ----------------- */
   body.sidebar-expanded .queue-management-section h2 {
-    text-align: center;
-    font-weight: 700;
     line-height: 1.3;
   }
 
   body.sidebar-expanded .queue-management-section p {
-    text-align: center;
     line-height: 1.7;
     margin-top: 1.8rem;
   }
@@ -244,15 +237,13 @@
 
   /* ----------------- Tampilan Sidebar Dibuka ----------------- */
   body.sidebar-expanded .queue-management-section h2 {
-    text-align: center;
-    font-weight: 700;
     line-height: 1.3;
   }
 
   body.sidebar-expanded .queue-management-section p {
-    text-align: center;
     line-height: 1.7;
     margin-top: 1.8rem;
+    padding: 0 4rem;
   }
 
   body.sidebar-expanded .queue-management-section .tab-search-wrapper {
@@ -337,15 +328,13 @@
 
   /* ----------------- Tampilan Sidebar Dibuka ----------------- */
   body.sidebar-expanded .queue-management-section h2 {
-    text-align: center;
-    font-weight: 700;
     line-height: 1.3;
   }
 
   body.sidebar-expanded .queue-management-section p {
-    text-align: center;
     line-height: 1.7;
     margin-top: 1.8rem;
+    padding: 0 3rem;
   }
 
   body.sidebar-expanded .queue-management-section .tab-search-wrapper {
@@ -409,7 +398,6 @@
   /* ------------------- Pengaturan Global --------------------- */
   .queue-management-section h2 {
     font-size: 1.5rem;
-    font-weight: 700;
     line-height: 1.5;
     margin-bottom: 1.5rem;
   }
@@ -436,7 +424,6 @@
   /* ------------------- Pengaturan Global --------------------- */
   .queue-management-section h2 {
     font-size: 1.5rem;
-    font-weight: 700;
     line-height: 1.5;
     margin-bottom: 1.5rem;
   }
@@ -460,7 +447,6 @@
   /* ------------------- Pengaturan Global --------------------- */
   .queue-management-section h2 {
     font-size: 1.5rem;
-    font-weight: 700;
     line-height: 1.5;
     margin-bottom: 1.5rem;
   }
@@ -468,6 +454,7 @@
   .queue-management-section p {
     font-size: 0.9rem;
     line-height: 1.7;
+    padding: 0 4rem;
   }
 
   .queue-management-section .tab-search-wrapper .nav-link {
@@ -562,13 +549,10 @@
 
   /* ----------------- Tampilan Sidebar Dibuka ----------------- */
   body.sidebar-expanded .queue-management-section h2 {
-    text-align: center;
-    font-weight: 700;
     line-height: 1.3;
   }
 
   body.sidebar-expanded .queue-management-section p {
-    text-align: center;
     line-height: 1.7;
     margin-top: 1.8rem;
   }
@@ -643,15 +627,13 @@
 
   /* ----------------- Tampilan Sidebar Dibuka ----------------- */
   body.sidebar-expanded .queue-management-section h2 {
-    text-align: center;
-    font-weight: 700;
     line-height: 1.3;
   }
 
   body.sidebar-expanded .queue-management-section p {
-    text-align: center;
     line-height: 1.7;
     margin-top: 1.8rem;
+    padding: 0 5rem;
   }
 
   body.sidebar-expanded .queue-management-section .tab-search-wrapper {
@@ -733,15 +715,13 @@
 
   /* ----------------- Tampilan Sidebar Dibuka ----------------- */
   body.sidebar-expanded .queue-management-section h2 {
-    text-align: center;
-    font-weight: 700;
     line-height: 1.3;
   }
 
   body.sidebar-expanded .queue-management-section p {
-    text-align: center;
     line-height: 1.7;
     margin-top: 1.8rem;
+    padding: 0 4rem;
   }
 
   body.sidebar-expanded .queue-management-section .tab-search-wrapper {
@@ -805,7 +785,6 @@
   /* ------------------- Pengaturan Global --------------------- */
   .queue-management-section h2 {
     font-size: 1.5rem;
-    font-weight: 700;
     line-height: 1.5;
     margin-bottom: 1.5rem;
   }
@@ -829,7 +808,6 @@
   /* ------------------- Pengaturan Global --------------------- */
   .queue-management-section h2 {
     font-size: 1.5rem;
-    font-weight: 700;
     line-height: 1.5;
     margin-bottom: 1.5rem;
   }
@@ -851,12 +829,11 @@
 }
 
 
-/* ============================= HP KECIL (≤ 520px) ============================== */
-@media (max-width: 520px) {
+/* ========================== HP KECIL (377px - 520px) =========================== */
+@media (min-width: 377px) and (max-width: 520px) {
   /* ------------------- Pengaturan Global --------------------- */
   .queue-management-section h2 {
     font-size: 1.5rem;
-    font-weight: 700;
     line-height: 1.5;
     margin-bottom: 1.5rem;
   }
@@ -864,6 +841,85 @@
   .queue-management-section p {
     font-size: 0.85rem;
     line-height: 1.8;
+    padding: 0 2rem;
+  }
+
+  .queue-management-section .tab-search-wrapper .nav-link,
+  .queue-management-section .tab-search-wrapper .form-inline input::placeholder,
+  .queue-management-section .info-pagination-wrapper .count-data,
+  .queue-management-section .info-pagination-wrapper .pagination a {
+    font-size: 0.85rem;
+  }
+
+  .queue-management-section .tab-search-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .queue-management-section .tab-search-wrapper .nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    border-bottom: 0;
+  }
+
+  .queue-management-section .tab-search-wrapper .nav-item {
+    flex: 1 0 33.3333%;
+    text-align: center;
+  }
+
+  .queue-management-section .tab-search-wrapper .nav-link {
+    cursor: pointer;
+    border-radius: 0;
+  }
+
+  .queue-management-section .tab-search-wrapper .form-inline {
+    display: flex;
+    width: 100%;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .queue-management-section .tab-search-wrapper .form-inline input {
+    flex: 1;
+  }
+
+  .queue-management-section .tab-search-wrapper .form-inline button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 37px;
+    white-space: nowrap;
+  }
+
+  .queue-management-section .info-pagination-wrapper .count-data {
+    padding-right: 25px;
+  }
+
+  .queue-management-section:has(.tab-search-wrapper input:not(:placeholder-shown))
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
+  }
+}
+
+
+/* ========================== HP PALING KECIL (≤ 376px) ========================== */
+@media (max-width: 376px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .queue-management-section h2 {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .queue-management-section p {
+    font-size: 0.85rem;
+    line-height: 1.8;
+    padding: 0 1.1rem;
   }
 
   .queue-management-section .tab-search-wrapper .nav-link,
