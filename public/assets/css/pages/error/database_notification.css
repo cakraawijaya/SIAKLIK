@@ -3,23 +3,638 @@
 /* ===================================================================================== */
 
 /* ==================================== GLOBAL =================================== */
-body { 
-  font-family: Arial;
-  background: #f2f2f2;
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: visible;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Roboto", "Lato", sans-serif;
+}
+
+main {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  flex: 1;
+  padding: 50px;
 }
 
-.card {
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+h1 {
+  font-family: "Lato", sans-serif;
+  margin-top: 10px;
+  margin-bottom: 0.5em;
   text-align: center;
+  font-weight: bold;
 }
 
-.error {
-  color: red;
+p {
+  font-family: sans-serif;
+  font-size: 1.02em;
+  line-height: 1.5em;
+  color: #515151;
+}
+
+.select-none {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+  pointer-events: auto;
+}
+
+.database-notification-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+.database-notification-section .card-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  background: #ffffff;
+  padding: 40px 34px;
+  border-radius: 20px;
+  text-align: center;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  box-shadow:
+    0 40px 80px rgba(0, 0, 0, 0.45),
+    0 15px 30px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.database-notification-section .card-wrapper .card-title {
+  color: #e53935;
+  margin-bottom: 20px;
+}
+
+.database-notification-section .card-wrapper .card-text {
+  box-sizing: border-box;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.database-notification-section .card-wrapper .card-body .card-text span {
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+  word-break: break-all;
+  margin: 0 0.25rem;
+}
+
+
+/* =========================== DESKTOP (1200px – 1368px) ========================= */
+@media (min-width: 1200px) and (max-width: 1368px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .database-notification-section .card-wrapper {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    padding: 25px 20px !important;
+    border-radius: 15px;
+  }
+
+  .database-notification-section .card-wrapper .card-title {
+    font-size: 1.8rem !important;
+    line-height: 1.5;
+    margin-bottom: 3rem;
+  }
+
+  .database-notification-section .card-wrapper .card-text {
+    font-size: 0.95rem !important;
+    line-height: 1.7;
+    padding: 0 7rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .database-notification-section .card-wrapper .card-body .card-text span {
+    margin: 0 0.25rem;
+  }
+}
+
+
+/* ======================= SMALL DESKTOP (992px – 1179px) ======================== */
+@media (min-width: 992px) and (max-width: 1179px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .database-notification-section .card-wrapper {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    padding: 25px 20px !important;
+    border-radius: 15px;
+  }
+
+  .database-notification-section .card-wrapper .card-title {
+    font-size: 1.6rem !important;
+    line-height: 1.5;
+    margin-bottom: 3rem;
+  }
+
+  .database-notification-section .card-wrapper .card-text {
+    font-size: 0.9rem !important;
+    line-height: 1.7;
+    padding: 0 7.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .database-notification-section .card-wrapper .card-body .card-text span {
+    margin: 0 0.25rem;
+  }
+}
+
+
+/* ==================== TABLET LANDSCAPE-1 (1180px – 1199px) ===================== */
+@media (min-width: 1180px) and (max-width: 1199px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .database-notification-section .card-wrapper {
+    width: 100%;
+    max-width: 650px;
+    height: 300px;
+    padding: 25px 20px !important;
+    border-radius: 15px;
+  }
+
+  .database-notification-section .card-wrapper .card-title {
+    font-size: 1.6rem !important;
+    line-height: 1.5;
+    margin-bottom: 3rem;
+  }
+
+  .database-notification-section .card-wrapper .card-text {
+    font-size: 0.9rem !important;
+    line-height: 1.7;
+    padding: 0 7.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .database-notification-section .card-wrapper .card-body .card-text span {
+    margin: 0 0.25rem;
+  }
+}
+
+
+/* ===================== TABLET LANDSCAPE-2 (933px – 991px) ====================== */
+@media (min-width: 933px) and (max-width: 991px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .database-notification-section .card-wrapper {
+    width: 100%;
+    max-width: 800px;
+    height: 350px;
+    padding: 25px 20px !important;
+    border-radius: 15px;
+  }
+
+  .database-notification-section .card-wrapper .card-title {
+    font-size: 1.6rem !important;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }
+
+  .database-notification-section .card-wrapper .card-text {
+    font-size: 0.9rem !important;
+    line-height: 1.7;
+    padding: 0 7rem !important;
+  }
+
+  .database-notification-section .card-wrapper .card-body .card-text span {
+    margin: 0 0.25rem;
+  }
+}
+
+
+/* ===================== TABLET LANDSCAPE-3 (853px – 881px) ====================== */
+@media (min-width: 853px) and (max-width: 881px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .database-notification-section .card-wrapper {
+    width: 100%;
+    max-width: 600px;
+    height: 280px;
+    padding: 25px 20px !important;
+    border-radius: 15px;
+  }
+
+  .database-notification-section .card-wrapper .card-title {
+    font-size: 1.6rem !important;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }
+
+  .database-notification-section .card-wrapper .card-text {
+    font-size: 0.9rem !important;
+    line-height: 1.7;
+    padding: 0 7.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .database-notification-section .card-wrapper .card-body .card-text span {
+    margin: 0 0.25rem;
+  }
+}
+
+
+/* ====================== TABLET POTRAIT-1 (820px – 839px) ======================= */
+@media (min-width: 820px) and (max-width: 839px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .database-notification-section .card-wrapper {
+    width: 100%;
+    max-width: 550px;
+    height: 350px;
+    padding: 25px 20px !important;
+    border-radius: 15px;
+  }
+
+  .database-notification-section .card-wrapper .card-title {
+    font-size: 1.6rem !important;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }
+
+  .database-notification-section .card-wrapper .card-text {
+    font-size: 0.9rem !important;
+    line-height: 1.7;
+    padding: 0 7rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .database-notification-section .card-wrapper .card-body .card-text span {
+    margin: 0 0.25rem;
+  }
+}
+
+
+/* ====================== TABLET POTRAIT-2 (768px – 819px) ======================= */
+@media (min-width: 768px) and (max-width: 819px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .database-notification-section .card-wrapper {
+    width: 100%;
+    max-width: 550px;
+    height: 300px;
+    padding: 25px 20px !important;
+    border-radius: 15px;
+  }
+
+  .database-notification-section .card-wrapper .card-title {
+    font-size: 1.5rem !important;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }
+
+  .database-notification-section .card-wrapper .card-text {
+    font-size: 0.9rem !important;
+    line-height: 1.7;
+    padding: 0 7rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .database-notification-section .card-wrapper .card-body .card-text span {
+    margin: 0 0.25rem;
+  }
+}
+
+
+/* ===================== HP BESAR LANDSCAPE (720px – 739px) ====================== */
+@media (min-width: 720px) and (max-width: 739px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .database-notification-section .card-wrapper {
+    width: 100%;
+    max-width: 480px;
+    height: 220px;
+    padding: 25px 20px !important;
+    border-radius: 15px;
+  }
+
+  .database-notification-section .card-wrapper .card-title {
+    font-size: 1.5rem !important;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }
+
+  .database-notification-section .card-wrapper .card-text {
+    font-size: 0.9rem !important;
+    line-height: 1.7;
+    padding: 0 1.9rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .database-notification-section .card-wrapper .card-body .card-text span {
+    margin: 0 0.25rem;
+  }
+}
+
+
+/* ===================== HP BESAR POTRAIT (521px – 666px) ======================== */
+@media (min-width: 521px) and (max-width: 666px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .database-notification-section .card-wrapper {
+    width: 100%;
+    max-width: 650px;
+    height: 250px;
+    padding: 25px 20px !important;
+    border-radius: 15px;
+  }
+
+  .database-notification-section .card-wrapper .card-title {
+    font-size: 1.5rem !important;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }
+
+  .database-notification-section .card-wrapper .card-text {
+    font-size: 0.9rem !important;
+    line-height: 1.7;
+    padding: 0 3.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .database-notification-section .card-wrapper .card-body .card-text span {
+    margin: 0 0.25rem;
+  }
+}
+
+
+/* ==================== HP KECIL LANDSCAPE 1 (912px – 932px) ===================== */
+@media (min-width: 912px) and (max-width: 932px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .database-notification-section .card-wrapper {
+    width: 100%;
+    max-width: 800px;
+    height: 300px;
+    padding: 25px 20px !important;
+    border-radius: 15px;
+  }
+
+  .database-notification-section .card-wrapper .card-title {
+    font-size: 1.6rem !important;
+    line-height: 1.5;
+    margin-bottom: 3rem;
+  }
+
+  .database-notification-section .card-wrapper .card-text {
+    font-size: 0.9rem !important;
+    line-height: 1.7;
+    padding: 0 7rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .database-notification-section .card-wrapper .card-body .card-text span {
+    margin: 0 0.25rem;
+  }
+}
+
+
+/* ==================== HP KECIL LANDSCAPE 2 (882px – 911px) ===================== */
+@media (min-width: 882px) and (max-width: 911px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .database-notification-section .card-wrapper {
+    width: 100%;
+    max-width: 770px;
+    height: 250px;
+    padding: 25px 20px !important;
+    border-radius: 15px;
+  }
+
+  .database-notification-section .card-wrapper .card-title {
+    font-size: 1.6rem !important;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }
+
+  .database-notification-section .card-wrapper .card-text {
+    font-size: 0.9rem !important;
+    line-height: 1.7;
+    padding: 0 4rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .database-notification-section .card-wrapper .card-body .card-text span {
+    margin: 0 0.25rem;
+  }
+}
+
+
+/* ==================== HP KECIL LANDSCAPE 3 (840px – 852px) ===================== */
+@media (min-width: 840px) and (max-width: 852px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .database-notification-section .card-wrapper {
+    width: 100%;
+    max-width: 700px;
+    height: 300px;
+    padding: 25px 20px !important;
+    border-radius: 15px;
+  }
+
+  .database-notification-section .card-wrapper .card-title {
+    font-size: 1.6rem !important;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }
+
+  .database-notification-section .card-wrapper .card-text {
+    font-size: 0.9rem !important;
+    line-height: 1.7;
+    padding: 0 5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .database-notification-section .card-wrapper .card-body .card-text span {
+    margin: 0 0.25rem;
+  }
+}
+
+
+/* ==================== HP KECIL LANDSCAPE 4 (740px – 767px) ===================== */
+@media (min-width: 740px) and (max-width: 767px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .database-notification-section .card-wrapper {
+    width: 100%;
+    max-width: 600px;
+    height: 250px;
+    padding: 25px 20px !important;
+    border-radius: 15px;
+  }
+
+  .database-notification-section .card-wrapper .card-title {
+    font-size: 1.5rem !important;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }
+
+  .database-notification-section .card-wrapper .card-text {
+    font-size: 0.9rem !important;
+    line-height: 1.7;
+    padding: 0 2rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .database-notification-section .card-wrapper .card-body .card-text span {
+    margin: 0 0.25rem;
+  }
+}
+
+
+/* ==================== HP KECIL LANDSCAPE 5 (667px – 719px) ===================== */
+@media (min-width: 667px) and (max-width: 719px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .database-notification-section .card-wrapper {
+    width: 100%;
+    max-width: 480px;
+    height: 200px;
+    padding: 25px 20px !important;
+    border-radius: 15px;
+  }
+
+  .database-notification-section .card-wrapper .card-title {
+    font-size: 1.5rem !important;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }
+
+  .database-notification-section .card-wrapper .card-text {
+    font-size: 0.9rem !important;
+    line-height: 1.7;
+    padding: 0 2rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .database-notification-section .card-wrapper .card-body .card-text span {
+    margin: 0 0.25rem;
+  }
+}
+
+
+/* ========================== HP KECIL (391px - 520px) =========================== */
+@media (min-width: 391px) and (max-width: 520px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .database-notification-section .card-wrapper {
+    padding: 25px !important;
+    border-radius: 15px;
+  }
+
+  .database-notification-section .card-wrapper .card-title {
+    font-size: 1.5rem !important;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .database-notification-section .card-wrapper .card-text {
+    font-size: 0.85rem !important;
+    line-height: 1.5;
+    padding: 0 0.9rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .database-notification-section .card-wrapper .card-body .card-text span {
+    margin: 0 0.25rem;
+  }
+}
+
+
+/* ===================== HP PALING KECIL 1 (361px - 390px) ======================= */
+@media (min-width: 361px) and (max-width: 390px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  main {
+    padding: 35px !important;
+  }
+
+  .database-notification-section .card-wrapper {
+    padding: 25px 20px !important;
+    border-radius: 15px;
+  }
+
+  .database-notification-section .card-wrapper .card-title {
+    font-size: 1.5rem !important;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .database-notification-section .card-wrapper .card-text {
+    font-size: 0.85rem !important;
+    line-height: 1.5;
+    padding: 0 1rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .database-notification-section .card-wrapper .card-body .card-text span {
+    margin: 0 0.25rem;
+  }
+}
+
+
+/* ===================== HP PALING KECIL 2 (345px - 360px) ======================= */
+@media (min-width: 345px) and (max-width: 360px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  main {
+    padding: 35px !important;
+  }
+
+  .database-notification-section .card-wrapper {
+    padding: 25px 20px !important;
+    border-radius: 15px;
+  }
+
+  .database-notification-section .card-wrapper .card-title {
+    font-size: 1.5rem !important;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .database-notification-section .card-wrapper .card-text {
+    font-size: 0.85rem !important;
+    line-height: 1.5;
+    padding: 0 3.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .database-notification-section .card-wrapper .card-body .card-text span {
+    margin: 0;
+  }
+}
+
+
+/* ========================= HP PALING KECIL 3 (≤ 344px) ========================= */
+@media (max-width: 344px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  main {
+    padding: 35px !important;
+  }
+
+  .database-notification-section .card-wrapper {
+    padding: 25px 20px !important;
+    border-radius: 15px;
+  }
+
+  .database-notification-section .card-wrapper .card-title {
+    font-size: 1.5rem !important;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .database-notification-section .card-wrapper .card-text {
+    font-size: 0.85rem !important;
+    line-height: 1.5;
+    padding: 0 3rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .database-notification-section .card-wrapper .card-body .card-text span {
+    margin: 0;
+  }
 }
