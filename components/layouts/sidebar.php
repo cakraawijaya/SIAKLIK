@@ -93,12 +93,23 @@
                             <span>Dashboard</span>
                         </a>
                     </li>
+
+                    <?php if (isset($_SESSION['level']) && $_SESSION['level'] === 'admin'): ?>
+                        <li>
+                            <a onclick="openLink('<?= BASE_URL ?>index.php?page=admin/user_log', false)">
+                                <i class="fas fa-folder-open mr-2" aria-hidden="true"></i>
+                                <span>Catatan Aktivitas</span>
+                            </a>
+                        </li>
+                    <?php endif; ?>
+
                     <li>
                         <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/clinic/queue_registration', false)">
                             <i class="fas fa-user-tag mr-2" aria-hidden="true"></i>
                             <span>Registrasi Antrean</span>
                         </a>
                     </li>
+                    
                     <li>
                         <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/clinic/queue_status', false)">
                             <i class="fas fa-tasks mr-2" aria-hidden="true"></i>
