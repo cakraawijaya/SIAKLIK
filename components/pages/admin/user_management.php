@@ -1,15 +1,18 @@
 <?php
-    // pengecekan otentikasi
+
+    // ======================== AUTH & CONFIG ========================
     $require_login = true; // harus login
     include __DIR__ . '/../../features/auth/authorization/admin.php';
 
     // muat konfigurasi untuk akses BASE_URL & Koneksi
     include __DIR__ . '/../../../config/config.php';
 
+
     // ======================== TAB DAN SEARCH ========================
     $tab_labels = ['pasien'=>'PASIEN','pekerja'=>'PEKERJA','admin'=>'ADMIN'];
     $active_tab = $_GET['tab'] ?? 'pasien';
     $search = $_GET['search'] ?? '';
+    
 ?>
 
 <main>
@@ -58,7 +61,7 @@
         </div>
 
         <!-- Table Content -->
-        <div class="tab-content" id="userTabContent">
+        <div class="tab-content" id="userManagementTabContent">
             <?php foreach ($tab_labels as $label=>$text): ?>
                 <div class="tab-pane select-none fade <?= $active_tab===$label?'show active':'' ?>" id="<?= $label ?>">
                     <div class="table-responsive">

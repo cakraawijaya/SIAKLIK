@@ -16,7 +16,7 @@
 
     // Jika page tidak ditemukan maka redirect ke halaman error
     if (!file_exists($view)) {
-        $_SESSION['error_message'] = "Halaman '$page' tidak ditemukan.";
+        $_SESSION['error_message'] = "$page";
         header("Location: " . BASE_URL . "index.php?page=error/page_notification");
         exit;
     }

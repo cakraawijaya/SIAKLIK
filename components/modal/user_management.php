@@ -1,10 +1,10 @@
 <!-- Hanya bisa diakses kalau sudah login -->
-<?php if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true): ?>
+<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true): ?>
 
   <!-- Hanya Admin yang bisa akses -->
   <?php 
       $allowed_roles = ['admin'];
-      if(isset($_SESSION['level']) && in_array($_SESSION['level'], $allowed_roles)):
+      if (isset($_SESSION['level']) && in_array($_SESSION['level'], $allowed_roles)):
   ?>
 
     <!-- Modal Add Data Pengguna Pasien -->

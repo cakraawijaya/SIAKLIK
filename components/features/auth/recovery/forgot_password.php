@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // cek email di DB
     $query = mysqli_query($koneksi, "SELECT * FROM akun_pasien WHERE email='$email'");
-    if(mysqli_num_rows($query) == 0){
+    if (mysqli_num_rows($query) == 0) {
         header("Location: " . BASE_URL . "index.php?pesan=email_salah&modal=forgot_password");
         exit;
     }
@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <p>Jika tidak meminta reset, abaikan email ini.</p>
     ";
 
-    if($mail->send()){
+    if ($mail->send()) {
         header("Location: " . BASE_URL . "index.php?pesan=reset_terkirim");
         exit;
     } else {

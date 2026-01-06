@@ -17,7 +17,7 @@
                     <li class="nav-item select-none">
                         <?php 
                             $allowed_roles = ['pekerja', 'admin'];
-                            if(isset($_SESSION['level']) && in_array($_SESSION['level'], $allowed_roles)):
+                            if (isset($_SESSION['level']) && in_array($_SESSION['level'], $allowed_roles)):
                         ?>
                             <a class="nav-link" onclick="openLink('<?= BASE_URL ?>index.php?page=worker/dashboard', false)">
                                 <i class="fas fa-laptop-house mr-1" aria-hidden="true"></i>
@@ -71,7 +71,7 @@
                     <li class="navbar-divider"></li>
                     
                     <?php 
-                        if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true):
+                        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true):
                     ?>  
                         <li class="nav-item select-none">
                             <div class="dropdown">
@@ -94,7 +94,7 @@
 
                                     <?php 
                                         $allowed_roles = ['pasien', 'pekerja', 'admin'];
-                                        if(isset($_SESSION['level']) && in_array($_SESSION['level'], $allowed_roles)):
+                                        if (isset($_SESSION['level']) && in_array($_SESSION['level'], $allowed_roles)):
                                     ?>
                                         <div class="dropdown-menu-child">
                                             <a class="dropdown-item" onclick="openLink('<?= BASE_URL ?>index.php?page=patient/clinic/queue_registration', false)">
@@ -121,7 +121,7 @@
                         <div class="dropdown">
                             <?php 
                                 $foto = $_SESSION['foto'] ?? 'default.png';
-                                if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true):
+                                if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true):
                             ?>
                                 <a class="nav-link" onclick="openLink('#', false)" role="button" id="ProfileDropdown" data-toggle="dropdown">
                                     <img src="<?= BASE_URL ?>public/assets/img/photo/<?= htmlspecialchars($foto) ?>" alt="Profil" class="navbar-avatar" />

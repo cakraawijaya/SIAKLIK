@@ -1,43 +1,50 @@
 <?php
 
+    // ===========================================================
+    // CEK SESSION
+    // ===========================================================
+    // Mengecek apakah session belum pernah dimulai
     if (session_status() === PHP_SESSION_NONE) {
-        session_start();
+        session_start(); // Jika session belum aktif, maka mulai session baru
     }
 
-    // Atur Timeout menjadi 300 detik = 5 menit
-    $timeout_duration = 300;
 
-    // --- CEK TIMEOUT ---
-    if (isset($_SESSION['LAST_ACTIVITY'])) {
-        $elapsed_time = time() - $_SESSION['LAST_ACTIVITY'];
-        if ($elapsed_time > $timeout_duration) {
-            session_unset();
-            session_destroy();
-            header("Location: " . BASE_URL . "index.php?pesan=timeout");
-            exit;
-        }
+    // ===========================================================
+    // KONEKSI
+    // ===========================================================
+    include __DIR__ . '/../../../../config/config.php';
+
+
+    // ===========================================================
+    // SET TIMEOUT
+    // ===========================================================
+    $timeout_duration = 300; // 300 detik = 5 menit
+
+
+    // ===========================================================
+    // HELPER LOG AKTIVITAS
+    // ===========================================================
+    function logAktivitas($koneksi, $username, $role, $aksi, $detail) {
+        if (!$username || !$role) return;
+
+        mysqli_query($koneksi, "
+            INSERT INTO riwayat_aktivitas (username, role, aksi, detail, created_at)
+            VALUES ('$username', '$role', '$aksi', '$detail', NOW())
+        ");
     }
 
-    // Update aktivitas terakhir jika login
-    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-        $_SESSION['LAST_ACTIVITY'] = time();
-    }
 
-    /*
-    ------------------------------------------------
-    Hanya cek login kalau $require_login = true
-    ------------------------------------------------
-    */
-
+    // ===========================================================
+    // HANYA CEK LOGIN KALAU $require_login = true
+    // ===========================================================
     if (isset($require_login) && $require_login === true) {
-
-        // ✅ Jika belum login → munculkan modal login pekerja/admin
+        // Jika belum login, tampilkan: modal login pekerja/admin
         if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
             header("location: " . BASE_URL . "index.php?pesan=belum_login&modal=pekerja_admin");
             exit;
         }
 
-        // ✅ Hanya pekerja/admin yang boleh akses
+        // Hanya pekerja/admin yang boleh akses
         $allowed_levels = ['pekerja', 'admin'];
         if (!in_array($_SESSION['level'], $allowed_levels)) {
             header("location: " . BASE_URL . "index.php?pesan=error");
@@ -45,14 +52,51 @@
         }
     }
 
+
+    // ===========================================================
+    // CEK TIMEOUT
+    // ===========================================================
+    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+        if (isset($_SESSION['LAST_ACTIVITY'])) {
+            $elapsed_time = time() - $_SESSION['LAST_ACTIVITY'];
+        
+            if ($elapsed_time > $timeout_duration) {
+                // Ambil data dari Session
+                $username = $_SESSION['username'];
+                $level    = $_SESSION['level'];
+                $nama     = $_SESSION['nama'];
+
+                // Log User: Timeout
+                logAktivitas($koneksi, $username, $level, 'Timeout', "$nama telah di Logout paksa oleh Sistem");
+
+                // Menghapus semua session
+                session_unset(); session_destroy();
+
+                // Mengalihkan ke Beranda, yang disertai dengan notifikasi
+                header("Location: " . BASE_URL . "index.php?pesan=timeout");
+                exit;
+            }
+        }
+    }
+
+
+    // ===========================================================
+    // UPDATE LAST ACTIVITY
+    // ===========================================================
+    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+        $_SESSION['LAST_ACTIVITY'] = time();
+    }
+
+
     // ===========================================================
     // CEK JIKA AKUN TELAH DIHAPUS OLEH ADMIN / ADMIN DATABASE
     // ===========================================================
     if (isset($_SESSION['level']) && isset($_SESSION['email'])) {
-        include __DIR__ . '/../../../../config/config.php';
-
-        $email = $_SESSION['email'];
-        $level = $_SESSION['level'];
+        // Ambil data dari Session
+        $username = $_SESSION['username'];
+        $level    = $_SESSION['level'];
+        $nama     = $_SESSION['nama'];
+        $email    = $_SESSION['email'];
 
         $level_map = [
             'admin'   => ['table' => 'akun_pekerja', 'role_id' => 1],
@@ -69,7 +113,13 @@
         }
 
         if (mysqli_num_rows($query) === 0) {
+            // Log User: Akun Dihapus
+            logAktivitas($koneksi, $username, $level, 'Akun Dihapus', "Akun a/n. $nama telah Dihapus, karena dianggap melanggar ketentuan Poliklinik");
+
+            // Menghapus semua session
             session_unset(); session_destroy();
+
+            // Mengalihkan ke Beranda, yang disertai dengan notifikasi
             header("Location: " . BASE_URL . "index.php?pesan=deleted");
             exit;
         }

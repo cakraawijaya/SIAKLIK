@@ -1,8 +1,10 @@
 <?php
 
-    // pengecekan otentikasi
+    // ============================ AUTH =============================
     include __DIR__ . '/../../../features/auth/authorization/patient.php';
 
+
+    // ======================== PDF SETTINGS =========================
     // nama file PDF
     $poli_umum_pdf = "poli_umum.pdf";
     $poli_gigi_pdf = "poli_gigi.pdf";

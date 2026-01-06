@@ -6,7 +6,7 @@
     // Fungsi untuk mendapatkan level string dari role_id
     function getLevel($role_id, $koneksi) {
         $query = mysqli_query($koneksi, "SELECT level FROM hak_akses WHERE id='$role_id'");
-        if(mysqli_num_rows($query) > 0){
+        if (mysqli_num_rows($query) > 0) {
             $row = mysqli_fetch_assoc($query);
             return $row['level'];
         }
@@ -45,6 +45,12 @@
             $_SESSION['nama'] = $data['nama'];
             $_SESSION['foto'] = $data['foto'];
             unset($_SESSION["captcha_".$captcha_id]); // hapus captcha setelah login sukses
+
+            // Log User: Login Pasien
+            mysqli_query($koneksi, "
+                INSERT INTO riwayat_aktivitas (username, role, aksi, detail, created_at)
+                VALUES ('{$data['username']}', '$level', 'Login', '{$data['nama']} telah Login', NOW())
+            ");
 
             header("location: " . BASE_URL . "index.php?pesan=login_sukses&modal=pasien");
             exit;
@@ -86,6 +92,12 @@
             $_SESSION['nama'] = $data['nama'];
             $_SESSION['foto'] = $data['foto'];
             unset($_SESSION["captcha_".$captcha_id]); // hapus captcha setelah login sukses
+
+            // Log User: Login Pekerja/Admin
+            mysqli_query($koneksi, "
+                INSERT INTO riwayat_aktivitas (username, role, aksi, detail, created_at)
+                VALUES ('{$data['username']}', '$level', 'Login', '{$data['nama']} telah Login', NOW())
+            ");
 
             header("location: " . BASE_URL . "index.php?pesan=login_sukses&modal=pekerja_admin");
             exit;

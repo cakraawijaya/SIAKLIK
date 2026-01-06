@@ -4,7 +4,7 @@
 <?php if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true): ?>
 
   <!-- Tampilkan Modal -->
-  <?php if($showModal): ?>
+  <?php if ($showModal): ?>
 
     <!-- Modal Reset Password -->
     <div class="modal fade" id="modalResetPassword" tabindex="-1" role="dialog" aria-labelledby="modalResetPasswordLabel" aria-hidden="true">

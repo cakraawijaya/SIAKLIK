@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Jangan rewrite jika file atau folder benar-benar ada
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Semua URL diarahkan ke index.php
+RewriteRule ^(.*)$ index.php?page=$1 [L,QSA]

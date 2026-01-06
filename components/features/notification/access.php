@@ -119,29 +119,29 @@
 
                     sessionStorage.removeItem('userLoggedOut');
 
-                    <?php if($pesan == 'login_sukses'): ?>
-                        <?php if($modal == 'pasien'): ?>
+                    <?php if ($pesan == 'login_sukses'): ?>
+                        <?php if ($modal == 'pasien'): ?>
                             window.location.href = "<?= BASE_URL . 'index.php?page=patient/clinic/queue_registration' ?>";
-                        <?php elseif($modal == 'pekerja_admin'): ?>
+                        <?php elseif ($modal == 'pekerja_admin'): ?>
                             window.location.href = "<?= BASE_URL . 'index.php?page=worker/dashboard' ?>";
                         <?php endif; ?>
-                    <?php elseif($pesan == 'logout' || $pesan == 'reset_terkirim' || $pesan == 'timeout' || $pesan == 'deleted'): ?>
+                    <?php elseif ($pesan == 'logout' || $pesan == 'reset_terkirim' || $pesan == 'timeout' || $pesan == 'deleted'): ?>
                         window.location.href = "<?= BASE_URL ?>";
                     <?php endif; ?>
                 });
             }
 
-            <?php if(!in_array($pesan, ['logout','timeout','auto_timeout','deleted','auto_deleted','login_sukses','reset_terkirim'])): ?>
+            <?php if (!in_array($pesan, ['logout','timeout','auto_timeout','deleted','auto_deleted','login_sukses','reset_terkirim'])): ?>
                 let targetModal = null;
                 if ("<?= $pesan ?>" === 'token_invalid' && "<?= $modal ?>" === 'reset_password') targetModal = '#modalForgotPassword';
                 else {
-                    if("<?= $modal ?>" === 'pasien') targetModal = '#modalLoginPasien';
-                    else if("<?= $modal ?>" === 'pekerja_admin') targetModal = '#modalLoginPekerjaAdmin';
-                    else if("<?= $modal ?>" === 'registration') targetModal = '#modalRegistration';
-                    else if("<?= $modal ?>" === 'forgot_password') targetModal = '#modalForgotPassword';
-                    else if("<?= $modal ?>" === 'reset_password') targetModal = '#modalResetPassword';
+                    if ("<?= $modal ?>" === 'pasien') targetModal = '#modalLoginPasien';
+                    else if ("<?= $modal ?>" === 'pekerja_admin') targetModal = '#modalLoginPekerjaAdmin';
+                    else if ("<?= $modal ?>" === 'registration') targetModal = '#modalRegistration';
+                    else if ("<?= $modal ?>" === 'forgot_password') targetModal = '#modalForgotPassword';
+                    else if ("<?= $modal ?>" === 'reset_password') targetModal = '#modalResetPassword';
                 }
-                if(targetModal) $(targetModal).modal({ backdrop: 'static', keyboard: true, show: true });
+                if (targetModal) $(targetModal).modal({ backdrop: 'static', keyboard: true, show: true });
             <?php endif; ?>
 
         }, 300);

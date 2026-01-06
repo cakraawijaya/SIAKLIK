@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 20 Nov 2025 pada 07.51
+-- Waktu pembuatan: 06 Jan 2026 pada 20.31
 -- Versi server: 10.4.27-MariaDB
 -- Versi PHP: 8.1.12
 
@@ -352,6 +352,29 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `riwayat_aktivitas`
+--
+
+CREATE TABLE `riwayat_aktivitas` (
+  `id` int(11) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `role` enum('admin','pekerja','pasien') NOT NULL,
+  `aksi` varchar(255) NOT NULL,
+  `detail` text DEFAULT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `riwayat_aktivitas`
+--
+
+INSERT INTO `riwayat_aktivitas` (`id`, `username`, `role`, `aksi`, `detail`, `created_at`) VALUES
+(1, 'admin1', 'admin', 'Login', 'Bambang Nugroho Hadi telah Login', '2026-01-07 02:09:05'),
+(2, 'admin1', 'admin', 'Logout', 'Bambang Nugroho Hadi telah Logout', '2026-01-07 02:31:09');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `riwayat_antrean`
 --
 
@@ -523,6 +546,14 @@ ALTER TABLE `password_resets`
   ADD PRIMARY KEY (`email`);
 
 --
+-- Indeks untuk tabel `riwayat_aktivitas`
+--
+ALTER TABLE `riwayat_aktivitas`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `username` (`username`),
+  ADD KEY `created_at` (`created_at`);
+
+--
 -- Indeks untuk tabel `riwayat_antrean`
 --
 ALTER TABLE `riwayat_antrean`
@@ -545,6 +576,12 @@ ALTER TABLE `riwayat_pasien`
 --
 ALTER TABLE `hak_akses`
   MODIFY `id` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT untuk tabel `riwayat_aktivitas`
+--
+ALTER TABLE `riwayat_aktivitas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `riwayat_antrean`
@@ -577,10 +614,19 @@ CREATE DEFINER=`root`@`localhost` EVENT `hapus_riwayat_antrean_harian` ON SCHEDU
     WHERE waktu_daftar < CURDATE();
 END$$
 
-CREATE DEFINER=`root`@`localhost` EVENT `hapus_antrean_harian` ON SCHEDULE EVERY 1 DAY STARTS '2025-11-04 00:00:00' ON COMPLETION NOT PRESERVE ENABLE DO BEGIN
+CREATE DEFINER=`root`@`localhost` EVENT `hapus_antrean_harian` ON SCHEDULE EVERY 1 DAY STARTS '2026-01-07 00:00:00' ON COMPLETION NOT PRESERVE ENABLE DO BEGIN
+    -- Hapus antrean yang sudah selesai
+    -- atau lebih dari 1 hari dari waktu daftar
+    -- atau waktu daftar sudah jauh di masa lalu (tahun berbeda dari sekarang)
     DELETE FROM antrean
     WHERE status_antrean = 'Selesai'
-      AND waktu_daftar < CURDATE();
+       OR waktu_daftar < NOW() - INTERVAL 1 DAY
+       OR YEAR(waktu_daftar) < YEAR(NOW());
+END$$
+
+CREATE DEFINER=`root`@`localhost` EVENT `hapus_riwayat_aktivitas_mingguan` ON SCHEDULE EVERY 1 DAY STARTS '2026-01-08 00:00:00' ON COMPLETION NOT PRESERVE ENABLE DO BEGIN
+    DELETE FROM riwayat_aktivitas
+    WHERE created_at < NOW() - INTERVAL 7 DAY;
 END$$
 
 DELIMITER ;

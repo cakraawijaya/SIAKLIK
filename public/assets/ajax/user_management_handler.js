@@ -23,7 +23,7 @@ $(document).ready(function () {
 
                 if (!data || data.data.length === 0) {
                     aksiColumn.hide();
-                    tbody.append('<tr><td colspan="5" class="text-center align-middle" data-header="Pemberitahuan Sistem"><div class="td-value">Data tidak ditemukan</div></td></tr>');
+                    tbody.append('<tr><td colspan="4" class="text-center align-middle" data-header="Pemberitahuan Sistem"><div class="td-value">Data tidak ditemukan</div></td></tr>');
                 } else {
                     aksiColumn.show();
 
@@ -147,7 +147,7 @@ $(document).ready(function () {
             error: function (xhr, status, err) {
                 console.error('Error loadUserData:', status, err);
                 var tbody = $('#' + activeTab + ' tbody');
-                tbody.empty().append('<tr><td colspan="5" class="text-center align-middle" data-header="Pemberitahuan Sistem"><div class="td-value">Gagal memuat data (lihat console)</div></td></tr>');
+                tbody.empty().append('<tr><td colspan="4" class="text-center align-middle" data-header="Pemberitahuan Sistem"><div class="td-value">Gagal memuat data (lihat console)</div></td></tr>');
             }
         });
     }

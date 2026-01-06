@@ -1,8 +1,10 @@
 <?php
 
-    // pengecekan otentikasi
+    // ============================ AUTH =============================
     include __DIR__ . '/../../../features/auth/authorization/patient.php';
 
+
+    // ======================== PDF SETTINGS =========================
     // nama file PDF
     $rujukan_berjenjang_pdf = "rujukan_berjenjang.pdf";
 

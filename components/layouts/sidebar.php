@@ -85,7 +85,7 @@
                 <?php 
                     // Jika login sebagai pekerja / admin → beri class css: custom-mt-sidebar hanya pada Dashboard Poliklinik
                     $allowed_roles = ['pekerja', 'admin'];
-                    if(isset($_SESSION['level']) && in_array($_SESSION['level'], $allowed_roles)):
+                    if (isset($_SESSION['level']) && in_array($_SESSION['level'], $allowed_roles)):
                 ?>
                     <li>
                         <a onclick="openLink('<?= BASE_URL ?>index.php?page=worker/dashboard', false)" class="custom-mt-sidebar">

@@ -186,6 +186,8 @@
             <script src="<?= BASE_URL ?>public/assets/js/ui/highcharts/chart_2022.js"></script>
         <?php elseif ($page == 'admin/user_management'): ?>
             <script src="<?= BASE_URL ?>public/assets/ajax/user_management_handler.js"></script>
+        <?php elseif ($page == 'admin/user_log'): ?>
+            <script src="<?= BASE_URL ?>public/assets/ajax/user_log_handler.js"></script>
         <?php elseif ($page == 'worker/patient_management'): ?>
             <script src="<?= BASE_URL ?>public/assets/ajax/patient_management_handler.js"></script>
         <?php elseif ($page == 'worker/queue_management'): ?>

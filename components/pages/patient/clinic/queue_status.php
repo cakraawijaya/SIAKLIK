@@ -1,13 +1,18 @@
 <?php
+
     // ======================== AUTH & CONFIG ========================
-    $require_login = true;
+    $require_login = true; // harus login
     include __DIR__ . '/../../../features/auth/authorization/patient.php';
+
+    // muat konfigurasi untuk akses BASE_URL & Koneksi
     include __DIR__ . '/../../../../config/config.php';
+    
 
     // ======================== TAB DAN SEARCH ========================
     $tab_labels = ['internal'=>'INTERNAL','bpjs'=>'BPJS','umum'=>'UMUM','selesai'=>'SELESAI'];
     $active_tab = $_GET['tab'] ?? 'internal';
     $search = $_GET['search'] ?? '';
+
 ?>
 
 <main>

@@ -1,6 +1,6 @@
 <?php
 
-    // pengecekan otentikasi
+    // ======================== AUTH & CONFIG ========================
     $require_login = true; // harus login
     include __DIR__ . '/../../features/auth/authorization/worker.php';
 

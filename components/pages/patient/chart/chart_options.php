@@ -1,7 +1,10 @@
 <?php
 
+    // ============================ AUTH =============================
     include __DIR__ . '/../../../features/auth/authorization/patient.php';
 
+    
+    // =========================== CHARTS ============================
     $charts_data = [
         ['color' => '#639c1f', 'label' => 'Jenis Kelamin', 'icon' => 'fas fa-procedures', 'link' => 'chart_gender'],
         ['color' => '#24252d', 'label' => 'Satker 2013', 'icon' => 'fas fa-procedures', 'link' => 'chart_2013'],

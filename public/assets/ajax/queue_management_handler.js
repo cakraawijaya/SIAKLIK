@@ -10,7 +10,7 @@ $(document).ready(function(){
             data: {
                 tab: activeTab,
                 search: search,
-                ['link_'+activeTab]: currentPage[activeTab]
+                ['link_' + activeTab]: currentPage[activeTab]
             },
             dataType: "json",
             success: function(res){
@@ -19,7 +19,7 @@ $(document).ready(function(){
                 tbody.empty();
 
                 if(!data || data.data.length === 0){
-                    tbody.append('<tr><td colspan="7" class="text-center align-middle" data-header="Pemberitahuan Sistem"><div class="td-value">Data tidak ditemukan</div></td></tr>'); 
+                    tbody.append('<tr><td colspan="6" class="text-center align-middle" data-header="Pemberitahuan Sistem"><div class="td-value">Data tidak ditemukan</div></td></tr>'); 
                     // Sembunyikan kolom aksi (opsional: hapus atau sembunyikan header)
                     $('#' + activeTab + ' thead th:last').hide(); 
                 } else {
@@ -124,7 +124,7 @@ $(document).ready(function(){
                 console.error('Error loadQueueData:', status, err);
                 var tbody = $('#' + activeTab + ' tbody');
                 tbody.empty();
-                tbody.append('<tr><td colspan="8" class="text-center align-middle" data-header="Pemberitahuan Sistem"><div class="td-value">Gagal memuat data (lihat console)</div></td></tr>');
+                tbody.append('<tr><td colspan="6" class="text-center align-middle" data-header="Pemberitahuan Sistem"><div class="td-value">Gagal memuat data (lihat console)</div></td></tr>');
             }
         });
     }

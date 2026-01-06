@@ -32,7 +32,7 @@
 ?>
 
 <!-- Hanya bisa diakses kalau sudah login -->
-<?php if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true): ?>
+<?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true): ?>
 
   <!-- ========================================= -->
   <!-- MODAL ANTREAN INTERNAL -->

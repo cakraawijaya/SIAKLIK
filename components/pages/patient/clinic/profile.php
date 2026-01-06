@@ -1,6 +1,12 @@
 <?php
-    // pengecekan otentikasi
+
+    // ======================== AUTH & CONFIG ========================
+    $require_login = true; // harus login
     include __DIR__ . '/../../../features/auth/authorization/patient.php';
+
+    // muat konfigurasi untuk akses BASE_URL & Koneksi
+    include __DIR__ . '/../../../../config/config.php';
+
 ?>
 
 <main>

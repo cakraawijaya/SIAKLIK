@@ -1,10 +1,12 @@
-$(document).ready(function(){
-    function loadQueueData(searchOnly = false){
+$(document).ready(function () {
+
+    // ======================== LOAD DATA ========================
+    function loadLogData(searchOnly = false) {
         // Jika searchOnly true, ambil value dari input search
         var search = searchOnly ? $('input[name="search"]').val() : '';
-        
+
         $.ajax({
-            url: BASE_URL + "components/data/ajax_queue_status.php",
+            url: BASE_URL + "components/data/ajax_user_log.php",
             type: "GET",
             data: {
                 tab: activeTab,
@@ -12,8 +14,8 @@ $(document).ready(function(){
                 ['link_' + activeTab]: currentPage[activeTab]
             },
             dataType: "json",
-            success: function(res){
-                var data = res.queues[activeTab];
+            success: function (res) {
+                var data = res.logs[activeTab];
                 var tbody = $('#' + activeTab + ' tbody');
 
                 // Jika halaman kosong dan ada halaman lain, pindah otomatis
@@ -21,12 +23,12 @@ $(document).ready(function(){
                     if(currentPage[activeTab] < (data.total_page || 1)){
                         // Naik ke halaman berikutnya
                         currentPage[activeTab]++;
-                        loadQueueData(searchOnly);
+                        loadLogData(searchOnly);
                         return;
                     } else if(currentPage[activeTab] > 1){
                         // Turun ke halaman sebelumnya
                         currentPage[activeTab]--;
-                        loadQueueData(searchOnly);
+                        loadLogData(searchOnly);
                         return;
                     }
                 }
@@ -38,28 +40,38 @@ $(document).ready(function(){
                 } else {
                     data.data.forEach(function(row){
                         tbody.append(
-                            '<tr>'+
-                                '<td class="text-center align-middle" data-header="Kode Antrean">' +
-                                    '<div class="td-value">' + (row.kode_antrean || '-') + '</div>' +
-                                '</td>' +
+                            `<tr>
+                                <td class="text-center align-middle" data-header="Waktu">
+                                    <div class="td-value">
+                                        ${row.created_at}
+                                    </div>
+                                </td>
 
-                                '<td class="text-center align-middle" data-header="Nama">' +
-                                    '<div class="td-value">' + (row.nama_user || '-') + '</div>' +
-                                '</td>' +
+                                <td class="text-center align-middle" data-header="Username">
+                                    <div class="td-value">
+                                        ${row.username || '-'}
+                                    </div>
+                                </td>
 
-                                '<td class="text-center align-middle" data-header="Layanan">' +
-                                    '<div class="td-value">' + (row.layanan_terkini || '-') + '</div>' +
-                                '</td>' +
+                                <td class="text-center align-middle" data-header="Role">
+                                    <div class="td-value">
+                                        ${labelMap[row.role] || row.role}
+                                    </div>
+                                </td>
 
-                                '<td class="text-center align-middle" data-header="Jenis Antrean">' +
-                                    '<div class="td-value">' + (row.kategori || '-') + '</div>' +
-                                '</td>' +
+                                <td class="text-center align-middle" data-header="Aktivitas">
+                                    <div class="td-value">
+                                        ${row.aksi || '-'}
+                                    </div>
+                                </td>
 
-                                '<td class="text-center align-middle" data-header="Status">' +
-                                    '<div class="td-value">' + (row.status_antrean || 'Menunggu') + '</div>' +
-                                '</td>' +
-                            '</tr>'
-                        );
+                                <td class="text-center align-middle" data-header="Detail">
+                                    <div class="td-value">
+                                        ${row.detail || '-'}
+                                    </div>
+                                </td>
+                            </tr>
+                        `);
                     });
                 }
 
@@ -69,16 +81,16 @@ $(document).ready(function(){
                 var countText = data.total_data || 0;
 
                 if (search === '') {
-                    infoText = 'Jumlah data antrean pasien';
+                    infoText = '';
                 } else {
-                    infoText = 'Hasil pencarian data antrean pasien';
+                    infoText = 'Hasil pencarian log aktivitas';
                 }
 
                 $('#' + activeTab + '-info').text(infoText + ' ');
                 $('#' + activeTab + '-category').text(labelText + ' ');
                 $('#' + activeTab + '-count').text(countText);
 
-                totalPage[activeTab] = data.total_page || 1;                
+                totalPage[activeTab] = data.total_page || 1;
 
                 // Pagination
                 if(data.current_page <= 1){
@@ -97,8 +109,8 @@ $(document).ready(function(){
                     }
                 }
             },
-            error: function(xhr, status, err){
-                console.error('Error loadQueueData:', status, err);
+            error: function (xhr, status, err) {
+                console.error('Error loadLogData:', status, err);
                 var tbody = $('#' + activeTab + ' tbody');
                 tbody.empty();
                 tbody.append('<tr><td colspan="5" class="text-center align-middle" data-header="Pemberitahuan Sistem"><div class="td-value">Gagal memuat data (lihat console)</div></td></tr>');
@@ -124,14 +136,14 @@ $(document).ready(function(){
         $('#' + clickedTab).addClass('show active');
 
         // Load data
-        loadQueueData();
+        loadLogData();
     });
 
     // Search form submit (hanya tombol search)
     $('#searchForm').on('submit', function(e){
         e.preventDefault();
         currentPage[activeTab] = 1;
-        loadQueueData(true); // true = ambil value search
+        loadLogData(true); // true = ambil value search
     });
 
     // Cegah submit form saat tekan Enter di input search
@@ -146,24 +158,25 @@ $(document).ready(function(){
         var tab = $(this).attr('id').replace('-prev','');
         if(currentPage[tab] > 1){
             currentPage[tab]--;
-            loadQueueData();
+            loadLogData();
         }
     });
     $('a[id$="-next"]').on('click', function(){
         var tab = $(this).attr('id').replace('-next','');
         if(currentPage[tab] < totalPage[tab]){
             currentPage[tab]++;
-            loadQueueData();
+            loadLogData();
         }
     });
 
     // Initial load tanpa search
-    loadQueueData();
+    loadLogData();
 
     // Auto refresh setiap 10 detik, tapi hanya jika search kosong
-    setInterval(function(){
-        if($('input[name="search"]').val() === ''){
-            loadQueueData();
+    setInterval(function () {
+        if ($('input[name="search"]').val() === '') {
+            loadLogData();
         }
     }, 10000);
+
 });
