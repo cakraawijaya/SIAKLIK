@@ -12,7 +12,15 @@
     $per_page = 5;
 
 
-    // ========================== HELPERS ============================
+    // ========================== SESSION ============================
+    $username      =  $_SESSION['username'];
+    $level         =  $_SESSION['level'];
+    $nama_lengkap  =  $_SESSION['nama_lengkap'];
+    $nama_depan    =  '';
+    if ($nama_lengkap !== '') { $nama_depan = explode(' ', trim($nama_lengkap))[0]; }
+
+
+    // ============ RIWAYAT PASIEN (SEARCH & PAGINATION) =============
     function get_patients_history($per_page, $page_param, $search = '') {
         global $koneksi;
         $page = isset($_GET[$page_param]) && $_GET[$page_param] > 1 ? (int)$_GET[$page_param] : 1;
@@ -30,7 +38,9 @@
         }
 
         $query = "SELECT * FROM riwayat_pasien $where 
-            ORDER BY CAST(SUBSTRING_INDEX(id,'-',-1) AS UNSIGNED) ASC
+            ORDER BY
+                CAST(SUBSTRING_INDEX(SUBSTRING_INDEX(id,'-',2),'-',-1) AS UNSIGNED) ASC,
+                CAST(SUBSTRING_INDEX(id,'-',-1) AS UNSIGNED) ASC
             LIMIT $per_page OFFSET $offset";
 
         $result = mysqli_query($koneksi, $query);
@@ -53,6 +63,7 @@
             'total' => $total_data
         ];
     }
+
 
     // ===================== GENERATE ID PASIEN ======================
     function generate_id($koneksi) {
@@ -96,9 +107,13 @@
         return $id_pasien;
     }
 
+
     // ======================== HANDLE REQUEST ========================
     $action = $_GET['action'] ?? $_POST['action'] ?? '';
     $id = $_REQUEST['id'] ?? '';
+    
+    // Return JSON
+    header('Content-Type: application/json; charset=utf-8');
 
     try {
         // ========================= LIST DATA ===========================
@@ -122,7 +137,7 @@
 
         // ========================== CREATE =============================
         elseif ($action === 'create') {
-            $nama = trim($_POST['nama'] ?? '');
+            $nama_pasien = trim($_POST['nama'] ?? '');
             $umur = trim($_POST['umur'] ?? '');
             $alamat = trim($_POST['alamat'] ?? '');
             $pekerjaan = trim($_POST['pekerjaan'] ?? '');
@@ -142,10 +157,16 @@
             $id = generate_id($koneksi);
 
             $stmt = $koneksi->prepare("INSERT INTO riwayat_pasien (id, nama, umur, alamat, pekerjaan, status, jenis_kelamin, nim_nip, no_bpjs, layanan, kategori, keterangan, waktu) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())");
-            $stmt->bind_param("ssssssssssss", $id, $nama, $umur, $alamat, $pekerjaan, $status, $jenis_kelamin, $nim_nip, $no_bpjs, $layanan, $kategori, $keterangan);
+            $stmt->bind_param("ssssssssssss", $id, $nama_pasien, $umur, $alamat, $pekerjaan, $status, $jenis_kelamin, $nim_nip, $no_bpjs, $layanan, $kategori, $keterangan);
             if (!$stmt->execute()) {
                 throw new Exception('Gagal menambah data pasien: ' . $stmt->error);
             }
+
+            // Log User: Tambah Riwayat Pasien
+            mysqli_query($koneksi, "
+                INSERT INTO riwayat_aktivitas (username, role, aksi, detail, created_at)
+                VALUES ('$username', '$level', 'Tambah Riwayat Pasien', '$nama_depan telah menambahkan data pasien baru a/n. $nama_pasien (ID: $id).', NOW())
+            ");
 
             // Ambil waktu yang baru saja disimpan agar frontend bisa highlight berdasarkan waktu
             $res_time = mysqli_query($koneksi, "SELECT waktu FROM riwayat_pasien WHERE id='$id' LIMIT 1");
@@ -165,7 +186,7 @@
         elseif ($action === 'update') {
             if (!$id) throw new Exception('ID tidak dikirim');
 
-            $nama = trim($_POST['nama'] ?? '');
+            $nama_pasien = trim($_POST['nama'] ?? '');
             $umur = trim($_POST['umur'] ?? '');
             $alamat = trim($_POST['alamat'] ?? '');
             $pekerjaan = trim($_POST['pekerjaan'] ?? '');
@@ -178,10 +199,16 @@
             $keterangan = trim($_POST['keterangan'] ?? '');
 
             $stmt = $koneksi->prepare("UPDATE riwayat_pasien SET nama=?, umur=?, alamat=?, pekerjaan=?, status=?, jenis_kelamin=?, nim_nip=?, no_bpjs=?, layanan=?, kategori=?, keterangan=? WHERE id=?");
-            $stmt->bind_param("ssssssssssss", $nama, $umur, $alamat, $pekerjaan, $status, $jenis_kelamin, $nim_nip, $no_bpjs, $layanan, $kategori, $keterangan, $id);
+            $stmt->bind_param("ssssssssssss", $nama_pasien, $umur, $alamat, $pekerjaan, $status, $jenis_kelamin, $nim_nip, $no_bpjs, $layanan, $kategori, $keterangan, $id);
             if (!$stmt->execute()) {
                 throw new Exception('Gagal memperbarui data pasien: ' . $stmt->error);
             }
+
+            // Log User: Ubah Riwayat Pasien
+            mysqli_query($koneksi, "
+                INSERT INTO riwayat_aktivitas (username, role, aksi, detail, created_at)
+                VALUES ('$username', '$level', 'Ubah Riwayat Pasien', '$nama_depan telah mengubah data riwayat pasien a/n. $nama_pasien (ID: $id).', NOW())
+            ");
 
             // Ambil kembali baris yang diupdate untuk waktu (agar frontend bisa highlight)
             $res_time = mysqli_query($koneksi, "SELECT waktu FROM riwayat_pasien WHERE id='$id' LIMIT 1");
@@ -202,12 +229,21 @@
             if (!$id) throw new Exception('ID tidak dikirim');
 
             $check = mysqli_query($koneksi, "SELECT * FROM riwayat_pasien WHERE id='$id'");
-            if (mysqli_num_rows($check) === 0) {
+            $row = mysqli_fetch_assoc($check);
+            $nama_pasien = $row['nama'] ?? '-';
+            
+            if ($row === 0) {
                 throw new Exception('Data pasien tidak ditemukan');
             }
 
             $delete = mysqli_query($koneksi, "DELETE FROM riwayat_pasien WHERE id='$id'");
             if (!$delete) throw new Exception('Gagal menghapus data pasien: ' . mysqli_error($koneksi));
+
+            // Log User: Hapus Riwayat Pasien
+            mysqli_query($koneksi, "
+                INSERT INTO riwayat_aktivitas (username, role, aksi, detail, created_at)
+                VALUES ('$username', '$level', 'Hapus Riwayat Pasien', '$nama_depan telah menghapus data riwayat pasien a/n. $nama_pasien (ID: $id).', NOW())
+            ");
 
             echo json_encode(['success' => true, 'message' => 'Data pasien berhasil dihapus']);
             exit;
@@ -220,8 +256,5 @@
     } catch (Exception $e) {
         echo json_encode(['success' => false, 'message' => $e->getMessage()]);
     }
-
-    // Return JSON
-    header('Content-Type: application/json; charset=utf-8');
 
 ?>

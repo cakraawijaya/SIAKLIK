@@ -14,31 +14,15 @@ $(document).ready(function () {
                 ['link_' + activeTab]: currentPage[activeTab]
             },
             dataType: "json",
-            success: function (res) {
-                var data = res.logs[activeTab];
+            success: function(res) {
+                var logs = res.logs[activeTab];
                 var tbody = $('#' + activeTab + ' tbody');
-
-                // Jika halaman kosong dan ada halaman lain, pindah otomatis
-                if(data.data.length === 0){
-                    if(currentPage[activeTab] < (data.total_page || 1)){
-                        // Naik ke halaman berikutnya
-                        currentPage[activeTab]++;
-                        loadLogData(searchOnly);
-                        return;
-                    } else if(currentPage[activeTab] > 1){
-                        // Turun ke halaman sebelumnya
-                        currentPage[activeTab]--;
-                        loadLogData(searchOnly);
-                        return;
-                    }
-                }
-
                 tbody.empty();
 
-                if(!data || data.data.length === 0){
+                if (!logs.data || logs.data.length === 0) {
                     tbody.append('<tr><td colspan="5" class="text-center align-middle" data-header="Pemberitahuan Sistem"><div class="td-value">Data tidak ditemukan</div></td></tr>');
                 } else {
-                    data.data.forEach(function(row){
+                    logs.data.forEach(function(row) {
                         tbody.append(
                             `<tr>
                                 <td class="text-center align-middle" data-header="Waktu">
@@ -55,7 +39,7 @@ $(document).ready(function () {
 
                                 <td class="text-center align-middle" data-header="Role">
                                     <div class="td-value">
-                                        ${labelMap[row.role] || row.role}
+                                        ${row.role}
                                     </div>
                                 </td>
 
@@ -75,36 +59,22 @@ $(document).ready(function () {
                     });
                 }
 
-                // ======================== INFO TEXT ========================
-                var labelText = '(' + activeTab.toUpperCase() + ')';
-                var infoText = '';
-                var countText = data.total_data || 0;
 
-                if (search === '') {
-                    infoText = '';
-                } else {
-                    infoText = 'Hasil pencarian log aktivitas';
-                }
+                // ======================== PAGINATION =======================
+                totalPage[activeTab] = logs.total_page || 1;
 
-                $('#' + activeTab + '-info').text(infoText + ' ');
-                $('#' + activeTab + '-category').text(labelText + ' ');
-                $('#' + activeTab + '-count').text(countText);
-
-                totalPage[activeTab] = data.total_page || 1;
-
-                // Pagination
-                if(data.current_page <= 1){
+                if (logs.current_page <= 1) {
                     $('#' + activeTab + '-prev').hide();
                 } else {
                     $('#' + activeTab + '-prev').show();
                 }
 
-                if(data.current_page >= data.total_page){
+                if (logs.current_page >= logs.total_page) {
                     $('#' + activeTab + '-next').hide();
                     $('#' + activeTab + '-prev').removeClass('mr-3');
                 } else {
                     $('#' + activeTab + '-next').show();
-                    if(data.current_page > 1){
+                    if (logs.current_page > 1) {
                         $('#' + activeTab + '-prev').addClass('mr-3');
                     }
                 }
@@ -112,13 +82,13 @@ $(document).ready(function () {
             error: function (xhr, status, err) {
                 console.error('Error loadLogData:', status, err);
                 var tbody = $('#' + activeTab + ' tbody');
-                tbody.empty();
-                tbody.append('<tr><td colspan="5" class="text-center align-middle" data-header="Pemberitahuan Sistem"><div class="td-value">Gagal memuat data (lihat console)</div></td></tr>');
+                tbody.empty().append('<tr><td colspan="5" class="text-center align-middle" data-header="Pemberitahuan Sistem"><div class="td-value">Gagal memuat data (lihat console)</div></td></tr>');
             }
         });
     }
 
-    // Tab switch
+
+    // ======================== TAB SWITCH =======================
     $('a[data-tab]').on('click', function(e){
         e.preventDefault();
         var clickedTab = $(this).data('tab');
@@ -172,7 +142,8 @@ $(document).ready(function () {
     // Initial load tanpa search
     loadLogData();
 
-    // Auto refresh setiap 10 detik, tapi hanya jika search kosong
+
+    // ======================= AUTO REFRESH ======================
     setInterval(function () {
         if ($('input[name="search"]').val() === '') {
             loadLogData();

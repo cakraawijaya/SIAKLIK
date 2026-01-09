@@ -9,12 +9,12 @@
     // Ambil data dari Session
     $username = $_SESSION['username'];
     $level    = $_SESSION['level'];
-    $nama     = $_SESSION['nama'];
+    $nama     = $_SESSION['nama_lengkap'];
 
     // Log User: Logout
     mysqli_query($koneksi, "
         INSERT INTO riwayat_aktivitas (username, role, aksi, detail, created_at)
-        VALUES ('$username', '$level', 'Logout', '$nama telah Logout', NOW())
+        VALUES ('$username', '$level', 'Logout', '$nama telah Logout.', NOW())
     ");
     
     // menghapus semua session

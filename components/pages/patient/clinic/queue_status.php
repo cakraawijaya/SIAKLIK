@@ -9,7 +9,7 @@
     
 
     // ======================== TAB DAN SEARCH ========================
-    $tab_labels = ['internal'=>'INTERNAL','bpjs'=>'BPJS','umum'=>'UMUM','selesai'=>'SELESAI'];
+    $tab_labels = ['internal' => 'INTERNAL', 'bpjs' => 'BPJS', 'umum' => 'UMUM', 'selesai' => 'SELESAI'];
     $active_tab = $_GET['tab'] ?? 'internal';
     $search = $_GET['search'] ?? '';
 
@@ -25,9 +25,9 @@
         <!-- Tabs dan Search -->
         <div class="tab-search-wrapper">
             <ul class="nav nav-tabs">
-                <?php foreach($tab_labels as $label=>$text): ?>
+                <?php foreach($tab_labels as $label => $text): ?>
                     <li class="nav-item">
-                        <a class="nav-link text-dark select-none <?= $active_tab===$label?'active':'' ?>" 
+                        <a class="nav-link text-dark select-none <?= $active_tab === $label ? 'active' : '' ?>" 
                         onclick="openLink('#<?= $label ?>', false)" data-tab="<?= $label ?>">
                             <?= $text ?>
                         </a>
@@ -42,8 +42,8 @@
 
         <!-- Tab Content -->
         <div class="tab-content" id="antreanTabContent">
-            <?php foreach($tab_labels as $label=>$text): ?>
-                <div class="tab-pane select-none fade <?= $active_tab===$label?'show active':'' ?>" id="<?= $label ?>">
+            <?php foreach($tab_labels as $label => $text): ?>
+                <div class="tab-pane select-none fade <?= $active_tab === $label ? 'show active' : '' ?>" id="<?= $label ?>">
                     <div class="table-responsive">
                         <table class="table table-bordered w-100">
                             <thead>
@@ -86,6 +86,6 @@
 <!-- Definisi Awal Queue Handler -->
 <script>
     var activeTab = '<?= $active_tab ?>';
-    var currentPage = { 'internal':1, 'bpjs':1, 'umum':1, 'selesai':1 };
-    var totalPage = { 'internal':1, 'bpjs':1, 'umum':1, 'selesai':1 };
+    var currentPage = { 'internal': 1, 'bpjs': 1, 'umum': 1, 'selesai': 1 };
+    var totalPage = { 'internal': 1, 'bpjs': 1, 'umum': 1, 'selesai': 1 };
 </script>

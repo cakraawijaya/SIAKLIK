@@ -16,9 +16,27 @@
 
 
     // ===========================================================
-    // SET TIMEOUT
+    // HANYA CEK LOGIN KALAU $require_login = true
     // ===========================================================
-    $timeout_duration = 300; // 300 detik = 5 menit
+    if (isset($require_login) && $require_login === true) {
+        // Jika belum login, tampilkan: modal login pekerja/admin
+        if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+            header("location: " . BASE_URL . "index.php?pesan=belum_login&modal=pekerja_admin");
+            exit;
+        }
+
+        // Jika variabel $allowed_levels belum didefinisikan di halaman pemanggil, maka gunakan:
+        if (!isset($allowed_levels)) {
+            // Default: Hanya pekerja/admin yang boleh akses
+            $allowed_levels = ['pekerja', 'admin'];
+        }
+
+        // Tolak akses jika role user tidak memiliki izin ke halaman ini
+        if (!in_array($_SESSION['level'], $allowed_levels)) {
+            header("location: " . BASE_URL . "index.php?pesan=error");
+            exit;
+        }
+    }
 
 
     // ===========================================================
@@ -35,22 +53,9 @@
 
 
     // ===========================================================
-    // HANYA CEK LOGIN KALAU $require_login = true
+    // SET TIMEOUT
     // ===========================================================
-    if (isset($require_login) && $require_login === true) {
-        // Jika belum login, tampilkan: modal login pekerja/admin
-        if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-            header("location: " . BASE_URL . "index.php?pesan=belum_login&modal=pekerja_admin");
-            exit;
-        }
-
-        // Hanya pekerja/admin yang boleh akses
-        $allowed_levels = ['pekerja', 'admin'];
-        if (!in_array($_SESSION['level'], $allowed_levels)) {
-            header("location: " . BASE_URL . "index.php?pesan=error");
-            exit;
-        }
-    }
+    $timeout_duration = 300; // 300 detik = 5 menit
 
 
     // ===========================================================
@@ -64,10 +69,10 @@
                 // Ambil data dari Session
                 $username = $_SESSION['username'];
                 $level    = $_SESSION['level'];
-                $nama     = $_SESSION['nama'];
+                $nama     = $_SESSION['nama_lengkap'];
 
                 // Log User: Timeout
-                logAktivitas($koneksi, $username, $level, 'Timeout', "$nama telah di Logout paksa oleh Sistem");
+                logAktivitas($koneksi, $username, $level, 'Timeout', "$nama telah di Logout paksa oleh Sistem.");
 
                 // Menghapus semua session
                 session_unset(); session_destroy();
@@ -81,21 +86,13 @@
 
 
     // ===========================================================
-    // UPDATE LAST ACTIVITY
-    // ===========================================================
-    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-        $_SESSION['LAST_ACTIVITY'] = time();
-    }
-
-
-    // ===========================================================
     // CEK JIKA AKUN TELAH DIHAPUS OLEH ADMIN / ADMIN DATABASE
     // ===========================================================
     if (isset($_SESSION['level']) && isset($_SESSION['email'])) {
         // Ambil data dari Session
         $username = $_SESSION['username'];
         $level    = $_SESSION['level'];
-        $nama     = $_SESSION['nama'];
+        $nama     = $_SESSION['nama_lengkap'];
         $email    = $_SESSION['email'];
 
         $level_map = [
@@ -114,7 +111,7 @@
 
         if (mysqli_num_rows($query) === 0) {
             // Log User: Akun Dihapus
-            logAktivitas($koneksi, $username, $level, 'Akun Dihapus', "Akun a/n. $nama telah Dihapus, karena dianggap melanggar ketentuan Poliklinik");
+            logAktivitas($koneksi, $username, $level, 'Akun Dihapus', "Akun milik $nama telah dihapus oleh Admin.");
 
             // Menghapus semua session
             session_unset(); session_destroy();
@@ -123,6 +120,14 @@
             header("Location: " . BASE_URL . "index.php?pesan=deleted");
             exit;
         }
+    }
+
+
+    // ===========================================================
+    // UPDATE LAST ACTIVITY
+    // ===========================================================
+    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+        $_SESSION['LAST_ACTIVITY'] = time();
     }
 
 ?>

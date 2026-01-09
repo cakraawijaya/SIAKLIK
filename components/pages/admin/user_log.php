@@ -9,7 +9,7 @@
 
     
     // ======================== TAB DAN SEARCH ========================
-    $tab_labels = ['pasien'=>'PASIEN','pekerja'=>'PEKERJA','admin'=>'ADMIN'];
+    $tab_labels = ['pasien' => 'PASIEN', 'pekerja' => 'PEKERJA', 'admin' => 'ADMIN'];
     $active_tab = $_GET['tab'] ?? 'pasien';
     $search = $_GET['search'] ?? '';
 
@@ -28,9 +28,9 @@
         <!-- Tabs dan Search -->
         <div class="tab-search-wrapper">
             <ul class="nav nav-tabs">
-                <?php foreach($tab_labels as $label=>$text): ?>
+                <?php foreach($tab_labels as $label => $text): ?>
                     <li class="nav-item">
-                        <a class="nav-link text-dark select-none <?= $active_tab===$label?'active':'' ?>" 
+                        <a class="nav-link text-dark select-none <?= $active_tab === $label ? 'active' : '' ?>" 
                         onclick="openLink('#<?= $label ?>', false)" data-tab="<?= $label ?>">
                             <?= $text ?>
                         </a>
@@ -45,8 +45,8 @@
 
         <!-- Table Content -->
         <div class="tab-content" id="userLogTabContent">
-            <?php foreach ($tab_labels as $label=>$text): ?>
-                <div class="tab-pane select-none fade <?= $active_tab===$label?'show active':'' ?>" id="<?= $label ?>">
+            <?php foreach ($tab_labels as $label => $text): ?>
+                <div class="tab-pane select-none fade <?= $active_tab === $label ? 'show active' : '' ?>" id="<?= $label ?>">
                     <div class="table-responsive">
                         <table class="table table-bordered w-100">
                             <thead>
@@ -84,8 +84,6 @@
 <!-- Definisi Awal User Handler -->
 <script>
     var activeTab = '<?= $active_tab ?>';
-    const labelMap = { pasien: 'Pasien', pekerja: 'Pekerja', admin: 'Admin' };
-    var activeTab = window.activeTab || 'pasien';
     var currentPage = { pasien: 1, pekerja: 1, admin: 1 };
     var totalPage = { pasien: 1, pekerja: 1, admin: 1 };
 </script>

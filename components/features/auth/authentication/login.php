@@ -42,14 +42,14 @@
             $_SESSION['email'] = $email;
             $_SESSION['level'] = $level;
             $_SESSION['username'] = $data['username'];
-            $_SESSION['nama'] = $data['nama'];
+            $_SESSION['nama_lengkap'] = $data['nama'];
             $_SESSION['foto'] = $data['foto'];
             unset($_SESSION["captcha_".$captcha_id]); // hapus captcha setelah login sukses
 
             // Log User: Login Pasien
             mysqli_query($koneksi, "
                 INSERT INTO riwayat_aktivitas (username, role, aksi, detail, created_at)
-                VALUES ('{$data['username']}', '$level', 'Login', '{$data['nama']} telah Login', NOW())
+                VALUES ('{$data['username']}', '$level', 'Login', '{$data['nama']} telah Login.', NOW())
             ");
 
             header("location: " . BASE_URL . "index.php?pesan=login_sukses&modal=pasien");
@@ -89,14 +89,14 @@
             $_SESSION['email'] = $email;
             $_SESSION['level'] = $level;
             $_SESSION['username'] = $data['username'];
-            $_SESSION['nama'] = $data['nama'];
+            $_SESSION['nama_lengkap'] = $data['nama'];
             $_SESSION['foto'] = $data['foto'];
             unset($_SESSION["captcha_".$captcha_id]); // hapus captcha setelah login sukses
 
             // Log User: Login Pekerja/Admin
             mysqli_query($koneksi, "
                 INSERT INTO riwayat_aktivitas (username, role, aksi, detail, created_at)
-                VALUES ('{$data['username']}', '$level', 'Login', '{$data['nama']} telah Login', NOW())
+                VALUES ('{$data['username']}', '$level', 'Login', '{$data['nama']} telah Login.', NOW())
             ");
 
             header("location: " . BASE_URL . "index.php?pesan=login_sukses&modal=pekerja_admin");

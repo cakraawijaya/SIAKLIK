@@ -99,8 +99,7 @@ $(document).ready(function(){
             },
             error: function(xhr, status, err){
                 console.error('Error loadQueueData:', status, err);
-                var tbody = $('#' + activeTab + ' tbody');
-                tbody.empty();
+                $('#' + activeTab + ' thead th:last').hide(); // sembunyikan header aksi
                 tbody.append('<tr><td colspan="5" class="text-center align-middle" data-header="Pemberitahuan Sistem"><div class="td-value">Gagal memuat data (lihat console)</div></td></tr>');
             }
         });

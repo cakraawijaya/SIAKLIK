@@ -2,6 +2,7 @@
 
     // ======================== AUTH & CONFIG ========================
     $require_login = true; // harus login
+    $allowed_levels = ['pasien']; // akses yang diberikan
     include __DIR__ . '/../../../features/auth/authorization/patient.php';
 
     // muat konfigurasi untuk akses BASE_URL & Koneksi

@@ -21,6 +21,7 @@
             <?php if (isset($_SESSION['level'])): ?>
                 <div class="divider-role"></div>
                 <?php
+                    $role = '';
                     switch ($_SESSION['level']) {
                         case 'admin':
                             $role = 'Admin Poliklinik';
@@ -227,6 +228,33 @@
                         <span>Fasilitas Poliklinik</span>
                     </a>
                 </li>
+
+                <?php if (isset($_SESSION['level']) && $_SESSION['level'] === 'admin'): ?>
+                    <li>
+                        <a onclick="openLink('<?= BASE_URL ?>index.php?page=admin/profile', false)">
+                            <i class="fas fa-user-cog mr-2" aria-hidden="true"></i>
+                            <span>Pengaturan Akun</span>
+                        </a>
+                    </li>
+                <?php endif; ?>
+
+                <?php if (isset($_SESSION['level']) && $_SESSION['level'] === 'pekerja'): ?>
+                    <li>
+                        <a onclick="openLink('<?= BASE_URL ?>index.php?page=worker/profile', false)">
+                            <i class="fas fa-user-cog mr-2" aria-hidden="true"></i>
+                            <span>Pengaturan Akun</span>
+                        </a>
+                    </li>
+                <?php endif; ?>
+
+                <?php if (isset($_SESSION['level']) && $_SESSION['level'] === 'pasien'): ?>
+                    <li>
+                        <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/clinic/profile', false)">
+                            <i class="fas fa-user-cog mr-2" aria-hidden="true"></i>
+                            <span>Pengaturan Akun</span>
+                        </a>
+                    </li>
+                <?php endif; ?>
 
                 <?php if ($is_logged_in): ?> 
                     <li>

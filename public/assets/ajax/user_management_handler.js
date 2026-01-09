@@ -2,7 +2,10 @@ $(document).ready(function () {
 
     // ======================== LOAD DATA ========================
     function loadUserData(searchOnly = false, highlightPage = null) {
+        // Jika searchOnly true, ambil value dari input search
         var search = searchOnly ? $('input[name="search"]').val() : '';
+
+        // Update halaman aktif berdasarkan pagination yang diklik
         if (highlightPage) currentPage[activeTab] = highlightPage;
 
         $.ajax({
@@ -14,20 +17,32 @@ $(document).ready(function () {
                 ['link_' + activeTab]: currentPage[activeTab]
             },
             dataType: "json",
-            success: function (res) {
-                var data = res.users[activeTab];
+            success: function(res) {
+                var users = res.users[activeTab];
                 var tbody = $('#' + activeTab + ' tbody');
+
+                // Jika halaman kosong dan ada halaman lain, pindah otomatis
+                if (users.data.length === 0) {
+                    if (currentPage[activeTab] < (users.total_page || 1)) {
+                        currentPage[activeTab]++;
+                        loadUserData(searchOnly);
+                        return;
+                    } else if (currentPage[activeTab] > 1) {
+                        currentPage[activeTab]--;
+                        loadUserData(searchOnly);
+                        return;
+                    }
+                }
+
                 tbody.empty();
 
-                var aksiColumn = $('#' + activeTab + ' table th:contains("Aksi"), #' + activeTab + ' table th:contains("AKSI")').closest('th');
-
-                if (!data || data.data.length === 0) {
-                    aksiColumn.hide();
+                if (!users.data || users.data.length === 0) {
+                    $('#' + activeTab + ' thead th:last').hide(); // sembunyikan header aksi
                     tbody.append('<tr><td colspan="4" class="text-center align-middle" data-header="Pemberitahuan Sistem"><div class="td-value">Data tidak ditemukan</div></td></tr>');
                 } else {
-                    aksiColumn.show();
+                    $('#' + activeTab + ' thead th:last').show(); // tampilkan header aksi jika ada data
 
-                    // ===== NATURAL SORT EMAIL =====
+                    // ==================== NATURAL SORT EMAIL ========================
                     function naturalSortEmail(a, b) {
                         var emailA = a.email.toLowerCase();
                         var emailB = b.email.toLowerCase();
@@ -52,14 +67,15 @@ $(document).ready(function () {
                         return blocksA.length - blocksB.length;
                     }
 
-                    data.data.sort(naturalSortEmail);
+                    users.data.sort(naturalSortEmail);
 
                     // ===== Tampilkan data ke tabel =====
-                    data.data.forEach(function (row) {
+                    users.data.forEach(function (row) {
                         var foto = row.foto || 'default.png';
                         var fotoSrc = BASE_URL + 'public/assets/img/photo/' + foto;
                         var highlightClass = (lastEditedUser.username === row.username) ? 'table-success' : '';
-                        var disableDelete = (row.username === CURRENT_USER_USERNAME) ? 'disabled' : '';
+                        var disableDelete = (row.email === CURRENT_USER_EMAIL) ? 'disabled' : '';
+
 
                         var actionBtns = `
                             <div class="btn-group">
@@ -108,22 +124,30 @@ $(document).ready(function () {
                 // ======================== INFO TEXT ========================
                 var labelText = '(' + activeTab.toUpperCase() + ')';
                 var infoText = search === '' ? 'Jumlah data pengguna' : 'Hasil pencarian data pengguna';
-                var countText = data.total_data || 0;
+                var countText = users.total_data || 0;
 
                 $('#' + activeTab + '-info').text(infoText + ' ');
                 $('#' + activeTab + '-category').text(labelText + ' ');
                 $('#' + activeTab + '-count').text(countText);
 
-                totalPage[activeTab] = data.total_page || 1;
+                totalPage[activeTab] = users.total_page || 1;
 
-                // ======================== PAGINATION ========================
-                if (data.current_page <= 1) $('#' + activeTab + '-prev').hide();
-                else $('#' + activeTab + '-prev').show();
-                if (data.current_page >= data.total_page) $('#' + activeTab + '-next').hide();
-                else $('#' + activeTab + '-next').show();
+                // Pagination
+                if (users.current_page <= 1) {
+                    $('#' + activeTab + '-prev').hide();
+                } else {
+                    $('#' + activeTab + '-prev').show();
+                }
 
-                // SESUAIKAN MARGIN OTOMATIS
-                updatePaginationMarginsAuto(activeTab);
+                if (users.current_page >= users.total_page) {
+                    $('#' + activeTab + '-next').hide();
+                    $('#' + activeTab + '-prev').removeClass('mr-3');
+                } else {
+                    $('#' + activeTab + '-next').show();
+                    if (users.current_page > 1) {
+                        $('#' + activeTab + '-prev').addClass('mr-3');
+                    }
+                }
 
                 // ======================== HIGHLIGHT & SCROLL ========================
                 if (lastEditedUser.username) {
@@ -147,26 +171,10 @@ $(document).ready(function () {
             error: function (xhr, status, err) {
                 console.error('Error loadUserData:', status, err);
                 var tbody = $('#' + activeTab + ' tbody');
+                $('#' + activeTab + ' thead th:last').hide(); // sembunyikan header aksi
                 tbody.empty().append('<tr><td colspan="4" class="text-center align-middle" data-header="Pemberitahuan Sistem"><div class="td-value">Gagal memuat data (lihat console)</div></td></tr>');
             }
         });
-    }
-
-    // ======================== PAGINATION MARGIN OTOMATIS ========================
-    function updatePaginationMarginsAuto(tab) {
-        var prevBtn = $('#' + tab + '-prev');
-        var nextBtn = $('#' + tab + '-next');
-
-        // Reset semua margin
-        prevBtn.removeClass('mr-3');
-        nextBtn.removeClass('mr-3');
-
-        var visibleBtns = [prevBtn, nextBtn].filter(btn => btn.is(':visible'));
-
-        if (visibleBtns.length === 2) {
-            // Dua tombol tampil → beri margin kanan hanya pada tombol pertama (prev)
-            visibleBtns[0].addClass('mr-3');
-        }
     }
 
     // ======================== TAB SWITCH ========================
@@ -318,6 +326,10 @@ $(document).ready(function () {
                         $(modalSelector).find('.input-captcha').val('');
                     }
 
+                    if (res.success && res.updated_self && res.new_username) {
+                        CURRENT_USER_USERNAME = res.new_username;
+                    }
+
                     if (res.success && res.highlight_username) {
                         lastEditedUser.username = res.highlight_username;
                         var highlightPage = res.highlight_page || 1;
@@ -453,7 +465,8 @@ $(document).ready(function () {
         modal.modal('show');
     });
 
-    // ======================== AUTO REFRESH ========================
+
+    // ======================= AUTO REFRESH ======================
     loadUserData();
     setInterval(function () {
         if ($('input[name="search"]').val() === '') loadUserData();

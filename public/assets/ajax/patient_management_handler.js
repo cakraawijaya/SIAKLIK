@@ -1,121 +1,106 @@
-$(document).ready(function(){
+$(document).ready(function() {
 
-    // ==============================================
-    // Fungsi Load Data Pasien
-    // ==============================================
-    function loadPatients(searchOnly = false){
-        var search = $('input[name="search"]').val();
+    // ======================== LOAD DATA ========================
+    function loadPatientData(searchOnly = false) {
+        // Jika searchOnly true, ambil value dari input search
+        var search = searchOnly ? $('input[name="search"]').val() : '';
 
         $.ajax({
             url: BASE_URL + "components/data/ajax_patient_management.php",
             type: "GET",
             data: { 
                 action: 'list',
-                page: currentPage[activeTab],
-                search: search
+                search: search,                
+                page: currentPage[activeTab]
             },
             dataType: "json",
-            success: function(res){
+            success: function(res) {
                 var tbody = $('#patientTableBody');
 
-                // Urutkan data berdasarkan angka terakhir ID
-                if(res.data && res.data.length > 0){
-                    res.data.sort((a, b) => {
-                        const getNum = id => {
-                            if(!id) return 0;
-                            const parts = id.trim().split('-');
-                            const last = parts.pop();
-                            const n = parseInt(last, 10);
-                            return isNaN(n) ? 0 : n;
-                        };
-                        return getNum(a.id) - getNum(b.id);
-                    });
-                }
-
                 // Jika halaman kosong dan ada halaman lain, pindah otomatis
-                if(res.data.length === 0){
-                    if(currentPage[activeTab] < (res.totalPage || 1)){
+                if (res.data.length === 0) {
+                    if (currentPage[activeTab] < (res.totalPage || 1)) {
                         currentPage[activeTab]++;
-                        loadPatients(searchOnly);
+                        loadPatientData(searchOnly);
                         return;
-                    } else if(currentPage[activeTab] > 1){
+                    } else if(currentPage[activeTab] > 1) {
                         currentPage[activeTab]--;
-                        loadPatients(searchOnly);
+                        loadPatientData(searchOnly);
                         return;
                     }
                 }
 
                 tbody.empty();
 
-                if(!res.data || res.data.length === 0){
+                if (!res.data || res.data.length === 0) {
                     $('th:last-child').hide(); // sembunyikan header aksi
                     tbody.append('<tr><td colspan="13" class="text-center align-middle" data-header="Pemberitahuan Sistem"><div class="td-value">Data tidak ditemukan</div></td></tr>');
                 } else {
                     $('th:last-child').show(); // tampilkan header aksi jika ada data
                     
-                    res.data.forEach(function(p){
+                    res.data.forEach(function(row) {
                         
-                        var highlightClass = (lastUpdatedPatient.id === p.id) ? 'table-success' : '';
+                        var highlightClass = (lastUpdatedPatient.id === row.id) ? 'table-success' : '';
 
                         var actionBtns = `
                             <div class="btn-group">
-                                <button class="btn btn-warning-custom text-white btn-sm edit-btn" data-id="${p.id}"><i class="fa fa-edit"></i></button>
-                                <button class="btn btn-danger btn-sm delete-btn" data-id="${p.id}" data-nama="${p.nama}"><i class="fa fa-trash"></i></button>
+                                <button class="btn btn-warning-custom text-white btn-sm edit-btn" data-id="${row.id}"><i class="fa fa-edit"></i></button>
+                                <button class="btn btn-danger btn-sm delete-btn" data-id="${row.id}" data-nama="${row.nama}"><i class="fa fa-trash"></i></button>
                             </div>
                         `;
 
                         tbody.append(
                             `<tr class="${highlightClass}">
                                 <td class="text-center align-middle" data-header="ID">
-                                    <div class="td-value">${p.id}</div>
+                                    <div class="td-value">${row.id}</div>
                                 </td>
 
                                 <td class="text-center align-middle" data-header="Nama">
-                                    <div class="td-value">${p.nama}</div>
+                                    <div class="td-value">${row.nama}</div>
                                 </td>
 
                                 <td class="text-center align-middle" data-header="Umur">
-                                    <div class="td-value">${p.umur}</div>
+                                    <div class="td-value">${row.umur}</div>
                                 </td>
 
                                 <td class="text-center align-middle" data-header="Alamat">
-                                    <div class="td-value">${p.alamat}</div>
+                                    <div class="td-value">${row.alamat}</div>
                                 </td>
 
                                 <td class="text-center align-middle" data-header="Pekerjaan">
-                                    <div class="td-value">${p.pekerjaan}</div>
+                                    <div class="td-value">${row.pekerjaan}</div>
                                 </td>
 
                                 <td class="text-center align-middle" data-header="Status">
-                                    <div class="td-value">${p.status}</div>
+                                    <div class="td-value">${row.status}</div>
                                 </td>
 
                                 <td class="text-center align-middle" data-header="JK">
-                                    <div class="td-value">${p.jenis_kelamin}</div>
+                                    <div class="td-value">${row.jenis_kelamin}</div>
                                 </td>
 
                                 <td class="text-center align-middle" data-header="NIM/NIP">
-                                    <div class="td-value">${p.nim_nip || '-'}</div>
+                                    <div class="td-value">${row.nim_nip || '-'}</div>
                                 </td>
 
                                 <td class="text-center align-middle" data-header="No BPJS">
-                                    <div class="td-value">${p.no_bpjs || '-'}</div>
+                                    <div class="td-value">${row.no_bpjs || '-'}</div>
                                 </td>
 
                                 <td class="text-center align-middle" data-header="Layanan">
-                                    <div class="td-value">${p.layanan}</div>
+                                    <div class="td-value">${row.layanan}</div>
                                 </td>
 
                                 <td class="text-center align-middle" data-header="Kategori">
-                                    <div class="td-value">${p.kategori}</div>
+                                    <div class="td-value">${row.kategori}</div>
                                 </td>
                                 
                                 <td class="text-center align-middle" data-header="Ket">
-                                    <div class="td-value">${p.keterangan || '-'}</div>
+                                    <div class="td-value">${row.keterangan || '-'}</div>
                                 </td>
 
                                 <td class="text-center align-middle" data-header="Waktu Pencatatan">
-                                    <div class="td-value">${p.waktu}</div>
+                                    <div class="td-value">${row.waktu}</div>
                                 </td>
 
                                 <td class="text-center align-middle" data-header="Aksi">
@@ -141,14 +126,8 @@ $(document).ready(function(){
                 }, 5000);
 
                 // ======================== INFO TEXT ========================
-                var infoText = '';
+                var infoText = search === '' ? 'Jumlah data pasien' : 'Hasil pencarian data pasien';
                 var countText = res.total || 0;
-
-                if (search === '') {
-                    infoText = 'Jumlah data pasien';
-                } else {
-                    infoText = 'Hasil pencarian data pasien';
-                }
 
                 $('#patient-info').text(infoText + ' ');
                 $('#patient-count').text(' ' + countText);
@@ -156,25 +135,27 @@ $(document).ready(function(){
                 totalPage[activeTab] = res.totalPage || 1;
 
                 // Pagination
-                if(currentPage[activeTab] <= 1){
+                if (currentPage[activeTab] <= 1) {
                     $('#patient-prev').hide();
                 } else {
                     $('#patient-prev').show();
                 }
 
-                if(currentPage[activeTab] >= totalPage[activeTab]){
+                if (currentPage[activeTab] >= totalPage[activeTab]) {
                     $('#patient-next').hide();
                     $('#patient-prev').removeClass('mr-3');
                 } else {
                     $('#patient-next').show();
-                    if(currentPage[activeTab] > 1){
+                    if (currentPage[activeTab] > 1) {
                         $('#patient-prev').addClass('mr-3');
                     }
                 }
             },
-            error: function(xhr, status, err){
-                console.error('Error loadPatients:', status, err);
-                $('#patientTableBody').html('<tr><td colspan="13" class="text-center align-middle" data-header="Pemberitahuan Sistem"><div class="td-value">Gagal memuat data (lihat console)</div></td></tr>');
+            error: function(xhr, status, err) {
+                console.error('Error loadPatientData:', status, err);
+                var tbody = $('#patientTableBody');
+                $('th:last-child').hide(); // sembunyikan header aksi
+                tbody.empty().append('<tr><td colspan="13" class="text-center align-middle" data-header="Pemberitahuan Sistem"><div class="td-value">Gagal memuat data (lihat console)</div></td></tr>');
             }
         });
     }
@@ -182,7 +163,7 @@ $(document).ready(function(){
     // =======================
     // Load awal
     // =======================
-    loadPatients();
+    loadPatientData();
 
     // =======================
     // Pencarian
@@ -191,7 +172,7 @@ $(document).ready(function(){
         e.preventDefault();
         currentPage[activeTab] = 1;
         lastUpdatedPatient = { id: null };
-        loadPatients(true);
+        loadPatientData(true);
     });
 
     $('#searchForm input[name="search"]').on('keypress', function(e){
@@ -204,25 +185,17 @@ $(document).ready(function(){
     $('#patient-prev').on('click', function(){
         if(currentPage[activeTab] > 1){
             currentPage[activeTab]--;
-            loadPatients();
+            loadPatientData();
         }
     });
 
     $('#patient-next').on('click', function(){
         if(currentPage[activeTab] < totalPage[activeTab]){
             currentPage[activeTab]++;
-            loadPatients();
+            loadPatientData();
         }
     });
 
-    // =======================
-    // Auto Refresh
-    // =======================
-    setInterval(function(){
-        if($('input[name="search"]').val() === ''){
-            loadPatients();
-        }
-    }, 10000);
 
     // ===================================================
     // MODAL ADD, EDIT, DELETE Pasien (AJAX CRUD)
@@ -250,7 +223,7 @@ $(document).ready(function(){
                     $.get(BASE_URL + "components/data/ajax_patient_management.php", { action: 'list', page: 1 }, function(listRes){
                         totalPage[activeTab] = listRes.totalPage || 1;
                         currentPage[activeTab] = totalPage[activeTab];
-                        loadPatients();
+                        loadPatientData();
                     }, 'json');
 
                     $('#formAddPasien')[0].reset();
@@ -353,7 +326,7 @@ $(document).ready(function(){
 
                     lastUpdatedPatient = { id: res.updated_id };
 
-                    loadPatients();
+                    loadPatientData();
 
                     setTimeout(() => {
                         Swal.fire({
@@ -413,7 +386,7 @@ $(document).ready(function(){
 
                 if(res.success){
                     $('#modalDeletePasien').modal('hide');
-                    loadPatients();
+                    loadPatientData();
 
                     setTimeout(() => {
                         Swal.fire({
@@ -546,5 +519,13 @@ $(document).ready(function(){
 
     formAdd.addEventListener("submit", validateSelects);
     formEdit.addEventListener("submit", validateSelects);
+
+
+    // ======================= AUTO REFRESH ======================
+    setInterval(function(){
+        if($('input[name="search"]').val() === ''){
+            loadPatientData();
+        }
+    }, 10000);
 
 });

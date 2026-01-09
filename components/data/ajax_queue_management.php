@@ -23,6 +23,14 @@
     ];
 
 
+    // ========================== SESSION ============================
+    $username      =  $_SESSION['username'];
+    $level         =  $_SESSION['level'];
+    $nama_lengkap  =  $_SESSION['nama_lengkap'];
+    $nama_depan    =  '';
+    if ($nama_lengkap !== '') { $nama_depan = explode(' ', trim($nama_lengkap))[0]; }
+
+
     // ================= PAGE VIEW WITH PAGINATION ===================
     function get_paginated_data($kategori, $per_page, $page_param, $search = '') {
         global $koneksi;
@@ -118,43 +126,68 @@
 
         if ($action === 'to_dilayani') {
             mysqli_query($koneksi, "UPDATE antrean SET status_antrean='Dilayani' WHERE kode_antrean='$id'");
-            $updated = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT * FROM antrean WHERE kode_antrean='$id'"));
+            $data = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT * FROM antrean WHERE kode_antrean='$id'"));
+
+            // Log User: Ubah Status Antrean menjadi Dilayani
+            mysqli_query($koneksi, "
+                INSERT INTO riwayat_aktivitas (username, role, aksi, detail, created_at)
+                VALUES ('$username', '$level', 'Ubah Status Antrean', '$nama_depan telah mengubah Status antrean menjadi Dilayani untuk akun a/n. {$data['nama']} (Kode Antrean: {$data['kode_antrean']}).', NOW())
+            ");
 
             echo json_encode([
                 'success' => true,
                 'message' => 'Status antrean diubah menjadi Dilayani',
                 'updated_queue' => [
-                    'kode_antrean' => $updated['kode_antrean'],
-                    'status_antrean' => $updated['status_antrean'],
-                    'waktu' => $updated['waktu_daftar']
+                    'kode_antrean' => $data['kode_antrean'],
+                    'status_antrean' => $data['status_antrean'],
+                    'waktu' => $data['waktu_daftar']
                 ]
             ]);
             exit;
         }
 
         if ($action === 'to_selesai') {
+            $id = mysqli_real_escape_string($koneksi, $_POST['kode_antrean'] ?? '');
+
+            // Ambil data langsung dari table antrean
             $cek = mysqli_query($koneksi, "SELECT * FROM antrean WHERE kode_antrean='$id'");
             $data = mysqli_fetch_assoc($cek);
+
             if ($data) {
                 mysqli_begin_transaction($koneksi);
                 try {
-                    // Masukkan ke riwayat_antrean
+                    $kode_antrean     = $data['kode_antrean'];
+                    $username_antrean = $data['username'];
+                    $nama_antrean     = $data['nama'];
+                    $layanan          = $data['layanan'];
+                    $kategori         = $data['kategori'];
+                    $waktu_daftar     = $data['waktu_daftar'];
+
                     mysqli_query($koneksi, "
-                        INSERT INTO riwayat_antrean 
+                        INSERT INTO riwayat_antrean
                         (kode_antrean, username, nama, layanan, kategori, status_antrean, waktu_daftar, waktu_selesai)
-                        VALUES 
-                        ('{$data['kode_antrean']}', '{$data['username']}', '{$data['nama']}', '{$data['layanan']}', '{$data['kategori']}', 'Selesai', '{$data['waktu_daftar']}', NOW())
+                        VALUES
+                        ('$kode_antrean', '$username_antrean', '$nama_antrean', '$layanan', '$kategori', 'Selesai', '$waktu_daftar', NOW())
                     ");
 
+                    // Hapus dari antrean
                     mysqli_query($koneksi, "DELETE FROM antrean WHERE kode_antrean='$id'");
+
                     mysqli_commit($koneksi);
 
                     // Ambil data terbaru dari riwayat_antrean untuk highlight
                     $updated = mysqli_fetch_assoc(mysqli_query($koneksi, "
                         SELECT * FROM riwayat_antrean 
-                        WHERE kode_antrean='{$data['kode_antrean']}' AND status_antrean='Selesai' 
+                        WHERE kode_antrean='$kode_antrean' AND status_antrean='Selesai'
                         ORDER BY waktu_selesai DESC LIMIT 1
                     "));
+
+                    // Log User: Ubah Status Antrean menjadi Selesai
+                    mysqli_query($koneksi, "
+                        INSERT INTO riwayat_aktivitas (username, role, aksi, detail, created_at)
+                        VALUES ('$username', '$level', 'Ubah Status Antrean', 
+                        '$nama_depan telah mengubah Status antrean menjadi Selesai untuk akun a/n. $nama_antrean (Kode Antrean: $kode_antrean).', NOW())
+                    ");
 
                     echo json_encode([
                         'success' => true,
@@ -170,6 +203,9 @@
                     mysqli_rollback($koneksi);
                     echo json_encode(['success' => false, 'message' => $e->getMessage()]);
                 }
+            } else {
+                // Jika antrean tidak ditemukan (misal kode salah)
+                echo json_encode(['success' => false, 'message' => 'Data antrean tidak ditemukan']);
             }
             exit;
         }
