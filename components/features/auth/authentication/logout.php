@@ -11,6 +11,9 @@
     $level    = $_SESSION['level'];
     $nama     = $_SESSION['nama_lengkap'];
 
+    // Format level
+    $level = ucfirst(strtolower($level));
+
     // Log User: Logout
     mysqli_query($koneksi, "
         INSERT INTO riwayat_aktivitas (username, role, aksi, detail, created_at)

@@ -86,7 +86,7 @@
         } else return ['data' => [], 'total_page' => 1, 'current_page' => 1, 'total_data' => 0];
 
         // Hitung total data
-        $cnt_sql = "SELECT COUNT(*) AS cnt FROM $table " . str_replace("WHERE", "WHERE", $where_clause);
+        $cnt_sql = "SELECT COUNT(*) AS cnt FROM $table $where_clause";
         $cnt_q = mysqli_query($koneksi, $cnt_sql);
         $cnt_row = mysqli_fetch_assoc($cnt_q);
         $total_data = (int)$cnt_row['cnt'];
@@ -94,9 +94,10 @@
         // Query data dengan natural sort
         $sql = "SELECT email, foto, username, nama FROM $table
                 $where_clause
-                ORDER BY 
-                CAST(REGEXP_SUBSTR(username,'[0-9]+$') AS UNSIGNED) ASC,
-                username ASC
+                ORDER BY
+                    REGEXP_REPLACE(email, '[0-9]', '') ASC,
+                    CAST(REGEXP_SUBSTR(email, '[0-9]+') AS UNSIGNED) ASC,
+                    email ASC
                 LIMIT $per_page OFFSET $offset";
 
         $rows = [];
@@ -110,11 +111,12 @@
         return ['data' => $rows, 'total_page' => $total_page, 'current_page' => $page, 'total_data' => $total_data];
     }
 
+
     // =================== GET PAGE UNTUK HIGHLIGHT ==================
-    function get_user_page($kategori, $username, $per_page = 3) {
+    function get_user_page($kategori, $email, $per_page) {
         global $koneksi;
 
-        $username = mysqli_real_escape_string($koneksi, $username);
+        $email = mysqli_real_escape_string($koneksi, $email);
 
         if ($kategori === 'pasien') {
             $table = "akun_pasien";
@@ -127,23 +129,36 @@
             return 1;
         }
 
-        // ======================== SORT NATURAL =========================
-        $rank_sql = "
-            SELECT COUNT(*) AS rank
-            FROM $table
-            $where
-            AND (
-                CAST(REGEXP_SUBSTR(username,'[0-9]+$') AS UNSIGNED) < CAST(REGEXP_SUBSTR('$username','[0-9]+$') AS UNSIGNED)
-                OR (CAST(REGEXP_SUBSTR(username,'[0-9]+$') AS UNSIGNED) = CAST(REGEXP_SUBSTR('$username','[0-9]+$') AS UNSIGNED)
-                AND username <= '$username')
+        $sql = "
+            SELECT COUNT(*) AS rank FROM $table
+            $where AND (
+                REGEXP_REPLACE(email,'[0-9]','') <
+                REGEXP_REPLACE('$email','[0-9]','')
+                OR (
+                    REGEXP_REPLACE(email,'[0-9]','') =
+                    REGEXP_REPLACE('$email','[0-9]','')
+                    AND (
+                        CAST(REGEXP_SUBSTR(email,'[0-9]+') AS UNSIGNED) <
+                        CAST(REGEXP_SUBSTR('$email','[0-9]+') AS UNSIGNED)
+                        OR (
+                            CAST(REGEXP_SUBSTR(email,'[0-9]+') AS UNSIGNED) =
+                            CAST(REGEXP_SUBSTR('$email','[0-9]+') AS UNSIGNED)
+                            AND email <= '$email'
+                        )
+                    )
+                )
             )
         ";
-        $res = mysqli_query($koneksi, $rank_sql);
-        $count = 0;
-        if ($res && $row = mysqli_fetch_assoc($res)) $count = (int)$row['rank'];
 
-        return $per_page > 0 ? ceil($count / $per_page) : 1;
+        $res = mysqli_query($koneksi, $sql);
+        $count = 0;
+        if ($res && $row = mysqli_fetch_assoc($res)) {
+            $count = (int)$row['rank'];
+        }
+
+        return max(1, ceil($count / $per_page));
     }
+
 
     // ============================ READ =============================
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
@@ -257,14 +272,22 @@
                 $stmt->close();
                 
                 if ($exec) {
+                    // Format level
+                    $level = ucfirst(strtolower($level));
+
                     // Log User: Tambah Akun Pasien
                     mysqli_query($koneksi, "
                         INSERT INTO riwayat_aktivitas (username, role, aksi, detail, created_at)
                         VALUES ('$username', '$level', 'Tambah Akun', '$nama_depan telah menambahkan akun baru a/n. $nama_akun (Username: $username_akun) sebagai Pasien.', NOW())
                     ");
 
-                    $pageBaru = get_user_page($kategori, $username_akun, $per_page);
-                    send_json(['success' => true, 'msg' => $msg_success_add, 'highlight_username' => $username_akun, 'highlight_page' => $pageBaru]);
+                    $pageBaru = get_user_page($kategori, $email, $per_page);
+                    send_json([
+                        'success' => true,
+                        'msg' => $msg_success_add,
+                        'highlight_email' => $email,
+                        'highlight_page' => $pageBaru
+                    ]);
                 }
                 send_json(['success' => false, 'msg' => 'Gagal menyimpan: '.$err]);
 
@@ -277,15 +300,23 @@
                 $stmt->close();
 
                 if ($exec) {
+                    // Format level
+                    $level = ucfirst(strtolower($level));
+                    
                     // Log User: Tambah Akun Admin / Pekerja
                     $peran = ($kategori === 'admin') ? 'admin' : 'pekerja';
                     mysqli_query($koneksi, "
                         INSERT INTO riwayat_aktivitas (username, role, aksi, detail, created_at)
-                        VALUES ('$username', '$level', 'Tambah Akun', '$nama_depan telah menambahkan akun baru a/n. $nama_akun (Username: $username_akun) sebagai " . ucfirst($peran) . ".', NOW())
+                        VALUES ('$username', '$level', 'Tambah Akun', '$nama_depan telah menambahkan akun baru a/n. $nama_akun (Username: $username_akun) sebagai " . ucfirst(strtolower($peran)) . ".', NOW())
                     ");
 
-                    $pageBaru = get_user_page($kategori, $username_akun, $per_page);
-                    send_json(['success' => true, 'msg' => $msg_success_add, 'highlight_username' => $username_akun, 'highlight_page' => $pageBaru]);
+                    $pageBaru = get_user_page($kategori, $email, $per_page);
+                    send_json([
+                        'success' => true,
+                        'msg' => $msg_success_add,
+                        'highlight_email' => $email,
+                        'highlight_page' => $pageBaru
+                    ]);
                 }
                 send_json(['success' => false, 'msg' => 'Gagal menyimpan: '.$err]);
             }
@@ -424,14 +455,22 @@
                 $stmt->close();
 
                 if ($exec) {
+                    // Format level
+                    $level = ucfirst(strtolower($level));
+
                     // Log User: Ubah Akun Pasien
                     mysqli_query($koneksi, "
                         INSERT INTO riwayat_aktivitas (username, role, aksi, detail, created_at)
                         VALUES ('$username', '$level', 'Ubah Akun', '$nama_depan telah mengubah data akun Pasien milik $nama_akun (Username: $username_akun).', NOW())
                     ");
 
-                    $pageBaru = get_user_page($kategori, $username_akun, $per_page);
-                    send_json(['success' => true, 'msg' => $msg_success_update, 'highlight_username' => $username_akun, 'highlight_page' => $pageBaru]);
+                    $pageBaru = get_user_page($kategori, $email_baru, $per_page);
+                    send_json([
+                        'success' => true,
+                        'msg' => $msg_success_update,
+                        'highlight_email' => $email_baru,
+                        'highlight_page' => $pageBaru
+                    ]);
                 }
                 send_json(['success' => false, 'msg' => 'Gagal update: '.$err]);
 
@@ -468,22 +507,30 @@
                         $is_self = true;
                     }
 
+                    // Format level
+                    $level = ucfirst(strtolower($level));
+
+                    // Cek apakah akun milik sendiri
+                    $peran = ($kategori === 'admin') ? 'admin' : 'pekerja';
+                    if ($is_self) {
+                        $detail = "$nama_depan telah mengubah data akun miliknya sendiri (Username: $username_akun).";
+                    } else {
+                        $detail = "$nama_depan telah mengubah data akun " . ucfirst(strtolower($peran)) . " milik $nama_akun (Username: $username_akun).";
+                    }
 
                     // Log User: Ubah Akun Admin / Pekerja
-                    $peran = ($kategori === 'admin') ? 'admin' : 'pekerja';
                     mysqli_query($koneksi, "
                         INSERT INTO riwayat_aktivitas (username, role, aksi, detail, created_at)
-                        VALUES ('$username', '$level', 'Ubah Akun', '$nama_depan telah mengubah data akun " . ucfirst($peran) . " milik $nama_akun (Username: $username_akun).', NOW())
+                        VALUES ('$username', '$level', 'Ubah Akun', '$detail', NOW())
                     ");
 
-                    $pageBaru = get_user_page($kategori, $username_akun, $per_page);
+                    $pageBaru = get_user_page($kategori, $email_baru, $per_page);
                     send_json([
                         'success' => true,
                         'msg' => $msg_success_update,
-                        'highlight_username' => $username_akun,
+                        'highlight_email' => $email_baru,
                         'highlight_page' => $pageBaru,
-                        'updated_self' => $is_self,
-                        'new_username' => $username_akun
+                        'updated_self' => $is_self
                     ]);
                 }
                 send_json(['success' => false, 'msg' => 'Gagal update: '.$err]);
@@ -517,7 +564,10 @@
                     $fotoToDelete  = $row['foto'] ?? 'default.png';
                 }
                 $exec = mysqli_query($koneksi, "DELETE FROM akun_pasien WHERE email='$email'");
-                if ($exec) { 
+                if ($exec) {
+                    // Format level
+                    $level = ucfirst(strtolower($level));
+                    
                     // Log User: Hapus Akun Pasien
                     mysqli_query($koneksi, "
                         INSERT INTO riwayat_aktivitas (username, role, aksi, detail, created_at)
@@ -540,12 +590,15 @@
                 } else send_json(['success' => false, 'msg' => 'Akun tidak ditemukan untuk kategori ini']);
                 $exec = mysqli_query($koneksi, "DELETE FROM akun_pekerja WHERE email='$email' AND role_id=$role_id");
 
-                if ($exec) { 
+                if ($exec) {
+                    // Format level
+                    $level = ucfirst(strtolower($level));
+
                     // Log User: Hapus Akun Admin / Pekerja
                     $peran = ($kategori === 'admin') ? 'admin' : 'pekerja';
                     mysqli_query($koneksi, "
                         INSERT INTO riwayat_aktivitas (username, role, aksi, detail, created_at)
-                        VALUES ('$username', '$level', 'Hapus Akun', '$nama_depan telah menghapus akun " . ucfirst($peran) . " milik $nama_akun (Username: $username_akun).', NOW())
+                        VALUES ('$username', '$level', 'Hapus Akun', '$nama_depan telah menghapus akun " . ucfirst(strtolower($peran)) . " milik $nama_akun (Username: $username_akun).', NOW())
                     ");
 
                     if ($fotoToDelete !== 'default.png' && file_exists($upload_dir.$fotoToDelete)) unlink($upload_dir.$fotoToDelete);

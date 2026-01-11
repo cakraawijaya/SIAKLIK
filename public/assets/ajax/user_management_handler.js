@@ -42,38 +42,11 @@ $(document).ready(function () {
                 } else {
                     $('#' + activeTab + ' thead th:last').show(); // tampilkan header aksi jika ada data
 
-                    // ==================== NATURAL SORT EMAIL ========================
-                    function naturalSortEmail(a, b) {
-                        var emailA = a.email.toLowerCase();
-                        var emailB = b.email.toLowerCase();
-
-                        function splitEmailBlocks(str) {
-                            return str.match(/\d+|\D+/g).map(function(block) {
-                                return /^\d+$/.test(block) ? parseInt(block, 10) : block;
-                            });
-                        }
-
-                        var blocksA = splitEmailBlocks(emailA);
-                        var blocksB = splitEmailBlocks(emailB);
-
-                        var len = Math.min(blocksA.length, blocksB.length);
-                        for (var i = 0; i < len; i++) {
-                            if (blocksA[i] === blocksB[i]) continue;
-                            if (typeof blocksA[i] === 'number' && typeof blocksB[i] === 'number') {
-                                return blocksA[i] - blocksB[i];
-                            }
-                            return String(blocksA[i]).localeCompare(String(blocksB[i]));
-                        }
-                        return blocksA.length - blocksB.length;
-                    }
-
-                    users.data.sort(naturalSortEmail);
-
                     // ===== Tampilkan data ke tabel =====
                     users.data.forEach(function (row) {
                         var foto = row.foto || 'default.png';
                         var fotoSrc = BASE_URL + 'public/assets/img/photo/' + foto;
-                        var highlightClass = (lastEditedUser.username === row.username) ? 'table-success' : '';
+                        var highlightClass = (lastEditedUser.email === row.email) ? 'table-success' : '';
                         var disableDelete = (row.email === CURRENT_USER_EMAIL) ? 'disabled' : '';
 
 
@@ -150,9 +123,9 @@ $(document).ready(function () {
                 }
 
                 // ======================== HIGHLIGHT & SCROLL ========================
-                if (lastEditedUser.username) {
+                if (lastEditedUser.email) {
                     var rowToHighlight = $('#' + activeTab + ' tbody tr').filter(function () {
-                        return $(this).find('td:nth-child(3)').text().trim() === lastEditedUser.username;
+                        return $(this).find('td.email').data('email') === lastEditedUser.email;
                     });
 
                     if (rowToHighlight.length > 0) {
@@ -165,7 +138,7 @@ $(document).ready(function () {
                         }, 4000);
                     }
 
-                    lastEditedUser.username = null;
+                    lastEditedUser.email = null;
                 }
             },
             error: function (xhr, status, err) {
@@ -184,7 +157,7 @@ $(document).ready(function () {
 
         if (clickedTab === activeTab) {
             currentPage[activeTab] = 1;
-            lastEditedUser.username = null;
+            lastEditedUser.email = null;
             loadUserData();
             return;
         }
@@ -196,7 +169,7 @@ $(document).ready(function () {
         $('#' + activeTab).addClass('show active');
 
         currentPage[activeTab] = 1;
-        lastEditedUser.username = null;
+        lastEditedUser.email = null;
         loadUserData();
         $('#btnAddText').text('Data ' + labelMap[activeTab]);
         $('#btnExportText').html('Export ' + labelMap[activeTab]);
@@ -206,7 +179,7 @@ $(document).ready(function () {
     $('#searchForm').on('submit', function (e) {
         e.preventDefault();
         currentPage[activeTab] = 1;
-        lastEditedUser.username = null;
+        lastEditedUser.email = null;
         loadUserData(true);
     });
 
@@ -219,7 +192,7 @@ $(document).ready(function () {
         var tab = $(this).attr('id').replace('-prev', '');
         if (currentPage[tab] > 1) {
             currentPage[tab]--;
-            lastEditedUser.username = null;
+            lastEditedUser.email = null;
             loadUserData();
         }
     });
@@ -228,7 +201,7 @@ $(document).ready(function () {
         var tab = $(this).attr('id').replace('-next', '');
         if (currentPage[tab] < totalPage[tab]) {
             currentPage[tab]++;
-            lastEditedUser.username = null;
+            lastEditedUser.email = null;
             loadUserData();
         }
     });
@@ -326,14 +299,10 @@ $(document).ready(function () {
                         $(modalSelector).find('.input-captcha').val('');
                     }
 
-                    if (res.success && res.updated_self && res.new_username) {
-                        CURRENT_USER_USERNAME = res.new_username;
-                    }
-
-                    if (res.success && res.highlight_username) {
-                        lastEditedUser.username = res.highlight_username;
-                        var highlightPage = res.highlight_page || 1;
-                        loadUserData(false, highlightPage);
+                    if (res.success && res.highlight_email) {
+                        lastEditedUser.email = res.highlight_email;
+                        if (res.highlight_page) { currentPage[activeTab] = res.highlight_page; }
+                        loadUserData();
                     }
                 },
                 error: function(xhr,status,err){

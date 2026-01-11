@@ -29,6 +29,9 @@
 
     // =========================== TIMEOUT ===========================
     if (isset($_GET['action']) && $_GET['action'] === 'force_logout') {
+        // Format level
+        $level = ucfirst(strtolower($level));
+
         // Log User: Timeout
         if (!isset($_SESSION['__timeout_logged'])) {
             mysqli_query($koneksi, "
@@ -63,10 +66,13 @@
 
     // Jika data tidak ada maka hapus Session loggedin (akun dikeluarkan secara paksa)
     if (mysqli_num_rows($query) === 0) {
+        // Format level
+        $level = ucfirst(strtolower($level));
+        
         // Log User: Akun Dihapus
         mysqli_query($koneksi, "
             INSERT INTO riwayat_aktivitas (username, role, aksi, detail, created_at)
-            VALUES ('$username', '$level', 'Akun Dihapus', 'Akun milik $nama telah dihapus oleh Admin.', NOW())
+            VALUES ('$username', '$level', 'Akun Diblokir', 'Akun a/n. $nama telah diblokir (banned) oleh Admin karena pelanggaran kebijakan.', NOW())
         ");
         session_unset(); session_destroy();
         echo json_encode(['status' => 'auto_deleted']); exit;

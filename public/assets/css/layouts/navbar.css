@@ -23,6 +23,7 @@
 
 .navbar .navbar-nav {
   gap: 20px;
+  margin-right: 10px;
 }
 
 .navbar .navbar-divider {

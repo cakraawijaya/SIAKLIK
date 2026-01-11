@@ -46,6 +46,9 @@
             $_SESSION['foto'] = $data['foto'];
             unset($_SESSION["captcha_".$captcha_id]); // hapus captcha setelah login sukses
 
+            // Format level
+            $level = ucfirst(strtolower($level));
+
             // Log User: Login Pasien
             mysqli_query($koneksi, "
                 INSERT INTO riwayat_aktivitas (username, role, aksi, detail, created_at)
@@ -92,6 +95,9 @@
             $_SESSION['nama_lengkap'] = $data['nama'];
             $_SESSION['foto'] = $data['foto'];
             unset($_SESSION["captcha_".$captcha_id]); // hapus captcha setelah login sukses
+
+            // Format level
+            $level = ucfirst(strtolower($level));
 
             // Log User: Login Pekerja/Admin
             mysqli_query($koneksi, "

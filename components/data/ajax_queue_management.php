@@ -128,10 +128,22 @@
             mysqli_query($koneksi, "UPDATE antrean SET status_antrean='Dilayani' WHERE kode_antrean='$id'");
             $data = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT * FROM antrean WHERE kode_antrean='$id'"));
 
+            // Format level
+            $level = ucfirst(strtolower($level));
+
+            // Cek apakah antrean milik sendiri
+            $is_self = ($username === $data['username']);
+
+            if ($is_self) {
+                $detail = "$nama_depan telah mengubah Status Antrean miliknya menjadi Dilayani (Kode Antrean: {$data['kode_antrean']}).";
+            } else {
+                $detail = "$nama_depan telah mengubah Status Antrean milik {$data['nama']} menjadi Dilayani (Kode Antrean: {$data['kode_antrean']}).";
+            }
+
             // Log User: Ubah Status Antrean menjadi Dilayani
             mysqli_query($koneksi, "
                 INSERT INTO riwayat_aktivitas (username, role, aksi, detail, created_at)
-                VALUES ('$username', '$level', 'Ubah Status Antrean', '$nama_depan telah mengubah Status antrean menjadi Dilayani untuk akun a/n. {$data['nama']} (Kode Antrean: {$data['kode_antrean']}).', NOW())
+                VALUES ('$username', '$level', 'Ubah Status Antrean', '$detail', NOW())
             ");
 
             echo json_encode([
@@ -182,11 +194,22 @@
                         ORDER BY waktu_selesai DESC LIMIT 1
                     "));
 
+                    // Format level
+                    $level = ucfirst(strtolower($level));
+
+                    // Cek apakah antrean milik sendiri
+                    $is_self = ($username === $username_antrean);
+
+                    if ($is_self) {
+                        $detail = "$nama_depan telah mengubah Status Antrean miliknya menjadi Selesai (Kode Antrean: $kode_antrean).";
+                    } else {
+                        $detail = "$nama_depan telah mengubah Status Antrean milik $nama_antrean menjadi Selesai (Kode Antrean: $kode_antrean).";
+                    }
+
                     // Log User: Ubah Status Antrean menjadi Selesai
                     mysqli_query($koneksi, "
                         INSERT INTO riwayat_aktivitas (username, role, aksi, detail, created_at)
-                        VALUES ('$username', '$level', 'Ubah Status Antrean', 
-                        '$nama_depan telah mengubah Status antrean menjadi Selesai untuk akun a/n. $nama_antrean (Kode Antrean: $kode_antrean).', NOW())
+                        VALUES ('$username', '$level', 'Ubah Status Antrean', '$detail', NOW())
                     ");
 
                     echo json_encode([

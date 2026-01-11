@@ -8,12 +8,11 @@
     include __DIR__ . '/../../config/config.php';
 
 
+    // ========================== SESSION ============================
+    $username      =  $_SESSION['username'];
+    $level         =  $_SESSION['level'];
+    $nama_lengkap  =  $_SESSION['nama_lengkap'];
 
-    // ===================== PENGATURAN LAINNYA ======================
-
-    // Ambil variabel session
-    $username = $_SESSION['username'] ?? null;
-    $level    = $_SESSION['level'] ?? null;
 
     // Ambil POST
     $kategori = strtoupper(trim($_POST['kategori'] ?? ''));
@@ -218,6 +217,15 @@
         if (count($_SESSION['processed_requests']) > 200) {
             $_SESSION['processed_requests'] = array_slice($_SESSION['processed_requests'], -100, 100, true);
         }
+
+        // Format level
+        $level = ucfirst(strtolower($level));
+
+        // Log User: Registrasi Antrean
+        mysqli_query($koneksi, "
+            INSERT INTO riwayat_aktivitas (username, role, aksi, detail, created_at)
+            VALUES ('$username', '$level', 'Ubah Akun', '$nama_lengkap telah terdaftar di antrean $kategori (Kode Antrean: $kode_antrean).', NOW())
+        ");
 
         echo json_encode(['status' => 'success', 'kode_antrean' => $kode_antrean, 'message' => 'Antrean berhasil dibuat']);
         exit;

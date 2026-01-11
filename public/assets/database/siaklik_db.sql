@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 09 Jan 2026 pada 08.47
+-- Waktu pembuatan: 11 Jan 2026 pada 08.02
 -- Versi server: 10.4.27-MariaDB
 -- Versi PHP: 8.1.12
 
@@ -349,7 +349,7 @@ CREATE TABLE `password_resets` (
 CREATE TABLE `riwayat_aktivitas` (
   `id` int(11) NOT NULL,
   `username` varchar(20) NOT NULL,
-  `role` enum('admin','pekerja','pasien') NOT NULL,
+  `role` enum('Admin','Pekerja','Pasien') NOT NULL,
   `aksi` varchar(255) NOT NULL,
   `detail` text DEFAULT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
@@ -360,18 +360,18 @@ CREATE TABLE `riwayat_aktivitas` (
 --
 
 INSERT INTO `riwayat_aktivitas` (`id`, `username`, `role`, `aksi`, `detail`, `created_at`) VALUES
-(1, 'pasien2', 'pasien', 'Login', 'David Junanto Putra telah Login.', '2026-01-08 20:27:28'),
-(2, 'pasien2', 'pasien', 'Timeout', 'David Junanto Putra telah di Logout paksa oleh Sistem.', '2026-01-08 20:32:41'),
-(3, 'pekerja1', 'pekerja', 'Login', 'Sugeng Raharjo telah Login.', '2026-01-08 20:33:43'),
-(4, 'pekerja1', 'pekerja', 'Timeout', 'Sugeng Raharjo telah di Logout paksa oleh Sistem.', '2026-01-08 20:38:55'),
-(5, 'admin2', 'admin', 'Login', 'Nurlaili Fatimah telah Login.', '2026-01-08 20:40:55'),
-(6, 'admin2', 'admin', 'Timeout', 'Nurlaili Fatimah telah di Logout paksa oleh Sistem.', '2026-01-08 20:46:48'),
-(7, 'pasien3', 'pasien', 'Login', 'Cecillia Putri Sagara telah Login.', '2026-01-09 08:24:22'),
-(8, 'pasien3', 'pasien', 'Logout', 'Cecillia Putri Sagara telah Logout.', '2026-01-09 08:24:31'),
-(9, 'pekerja5', 'pekerja', 'Login', 'Miranda Oktaviani telah Login.', '2026-01-09 08:25:24'),
-(10, 'pekerja5', 'pekerja', 'Logout', 'Miranda Oktaviani telah Logout.', '2026-01-09 08:25:32'),
-(11, 'admin3', 'admin', 'Login', 'Lidya Wistyawati telah Login.', '2026-01-09 08:26:50'),
-(12, 'admin3', 'admin', 'Logout', 'Lidya Wistyawati telah Logout.', '2026-01-09 08:26:59');
+(1, 'pasien2', 'Pasien', 'Login', 'David Junanto Putra telah Login.', '2026-01-08 20:27:28'),
+(2, 'pasien2', 'Pasien', 'Timeout', 'David Junanto Putra telah di Logout paksa oleh Sistem.', '2026-01-08 20:32:41'),
+(3, 'pekerja1', 'Pekerja', 'Login', 'Sugeng Raharjo telah Login.', '2026-01-08 20:33:43'),
+(4, 'pekerja1', 'Pekerja', 'Timeout', 'Sugeng Raharjo telah di Logout paksa oleh Sistem.', '2026-01-08 20:38:55'),
+(5, 'admin2', 'Admin', 'Login', 'Nurlaili Fatimah telah Login.', '2026-01-08 20:40:55'),
+(6, 'admin2', 'Admin', 'Timeout', 'Nurlaili Fatimah telah di Logout paksa oleh Sistem.', '2026-01-08 20:46:48'),
+(7, 'pasien3', 'Pasien', 'Login', 'Cecillia Putri Sagara telah Login.', '2026-01-09 08:24:22'),
+(8, 'pasien3', 'Pasien', 'Logout', 'Cecillia Putri Sagara telah Logout.', '2026-01-09 08:24:31'),
+(9, 'pekerja5', 'Pekerja', 'Login', 'Miranda Oktaviani telah Login.', '2026-01-09 08:25:24'),
+(10, 'pekerja5', 'Pekerja', 'Logout', 'Miranda Oktaviani telah Logout.', '2026-01-09 08:25:32'),
+(11, 'admin3', 'Admin', 'Login', 'Lidya Wistyawati telah Login.', '2026-01-09 08:26:50'),
+(12, 'admin3', 'Admin', 'Logout', 'Lidya Wistyawati telah Logout.', '2026-01-09 08:26:59');
 
 -- --------------------------------------------------------
 

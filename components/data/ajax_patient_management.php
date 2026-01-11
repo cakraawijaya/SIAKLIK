@@ -162,6 +162,9 @@
                 throw new Exception('Gagal menambah data pasien: ' . $stmt->error);
             }
 
+            // Format level
+            $level = ucfirst(strtolower($level));
+
             // Log User: Tambah Riwayat Pasien
             mysqli_query($koneksi, "
                 INSERT INTO riwayat_aktivitas (username, role, aksi, detail, created_at)
@@ -204,6 +207,9 @@
                 throw new Exception('Gagal memperbarui data pasien: ' . $stmt->error);
             }
 
+            // Format level
+            $level = ucfirst(strtolower($level));
+
             // Log User: Ubah Riwayat Pasien
             mysqli_query($koneksi, "
                 INSERT INTO riwayat_aktivitas (username, role, aksi, detail, created_at)
@@ -238,6 +244,9 @@
 
             $delete = mysqli_query($koneksi, "DELETE FROM riwayat_pasien WHERE id='$id'");
             if (!$delete) throw new Exception('Gagal menghapus data pasien: ' . mysqli_error($koneksi));
+
+            // Format level
+            $level = ucfirst(strtolower($level));
 
             // Log User: Hapus Riwayat Pasien
             mysqli_query($koneksi, "

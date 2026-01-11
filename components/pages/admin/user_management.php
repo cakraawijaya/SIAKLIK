@@ -109,7 +109,7 @@
     var activeTab = '<?= $active_tab ?>';
     var currentPage = { pasien: 1, pekerja: 1, admin: 1 };
     var totalPage = { pasien: 1, pekerja: 1, admin: 1 };
-    var lastEditedUser = { username: null };
+    var lastEditedUser = { email: null };
     const CURRENT_USER_EMAIL = "<?= $_SESSION['email'] ?>";
     const labelMap = { pasien: 'Pasien', pekerja: 'Pekerja', admin: 'Admin' };
 </script>

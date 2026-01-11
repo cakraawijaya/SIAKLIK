@@ -62,14 +62,28 @@
     // CEK TIMEOUT
     // ===========================================================
     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-        if (isset($_SESSION['LAST_ACTIVITY'])) {
+
+        // Jika belum ada LAST_ACTIVITY (artinya ini adalah aktivitas pertama user), maka :
+        if (!isset($_SESSION['LAST_ACTIVITY'])) {
+            // Simpan waktu aktivitas pertama ke dalam session
+            $_SESSION['LAST_ACTIVITY'] = time();
+
+        } else { // Diluar hal itu, maka lakukan beberapa hal sebagai berikut :
+            
+            // Hitung lama waktu user tidak melakukan aktivitas (dalam detik)
+            // Waktu sekarang dikurangi waktu aktivitas terakhir
             $elapsed_time = time() - $_SESSION['LAST_ACTIVITY'];
             
+            // Jika waktu tidak aktif melebihi batas timeout
             if ($elapsed_time > $timeout_duration) {
+
                 // Ambil data dari Session
                 $username = $_SESSION['username'];
                 $level    = $_SESSION['level'];
                 $nama     = $_SESSION['nama_lengkap'];
+
+                // Format level
+                $level = ucfirst(strtolower($level));
 
                 // Log User: Timeout
                 logAktivitas($koneksi, $username, $level, 'Timeout', "$nama telah di Logout paksa oleh Sistem.");
@@ -82,6 +96,10 @@
                 exit;
             }
         }
+
+        // Perbarui waktu aktivitas terakhir
+        // Dilakukan setelah user lolos dari pengecekan timeout
+        $_SESSION['LAST_ACTIVITY'] = time();
     }
 
 
@@ -106,8 +124,11 @@
         }
 
         if (mysqli_num_rows($query) === 0) {
+            // Format level
+            $level = ucfirst(strtolower($level));
+
             // Log User: Akun Dihapus
-            logAktivitas($koneksi, $username, $level, 'Akun Dihapus', "Akun milik $nama telah dihapus oleh Admin.");
+            logAktivitas($koneksi, $username, $level, 'Akun Diblokir', "Akun a/n. $nama telah diblokir (banned) oleh Admin karena pelanggaran kebijakan.");
 
             // Menghapus semua session
             session_unset(); session_destroy();
@@ -116,14 +137,6 @@
             header("Location: " . BASE_URL . "index.php?pesan=deleted");
             exit;
         }
-    }
-
-
-    // ===========================================================
-    // UPDATE LAST ACTIVITY
-    // ===========================================================
-    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-        $_SESSION['LAST_ACTIVITY'] = time();
     }
 
 ?>
