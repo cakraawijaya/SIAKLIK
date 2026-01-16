@@ -34,10 +34,6 @@
   margin-top: 1rem;
 }
 
-.queue-management-section .tab-content .table-responsive {
-  margin-bottom: 1rem;
-}
-
 .queue-management-section .info-pagination-wrapper {
   display: flex;
   justify-content: space-between;
@@ -65,10 +61,16 @@
   }
 
   .queue-management-section .tab-search-wrapper .nav-link,
+  .queue-management-section .tab-search-wrapper .form-inline input.form-control,
   .queue-management-section .tab-search-wrapper .form-inline input::placeholder,
   .queue-management-section .info-pagination-wrapper .count-data,
   .queue-management-section .info-pagination-wrapper .pagination a {
     font-size: 0.95rem;
+  }
+
+  .queue-management-section .tab-search-wrapper .form-inline input.form-control {
+    padding-top: 0.425rem;
+    padding-bottom: 0.43rem;
   }
 
   .queue-management-section .tab-search-wrapper .form-inline button {
@@ -96,10 +98,16 @@
   }
 
   .queue-management-section .tab-search-wrapper .nav-link,
+  .queue-management-section .tab-search-wrapper .form-inline input.form-control,
   .queue-management-section .tab-search-wrapper .form-inline input::placeholder,
   .queue-management-section .info-pagination-wrapper .count-data,
   .queue-management-section .info-pagination-wrapper .pagination a {
     font-size: 0.9rem;
+  }
+
+  .queue-management-section .tab-search-wrapper .form-inline input.form-control {
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
   }
 }
 
@@ -119,10 +127,16 @@
   }
 
   .queue-management-section .tab-search-wrapper .nav-link,
+  .queue-management-section .tab-search-wrapper .form-inline input.form-control,
   .queue-management-section .tab-search-wrapper .form-inline input::placeholder,
   .queue-management-section .info-pagination-wrapper .count-data,
   .queue-management-section .info-pagination-wrapper .pagination a {
     font-size: 0.9rem;
+  }
+
+  .queue-management-section .tab-search-wrapper .form-inline input.form-control {
+    padding-top: 0.47rem;
+    padding-bottom: 0.46rem;
   }
 }
 
@@ -142,10 +156,16 @@
   }
 
   .queue-management-section .tab-search-wrapper .nav-link,
+  .queue-management-section .tab-search-wrapper .form-inline input.form-control,
   .queue-management-section .tab-search-wrapper .form-inline input::placeholder,
   .queue-management-section .info-pagination-wrapper .count-data,
   .queue-management-section .info-pagination-wrapper .pagination a {
     font-size: 0.9rem;
+  }
+
+  .queue-management-section .tab-search-wrapper .form-inline input.form-control {
+    padding-top: 0.47rem;
+    padding-bottom: 0.46rem;
   }
 
   /* ---------------- Tampilan Sidebar Ditutup ----------------- */
@@ -223,10 +243,16 @@
     font-size: 0.9rem;
   }
 
+  .queue-management-section .tab-search-wrapper .form-inline input.form-control,
   .queue-management-section .tab-search-wrapper .form-inline input::placeholder,
   .queue-management-section .info-pagination-wrapper .count-data,
   .queue-management-section .info-pagination-wrapper .pagination a {
     font-size: 0.85rem;
+  }
+
+  .queue-management-section .tab-search-wrapper .form-inline input.form-control {
+    padding-top: 0.49rem;
+    padding-bottom: 0.49rem;
   }
 
   /* ---------------- Tampilan Sidebar Ditutup ----------------- */
@@ -320,10 +346,16 @@
     font-size: 0.9rem;
   }
 
+  .queue-management-section .tab-search-wrapper .form-inline input.form-control,
   .queue-management-section .tab-search-wrapper .form-inline input::placeholder,
   .queue-management-section .info-pagination-wrapper .count-data,
   .queue-management-section .info-pagination-wrapper .pagination a {
     font-size: 0.85rem;
+  }
+
+  .queue-management-section .tab-search-wrapper .form-inline input.form-control {
+    padding-top: 0.49rem;
+    padding-bottom: 0.49rem;
   }
 
   /* ---------------- Tampilan Sidebar Ditutup ----------------- */
@@ -423,10 +455,16 @@
     font-size: 0.9rem;
   }
 
+  .queue-management-section .tab-search-wrapper .form-inline input.form-control,
   .queue-management-section .tab-search-wrapper .form-inline input::placeholder,
   .queue-management-section .info-pagination-wrapper .count-data,
   .queue-management-section .info-pagination-wrapper .pagination a {
     font-size: 0.85rem;
+  }
+
+  .queue-management-section .tab-search-wrapper .form-inline input.form-control {
+    padding-top: 0.485rem;
+    padding-bottom: 0.49rem;
   }
 }
 
@@ -446,10 +484,16 @@
   }
 
   .queue-management-section .tab-search-wrapper .nav-link,
+  .queue-management-section .tab-search-wrapper .form-inline input.form-control,
   .queue-management-section .tab-search-wrapper .form-inline input::placeholder,
   .queue-management-section .info-pagination-wrapper .count-data,
   .queue-management-section .info-pagination-wrapper .pagination a {
     font-size: 0.85rem;
+  }
+
+  .queue-management-section .tab-search-wrapper .form-inline input.form-control {
+    padding-top: 0.49rem;
+    padding-bottom: 0.49rem;
   }
 }
 
@@ -473,10 +517,16 @@
     font-size: 0.9rem;
   }
 
+  .queue-management-section .tab-search-wrapper .form-inline input.form-control,
   .queue-management-section .tab-search-wrapper .form-inline input::placeholder,
   .queue-management-section .info-pagination-wrapper .count-data,
   .queue-management-section .info-pagination-wrapper .pagination a {
     font-size: 0.85rem;
+  }
+
+  .queue-management-section .tab-search-wrapper .form-inline input.form-control {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 
   .queue-management-section .tab-search-wrapper {
@@ -553,10 +603,16 @@
     font-size: 0.9rem;
   }
 
+  .queue-management-section .tab-search-wrapper .form-inline input.form-control,
   .queue-management-section .tab-search-wrapper .form-inline input::placeholder,
   .queue-management-section .info-pagination-wrapper .count-data,
   .queue-management-section .info-pagination-wrapper .pagination a {
     font-size: 0.85rem;
+  }
+
+  .queue-management-section .tab-search-wrapper .form-inline input.form-control {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 
   /* ---------------- Tampilan Sidebar Ditutup ----------------- */
@@ -635,10 +691,16 @@
 
   .queue-management-section p,
   .queue-management-section .tab-search-wrapper .nav-link,
+  .queue-management-section .tab-search-wrapper .form-inline input.form-control,
   .queue-management-section .tab-search-wrapper .form-inline input::placeholder,
   .queue-management-section .info-pagination-wrapper .count-data,
   .queue-management-section .info-pagination-wrapper .pagination a {
     font-size: 0.9rem;
+  }
+
+  .queue-management-section .tab-search-wrapper .form-inline input.form-control {
+    padding-top: 0.47rem;
+    padding-bottom: 0.46rem;
   }
 
   /* ---------------- Tampilan Sidebar Ditutup ----------------- */
@@ -729,10 +791,16 @@
 
   .queue-management-section p,
   .queue-management-section .tab-search-wrapper .nav-link,
+  .queue-management-section .tab-search-wrapper .form-inline input.form-control,
   .queue-management-section .tab-search-wrapper .form-inline input::placeholder,
   .queue-management-section .info-pagination-wrapper .count-data,
   .queue-management-section .info-pagination-wrapper .pagination a {
     font-size: 0.9rem;
+  }
+
+  .queue-management-section .tab-search-wrapper .form-inline input.form-control {
+    padding-top: 0.47rem;
+    padding-bottom: 0.46rem;
   }
 
   /* ---------------- Tampilan Sidebar Ditutup ----------------- */
@@ -829,10 +897,16 @@
   }
 
   .queue-management-section .tab-search-wrapper .nav-link,
+  .queue-management-section .tab-search-wrapper .form-inline input.form-control,
   .queue-management-section .tab-search-wrapper .form-inline input::placeholder,
   .queue-management-section .info-pagination-wrapper .count-data,
   .queue-management-section .info-pagination-wrapper .pagination a {
     font-size: 0.85rem;
+  }
+
+  .queue-management-section .tab-search-wrapper .form-inline input.form-control {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 }
 
@@ -855,10 +929,16 @@
     font-size: 0.9rem;
   }
 
+  .queue-management-section .tab-search-wrapper .form-inline input.form-control,
   .queue-management-section .tab-search-wrapper .form-inline input::placeholder,
   .queue-management-section .info-pagination-wrapper .count-data,
   .queue-management-section .info-pagination-wrapper .pagination a {
     font-size: 0.85rem;
+  }
+
+  .queue-management-section .tab-search-wrapper .form-inline input.form-control {
+    padding-top: 0.49rem;
+    padding-bottom: 0.49rem;
   }
 }
 
@@ -878,11 +958,20 @@
     padding: 0 2rem;
   }
 
-  .queue-management-section .tab-search-wrapper .nav-link,
+  .queue-management-section .tab-search-wrapper .nav-link {
+    font-size: 0.88rem;
+  }
+
+  .queue-management-section .tab-search-wrapper .form-inline input.form-control,
   .queue-management-section .tab-search-wrapper .form-inline input::placeholder,
   .queue-management-section .info-pagination-wrapper .count-data,
   .queue-management-section .info-pagination-wrapper .pagination a {
     font-size: 0.85rem;
+  }
+
+  .queue-management-section .tab-search-wrapper .form-inline input.form-control {
+    padding-top: 0.477rem;
+    padding-bottom: 0.48rem;
   }
 
   .queue-management-section .tab-search-wrapper {
@@ -928,6 +1017,10 @@
     justify-content: center;
     height: 37px;
     white-space: nowrap;
+  }
+
+  .queue-management-section .table-wrapper {
+    margin-bottom: 1.8rem !important;
   }
 
   .queue-management-section .info-pagination-wrapper .count-data {
@@ -962,11 +1055,20 @@
     padding: 0 2rem;
   }
 
-  .queue-management-section .tab-search-wrapper .nav-link,
+  .queue-management-section .tab-search-wrapper .nav-link {
+    font-size: 0.88rem;
+  }
+
+  .queue-management-section .tab-search-wrapper .form-inline input.form-control,
   .queue-management-section .tab-search-wrapper .form-inline input::placeholder,
   .queue-management-section .info-pagination-wrapper .count-data,
   .queue-management-section .info-pagination-wrapper .pagination a {
     font-size: 0.85rem;
+  }
+
+  .queue-management-section .tab-search-wrapper .form-inline input.form-control {
+    padding-top: 0.477rem;
+    padding-bottom: 0.48rem;
   }
 
   .queue-management-section .tab-search-wrapper {
@@ -1012,6 +1114,10 @@
     justify-content: center;
     height: 37px;
     white-space: nowrap;
+  }
+
+  .queue-management-section .table-wrapper {
+    margin-bottom: 1.8rem !important;
   }
 
   .queue-management-section .info-pagination-wrapper .count-data {
@@ -1046,11 +1152,20 @@
     padding: 0 1.1rem;
   }
 
-  .queue-management-section .tab-search-wrapper .nav-link,
+  .queue-management-section .tab-search-wrapper .nav-link {
+    font-size: 0.88rem;
+  }
+
+  .queue-management-section .tab-search-wrapper .form-inline input.form-control,
   .queue-management-section .tab-search-wrapper .form-inline input::placeholder,
   .queue-management-section .info-pagination-wrapper .count-data,
   .queue-management-section .info-pagination-wrapper .pagination a {
     font-size: 0.85rem;
+  }
+
+  .queue-management-section .tab-search-wrapper .form-inline input.form-control {
+    padding-top: 0.477rem;
+    padding-bottom: 0.48rem;
   }
 
   .queue-management-section .tab-search-wrapper {
@@ -1096,6 +1211,10 @@
     justify-content: center;
     height: 37px;
     white-space: nowrap;
+  }
+
+  .queue-management-section .table-wrapper {
+    margin-bottom: 1.8rem !important;
   }
 
   .queue-management-section .info-pagination-wrapper .count-data {

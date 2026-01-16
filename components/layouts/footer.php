@@ -87,38 +87,38 @@
 
         <!-- Malihu Scrollbar -->
         <script src="<?= BASE_URL ?>public/vendor/malihu/jquery.mCustomScrollbar.concat.min.js"></script>
-        
+
         <!-- Sidebar Handler -->
         <script src="<?= BASE_URL ?>public/assets/js/ui/global/sidebar.js"></script>
 
         <!-- Kelola URL -->
         <script src="<?= BASE_URL ?>public/assets/js/utils/url_handler.js"></script>
-        
+
         <!-- Highcharts -->
         <script src="<?= BASE_URL ?>public/vendor/highcharts/code/highcharts.js"></script>
         <script src="<?= BASE_URL ?>public/vendor/highcharts/code/modules/data.js"></script>
         <script src="<?= BASE_URL ?>public/vendor/highcharts/code/modules/exporting.js"></script>
         <script src="<?= BASE_URL ?>public/vendor/highcharts/code/modules/export-data.js"></script>
         <script src="<?= BASE_URL ?>public/vendor/highcharts/code/modules/accessibility.js"></script>
-        
+
         <!-- VanillaTop -->
         <script src="<?= BASE_URL ?>public/vendor/vanillatop/dist/vanillatop.min.js"></script>
-        
+
         <!-- Register Handler -->
         <script src="<?= BASE_URL ?>public/assets/js/auth/registration_handler.js"></script>
-        
+
         <!-- Login Handler -->
         <script src="<?= BASE_URL ?>public/assets/js/auth/login_handler.js"></script>
-        
+
         <!-- Forgot Password Handler -->
         <script src="<?= BASE_URL ?>public/assets/js/auth/forgot_password_handler.js"></script>
-        
+
         <!-- Reset Password Handler -->
         <script src="<?= BASE_URL ?>public/assets/js/auth/reset_password_handler.js"></script>
-        
+
         <!-- Toggle Password -->
         <script src="<?= BASE_URL ?>public/assets/js/auth/toggle_password.js"></script>
-        
+
         <!-- Reload Captcha -->
         <script src="<?= BASE_URL ?>public/assets/js/auth/reload_captcha.js"></script>
 
@@ -132,10 +132,10 @@
 
         <!-- Auth Handler -->
         <script src="<?= BASE_URL ?>public/assets/ajax/auth_handler.js"></script>
-        
+
         <!-- Notifikasi Login & Register -->
         <?php include __DIR__ . '/../features/notification/access.php'; ?>
-        
+
         <!-- SweetAlert2 -->
         <script src="<?= BASE_URL ?>public/vendor/sweetalert2/sweetalert2.all.min.js"></script>
         <?php
@@ -154,10 +154,10 @@
             data-redirect="<?= $swal['redirect'] ?? '' ?>">
         </div>
         <script src="<?= BASE_URL ?>public/assets/js/utils/swal_handler.js"></script>
-        
+
         <!-- Calendar -->
         <script src="<?= BASE_URL ?>public/assets/js/ui/home/calendar.js"></script>
-        
+
         <!-- Resize Header Article -->
         <script src="<?= BASE_URL ?>public/assets/js/ui/home/resize_header_article.js"></script>
 
@@ -186,17 +186,22 @@
             <script src="<?= BASE_URL ?>public/assets/js/ui/highcharts/chart_2022.js"></script>
         <?php elseif ($page == 'admin/user_management'): ?>
             <script src="<?= BASE_URL ?>public/assets/ajax/user_management_handler.js"></script>
+            <script src="<?= BASE_URL ?>public/assets/js/utils/table_scrollbar.js"></script>
         <?php elseif ($page == 'admin/user_log'): ?>
             <script src="<?= BASE_URL ?>public/assets/ajax/user_log_handler.js"></script>
+            <script src="<?= BASE_URL ?>public/assets/js/utils/table_scrollbar.js"></script>
         <?php elseif ($page == 'worker/patient_management'): ?>
             <script src="<?= BASE_URL ?>public/assets/ajax/patient_management_handler.js"></script>
+            <script src="<?= BASE_URL ?>public/assets/js/utils/table_scrollbar.js"></script>
         <?php elseif ($page == 'worker/queue_management'): ?>
             <script src="<?= BASE_URL ?>public/assets/ajax/queue_management_handler.js"></script>
+            <script src="<?= BASE_URL ?>public/assets/js/utils/table_scrollbar.js"></script>
         <?php elseif ($page == 'patient/clinic/queue_registration'): ?>
             <script src="<?= BASE_URL ?>public/assets/ajax/queue_registration_handler.js"></script>
         <?php elseif ($page == 'patient/clinic/queue_status'): ?>
             <script src="<?= BASE_URL ?>public/assets/ajax/queue_status_handler.js"></script>
+            <script src="<?= BASE_URL ?>public/assets/js/utils/table_scrollbar.js"></script>
         <?php endif; ?>
-        
+
     </body>
 </html>

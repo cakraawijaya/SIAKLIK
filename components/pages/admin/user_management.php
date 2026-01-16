@@ -27,7 +27,7 @@
             <ul class="nav nav-tabs">
                 <?php foreach ($tab_labels as $label => $text): ?>
                     <li class="nav-item">
-                        <a class="nav-link text-dark select-none <?= $active_tab === $label ? 'active' : '' ?>" 
+                        <a class="nav-link text-dark select-none <?= $active_tab === $label ? 'active' : '' ?>"
                         onclick="openLink('#<?= $label ?>', false)" data-tab="<?= $label ?>" style="cursor:pointer;">
                             <?= $text ?>
                         </a>
@@ -64,25 +64,27 @@
         <div class="tab-content" id="userManagementTabContent">
             <?php foreach ($tab_labels as $label => $text): ?>
                 <div class="tab-pane select-none fade <?= $active_tab === $label ? 'show active' : '' ?>" id="<?= $label ?>">
-                    <div class="table-responsive">
-                        <table class="table table-bordered w-100">
-                            <thead>
-                                <tr>
-                                    <th class="text-center align-middle">FOTO</th>
-                                    <th class="text-center align-middle">EMAIL</th>
-                                    <th class="text-center align-middle">USERNAME</th>
-                                    <th class="text-center align-middle">NAMA</th>
-                                    <th class="text-center align-middle">AKSI</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td colspan="5" class="text-center align-middle" data-header="Pemberitahuan Sistem">
-                                        <div class="td-value">Memuat data...</div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="table-wrapper">
+                        <div class="table-responsive">
+                            <table class="table table-bordered w-100">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center align-middle">FOTO</th>
+                                        <th class="text-center align-middle">EMAIL</th>
+                                        <th class="text-center align-middle">USERNAME</th>
+                                        <th class="text-center align-middle">NAMA</th>
+                                        <th class="text-center align-middle">AKSI</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="5" class="text-center align-middle" data-header="Pemberitahuan Sistem">
+                                            <div class="td-value">Memuat data...</div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
 
                     <div class="info-pagination-wrapper">

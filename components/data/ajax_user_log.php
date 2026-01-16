@@ -53,7 +53,11 @@
 
         // ================= DATA =================
         $sql = "
-            SELECT created_at, username, role, aksi, detail
+            SELECT 
+                created_at,
+                DATE_FORMAT(created_at, '%d-%m-%Y') AS tanggal,
+                DATE_FORMAT(created_at, '%H:%i:%s') AS jam,
+                username, role, aksi, detail
             FROM riwayat_aktivitas
             $where
             ORDER BY created_at DESC

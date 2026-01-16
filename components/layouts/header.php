@@ -46,8 +46,8 @@
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/worker/patient_management.css">
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/worker/queue_management.css">
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/admin/user_management.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/admin/user_log.css">
         <!-- Under Construction -->
-        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/admin/log_user.css">
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/admin/profile.css">
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/worker/profile.css">
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/patient/profile.css">

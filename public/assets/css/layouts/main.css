@@ -350,13 +350,29 @@ table td .td-value {
   font-size: 0.95rem;
 }
 
+.table-wrapper {
+  position: relative;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+}
+
 .table-responsive {
   overflow-x: auto;
-  scrollbar-width: none;
+  overflow-y: hidden;
 }
 
 .table-responsive::-webkit-scrollbar {
-  display: none;
+  height: 0 !important;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.table-responsive.show-scrollbar::-webkit-scrollbar {
+  opacity: 1;
+}
+
+.table-responsive.show-scrollbar {
+  scrollbar-width: thin;
 }
 
 .btn-group-queue form {
@@ -384,7 +400,7 @@ table td .td-value {
 @media (min-width: 1200px) and (max-width: 1368px) {
   /* ------------------- Pengaturan Global --------------------- */
   table th {
-    font-size: 0.9rem;
+    font-size: 0.94rem;
   }
 
   table td .td-value {
@@ -397,7 +413,7 @@ table td .td-value {
 @media (min-width: 992px) and (max-width: 1179px) {
   /* ------------------- Pengaturan Global --------------------- */
   table th {
-    font-size: 0.85rem;
+    font-size: 0.88rem;
   }
 
   table td .td-value {
@@ -410,7 +426,7 @@ table td .td-value {
 @media (min-width: 1180px) and (max-width: 1199px) {
   /* ------------------- Pengaturan Global --------------------- */
   table th {
-    font-size: 0.85rem;
+    font-size: 0.93rem;
   }
 
   table td .td-value {
@@ -435,7 +451,10 @@ table td .td-value {
 /* ===================== TABLET LANDSCAPE-3 (853px – 881px) ====================== */
 @media (min-width: 853px) and (max-width: 881px) {
   /* ------------------- Pengaturan Global --------------------- */
-  table th,
+  table th {
+    font-size: 0.89rem;
+  }
+
   table td .td-value {
     font-size: 0.85rem;
   }
@@ -445,7 +464,10 @@ table td .td-value {
 /* ====================== TABLET POTRAIT-1 (820px – 839px) ======================= */
 @media (min-width: 820px) and (max-width: 839px) {
   /* ------------------- Pengaturan Global --------------------- */
-  table th,
+  table th {
+    font-size: 0.88rem;
+  }
+
   table td .td-value {
     font-size: 0.85rem;
   }
@@ -455,7 +477,10 @@ table td .td-value {
 /* ====================== TABLET POTRAIT-2 (768px – 819px) ======================= */
 @media (min-width: 768px) and (max-width: 819px) {
   /* ------------------- Pengaturan Global --------------------- */
-  table th,
+  table th {
+    font-size: 0.88rem;
+  }
+
   table td .td-value {
     font-size: 0.85rem;
   }
@@ -466,7 +491,7 @@ table td .td-value {
 @media (min-width: 720px) and (max-width: 739px) {
   /* ------------------- Pengaturan Global --------------------- */
   table th {
-    font-size: 0.75rem;
+    font-size: 0.85rem;
   }
 
   table td .td-value {
@@ -479,7 +504,7 @@ table td .td-value {
 @media (min-width: 521px) and (max-width: 666px) {
   /* ------------------- Pengaturan Global --------------------- */
   table th {
-    font-size: 0.75rem;
+    font-size: 0.89rem;
   }
 
   table td .td-value {
@@ -491,7 +516,10 @@ table td .td-value {
 /* ==================== HP KECIL LANDSCAPE 1 (912px – 932px) ===================== */
 @media (min-width: 912px) and (max-width: 932px) {
   /* ------------------- Pengaturan Global --------------------- */
-  table th,
+  table th {
+    font-size: 0.9rem;
+  }
+  
   table td .td-value {
     font-size: 0.85rem;
   }
@@ -502,7 +530,7 @@ table td .td-value {
 @media (min-width: 882px) and (max-width: 911px) {
   /* ------------------- Pengaturan Global --------------------- */
   table th {
-    font-size: 0.85rem;
+    font-size: 0.87rem;
   }
 
   table td .td-value {
@@ -515,7 +543,7 @@ table td .td-value {
 @media (min-width: 840px) and (max-width: 852px) {
   /* ------------------- Pengaturan Global --------------------- */
   table th {
-    font-size: 0.85rem;
+    font-size: 0.86rem;
   }
 
   table td .td-value {
@@ -527,10 +555,7 @@ table td .td-value {
 /* ==================== HP KECIL LANDSCAPE 4 (740px – 767px) ===================== */
 @media (min-width: 740px) and (max-width: 767px) {
   /* ------------------- Pengaturan Global --------------------- */
-  table th {
-    font-size: 0.75rem;
-  }
-
+  table th,
   table td .td-value {
     font-size: 0.85rem;
   }
@@ -541,7 +566,7 @@ table td .td-value {
 @media (min-width: 667px) and (max-width: 719px) {
   /* ------------------- Pengaturan Global --------------------- */
   table th {
-    font-size: 0.75rem;
+    font-size: 0.88rem;
   }
 
   table td .td-value {
@@ -552,6 +577,10 @@ table td .td-value {
 
 /* ============================= HP KECIL (≤ 520px) ============================== */
 @media (max-width: 520px) {
+  .table-responsive.show-scrollbar {
+    margin-bottom: 0 !important;
+  }
+
   table, tbody, tr {
     display: block;
     width: 100%;
@@ -562,12 +591,12 @@ table td .td-value {
     padding: 0 !important;
   }
 
-  thead {
-    display: none !important;
+  tr:last-child {
+    margin-bottom: 0 !important;
   }
 
-  table th {
-    font-size: 0.4rem !important;
+  thead {
+    display: none !important;
   }
 
   table td {
@@ -583,6 +612,7 @@ table td .td-value {
     background: #639c1f;
     color: #fff;
     text-align: center;
+    font-size: 0.89rem;
     font-weight: 700;
     padding: .4em 0;
     border-bottom: 0;
@@ -591,7 +621,7 @@ table td .td-value {
 
   table td .td-value {
     font-size: 0.85rem;
-    padding: .7em 3rem;
+    padding: .7em 2.2rem;
     background: #8cc3ff;
     text-align: center;
     line-height: 1.5;

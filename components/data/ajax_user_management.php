@@ -57,6 +57,40 @@
         return ['file' => $target];
     }
 
+    function filter_gmail_email($raw_email) {
+        // lowercase
+        $val = strtolower(trim($raw_email));
+
+        // hanya izinkan karakter gmail
+        $val = preg_replace('/[^a-z0-9.@]/', '', $val);
+
+        // cegah lebih dari satu @
+        $parts = explode('@', $val);
+        if (count($parts) > 2) {
+            $val = $parts[0] . '@' . implode('', array_slice($parts, 1));
+        }
+
+        // rapikan local & domain
+        if (strpos($val, '@') !== false) {
+            [$local, $domain] = explode('@', $val, 2);
+
+            // cegah titik beruntun di local
+            $local = preg_replace('/\.{2,}/', '.', $local);
+
+            // domain hanya huruf & titik
+            $domain = preg_replace('/[^a-z.]/', '', $domain);
+
+            $val = $local . '@' . $domain;
+        }
+
+        // batas panjang
+        if (strlen($val) > 45) {
+            $val = substr($val, 0, 45);
+        }
+
+        return $val;
+    }
+
 
 
     // ========================== CAPTCHA ============================
@@ -67,6 +101,8 @@
         unset($_SESSION[$session_key]); // captcha sekali pakai
         return $valid;
     }
+
+
 
     // =================== PAGINATE & SORT NATURAL ===================
     function get_paginated_users($kategori, $per_page, $page_param, $search = '') {
@@ -110,6 +146,7 @@
         $total_page = $per_page > 0 ? ceil($total_data / $per_page) : 1;
         return ['data' => $rows, 'total_page' => $total_page, 'current_page' => $page, 'total_data' => $total_data];
     }
+
 
 
     // =================== GET PAGE UNTUK HIGHLIGHT ==================
@@ -209,7 +246,7 @@
             $username_akun = strtolower(preg_replace('/[^a-z0-9]/i', '', $raw_username));
             $raw_name = $_POST['add-name'] ?? '';
             $nama_akun = ucwords(strtolower(trim($raw_name)));
-            $email = strtolower(clean($_POST['add-email'] ?? ''));
+            $email = filter_gmail_email($_POST['add-email'] ?? '');
             $raw_password = $_POST['add-password'] ?? '';
             $raw_password_confirm = $_POST['add-confirm-password'] ?? '';
 
@@ -325,7 +362,7 @@
         // ========================== UPDATE =============================
         if (isset($_POST['submit_edit_user'])) {
             $email_lama = clean($_POST['edit-email-lama'] ?? '');
-            $email_baru = strtolower(clean($_POST['edit-email'] ?? ''));
+            $email_baru = filter_gmail_email($_POST['edit-email'] ?? '');
             $raw_username = $_POST['edit-username'] ?? '';
             $username_akun = strtolower(preg_replace('/[^a-z0-9]/i', '', $raw_username));
             $raw_name = $_POST['edit-name'] ?? '';

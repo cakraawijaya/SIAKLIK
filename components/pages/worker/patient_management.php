@@ -42,34 +42,36 @@
         </div>
 
         <!-- Table -->
-        <div class="table-responsive select-none">
-            <table class="table table-bordered w-100">
-                <thead>
-                    <tr>
-                        <th class="text-center align-middle">ID</th>
-                        <th class="text-center align-middle">NAMA</th>
-                        <th class="text-center align-middle">UMUR</th>
-                        <th class="text-center align-middle">ALAMAT</th>
-                        <th class="text-center align-middle">PEKERJAAN</th>
-                        <th class="text-center align-middle">STATUS</th>
-                        <th class="text-center align-middle">JK</th>
-                        <th class="text-center align-middle">NIM/NIP</th>
-                        <th class="text-center align-middle">NO BPJS</th>
-                        <th class="text-center align-middle">LAYANAN</th>
-                        <th class="text-center align-middle">KATEGORI</th>
-                        <th class="text-center align-middle">KET</th>
-                        <th class="text-center align-middle">WAKTU PENCATATAN</th>
-                        <th class="text-center align-middle">AKSI</th>
-                    </tr>
-                </thead>
-                <tbody id="patientTableBody">
-                    <tr>
-                        <td colspan="13" class="text-center align-middle" data-header="Pemberitahuan Sistem">
-                            <div class="td-value">Memuat data...</div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="table-wrapper">
+            <div class="table-responsive select-none">
+                <table class="table table-bordered w-100">
+                    <thead>
+                        <tr>
+                            <th class="text-center align-middle">ID</th>
+                            <th class="text-center align-middle">NAMA</th>
+                            <th class="text-center align-middle">UMUR</th>
+                            <th class="text-center align-middle">ALAMAT</th>
+                            <th class="text-center align-middle">PEKERJAAN</th>
+                            <th class="text-center align-middle">STATUS</th>
+                            <th class="text-center align-middle">JK</th>
+                            <th class="text-center align-middle">NIM/NIP</th>
+                            <th class="text-center align-middle">NO BPJS</th>
+                            <th class="text-center align-middle">LAYANAN</th>
+                            <th class="text-center align-middle">KATEGORI</th>
+                            <th class="text-center align-middle">KET</th>
+                            <th class="text-center align-middle">WAKTU PENCATATAN</th>
+                            <th class="text-center align-middle">AKSI</th>
+                        </tr>
+                    </thead>
+                    <tbody id="patientTableBody">
+                        <tr>
+                            <td colspan="13" class="text-center align-middle" data-header="Pemberitahuan Sistem">
+                                <div class="td-value">Memuat data...</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         <div class="info-pagination-wrapper">

@@ -37,7 +37,8 @@
                 nim_nip LIKE '%$s%'";
         }
 
-        $query = "SELECT * FROM riwayat_pasien $where 
+        $query = "SELECT riwayat_pasien.*, DATE_FORMAT(waktu, '%d-%m-%Y') AS tanggal,
+            DATE_FORMAT(waktu, '%H:%i:%s') AS jam FROM riwayat_pasien $where
             ORDER BY
                 CAST(SUBSTRING_INDEX(SUBSTRING_INDEX(id,'-',2),'-',-1) AS UNSIGNED) ASC,
                 CAST(SUBSTRING_INDEX(id,'-',-1) AS UNSIGNED) ASC
@@ -127,7 +128,8 @@
         // ====================== GET DATA BY ID =========================
         elseif ($action === 'get') {
             if (!$id) throw new Exception('ID pasien tidak valid');
-            $query = "SELECT * FROM riwayat_pasien WHERE id='$id'";
+            $query = "SELECT riwayat_pasien.*, DATE_FORMAT(waktu, '%d-%m-%Y') AS tanggal,
+            DATE_FORMAT(waktu, '%H:%i:%s') AS jam FROM riwayat_pasien WHERE id='$id'";
             $result = mysqli_query($koneksi, $query);
             $data = mysqli_fetch_assoc($result);
             if (!$data) throw new Exception('Data pasien tidak ditemukan');

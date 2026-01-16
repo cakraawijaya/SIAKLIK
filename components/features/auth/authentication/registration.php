@@ -3,11 +3,46 @@
     session_start();
     include __DIR__ . '/../../../../config/config.php';
 
+    function filter_gmail_email($raw_email) {
+        // lowercase
+        $val = strtolower(trim($raw_email));
+
+        // hanya izinkan karakter gmail
+        $val = preg_replace('/[^a-z0-9.@]/', '', $val);
+
+        // cegah lebih dari satu @
+        $parts = explode('@', $val);
+        if (count($parts) > 2) {
+            $val = $parts[0] . '@' . implode('', array_slice($parts, 1));
+        }
+
+        // rapikan local & domain
+        if (strpos($val, '@') !== false) {
+            [$local, $domain] = explode('@', $val, 2);
+
+            // cegah titik beruntun di local
+            $local = preg_replace('/\.{2,}/', '.', $local);
+
+            // domain hanya huruf & titik
+            $domain = preg_replace('/[^a-z.]/', '', $domain);
+
+            $val = $local . '@' . $domain;
+        }
+
+        // batas panjang
+        if (strlen($val) > 45) {
+            $val = substr($val, 0, 45);
+        }
+
+        return $val;
+    }
+
+
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $username = strtolower(preg_replace('/[^a-z0-9]/i', '', $_POST['register-username']));
         $name = ucwords(strtolower(trim($_POST['register-name'])));
-        $email = strtolower(trim($_POST['register-email']));
+        $email = filter_gmail_email($_POST['register-email'] ?? '');
         $password = $_POST['register-password'];
         $confirm_password = $_POST['register-confirm-password'];
         $captcha_input = trim($_POST['kode']);

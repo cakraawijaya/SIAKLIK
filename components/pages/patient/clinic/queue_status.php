@@ -44,25 +44,27 @@
         <div class="tab-content" id="antreanTabContent">
             <?php foreach($tab_labels as $label => $text): ?>
                 <div class="tab-pane select-none fade <?= $active_tab === $label ? 'show active' : '' ?>" id="<?= $label ?>">
-                    <div class="table-responsive">
-                        <table class="table table-bordered w-100">
-                            <thead>
-                                <tr>
-                                    <th class="text-center align-middle">KODE ANTREAN</th>
-                                    <th class="text-center align-middle">NAMA</th>
-                                    <th class="text-center align-middle">LAYANAN</th>
-                                    <th class="text-center align-middle">JENIS ANTREAN</th>
-                                    <th class="text-center align-middle">STATUS</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td colspan="5" class="text-center align-middle" data-header="Pemberitahuan Sistem">
-                                        <div class="td-value">Memuat data...</div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="table-wrapper">
+                        <div class="table-responsive">
+                            <table class="table table-bordered w-100">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center align-middle">KODE ANTREAN</th>
+                                        <th class="text-center align-middle">NAMA</th>
+                                        <th class="text-center align-middle">LAYANAN</th>
+                                        <th class="text-center align-middle">JENIS ANTREAN</th>
+                                        <th class="text-center align-middle">STATUS</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="5" class="text-center align-middle" data-header="Pemberitahuan Sistem">
+                                            <div class="td-value">Memuat data...</div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
 
                     <!-- Info & Pagination -->

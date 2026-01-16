@@ -60,7 +60,7 @@
                   </div>
                   <div class="form-group mt-2">
                     <label class="select-none"><strong>Email</strong></label>
-                    <input type="email" class="form-control select-none" placeholder="Masukkan email aktif" name="add-email" autocomplete="email" required oninput="this.value = this.value.toLowerCase()">
+                    <input type="email" class="form-control select-none" placeholder="Masukkan email aktif" name="add-email" autocomplete="email" required oninput="filterGmail(this)">
                   </div>
                 </div>
 
@@ -177,7 +177,7 @@
                   </div>
                   <div class="form-group mt-2">
                     <label class="select-none"><strong>Email</strong></label>
-                    <input type="email" class="form-control select-none" placeholder="Ubah email" name="edit-email" autocomplete="email" required oninput="this.value = this.value.toLowerCase()">
+                    <input type="email" class="form-control select-none" placeholder="Ubah email" name="edit-email" autocomplete="email" required oninput="filterGmail(this)">
                   </div>
                 </div>
 
@@ -334,7 +334,7 @@
                   </div>
                   <div class="form-group mt-2">
                     <label class="select-none"><strong>Email</strong></label>
-                    <input type="email" class="form-control select-none" placeholder="Masukkan email aktif" name="add-email" autocomplete="email" required oninput="this.value = this.value.toLowerCase()">
+                    <input type="email" class="form-control select-none" placeholder="Masukkan email aktif" name="add-email" autocomplete="email" required oninput="filterGmail(this)">
                   </div>
                 </div>
 
@@ -451,7 +451,7 @@
                   </div>
                   <div class="form-group mt-2">
                     <label class="select-none"><strong>Email</strong></label>
-                    <input type="email" class="form-control select-none" placeholder="Ubah email" name="edit-email" autocomplete="email" required oninput="this.value = this.value.toLowerCase()">
+                    <input type="email" class="form-control select-none" placeholder="Ubah email" name="edit-email" autocomplete="email" required oninput="filterGmail(this)">
                   </div>
                 </div>
 
@@ -608,7 +608,7 @@
                   </div>
                   <div class="form-group mt-2">
                     <label class="select-none"><strong>Email</strong></label>
-                    <input type="email" class="form-control select-none" placeholder="Masukkan email aktif" name="add-email" autocomplete="email" required oninput="this.value = this.value.toLowerCase()">
+                    <input type="email" class="form-control select-none" placeholder="Masukkan email aktif" name="add-email" autocomplete="email" required oninput="filterGmail(this)">
                   </div>
                 </div>
 
@@ -725,7 +725,7 @@
                   </div>
                   <div class="form-group mt-2">
                     <label class="select-none"><strong>Email</strong></label>
-                    <input type="email" class="form-control select-none" placeholder="Ubah email" name="edit-email" autocomplete="email" required oninput="this.value = this.value.toLowerCase()">
+                    <input type="email" class="form-control select-none" placeholder="Ubah email" name="edit-email" autocomplete="email" required oninput="filterGmail(this)">
                   </div>
                 </div>
 
@@ -826,6 +826,36 @@
         </div>
       </div>
     </div>
+
+
+    <script>
+      function filterGmail(el) {
+        let val = el.value.toLowerCase();
+
+        // hanya izinkan karakter gmail
+        val = val.replace(/[^a-z0-9.@]/g, '');
+
+        // cegah lebih dari satu @
+        let parts = val.split('@');
+        if (parts.length > 2) {
+          val = parts[0] + '@' + parts.slice(1).join('');
+        }
+
+        // rapikan local & domain
+        if (val.includes('@')) {
+          let local = parts[0].replace(/\.{2,}/g, '.');
+          let domain = parts[1].replace(/[^a-z.]/g, '');
+          val = local + '@' + domain;
+        }
+
+        // batas panjang
+        if (val.length > 45) {
+          val = val.slice(0, 45);
+        }
+
+        el.value = val;
+      }
+    </script>
 
   <?php endif; ?>
 <?php endif; ?>

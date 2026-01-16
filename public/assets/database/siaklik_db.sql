@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 11 Jan 2026 pada 08.02
+-- Waktu pembuatan: 16 Jan 2026 pada 14.39
 -- Versi server: 10.4.27-MariaDB
 -- Versi PHP: 8.1.12
 
@@ -28,10 +28,10 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `akun_pasien` (
-  `email` varchar(255) NOT NULL,
+  `email` varchar(45) NOT NULL,
   `foto` varchar(255) DEFAULT 'default.png',
   `username` varchar(20) NOT NULL,
-  `nama` varchar(255) DEFAULT NULL,
+  `nama` varchar(60) DEFAULT NULL,
   `password` varchar(255) NOT NULL,
   `role_id` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -59,10 +59,10 @@ INSERT INTO `akun_pasien` (`email`, `foto`, `username`, `nama`, `password`, `rol
 --
 
 CREATE TABLE `akun_pekerja` (
-  `email` varchar(255) NOT NULL,
+  `email` varchar(45) NOT NULL,
   `foto` varchar(255) DEFAULT 'default.png',
   `username` varchar(20) NOT NULL,
-  `nama` varchar(255) DEFAULT NULL,
+  `nama` varchar(60) DEFAULT NULL,
   `password` varchar(255) NOT NULL,
   `role_id` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -100,13 +100,13 @@ INSERT INTO `akun_pekerja` (`email`, `foto`, `username`, `nama`, `password`, `ro
 --
 
 CREATE TABLE `antrean` (
-  `kode_antrean` varchar(8) NOT NULL,
+  `kode_antrean` varchar(5) NOT NULL,
   `username` varchar(20) NOT NULL,
   `nama` varchar(60) NOT NULL,
   `layanan` enum('Poli Umum','Poli Gigi') NOT NULL DEFAULT 'Poli Umum',
   `kategori` enum('INTERNAL','BPJS','UMUM') NOT NULL DEFAULT 'UMUM',
   `status_antrean` enum('Menunggu','Dilayani','Selesai') NOT NULL DEFAULT 'Menunggu',
-  `waktu_daftar` datetime NOT NULL DEFAULT current_timestamp()
+  `waktu_daftar` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -296,7 +296,7 @@ INSERT INTO `hak_akses` (`id`, `level`) VALUES
 --
 
 CREATE TABLE `hitung_antrean` (
-  `kategori` enum('INTERNAL','BPJS','UMUM','') NOT NULL DEFAULT 'UMUM',
+  `kategori` enum('INTERNAL','BPJS','UMUM') NOT NULL DEFAULT 'UMUM',
   `last_number` int(4) NOT NULL DEFAULT 0,
   `last_reset` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -317,8 +317,8 @@ INSERT INTO `hitung_antrean` (`kategori`, `last_number`, `last_reset`) VALUES
 --
 
 CREATE TABLE `hitung_pasien` (
-  `id_pasien` varchar(100) NOT NULL,
-  `last_number` int(100) NOT NULL DEFAULT 0
+  `id_pasien` varchar(7) NOT NULL,
+  `last_number` int(4) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -335,9 +335,9 @@ INSERT INTO `hitung_pasien` (`id_pasien`, `last_number`) VALUES
 --
 
 CREATE TABLE `password_resets` (
-  `email` varchar(255) NOT NULL,
+  `email` varchar(45) NOT NULL,
   `token` varchar(255) NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT current_timestamp()
+  `created_at` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -347,12 +347,12 @@ CREATE TABLE `password_resets` (
 --
 
 CREATE TABLE `riwayat_aktivitas` (
-  `id` int(11) NOT NULL,
+  `id` int(100) NOT NULL,
   `username` varchar(20) NOT NULL,
   `role` enum('Admin','Pekerja','Pasien') NOT NULL,
   `aksi` varchar(255) NOT NULL,
-  `detail` text DEFAULT NULL,
-  `created_at` datetime NOT NULL DEFAULT current_timestamp()
+  `detail` text NOT NULL,
+  `created_at` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -380,15 +380,15 @@ INSERT INTO `riwayat_aktivitas` (`id`, `username`, `role`, `aksi`, `detail`, `cr
 --
 
 CREATE TABLE `riwayat_antrean` (
-  `id` int(11) NOT NULL,
-  `kode_antrean` varchar(8) NOT NULL,
+  `id` int(4) NOT NULL,
+  `kode_antrean` varchar(5) NOT NULL,
   `username` varchar(20) NOT NULL,
   `nama` varchar(60) NOT NULL,
-  `layanan` enum('Poli Umum','Poli Gigi','','') NOT NULL DEFAULT 'Poli Umum',
-  `kategori` enum('INTERNAL','BPJS','UMUM','') NOT NULL DEFAULT 'UMUM',
-  `status_antrean` enum('Menunggu','Dilayani','Selesai','') NOT NULL DEFAULT 'Menunggu',
-  `waktu_daftar` datetime NOT NULL,
-  `waktu_selesai` datetime NOT NULL DEFAULT current_timestamp()
+  `layanan` enum('Poli Umum','Poli Gigi') NOT NULL DEFAULT 'Poli Umum',
+  `kategori` enum('INTERNAL','BPJS','UMUM') NOT NULL DEFAULT 'UMUM',
+  `status_antrean` enum('Menunggu','Dilayani','Selesai') NOT NULL DEFAULT 'Menunggu',
+  `waktu_daftar` datetime DEFAULT NULL,
+  `waktu_selesai` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -398,7 +398,7 @@ CREATE TABLE `riwayat_antrean` (
 --
 
 CREATE TABLE `riwayat_pasien` (
-  `id` varchar(100) NOT NULL,
+  `id` varchar(12) NOT NULL,
   `nama` varchar(60) NOT NULL,
   `umur` int(3) NOT NULL,
   `alamat` varchar(130) NOT NULL,
@@ -409,8 +409,8 @@ CREATE TABLE `riwayat_pasien` (
   `no_bpjs` varchar(13) DEFAULT NULL,
   `layanan` enum('Poli Umum','Poli Gigi') NOT NULL DEFAULT 'Poli Umum',
   `kategori` enum('Internal','Eksternal') NOT NULL DEFAULT 'Eksternal',
-  `keterangan` varchar(255) DEFAULT NULL,
-  `waktu` datetime NOT NULL DEFAULT current_timestamp()
+  `keterangan` text DEFAULT NULL,
+  `waktu` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -552,13 +552,13 @@ ALTER TABLE `hak_akses`
 -- AUTO_INCREMENT untuk tabel `riwayat_aktivitas`
 --
 ALTER TABLE `riwayat_aktivitas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT untuk tabel `riwayat_antrean`
 --
 ALTER TABLE `riwayat_antrean`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

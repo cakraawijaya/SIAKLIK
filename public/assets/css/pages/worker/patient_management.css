@@ -33,7 +33,6 @@
 
 .patient-management-section .table-responsive {
   margin-top: 1rem;
-  margin-bottom: 1rem;
 }
 
 .patient-management-section .info-pagination-wrapper {
@@ -64,10 +63,16 @@
 
   .patient-management-section .action-bar-wrapper .add-export button,
   .patient-management-section .action-bar-wrapper .add-export a,
+  .patient-management-section .action-bar-wrapper .form-inline input.form-control,
   .patient-management-section .action-bar-wrapper .form-inline input::placeholder,
   .patient-management-section .info-pagination-wrapper .count-data,
   .patient-management-section .info-pagination-wrapper .pagination a {
     font-size: 0.95rem;
+  }
+
+  .patient-management-section .action-bar-wrapper .form-inline input.form-control {
+    padding-top: 0.425rem;
+    padding-bottom: 0.43rem;
   }
 
   .patient-management-section .action-bar-wrapper {
@@ -101,10 +106,16 @@
 
   .patient-management-section .action-bar-wrapper .add-export button,
   .patient-management-section .action-bar-wrapper .add-export a,
+  .patient-management-section .action-bar-wrapper .form-inline input.form-control,
   .patient-management-section .action-bar-wrapper .form-inline input::placeholder,
   .patient-management-section .info-pagination-wrapper .count-data,
   .patient-management-section .info-pagination-wrapper .pagination a {
     font-size: 0.9rem;
+  }
+
+  .patient-management-section .action-bar-wrapper .form-inline input.form-control {
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
   }
 
   .patient-management-section .action-bar-wrapper {
@@ -134,10 +145,16 @@
 
   .patient-management-section .action-bar-wrapper .add-export button,
   .patient-management-section .action-bar-wrapper .add-export a,
+  .patient-management-section .action-bar-wrapper .form-inline input.form-control,
   .patient-management-section .action-bar-wrapper .form-inline input::placeholder,
   .patient-management-section .info-pagination-wrapper .count-data,
   .patient-management-section .info-pagination-wrapper .pagination a {
     font-size: 0.9rem;
+  }
+
+  .patient-management-section .action-bar-wrapper .form-inline input.form-control {
+    padding-top: 0.47rem;
+    padding-bottom: 0.46rem;
   }
 
   .patient-management-section .action-bar-wrapper {
@@ -167,10 +184,16 @@
 
   .patient-management-section .action-bar-wrapper .add-export button,
   .patient-management-section .action-bar-wrapper .add-export a,
+  .patient-management-section .action-bar-wrapper .form-inline input.form-control,
   .patient-management-section .action-bar-wrapper .form-inline input::placeholder,
   .patient-management-section .info-pagination-wrapper .count-data,
   .patient-management-section .info-pagination-wrapper .pagination a {
     font-size: 0.9rem;
+  }
+
+  .patient-management-section .action-bar-wrapper .form-inline input.form-control {
+    padding-top: 0.47rem;
+    padding-bottom: 0.46rem;
   }
 
   /* ---------------- Tampilan Sidebar Ditutup ----------------- */
@@ -255,10 +278,16 @@
 
   .patient-management-section .action-bar-wrapper .add-export button,
   .patient-management-section .action-bar-wrapper .add-export a,
+  .patient-management-section .action-bar-wrapper .form-inline input.form-control,
   .patient-management-section .action-bar-wrapper .form-inline input::placeholder,
   .patient-management-section .info-pagination-wrapper .count-data,
   .patient-management-section .info-pagination-wrapper .pagination a {
     font-size: 0.85rem;
+  }
+
+  .patient-management-section .action-bar-wrapper .form-inline input.form-control {
+    padding-top: 0.49rem;
+    padding-bottom: 0.49rem;
   }
 
   /* ---------------- Tampilan Sidebar Ditutup ----------------- */
@@ -358,10 +387,16 @@
 
   .patient-management-section .action-bar-wrapper .add-export button,
   .patient-management-section .action-bar-wrapper .add-export a,
+  .patient-management-section .action-bar-wrapper .form-inline input.form-control,
   .patient-management-section .action-bar-wrapper .form-inline input::placeholder,
   .patient-management-section .info-pagination-wrapper .count-data,
   .patient-management-section .info-pagination-wrapper .pagination a {
     font-size: 0.85rem;
+  }
+
+  .patient-management-section .action-bar-wrapper .form-inline input.form-control {
+    padding-top: 0.49rem;
+    padding-bottom: 0.49rem;
   }
 
   /* ---------------- Tampilan Sidebar Ditutup ----------------- */
@@ -464,10 +499,16 @@
 
   .patient-management-section .action-bar-wrapper .add-export button,
   .patient-management-section .action-bar-wrapper .add-export a,
+  .patient-management-section .action-bar-wrapper .form-inline input.form-control,
   .patient-management-section .action-bar-wrapper .form-inline input::placeholder,
   .patient-management-section .info-pagination-wrapper .count-data,
   .patient-management-section .info-pagination-wrapper .pagination a {
     font-size: 0.85rem;
+  }
+
+  .patient-management-section .action-bar-wrapper .form-inline input.form-control {
+    padding-top: 0.485rem;
+    padding-bottom: 0.49rem;
   }
 
   .patient-management-section .action-bar-wrapper {
@@ -497,10 +538,16 @@
 
   .patient-management-section .action-bar-wrapper .add-export button,
   .patient-management-section .action-bar-wrapper .add-export a,
+  .patient-management-section .action-bar-wrapper .form-inline input.form-control,
   .patient-management-section .action-bar-wrapper .form-inline input::placeholder,
   .patient-management-section .info-pagination-wrapper .count-data,
   .patient-management-section .info-pagination-wrapper .pagination a {
     font-size: 0.85rem;
+  }
+
+  .patient-management-section .action-bar-wrapper .form-inline input.form-control {
+    padding-top: 0.49rem;
+    padding-bottom: 0.49rem;
   }
 
   .patient-management-section .action-bar-wrapper {
@@ -530,10 +577,16 @@
 
   .patient-management-section .action-bar-wrapper .add-export button,
   .patient-management-section .action-bar-wrapper .add-export a,
+  .patient-management-section .action-bar-wrapper .form-inline input.form-control,
   .patient-management-section .action-bar-wrapper .form-inline input::placeholder,
   .patient-management-section .info-pagination-wrapper .count-data,
   .patient-management-section .info-pagination-wrapper .pagination a {
     font-size: 0.85rem;
+  }
+
+  .patient-management-section .action-bar-wrapper .form-inline input.form-control {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 
   .patient-management-section .action-bar-wrapper .add-export {
@@ -604,10 +657,16 @@
 
   .patient-management-section .action-bar-wrapper .add-export button,
   .patient-management-section .action-bar-wrapper .add-export a,
+  .patient-management-section .action-bar-wrapper .form-inline input.form-control,
   .patient-management-section .action-bar-wrapper .form-inline input::placeholder,
   .patient-management-section .info-pagination-wrapper .count-data,
   .patient-management-section .info-pagination-wrapper .pagination a {
     font-size: 0.85rem;
+  }
+
+  .patient-management-section .action-bar-wrapper .form-inline input.form-control {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 
   /* ---------------- Tampilan Sidebar Ditutup ----------------- */
@@ -689,10 +748,16 @@
   .patient-management-section p,
   .patient-management-section .action-bar-wrapper .add-export button,
   .patient-management-section .action-bar-wrapper .add-export a,
+  .patient-management-section .action-bar-wrapper .form-inline input.form-control,
   .patient-management-section .action-bar-wrapper .form-inline input::placeholder,
   .patient-management-section .info-pagination-wrapper .count-data,
   .patient-management-section .info-pagination-wrapper .pagination a {
     font-size: 0.9rem;
+  }
+
+  .patient-management-section .action-bar-wrapper .form-inline input.form-control {
+    padding-top: 0.47rem;
+    padding-bottom: 0.46rem;
   }
 
   /* ---------------- Tampilan Sidebar Ditutup ----------------- */
@@ -789,10 +854,16 @@
   .patient-management-section p,
   .patient-management-section .action-bar-wrapper .add-export button,
   .patient-management-section .action-bar-wrapper .add-export a,
+  .patient-management-section .action-bar-wrapper .form-inline input.form-control,
   .patient-management-section .action-bar-wrapper .form-inline input::placeholder,
   .patient-management-section .info-pagination-wrapper .count-data,
   .patient-management-section .info-pagination-wrapper .pagination a {
     font-size: 0.9rem;
+  }
+
+  .patient-management-section .action-bar-wrapper .form-inline input.form-control {
+    padding-top: 0.47rem;
+    padding-bottom: 0.46rem;
   }
 
   /* ---------------- Tampilan Sidebar Ditutup ----------------- */
@@ -895,10 +966,16 @@
 
   .patient-management-section .action-bar-wrapper .add-export button,
   .patient-management-section .action-bar-wrapper .add-export a,
+  .patient-management-section .action-bar-wrapper .form-inline input.form-control,
   .patient-management-section .action-bar-wrapper .form-inline input::placeholder,
   .patient-management-section .info-pagination-wrapper .count-data,
   .patient-management-section .info-pagination-wrapper .pagination a {
     font-size: 0.85rem;
+  }
+
+  .patient-management-section .action-bar-wrapper .form-inline input.form-control {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 
   .patient-management-section .action-bar-wrapper {
@@ -928,10 +1005,16 @@
 
   .patient-management-section .action-bar-wrapper .add-export button,
   .patient-management-section .action-bar-wrapper .add-export a,
+  .patient-management-section .action-bar-wrapper .form-inline input.form-control,
   .patient-management-section .action-bar-wrapper .form-inline input::placeholder,
   .patient-management-section .info-pagination-wrapper .count-data,
   .patient-management-section .info-pagination-wrapper .pagination a {
     font-size: 0.85rem;
+  }
+
+  .patient-management-section .action-bar-wrapper .form-inline input.form-control {
+    padding-top: 0.49rem;
+    padding-bottom: 0.49rem;
   }
 
   .patient-management-section .action-bar-wrapper {
@@ -966,10 +1049,16 @@
 
   .patient-management-section .action-bar-wrapper .add-export button,
   .patient-management-section .action-bar-wrapper .add-export a,
+  .patient-management-section .action-bar-wrapper .form-inline input.form-control,
   .patient-management-section .action-bar-wrapper .form-inline input::placeholder,
   .patient-management-section .info-pagination-wrapper .count-data,
   .patient-management-section .info-pagination-wrapper .pagination a {
     font-size: 0.85rem;
+  }
+
+  .patient-management-section .action-bar-wrapper .form-inline input.form-control {
+    padding-top: 0.477rem;
+    padding-bottom: 0.48rem;
   }
 
   .patient-management-section .action-bar-wrapper .add-export {
@@ -1003,6 +1092,10 @@
     justify-content: center;
     height: 37px;
     white-space: nowrap;
+  }
+
+  .patient-management-section .table-wrapper {
+    margin-bottom: 1.8rem !important;
   }
 
   .patient-management-section .table-responsive {
@@ -1043,10 +1136,16 @@
 
   .patient-management-section .action-bar-wrapper .add-export button,
   .patient-management-section .action-bar-wrapper .add-export a,
+  .patient-management-section .action-bar-wrapper .form-inline input.form-control,
   .patient-management-section .action-bar-wrapper .form-inline input::placeholder,
   .patient-management-section .info-pagination-wrapper .count-data,
   .patient-management-section .info-pagination-wrapper .pagination a {
     font-size: 0.85rem;
+  }
+
+  .patient-management-section .action-bar-wrapper .form-inline input.form-control {
+    padding-top: 0.477rem;
+    padding-bottom: 0.48rem;
   }
 
   .patient-management-section .action-bar-wrapper .add-export {
@@ -1080,6 +1179,10 @@
     justify-content: center;
     height: 37px;
     white-space: nowrap;
+  }
+
+  .patient-management-section .table-wrapper {
+    margin-bottom: 1.8rem !important;
   }
 
   .patient-management-section .table-responsive {
@@ -1120,10 +1223,16 @@
 
   .patient-management-section .action-bar-wrapper .add-export button,
   .patient-management-section .action-bar-wrapper .add-export a,
+  .patient-management-section .action-bar-wrapper .form-inline input.form-control,
   .patient-management-section .action-bar-wrapper .form-inline input::placeholder,
   .patient-management-section .info-pagination-wrapper .count-data,
   .patient-management-section .info-pagination-wrapper .pagination a {
     font-size: 0.85rem;
+  }
+
+  .patient-management-section .action-bar-wrapper .form-inline input.form-control {
+    padding-top: 0.477rem;
+    padding-bottom: 0.48rem;
   }
 
   .patient-management-section .action-bar-wrapper .add-export {
@@ -1157,6 +1266,10 @@
     justify-content: center;
     height: 37px;
     white-space: nowrap;
+  }
+
+  .patient-management-section .table-wrapper {
+    margin-bottom: 1.8rem !important;
   }
 
   .patient-management-section .table-responsive {

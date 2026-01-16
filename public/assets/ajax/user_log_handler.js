@@ -27,7 +27,7 @@ $(document).ready(function () {
                             `<tr>
                                 <td class="text-center align-middle" data-header="Waktu">
                                     <div class="td-value">
-                                        ${row.created_at}
+                                        ${row.tanggal} &nbsp;(${row.jam})
                                     </div>
                                 </td>
 

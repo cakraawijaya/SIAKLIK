@@ -34,10 +34,6 @@
   margin-top: 1rem;
 }
 
-.queue-list-section .tab-content .table-responsive {
-  margin-bottom: 1rem;
-}
-
 .queue-list-section .info-pagination-wrapper {
   display: flex;
   justify-content: space-between;
@@ -66,10 +62,16 @@
   }
 
   .queue-list-section .tab-search-wrapper .nav-link,
+  .queue-list-section .tab-search-wrapper .form-inline input.form-control,
   .queue-list-section .tab-search-wrapper .form-inline input::placeholder,
   .queue-list-section .info-pagination-wrapper .count-data,
   .queue-list-section .info-pagination-wrapper .pagination a {
     font-size: 0.95rem;
+  }
+
+  .queue-list-section .tab-search-wrapper .form-inline input.form-control {
+    padding-top: 0.425rem;
+    padding-bottom: 0.43rem;
   }
 
   .queue-list-section .tab-search-wrapper .form-inline button {
@@ -98,10 +100,16 @@
   }
 
   .queue-list-section .tab-search-wrapper .nav-link,
+  .queue-list-section .tab-search-wrapper .form-inline input.form-control,
   .queue-list-section .tab-search-wrapper .form-inline input::placeholder,
   .queue-list-section .info-pagination-wrapper .count-data,
   .queue-list-section .info-pagination-wrapper .pagination a {
     font-size: 0.9rem;
+  }
+
+  .queue-list-section .tab-search-wrapper .form-inline input.form-control {
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
   }
 }
 
@@ -122,10 +130,16 @@
   }
 
   .queue-list-section .tab-search-wrapper .nav-link,
+  .queue-list-section .tab-search-wrapper .form-inline input.form-control,
   .queue-list-section .tab-search-wrapper .form-inline input::placeholder,
   .queue-list-section .info-pagination-wrapper .count-data,
   .queue-list-section .info-pagination-wrapper .pagination a {
     font-size: 0.9rem;
+  }
+
+  .queue-list-section .tab-search-wrapper .form-inline input.form-control {
+    padding-top: 0.47rem;
+    padding-bottom: 0.46rem;
   }
 }
 
@@ -146,10 +160,16 @@
   }
 
   .queue-list-section .tab-search-wrapper .nav-link,
+  .queue-list-section .tab-search-wrapper .form-inline input.form-control,
   .queue-list-section .tab-search-wrapper .form-inline input::placeholder,
   .queue-list-section .info-pagination-wrapper .count-data,
   .queue-list-section .info-pagination-wrapper .pagination a {
     font-size: 0.9rem;
+  }
+
+  .queue-list-section .tab-search-wrapper .form-inline input.form-control {
+    padding-top: 0.47rem;
+    padding-bottom: 0.46rem;
   }
 
   /* ---------------- Tampilan Sidebar Ditutup ----------------- */
@@ -230,10 +250,16 @@
     font-size: 0.9rem;
   }
 
+  .queue-list-section .tab-search-wrapper .form-inline input.form-control,
   .queue-list-section .tab-search-wrapper .form-inline input::placeholder,
   .queue-list-section .info-pagination-wrapper .count-data,
   .queue-list-section .info-pagination-wrapper .pagination a {
     font-size: 0.85rem;
+  }
+
+  .queue-list-section .tab-search-wrapper .form-inline input.form-control {
+    padding-top: 0.49rem;
+    padding-bottom: 0.49rem;
   }
 
   /* ---------------- Tampilan Sidebar Ditutup ----------------- */
@@ -301,7 +327,17 @@
   }
 
   body.sidebar-expanded .queue-list-section .info-pagination-wrapper .count-data {
+    line-height: 1.6;
+  }
+
+  body.sidebar-expanded .queue-list-section .tab-pane#internal.active .info-pagination-wrapper .count-data,
+  body.sidebar-expanded .queue-list-section .tab-pane#bpjs.active .info-pagination-wrapper .count-data,
+  body.sidebar-expanded .queue-list-section .tab-pane#umum.active .info-pagination-wrapper .count-data {
     padding-right: 50px;
+  }
+
+  body.sidebar-expanded .queue-list-section .tab-pane#selesai.active .info-pagination-wrapper .count-data {
+    padding-right: 0;
   }
 
   body.sidebar-expanded .queue-list-section:has(.tab-search-wrapper input:placeholder-shown)
@@ -329,10 +365,16 @@
     font-size: 0.9rem;
   }
 
+  .queue-list-section .tab-search-wrapper .form-inline input.form-control,
   .queue-list-section .tab-search-wrapper .form-inline input::placeholder,
   .queue-list-section .info-pagination-wrapper .count-data,
   .queue-list-section .info-pagination-wrapper .pagination a {
     font-size: 0.85rem;
+  }
+
+  .queue-list-section .tab-search-wrapper .form-inline input.form-control {
+    padding-top: 0.49rem;
+    padding-bottom: 0.49rem;
   }
 
   /* ---------------- Tampilan Sidebar Ditutup ----------------- */
@@ -400,7 +442,17 @@
   }
 
   body.sidebar-expanded .queue-list-section .info-pagination-wrapper .count-data {
+    line-height: 1.6;
+  }
+
+  body.sidebar-expanded .queue-list-section .tab-pane#internal.active .info-pagination-wrapper .count-data,
+  body.sidebar-expanded .queue-list-section .tab-pane#bpjs.active .info-pagination-wrapper .count-data,
+  body.sidebar-expanded .queue-list-section .tab-pane#umum.active .info-pagination-wrapper .count-data {
     padding-right: 50px;
+  }
+
+  body.sidebar-expanded .queue-list-section .tab-pane#selesai.active .info-pagination-wrapper .count-data {
+    padding-right: 0;
   }
 
   body.sidebar-expanded .queue-list-section:has(.tab-search-wrapper input:placeholder-shown)
@@ -435,10 +487,16 @@
     font-size: 0.9rem;
   }
 
+  .queue-list-section .tab-search-wrapper .form-inline input.form-control,
   .queue-list-section .tab-search-wrapper .form-inline input::placeholder,
   .queue-list-section .info-pagination-wrapper .count-data,
   .queue-list-section .info-pagination-wrapper .pagination a {
     font-size: 0.85rem;
+  }
+
+  .queue-list-section .tab-search-wrapper .form-inline input.form-control {
+    padding-top: 0.485rem;
+    padding-bottom: 0.49rem;
   }
 }
 
@@ -459,10 +517,16 @@
   }
 
   .queue-list-section .tab-search-wrapper .nav-link,
+  .queue-list-section .tab-search-wrapper .form-inline input.form-control,
   .queue-list-section .tab-search-wrapper .form-inline input::placeholder,
   .queue-list-section .info-pagination-wrapper .count-data,
   .queue-list-section .info-pagination-wrapper .pagination a {
     font-size: 0.85rem;
+  }
+
+  .queue-list-section .tab-search-wrapper .form-inline input.form-control {
+    padding-top: 0.49rem;
+    padding-bottom: 0.49rem;
   }
 }
 
@@ -486,10 +550,16 @@
     font-size: 0.9rem;
   }
 
+  .queue-list-section .tab-search-wrapper .form-inline input.form-control,
   .queue-list-section .tab-search-wrapper .form-inline input::placeholder,
   .queue-list-section .info-pagination-wrapper .count-data,
   .queue-list-section .info-pagination-wrapper .pagination a {
     font-size: 0.85rem;
+  }
+
+  .queue-list-section .tab-search-wrapper .form-inline input.form-control {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 
   .queue-list-section .tab-search-wrapper {
@@ -538,7 +608,17 @@
   }
 
   .queue-list-section .info-pagination-wrapper .count-data {
-    padding-right: 80px;
+    line-height: 1.6;
+  }
+
+  .queue-list-section .tab-pane#internal.active .info-pagination-wrapper .count-data,
+  .queue-list-section .tab-pane#bpjs.active .info-pagination-wrapper .count-data,
+  .queue-list-section .tab-pane#umum.active .info-pagination-wrapper .count-data {
+    padding-right: 60px;
+  }
+
+  .queue-list-section .tab-pane#selesai.active .info-pagination-wrapper .count-data {
+    padding-right: 0;
   }
 
   .queue-list-section:has(.tab-search-wrapper input:placeholder-shown)
@@ -566,10 +646,16 @@
     font-size: 0.9rem;
   }
 
+  .queue-list-section .tab-search-wrapper .form-inline input.form-control,
   .queue-list-section .tab-search-wrapper .form-inline input::placeholder,
   .queue-list-section .info-pagination-wrapper .count-data,
   .queue-list-section .info-pagination-wrapper .pagination a {
     font-size: 0.85rem;
+  }
+
+  .queue-list-section .tab-search-wrapper .form-inline input.form-control {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 
   /* ---------------- Tampilan Sidebar Ditutup ----------------- */
@@ -647,10 +733,16 @@
 
   .queue-list-section p,
   .queue-list-section .tab-search-wrapper .nav-link,
+  .queue-list-section .tab-search-wrapper .form-inline input.form-control,
   .queue-list-section .tab-search-wrapper .form-inline input::placeholder,
   .queue-list-section .info-pagination-wrapper .count-data,
   .queue-list-section .info-pagination-wrapper .pagination a {
     font-size: 0.9rem;
+  }
+
+  .queue-list-section .tab-search-wrapper .form-inline input.form-control {
+    padding-top: 0.47rem;
+    padding-bottom: 0.46rem;
   }
 
   /* ---------------- Tampilan Sidebar Ditutup ----------------- */
@@ -718,7 +810,17 @@
   }
 
   body.sidebar-expanded .queue-list-section .info-pagination-wrapper .count-data {
+    line-height: 1.6;
+  }
+
+  body.sidebar-expanded .queue-list-section .tab-pane#internal.active .info-pagination-wrapper .count-data,
+  body.sidebar-expanded .queue-list-section .tab-pane#bpjs.active .info-pagination-wrapper .count-data,
+  body.sidebar-expanded .queue-list-section .tab-pane#umum.active .info-pagination-wrapper .count-data {
     padding-right: 80px;
+  }
+
+  body.sidebar-expanded .queue-list-section .tab-pane#selesai.active .info-pagination-wrapper .count-data {
+    padding-right: 0;
   }
 
   body.sidebar-expanded .queue-list-section:has(.tab-search-wrapper input:placeholder-shown)
@@ -743,10 +845,16 @@
 
   .queue-list-section p,
   .queue-list-section .tab-search-wrapper .nav-link,
+  .queue-list-section .tab-search-wrapper .form-inline input.form-control,
   .queue-list-section .tab-search-wrapper .form-inline input::placeholder,
   .queue-list-section .info-pagination-wrapper .count-data,
   .queue-list-section .info-pagination-wrapper .pagination a {
     font-size: 0.9rem;
+  }
+
+  .queue-list-section .tab-search-wrapper .form-inline input.form-control {
+    padding-top: 0.47rem;
+    padding-bottom: 0.46rem;
   }
 
   /* ---------------- Tampilan Sidebar Ditutup ----------------- */
@@ -814,7 +922,17 @@
   }
 
   body.sidebar-expanded .queue-list-section .info-pagination-wrapper .count-data {
-    padding-right: 110px;
+    line-height: 1.6;
+  }
+
+  body.sidebar-expanded .queue-list-section .tab-pane#internal.active .info-pagination-wrapper .count-data,
+  body.sidebar-expanded .queue-list-section .tab-pane#bpjs.active .info-pagination-wrapper .count-data,
+  body.sidebar-expanded .queue-list-section .tab-pane#umum.active .info-pagination-wrapper .count-data {
+    padding-right: 30px;
+  }
+
+  body.sidebar-expanded .queue-list-section .tab-pane#selesai.active .info-pagination-wrapper .count-data {
+    padding-right: 0;
   }
 
   body.sidebar-expanded .queue-list-section:has(.tab-search-wrapper input:placeholder-shown)
@@ -846,10 +964,16 @@
   }
 
   .queue-list-section .tab-search-wrapper .nav-link,
+  .queue-list-section .tab-search-wrapper .form-inline input.form-control,
   .queue-list-section .tab-search-wrapper .form-inline input::placeholder,
   .queue-list-section .info-pagination-wrapper .count-data,
   .queue-list-section .info-pagination-wrapper .pagination a {
     font-size: 0.85rem;
+  }
+
+  .queue-list-section .tab-search-wrapper .form-inline input.form-control {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 }
 
@@ -869,11 +993,20 @@
     line-height: 1.7;
   }
 
-  .queue-list-section .tab-search-wrapper .nav-link,
+  .queue-list-section .tab-search-wrapper .nav-link {
+    font-size: 0.9rem;
+  }
+
+  .queue-list-section .tab-search-wrapper .form-inline input.form-control,
   .queue-list-section .tab-search-wrapper .form-inline input::placeholder,
   .queue-list-section .info-pagination-wrapper .count-data,
   .queue-list-section .info-pagination-wrapper .pagination a {
     font-size: 0.85rem;
+  }
+
+  .queue-list-section .tab-search-wrapper .form-inline input.form-control {
+    padding-top: 0.49rem;
+    padding-bottom: 0.49rem;
   }
 
   .queue-list-section .tab-search-wrapper {
@@ -923,8 +1056,8 @@
 }
 
 
-/* ========================== HP KECIL (430px - 520px) =========================== */
-@media (min-width: 430px) and (max-width: 520px) {
+/* ========================== HP KECIL (415px - 520px) =========================== */
+@media (min-width: 415px) and (max-width: 520px) {
   /* ------------------- Pengaturan Global --------------------- */
   .queue-list-section h2 {
     font-size: 1.5rem;
@@ -940,13 +1073,19 @@
   }
 
   .queue-list-section .tab-search-wrapper .nav-link {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
   }
 
+  .queue-list-section .tab-search-wrapper .form-inline input.form-control,
   .queue-list-section .tab-search-wrapper .form-inline input::placeholder,
   .queue-list-section .info-pagination-wrapper .count-data,
   .queue-list-section .info-pagination-wrapper .pagination a {
     font-size: 0.85rem;
+  }
+
+  .queue-list-section .tab-search-wrapper .form-inline input.form-control {
+    padding-top: 0.477rem;
+    padding-bottom: 0.48rem;
   }
 
   .queue-list-section .tab-search-wrapper {
@@ -995,8 +1134,21 @@
     white-space: nowrap;
   }
 
-  .queue-list-section .info-pagination-wrapper .count-data {
-    padding-right: 30px;
+  .queue-list-section .table-wrapper {
+    margin-bottom: 1.8rem !important;
+  }
+
+  .queue-list-section .tab-pane#internal.active .info-pagination-wrapper .count-data {
+    padding-right: 50px;
+  }
+
+  .queue-list-section .tab-pane#bpjs.active .info-pagination-wrapper .count-data,
+  .queue-list-section .tab-pane#umum.active .info-pagination-wrapper .count-data {
+    padding-right: 70px;
+  }
+
+  .queue-list-section .tab-pane#selesai.active .info-pagination-wrapper .count-data {
+    padding-right: 0;
   }
 
   .queue-list-section:has(.tab-search-wrapper input:placeholder-shown)
@@ -1012,8 +1164,8 @@
 }
 
 
-/* ========================== HP PALING KECIL (≤ 429px) ========================== */
-@media (max-width: 429px) {
+/* ===================== HP PALING KECIL 1 (391px - 414px) ======================= */
+@media (min-width: 391px) and (max-width: 414px) {
   /* ------------------- Pengaturan Global --------------------- */
   .queue-list-section h2 {
     font-size: 1.5rem;
@@ -1029,13 +1181,19 @@
   }
 
   .queue-list-section .tab-search-wrapper .nav-link {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
   }
 
+  .queue-list-section .tab-search-wrapper .form-inline input.form-control,
   .queue-list-section .tab-search-wrapper .form-inline input::placeholder,
   .queue-list-section .info-pagination-wrapper .count-data,
   .queue-list-section .info-pagination-wrapper .pagination a {
     font-size: 0.85rem;
+  }
+
+  .queue-list-section .tab-search-wrapper .form-inline input.form-control {
+    padding-top: 0.477rem;
+    padding-bottom: 0.48rem;
   }
 
   .queue-list-section .tab-search-wrapper {
@@ -1084,8 +1242,231 @@
     white-space: nowrap;
   }
 
-  .queue-list-section .info-pagination-wrapper .count-data {
-    padding-right: 50px;
+  .queue-list-section .table-wrapper {
+    margin-bottom: 1.8rem !important;
+  }
+
+  .queue-list-section .tab-pane#internal.active .info-pagination-wrapper .count-data {
+    padding-right: 40px;
+  }
+
+  .queue-list-section .tab-pane#bpjs.active .info-pagination-wrapper .count-data,
+  .queue-list-section .tab-pane#umum.active .info-pagination-wrapper .count-data {
+    padding-right: 55px;
+  }
+
+  .queue-list-section .tab-pane#selesai.active .info-pagination-wrapper .count-data {
+    padding-right: 0;
+  }
+
+  .queue-list-section:has(.tab-search-wrapper input:placeholder-shown)
+  .tab-pane:has(tbody tr:only-child .td-value)
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
+  }
+
+  .queue-list-section:has(.tab-search-wrapper input:not(:placeholder-shown))
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
+  }
+}
+
+
+/* ===================== HP PALING KECIL 2 (361px - 390px) ======================= */
+@media (min-width: 361px) and (max-width: 390px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .queue-list-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .queue-list-section p {
+    font-size: 0.85rem;
+    line-height: 1.8;
+    padding: 0 3.4rem;
+  }
+
+  .queue-list-section .tab-search-wrapper .nav-link {
+    font-size: 0.88rem;
+  }
+
+  .queue-list-section .tab-search-wrapper .form-inline input.form-control,
+  .queue-list-section .tab-search-wrapper .form-inline input::placeholder,
+  .queue-list-section .info-pagination-wrapper .count-data,
+  .queue-list-section .info-pagination-wrapper .pagination a {
+    font-size: 0.85rem;
+  }
+
+  .queue-list-section .tab-search-wrapper .form-inline input.form-control {
+    padding-top: 0.477rem;
+    padding-bottom: 0.48rem;
+  }
+
+  .queue-list-section .tab-search-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .queue-list-section .tab-search-wrapper .nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    border-bottom: 0;
+  }
+
+  .queue-list-section .tab-search-wrapper .nav-item {
+    flex: 1 1 auto;
+    width: 50%;
+    text-align: center;
+  }
+
+  .queue-list-section .tab-search-wrapper .nav-link {
+    cursor: pointer;
+    border-radius: 0;
+  }
+
+  .queue-list-section .tab-search-wrapper .form-inline {
+    display: flex;
+    width: 100%;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .queue-list-section .tab-search-wrapper .form-inline input {
+    flex: 1;
+  }
+
+  .queue-list-section .tab-search-wrapper .form-inline button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 37px;
+    white-space: nowrap;
+  }
+
+  .queue-list-section .table-wrapper {
+    margin-bottom: 1.8rem !important;
+  }
+
+  .queue-list-section .tab-pane#internal.active .info-pagination-wrapper .count-data,
+  .queue-list-section .tab-pane#bpjs.active .info-pagination-wrapper .count-data,
+  .queue-list-section .tab-pane#umum.active .info-pagination-wrapper .count-data {
+    padding-right: 40px;
+  }
+
+  .queue-list-section .tab-pane#selesai.active .info-pagination-wrapper .count-data {
+    padding-right: 0;
+  }
+
+  .queue-list-section:has(.tab-search-wrapper input:placeholder-shown)
+  .tab-pane:has(tbody tr:only-child .td-value)
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
+  }
+
+  .queue-list-section:has(.tab-search-wrapper input:not(:placeholder-shown))
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
+  }
+}
+
+
+/* ========================= HP PALING KECIL 3 (≤ 360px) ========================= */
+@media (max-width: 360px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .queue-list-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .queue-list-section p {
+    font-size: 0.85rem;
+    line-height: 1.8;
+    padding: 0 3.4rem;
+  }
+
+  .queue-list-section .tab-search-wrapper .nav-link {
+    font-size: 0.88rem;
+  }
+
+  .queue-list-section .tab-search-wrapper .form-inline input.form-control,
+  .queue-list-section .tab-search-wrapper .form-inline input::placeholder,
+  .queue-list-section .info-pagination-wrapper .count-data,
+  .queue-list-section .info-pagination-wrapper .pagination a {
+    font-size: 0.85rem;
+  }
+
+  .queue-list-section .tab-search-wrapper .form-inline input.form-control {
+    padding-top: 0.477rem;
+    padding-bottom: 0.48rem;
+  }
+
+  .queue-list-section .tab-search-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .queue-list-section .tab-search-wrapper .nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    border-bottom: 0;
+  }
+
+  .queue-list-section .tab-search-wrapper .nav-item {
+    flex: 1 1 auto;
+    width: 50%;
+    text-align: center;
+  }
+
+  .queue-list-section .tab-search-wrapper .nav-link {
+    cursor: pointer;
+    border-radius: 0;
+  }
+
+  .queue-list-section .tab-search-wrapper .form-inline {
+    display: flex;
+    width: 100%;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .queue-list-section .tab-search-wrapper .form-inline input {
+    flex: 1;
+  }
+
+  .queue-list-section .tab-search-wrapper .form-inline button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 37px;
+    white-space: nowrap;
+  }
+
+  .queue-list-section .table-wrapper {
+    margin-bottom: 1.8rem !important;
+  }
+
+  .queue-list-section .tab-pane#internal.active .info-pagination-wrapper .count-data,
+  .queue-list-section .tab-pane#umum.active .info-pagination-wrapper .count-data,
+  .queue-list-section .tab-pane#bpjs.active .info-pagination-wrapper .count-data {
+    padding-right: 30px;
+  }
+
+  .queue-list-section .tab-pane#selesai.active .info-pagination-wrapper .count-data {
+    padding-right: 0;
   }
 
   .queue-list-section:has(.tab-search-wrapper input:placeholder-shown)

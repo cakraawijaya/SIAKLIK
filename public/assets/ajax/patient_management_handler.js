@@ -100,7 +100,7 @@ $(document).ready(function() {
                                 </td>
 
                                 <td class="text-center align-middle" data-header="Waktu Pencatatan">
-                                    <div class="td-value">${row.waktu}</div>
+                                    <div class="td-value">${row.tanggal} &nbsp;(${row.jam})</div>
                                 </td>
 
                                 <td class="text-center align-middle" data-header="Aksi">

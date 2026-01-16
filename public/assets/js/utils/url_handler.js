@@ -1,7 +1,8 @@
+// Jalankan script setelah seluruh DOM selesai dimuat
 document.addEventListener("DOMContentLoaded", function() {
     window.openLink = function(url, openInNewTab = true) {
 
-        // Jika URL diawali "#" atau kosong → tidak melakukan apa-apa
+        // Jika URL diawali "#" atau kosong, maka tidak melakukan apa-apa
         if (url.startsWith("#") || url.trim() === "") {
             return true;
         }
