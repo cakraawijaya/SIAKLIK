@@ -31,7 +31,7 @@ $(document).ready(function() {
 
                         let actionBtns = '';
                         if (statusLower === 'selesai') {
-                            actionBtns = '<span class="badge badge-danger text-white" style="font-size: 16px;padding: 8px 8.2px;">Selesai</span>';
+                            actionBtns = '<span class="badge badge-danger text-white queue-status-completed">Selesai</span>';
                         } else {
                             var disabledDilayani = (status !== 'Menunggu') ? 'disabled' : '';
                             var disabledSelesai  = (status !== 'Dilayani') ? 'disabled' : '';

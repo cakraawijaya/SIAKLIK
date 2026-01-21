@@ -80,6 +80,11 @@
     height: 36.5px;
     white-space: nowrap;
   }
+
+  .queue-management-section table td .td-value > span.queue-status-completed {
+    font-size: 0.95rem;
+    padding: 8px 9.5px;
+  }
 }
 
 
@@ -108,6 +113,11 @@
   .queue-management-section .tab-search-wrapper .form-inline input.form-control {
     padding-top: 0.4rem;
     padding-bottom: 0.4rem;
+  }
+
+  .queue-management-section table td .td-value > span.queue-status-completed {
+    font-size: 0.9rem;
+    padding: 8px 10.5px;
   }
 }
 
@@ -138,6 +148,11 @@
     padding-top: 0.47rem;
     padding-bottom: 0.46rem;
   }
+
+  .queue-management-section table td .td-value > span.queue-status-completed {
+    font-size: 0.9rem;
+    padding: 8px 10.5px;
+  }
 }
 
 
@@ -166,6 +181,11 @@
   .queue-management-section .tab-search-wrapper .form-inline input.form-control {
     padding-top: 0.47rem;
     padding-bottom: 0.46rem;
+  }
+
+  .queue-management-section table td .td-value > span.queue-status-completed {
+    font-size: 0.9rem;
+    padding: 8px 10.5px;
   }
 
   /* ---------------- Tampilan Sidebar Ditutup ----------------- */
@@ -255,10 +275,19 @@
     padding-bottom: 0.49rem;
   }
 
+  .queue-management-section table td .td-value > span.queue-status-completed {
+    font-size: 0.85rem;
+    padding: 8px 11.7px;
+  }
+
   /* ---------------- Tampilan Sidebar Ditutup ----------------- */
   body.sidebar-collapsed .queue-management-section p {
     line-height: 2;
     margin-top: 1.8rem;
+  }
+
+  body.sidebar-collapsed .queue-management-section .table-responsive::-webkit-scrollbar {
+    height: 10px !important;
   }
 
   /* ----------------- Tampilan Sidebar Dibuka ----------------- */
@@ -317,8 +346,13 @@
     white-space: nowrap;
   }
 
+  body.sidebar-expanded .queue-management-section .table-responsive::-webkit-scrollbar {
+    height: 10px !important;
+  }
+
   body.sidebar-expanded .queue-management-section .info-pagination-wrapper .count-data {
     padding-right: 40px;
+    line-height: 1.6;
   }
 
   body.sidebar-expanded .queue-management-section:has(.tab-search-wrapper input:placeholder-shown)
@@ -356,6 +390,11 @@
   .queue-management-section .tab-search-wrapper .form-inline input.form-control {
     padding-top: 0.49rem;
     padding-bottom: 0.49rem;
+  }
+
+  .queue-management-section table td .td-value > span.queue-status-completed {
+    font-size: 0.85rem;
+    padding: 8px 11.7px;
   }
 
   /* ---------------- Tampilan Sidebar Ditutup ----------------- */
@@ -420,8 +459,15 @@
     white-space: nowrap;
   }
 
-  body.sidebar-expanded .queue-management-section .info-pagination-wrapper .count-data {
-    padding-right: 30px;
+  body.sidebar-expanded .queue-management-section .tab-pane#internal.active .info-pagination-wrapper .count-data {
+    padding-right: 60px;
+    line-height: 1.6;
+  }
+
+  body.sidebar-expanded .queue-management-section .tab-pane#bpjs.active .info-pagination-wrapper .count-data,
+  body.sidebar-expanded .queue-management-section .tab-pane#umum.active .info-pagination-wrapper .count-data {
+    padding-right: 40px;
+    line-height: 1.6;
   }
 
   body.sidebar-expanded .queue-management-section:has(.tab-search-wrapper input:placeholder-shown)
@@ -466,6 +512,11 @@
     padding-top: 0.485rem;
     padding-bottom: 0.49rem;
   }
+
+  .queue-management-section table td .td-value > span.queue-status-completed {
+    font-size: 0.85rem;
+    padding: 8px 11.7px;
+  }
 }
 
 
@@ -494,6 +545,11 @@
   .queue-management-section .tab-search-wrapper .form-inline input.form-control {
     padding-top: 0.49rem;
     padding-bottom: 0.49rem;
+  }
+
+  .queue-management-section table td .td-value > span.queue-status-completed {
+    font-size: 0.8rem;
+    padding: 8px 13.25px;
   }
 }
 
@@ -574,8 +630,14 @@
     white-space: nowrap;
   }
 
+  .queue-management-section table td .td-value > span.queue-status-completed {
+    font-size: 0.8rem;
+    padding: 8px 13.25px;
+  }
+
   .queue-management-section .info-pagination-wrapper .count-data {
     padding-right: 50px;
+    line-height: 1.6;
   }
 
   .queue-management-section:has(.tab-search-wrapper input:placeholder-shown)
@@ -613,6 +675,11 @@
   .queue-management-section .tab-search-wrapper .form-inline input.form-control {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+  }
+
+  .queue-management-section table td .td-value > span.queue-status-completed {
+    font-size: 0.85rem;
+    padding: 8px 11.8px;
   }
 
   /* ---------------- Tampilan Sidebar Ditutup ----------------- */
@@ -678,6 +745,7 @@
 
   .queue-management-section .info-pagination-wrapper .count-data {
     padding-right: 90px;
+    line-height: 1.6;
   }
 }
 
@@ -701,6 +769,11 @@
   .queue-management-section .tab-search-wrapper .form-inline input.form-control {
     padding-top: 0.47rem;
     padding-bottom: 0.46rem;
+  }
+
+  .queue-management-section table td .td-value > span.queue-status-completed {
+    font-size: 0.9rem;
+    padding: 8px 10.8px;
   }
 
   /* ---------------- Tampilan Sidebar Ditutup ----------------- */
@@ -767,6 +840,7 @@
 
   body.sidebar-expanded .queue-management-section .info-pagination-wrapper .count-data {
     padding-right: 70px;
+    line-height: 1.6;
   }
 
   body.sidebar-expanded .queue-management-section:has(.tab-search-wrapper input:placeholder-shown)
@@ -801,6 +875,11 @@
   .queue-management-section .tab-search-wrapper .form-inline input.form-control {
     padding-top: 0.47rem;
     padding-bottom: 0.46rem;
+  }
+
+  .queue-management-section table td .td-value > span.queue-status-completed {
+    font-size: 0.9rem;
+    padding: 8px 10.68px;
   }
 
   /* ---------------- Tampilan Sidebar Ditutup ----------------- */
@@ -865,8 +944,15 @@
     white-space: nowrap;
   }
 
-  body.sidebar-expanded .queue-management-section .info-pagination-wrapper .count-data {
+  body.sidebar-expanded .queue-management-section .tab-pane#internal.active .info-pagination-wrapper .count-data {
+    padding-right: 70px;
+    line-height: 1.6;
+  }
+
+  body.sidebar-expanded .queue-management-section .tab-pane#bpjs.active .info-pagination-wrapper .count-data,
+  body.sidebar-expanded .queue-management-section .tab-pane#umum.active .info-pagination-wrapper .count-data {
     padding-right: 30px;
+    line-height: 1.6;
   }
 
   body.sidebar-expanded .queue-management-section:has(.tab-search-wrapper input:placeholder-shown)
@@ -908,6 +994,11 @@
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
   }
+
+  .queue-management-section table td .td-value > span.queue-status-completed {
+    font-size: 0.85rem;
+    padding: 8px 12.35px;
+  }
 }
 
 
@@ -940,11 +1031,16 @@
     padding-top: 0.49rem;
     padding-bottom: 0.49rem;
   }
+
+  .queue-management-section table td .td-value > span.queue-status-completed {
+    font-size: 0.8rem;
+    padding: 8px 13.45px;
+  }
 }
 
 
-/* ========================== HP KECIL (391px - 520px) =========================== */
-@media (min-width: 391px) and (max-width: 520px) {
+/* ========================== HP KECIL (415px - 520px) =========================== */
+@media (min-width: 415px) and (max-width: 520px) {
   /* ------------------- Pengaturan Global --------------------- */
   .queue-management-section h2 {
     font-size: 1.5rem;
@@ -1023,8 +1119,18 @@
     margin-bottom: 1.8rem !important;
   }
 
-  .queue-management-section .info-pagination-wrapper .count-data {
-    padding-right: 60px;
+  .queue-management-section table td .td-value > span.queue-status-completed {
+    font-size: 0.85rem;
+    padding: 12px 11.7px;
+  }
+
+  .queue-management-section .tab-pane#internal.active .info-pagination-wrapper .count-data {
+    padding-right: 35px;
+  }
+
+  .queue-management-section .tab-pane#bpjs.active .info-pagination-wrapper .count-data,
+  .queue-management-section .tab-pane#umum.active .info-pagination-wrapper .count-data {
+    padding-right: 50px;
   }
 
   .queue-management-section:has(.tab-search-wrapper input:placeholder-shown)
@@ -1040,7 +1146,114 @@
 }
 
 
-/* ===================== HP PALING KECIL 1 (361px - 390px) ======================= */
+/* ===================== HP PALING KECIL 1 (391px - 414px) ======================= */
+@media (min-width: 391px) and (max-width: 414px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .queue-management-section h2 {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .queue-management-section p {
+    font-size: 0.85rem;
+    line-height: 1.8;
+    padding: 0 2rem;
+  }
+
+  .queue-management-section .tab-search-wrapper .nav-link {
+    font-size: 0.88rem;
+  }
+
+  .queue-management-section .tab-search-wrapper .form-inline input.form-control,
+  .queue-management-section .tab-search-wrapper .form-inline input::placeholder,
+  .queue-management-section .info-pagination-wrapper .count-data,
+  .queue-management-section .info-pagination-wrapper .pagination a {
+    font-size: 0.85rem;
+  }
+
+  .queue-management-section .tab-search-wrapper .form-inline input.form-control {
+    padding-top: 0.477rem;
+    padding-bottom: 0.48rem;
+  }
+
+  .queue-management-section .tab-search-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .queue-management-section .tab-search-wrapper .nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    border-bottom: 0;
+  }
+
+  .queue-management-section .tab-search-wrapper .nav-item {
+    flex: 1 0 33.3333%;
+    text-align: center;
+  }
+
+  .queue-management-section .tab-search-wrapper .nav-link {
+    cursor: pointer;
+    border-radius: 0;
+  }
+
+  .queue-management-section .tab-search-wrapper .form-inline {
+    display: flex;
+    width: 100%;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .queue-management-section .tab-search-wrapper .form-inline input {
+    flex: 1;
+  }
+
+  .queue-management-section .tab-search-wrapper .form-inline button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 37px;
+    white-space: nowrap;
+  }
+
+  .queue-management-section .table-wrapper {
+    margin-bottom: 1.8rem !important;
+  }
+
+  .queue-management-section table td .td-value > span.queue-status-completed {
+    font-size: 0.85rem;
+    padding: 12px 11.7px;
+  }
+
+  .queue-management-section .tab-pane#internal.active .info-pagination-wrapper .count-data,
+  .queue-management-section .tab-pane#umum.active .info-pagination-wrapper .count-data {
+    padding-right: 40px;
+  }
+
+  .queue-management-section .tab-pane#bpjs.active .info-pagination-wrapper .count-data {
+    padding-right: 50px;
+  }
+
+  .queue-management-section:has(.tab-search-wrapper input:placeholder-shown)
+  .tab-pane:has(tbody tr:only-child .td-value)
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
+  }
+
+  .queue-management-section:has(.tab-search-wrapper input:not(:placeholder-shown))
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
+  }
+}
+
+
+/* ===================== HP PALING KECIL 2 (361px - 390px) ======================= */
 @media (min-width: 361px) and (max-width: 390px) {
   /* ------------------- Pengaturan Global --------------------- */
   .queue-management-section h2 {
@@ -1120,7 +1333,17 @@
     margin-bottom: 1.8rem !important;
   }
 
-  .queue-management-section .info-pagination-wrapper .count-data {
+  .queue-management-section table td .td-value > span.queue-status-completed {
+    font-size: 0.85rem;
+    padding: 12px 11.7px;
+  }
+
+  .queue-management-section .tab-pane#internal.active .info-pagination-wrapper .count-data {
+    padding-right: 40px;
+  }
+
+  .queue-management-section .tab-pane#bpjs.active .info-pagination-wrapper .count-data,
+  .queue-management-section .tab-pane#umum.active .info-pagination-wrapper .count-data {
     padding-right: 40px;
   }
 
@@ -1137,7 +1360,7 @@
 }
 
 
-/* ========================= HP PALING KECIL 2 (≤ 360px) ========================= */
+/* ========================= HP PALING KECIL 3 (≤ 360px) ========================= */
 @media (max-width: 360px) {
   /* ------------------- Pengaturan Global --------------------- */
   .queue-management-section h2 {
@@ -1217,7 +1440,14 @@
     margin-bottom: 1.8rem !important;
   }
 
-  .queue-management-section .info-pagination-wrapper .count-data {
+  .queue-management-section table td .td-value > span.queue-status-completed {
+    font-size: 0.85rem;
+    padding: 12px 11.7px;
+  }
+
+  .queue-management-section .tab-pane#internal.active .info-pagination-wrapper .count-data,
+  .queue-management-section .tab-pane#bpjs.active .info-pagination-wrapper .count-data,
+  .queue-management-section .tab-pane#umum.active .info-pagination-wrapper .count-data {
     padding-right: 25px;
   }
   

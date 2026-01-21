@@ -47,8 +47,61 @@
 }
 
 
-/* =========================== DESKTOP (1200px – 1368px) ========================= */
-@media (min-width: 1200px) and (max-width: 1368px) {
+/* =========================== DESKTOP (1281px – 1368px) ========================= */
+@media (min-width: 1281px) and (max-width: 1368px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .patient-management-section h2 {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .patient-management-section p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .patient-management-section .action-bar-wrapper .add-export button,
+  .patient-management-section .action-bar-wrapper .add-export a,
+  .patient-management-section .action-bar-wrapper .form-inline input.form-control,
+  .patient-management-section .action-bar-wrapper .form-inline input::placeholder,
+  .patient-management-section .info-pagination-wrapper .count-data,
+  .patient-management-section .info-pagination-wrapper .pagination a {
+    font-size: 0.95rem;
+  }
+
+  .patient-management-section .action-bar-wrapper .form-inline input.form-control {
+    padding-top: 0.425rem;
+    padding-bottom: 0.43rem;
+  }
+
+  .patient-management-section .action-bar-wrapper {
+    margin: 1.5rem 0;
+    padding-top: 1.5rem;
+  }
+
+  .patient-management-section .action-bar-wrapper .form-inline button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 36.5px;
+    white-space: nowrap;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .patient-management-section .table-responsive::-webkit-scrollbar {
+    height: 0 !important;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .patient-management-section .table-responsive::-webkit-scrollbar {
+    height: 0 !important;
+  }
+}
+
+
+/* =========================== DESKTOP (1200px – 1280px) ========================= */
+@media (min-width: 1200px) and (max-width: 1280px) {
   /* ------------------- Pengaturan Global --------------------- */
   .patient-management-section h2 {
     font-size: 1.8rem;
@@ -90,6 +143,14 @@
 }
 
 
+/* ============================== DESKTOP (≤ 800px) ============================== */
+@media screen and (max-height: 800px) {
+  .patient-management-section .table-responsive::-webkit-scrollbar {
+    height: 0 !important;
+  }
+}
+
+
 /* ======================= SMALL DESKTOP (992px – 1179px) ======================== */
 @media (min-width: 992px) and (max-width: 1179px) {
   /* ------------------- Pengaturan Global --------------------- */
@@ -125,6 +186,16 @@
 
   .patient-management-section .add-export .btn {
     padding: 0.44rem;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .patient-management-section .table-responsive::-webkit-scrollbar {
+    height: 0 !important;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .patient-management-section .table-responsive::-webkit-scrollbar {
+    height: 0 !important;
   }
 }
 
@@ -164,6 +235,16 @@
 
   .patient-management-section .add-export .btn {
     padding: 0.44rem;
+  }
+
+  /* ---------------- Tampilan Sidebar Ditutup ----------------- */
+  body.sidebar-collapsed .patient-management-section .table-responsive::-webkit-scrollbar {
+    height: 0 !important;
+  }
+
+  /* ----------------- Tampilan Sidebar Dibuka ----------------- */
+  body.sidebar-expanded .patient-management-section .table-responsive::-webkit-scrollbar {
+    height: 0 !important;
   }
 }
 
@@ -374,6 +455,14 @@
 }
 
 
+/* ======================== TABLET LANDSCAPE-4 (≥ 801px) ========================= */
+@media screen and (min-height: 801px) {
+  .patient-management-section .table-responsive::-webkit-scrollbar {
+    height: 10px !important;
+  }
+}
+
+
 /* ====================== TABLET POTRAIT-1 (820px – 839px) ======================= */
 @media (min-width: 820px) and (max-width: 839px) {
   /* ------------------- Pengaturan Global --------------------- */
@@ -416,6 +505,10 @@
 
   body.sidebar-collapsed .patient-management-section .add-export .btn {
     padding: 0.44rem;
+  }
+
+  body.sidebar-collapsed .patient-management-section .table-responsive::-webkit-scrollbar {
+    height: 0 !important;
   }
 
   /* ----------------- Tampilan Sidebar Dibuka ----------------- */
@@ -464,6 +557,10 @@
 
   body.sidebar-expanded .patient-management-section .table-responsive {
     margin-top: 0.25rem;
+  }
+
+  body.sidebar-expanded .patient-management-section .table-responsive::-webkit-scrollbar {
+    height: 0 !important;
   }
 
   body.sidebar-expanded .patient-management-section .info-pagination-wrapper .count-data {
@@ -518,6 +615,10 @@
 
   .patient-management-section .add-export .btn {
     padding: 0.44rem;
+  }
+
+  .patient-management-section .table-responsive::-webkit-scrollbar {
+    height: 0 !important;
   }
 }
 
@@ -687,6 +788,10 @@
   body.sidebar-collapsed .patient-management-section .add-export .btn {
     padding: 0.48rem;
   }
+  
+  body.sidebar-collapsed .patient-management-section .table-responsive::-webkit-scrollbar {
+    height: 0 !important;
+  }
 
   /* ----------------- Tampilan Sidebar Dibuka ----------------- */
   body.sidebar-expanded .patient-management-section h2 {
@@ -734,6 +839,10 @@
 
   body.sidebar-expanded .patient-management-section .table-responsive {
     margin-top: 0.25rem;
+  }
+
+  body.sidebar-expanded .patient-management-section .table-responsive::-webkit-scrollbar {
+    height: 0 !important;
   }
 }
 
