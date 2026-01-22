@@ -319,6 +319,10 @@
     padding: 0.44rem;
   }
 
+  body.sidebar-collapsed .user-management-section .table-responsive::-webkit-scrollbar {
+    height: 10px !important;
+  }
+
   /* ----------------- Tampilan Sidebar Dibuka ----------------- */
   body.sidebar-expanded .user-management-section h2 {
     line-height: 1.3;
@@ -389,6 +393,10 @@
 
   body.sidebar-expanded .user-management-section .tab-content {
     margin-top: 0.25rem;
+  }
+
+  body.sidebar-expanded .user-management-section .table-responsive::-webkit-scrollbar {
+    height: 10px !important;
   }
 
   body.sidebar-expanded .user-management-section .info-pagination-wrapper .count-data {
@@ -1407,8 +1415,8 @@
 }
 
 
-/* ===================== HP PALING KECIL 2 (361px - 390px) ======================= */
-@media (min-width: 361px) and (max-width: 390px) {
+/* ===================== HP PALING KECIL 2 (377px - 390px) ======================= */
+@media (min-width: 377px) and (max-width: 390px) {
   /* ------------------- Pengaturan Global --------------------- */
   .user-management-section h2 {
     font-size: 1.5rem;
@@ -1511,16 +1519,13 @@
     white-space: normal;
   }
 
-  .user-management-section .tab-pane#pasien.active .info-pagination-wrapper .count-data {
-    padding-right: 45px;
+  .user-management-section .tab-pane#pasien.active .info-pagination-wrapper .count-data,
+  .user-management-section .tab-pane#admin.active .info-pagination-wrapper .count-data {
+    padding-right: 50px;
   }
   
   .user-management-section .tab-pane#pekerja.active .info-pagination-wrapper .count-data {
-    padding-right: 40px;
-  }
-
-  .user-management-section .tab-pane#admin.active .info-pagination-wrapper .count-data {
-    padding-right: 50px;
+    padding-right: 35px;
   }
 
   .user-management-section:has(.action-bar-wrapper input:placeholder-shown)
@@ -1536,7 +1541,133 @@
 }
 
 
-/* ========================= HP PALING KECIL 3 (≤ 360px) ========================= */
+/* ===================== HP PALING KECIL 3 (361px - 376px) ======================= */
+@media (min-width: 361px) and (max-width: 376px) {
+  /* ------------------- Pengaturan Global --------------------- */
+  .user-management-section h2 {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  .user-management-section p {
+    font-size: 0.85rem;
+    line-height: 1.8;
+    padding: 0 1.3rem;
+  }
+
+  .user-management-section .tab-wrapper .nav-link {
+    font-size: 0.88rem;
+  }
+
+  .user-management-section .action-bar-wrapper .add-export button,
+  .user-management-section .action-bar-wrapper .add-export a,
+  .user-management-section .action-bar-wrapper .form-inline input.form-control,
+  .user-management-section .action-bar-wrapper .form-inline input::placeholder,
+  .user-management-section .info-pagination-wrapper .count-data,
+  .user-management-section .info-pagination-wrapper .pagination a {
+    font-size: 0.85rem;
+  }
+
+  .user-management-section .action-bar-wrapper .form-inline input.form-control {
+    padding-top: 0.477rem;
+    padding-bottom: 0.48rem;
+  }
+
+  .user-management-section .tab-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .user-management-section .tab-wrapper .nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    border-bottom: 0;
+  }
+
+  .user-management-section .tab-wrapper .nav-item {
+    flex: 1 0 33.3333%;
+    text-align: center;
+  }
+
+  .user-management-section .tab-wrapper .nav-link {
+    cursor: pointer;
+    border-radius: 0;
+  }
+
+  .user-management-section .action-bar-wrapper .add-export {
+    display: flex;
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+
+  .user-management-section .add-export .btn {
+    flex: 1 1 50%;
+    max-width: 50%;
+    padding: 0.55rem;
+  }
+
+  .user-management-section .action-bar-wrapper .form-inline {
+    display: flex;
+    width: 100%;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .user-management-section .action-bar-wrapper .form-inline input {
+    flex: 1;
+  }
+
+  .user-management-section .action-bar-wrapper .form-inline button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 37px;
+    white-space: nowrap;
+  }
+
+  .user-management-section .tab-content {
+    margin-top: 0.25rem;
+  }
+
+  .user-management-section .table-wrapper {
+    margin-bottom: 1.8rem !important;
+  }
+
+  .user-management-section .table-responsive td.email {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
+
+  .user-management-section .tab-pane#pasien.active .info-pagination-wrapper .count-data,
+  .user-management-section .tab-pane#admin.active .info-pagination-wrapper .count-data {
+    padding-right: 35px;
+  }
+  
+  .user-management-section .tab-pane#pekerja.active .info-pagination-wrapper .count-data {
+    padding-right: 20px;
+  }
+
+  .user-management-section:has(.action-bar-wrapper input:placeholder-shown)
+  .tab-pane:has(tbody tr:only-child .td-value)
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
+  }
+
+  .user-management-section:has(.action-bar-wrapper input:not(:placeholder-shown))
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
+  }
+}
+
+
+/* ========================= HP PALING KECIL 4 (≤ 360px) ========================= */
 @media (max-width: 360px) {
   /* ------------------- Pengaturan Global --------------------- */
   .user-management-section h2 {

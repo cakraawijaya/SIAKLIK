@@ -92,13 +92,13 @@ a.brand-text {
 .online {
   vertical-align: middle;
   color: #8cff6c;
-  padding: 0px 10px 0px 0px;
+  padding: 0px 12px 0px 10px;
   font-size: 10px;
 }
 
 .role {
   color: #8cff6c;
-  padding: 18px 15px 0px 0px;
+  padding: 18px 15px 0px 5px;
   margin-top: 0.5rem;
   font-weight: bold;
   font-family: "Lato", sans-serif;
@@ -278,6 +278,22 @@ ul ul ul li a.custom-mb-sidebar-child {
 }
 
 
+/* ============================== DESKTOP (≤ 1368px) ============================= */
+@media (max-width: 1368px) {
+  .nama-user {
+    padding: 0px 15px 10px 15px;
+  }
+}
+
+
+/* ============================== DESKTOP (≤ 1279px) ============================= */
+@media (max-width: 1279px) {
+  .nama-user {
+    padding: 0px 10px 10px 10px;
+  }
+}
+
+
 /* ============================== TABLET (≤ 1024px) ============================== */
 @media (max-width: 1024px) {
   #sidebar {
@@ -299,6 +315,7 @@ ul ul ul li a.custom-mb-sidebar-child {
   
   .brand-text .sub-title {
     font-size: 16px;
+    padding: 0px 30px;
   }
 
   ul ul li a,

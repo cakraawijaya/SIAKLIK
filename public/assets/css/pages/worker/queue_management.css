@@ -248,6 +248,22 @@
     height: 37px;
     white-space: nowrap;
   }
+
+  body.sidebar-expanded .queue-management-section .info-pagination-wrapper .count-data {
+    padding-right: 70px;
+    line-height: 1.6;
+  }
+
+  body.sidebar-expanded .queue-management-section:has(.tab-search-wrapper input:placeholder-shown)
+  .tab-pane:has(tbody tr:only-child .td-value)
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
+  }
+
+  body.sidebar-expanded .queue-management-section:has(.tab-search-wrapper input:not(:placeholder-shown))
+  .info-pagination-wrapper .count-data {
+    padding-right: 0;
+  }
 }
 
 

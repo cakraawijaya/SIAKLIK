@@ -296,6 +296,10 @@
     padding: 0.48rem;
   }
 
+  body.sidebar-collapsed .patient-management-section .table-responsive::-webkit-scrollbar {
+    height: 0 !important;
+  }
+
   /* ----------------- Tampilan Sidebar Dibuka ----------------- */
   body.sidebar-expanded .patient-management-section h2 {
     line-height: 1.3;
@@ -342,6 +346,10 @@
 
   body.sidebar-expanded .patient-management-section .table-responsive {
     margin-top: 0.25rem;
+  }
+
+  body.sidebar-expanded .patient-management-section .table-responsive::-webkit-scrollbar {
+    height: 0 !important;
   }
 }
 

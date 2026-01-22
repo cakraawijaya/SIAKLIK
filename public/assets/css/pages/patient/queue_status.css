@@ -326,18 +326,13 @@
     white-space: nowrap;
   }
 
+  body.sidebar-expanded .queue-list-section .table-responsive::-webkit-scrollbar {
+    height: 10px !important;
+  }
+
   body.sidebar-expanded .queue-list-section .info-pagination-wrapper .count-data {
-    line-height: 1.6;
-  }
-
-  body.sidebar-expanded .queue-list-section .tab-pane#internal.active .info-pagination-wrapper .count-data,
-  body.sidebar-expanded .queue-list-section .tab-pane#bpjs.active .info-pagination-wrapper .count-data,
-  body.sidebar-expanded .queue-list-section .tab-pane#umum.active .info-pagination-wrapper .count-data {
     padding-right: 50px;
-  }
-
-  body.sidebar-expanded .queue-list-section .tab-pane#selesai.active .info-pagination-wrapper .count-data {
-    padding-right: 0;
+    line-height: 1.6;
   }
 
   body.sidebar-expanded .queue-list-section:has(.tab-search-wrapper input:placeholder-shown)
@@ -608,17 +603,8 @@
   }
 
   .queue-list-section .info-pagination-wrapper .count-data {
-    line-height: 1.6;
-  }
-
-  .queue-list-section .tab-pane#internal.active .info-pagination-wrapper .count-data,
-  .queue-list-section .tab-pane#bpjs.active .info-pagination-wrapper .count-data,
-  .queue-list-section .tab-pane#umum.active .info-pagination-wrapper .count-data {
     padding-right: 60px;
-  }
-
-  .queue-list-section .tab-pane#selesai.active .info-pagination-wrapper .count-data {
-    padding-right: 0;
+    line-height: 1.6;
   }
 
   .queue-list-section:has(.tab-search-wrapper input:placeholder-shown)
@@ -810,17 +796,8 @@
   }
 
   body.sidebar-expanded .queue-list-section .info-pagination-wrapper .count-data {
-    line-height: 1.6;
-  }
-
-  body.sidebar-expanded .queue-list-section .tab-pane#internal.active .info-pagination-wrapper .count-data,
-  body.sidebar-expanded .queue-list-section .tab-pane#bpjs.active .info-pagination-wrapper .count-data,
-  body.sidebar-expanded .queue-list-section .tab-pane#umum.active .info-pagination-wrapper .count-data {
     padding-right: 80px;
-  }
-
-  body.sidebar-expanded .queue-list-section .tab-pane#selesai.active .info-pagination-wrapper .count-data {
-    padding-right: 0;
+    line-height: 1.6;
   }
 
   body.sidebar-expanded .queue-list-section:has(.tab-search-wrapper input:placeholder-shown)
@@ -1138,17 +1115,14 @@
     margin-bottom: 1.8rem !important;
   }
 
-  .queue-list-section .tab-pane#internal.active .info-pagination-wrapper .count-data {
+  .queue-list-section .tab-pane#internal.active .info-pagination-wrapper .count-data,
+  .queue-list-section .tab-pane#selesai.active .info-pagination-wrapper .count-data {
     padding-right: 50px;
   }
 
   .queue-list-section .tab-pane#bpjs.active .info-pagination-wrapper .count-data,
   .queue-list-section .tab-pane#umum.active .info-pagination-wrapper .count-data {
     padding-right: 70px;
-  }
-
-  .queue-list-section .tab-pane#selesai.active .info-pagination-wrapper .count-data {
-    padding-right: 0;
   }
 
   .queue-list-section:has(.tab-search-wrapper input:placeholder-shown)
@@ -1251,12 +1225,9 @@
   }
 
   .queue-list-section .tab-pane#bpjs.active .info-pagination-wrapper .count-data,
-  .queue-list-section .tab-pane#umum.active .info-pagination-wrapper .count-data {
-    padding-right: 55px;
-  }
-
+  .queue-list-section .tab-pane#umum.active .info-pagination-wrapper .count-data,
   .queue-list-section .tab-pane#selesai.active .info-pagination-wrapper .count-data {
-    padding-right: 0;
+    padding-right: 55px;
   }
 
   .queue-list-section:has(.tab-search-wrapper input:placeholder-shown)
@@ -1354,14 +1325,8 @@
     margin-bottom: 1.8rem !important;
   }
 
-  .queue-list-section .tab-pane#internal.active .info-pagination-wrapper .count-data,
-  .queue-list-section .tab-pane#bpjs.active .info-pagination-wrapper .count-data,
-  .queue-list-section .tab-pane#umum.active .info-pagination-wrapper .count-data {
+  .queue-list-section .info-pagination-wrapper .count-data {
     padding-right: 40px;
-  }
-
-  .queue-list-section .tab-pane#selesai.active .info-pagination-wrapper .count-data {
-    padding-right: 0;
   }
 
   .queue-list-section:has(.tab-search-wrapper input:placeholder-shown)
@@ -1461,12 +1426,12 @@
 
   .queue-list-section .tab-pane#internal.active .info-pagination-wrapper .count-data,
   .queue-list-section .tab-pane#umum.active .info-pagination-wrapper .count-data,
-  .queue-list-section .tab-pane#bpjs.active .info-pagination-wrapper .count-data {
-    padding-right: 30px;
+  .queue-list-section .tab-pane#selesai.active .info-pagination-wrapper .count-data {
+    padding-right: 35px;
   }
 
-  .queue-list-section .tab-pane#selesai.active .info-pagination-wrapper .count-data {
-    padding-right: 0;
+  .queue-list-section .tab-pane#bpjs.active .info-pagination-wrapper .count-data {
+    padding-right: 40px;
   }
 
   .queue-list-section:has(.tab-search-wrapper input:placeholder-shown)
