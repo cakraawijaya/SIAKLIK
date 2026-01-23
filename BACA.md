@@ -127,14 +127,14 @@ Program magang ini telah kami laksanakan selama kurang lebih enam bulan secara h
 <br><br>
 
 ## Pengingat
-Jika ingin mengatur ulang auto-increment pada tabel riwayat_antrean, cukup lakukan melalui phpMyAdmin. Berikut caranya:
+Jika ingin mengatur ulang auto-increment pada tabel riwayat_antrean / riwayat_aktivitas, cukup ubah nama_tabel melalui phpMyAdmin. Berikut caranya:
 
    <table><tr><td width="810">
       
    ```sql
       SET @num := 0;
-      UPDATE riwayat_antrean SET id = @num := (@num+1);
-      ALTER TABLE riwayat_antrean AUTO_INCREMENT =1;
+      UPDATE nama_tabel SET id = @num := (@num+1);
+      ALTER TABLE nama_tabel AUTO_INCREMENT =1;
    ```
    </td></tr></table>
 
