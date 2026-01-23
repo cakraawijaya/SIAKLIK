@@ -32,8 +32,6 @@
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/layouts/sidebar.css">
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/layouts/main.css">
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/layouts/footer.css">
-        <!-- Modules -->
-        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/modules/modal.css">
         <!-- Pages -->
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/home.css">
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/patient/chart_options.css">
@@ -47,6 +45,8 @@
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/worker/queue_management.css">
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/admin/user_management.css">
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/admin/user_log.css">
+        <!-- Modules -->
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/modules/modal.css">
         <!-- Under Construction -->
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/admin/profile.css">
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/worker/profile.css">

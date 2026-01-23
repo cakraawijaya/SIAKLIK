@@ -1,10 +1,23 @@
 <?php 
     
-    // mengaktifkan session php
-    session_start();
+    // ===========================================================================================
+    // CEK SESSION
+    // ===========================================================================================
+    // Mengecek apakah session belum pernah dimulai
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start(); // Jika session belum aktif, maka mulai session baru
+    }
 
-    // muat konfigurasi untuk akses BASE_URL & Koneksi
-    include __DIR__ . '/../../../../config/config.php';
+
+    // ===========================================================================================
+    // KONEKSI & AKSES BASE_URL
+    // ===========================================================================================
+    require_once __DIR__ . '/../../../../config/config.php';
+
+
+    // ===========================================================================================
+    // LOGOUT MANUAL
+    // ===========================================================================================
 
     // Ambil data dari Session
     $username = $_SESSION['username'];
@@ -20,13 +33,14 @@
         VALUES ('$username', '$level', 'Logout', '$nama telah Logout.', NOW())
     ");
     
-    // menghapus semua session
+    // Menghapus semua session
     $_SESSION = [];
     session_unset();
     session_destroy();
 
-    // mengalihkan halaman ke halaman utama
+    // Redirect ke halaman beranda
+    // Hal ini disertai dengan pesan = Anda telah logout!
     header("location: " . BASE_URL . "index.php?pesan=logout");
-    exit;
+    exit; // Menghentikan eksekusi script
 
 ?>
