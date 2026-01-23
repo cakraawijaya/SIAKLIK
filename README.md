@@ -127,14 +127,14 @@ We have carried out this internship program for approximately six months on a hy
 <br><br>
 
 ## Reminder
-If you want to reset the auto-increment on the riwayat_antrean table, simply do it through phpMyAdmin. Here's how:
+If you want to reset the auto-increment on the riwayat_antrean / riwayat aktivitas table, simply change the table_name via phpMyAdmin. Here's how:
 
    <table><tr><td width="810">
       
    ```sql
       SET @num := 0;
-      UPDATE riwayat_antrean SET id = @num := (@num+1);
-      ALTER TABLE riwayat_antrean AUTO_INCREMENT =1;
+      UPDATE table_name SET id = @num := (@num+1);
+      ALTER TABLE table_name AUTO_INCREMENT =1;
    ```
    </td></tr></table>
 
