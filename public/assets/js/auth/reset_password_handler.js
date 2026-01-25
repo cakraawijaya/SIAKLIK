@@ -1,10 +1,11 @@
+// Jalankan kode setelah DOM (struktur HTML) siap
 $(document).ready(function() {
 
-    // Modal reset password otomatis tampil saat load
+    // Tampilkan modal reset password
     $('#modalResetPassword').modal({
-        backdrop: 'static',
-        keyboard: true,
-        show: true
+        backdrop: 'static',  // Modal tidak tertutup saat klik di luar area modal
+        keyboard: true,      // Modal dapat ditutup dengan tombol ESC
+        show: true           // Langsung tampilkan modal
     });
-    
+
 });
