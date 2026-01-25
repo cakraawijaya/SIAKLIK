@@ -132,7 +132,7 @@ Tentukan isi alert dan aksi lanjutannya berdasarkan parameter "pesan" dan "modal
                         // Redirect ke halaman beranda
                         window.location.replace("<?= BASE_URL ?>");
                     });
-                } 
+                }
 
                 // Jika tidak termasuk special dan pesan ada, maka :
                 else if (!isSpecial && "<?= $alertMessage ?>" !== "") {
@@ -157,9 +157,9 @@ Tentukan isi alert dan aksi lanjutannya berdasarkan parameter "pesan" dan "modal
                         sessionStorage.removeItem('userLoggedOut');
 
                         // Hapus parameter "pesan" dan "modal" dari URL tanpa me-refresh halaman
-                        const url = new URL(window.location); 
-                        url.searchParams.delete('pesan'); 
-                        url.searchParams.delete('modal'); 
+                        const url = new URL(window.location);
+                        url.searchParams.delete('pesan');
+                        url.searchParams.delete('modal');
                         window.history.replaceState({}, document.title, url);
 
                         // Jika pesan yang diterima itu "login_sukses", maka :
@@ -180,7 +180,7 @@ Tentukan isi alert dan aksi lanjutannya berdasarkan parameter "pesan" dan "modal
 
                         // Jika pesan yang diterima itu antara lain "logout, reset_terkirim, timeout, deleted", maka :
                         <?php elseif ($pesan == 'logout' || $pesan == 'reset_terkirim' || $pesan == 'timeout' || $pesan == 'deleted'): ?>
-                            
+
                             // Redirect ke halaman beranda
                             window.location.href = "<?= BASE_URL ?>";
                         <?php endif; ?>
@@ -220,14 +220,14 @@ Tentukan isi alert dan aksi lanjutannya berdasarkan parameter "pesan" dan "modal
     </script>
 
 
-<!-- 
+<!--
 ===========================================================================================
 Pesan tidak ada, maka :
 Tentukan modal yang akan dibuka berdasarkan parameter "modal"
 ===========================================================================================
 -->
 
-<?php 
+<?php
     // Jika tidak ada parameter "pesan" di URL dan
     // Hanya ada parameter "modal" di URL, maka :
     elseif (!isset($_GET['pesan']) && isset($_GET['modal'])):
@@ -279,7 +279,7 @@ Tentukan modal yang akan dibuka berdasarkan parameter "modal"
             if (targetModal) {
 
                 // Delay beberapa saat
-                setTimeout(()=>{ 
+                setTimeout(() => {
 
                     // Memanggil modal Bootstrap berdasarkan targetModal
                     $(targetModal).modal({
