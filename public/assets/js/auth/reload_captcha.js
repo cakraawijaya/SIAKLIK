@@ -1,4 +1,5 @@
-function reloadCaptcha(imgId){
+function reloadCaptcha(imgId) {
+
     const img = document.getElementById(imgId);
     if (!img) return;
 
@@ -8,4 +9,5 @@ function reloadCaptcha(imgId){
     // Tambahkan param dummy _ untuk bypass cache, jangan ubah id
     const separator = base.includes('?') ? '&' : '?';
     img.src = base + separator + '_=' + new Date().getTime();
+
 }

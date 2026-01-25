@@ -1,15 +1,29 @@
-<?php 
-    if (isset($_GET['pesan'])):
+<!-- 
+===========================================================================================
+Pesan ada, maka :
+Tentukan isi alert dan aksi lanjutannya berdasarkan parameter "pesan" dan "modal"
+===========================================================================================
+-->
 
+<?php
+    // Jika ada parameter "pesan" di URL, maka :
+    if (isset($_GET['pesan'])):
+?>
+
+
+    <?php
+
+        // Ambil nilai "pesan" dari URL
         $pesan = $_GET['pesan'];
+
+        // Ambil parameter "modal" jika ada
+        // Default: "pasien" jika tidak ada
         $modal = isset($_GET['modal']) ? $_GET['modal'] : 'pasien';
 
-        $specialAlerts = ['auto_timeout','auto_deleted'];
-        $userLoggedIn = isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true;
+        $alertMessage = ""; // Inisialisasi variabel untuk Judul pesan
+        $subtitle = ""; // Inisialisasi variabel untuk Subjudul pesan
 
-        $alertMessage = "";
-        $subtitle = "";
-
+        // Bagian ini mengatur Judul pesan berdasarkan kode "pesan"
         switch ($pesan) {
             case "akses_terbatas": $alertMessage = "Hak akses terbatas!"; break;
             case "gagal": $alertMessage = "Captcha salah!"; break;
@@ -36,6 +50,7 @@
             case "auto_deleted": $alertMessage = "Akun Anda Dihapus!"; break;
         }
 
+        // Bagian ini mengatur Subjudul pesan berdasarkan kode "pesan"
         switch($pesan){
             case "akses_terbatas": $subtitle = "Fitur ini hanya bisa diakses oleh admin."; break;
             case 'gagal': $subtitle = 'Silakan coba lagi.'; break;
@@ -62,93 +77,237 @@
             case "auto_deleted": $subtitle = "Anda telah melanggar ketentuan yang berlaku."; break;
         }
 
+        // Daftar pesan sukses
         $successMessages = ['login_sukses', 'registration_sukses', 'reset_terkirim', 'reset_sukses'];
-        $iconType = in_array($pesan, $successMessages) ? 'success' : 'error';
-        $iconColor = in_array($pesan, $successMessages) ? '#28a745' : '#dc3545';
+
+        $iconType = in_array($pesan, $successMessages) ? 'success' : 'error';     // Jenis ikon Swal
+        $iconColor = in_array($pesan, $successMessages) ? '#28a745' : '#dc3545';  // Warna ikon Swal
+
+    ?>
+
+
+    <script>
+        // Jalankan kode setelah DOM (struktur HTML) siap
+        $(document).ready(function() {
+
+            // Delay beberapa saat
+            setTimeout(function() {
+
+                const specialAlerts = ['auto_timeout', 'auto_deleted']; // Pesan khusus
+
+                // Cek apakah pesan termasuk special
+                const isSpecial = specialAlerts.includes("<?= $pesan ?>");
+
+                // Cek logout sebelumnya
+                const userJustLoggedOut = sessionStorage.getItem("userLoggedOut") === "true";
+
+                // Jika pesan termasuk special dan user baru logout, maka :
+                if (isSpecial && userJustLoggedOut) {
+
+                    // Tampilkan alert
+                    Swal.fire({
+                        icon: "<?= $iconType ?>",                   // Ikon sukses atau error
+                        title: <?= json_encode($alertMessage) ?>,   // Judul alert
+                        html: <?= json_encode($subtitle) ?>,        // Subjudul alert
+                        timer: 5000,                                // Waktu alert: 5 detik
+                        timerProgressBar: true,                     // Tampilkan progress bar
+                        showConfirmButton: false,                   // Tidak ada tombol confirm
+                        customClass: { popup: 'swal2-card' },       // Class khusus styling
+                        buttonsStyling: false,                      // Mematikan style bawaan plugin
+                        allowOutsideClick: false,                   // Tidak bisa klik di luar
+                        allowEscapeKey: false,                      // Tidak bisa ESC
+                        iconColor: "<?= $iconColor ?>"              // Warna ikon
+
+                    }).then(() => {
+
+                        // Hapus flag logout
+                        sessionStorage.removeItem('userLoggedOut');
+
+                        // Hapus parameter "pesan" dan "modal" dari URL tanpa me-refresh halaman
+                        const url = new URL(window.location);
+                        url.searchParams.delete('pesan');
+                        url.searchParams.delete('modal');
+                        window.history.replaceState({}, document.title, url);
+
+                        // Redirect ke halaman beranda
+                        window.location.replace("<?= BASE_URL ?>");
+                    });
+                } 
+
+                // Jika tidak termasuk special dan pesan ada, maka :
+                else if (!isSpecial && "<?= $alertMessage ?>" !== "") {
+
+                    // Tampilkan alert
+                    Swal.fire({
+                        icon: "<?= $iconType ?>",                   // Ikon sukses atau error
+                        title: <?= json_encode($alertMessage) ?>,   // Judul alert
+                        html: <?= json_encode($subtitle) ?>,        // Subjudul alert
+                        timer: 5000,                                // Waktu alert: 5 detik
+                        timerProgressBar: true,                     // Tampilkan progress bar
+                        showConfirmButton: false,                   // Tidak ada tombol confirm
+                        customClass: { popup: 'swal2-card' },       // Class khusus styling
+                        buttonsStyling: false,                      // Mematikan style bawaan plugin
+                        allowOutsideClick: false,                   // Tidak bisa klik di luar
+                        allowEscapeKey: false,                      // Tidak bisa ESC
+                        iconColor: "<?= $iconColor ?>"              // Warna ikon
+
+                    }).then(() => {
+
+                        // Hapus flag logout
+                        sessionStorage.removeItem('userLoggedOut');
+
+                        // Hapus parameter "pesan" dan "modal" dari URL tanpa me-refresh halaman
+                        const url = new URL(window.location); 
+                        url.searchParams.delete('pesan'); 
+                        url.searchParams.delete('modal'); 
+                        window.history.replaceState({}, document.title, url);
+
+                        // Jika pesan yang diterima itu "login_sukses", maka :
+                        <?php if ($pesan == 'login_sukses'): ?>
+
+                            // Cek modal apakah sama dengan "pasien", jika iya maka :
+                            <?php if ($modal == 'pasien'): ?>
+
+                                // Redirect ke halaman registrasi antrean
+                                window.location.href = "<?= BASE_URL . 'index.php?page=patient/clinic/queue_registration' ?>";
+
+                            // Cek modal apakah sama dengan "pekerja_admin", jika iya maka :
+                            <?php elseif ($modal == 'pekerja_admin'): ?>
+
+                                // Redirect ke halaman dashboard
+                                window.location.href = "<?= BASE_URL . 'index.php?page=worker/dashboard' ?>";
+                            <?php endif; ?>
+
+                        // Jika pesan yang diterima itu antara lain "logout, reset_terkirim, timeout, deleted", maka :
+                        <?php elseif ($pesan == 'logout' || $pesan == 'reset_terkirim' || $pesan == 'timeout' || $pesan == 'deleted'): ?>
+                            
+                            // Redirect ke halaman beranda
+                            window.location.href = "<?= BASE_URL ?>";
+                        <?php endif; ?>
+                    });
+                }
+
+                // Jika pesan bukan "logout, timeout, auto_timeout, deleted, auto_deleted, login_sukses, reset_terkirim", maka :
+                <?php if (!in_array($pesan, ['logout','timeout','auto_timeout','deleted','auto_deleted','login_sukses','reset_terkirim'])): ?>
+
+                    // Inisialisasi target modal
+                    let targetModal = null;
+
+                    // Jika pesan yang diterima itu "token_invalid" dan
+                    // Jika modal sama dengan "reset_password", maka :
+                    if ("<?= $pesan ?>" === 'token_invalid' && "<?= $modal ?>" === 'reset_password') {
+
+                        // Target modalnya adalah forgot password
+                        targetModal = '#modalForgotPassword';
+                    }
+
+                    // Tampilkan modal jika ada
+                    if (targetModal) {
+
+                        // Memanggil modal Bootstrap berdasarkan targetModal
+                        $(targetModal).modal({
+                            backdrop:'static',  // Modal tidak tertutup saat klik di luar area modal
+                            keyboard:true,      // Modal dapat ditutup dengan tombol ESC
+                            show:true           // Langsung tampilkan modal
+                        });
+
+                    }
+                <?php endif; ?>
+
+            }, 300);  // Delay 300 ms = 0,3 detik
+        });
+
+    </script>
+
+
+<!-- 
+===========================================================================================
+Pesan tidak ada, maka :
+Tentukan modal yang akan dibuka berdasarkan parameter "modal"
+===========================================================================================
+-->
+
+<?php 
+    // Jika tidak ada parameter "pesan" di URL dan
+    // Hanya ada parameter "modal" di URL, maka :
+    elseif (!isset($_GET['pesan']) && isset($_GET['modal'])):
 ?>
 
-<script>
-    $(document).ready(function(){
-        setTimeout(function(){
-            const specialAlerts = ['auto_timeout', 'auto_deleted'];
-            const isSpecial = specialAlerts.includes("<?= $pesan ?>");
-            const userJustLoggedOut = sessionStorage.getItem("userLoggedOut") === "true";
+    <script>
+        // Jalankan kode setelah seluruh halaman dan semua asset selesai dimuat
+        $(window).on('load', function() {
 
-            if (isSpecial && userJustLoggedOut) {
-                Swal.fire({
-                    icon: "<?= $iconType ?>",
-                    title: <?= json_encode($alertMessage) ?>,
-                    html: <?= json_encode($subtitle) ?>,
-                    timer: 5000,
-                    timerProgressBar: true,
-                    showConfirmButton: false,
-                    customClass: { popup: 'swal2-card' },
-                    buttonsStyling: false,
-                    allowOutsideClick: false,
-                    allowEscapeKey: false,
-                    iconColor: "<?= $iconColor ?>"
-                }).then(() => {
-                    sessionStorage.removeItem('userLoggedOut');
+            const modal = "<?= $_GET['modal'] ?>"; // Ambil parameter "modal"
+            let targetModal = null; // Inisialisasi target modal
 
-                    const url = new URL(window.location);
-                    url.searchParams.delete('pesan');
-                    url.searchParams.delete('modal');
-                    window.history.replaceState({}, document.title, url);
+            // Jika modal sama dengan "pasien", maka :
+            if (modal === 'pasien') {
 
-                    window.location.replace("<?= BASE_URL ?>");
-                });
-            } 
-            else if (!isSpecial && "<?= $alertMessage ?>" !== "") {
-                Swal.fire({
-                    icon: "<?= $iconType ?>",
-                    title: <?= json_encode($alertMessage) ?>,
-                    html: <?= json_encode($subtitle) ?>,
-                    timer: 5000,
-                    timerProgressBar: true,
-                    showConfirmButton: false,
-                    customClass: { popup: 'swal2-card' },
-                    buttonsStyling: false,
-                    allowOutsideClick: false,
-                    allowEscapeKey: false,
-                    iconColor: "<?= $iconColor ?>"
-                }).then(() => {
-                    const url = new URL(window.location); 
-                    url.searchParams.delete('pesan'); 
-                    url.searchParams.delete('modal'); 
-                    window.history.replaceState({}, document.title, url);
-
-                    sessionStorage.removeItem('userLoggedOut');
-
-                    <?php if ($pesan == 'login_sukses'): ?>
-                        <?php if ($modal == 'pasien'): ?>
-                            window.location.href = "<?= BASE_URL . 'index.php?page=patient/clinic/queue_registration' ?>";
-                        <?php elseif ($modal == 'pekerja_admin'): ?>
-                            window.location.href = "<?= BASE_URL . 'index.php?page=worker/dashboard' ?>";
-                        <?php endif; ?>
-                    <?php elseif ($pesan == 'logout' || $pesan == 'reset_terkirim' || $pesan == 'timeout' || $pesan == 'deleted'): ?>
-                        window.location.href = "<?= BASE_URL ?>";
-                    <?php endif; ?>
-                });
+                // Target modalnya adalah login pasien
+                targetModal = '#modalLoginPasien';
             }
 
-            <?php if (!in_array($pesan, ['logout','timeout','auto_timeout','deleted','auto_deleted','login_sukses','reset_terkirim'])): ?>
-                let targetModal = null;
-                if ("<?= $pesan ?>" === 'token_invalid' && "<?= $modal ?>" === 'reset_password') targetModal = '#modalForgotPassword';
-                else {
-                    if ("<?= $modal ?>" === 'pasien') targetModal = '#modalLoginPasien';
-                    else if ("<?= $modal ?>" === 'pekerja_admin') targetModal = '#modalLoginPekerjaAdmin';
-                    else if ("<?= $modal ?>" === 'registration') targetModal = '#modalRegistration';
-                    else if ("<?= $modal ?>" === 'forgot_password') targetModal = '#modalForgotPassword';
-                    else if ("<?= $modal ?>" === 'reset_password') targetModal = '#modalResetPassword';
-                }
-                if (targetModal) $(targetModal).modal({ backdrop: 'static', keyboard: true, show: true });
-            <?php endif; ?>
+            // Jika modal sama dengan "pekerja_admin", maka :
+            else if (modal === 'pekerja_admin') {
 
-        }, 300);
-    });
-</script>
+                // Target modalnya adalah login pekerja atau admin
+                targetModal = '#modalLoginPekerjaAdmin';
+            }
+
+            // Jika modal sama dengan "registration", maka :
+            else if (modal === 'registration') {
+
+                // Target modalnya adalah registrasi akun pasien
+                targetModal = '#modalRegistration';
+            }
+
+            // Jika modal sama dengan "forgot_password", maka :
+            else if (modal === 'forgot_password') {
+
+                // Target modalnya adalah lupa password
+                targetModal = '#modalForgotPassword';
+            }
+
+            // Jika modal sama dengan "reset_password", maka :
+            else if (modal === 'reset_password') {
+
+                // Target modalnya adalah reset password
+                targetModal = '#modalResetPassword';
+            }
+
+            // Tampilkan modal jika ada
+            if (targetModal) {
+
+                // Delay beberapa saat
+                setTimeout(()=>{ 
+
+                    // Memanggil modal Bootstrap berdasarkan targetModal
+                    $(targetModal).modal({
+                        backdrop:'static',  // Modal tidak tertutup saat klik di luar area modal
+                        keyboard:true,      // Modal dapat ditutup dengan tombol ESC
+                        show:true           // Langsung tampilkan modal
+                    });
+
+                }, 300); // Delay 300 ms = 0,3 detik
+
+                // Hapus parameter "modal" dari URL tanpa me-refresh halaman
+                const url = new URL(window.location);
+                url.searchParams.delete('modal');
+                window.history.replaceState({}, document.title, url);
+            }
+        });
+
+    </script>
+<?php endif; ?>
+
 
 <style>
+    /* ===================================================================================== */
+    /* ===                              SWEETALERT2 STYLE                                === */
+    /* ===================================================================================== */
+
+    /* ==================================== GLOBAL =================================== */
+    /* Custom card untuk SweetAlert2 */
     .swal2-card {
         padding: 1rem 2rem 3rem 2rem !important;
         width: 480px !important;
@@ -161,42 +320,22 @@
         text-align: center;
     }
 
+    /* Subtitle (deskripsi pesan) pada SweetAlert2 */
     .swal2-html-container {
         margin-top: 0.5rem;
         font-size: 1rem;
         color: #6c757d;
     }
 
+    /* Kontainer progress bar timer SweetAlert2 */
     .swal2-timer-progress-bar-container { 
         padding: 0 1.5rem !important;
     }
 
+    /* Progress bar timer SweetAlert2 */
     .swal2-timer-progress-bar { 
         height: 6px !important;
         border-radius: 10px !important;
         background-color: rgba(0,0,0,.1) !important;
     }
 </style>
-<?php endif; ?>
-
-
-
-<?php if (!isset($_GET['pesan']) && isset($_GET['modal'])): ?>
-<script>
-    const url = new URL(window.location); 
-    url.searchParams.delete('pesan'); 
-    url.searchParams.delete('modal'); 
-    window.history.replaceState({}, document.title, url);
-
-    $(window).on('load', function() {
-        const modal = "<?= $_GET['modal'] ?>";
-        let targetModal = null;
-        if (modal === 'pasien') targetModal = '#modalLoginPasien';
-        else if (modal === 'pekerja_admin') targetModal = '#modalLoginPekerjaAdmin';
-        else if (modal === 'registration') targetModal = '#modalRegistration';
-        else if (modal === 'forgot_password') targetModal = '#modalForgotPassword';
-
-        if (targetModal) setTimeout(()=>{ $(targetModal).modal({ backdrop:'static', keyboard:true, show:true }); }, 300);
-    });
-</script>
-<?php endif; ?>

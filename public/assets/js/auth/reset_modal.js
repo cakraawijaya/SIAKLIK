@@ -1,4 +1,4 @@
-$(document).ready(function() {    
+$(document).ready(function() {
 
     // Fungsi untuk reset input kecuali pengecualian
     function resetInputs($form, exceptions = []) {
