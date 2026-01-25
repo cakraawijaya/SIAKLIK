@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Ambil elemen SweetAlert dari HTML
     const swalEl = document.getElementById("swal-data");
+
     if (!swalEl) return; // Hentikan jika tidak ada data alert
 
     // Ambil konfigurasi alert dari data-attribute
