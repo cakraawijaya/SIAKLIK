@@ -303,10 +303,10 @@ Tentukan modal yang akan dibuka berdasarkan parameter "modal"
 
 <style>
     /* ===================================================================================== */
-    /* ===                              SWEETALERT2 STYLE                                === */
+    /* ===                      ACCESS STYLE WITH SWEETALERT2                            === */
     /* ===================================================================================== */
 
-    /* ==================================== GLOBAL =================================== */
+    /* ==================================== LOKAL ==================================== */
     /* Custom card untuk SweetAlert2 */
     .swal2-card {
         padding: 1rem 2rem 3rem 2rem !important;
