@@ -51,7 +51,7 @@ Tentukan isi alert dan aksi lanjutannya berdasarkan parameter "pesan" dan "modal
         }
 
         // Bagian ini mengatur Subjudul pesan berdasarkan kode "pesan"
-        switch($pesan) {
+        switch ($pesan) {
             case "akses_terbatas": $subtitle = "Fitur ini hanya bisa diakses oleh admin."; break;
             case 'gagal': $subtitle = 'Silakan coba lagi.'; break;
             case 'email_salah': $subtitle = 'Periksa kembali email Anda. Pastikan email sudah pernah Anda daftarkan di SIAKLIK.'; break;
