@@ -3,7 +3,7 @@
                     <div class="container">
                         <div class="row g-3">
 
-                            <!-- Lokasi -->
+                            <!-- Informasi Lokasi Klinik -->
                             <div class="col-md-4 my-3 py-2 select-none">
                                 <h5 class="footer-title">
                                     <i class="footer-icons fas fa-map-marker-alt" aria-hidden="true"></i>
@@ -12,6 +12,7 @@
 
                                 <p>Jl. Rungkut Madya No.1, Gn. Anyar, Kec. Gn. Anyar, Kota SBY, Jawa Timur</p>
 
+                                <!-- Link Google Maps -->
                                 <a onclick="openLink('https://maps.app.goo.gl/MCWaaT6fg1CZRLd89', true)"
                                 target="_blank"
                                 class="maps-link d-block mt-2">
@@ -20,7 +21,7 @@
                                 </a>
                             </div>
 
-                            <!-- Kontak -->
+                            <!-- Informasi Kontak & Media Sosial -->
                             <div class="col-md-4 my-3 py-2 select-none">
                                 <h5 class="footer-title">
                                     <i class="footer-icons fas fa-address-book" aria-hidden="true"></i>
@@ -32,6 +33,7 @@
                                     <li><span class="footer-email"><i class="fas fa-envelope mr-1" aria-hidden="true"></i>poliklinik@upnvjatim.ac.id</span></li>
                                 </ul>
 
+                                <!-- Social Media -->
                                 <div class="mt-3 social-wrap">
                                     <a onclick="openLink('#', false)" class="social-icon"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
                                     <a onclick="openLink('#', false)" class="social-icon"><i class="fab fa-twitter" aria-hidden="true"></i></a>
@@ -40,7 +42,7 @@
                                 </div>
                             </div>
 
-                            <!-- Praktek -->
+                            <!-- Jam Praktek Klinik -->
                             <div class="col-md-4 my-3 py-2 select-none">
                                 <h5 class="footer-title">
                                     <i class="footer-icons fas fa-clock" aria-hidden="true"></i>
@@ -55,13 +57,13 @@
                         </div>
                     </div>
 
-                    <!-- COPYRIGHT -->
+                    <!-- Hak Cipta -->
                     <div class="footer-copyright text-center py-3 mt-5 pt-2">
                         © 2021–<?= date("Y"); ?> <strong>SIAKLIK (Sistem Pelayanan Klinik Kesehatan)</strong>. All Rights Reserved
                     </div>
                 </footer>
 
-                <!-- Tombol Scroll Up -->
+                <!-- Tombol Scroll ke Atas -->
                 <a onclick="openLink('#', false)" class="vanillatop"><i class="fas fa-angle-up" aria-hidden="true"></i></a>
 
                 <!-- Modal Login -->
