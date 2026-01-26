@@ -1,5 +1,5 @@
 // Jalankan script setelah seluruh DOM selesai dimuat
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
 
     // Ambil semua wrapper tabel yang bisa di-scroll
     const tables = document.querySelectorAll('.table-responsive');
