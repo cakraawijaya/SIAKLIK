@@ -17,10 +17,10 @@
         // Ambil host dari request (contoh: localhost, domain.com)
         $host = $_SERVER['HTTP_HOST'];
 
-        // Ambil path proyek relatif terhadap DOCUMENT_ROOT
+        // Ambil path folder project relatif terhadap document root
         $projectFolder = str_replace($_SERVER['DOCUMENT_ROOT'], '', str_replace('\\', '/', dirname(__DIR__)));
 
-        // Tambahkan trailing slash
+        // Pastikan path diakhiri dengan slash
         $projectFolder = rtrim($projectFolder, '/') . '/';
 
         // Definisikan BASE_URL sebagai URL absolut aplikasi
