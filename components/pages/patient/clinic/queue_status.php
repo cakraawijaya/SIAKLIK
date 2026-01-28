@@ -38,7 +38,7 @@
 
         <hr> <!-- Garis pemisah di bawah header -->
 
-        <!-- Tabs dan Search -->
+        <!-- Tab dan Pencarian -->
         <div class="tab-search-wrapper">
 
             <!-- Navigasi tab antrean -->
@@ -53,14 +53,15 @@
                 <?php endforeach; ?>
             </ul>
 
-            <!-- Form pencarian berdasarkan kode antrean -->
+            <!-- Form pencarian untuk mencari data antrean pengguna -->
+            <!-- Kata kunci pencarian hanya bergantung pada kode antrean saja -->
             <form class="form-inline" id="searchForm">
                 <input type="text" name="search" class="form-control select-none mr-2" placeholder="Cari Kode Antrean" value="<?= htmlspecialchars($search) ?>">
                 <button class="btn btn-info text-white" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
             </form>
         </div>
 
-        <!-- Tampilkan data antrean berdasarkan tab yang dipilih -->
+        <!-- Menampilkan data antrean (sesuai tab yang sedang dipilih) -->
         <div class="tab-content" id="antreanTabContent">
             <?php foreach($tab_labels as $label => $text): ?>
                 <div class="tab-pane select-none fade <?= $active_tab === $label ? 'show active' : '' ?>" id="<?= $label ?>">
@@ -113,6 +114,7 @@
         </div>
     </section>
 </main>
+
 
 <!-- Definisi Awal Queue Handler -->
 <script>

@@ -70,8 +70,10 @@
     </section>
 </main>
 
+
 <!-- Modal Antrean -->
 <?php include __DIR__ . '/../../../modal/queue.php'; ?>
+
 
 <style>
     /* Card utama */
