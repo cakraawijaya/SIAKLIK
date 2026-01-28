@@ -1,26 +1,38 @@
 <?php
 
-    // ============================ AUTH =============================
-    include __DIR__ . '/../../../features/auth/authorization/patient.php';
+    // ===========================================================================================
+    // AUTENTIKASI, KEAMANAN, DAN KONTROL AKSES PENGGUNA
+    // ===========================================================================================
+    require_once __DIR__ . '/../../../features/auth/authorization/patient.php';
 
 
-    // ======================== PDF SETTINGS =========================
-    // nama file PDF
+    // ===========================================================================================
+    // PDF SETTINGS
+    // ===========================================================================================
+
+    // Nama file PDF
     $rujukan_berjenjang_pdf = "rujukan_berjenjang.pdf";
 
-    // base URL PDF.js viewer
+    // Base URL PDF.js viewer
     $viewerUrl = "https://mozilla.github.io/pdf.js/web/viewer.html";
 
-    // base URL folder PDF di GitHub
+    // Base URL folder PDF di GitHub
     $pdfBaseUrl = "https://raw.githubusercontent.com/cakraawijaya/SIAKLIK/master/public/assets/pdf/";
 
-    // full URL PDF
+    // Full URL PDF
     $rujukan_berjenjang = $pdfBaseUrl . $rujukan_berjenjang_pdf;
 
 ?>
 
+
 <main>
+
+    <!-- =========================================================================================== -->
+    <!-- INFORMATION SECTION                                                                         -->
+    <!-- =========================================================================================== -->
     <section class="information-section">
+
+        <!-- Header Informasi Pelayanan -->
         <div class="custom-header text-center information-text select-none">
             <h2>
                 <i class="fas fa-info-circle mr-1" aria-hidden="true"></i>
@@ -28,19 +40,30 @@
             </h2>
             <p>Panduan pendaftaran dan alur pelayanan Pasien Poliklinik secara Offline maupun Online</p>
         </div>
+
+        <!-- Garis pemisah di bawah header -->
         <div class="content-divider"><hr></div>
+
+        <!-- Kontainer -->
         <div class="container">
+
+            <!-- Gambar Alur Pelayanan Poliklinik -->
             <img class="img-fluid rounded select-none" src="<?= BASE_URL ?>public/assets/img/others/alur_poli.png" alt="Alur Poli">
+
+            <!-- Baris untuk menata tampilan agar kolom Offline dan Online sejajar dan rapi -->
             <div class="row g-2 mt-3">
 
-                <!-- Kolom Kiri: Offline -->
+                <!-- ================================= KOLOM: OFFLINE ============================== -->
                 <div class="col-md-5 col-left">
                     <div class="card h-100 border-0 shadow-sm card-wrapper">
                         <div class="card-body">
                             <h4 class="text-center text-success select-none">
                                 <i class="fas fa-street-view" aria-hidden="true"></i>
                                 OFFLINE
-                            </h4><hr>
+                            </h4>
+
+                            <hr> <!-- Garis pemisah di bawah h4 -->
+
                             <p class="text-justify text-secondary select-none">
                                 Pasien bisa datang langsung ke bagian pendaftaran yang ada di <strong>Poliklinik UPN “Veteran” 
                                 Jawa Timur</strong>. Petugas akan membantu melakukan verifikasi data, dan proses ini <strong>
@@ -56,14 +79,18 @@
                     </div>
                 </div>
 
-                <!-- Kolom Kanan: Online -->
+
+                <!-- ================================= KOLOM: ONLINE =============================== -->
                 <div class="col-md-6 col-right">
                     <div class="card h-100 border-0 shadow-sm card-wrapper">
                         <div class="card-body">
                             <h4 class="text-center text-primary select-none">
-                              <i class="fas fa-globe" aria-hidden="true"></i>
-                              ONLINE
-                            </h4><hr>
+                                <i class="fas fa-globe" aria-hidden="true"></i>
+                                ONLINE
+                            </h4>
+
+                            <hr> <!-- Garis pemisah di bawah h4 -->
+
                             <p class="text-justify text-secondary select-none">
                                 Pasien dapat <strong>mendaftar secara online dengan langkah yang mudah</strong>. Jika belum memiliki akun, 
                                 pasien cukup <strong>membuat akun terlebih dahulu</strong>, lalu <strong>login ke SIAKLIK</strong>. 
@@ -80,11 +107,18 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
+
+    <!-- =========================================================================================== -->
+    <!-- REFERRAL SECTION                                                                            -->
+    <!-- =========================================================================================== -->
     <section class="referral-section">
+
+        <!-- Header Rujukan Berjenjang -->
         <div class="custom-header select-none">
             <div class="text-center align-middle referral-text">
                 <h2>
@@ -94,8 +128,14 @@
                 <p>Gambaran umum terkait prosedur rujukan berjenjang dari Faskes Tingkat 1 (Poliklinik) ke Rumah Sakit tujuan terdekat</p>
             </div>
         </div>
+
+        <!-- Garis pemisah di bawah header -->
         <div class="content-divider"><hr></div>
+
+        <!-- Bagian ini membuat isi di dalamnya berada di tengah halaman -->
         <div class="d-flex justify-content-center">
+
+            <!-- Menampilkan file PDF menggunakan PDF.js viewer -->
             <article class="select-none">
                 <iframe 
                     src="<?= $viewerUrl ?>?file=<?= urlencode($rujukan_berjenjang) ?>"
@@ -103,5 +143,6 @@
                 </iframe>
             </article>
         </div>
+
     </section>
 </main>

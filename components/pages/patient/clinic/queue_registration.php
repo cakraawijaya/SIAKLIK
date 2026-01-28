@@ -1,28 +1,36 @@
 <?php
 
-    // ======================== AUTH & CONFIG ========================
+    // ===========================================================================================
+    // AUTENTIKASI, KEAMANAN, DAN KONTROL AKSES PENGGUNA
+    // ===========================================================================================
     $require_login = true; // harus login
-    include __DIR__ . '/../../../features/auth/authorization/patient.php';
+    require_once __DIR__ . '/../../../features/auth/authorization/patient.php';
 
-    // muat konfigurasi untuk akses BASE_URL & Koneksi
-    include __DIR__ . '/../../../../config/config.php';
-    
 ?>
 
+
 <main>
+
+    <!-- =========================================================================================== -->
+    <!-- QUEUE REGISTRATION SECTION                                                                  -->
+    <!-- =========================================================================================== -->
     <section class="queue-registration-section">
+
+        <!-- Header registrasi antrean -->
         <div class="custom-header text-center queue-registration-text select-none">
             <h2>
                 <i class="fas fa-user-tag mr-2" aria-hidden="true">
                 </i>Registrasi Antrean
             </h2>
             <p>Pilihan antrean ada 3 macam, yaitu: Internal, BPJS, dan Umum</p>
-        </div><hr>
+        </div>
 
-        <!-- Queue Registration Grid -->
+        <hr> <!-- Garis pemisah di bawah header -->
+
+        <!-- Pembungkus card dalam bentuk grid -->
         <div class="queue-registration-grid text-center">
 
-            <!-- Card 1 -->
+            <!-- ============================ CARD 1: ANTREAN INTERNAL ========================= -->
             <div class="queue-registration-item select-none">
                 <a onclick="openLink('#modalAntreInternal', false)" data-target="#modalAntreInternal" data-toggle="modal" data-kategori="INTERNAL">
                     <div class="card bg-primary text-white h-100">
@@ -34,7 +42,7 @@
                 </a>
             </div>
 
-            <!-- Card 2 -->
+            <!-- ============================== CARD 2: ANTREAN BPJS =========================== -->
             <div class="queue-registration-item select-none">
                 <a onclick="openLink('#modalAntreBPJS', false)" data-target="#modalAntreBPJS" data-toggle="modal" data-kategori="BPJS">
                     <div class="card bg-success text-white h-100">
@@ -46,7 +54,7 @@
                 </a>
             </div>
 
-            <!-- Card 3 -->
+            <!-- ============================== CARD 3: ANTREAN UMUM =========================== -->
             <div class="queue-registration-item select-none">
                 <a onclick="openLink('#modalAntreUmum', false)" data-target="#modalAntreUmum" data-toggle="modal" data-kategori="UMUM">
                     <div class="card bg-info text-white h-100">
@@ -57,6 +65,7 @@
                     </div>
                 </a>
             </div>
+
         </div>
     </section>
 </main>
