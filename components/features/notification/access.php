@@ -201,6 +201,45 @@ Tentukan isi alert dan aksi lanjutannya berdasarkan parameter "pesan" dan "modal
                         targetModal = '#modalForgotPassword';
                     }
 
+                    // Selain itu, maka :
+                    else {
+
+                        // Cek jika modal sama dengan "pasien", maka :
+                        if ("<?= $modal ?>" === 'pasien') {
+
+                            // Target modalnya adalah login pasien
+                            targetModal = '#modalLoginPasien';
+                        }
+
+                        // Cek jika modal sama dengan "pekerja_admin", maka :
+                        else if ("<?= $modal ?>" === 'pekerja_admin') {
+
+                            // Target modalnya adalah login pekerja atau admin
+                            targetModal = '#modalLoginPekerjaAdmin';
+                        }
+
+                        // Cek jika modal sama dengan "registration", maka :
+                        else if ("<?= $modal ?>" === 'registration') {
+
+                            // Target modalnya adalah registrasi akun pasien
+                            targetModal = '#modalRegistration';
+                        }
+
+                        // Cek jika modal sama dengan "forgot_password", maka :
+                        else if ("<?= $modal ?>" === 'forgot_password') {
+
+                            // Target modalnya adalah lupa password
+                            targetModal = '#modalForgotPassword';
+                        }
+
+                        // Cek jika modal sama dengan "reset_password", maka :
+                        else if ("<?= $modal ?>" === 'reset_password') {
+
+                            // Target modalnya adalah reset password
+                            targetModal = '#modalResetPassword';
+                        }
+                    }
+
                     // Tampilkan modal jika ada
                     if (targetModal) {
 
