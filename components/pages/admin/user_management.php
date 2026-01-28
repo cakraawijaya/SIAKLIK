@@ -1,29 +1,47 @@
 <?php
 
-    // ======================== AUTH & CONFIG ========================
+    // ===========================================================================================
+    // AUTENTIKASI, KEAMANAN, DAN KONTROL AKSES PENGGUNA
+    // ===========================================================================================
     $require_login = true; // harus login
-    include __DIR__ . '/../../features/auth/authorization/admin.php';
-
-    // muat konfigurasi untuk akses BASE_URL & Koneksi
-    include __DIR__ . '/../../../config/config.php';
+    require_once __DIR__ . '/../../features/auth/authorization/admin.php';
 
 
-    // ======================== TAB DAN SEARCH ========================
+    // ===========================================================================================
+    // TAB DAN SEARCH
+    // ===========================================================================================
+
+    // Daftar tab user yang tersedia
     $tab_labels = ['pasien' => 'PASIEN', 'pekerja' => 'PEKERJA', 'admin' => 'ADMIN'];
+
+    // Menentukan tab yang sedang aktif
     $active_tab = $_GET['tab'] ?? 'pasien';
+
+    // Kata kunci pencarian user
     $search = $_GET['search'] ?? '';
-    
+
 ?>
 
+
 <main>
+
+    <!-- =========================================================================================== -->
+    <!-- USER MANAGEMENT SECTION                                                                     -->
+    <!-- =========================================================================================== -->
     <section class="user-management-section">
+
+        <!-- Header manajemen pengguna -->
         <div class="custom-header text-center user-management-text select-none">
             <h2><i class="fas fa-user-cog mr-2" aria-hidden="true"></i>Manajemen Pengguna</h2>
             <p>Memudahkan Admin dalam mengelola seluruh data pengguna poliklinik</p>
-        </div><hr>
+        </div>
 
-        <!-- Tabs -->
+        <hr> <!-- Garis pemisah di bawah header -->
+
+        <!-- Tab -->
         <div class="tab-wrapper">
+
+            <!-- Navigasi tab user -->
             <ul class="nav nav-tabs">
                 <?php foreach ($tab_labels as $label => $text): ?>
                     <li class="nav-item">
@@ -36,22 +54,27 @@
             </ul>
         </div>
 
-        <!-- Action bar -->
+        <!-- Aksi -->
         <div class="action-bar-wrapper">
-            <!-- Left side: Add + Export -->
+
+            <!-- Bagian Kiri -->
             <div class="add-export">
+
+                <!-- Tombol Tambah Data -->
                 <button type="button" class="btn add-btn btn-success text-white">
                     <i class="fa fa-plus mr-1" aria-hidden="true"></i>
                     <span id="btnAddText">Data <?= ucfirst(strtolower($tab_labels[$active_tab])) ?></span>
                 </button>
 
+                <!-- Tombol Ekspor Data -->
                 <a id="btnExport" class="btn btn-info text-white">
                     <i class="fa fa-download mr-1" aria-hidden="true"></i>
                     <span id="btnExportText">Export <?= ucfirst(strtolower($tab_labels[$active_tab])) ?></span>
                 </a>
             </div>
 
-            <!-- Right side: Search -->
+            <!-- Bagian Kanan: Pencarian Data -->
+            <!-- Kata kunci pencarian tidak terbatas (bebas) -->
             <form class="form-inline" id="searchForm">
                 <input type="text" name="search" class="form-control select-none mr-2" placeholder="Cari Data Pengguna" value="<?= htmlspecialchars($search) ?>">
                 <button class="btn btn-info text-white" type="submit">
@@ -60,10 +83,13 @@
             </form>
         </div>
 
-        <!-- Table Content -->
+        <!-- Menampilkan data user (sesuai tab yang sedang dipilih) -->
         <div class="tab-content" id="userManagementTabContent">
             <?php foreach ($tab_labels as $label => $text): ?>
                 <div class="tab-pane select-none fade <?= $active_tab === $label ? 'show active' : '' ?>" id="<?= $label ?>">
+
+
+                    <!-- ============================== TABEL DAFTAR USER ============================== -->
                     <div class="table-wrapper">
                         <div class="table-responsive">
                             <table class="table table-bordered w-100">
@@ -77,7 +103,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    <tr> <!-- Informasi sementara saat data belum dimuat -->
                                         <td colspan="5" class="text-center align-middle" data-header="Pemberitahuan Sistem">
                                             <div class="td-value">Memuat data...</div>
                                         </td>
@@ -87,34 +113,48 @@
                         </div>
                     </div>
 
+
+                    <!-- ============================== INFO & PAGINATION ============================== -->
                     <div class="info-pagination-wrapper">
+
+                        <!-- Informasi jumlah user -->
                         <div class="count-data">
                             <span id="<?= $label ?>-info">Jumlah data pengguna</span>
                             <strong id="<?= $label ?>-category" class="text-muted"><?= strtoupper($text) ?></strong>
                             :&nbsp;<b id="<?= $label ?>-count">0</b>
                         </div>
+
+                        <!-- Tombol navigasi halaman -->
                         <div class="pagination">
                             <a class="btn btn-success text-white mr-3" id="<?= $label ?>-prev"><i class="fas fa-arrow-left mr-1" aria-hidden="true"></i>Kembali</a>
                             <a class="btn btn-success text-white" id="<?= $label ?>-next">Lanjut<i class="fas fa-arrow-right ml-1" aria-hidden="true"></i></a>
                         </div>
                     </div>
+
                 </div>
             <?php endforeach; ?>
         </div>
     </section>
 </main>
 
+
+<!-- Modal Manajemen Pengguna -->
 <?php include __DIR__ . '/../../modal/user_management.php'; ?>
+
 
 <!-- Definisi Awal User Handler -->
 <script>
-    var activeTab = '<?= $active_tab ?>';
-    var currentPage = { pasien: 1, pekerja: 1, admin: 1 };
-    var totalPage = { pasien: 1, pekerja: 1, admin: 1 };
-    var lastEditedUser = { email: null };
+    var activeTab = '<?= $active_tab ?>'; // Tab yang sedang aktif
+    var currentPage = { 'pasien': 1, 'pekerja': 1, 'admin': 1 };  // Halaman aktif tiap tab
+    var totalPage = { 'pasien': 1, 'pekerja': 1, 'admin': 1 };    // Total halaman tiap tab
+
+    // Menyimpan email user terakhir yang diedit
+    var lastEditedUser = { 'email': null };
+
+    // Menyimpan email admin yang sedang login
     const CURRENT_USER_EMAIL = "<?= $_SESSION['email'] ?>";
-    const labelMap = { pasien: 'Pasien', pekerja: 'Pekerja', admin: 'Admin' };
 </script>
+
 
 <style>
     /* Card utama */
