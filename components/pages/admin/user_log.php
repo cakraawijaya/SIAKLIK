@@ -112,9 +112,9 @@
 </main>
 
 
-<!-- Definisi Awal User Handler -->
+<!-- Definisi Awal untuk User Log Handler -->
 <script>
-    var activeTab = '<?= $active_tab ?>'; // Tab yang sedang aktif
-    var currentPage = { 'pasien': 1, 'pekerja': 1, 'admin': 1 }; // Halaman aktif tiap tab
-    var totalPage = { 'pasien': 1, 'pekerja': 1, 'admin': 1 };   // Total halaman tiap tab
+    var activeTab = '<?= $active_tab ?>';                         // Tab yang sedang aktif
+    var currentPage = { 'pasien': 1, 'pekerja': 1, 'admin': 1 };  // Halaman aktif tiap tab
+    var totalPage = { 'pasien': 1, 'pekerja': 1, 'admin': 1 };    // Total halaman tiap tab
 </script>

@@ -142,9 +142,9 @@
 <?php include __DIR__ . '/../../modal/user_management.php'; ?>
 
 
-<!-- Definisi Awal User Handler -->
+<!-- Definisi Awal untuk User Management Handler -->
 <script>
-    var activeTab = '<?= $active_tab ?>'; // Tab yang sedang aktif
+    var activeTab = '<?= $active_tab ?>';                         // Tab yang sedang aktif
     var currentPage = { 'pasien': 1, 'pekerja': 1, 'admin': 1 };  // Halaman aktif tiap tab
     var totalPage = { 'pasien': 1, 'pekerja': 1, 'admin': 1 };    // Total halaman tiap tab
 
