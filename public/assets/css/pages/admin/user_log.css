@@ -39,14 +39,14 @@
   margin-top: 1rem;
 }
 
-.user-log-section .info-pagination-wrapper {
+.user-log-section .pagination-wrapper {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   margin-top: 10px;
 }
 
-.user-log-section .info-pagination-wrapper .pagination {
+.user-log-section .pagination-wrapper .pagination {
   align-items: center;
 }
 
@@ -69,7 +69,7 @@
   .user-log-section .tab-search-wrapper .nav-link,
   .user-log-section .tab-search-wrapper .form-inline input.form-control,
   .user-log-section .tab-search-wrapper .form-inline input::placeholder,
-  .user-log-section .info-pagination-wrapper .pagination a {
+  .user-log-section .pagination-wrapper .pagination a {
     font-size: 0.95rem;
   }
 
@@ -106,7 +106,7 @@
   .user-log-section .tab-search-wrapper .nav-link,
   .user-log-section .tab-search-wrapper .form-inline input.form-control,
   .user-log-section .tab-search-wrapper .form-inline input::placeholder,
-  .user-log-section .info-pagination-wrapper .pagination a {
+  .user-log-section .pagination-wrapper .pagination a {
     font-size: 0.9rem;
   }
 
@@ -135,7 +135,7 @@
   .user-log-section .tab-search-wrapper .nav-link,
   .user-log-section .tab-search-wrapper .form-inline input.form-control,
   .user-log-section .tab-search-wrapper .form-inline input::placeholder,
-  .user-log-section .info-pagination-wrapper .pagination a {
+  .user-log-section .pagination-wrapper .pagination a {
     font-size: 0.9rem;
   }
 
@@ -164,7 +164,7 @@
   .user-log-section .tab-search-wrapper .nav-link,
   .user-log-section .tab-search-wrapper .form-inline input.form-control,
   .user-log-section .tab-search-wrapper .form-inline input::placeholder,
-  .user-log-section .info-pagination-wrapper .pagination a {
+  .user-log-section .pagination-wrapper .pagination a {
     font-size: 0.9rem;
   }
 
@@ -253,7 +253,7 @@
 
   .user-log-section .tab-search-wrapper .form-inline input.form-control,
   .user-log-section .tab-search-wrapper .form-inline input::placeholder,
-  .user-log-section .info-pagination-wrapper .pagination a {
+  .user-log-section .pagination-wrapper .pagination a {
     font-size: 0.85rem;
   }
 
@@ -351,7 +351,7 @@
 
   .user-log-section .tab-search-wrapper .form-inline input.form-control,
   .user-log-section .tab-search-wrapper .form-inline input::placeholder,
-  .user-log-section .info-pagination-wrapper .pagination a {
+  .user-log-section .pagination-wrapper .pagination a {
     font-size: 0.85rem;
   }
 
@@ -448,7 +448,7 @@
 
   .user-log-section .tab-search-wrapper .form-inline input.form-control,
   .user-log-section .tab-search-wrapper .form-inline input::placeholder,
-  .user-log-section .info-pagination-wrapper .pagination a {
+  .user-log-section .pagination-wrapper .pagination a {
     font-size: 0.85rem;
   }
 
@@ -477,7 +477,7 @@
   .user-log-section .tab-search-wrapper .nav-link,
   .user-log-section .tab-search-wrapper .form-inline input.form-control,
   .user-log-section .tab-search-wrapper .form-inline input::placeholder,
-  .user-log-section .info-pagination-wrapper .pagination a {
+  .user-log-section .pagination-wrapper .pagination a {
     font-size: 0.85rem;
   }
 
@@ -510,7 +510,7 @@
 
   .user-log-section .tab-search-wrapper .form-inline input.form-control,
   .user-log-section .tab-search-wrapper .form-inline input::placeholder,
-  .user-log-section .info-pagination-wrapper .pagination a {
+  .user-log-section .pagination-wrapper .pagination a {
     font-size: 0.85rem;
   }
 
@@ -580,7 +580,7 @@
 
   .user-log-section .tab-search-wrapper .form-inline input.form-control,
   .user-log-section .tab-search-wrapper .form-inline input::placeholder,
-  .user-log-section .info-pagination-wrapper .pagination a {
+  .user-log-section .pagination-wrapper .pagination a {
     font-size: 0.85rem;
   }
 
@@ -667,7 +667,7 @@
   .user-log-section .tab-search-wrapper .nav-link,
   .user-log-section .tab-search-wrapper .form-inline input.form-control,
   .user-log-section .tab-search-wrapper .form-inline input::placeholder,
-  .user-log-section .info-pagination-wrapper .pagination a {
+  .user-log-section .pagination-wrapper .pagination a {
     font-size: 0.9rem;
   }
 
@@ -754,7 +754,7 @@
   .user-log-section .tab-search-wrapper .nav-link,
   .user-log-section .tab-search-wrapper .form-inline input.form-control,
   .user-log-section .tab-search-wrapper .form-inline input::placeholder,
-  .user-log-section .info-pagination-wrapper .pagination a {
+  .user-log-section .pagination-wrapper .pagination a {
     font-size: 0.9rem;
   }
 
@@ -848,7 +848,7 @@
   .user-log-section .tab-search-wrapper .nav-link,
   .user-log-section .tab-search-wrapper .form-inline input.form-control,
   .user-log-section .tab-search-wrapper .form-inline input::placeholder,
-  .user-log-section .info-pagination-wrapper .pagination a {
+  .user-log-section .pagination-wrapper .pagination a {
     font-size: 0.85rem;
   }
 
@@ -880,7 +880,7 @@
 
   .user-log-section .tab-search-wrapper .form-inline input.form-control,
   .user-log-section .tab-search-wrapper .form-inline input::placeholder,
-  .user-log-section .info-pagination-wrapper .pagination a {
+  .user-log-section .pagination-wrapper .pagination a {
     font-size: 0.85rem;
   }
 
@@ -958,7 +958,7 @@
 
   .user-log-section .tab-search-wrapper .form-inline input.form-control,
   .user-log-section .tab-search-wrapper .form-inline input::placeholder,
-  .user-log-section .info-pagination-wrapper .pagination a {
+  .user-log-section .pagination-wrapper .pagination a {
     font-size: 0.85rem;
   }
 
