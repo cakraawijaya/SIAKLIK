@@ -57,7 +57,7 @@
                 <!-- Setiap foto bisa diklik -->
                 <a onclick="openLink('#', false)">
 
-                    <!-- Gambar foto galeri -->
+                    <!-- Gambar -->
                     <img src="<?= BASE_URL ?>public/assets/img/gallery/<?= $photo[1] ?>" alt="<?= strtolower(str_replace(' ', '-', $photo[0])) ?>">
 
                     <!-- Efek overlay saat foto disentuh atau diarahkan -->
@@ -66,6 +66,7 @@
                             <h3><?= $photo[0] ?></h3>
                         </div>
                     </div>
+
                 </a>
             </div>
 
@@ -114,6 +115,7 @@
                     ></iframe>
                 `;
             </script>
+
         </div>
     </section>
 

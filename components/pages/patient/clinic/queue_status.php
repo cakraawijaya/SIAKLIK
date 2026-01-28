@@ -116,9 +116,9 @@
 </main>
 
 
-<!-- Definisi Awal Queue Handler -->
+<!-- Definisi Awal untuk Queue Status Handler -->
 <script>
-    var activeTab = '<?= $active_tab ?>'; // Tab yang sedang aktif
+    var activeTab = '<?= $active_tab ?>';                                    // Tab yang sedang aktif
     var currentPage = { 'internal': 1, 'bpjs': 1, 'umum': 1, 'selesai': 1 }; // Halaman aktif tiap tab
     var totalPage = { 'internal': 1, 'bpjs': 1, 'umum': 1, 'selesai': 1 };   // Total halaman tiap tab
 </script>

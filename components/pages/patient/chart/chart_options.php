@@ -9,7 +9,7 @@
     // ===========================================================================================
     // CHARTS
     // ===========================================================================================
-    // Data daftar grafik yang akan ditampilkan di halaman
+    // Data grafik yang akan ditampilkan di halaman
     // Berisi warna kartu, judul grafik, ikon, dan link tujuan grafik
     $charts_data = [
         ['color' => '#639c1f', 'label' => 'Jenis Kelamin', 'icon' => 'fas fa-procedures', 'link' => 'chart_gender'],
@@ -46,7 +46,7 @@
 
         <hr> <!-- Garis pemisah di bawah header -->
 
-        <!-- Pembungkus daftar card grafik -->
+        <!-- Pembungkus daftar grafik -->
         <div class="charts-grid-container">
 
             <!-- Loop data grafik untuk membuat card satu per satu -->
