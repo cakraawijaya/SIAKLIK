@@ -171,8 +171,13 @@ $(document).ready(function () {
         currentPage[activeTab] = 1;
         lastEditedUser.email = null;
         loadUserData();
-        $('#btnAddText').text('Data ' + labelMap[activeTab]);
-        $('#btnExportText').html('Export ' + labelMap[activeTab]);
+        
+        function prettyLabel(tab) {
+            return tab.charAt(0).toUpperCase() + tab.slice(1);
+        }
+
+        $('#btnAddText').text('Data ' + prettyLabel(activeTab));
+        $('#btnExportText').html('Export ' + prettyLabel(activeTab));
     });
 
     // ======================== SEARCH ========================
@@ -239,7 +244,7 @@ $(document).ready(function () {
         });
     }
 
-    const categoryList = Object.keys(labelMap); // ['pasien','pekerja','admin']
+    const categoryList = ['pasien', 'pekerja', 'admin'];
 
     categoryList.forEach(category => {
         const Caption = category.charAt(0).toUpperCase() + category.slice(1);
@@ -441,7 +446,7 @@ $(document).ready(function () {
         if ($('input[name="search"]').val() === '') loadUserData();
     }, 10000);
 
-    $('#btnAddText').text('Data ' + labelMap[activeTab]);
-    $('#btnExportText').html('Export ' + labelMap[activeTab]);
+    $('#btnAddText').text('Data ' + prettyLabel(activeTab));
+    $('#btnExportText').html('Export ' + prettyLabel(activeTab));
 
 });
