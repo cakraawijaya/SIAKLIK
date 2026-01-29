@@ -157,6 +157,16 @@
 
 
 <style>
+    /* ===================================================================================== */
+    /* ===                  USER MANAGEMENT STYLE WITH SWEETALERT2                       === */
+    /* ===================================================================================== */
+
+    /* ==================================== LOKAL ==================================== */
+    /* SweetAlert2 HARUS paling atas */
+    .swal2-container {
+        z-index: 9999 !important;
+    }
+
     /* Card utama */
     .swal2-card {
         padding: 1rem 2rem 3rem 2rem !important;
