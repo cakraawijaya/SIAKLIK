@@ -74,7 +74,7 @@
   padding: 8px 0;
   animation: fadeDrop 0.2s ease;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  z-index: 1000;
+  z-index: 900;
 }
 
 .navbar .dropdown-menu.animate-drop {
@@ -141,7 +141,7 @@
   height: 42px;
   padding: 0;
   margin-right: 14px;
-  z-index: 9999 !important;
+  z-index: 950 !important;
   background: #447b17;
   color: white;
   transition: background 0.3s ease;
@@ -263,7 +263,7 @@
     border-radius: 0 0 12px 12px;
     margin: 0 !important;
     box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-    z-index: 9999;
+    z-index: 900;
   }
 
   .navbar .dropdown.show {
@@ -346,7 +346,7 @@
     border-radius: 0 0 12px 12px;
     margin: 0 !important;
     box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-    z-index: 9999;
+    z-index: 900;
   }
 
   .navbar .dropdown.show {
@@ -434,7 +434,7 @@
     border-radius: 0 0 12px 12px;
     margin: 0 !important;
     box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-    z-index: 9999;
+    z-index: 900;
   }
 
   .navbar .dropdown.show {
@@ -522,7 +522,7 @@
     border-radius: 0 0 12px 12px;
     margin: 0 !important;
     box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-    z-index: 9999;
+    z-index: 900;
   }
 
   .navbar .dropdown.show {

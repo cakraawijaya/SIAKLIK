@@ -13,11 +13,11 @@
 .modal,
 .modal.show,
 .modal-dialog {
-  z-index: 9999 !important;
+  z-index: 1100 !important;
 }
 
 .modal-backdrop {
-  z-index: 9998 !important;
+  z-index: 1000 !important;
 }
 
 #modalLoginPasien .modal-content,

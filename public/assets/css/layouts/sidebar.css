@@ -335,7 +335,7 @@ ul ul ul li a.custom-mb-sidebar-child {
     width: 260px;
     height: 100vh;
     background: #24252d;
-    z-index: 9999;
+    z-index: 999;
     transform: translateX(-260px);
     transition: transform 0.35s ease;
   }
