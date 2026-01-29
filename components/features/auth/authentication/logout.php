@@ -1,5 +1,5 @@
 <?php
-    
+
     // ===========================================================================================
     // CEK SESSION
     // ===========================================================================================
@@ -32,7 +32,7 @@
         INSERT INTO riwayat_aktivitas (username, role, aksi, detail, created_at)
         VALUES ('$username', '$level', 'Logout', '$nama telah Logout.', NOW())
     ");
-    
+
     // Menghapus semua session
     $_SESSION = [];
     session_unset();

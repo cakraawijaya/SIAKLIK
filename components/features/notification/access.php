@@ -346,6 +346,11 @@ Tentukan modal yang akan dibuka berdasarkan parameter "modal"
     /* ===================================================================================== */
 
     /* ==================================== LOKAL ==================================== */
+    /* SweetAlert2 HARUS paling atas */
+    .swal2-container {
+        z-index: 9999 !important;
+    }
+
     /* Custom card untuk SweetAlert2 */
     .swal2-card {
         padding: 1rem 2rem 3rem 2rem !important;
