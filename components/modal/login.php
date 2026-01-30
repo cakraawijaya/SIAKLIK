@@ -1,25 +1,44 @@
 <!-- Hanya bisa diakses kalau belum login -->
 <?php if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true): ?>
 
-  <!-- Modal Login Pasien -->
+
+  <!-- =========================================================================================== -->
+  <!-- MODAL LOGIN PASIEN                                                                          -->
+  <!-- =========================================================================================== -->
   <div class="modal fade" id="modalLoginPasien" tabindex="-1" role="dialog" aria-labelledby="modalLoginPasienLabel" aria-hidden="true">
+
+    <!-- Dialog modal (ukuran standard, berada di tengah & bisa di scroll) -->
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
       <div class="modal-content border-0 shadow-lg">
-        <!-- Header -->
+
+
+        <!-- ==================================== HEADER =================================== -->
         <div class="modal-header bg-success text-white text-center">
+
+          <!-- Judul modal -->
           <h5 class="modal-title w-100 select-none" id="modalLoginPasienLabel">
             <i class="fas fa-user-injured mr-2" aria-hidden="true"></i>Login Pasien Klinik
           </h5>
+
+          <!-- Tombol tutup modal -->
           <button type="button" class="close select-none" onclick="$('#modalLoginPasien').modal('hide')">&times;</button>
+
         </div>
 
-        <!-- Body -->
+
+        <!-- ===================================== BODY ==================================== -->
         <div class="modal-body pt-4 px-4">
+
+          <!-- Form login Pasien -->
           <form action="<?= BASE_URL ?>components/features/auth/authentication/login.php" method="post">
+
+            <!-- Email -->
             <div class="form-group">
               <label class="select-none"><strong>Email</strong></label>
               <input type="email" class="form-control select-none" placeholder="Masukkan email anda" name="patient-email" autocomplete="patient-email" required>
             </div>
+
+            <!-- Password -->
             <div class="form-group position-relative">
               <label class="select-none"><strong>Password</strong></label>
               <div class="input-group">
@@ -55,53 +74,83 @@
               </div>
             </div>
 
+            <!-- Tombol login Pasien -->
             <button type="submit" class="btn btn-success py-2 mt-2 w-100" name="patient-submit">
               <strong>Masuk<i class="fas fa-sign-in-alt ml-1" aria-hidden="true"></i></strong>
             </button>
+
           </form>
         </div>
 
-        <!-- Footer -->
+
+        <!-- ==================================== FOOTER =================================== -->
         <div class="modal-footer text-center flex-column">
-          <p class="mb-1 select-none">Login sebagai Pekerja atau Admin? 
+
+          <!-- Link untuk menuju ke modal Login Pekerja atau Admin -->
+          <p class="mb-1 select-none">Login sebagai Pekerja atau Admin?
             <a onclick="openLink('#', false)" id="switchToPekerjaFromPasien">
               <span>Klik di sini</span>
             </a>
           </p>
-          <p class="mb-1 select-none">Belum punya akun? 
+
+          <!-- Link untuk menuju ke modal Registrasi Pasien -->
+          <p class="mb-1 select-none">Belum punya akun?
             <a onclick="openLink('#', false)" id="switchToRegistration">
               <span>Daftar</span>
             </a>
           </p>
-          <p class="mb-0 select-none">Lupa Password? 
+
+          <!-- Link untuk menuju ke modal Lupa Password -->
+          <p class="mb-0 select-none">Lupa Password?
             <a onclick="openLink('#', false)" id="switchToForgotPassword">
               <span>Klik di sini</span>
             </a>
           </p>
         </div>
+
       </div>
     </div>
   </div>
 
-  <!-- Modal Login Pekerja/Admin -->
+
+
+  <!-- =========================================================================================== -->
+  <!-- MODAL LOGIN PEKERJA / ADMIN                                                                 -->
+  <!-- =========================================================================================== -->
   <div class="modal fade" id="modalLoginPekerjaAdmin" tabindex="-1" role="dialog" aria-labelledby="modalLoginPekerjaAdminLabel" aria-hidden="true">
+
+    <!-- Dialog modal (ukuran standard, berada di tengah & bisa di scroll) -->
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
       <div class="modal-content border-0 shadow-lg">
-        <!-- Header -->
+
+
+        <!-- ==================================== HEADER =================================== -->
         <div class="modal-header bg-success text-white text-center">
+
+          <!-- Judul modal -->
           <h5 class="modal-title w-100 select-none" id="modalLoginPekerjaAdminLabel">
             <i class="fas fa-stethoscope mr-2" aria-hidden="true"></i>Login Pekerja / Admin Klinik
           </h5>
+
+          <!-- Tombol tutup modal -->
           <button type="button" class="close select-none" onclick="$('#modalLoginPekerjaAdmin').modal('hide')">&times;</button>
+
         </div>
 
-        <!-- Body -->
+
+        <!-- ===================================== BODY ==================================== -->
         <div class="modal-body pt-4 px-4">
+
+          <!-- Form login Pekerja atau Admin -->
           <form action="<?= BASE_URL ?>components/features/auth/authentication/login.php" method="post">
+
+            <!-- Email -->
             <div class="form-group">
               <label class="select-none"><strong>Email</strong></label>
               <input type="email" class="form-control select-none" placeholder="Masukkan email anda" name="pekerja-email" autocomplete="pekerja-email" required>
             </div>
+
+            <!-- Password -->
             <div class="form-group position-relative">
               <label class="select-none"><strong>Password</strong></label>
               <div class="input-group">
@@ -137,25 +186,33 @@
               </div>
             </div>
 
+            <!-- Tombol login Pekerja atau Admin -->
             <button type="submit" class="btn btn-success py-2 mt-2 w-100" name="pekerja-submit">
               <strong>Masuk<i class="fas fa-sign-in-alt ml-1" aria-hidden="true"></i></strong>
             </button>
+
           </form>
         </div>
 
-        <!-- Footer -->
+
+        <!-- ==================================== FOOTER =================================== -->
         <div class="modal-footer text-center flex-column">
-          <p class="mb-1 select-none">Login sebagai pasien? 
+
+          <!-- Link untuk menuju ke modal Login Pasien -->
+          <p class="mb-1 select-none">Login sebagai pasien?
             <a onclick="openLink('#', false)" id="switchToPasienFromPekerja">
               <span>Klik di sini</span>
             </a>
           </p>
-          <p class="mb-0 select-none">Lupa Password? 
+
+          <!-- Link untuk menuju ke modal Lupa Password -->
+          <p class="mb-0 select-none">Lupa Password?
             <a onclick="openLink('<?= BASE_URL ?>index.php?page=admin/user_management', false)">
               <span>Klik di sini</span>
             </a>
           </p>
         </div>
+
       </div>
     </div>
   </div>
