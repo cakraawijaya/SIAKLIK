@@ -50,7 +50,7 @@
         exit; // Menghentikan eksekusi script
     }
 
-    // Ambil pesan error lalu hapus dari session
+    // Ambil pesan error
     $error_message = $_SESSION['error_message'];
 
     // Menghapus pesan error dari session setelah digunakan
