@@ -24,18 +24,21 @@
         session_start(); // Jika session belum aktif, maka mulai session baru
     }
 
-	// Mencoba untuk :
+	// Mencoba untuk memproses :
 	try {
 
-		// Membuat koneksi ke database
+		// Koneksi database
 		$koneksi = mysqli_connect($host, $username, $password, $namadb);
 
 		// Set karakter encoding ke UTF-8 untuk mendukung karakter multibahasa
 		mysqli_set_charset($koneksi, "utf8");
 	} 
 
-	// Menangkap exception yang terjadi saat proses koneksi database
+	// Menangkap exception jika terjadi kesalahan pada proses database
 	catch (mysqli_sql_exception $e) {
+
+		// Mencatat detail error ke log server untuk keperluan debugging
+        error_log("Database error: " . $e->getMessage());
 
 		// Simpan pesan error ke dalam session
 		$_SESSION['error_message'] = $e->getMessage();
