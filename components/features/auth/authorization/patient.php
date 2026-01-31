@@ -55,11 +55,35 @@
         // Jika username atau role kosong, log tidak dijalankan
         if (!$username || !$role) return;
 
-        // Simpan data aktivitas ke database
-        mysqli_query($koneksi, "
-            INSERT INTO riwayat_aktivitas (username, role, aksi, detail, created_at)
-            VALUES ('$username', '$role', '$aksi', '$detail', NOW())
-        ");
+        // Mencoba untuk memproses :
+        try {
+
+            // Insert Statement
+            // Digunakan untuk menyimpan data aktivitas ke database
+            $stmt = $koneksi->prepare("
+                INSERT INTO riwayat_aktivitas (username, role, aksi, detail, created_at)
+                VALUES (?, ?, ?, ?, NOW())
+            ");
+
+            // Mengikat 4 parameter (username, role, aksi, dan detail) ke dalam query
+            $stmt->bind_param("ssss", $username, $role, $aksi, $detail);
+
+            $stmt->execute();   // Menjalankan query
+            $stmt->close();     // Menutup statement
+
+        // Menangkap exception jika terjadi kesalahan pada proses database
+        } catch (mysqli_sql_exception $e) {
+
+            // Mencatat detail error ke log server untuk keperluan debugging
+            error_log("Database error: " . $e->getMessage());
+
+            // Simpan pesan error ke dalam session
+            $_SESSION['error_message'] = $e->getMessage();
+
+            // Redirect ke halaman notifikasi error database
+            header("Location: " . BASE_URL . "components/pages/error/database_notification.php");
+            exit; // Menghentikan eksekusi script
+        }
     }
 
 
@@ -98,7 +122,9 @@
                 $level = ucfirst(strtolower($level));
 
                 // Log User: Timeout
-                logAktivitas($koneksi, $username, $level, 'Timeout', "$nama telah di Logout paksa oleh Sistem.");
+                $aksi   = "Timeout";
+                $detail = "$nama telah di Logout paksa oleh Sistem.";
+                logAktivitas($koneksi, $username, $level, $aksi, $detail);
 
                 // Menghapus semua session
                 session_unset(); session_destroy();
@@ -136,31 +162,53 @@
         $table = $level_map[$level]['table'];
         $role_id = $level_map[$level]['role_id'];
 
-        // Query ini digunakan untuk mengecek apakah akun masih ada di database
-        $query = mysqli_query($koneksi, "SELECT * FROM $table WHERE email='$email' AND role_id='$role_id' LIMIT 1");
+        // Mencoba untuk memproses :
+        try {
 
-        // Jika query error, maka :
-        if (!$query) {
+            // Select Statement
+            // Digunakan untuk mengecek apakah akun masih ada di database
+            $stmt = $koneksi->prepare("SELECT 1 FROM $table WHERE email = ? AND role_id = ? LIMIT 1");
 
-            // Hentikan eksekusi dan tampilkan error jika query database gagal (untuk debugging)
-            die("Query error: " . mysqli_error($koneksi));
-        }
+            // Mengikat 2 parameter (email dan role id) ke dalam query
+            $stmt->bind_param("si", $email, $role_id);
 
-        // Jika akun tidak ditemukan (artinya sudah dihapus atau diblokir), maka lakukan :
-        if (mysqli_num_rows($query) === 0) {
+            $stmt->execute();       // Menjalankan query
+            $stmt->store_result();  // Menyimpan hasil query
 
-            // Format level
-            $level = ucfirst(strtolower($level));
+            // Jika akun tidak ditemukan (artinya sudah dihapus atau diblokir), maka lakukan :
+            if ($stmt->num_rows === 0) {
 
-            // Log User: Akun Dihapus
-            logAktivitas($koneksi, $username, $level, 'Akun Diblokir', "Akun a/n. $nama telah diblokir (banned) oleh Admin karena pelanggaran kebijakan.");
+                // Format level
+                $level = ucfirst(strtolower($level));
 
-            // Menghapus semua session
-            session_unset(); session_destroy();
+                // Log User: Akun Dihapus
+                $aksi   = "Akun Diblokir";
+                $detail = "Akun a/n. $nama telah diblokir (banned) oleh Admin karena pelanggaran kebijakan.";
+                logAktivitas($koneksi, $username, $level, $aksi, $detail);
 
-            // Redirect ke halaman beranda
-            // Hal ini disertai dengan pesan = Akun Anda Dihapus!
-            header("Location: " . BASE_URL . "index.php?pesan=deleted");
+                // Menghapus semua session
+                session_unset(); session_destroy();
+
+                // Redirect ke halaman beranda
+                // Hal ini disertai dengan pesan = Akun Anda Dihapus!
+                header("Location: " . BASE_URL . "index.php?pesan=deleted");
+                exit; // Menghentikan eksekusi script
+            }
+
+            // Menutup statement
+            $stmt->close();
+
+        // Menangkap exception jika terjadi kesalahan pada proses database
+        } catch (mysqli_sql_exception $e) {
+
+            // Mencatat detail error ke log server untuk keperluan debugging
+            error_log("Database error: " . $e->getMessage());
+
+            // Simpan pesan error ke dalam session
+            $_SESSION['error_message'] = $e->getMessage();
+
+		    // Redirect ke halaman notifikasi error database
+            header("Location: " . BASE_URL . "components/pages/error/database_notification.php");
             exit; // Menghentikan eksekusi script
         }
     }
