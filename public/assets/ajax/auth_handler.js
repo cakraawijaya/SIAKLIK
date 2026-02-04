@@ -1,3 +1,20 @@
+$(document).ready(function () {
+
+    // ======================= SESSION FLAG ======================
+    window.SESSION_EXPIRED = false;
+
+
+    // ================== GLOBAL AJAX AUTH GUARD =================
+    $(document).ajaxError(function (event, xhr) {
+        if (xhr.status === 401 && !window.SESSION_EXPIRED) {
+            window.SESSION_EXPIRED = true;
+            window.location.href = BASE_URL + 'index.php?pesan=timeout';
+        }
+    });
+
+});
+
+
 document.addEventListener("DOMContentLoaded", function() {
     const loggedIn = document.body.dataset.loggedin === "true";
     if (!loggedIn) {
