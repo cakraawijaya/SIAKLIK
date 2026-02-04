@@ -114,7 +114,7 @@
                     <div class="card-header">
                         <h1 class="card-title">
                             <i class="fas fa-times-circle mr-2" aria-hidden="true"></i>
-                            Oops! Koneksi Database Gagal
+                            Oops! Kesalahan Database
                         </h1>
                     </div>
 
@@ -122,7 +122,7 @@
                     <div class="card-body">
                         <p class="card-text">
                             <small>
-                                Error: <span>
+                                Pesan Error: <span>
                                     <strong>
                                         <?= $error_message ? htmlspecialchars($error_message).'.' : 'Tidak ada informasi error.' ?>
                                     </strong>
