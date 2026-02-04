@@ -16,81 +16,85 @@
 
 
     // ===========================================================================================
-    // HANYA CEK LOGIN KALAU $require_login = true
+    // SET TIMEOUT
     // ===========================================================================================
-    if (isset($require_login) && $require_login === true) {
-
-        // Jika belum login, maka :
-        if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-
-            // Redirect ke modal login pekerja atau admin
-            // Hal ini disertai dengan pesan = Hak akses terbatas!
-            header("location: " . BASE_URL . "index.php?pesan=akses_terbatas&modal=pekerja_admin");
-            exit; // Menghentikan eksekusi script
-        }
-
-        // Jika variabel $allowed_levels belum didefinisikan di halaman pemanggil, maka gunakan :
-        if (!isset($allowed_levels)) {
-
-            // Default: Hanya admin yang boleh akses
-            $allowed_levels = ['admin'];
-        }
-
-        // Jika role user tidak memiliki izin ke halaman ini, maka :
-        if (!in_array($_SESSION['level'], $allowed_levels)) {
-
-            // Redirect ke modal login pekerja atau admin
-            // Hal ini disertai dengan pesan = Akses ditolak!
-            header("location: " . BASE_URL . "index.php?pesan=error&modal=pekerja_admin");
-            exit; // Menghentikan eksekusi script
-        }
-    }
+    $timeout_duration = 30; // 300 detik = 5 menit
 
 
     // ===========================================================================================
     // HELPER LOG AKTIVITAS
     // ===========================================================================================
-    function logAktivitas($koneksi, $username, $role, $aksi, $detail) {
+    // Pastikan fungsi hanya dideklarasikan sekali
+    if (!function_exists('logAktivitas')) {
+        function logAktivitas($koneksi, $username, $role, $aksi, $detail) {
 
-        // Jika username atau role kosong, log tidak dijalankan
-        if (!$username || !$role) return;
+            // Jika username atau role kosong, log tidak dijalankan
+            if (!$username || !$role) return;
 
-        // Mencoba untuk memproses :
-        try {
+            // Mencoba untuk memproses :
+            try {
 
-            // Insert Statement
-            // Digunakan untuk menyimpan data aktivitas ke database
-            $stmt = $koneksi->prepare("
-                INSERT INTO riwayat_aktivitas (username, role, aksi, detail, created_at)
-                VALUES (?, ?, ?, ?, NOW())
-            ");
+                // Insert Statement
+                // Digunakan untuk menyimpan data aktivitas ke database
+                $stmt = $koneksi->prepare("
+                    INSERT INTO riwayat_aktivitas (username, role, aksi, detail, created_at)
+                    VALUES (?, ?, ?, ?, NOW())
+                ");
 
-            // Mengikat 4 parameter (username, role, aksi, dan detail) ke dalam query
-            $stmt->bind_param("ssss", $username, $role, $aksi, $detail);
+                // Mengikat 4 parameter (username, role, aksi, dan detail) ke dalam query
+                $stmt->bind_param("ssss", $username, $role, $aksi, $detail);
 
-            $stmt->execute();   // Menjalankan query
-            $stmt->close();     // Menutup statement
+                $stmt->execute();   // Menjalankan query
+                $stmt->close();     // Menutup statement
 
-        // Menangkap exception jika terjadi kesalahan pada proses database
-        } catch (mysqli_sql_exception $e) {
+            // Menangkap exception jika terjadi kesalahan pada proses database
+            } catch (mysqli_sql_exception $e) {
 
-            // Mencatat detail error ke log server untuk keperluan debugging
-            error_log("Database error: " . $e->getMessage());
+                // Mencatat detail error ke log server untuk keperluan debugging
+                error_log("Database error: " . $e->getMessage());
 
-            // Simpan pesan error ke dalam session
-            $_SESSION['error_message'] = $e->getMessage();
+                // Simpan pesan error ke dalam session
+                $_SESSION['error_message'] = $e->getMessage();
 
-            // Redirect ke halaman notifikasi error database
-            header("Location: " . BASE_URL . "components/pages/error/database_notification.php");
-            exit; // Menghentikan eksekusi script
+                // Redirect ke halaman notifikasi error database
+                header("Location: " . BASE_URL . "components/pages/error/database_notification.php");
+                exit; // Menghentikan eksekusi script
+            }
         }
     }
 
 
     // ===========================================================================================
-    // SET TIMEOUT
+    // HELPER AJAX REQUEST
     // ===========================================================================================
-    $timeout_duration = 300; // 300 detik = 5 menit
+    // Fungsi untuk mengecek apakah request yang masuk adalah AJAX
+    function isAjaxRequest() {
+
+        // Mengecek apakah header HTTP_X_REQUESTED_WITH ada dan tidak kosong
+        return !empty($_SERVER['HTTP_X_REQUESTED_WITH']) &&
+
+            // Membandingkan nilai header tersebut (dijadikan huruf kecil)
+            // dengan string 'xmlhttprequest' yang merupakan ciri khas request AJAX
+            strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';
+    }
+
+
+    // ===========================================================================================
+    // HELPER AJAX SESSION EXPIRED
+    // ===========================================================================================
+    // Fungsi untuk menangani session AJAX yang sudah expired
+    function ajaxSessionExpired() {
+
+        // Set HTTP response code menjadi 401 (Unauthorized)
+        http_response_code(401);
+
+        // Set response ke format JSON
+        header('Content-Type: application/json');
+
+        // Mengirim response JSON ke client dengan kode error "SESSION_EXPIRED"
+        echo json_encode(['code' => 'SESSION_EXPIRED']);
+        exit; // Menghentikan eksekusi script
+    }
 
 
     // ===========================================================================================
@@ -126,6 +130,9 @@
                 $detail = "$nama telah di Logout paksa oleh Sistem.";
                 logAktivitas($koneksi, $username, $level, $aksi, $detail);
 
+                // Jika request berasal dari AJAX, maka atur session menjadi expired dan hentikan eksekusi
+                if (isAjaxRequest()) { ajaxSessionExpired(); }
+
                 // Menghapus semua session
                 session_unset(); session_destroy();
 
@@ -139,6 +146,44 @@
         // Perbarui waktu aktivitas terakhir
         // Dilakukan setelah user lolos dari pengecekan timeout
         $_SESSION['LAST_ACTIVITY'] = time();
+    }
+
+
+    // ===========================================================================================
+    // CEK LOGIN & ROLE KALAU BELUM TIMEOUT
+    // ===========================================================================================
+    if (isset($require_login) && $require_login === true && empty($_GET['pesan'])) {
+
+        // Jika session hilang (user tidak login), maka :
+        if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+
+            // Jika request berasal dari AJAX, maka atur session menjadi expired dan hentikan eksekusi
+            if (isAjaxRequest()) { ajaxSessionExpired(); }
+
+            // Redirect ke modal login pekerja atau admin
+            // Hal ini disertai dengan pesan = Hak akses terbatas!
+            header("location: " . BASE_URL . "index.php?pesan=akses_terbatas&modal=pekerja_admin");
+            exit; // Menghentikan eksekusi script
+        }
+
+        // Jika variabel $allowed_levels belum didefinisikan di halaman pemanggil, maka gunakan :
+        if (!isset($allowed_levels)) {
+
+            // Default: Hanya admin yang boleh akses
+            $allowed_levels = ['admin'];
+        }
+
+        // Jika role user tidak memiliki izin ke halaman ini, maka :
+        if (!in_array($_SESSION['level'], $allowed_levels)) {
+
+            // Jika request berasal dari AJAX, maka atur session menjadi expired dan hentikan eksekusi
+            if (isAjaxRequest()) { ajaxSessionExpired(); }
+
+            // Redirect ke modal login pekerja atau admin
+            // Hal ini disertai dengan pesan = Akses ditolak!
+            header("location: " . BASE_URL . "index.php?pesan=error&modal=pekerja_admin");
+            exit; // Menghentikan eksekusi script
+        }
     }
 
 
@@ -183,6 +228,9 @@
                 $aksi   = "Akun Diblokir";
                 $detail = "Akun a/n. $nama telah diblokir (banned) oleh Admin karena pelanggaran kebijakan.";
                 logAktivitas($koneksi, $username, $level, $aksi, $detail);
+
+                // Jika request berasal dari AJAX, maka atur session menjadi expired dan hentikan eksekusi
+                if (isAjaxRequest()) { ajaxSessionExpired(); }
 
                 // Menghapus semua session
                 session_unset(); session_destroy();
