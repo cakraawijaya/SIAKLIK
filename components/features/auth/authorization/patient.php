@@ -80,19 +80,19 @@
 
 
     // ===========================================================================================
-    // HELPER AJAX SESSION EXPIRED
+    // HELPER AJAX AUTH RESPONSE
     // ===========================================================================================
-    // Fungsi untuk menangani session AJAX yang sudah expired
-    function ajaxSessionExpired() {
+    // Fungsi untuk mengirim response autentikasi atau otorisasi khusus request AJAX
+    function ajaxSessionExpired($code, $reason) {
 
-        // Set HTTP response code menjadi 401 (Unauthorized)
-        http_response_code(401);
+        // Set HTTP response code sesuai konteks (401 / 403)
+        http_response_code($code);
 
         // Set response ke format JSON
         header('Content-Type: application/json');
 
-        // Mengirim response JSON ke client dengan kode error "SESSION_EXPIRED"
-        echo json_encode(['code' => 'SESSION_EXPIRED']);
+        // Mengirim response JSON ke client dengan kode status yang sudah ditetapkan
+        echo json_encode(['code' => $reason]);
         exit; // Menghentikan eksekusi script
     }
 
@@ -130,8 +130,8 @@
                 $detail = "$nama telah di Logout paksa oleh Sistem.";
                 logAktivitas($koneksi, $username, $level, $aksi, $detail);
 
-                // Jika request berasal dari AJAX, maka atur session menjadi expired dan hentikan eksekusi
-                if (isAjaxRequest()) { ajaxSessionExpired(); }
+                // Jika request berasal dari AJAX, maka berikan respon 401 dan hentikan eksekusi
+                if (isAjaxRequest()) { ajaxSessionExpired(401, 'SESSION_EXPIRED'); }
 
                 // Menghapus semua session
                 session_unset(); session_destroy();
@@ -143,9 +143,12 @@
             }
         }
 
-        // Perbarui waktu aktivitas terakhir
-        // Dilakukan setelah user lolos dari pengecekan timeout
-        $_SESSION['LAST_ACTIVITY'] = time();
+        // Perbarui waktu aktivitas terakhir user
+        // Hanya untuk request non-AJAX (page load / navigasi langsung)
+        // Request AJAX tidak memperpanjang sesi agar mekanisme timeout tetap akurat
+        if (!isAjaxRequest()) {
+            $_SESSION['LAST_ACTIVITY'] = time();
+        }
     }
 
 
@@ -157,8 +160,8 @@
         // Jika session hilang (user tidak login), maka :
         if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 
-            // Jika request berasal dari AJAX, maka atur session menjadi expired dan hentikan eksekusi
-            if (isAjaxRequest()) { ajaxSessionExpired(); }
+            // Jika request berasal dari AJAX, maka berikan respon 401 dan hentikan eksekusi
+            if (isAjaxRequest()) { ajaxSessionExpired(401, 'NOT_LOGGED_IN'); }
 
             // Redirect ke modal login pasien
             // Hal ini disertai dengan pesan = Mohon masuk terlebih dahulu!
@@ -176,8 +179,8 @@
         // Jika role user tidak memiliki izin ke halaman ini, maka :
         if (!in_array($_SESSION['level'], $allowed_levels)) {
 
-            // Jika request berasal dari AJAX, maka atur session menjadi expired dan hentikan eksekusi
-            if (isAjaxRequest()) { ajaxSessionExpired(); }
+            // Jika request berasal dari AJAX, maka berikan respon 403 dan hentikan eksekusi
+            if (isAjaxRequest()) { ajaxSessionExpired(403, 'FORBIDDEN'); }
 
             // Redirect ke modal login pasien
             // Hal ini disertai dengan pesan = Akses ditolak!
@@ -231,8 +234,8 @@
                 $detail = "Akun a/n. $nama telah diblokir (banned) oleh Admin karena pelanggaran kebijakan.";
                 logAktivitas($koneksi, $username, $level, $aksi, $detail);
 
-                // Jika request berasal dari AJAX, maka atur session menjadi expired dan hentikan eksekusi
-                if (isAjaxRequest()) { ajaxSessionExpired(); }
+                // Jika request berasal dari AJAX, maka berikan respon 403 dan hentikan eksekusi
+                if (isAjaxRequest()) { ajaxSessionExpired(403, 'ACCOUNT_BLOCKED'); }
 
                 // Menghapus semua session
                 session_unset(); session_destroy();
