@@ -83,7 +83,7 @@
     // HELPER AJAX AUTH RESPONSE
     // ===========================================================================================
     // Fungsi untuk mengirim response autentikasi atau otorisasi khusus request AJAX
-    function ajaxSessionExpired($code, $reason) {
+    function ajaxAuthResponse($code, $reason) {
 
         // Set HTTP response code sesuai konteks (401 / 403)
         http_response_code($code);
@@ -131,7 +131,7 @@
                 logAktivitas($koneksi, $username, $level, $aksi, $detail);
 
                 // Jika request berasal dari AJAX, maka berikan respon 401 dan hentikan eksekusi
-                if (isAjaxRequest()) { ajaxSessionExpired(401, 'SESSION_EXPIRED'); }
+                if (isAjaxRequest()) { ajaxAuthResponse(401, 'SESSION_EXPIRED'); }
 
                 // Menghapus semua session
                 session_unset(); session_destroy();
@@ -161,7 +161,7 @@
         if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 
             // Jika request berasal dari AJAX, maka berikan respon 401 dan hentikan eksekusi
-            if (isAjaxRequest()) { ajaxSessionExpired(401, 'NOT_LOGGED_IN'); }
+            if (isAjaxRequest()) { ajaxAuthResponse(401, 'NOT_LOGGED_IN'); }
 
             // Redirect ke modal login pekerja atau admin
             // Hal ini disertai dengan pesan = Hak akses terbatas!
@@ -180,7 +180,7 @@
         if (!in_array($_SESSION['level'], $allowed_levels)) {
 
             // Jika request berasal dari AJAX, maka berikan respon 403 dan hentikan eksekusi
-            if (isAjaxRequest()) { ajaxSessionExpired(403, 'FORBIDDEN'); }
+            if (isAjaxRequest()) { ajaxAuthResponse(403, 'FORBIDDEN'); }
 
             // Redirect ke modal login pekerja atau admin
             // Hal ini disertai dengan pesan = Akses ditolak!
@@ -233,7 +233,7 @@
                 logAktivitas($koneksi, $username, $level, $aksi, $detail);
 
                 // Jika request berasal dari AJAX, maka berikan respon 403 dan hentikan eksekusi
-                if (isAjaxRequest()) { ajaxSessionExpired(403, 'ACCOUNT_BLOCKED'); }
+                if (isAjaxRequest()) { ajaxAuthResponse(403, 'ACCOUNT_BLOCKED'); }
 
                 // Menghapus semua session
                 session_unset(); session_destroy();
