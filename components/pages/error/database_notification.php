@@ -45,9 +45,37 @@
     // Jika tidak ada pesan error, maka :
     if (!isset($_SESSION['error_message'])) {
 
-        // Redirect ke halaman beranda
-        header("Location: " . BASE_URL);
-        exit; // Menghentikan eksekusi script
+        // Cek apakah saat ini user tidak login, jika iya maka :
+        if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+
+            // Redirect ke halaman beranda
+            header("Location: " . BASE_URL);
+            exit; // Menghentikan eksekusi script
+        }
+
+        // Cek apakah saat ini user login sebagai pasien, jika iya maka :
+        if (isset($_SESSION['level']) && $_SESSION['level'] === 'pasien') {
+
+            // Redirect ke halaman registrasi antrean
+            header("Location: " . BASE_URL . "index.php?page=patient/clinic/queue_registration");
+            exit; // Menghentikan eksekusi script
+        }
+
+        // Cek apakah saat ini user login sebagai pekerja, jika iya maka :
+        if (isset($_SESSION['level']) && $_SESSION['level'] === 'pekerja') {
+
+            // Redirect ke halaman dashboard
+            header("Location: " . BASE_URL . "index.php?page=worker/dashboard");
+            exit; // Menghentikan eksekusi script
+        }
+
+        // Cek apakah saat ini user login sebagai admin, jika iya maka :
+        if (isset($_SESSION['level']) && $_SESSION['level'] === 'admin') {
+
+            // Redirect ke halaman dashboard
+            header("Location: " . BASE_URL . "index.php?page=worker/dashboard");
+            exit; // Menghentikan eksekusi script
+        }
     }
 
     // Ambil pesan error
