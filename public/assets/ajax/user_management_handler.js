@@ -1,5 +1,10 @@
 $(document).ready(function () {
 
+    // ========================= HELPER ==========================
+    function prettyLabel(tab) {
+        return tab.charAt(0).toUpperCase() + tab.slice(1);
+    }
+
     // ======================== LOAD DATA ========================
     function loadUserData(searchOnly = false, highlightPage = null) {
         // Jika searchOnly true, ambil value dari input search
@@ -171,10 +176,6 @@ $(document).ready(function () {
         currentPage[activeTab] = 1;
         lastEditedUser.email = null;
         loadUserData();
-        
-        function prettyLabel(tab) {
-            return tab.charAt(0).toUpperCase() + tab.slice(1);
-        }
 
         $('#btnAddText').text('Data ' + prettyLabel(activeTab));
         $('#btnExportText').html('Export ' + prettyLabel(activeTab));
