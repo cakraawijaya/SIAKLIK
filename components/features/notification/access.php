@@ -174,8 +174,15 @@ Tentukan isi alert dan aksi lanjutannya berdasarkan parameter "pesan" dan "modal
                             // Cek modal apakah sama dengan "pekerja_admin", jika iya maka :
                             <?php elseif ($modal == 'pekerja_admin'): ?>
 
-                                // Redirect ke halaman dashboard
-                                window.location.href = "<?= BASE_URL . 'index.php?page=worker/dashboard' ?>";
+                                // Redirect ke halaman dashboard (untuk user admin)
+                                <?php if (isset($_SESSION['level']) && $_SESSION['level'] === 'admin'): ?>
+                                    window.location.href = "<?= BASE_URL . 'index.php?page=admin/dashboard' ?>";
+                                <?php endif; ?>
+
+                                // Redirect ke halaman dashboard (untuk user pekerja)
+                                <?php if (isset($_SESSION['level']) && $_SESSION['level'] === 'pekerja'): ?>
+                                    window.location.href = "<?= BASE_URL . 'index.php?page=worker/dashboard' ?>";
+                                <?php endif; ?>
                             <?php endif; ?>
 
                         // Jika pesan yang diterima itu antara lain "logout, reset_terkirim, timeout, deleted", maka :

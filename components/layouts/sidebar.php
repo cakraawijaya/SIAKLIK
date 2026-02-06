@@ -140,11 +140,30 @@
                     </li>
                 <?php endif; ?>
 
-                <!-- Menu untuk Pekerja dan Admin -->
-                <?php
-                    $allowed_roles = ['pekerja', 'admin'];
-                    if (isset($_SESSION['level']) && in_array($_SESSION['level'], $allowed_roles)):
-                ?>
+                <!-- Menu khusus untuk Admin -->
+                <?php if (isset($_SESSION['level']) && $_SESSION['level'] === 'admin'): ?>
+
+                    <!-- Dashboard -->
+                    <li>
+                        <!-- Tambahkan class css: custom-mt-sidebar -->
+                        <a onclick="openLink('<?= BASE_URL ?>index.php?page=admin/dashboard', false)" class="custom-mt-sidebar">
+                            <i class="fas fa-laptop-house mr-2" aria-hidden="true"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+
+                    <!-- Catatan Aktivitas -->
+                    <li>
+                        <a onclick="openLink('<?= BASE_URL ?>index.php?page=admin/user_log', false)">
+                            <i class="fas fa-folder-open mr-2" aria-hidden="true"></i>
+                            <span>Catatan Aktivitas</span>
+                        </a>
+                    </li>
+
+                <?php endif; ?>
+
+                <!-- Menu khusus untuk Pekerja -->
+                <?php if (isset($_SESSION['level']) && $_SESSION['level'] === 'pekerja'): ?>
 
                     <!-- Dashboard -->
                     <li>
@@ -155,17 +174,13 @@
                         </a>
                     </li>
 
-                    <!-- Menu khusus untuk Admin -->
-                    <?php if (isset($_SESSION['level']) && $_SESSION['level'] === 'admin'): ?>
+                <?php endif; ?>
 
-                        <!-- Catatan Aktivitas -->
-                        <li>
-                            <a onclick="openLink('<?= BASE_URL ?>index.php?page=admin/user_log', false)">
-                                <i class="fas fa-folder-open mr-2" aria-hidden="true"></i>
-                                <span>Catatan Aktivitas</span>
-                            </a>
-                        </li>
-                    <?php endif; ?>
+                <!-- Menu untuk Pekerja dan Admin -->
+                <?php
+                    $allowed_roles = ['pekerja', 'admin'];
+                    if (isset($_SESSION['level']) && in_array($_SESSION['level'], $allowed_roles)):
+                ?>
 
                     <!-- Registrasi Antrean -->
                     <li>

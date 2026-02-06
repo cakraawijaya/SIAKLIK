@@ -73,7 +73,7 @@
         if (isset($_SESSION['level']) && $_SESSION['level'] === 'admin') {
 
             // Redirect ke halaman dashboard
-            header("Location: " . BASE_URL . "index.php?page=worker/dashboard");
+            header("Location: " . BASE_URL . "index.php?page=admin/dashboard");
             exit; // Menghentikan eksekusi script
         }
     }

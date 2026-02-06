@@ -46,11 +46,17 @@
                     -->
                     <li class="nav-item select-none">
 
-                        <!-- Menu untuk Pekerja dan Admin -->
-                        <?php 
-                            $allowed_roles = ['pekerja', 'admin'];
-                            if (isset($_SESSION['level']) && in_array($_SESSION['level'], $allowed_roles)):
-                        ?>
+                        <!-- Menu khusus untuk Admin -->
+                        <?php if (isset($_SESSION['level']) && $_SESSION['level'] === 'admin'): ?>
+
+                            <!-- Dashboard -->
+                            <a class="nav-link" onclick="openLink('<?= BASE_URL ?>index.php?page=admin/dashboard', false)">
+                                <i class="fas fa-laptop-house mr-1" aria-hidden="true"></i>
+                                Dashboard
+                            </a>
+
+                        <!-- Menu khusus untuk Pekerja -->
+                        <?php elseif (isset($_SESSION['level']) && $_SESSION['level'] === 'pekerja'): ?>
 
                             <!-- Dashboard -->
                             <a class="nav-link" onclick="openLink('<?= BASE_URL ?>index.php?page=worker/dashboard', false)">
