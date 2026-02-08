@@ -61,10 +61,7 @@ $(document).ready(function () {
 
         fetch(BASE_URL + "components/data/ajax_auth_check.php?action=force_logout", { credentials: 'same-origin' })
         .then(res => res.json())
-        .then(res => {
-            if (res.status === 'auto_deleted' || type === 'auto_deleted') {
-                window.location.href = BASE_URL + "index.php?pesan=auto_deleted";
-            } else {
+        .then(() => {
                 window.location.href = BASE_URL + "index.php?pesan=" + type;
             }
         });
