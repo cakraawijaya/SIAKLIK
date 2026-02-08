@@ -60,8 +60,7 @@ $(document).ready(function () {
         sessionStorage.setItem("userLoggedOut", "true");
 
         fetch(BASE_URL + "components/data/ajax_auth_check.php?action=force_logout", { credentials: 'same-origin' })
-        .then(res => res.json())
-        .then(() => {
+        .finally(() => {
                 window.location.href = BASE_URL + "index.php?pesan=" + type;
             }
         });
