@@ -53,7 +53,7 @@ $(document).ready(function () {
         console.log("[Auth] Polling dihentikan karena:", type);
 
         if (type === 'auto_db_error') {
-            window.location.href = BASE_URL + "components/pages/error/database_notification.php";
+            window.location.href = BASE_URL + "components/pages/system/error/database_notification.php";
             return;
         }
 
