@@ -19,7 +19,7 @@
         $docRoot = str_replace('\\', '/', $_SERVER['DOCUMENT_ROOT']);
 
         // Ambil path folder project relatif terhadap document root
-        $projectFolder = str_replace($docRoot, '', str_replace('\\', '/', realpath(__DIR__ . '/../../../')));
+        $projectFolder = str_replace($docRoot, '', str_replace('\\', '/', realpath(__DIR__ . '/../../../../')));
 
         // Pastikan path diakhiri dengan slash
         $projectFolder = rtrim($projectFolder, '/') . '/';
