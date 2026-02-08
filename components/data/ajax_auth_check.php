@@ -76,13 +76,6 @@
         // Menangkap exception jika terjadi kesalahan pada proses database
         } catch (mysqli_sql_exception $e) {
 
-            // Jika session Database Error belum pernah dicatat sama sekali, maka atur :
-            if (!isset($_SESSION['__db_error'])) {
-
-                // Penanda DB error agar hanya dicatat satu kali
-                $_SESSION['__db_error'] = true;
-            }
-
             // Mencatat detail error ke log server untuk keperluan debugging
             error_log("Database error: " . $e->getMessage());
 
@@ -111,13 +104,6 @@
 
         // Menangkap exception jika terjadi kesalahan pada proses database
         } catch (mysqli_sql_exception $e) {
-
-            // Jika session Database Error belum pernah dicatat sama sekali, maka atur :
-            if (!isset($_SESSION['__db_error'])) {
-
-                // Penanda DB error agar hanya dicatat satu kali
-                $_SESSION['__db_error'] = true;
-            }
 
             // Mencatat detail error ke log server untuk keperluan debugging
             error_log("Database error: " . $e->getMessage());
@@ -195,13 +181,6 @@
 
     // Menangkap exception jika terjadi kesalahan pada proses database
     } catch (mysqli_sql_exception $e) {
-
-        // Jika session Database Error belum pernah dicatat sama sekali, maka atur :
-        if (!isset($_SESSION['__db_error'])) {
-
-            // Penanda DB error agar hanya dicatat satu kali
-            $_SESSION['__db_error'] = true;
-        }
 
         // Mencatat detail error ke log server untuk keperluan debugging
         error_log("Database error: " . $e->getMessage());
