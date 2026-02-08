@@ -28,7 +28,7 @@
             session_unset(); session_destroy();
 
             // Mengirimkan status 'auto_timeout'
-            echo json_encode(['status'=>'auto_timeout']);
+            echo json_encode(['status' => 'auto_timeout']);
             exit; // Menghentikan eksekusi script
         }
     }
@@ -83,7 +83,7 @@
             $_SESSION['error_message'] = $e->getMessage();
 
             // Kirim response JSON error
-            echo json_encode(['status' => 'auto_db_error', 'message' => 'Terjadi kesalahan pada database', 'error'=>$e->getMessage()]);
+            echo json_encode(['status' => 'auto_db_error', 'message' => 'Terjadi kesalahan pada database']);
             exit; // Menghentikan eksekusi script
         }
     }
@@ -98,12 +98,16 @@
         // Mencoba untuk memproses :
         try {
 
-            // Select Statement
-            // Digunakan untuk mengecek ketersediaan koneksi database sebelum melanjutkan proses
-            $koneksi->query("SELECT 1");
+            // Memeriksa apakah koneksi database masih aktif
+            // ping() akan mengembalikan TRUE jika koneksi hidup, FALSE jika terputus
+            if (!$koneksi->ping()) {
 
-        // Menangkap exception jika terjadi kesalahan pada proses database
-        } catch (mysqli_sql_exception $e) {
+                 // Jika koneksi terputus, maka lempar Exception secara manual
+                 throw new Exception("Koneksi database terputus");
+            }
+
+        // Menangkap exception jika terjadi kesalahan pada proses pengecekan
+        } catch (Throwable $e) {
 
             // Mencatat detail error ke log server untuk keperluan debugging
             error_log("Database error: " . $e->getMessage());
@@ -112,7 +116,7 @@
             $_SESSION['error_message'] = $e->getMessage();
 
             // Kirim response JSON error
-            echo json_encode(['status' => 'auto_db_error', 'message' => 'Terjadi kesalahan pada database', 'error'=>$e->getMessage()]);
+            echo json_encode(['status' => 'auto_db_error', 'message' => 'Database tidak tersedia']);
             exit; // Menghentikan eksekusi script
         }
 
@@ -189,7 +193,7 @@
         $_SESSION['error_message'] = $e->getMessage();
 
         // Kirim response JSON error
-        echo json_encode(['status' => 'auto_db_error', 'message' => 'Terjadi kesalahan pada database', 'error'=>$e->getMessage()]);
+        echo json_encode(['status' => 'auto_db_error', 'message' => 'Terjadi kesalahan pada database']);
         exit; // Menghentikan eksekusi script
     }
 
