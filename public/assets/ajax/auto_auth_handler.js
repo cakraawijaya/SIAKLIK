@@ -117,13 +117,4 @@ $(document).ready(function () {
         }
     }, 1000);
 
-    // Saat halaman selesai load (F5 / Refresh)
-    $(window).on('load', function () {
-        const dbError = sessionStorage.getItem("dbErrorOccurred") === "true";
-        if (dbError) {
-            sessionStorage.removeItem("dbErrorOccurred");
-            window.location.href = BASE_URL + "index.php?pesan=auto_timeout";
-        }
-    });
-
 });
