@@ -93,7 +93,7 @@
 
                                 <!-- Informasi Pelayanan -->
                                 <div class="dropdown-menu-child">
-                                    <a class="dropdown-item" onclick="openLink('<?= BASE_URL ?>index.php?page=patient/clinic/clinic_information', false)">
+                                    <a class="dropdown-item" onclick="openLink('<?= BASE_URL ?>index.php?page=guest/clinic/information', false)">
                                         Informasi Pelayanan
                                         <i class="fas fa-info-circle ml-1" aria-hidden="true"></i>
                                     </a>
@@ -103,7 +103,7 @@
 
                                 <!-- Grafik Kunjungan -->
                                 <div class="dropdown-menu-child">
-                                    <a class="dropdown-item" onclick="openLink('<?= BASE_URL ?>index.php?page=patient/chart/chart_options', false)">
+                                    <a class="dropdown-item" onclick="openLink('<?= BASE_URL ?>index.php?page=guest/statistics/options', false)">
                                         Grafik Kunjungan
                                         <i class="fas fa-chart-line ml-1" aria-hidden="true"></i>
                                     </a>
@@ -113,7 +113,7 @@
 
                                 <!-- Fasilitas Poliklinik -->
                                 <div class="dropdown-menu-child">
-                                    <a class="dropdown-item" onclick="openLink('<?= BASE_URL ?>index.php?page=patient/clinic/clinic_facilities', false)">
+                                    <a class="dropdown-item" onclick="openLink('<?= BASE_URL ?>index.php?page=guest/clinic/facilities', false)">
                                         Fasilitas Poliklinik
                                         <i class="fas fa-hand-holding-medical ml-1" aria-hidden="true"></i>
                                     </a>
@@ -123,7 +123,7 @@
 
                                 <!-- Galeri -->
                                 <div class="dropdown-menu-child">
-                                    <a class="dropdown-item" onclick="openLink('<?= BASE_URL ?>index.php?page=patient/clinic/gallery', false)">
+                                    <a class="dropdown-item" onclick="openLink('<?= BASE_URL ?>index.php?page=guest/clinic/gallery', false)">
                                         Galeri
                                         <i class="fas fa-photo-video ml-1" aria-hidden="true"></i>
                                     </a>
@@ -159,7 +159,7 @@
 
                                         <!-- Catatan Aktivitas -->
                                         <div class="dropdown-menu-child">
-                                            <a class="dropdown-item" onclick="openLink('<?= BASE_URL ?>index.php?page=admin/user_log', false)">
+                                            <a class="dropdown-item" onclick="openLink('<?= BASE_URL ?>index.php?page=management/logs', false)">
                                                 Catatan Aktivitas
                                                 <i class="fas fa-folder-open ml-1" aria-hidden="true"></i>
                                             </a>
@@ -176,7 +176,7 @@
 
                                         <!-- Registrasi Antrean -->
                                         <div class="dropdown-menu-child">
-                                            <a class="dropdown-item" onclick="openLink('<?= BASE_URL ?>index.php?page=patient/clinic/queue_registration', false)">
+                                            <a class="dropdown-item" onclick="openLink('<?= BASE_URL ?>index.php?page=general/queue/registration', false)">
                                                 Registrasi Antrean
                                                 <i class="fas fa-user-tag ml-1" aria-hidden="true"></i>
                                             </a>
@@ -186,7 +186,7 @@
 
                                         <!-- Status Antrean -->
                                         <div class="dropdown-menu-child">
-                                            <a class="dropdown-item" onclick="openLink('<?= BASE_URL ?>index.php?page=patient/clinic/queue_status', false)">
+                                            <a class="dropdown-item" onclick="openLink('<?= BASE_URL ?>index.php?page=general/queue/status', false)">
                                                 Status Antrean
                                                 <i class="fas fa-tasks ml-1" aria-hidden="true"></i>
                                             </a>
@@ -223,34 +223,14 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="ProfileDropdown">
 
-                                    <!-- Pengaturan akun Admin -->
-                                    <?php if (isset($_SESSION['level']) && $_SESSION['level'] === 'admin'): ?>
+                                    <!-- Menu untuk Pasien, Pekerja, dan Admin -->
+                                    <?php 
+                                        $allowed_roles = ['pasien', 'pekerja', 'admin'];
+                                        if (isset($_SESSION['level']) && in_array($_SESSION['level'], $allowed_roles)):
+                                    ?>
+
                                         <div class="dropdown-menu-child">
-                                            <a class="dropdown-item" onclick="openLink('<?= BASE_URL ?>index.php?page=admin/profile', false)">
-                                                Pengaturan Akun
-                                                <i class="fas fa-user-cog ml-1" aria-hidden="true"></i>
-                                            </a>
-                                        </div>
-
-                                        <div class="dropdown-divider"></div> <!-- Garis pemisah submenu -->
-                                    <?php endif; ?>
-
-                                    <!-- Pengaturan akun Pekerja -->
-                                    <?php if (isset($_SESSION['level']) && $_SESSION['level'] === 'pekerja'): ?>
-                                        <div class="dropdown-menu-child">
-                                            <a class="dropdown-item" onclick="openLink('<?= BASE_URL ?>index.php?page=worker/profile', false)">
-                                                Pengaturan Akun
-                                                <i class="fas fa-user-cog ml-1" aria-hidden="true"></i>
-                                            </a>
-                                        </div>
-
-                                        <div class="dropdown-divider"></div> <!-- Garis pemisah submenu -->
-                                    <?php endif; ?>
-
-                                    <!-- Pengaturan akun Pasien -->
-                                    <?php if (isset($_SESSION['level']) && $_SESSION['level'] === 'pasien'): ?>
-                                        <div class="dropdown-menu-child">
-                                            <a class="dropdown-item" onclick="openLink('<?= BASE_URL ?>index.php?page=patient/clinic/profile', false)">
+                                            <a class="dropdown-item" onclick="openLink('<?= BASE_URL ?>index.php?page=general/account/profile', false)">
                                                 Pengaturan Akun
                                                 <i class="fas fa-user-cog ml-1" aria-hidden="true"></i>
                                             </a>

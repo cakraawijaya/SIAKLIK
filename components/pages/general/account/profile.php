@@ -4,7 +4,6 @@
     // AUTENTIKASI, KEAMANAN, DAN KONTROL AKSES PENGGUNA
     // ===========================================================================================
     $require_login = true; // harus login
-    $allowed_levels = ['pasien']; // akses yang diberikan
     require_once __DIR__ . '/../../../features/auth/authorization/patient.php';
 
 ?>

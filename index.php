@@ -46,7 +46,7 @@
         $_SESSION['error_message'] = "$page";
 
         // Redirect ke halaman notifikasi error
-        header("Location: " . BASE_URL . "index.php?page=error/page_notification");
+        header("Location: " . BASE_URL . "index.php?page=system/error/page_notification");
         exit; // Menghentikan eksekusi script
     }
 
@@ -55,7 +55,7 @@
     // TAMPILKAN HALAMAN ERROR TANPA LAYOUT
     // ===========================================================================================
     // Jika halaman berada dalam folder "error/", maka :
-    if (strpos($page, 'error/') === 0) {
+    if (strpos($page, 'system/error/') === 0) {
         include $view;      // Include file error (tanpa layout tambahan)
         ob_end_flush();     // Akhiri buffering dan kirim output
         exit;               // Menghentikan eksekusi script

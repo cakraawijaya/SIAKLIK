@@ -44,25 +44,25 @@
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/layouts/footer.css">
 
         <!-- Halaman Umum (Tidak Harus Login) -->
-        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/guest/home.css">
-        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/guest/clinic_information.css">
-        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/guest/chart_options.css">
-        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/guest/clinic_facilities.css">
-        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/guest/gallery.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/home.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/guest/clinic/information.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/guest/clinic/facilities.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/guest/clinic/gallery.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/guest/statistics/all.css">
 
         <!-- Halaman Umum (Harus Login) -->
-        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/all_roles/profile.css">
-        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/all_roles/queue_registration.css">
-        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/all_roles/queue_status.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/general/account/profile.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/general/queue/registration.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/general/queue/status.css">
 
         <!-- Halaman Khusus Admin dan Pekerja -->
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/worker_admin/dashboard.css">
-        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/worker_admin/patient_management.css">
-        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/worker_admin/queue_management.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/management/patients.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/management/queues.css">
 
         <!-- Halaman Khusus Admin -->
-        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/admin/user_management.css">
-        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/admin/user_log.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/management/users.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/management/logs.css">
 
         <!-- Modal -->
         <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/modules/modal.css">

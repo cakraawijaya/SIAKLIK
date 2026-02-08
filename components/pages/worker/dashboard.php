@@ -33,7 +33,7 @@
 
             <!-- ======================== CARD 1: MENU MANAJEMEN PASIEN ======================== -->
             <div class="dashboard-item select-none">
-                <a onclick="openLink('<?= BASE_URL ?>index.php?page=worker/patient_management', false)">
+                <a onclick="openLink('<?= BASE_URL ?>index.php?page=management/patients', false)">
                     <div class="card bg-primary text-white h-100">
                         <div class="card-body">
                             <i class="fas fa-book" aria-hidden="true"></i>
@@ -45,7 +45,7 @@
 
             <!-- ======================== CARD 2: MENU MANAJEMEN ANTREAN ======================= -->
             <div class="dashboard-item select-none">
-                <a onclick="openLink('<?= BASE_URL ?>index.php?page=worker/queue_management', false)">
+                <a onclick="openLink('<?= BASE_URL ?>index.php?page=management/queues', false)">
                     <div class="card bg-info text-white h-100">
                         <div class="card-body">
                             <i class="fas fa-tasks" aria-hidden="true"></i>
@@ -57,7 +57,7 @@
 
             <!-- ======================== CARD 3: MENU GRAFIK KUNJUNGAN ======================== -->
             <div class="dashboard-item select-none">
-                <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/chart/chart_options', false)">
+                <a onclick="openLink('<?= BASE_URL ?>index.php?page=guest/statistics/options', false)">
                     <div class="card bg-success text-white h-100">
                         <div class="card-body">
                             <i class="fas fa-chart-bar" aria-hidden="true"></i>

@@ -50,8 +50,8 @@
                                 </h5>
                                 
                                 <ul class="list-unstyled footer-list">
-                                    <li><span><strong>Senin - Jumat:</strong> 07.30 – 15.30</span></li>
-                                    <li><span><strong>Sabtu & Minggu:</strong> Libur</span></li>
+                                    <li><span><strong>Senin - Jumat:</strong>&nbsp; 07.30 – 15.30</span></li>
+                                    <li><span><strong>Sabtu & Minggu:</strong>&nbsp; Libur</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -165,43 +165,43 @@
         <script src="<?= BASE_URL ?>public/assets/js/ui/home/resize_header_article.js"></script>
 
         <!-- Script Khusus Berdasarkan Halaman -->
-        <?php if ($page == 'patient/chart/chart_gender'): ?>
-            <script src="<?= BASE_URL ?>public/assets/js/ui/highcharts/chart_gender.js"></script>
-        <?php elseif ($page == 'patient/chart/chart_2013'): ?>
-            <script src="<?= BASE_URL ?>public/assets/js/ui/highcharts/chart_2013.js"></script>
-        <?php elseif ($page == 'patient/chart/chart_2014'): ?>
-            <script src="<?= BASE_URL ?>public/assets/js/ui/highcharts/chart_2014.js"></script>
-        <?php elseif ($page == 'patient/chart/chart_2015'): ?>
-            <script src="<?= BASE_URL ?>public/assets/js/ui/highcharts/chart_2015.js"></script>
-        <?php elseif ($page == 'patient/chart/chart_2016'): ?>
-            <script src="<?= BASE_URL ?>public/assets/js/ui/highcharts/chart_2016.js"></script>
-        <?php elseif ($page == 'patient/chart/chart_2017'): ?>
-            <script src="<?= BASE_URL ?>public/assets/js/ui/highcharts/chart_2017.js"></script>
-        <?php elseif ($page == 'patient/chart/chart_2018'): ?>
-            <script src="<?= BASE_URL ?>public/assets/js/ui/highcharts/chart_2018.js"></script>
-        <?php elseif ($page == 'patient/chart/chart_2019'): ?>
-            <script src="<?= BASE_URL ?>public/assets/js/ui/highcharts/chart_2019.js"></script>
-        <?php elseif ($page == 'patient/chart/chart_2020'): ?>
-            <script src="<?= BASE_URL ?>public/assets/js/ui/highcharts/chart_2020.js"></script>
-        <?php elseif ($page == 'patient/chart/chart_2021'): ?>
-            <script src="<?= BASE_URL ?>public/assets/js/ui/highcharts/chart_2021.js"></script>
-        <?php elseif ($page == 'patient/chart/chart_2022'): ?>
-            <script src="<?= BASE_URL ?>public/assets/js/ui/highcharts/chart_2022.js"></script>
-        <?php elseif ($page == 'admin/user_management'): ?>
+        <?php if ($page == 'guest/statistics/gender'): ?>
+            <script src="<?= BASE_URL ?>public/assets/js/ui/highcharts/statistic_gender.js"></script>
+        <?php elseif ($page == 'guest/statistics/2013'): ?>
+            <script src="<?= BASE_URL ?>public/assets/js/ui/highcharts/statistic_2013.js"></script>
+        <?php elseif ($page == 'guest/statistics/2014'): ?>
+            <script src="<?= BASE_URL ?>public/assets/js/ui/highcharts/statistic_2014.js"></script>
+        <?php elseif ($page == 'guest/statistics/2015'): ?>
+            <script src="<?= BASE_URL ?>public/assets/js/ui/highcharts/statistic_2015.js"></script>
+        <?php elseif ($page == 'guest/statistics/2016'): ?>
+            <script src="<?= BASE_URL ?>public/assets/js/ui/highcharts/statistic_2016.js"></script>
+        <?php elseif ($page == 'guest/statistics/2017'): ?>
+            <script src="<?= BASE_URL ?>public/assets/js/ui/highcharts/statistic_2017.js"></script>
+        <?php elseif ($page == 'guest/statistics/2018'): ?>
+            <script src="<?= BASE_URL ?>public/assets/js/ui/highcharts/statistic_2018.js"></script>
+        <?php elseif ($page == 'guest/statistics/2019'): ?>
+            <script src="<?= BASE_URL ?>public/assets/js/ui/highcharts/statistic_2019.js"></script>
+        <?php elseif ($page == 'guest/statistics/2020'): ?>
+            <script src="<?= BASE_URL ?>public/assets/js/ui/highcharts/statistic_2020.js"></script>
+        <?php elseif ($page == 'guest/statistics/2021'): ?>
+            <script src="<?= BASE_URL ?>public/assets/js/ui/highcharts/statistic_2021.js"></script>
+        <?php elseif ($page == 'guest/statistics/2022'): ?>
+            <script src="<?= BASE_URL ?>public/assets/js/ui/highcharts/statistic_2022.js"></script>
+        <?php elseif ($page == 'management/users'): ?>
             <script src="<?= BASE_URL ?>public/assets/ajax/user_management_handler.js"></script>
             <script src="<?= BASE_URL ?>public/assets/js/utils/table_scrollbar.js"></script>
-        <?php elseif ($page == 'admin/user_log'): ?>
+        <?php elseif ($page == 'management/logs'): ?>
             <script src="<?= BASE_URL ?>public/assets/ajax/user_log_handler.js"></script>
             <script src="<?= BASE_URL ?>public/assets/js/utils/table_scrollbar.js"></script>
-        <?php elseif ($page == 'worker/patient_management'): ?>
+        <?php elseif ($page == 'management/patients'): ?>
             <script src="<?= BASE_URL ?>public/assets/ajax/patient_management_handler.js"></script>
             <script src="<?= BASE_URL ?>public/assets/js/utils/table_scrollbar.js"></script>
-        <?php elseif ($page == 'worker/queue_management'): ?>
+        <?php elseif ($page == 'management/queues'): ?>
             <script src="<?= BASE_URL ?>public/assets/ajax/queue_management_handler.js"></script>
             <script src="<?= BASE_URL ?>public/assets/js/utils/table_scrollbar.js"></script>
-        <?php elseif ($page == 'patient/clinic/queue_registration'): ?>
+        <?php elseif ($page == 'general/queue/registration'): ?>
             <script src="<?= BASE_URL ?>public/assets/ajax/queue_registration_handler.js"></script>
-        <?php elseif ($page == 'patient/clinic/queue_status'): ?>
+        <?php elseif ($page == 'general/queue/status'): ?>
             <script src="<?= BASE_URL ?>public/assets/ajax/queue_status_handler.js"></script>
             <script src="<?= BASE_URL ?>public/assets/js/utils/table_scrollbar.js"></script>
         <?php endif; ?>

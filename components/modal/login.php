@@ -207,7 +207,7 @@
 
           <!-- Link untuk menuju ke modal Lupa Password -->
           <p class="mb-0 select-none">Lupa Password?
-            <a onclick="openLink('<?= BASE_URL ?>index.php?page=admin/user_management', false)">
+            <a onclick="openLink('<?= BASE_URL ?>index.php?page=management/users', false)">
               <span>Klik di sini</span>
             </a>
           </p>

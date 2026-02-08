@@ -154,7 +154,7 @@
 
                     <!-- Catatan Aktivitas -->
                     <li>
-                        <a onclick="openLink('<?= BASE_URL ?>index.php?page=admin/user_log', false)">
+                        <a onclick="openLink('<?= BASE_URL ?>index.php?page=management/logs', false)">
                             <i class="fas fa-folder-open mr-2" aria-hidden="true"></i>
                             <span>Catatan Aktivitas</span>
                         </a>
@@ -184,7 +184,7 @@
 
                     <!-- Registrasi Antrean -->
                     <li>
-                        <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/clinic/queue_registration', false)">
+                        <a onclick="openLink('<?= BASE_URL ?>index.php?page=general/queue/registration', false)">
                             <i class="fas fa-user-tag mr-2" aria-hidden="true"></i>
                             <span>Registrasi Antrean</span>
                         </a>
@@ -192,7 +192,7 @@
 
                     <!-- Status Antrean -->
                     <li>
-                        <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/clinic/queue_status', false)">
+                        <a onclick="openLink('<?= BASE_URL ?>index.php?page=general/queue/status', false)">
                             <i class="fas fa-tasks mr-2" aria-hidden="true"></i>
                             <span>Status Antrean</span>
                         </a>
@@ -207,7 +207,7 @@
                     <!-- Registrasi Antrean -->
                     <li>
                         <!-- Tambahkan class css: custom-mt-sidebar -->
-                        <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/clinic/queue_registration', false)" class="custom-mt-sidebar">
+                        <a onclick="openLink('<?= BASE_URL ?>index.php?page=general/queue/registration', false)" class="custom-mt-sidebar">
                             <i class="fas fa-user-tag mr-2" aria-hidden="true"></i>
                             <span>Registrasi Antrean</span>
                         </a>
@@ -215,7 +215,7 @@
 
                     <!-- Status Antrean -->
                     <li>
-                        <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/clinic/queue_status', false)">
+                        <a onclick="openLink('<?= BASE_URL ?>index.php?page=general/queue/status', false)">
                             <i class="fas fa-tasks mr-2" aria-hidden="true"></i>
                             <span>Status Antrean</span>
                         </a>
@@ -224,7 +224,7 @@
 
                 <!-- Informasi Pelayanan -->
                 <li>
-                    <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/clinic/clinic_information', false)">
+                    <a onclick="openLink('<?= BASE_URL ?>index.php?page=guest/clinic/information', false)">
                         <i class="fas fa-info-circle mr-2" aria-hidden="true"></i>
                         <span>Informasi Pelayanan</span>
                     </a>
@@ -241,7 +241,7 @@
                         <!-- Kunjungan pasien berdasarkan Jenis Kelamin -->
                         <li>
                             <!-- Tambahkan class css: custom-mt-sidebar-child -->
-                            <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/chart/chart_gender', false)" class="custom-mt-sidebar-child">
+                            <a onclick="openLink('<?= BASE_URL ?>index.php?page=guest/statistics/gender', false)" class="custom-mt-sidebar-child">
                                 <i class="fas fa-procedures mr-2" aria-hidden="true"></i>
                                 <span>Jenis Kelamin</span>
                             </a>
@@ -249,7 +249,7 @@
 
                         <!-- Kunjungan pasien berdasarkan SATKER Tahun 2013 -->
                         <li>
-                            <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/chart/chart_2013', false)">
+                            <a onclick="openLink('<?= BASE_URL ?>index.php?page=guest/statistics/2013', false)">
                                 <i class="fas fa-procedures mr-2" aria-hidden="true"></i>
                                 <span>SATKER Tahun 2013</span>
                             </a>
@@ -257,7 +257,7 @@
 
                         <!-- Kunjungan pasien berdasarkan SATKER Tahun 2014 -->
                         <li>
-                            <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/chart/chart_2014', false)">
+                            <a onclick="openLink('<?= BASE_URL ?>index.php?page=guest/statistics/2014', false)">
                                 <i class="fas fa-procedures mr-2" aria-hidden="true"></i>
                                 <span>SATKER Tahun 2014</span>
                             </a>
@@ -265,7 +265,7 @@
 
                         <!-- Kunjungan pasien berdasarkan SATKER Tahun 2015 -->
                         <li>
-                            <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/chart/chart_2015', false)">
+                            <a onclick="openLink('<?= BASE_URL ?>index.php?page=guest/statistics/2015', false)">
                                 <i class="fas fa-procedures mr-2" aria-hidden="true"></i>
                                 <span>SATKER Tahun 2015</span>
                             </a>
@@ -273,7 +273,7 @@
 
                         <!-- Kunjungan pasien berdasarkan SATKER Tahun 2016 -->
                         <li>
-                            <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/chart/chart_2016', false)">
+                            <a onclick="openLink('<?= BASE_URL ?>index.php?page=guest/statistics/2016', false)">
                                 <i class="fas fa-procedures mr-2" aria-hidden="true"></i>
                                 <span>SATKER Tahun 2016</span>
                             </a>
@@ -281,7 +281,7 @@
 
                         <!-- Kunjungan pasien berdasarkan SATKER Tahun 2017 -->
                         <li>
-                            <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/chart/chart_2017', false)">
+                            <a onclick="openLink('<?= BASE_URL ?>index.php?page=guest/statistics/2017', false)">
                                 <i class="fas fa-procedures mr-2" aria-hidden="true"></i>
                                 <span>SATKER Tahun 2017</span>
                             </a>
@@ -289,7 +289,7 @@
 
                         <!-- Kunjungan pasien berdasarkan SATKER Tahun 2018 -->
                         <li>
-                            <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/chart/chart_2018', false)">
+                            <a onclick="openLink('<?= BASE_URL ?>index.php?page=guest/statistics/2018', false)">
                                 <i class="fas fa-procedures mr-2" aria-hidden="true"></i>
                                 <span>SATKER Tahun 2018</span>
                             </a>
@@ -297,7 +297,7 @@
 
                         <!-- Kunjungan pasien berdasarkan SATKER Tahun 2019 -->
                         <li>
-                            <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/chart/chart_2019', false)">
+                            <a onclick="openLink('<?= BASE_URL ?>index.php?page=guest/statistics/2019', false)">
                                 <i class="fas fa-procedures mr-2" aria-hidden="true"></i>
                                 <span>SATKER Tahun 2019</span>
                             </a>
@@ -305,7 +305,7 @@
 
                         <!-- Kunjungan pasien berdasarkan SATKER Tahun 2020 -->
                         <li>
-                            <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/chart/chart_2020', false)">
+                            <a onclick="openLink('<?= BASE_URL ?>index.php?page=guest/statistics/2020', false)">
                                 <i class="fas fa-procedures mr-2" aria-hidden="true"></i>
                                 <span>SATKER Tahun 2020</span>
                             </a>
@@ -313,7 +313,7 @@
 
                         <!-- Kunjungan pasien berdasarkan SATKER Tahun 2021 -->
                         <li>
-                            <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/chart/chart_2021', false)">
+                            <a onclick="openLink('<?= BASE_URL ?>index.php?page=guest/statistics/2021', false)">
                                 <i class="fas fa-procedures mr-2" aria-hidden="true"></i>
                                 <span>SATKER Tahun 2021</span>
                             </a>
@@ -322,7 +322,7 @@
                         <!-- Kunjungan pasien berdasarkan SATKER Tahun 2022 -->
                         <li>
                             <!-- Tambahkan class css: custom-mb-sidebar-child -->
-                            <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/chart/chart_2022', false)" class="custom-mb-sidebar-child">
+                            <a onclick="openLink('<?= BASE_URL ?>index.php?page=guest/statistics/2022', false)" class="custom-mb-sidebar-child">
                                 <i class="fas fa-procedures mr-2" aria-hidden="true"></i>
                                 <span>SATKER Tahun 2022</span>
                             </a>
@@ -339,36 +339,20 @@
                 <li>
                     <!-- Jika belum login, Tambahkan class css: custom-mb-sidebar -->
                     <!-- Jika sedang login, Hapus class css: custom-mb-sidebar -->
-                    <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/clinic/clinic_facilities', false)" class="<?= !$is_logged_in ? 'custom-mb-sidebar' : '' ?>">
+                    <a onclick="openLink('<?= BASE_URL ?>index.php?page=guest/clinic/facilities', false)" class="<?= !$is_logged_in ? 'custom-mb-sidebar' : '' ?>">
                         <i class="fas fa-hand-holding-medical mr-2" aria-hidden="true"></i>
                         <span>Fasilitas Poliklinik</span>
                     </a>
                 </li>
 
-                <!-- Pengaturan akun Admin -->
-                <?php if (isset($_SESSION['level']) && $_SESSION['level'] === 'admin'): ?>
-                    <li>
-                        <a onclick="openLink('<?= BASE_URL ?>index.php?page=admin/profile', false)">
-                            <i class="fas fa-user-cog mr-2" aria-hidden="true"></i>
-                            <span>Pengaturan Akun</span>
-                        </a>
-                    </li>
-                <?php endif; ?>
+                <!-- Menu untuk Pasien, Pekerja, dan Admin -->
+                <?php 
+                    $allowed_roles = ['pasien', 'pekerja', 'admin'];
+                    if (isset($_SESSION['level']) && in_array($_SESSION['level'], $allowed_roles)):
+                ?>
 
-                <!-- Pengaturan akun Pekerja -->
-                <?php if (isset($_SESSION['level']) && $_SESSION['level'] === 'pekerja'): ?>
                     <li>
-                        <a onclick="openLink('<?= BASE_URL ?>index.php?page=worker/profile', false)">
-                            <i class="fas fa-user-cog mr-2" aria-hidden="true"></i>
-                            <span>Pengaturan Akun</span>
-                        </a>
-                    </li>
-                <?php endif; ?>
-
-                <!-- Pengaturan akun Pasien -->
-                <?php if (isset($_SESSION['level']) && $_SESSION['level'] === 'pasien'): ?>
-                    <li>
-                        <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/clinic/profile', false)">
+                        <a onclick="openLink('<?= BASE_URL ?>index.php?page=general/account/profile', false)">
                             <i class="fas fa-user-cog mr-2" aria-hidden="true"></i>
                             <span>Pengaturan Akun</span>
                         </a>
@@ -523,7 +507,7 @@
                     <!-- Tambahkan class css: custom-mt-sidebar -->
                     <a onclick="openLink('#', false)" class="custom-mt-sidebar">
                         <i class="far fa-clock mr-2" aria-hidden="true"></i>
-                        <span>Buka Jam: <u>07.30 WIB</u></span>
+                        <span>Buka Jam:&nbsp; <u>07.30 WIB</u></span>
                     </a>
                 </li>
 
@@ -531,7 +515,7 @@
                 <li>
                     <a onclick="openLink('#', false)">
                         <i class="fas fa-store-alt-slash mr-2" aria-hidden="true"></i>
-                        <span>Tutup Jam: <u>15:30 WIB</u></span>
+                        <span>Tutup Jam:&nbsp; <u>15.30 WIB</u></span>
                     </a>
                 </li>
 
@@ -540,7 +524,7 @@
                     <!-- Tambahkan class css: custom-mb-sidebar -->
                     <a onclick="openLink('#', false)" class="custom-mb-sidebar">
                         <i class="fas fa-calendar-week mr-2" aria-hidden="true"></i>
-                        <span>Hari kerja: <u>Senin - Jumat</u></span>
+                        <span>Hari kerja:&nbsp; <u>Senin - Jumat</u></span>
                     </a>
                 </li>
             </ul>
@@ -661,7 +645,7 @@
                 <!-- Album Foto -->
                 <li>
                     <!-- Tambahkan class css: custom-mt-sidebar -->
-                    <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/clinic/gallery#gallery-foto', false)" class="custom-mt-sidebar">
+                    <a onclick="openLink('<?= BASE_URL ?>index.php?page=guest/clinic/gallery#gallery-foto', false)" class="custom-mt-sidebar">
                         <i class="fas fa-image mr-2" aria-hidden="true"></i>
                         <span>Album Foto</span>
                     </a>
@@ -670,7 +654,7 @@
                 <!-- Album Video -->
                 <li>
                     <!-- Tambahkan class css: custom-mb-sidebar -->
-                    <a onclick="openLink('<?= BASE_URL ?>index.php?page=patient/clinic/gallery#gallery-video', false)" class="custom-mb-sidebar">
+                    <a onclick="openLink('<?= BASE_URL ?>index.php?page=guest/clinic/gallery#gallery-video', false)" class="custom-mb-sidebar">
                         <i class="fas fa-film mr-2" aria-hidden="true"></i>
                         <span>Album Video</span>
                     </a>

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
     // ===========================================================================================
     // AKSES BASE_URL
@@ -57,7 +57,7 @@
         if (isset($_SESSION['level']) && $_SESSION['level'] === 'pasien') {
 
             // Redirect ke halaman registrasi antrean
-            header("Location: " . BASE_URL . "index.php?page=patient/clinic/queue_registration");
+            header("Location: " . BASE_URL . "index.php?page=general/queue/registration");
             exit; // Menghentikan eksekusi script
         }
 
@@ -114,7 +114,7 @@
 
 
         <!-- =================================== CUSTOM CSS ================================ -->
-        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/error/database_notification.css">
+        <link rel="stylesheet" href="<?= BASE_URL ?>public/assets/css/pages/system/error/database_notification.css">
         <style>
             body {
                 background-image: url("<?= BASE_URL ?>public/assets/img/others/medical_background.jpg");

@@ -169,7 +169,7 @@ Tentukan isi alert dan aksi lanjutannya berdasarkan parameter "pesan" dan "modal
                             <?php if ($modal == 'pasien'): ?>
 
                                 // Redirect ke halaman registrasi antrean
-                                window.location.href = "<?= BASE_URL . 'index.php?page=patient/clinic/queue_registration' ?>";
+                                window.location.href = "<?= BASE_URL . 'index.php?page=general/queue/registration' ?>";
 
                             // Cek modal apakah sama dengan "pekerja_admin", jika iya maka :
                             <?php elseif ($modal == 'pekerja_admin'): ?>

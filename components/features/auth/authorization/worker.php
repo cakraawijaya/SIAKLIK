@@ -57,7 +57,7 @@
                 $_SESSION['error_message'] = $e->getMessage();
 
                 // Redirect ke halaman notifikasi error database
-                header("Location: " . BASE_URL . "components/pages/error/database_notification.php");
+                header("Location: " . BASE_URL . "components/pages/system/error/database_notification.php");
                 exit; // Menghentikan eksekusi script
             }
         }
@@ -258,7 +258,7 @@
             $_SESSION['error_message'] = $e->getMessage();
 
 		    // Redirect ke halaman notifikasi error database
-            header("Location: " . BASE_URL . "components/pages/error/database_notification.php");
+            header("Location: " . BASE_URL . "components/pages/system/error/database_notification.php");
             exit; // Menghentikan eksekusi script
         }
     }
