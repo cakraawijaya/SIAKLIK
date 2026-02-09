@@ -69,10 +69,15 @@
     </head>
 
 
+    <!-- Memuat pengaturan timeout user dan interval polling AJAX -->
+    <?php require_once __DIR__ . '/../../config/timeout_duration.php'; ?>
+
+
     <!-- BODY -->
     <body 
         class="sidebar-expanded <?= isset($_SESSION['level']) ? 'role-' . $_SESSION['level'] : '' ?>"
         data-loggedin="<?= isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true ? 'true' : 'false' ?>"
+        data-timeout="<?= AUTH_TIMEOUT ?>" data-poll-interval="<?= AUTH_POLL_INTERVAL ?>"
     >
         <!-- Wrapper Utama Aplikasi -->
         <div class="wrapper">

@@ -41,4 +41,11 @@
     // File connection.php bertanggung jawab untuk inisialisasi koneksi database
     require_once BASE_PATH . '/config/connection.php';
 
+
+    // ===========================================================================================
+    // MEMUAT PENGATURAN WAKTU KELUAR OTOMATIS
+    // ===========================================================================================
+    // File timeout_duration.php bertanggung jawab untuk menangani timeout & interval polling AJAX
+    require_once BASE_PATH . '/config/timeout_duration.php';
+
 ?>

@@ -102,8 +102,8 @@
             // ping() akan mengembalikan TRUE jika koneksi hidup, FALSE jika terputus
             if (!$koneksi->ping()) {
 
-                 // Jika koneksi terputus, maka lempar Exception secara manual
-                 throw new Exception("Koneksi database terputus");
+                // Jika koneksi terputus, maka lempar Exception secara manual
+                throw new Exception("Koneksi database terputus");
             }
 
         // Menangkap exception jika terjadi kesalahan pada proses pengecekan
@@ -145,7 +145,7 @@
 
 
     // ===========================================================================================
-    // CEK JIKA AKUN TELAH DIHAPUS OLEH ADMIN DATABASE
+    // CEK JIKA AKUN TELAH DIHAPUS OLEH ADMIN ATAU ADMIN DATABASE
     // ===========================================================================================
     // Menentukan tabel berdasarkan level pengguna
     $table = ($level==='admin' || $level==='pekerja') ? 'akun_pekerja' : 'akun_pasien';
