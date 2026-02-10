@@ -179,6 +179,9 @@ $(document).ready(function () {
             // Memperbarui waktu aktivitas terakhir
             lastActivity = now; lastEvent = evt;
 
+            // Reset hitungan waktu
+            startLogTime  = now; lastMinuteLog = now;
+
             // Reset flag timeout saat user kembali aktif
             timeoutLogged = false;
 
@@ -217,7 +220,7 @@ $(document).ready(function () {
     /* ======================= LOG DEBUG BERDASARKAN WAKTU NYATA ===================== */
     // Digunakan untuk debugging atau monitoring
 
-    const startLogTime = Date.now();    // waktu awal hitung menit
+    let startLogTime = Date.now();    // waktu awal hitung menit
     let lastMinuteLog = startLogTime;   // waktu terakhir log muncul
 
     // Fungsi untuk menghitung & menampilkan log waktu yang telah berlalu (termasuk durasi idle user & status timeout)
