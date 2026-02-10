@@ -83,7 +83,7 @@
             $_SESSION['error_message'] = $e->getMessage();
 
             // Kirim response JSON error
-            echo json_encode(['status' => 'auto_db_error', 'message' => 'Terjadi kesalahan pada database']);
+            echo json_encode(['status' => 'auto_db_error']);
             exit; // Menghentikan eksekusi script
         }
     }
@@ -116,7 +116,7 @@
             $_SESSION['error_message'] = $e->getMessage();
 
             // Kirim response JSON error
-            echo json_encode(['status' => 'auto_db_error', 'message' => 'Database tidak tersedia']);
+            echo json_encode(['status' => 'auto_db_error']);
             exit; // Menghentikan eksekusi script
         }
 
@@ -193,7 +193,7 @@
         $_SESSION['error_message'] = $e->getMessage();
 
         // Kirim response JSON error
-        echo json_encode(['status' => 'auto_db_error', 'message' => 'Terjadi kesalahan pada database']);
+        echo json_encode(['status' => 'auto_db_error']);
         exit; // Menghentikan eksekusi script
     }
 

@@ -133,8 +133,7 @@
         </script>
 
         <!-- Auth Handler -->
-        <script src="<?= BASE_URL ?>public/assets/ajax/auto_auth_handler.js"></script>
-        <script src="<?= BASE_URL ?>public/assets/ajax/manual_auth_handler.js"></script>
+        <script src="<?= BASE_URL ?>public/assets/ajax/auth_handler.js"></script>
 
         <!-- Notifikasi Login & Register -->
         <?php include __DIR__ . '/../features/notification/access.php'; ?>
