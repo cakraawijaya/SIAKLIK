@@ -3,12 +3,13 @@ $(document).ready(function () {
 
     /* ============================ STATUS SESSION GLOBAL ============================ */
 
-    // Flag global untuk menandai apakah session sudah expired
-    // Default: false (session masih aktif)
+    // Flag global untuk menandai bahwa sesi atau otorisasi user sudah tidak valid
+    // Bisa disebabkan oleh: belum login atau tidak punya hak akses
+    // Default: false (session & akses masih valid)
     window.SESSION_EXPIRED = false;
 
-    // Variabel global untuk menyimpan alasan session expired
-    // Misalnya: "SESSION_EXPIRED", "UNAUTHORIZED", dll
+    // Variabel global untuk menyimpan alasan dari backend (PHP)
+    // Misalnya: "UNAUTHORIZED" atau "FORBIDDEN"
     window.SESSION_REASON  = null;
 
 
@@ -20,17 +21,17 @@ $(document).ready(function () {
         // Hentikan eksekusi (bukan error auth/session)
         if (!xhr.responseJSON || !xhr.responseJSON.code) return;
 
-        // Jika session sudah ditandai expired sebelumnya, maka :
+        // Jika sesi atau otorisasi user sudah ditandai tidak valid sebelumnya, maka :
         // Jangan set ulang agar tidak dobel eksekusi
         if (window.SESSION_EXPIRED) return;
 
-        // Tandai bahwa session sudah expired
+        // Tandai bahwa sesi atau otorisasi user sudah tidak valid
         window.SESSION_EXPIRED = true;
 
         // Simpan kode alasan error dari backend
         window.SESSION_REASON  = xhr.responseJSON.code;
 
-        // Tampilkan peringatan di console (untuk debugging)
+        // Tampilkan peringatan ke console
         console.warn('Session flag set:', window.SESSION_REASON);
 
     });
