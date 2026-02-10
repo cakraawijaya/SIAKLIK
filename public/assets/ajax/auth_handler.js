@@ -71,6 +71,10 @@ $(document).ready(function () {
     // Flag agar log timeout hanya muncul satu kali
     let timeoutLogged = false;
 
+    // Flag agar log durasi idle dapat ditampilkan atau disembunyikan sesuai kebutuhan
+    // true -> tampilkan, false -> sembunyikan
+    const DEBUG_IDLE = false;
+
 
     /* ======================= POLLING STATUS SESSION KE SERVER ====================== */
     // Fungsi untuk memulai polling ke server
@@ -236,8 +240,17 @@ $(document).ready(function () {
         // Jika sudah lewat minimal 1 menit sejak log terakhir, maka :
         if (now - lastMinuteLog >= 60_000) {
 
-            // Tampilkan informasi ke console
-            console.log(`[Auth] ${elapsedMinutes} menit telah berlalu ⏱ | Idle: ${Math.floor(idleTime / 1000)} detik`);
+            // Cek apakah mode debug idle aktif, jika iya maka :
+            if (DEBUG_IDLE) {
+
+                // Tampilkan informasi ke console (dengan Idle)
+                console.log(`[Auth] ${elapsedMinutes} menit berlalu ⏱ | Idle: ${Math.floor(idleTime / 1000)} detik`);
+
+            } else {  // Selain itu, maka :
+
+                // Tampilkan informasi ke console (tanpa Idle)
+                console.log(`[Auth] ${elapsedMinutes} menit berlalu ⏱`);
+            }
 
             // Menandai bahwa satu menit sudah tercatat
             // Jadi sistem menunggu 1 menit berikutnya sebelum mencetak log lagi
