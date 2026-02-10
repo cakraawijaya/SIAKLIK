@@ -68,6 +68,9 @@ $(document).ready(function () {
     // Variabel untuk menyimpan interval AJAX polling
     let ajaxInterval;
 
+    // Flag agar log timeout hanya muncul satu kali
+    let timeoutLogged = false;
+
 
     /* ======================= POLLING STATUS SESSION KE SERVER ====================== */
     // Fungsi untuk memulai polling ke server
@@ -176,6 +179,9 @@ $(document).ready(function () {
             // Memperbarui waktu aktivitas terakhir
             lastActivity = now; lastEvent = evt;
 
+            // Reset flag timeout saat user kembali aktif
+            timeoutLogged = false;
+
             // Tampilkan informasi ke console
             console.log(`[Auth] Terdeteksi aktivitas: ${evt}`);
 
@@ -208,38 +214,71 @@ $(document).ready(function () {
     }, 1000); // Dicek setiap 1 detik
 
 
-    /* ======================== LOG DEBUG STATUS SETIAP 1 MENIT ====================== */
+    /* ======================= LOG DEBUG BERDASARKAN WAKTU NYATA ===================== */
     // Digunakan untuk debugging atau monitoring
 
-    // Variabel untuk menampung hitungan mundur
-    let countdown = 60; // 60 detik = 1 menit
+    const startLogTime = Date.now();    // waktu awal hitung menit
+    let lastMinuteLog = startLogTime;   // waktu terakhir log muncul
 
-    // Timer yang digunakan untuk menghitung interval 1 menit
-    const minuteCountdown = setInterval(() => {
+    // Fungsi untuk menghitung & menampilkan log waktu yang telah berlalu (termasuk durasi idle user & status timeout)
+    function logElapsed() {
 
-        // Mengurangi hitungan setiap detik
-        countdown--;
+        const now      = Date.now();          // Menyimpan waktu saat fungsi ini dipanggil
+        const idleTime = now - lastActivity;  // Menghitung berapa lama user tidak beraktivitas (dalam milidetik)
 
-        // Jika sudah 1 menit, maka :
-        if (countdown <= 0) {
+        /* LOG MENIT */
+        // Menghitung jumlah menit penuh yang telah berlalu sejak terakhir kali log menit ditampilkan
+        const elapsedMinutes = Math.floor((now - startLogTime) / 60_000);
 
-            // Hitung waktu idle dalam detik
-            const idleTime = Date.now() - lastActivity;
+        // Jika sudah lewat minimal 1 menit sejak log terakhir, maka :
+        if (now - lastMinuteLog >= 60_000) {
 
             // Tampilkan informasi ke console
-            console.log(`[Auth] 1 menit berlalu ⏱ | Idle: ${Math.floor(idleTime / 1000)} detik`);
+            console.log(`[Auth] ${elapsedMinutes} menit telah berlalu ⏱ | Idle: ${Math.floor(idleTime / 1000)} detik`);
 
-            // Jika timeout sudah tercapai, maka :
-            if (idleTime >= IDLE_TIMEOUT) {
-
-                // Tampilkan informasi ke console
-                console.log("[Auth] Timeout sudah tercapai!");
-            }
-
-            // Reset hitungan 1 menit
-            countdown = 60;
+            // Menandai bahwa satu menit sudah tercatat
+            // Jadi sistem menunggu 1 menit berikutnya sebelum mencetak log lagi
+            lastMinuteLog += 60_000;
         }
 
-    }, 1000); // Interval dijalankan setiap 1 detik
+        /* LOG TIMEOUT */
+        // Jika timeout belum pernah dicatat sebelumnya dan
+        // Waktu idle user sudah melebihi batas timeout, maka :
+        if (!timeoutLogged && idleTime >= IDLE_TIMEOUT) {
+
+            // Tampilkan informasi ke console
+            console.log("[Auth] Timeout sudah tercapai!");
+
+            // Tandai bahwa log timeout sudah ditampilkan agar tidak muncul berkali-kali
+            timeoutLogged = true;
+        }
+    }
+
+
+    /* ============================ INTERVAL PEMANTAUAN WAKTU ======================== */
+    // Interval ini digunakan untuk memicu pengecekan waktu secara berkala
+
+    // Menjalankan proses pengecekan setiap interval
+    const minuteCountdown = setInterval(() => {
+        logElapsed();   // Memanggil fungsi untuk mengecek dan menampilkan log waktu
+    }, 1000);           // Interval dijalankan setiap 1 detik
+
+
+    /* ========================= TAB VISIBILITY & FOCUS HANDLER ====================== */
+    // Bagian ini menangani kondisi saat user kembali ke halaman (dari tab atau window lain)
+
+    // Event ini terpanggil saat status visibilitas tab berubah
+    document.addEventListener('visibilitychange', () => {
+
+        // Jika tab sekarang dalam keadaan aktif (tidak tersembunyi), maka :
+        if (!document.hidden) {
+            logElapsed(); // Perbarui dan tampilkan log waktu terbaru
+        }
+    });
+
+    // Event ini terpanggil saat window browser kembali mendapatkan fokus
+    window.addEventListener('focus', () => {
+        logElapsed(); // Perbarui dan tampilkan log waktu terbaru
+    });
 
 });
