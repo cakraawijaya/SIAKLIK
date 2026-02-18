@@ -42,7 +42,7 @@
     // ERROR HANDLING
     // ===========================================================================================
 
-    // Jika tidak ada pesan error, maka :
+    // Jika tidak ada pesan error dan halaman notifikasi error database diakses secara ilegal, maka :
     if (!isset($_SESSION['error_message'])) {
 
         // Cek apakah saat ini user tidak login, jika iya maka :

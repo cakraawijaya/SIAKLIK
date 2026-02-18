@@ -92,12 +92,15 @@
     // ERROR HANDLING
     // ===========================================================================================
 
-    // Jika database tidak ada error
-    // Artinya halaman notifikasi error database diakses secara ilegal, maka :
+    // Jika database tidak ada error dan halaman notifikasi error database diakses secara ilegal, maka :
     if (!isset($_SESSION['__db_error']) || $_SESSION['__db_error'] !== true) {
 
-        // Panggil fungsi redirect khusus
-        redirectBySession();
+        // Jika tidak ada pesan error, maka :
+        if (!isset($_SESSION['error_message'])) {
+
+            // Panggil fungsi redirect khusus
+            redirectBySession();
+        }
     }
 
 

@@ -40,6 +40,9 @@
 		// Mencatat detail error ke log server untuk keperluan debugging
         error_log("Database error: " . $e->getMessage());
 
+		// Tandai kalau database sedang error
+		$_SESSION['__db_error'] = true;
+
 		// Simpan pesan error ke dalam session
 		$_SESSION['error_message'] = $e->getMessage();
 
