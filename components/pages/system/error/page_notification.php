@@ -53,27 +53,18 @@
             exit; // Menghentikan eksekusi script
         }
 
-        // Cek apakah saat ini user login sebagai pasien, jika iya maka :
-        if (isset($_SESSION['level']) && $_SESSION['level'] === 'pasien') {
+        // Konfigurasi pemetaan role user ke route tujuan masing-masing
+        $redirectMap = [
+            'pasien'  => "index.php?page=general/queue/registration",  // Halaman registrasi antrean pasien
+            'pekerja' => "index.php?page=worker/dashboard",            // Halaman dashboard pekerja
+            'admin'   => "index.php?page=admin/dashboard",             // Halaman dashboard admin
+        ];
 
-            // Redirect ke halaman registrasi antrean
-            header("Location: " . BASE_URL . "index.php?page=general/queue/registration");
-            exit; // Menghentikan eksekusi script
-        }
+        // Jika level user tersedia dan terdaftar dalam mapping (dikenali), maka :
+        if (isset($_SESSION['level']) && isset($redirectMap[$_SESSION['level']])) {
 
-        // Cek apakah saat ini user login sebagai pekerja, jika iya maka :
-        if (isset($_SESSION['level']) && $_SESSION['level'] === 'pekerja') {
-
-            // Redirect ke halaman dashboard
-            header("Location: " . BASE_URL . "index.php?page=worker/dashboard");
-            exit; // Menghentikan eksekusi script
-        }
-
-        // Cek apakah saat ini user login sebagai admin, jika iya maka :
-        if (isset($_SESSION['level']) && $_SESSION['level'] === 'admin') {
-
-            // Redirect ke halaman dashboard
-            header("Location: " . BASE_URL . "index.php?page=admin/dashboard");
+            // Redirect ke halaman yang sudah ditentukan (sesuai dengan level user yang sedang login)
+            header("Location: " . BASE_URL . $redirectMap[$_SESSION['level']]);
             exit; // Menghentikan eksekusi script
         }
     }
