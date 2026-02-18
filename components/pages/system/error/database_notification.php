@@ -39,11 +39,9 @@
 
 
     // ===========================================================================================
-    // ERROR HANDLING
+    // FUNGSI REDIRECT BERDASARKAN STATUS LOGIN & LEVEL USER
     // ===========================================================================================
-
-    // Jika tidak ada pesan error, maka :
-    if (!isset($_SESSION['error_message'])) {
+    function redirectBySession() {
 
         // Cek apakah saat ini user tidak login, jika iya maka :
         if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
@@ -53,37 +51,60 @@
             exit; // Menghentikan eksekusi script
         }
 
-        // Cek apakah saat ini user login sebagai pasien, jika iya maka :
-        if (isset($_SESSION['level']) && $_SESSION['level'] === 'pasien') {
+        // Konfigurasi pemetaan role user ke route tujuan masing-masing
+        $redirectMap = [
+            'pasien'  => "index.php?page=general/queue/registration",  // Halaman registrasi antrean pasien
+            'pekerja' => "index.php?page=worker/dashboard",            // Halaman dashboard pekerja
+            'admin'   => "index.php?page=admin/dashboard",             // Halaman dashboard admin
+        ];
 
-            // Redirect ke halaman registrasi antrean
-            header("Location: " . BASE_URL . "index.php?page=general/queue/registration");
-            exit; // Menghentikan eksekusi script
-        }
+        // Jika level user tersedia dan terdaftar dalam mapping (dikenali), maka :
+        if (isset($_SESSION['level']) && isset($redirectMap[$_SESSION['level']])) {
 
-        // Cek apakah saat ini user login sebagai pekerja, jika iya maka :
-        if (isset($_SESSION['level']) && $_SESSION['level'] === 'pekerja') {
-
-            // Redirect ke halaman dashboard
-            header("Location: " . BASE_URL . "index.php?page=worker/dashboard");
-            exit; // Menghentikan eksekusi script
-        }
-
-        // Cek apakah saat ini user login sebagai admin, jika iya maka :
-        if (isset($_SESSION['level']) && $_SESSION['level'] === 'admin') {
-
-            // Redirect ke halaman dashboard
-            header("Location: " . BASE_URL . "index.php?page=admin/dashboard");
+            // Redirect ke halaman yang sudah ditentukan (sesuai dengan level user yang sedang login)
+            header("Location: " . BASE_URL . $redirectMap[$_SESSION['level']]);
             exit; // Menghentikan eksekusi script
         }
     }
 
-    // Ambil pesan error
-    $error_message = $_SESSION['error_message'];
 
-    // Menghapus pesan error dari session setelah digunakan
-    // Tujuannya agar pesan error hanya ditampilkan satu kali
-    unset($_SESSION['error_message']);
+    // ===========================================================================================
+    // CLEAR ERROR SESSION & RETURN TO SPECIFIC PAGE
+    // ===========================================================================================
+
+    // Menjalankan proses reset jika parameter 'clear' bernilai '1'
+    if (isset($_GET['clear']) && $_GET['clear'] === '1') {
+
+        // Menghapus tanda error database dari session setelah digunakan
+        // Tujuannya supaya sistem bisa kembali berjalan normal
+        unset($_SESSION['__db_error']);
+
+        // Menghapus pesan error dari session setelah digunakan
+        // Tujuannya agar pesan error hanya ditampilkan satu kali
+        unset($_SESSION['error_message']);
+
+        // Panggil fungsi redirect khusus
+        redirectBySession();
+    }
+
+
+    // ===========================================================================================
+    // ERROR HANDLING
+    // ===========================================================================================
+
+    // Jika database tidak ada error
+    // Artinya halaman notifikasi error database diakses secara ilegal, maka :
+    if (!isset($_SESSION['__db_error']) || $_SESSION['__db_error'] !== true) {
+
+        // Panggil fungsi redirect khusus
+        redirectBySession();
+    }
+
+
+    // ===========================================================================================
+    // AMBIL PESAN ERROR
+    // ===========================================================================================
+    $error_message = $_SESSION['error_message'] ?? NULL;
 
 ?>
 
@@ -126,8 +147,12 @@
     </head>
 
 
+    <!-- Memuat pengaturan interval polling AJAX -->
+    <?php require_once __DIR__ . '/../../../../config/timeout_duration.php'; ?>
+
+
     <!-- BODY -->
-    <body>
+    <body data-poll-interval="<?= AUTH_POLL_INTERVAL ?>">
         <main>
 
             <!-- =========================================================================================== -->
@@ -162,5 +187,44 @@
                 </div>
             </section>
         </main>
+
+
+        <!-- =========================================================================================== -->
+        <!-- PENGECEKAN STATUS DATABASE SECARA BERKALA                                                   -->
+        <!-- =========================================================================================== -->
+        <script>
+
+            // Mengambil interval polling AJAX dari <body>
+            const CHECK_INTERVAL = parseInt(document.body.dataset.pollInterval);
+
+            // Menjalankan polling AJAX secara berkala
+            setInterval(() => {
+
+                // Mengirimkan request ke server untuk mengecek status session
+                fetch("<?= BASE_URL ?>components/data/ajax_auth_check.php", {
+                    credentials: 'same-origin'
+                })
+                .then(res => res.json())    // Mengubah response menjadi format JSON
+                .then(res => {              // Memproses data JSON yang diterima dari server
+
+                    // Jika status dari server adalah 'ok' (Artinya database sudah kembali normal), maka :
+                    if (res.status === 'ok') {
+
+                        // Redirect ke halaman notifikasi error database dengan parameter 'clear=1'
+                        // Tujuannya untuk menghapus flag error dan mengembalikan user ke halaman semula
+                        fetch("<?= BASE_URL ?>components/pages/system/error/database_notification.php?clear=1", {
+                            credentials: 'same-origin'
+                        })
+                    }
+
+                })
+
+                // Tidak melakukan tindakan apa pun agar polling tetap berjalan
+                .catch(() => {});
+
+            // Menentukan interval polling ke server
+            }, CHECK_INTERVAL);
+
+        </script>
     </body>
 </html>

@@ -46,7 +46,7 @@ $(document).ready(function () {
         return; // Stop eksekusi script agar tidak lanjut ke proses polling
     }
 
-    // Menyimpan status login user di sessionStorage browser
+    // Menyimpan status login user
     sessionStorage.setItem("userLoggedIn", "true");
 
 
@@ -89,7 +89,9 @@ $(document).ready(function () {
             // Mengirimkan request ke server untuk mengecek status session
             fetch(BASE_URL + "components/data/ajax_auth_check.php", {
                 credentials: 'same-origin'
-            }).then(res => res.json()).then(res => {
+            })
+            .then(res => res.json())    // Mengubah response menjadi format JSON
+            .then(res => {              // Memproses data JSON yang diterima dari server
 
                 // Menangani respon status dari server
                 switch (res.status) {
@@ -99,14 +101,16 @@ $(document).ready(function () {
                     case 'auto_deleted':
                     case 'auto_timeout':
                     case 'auto_db_error':
-                        forceLogout(res.status); // Lakukan proses logout otomatis
+                        // Status akun terhapus atau timeout -> Proses logout otomatis
+                        // Status error database -> Redirect ke halaman notifikasi error database
+                        forceLogout(res.status);
                         break; // Keluar dari switch
 
-                    // Jika status normal, maka :
+                    // Jika respon statusnya itu ternyata normal, maka :
                     case 'ok':
                         break; // Keluar dari switch (tidak perlu melakukan suatu tindakan)
 
-                    // Jika status tidak dikenal, maka :
+                    // Jika respon statusnya itu ternyata tidak dikenal, maka :
                     default:
                         console.warn("[Auth] Status tidak dikenali:", res); // Tampilkan peringatan ke console
                 }
@@ -140,24 +144,39 @@ $(document).ready(function () {
         // Jika error berasal dari database, maka :
         if (type === 'auto_db_error') {
 
+            // Jangan panggil server lagi
             // Redirect ke halaman notifikasi error database
             window.location.href = BASE_URL + PAGE_DB_ERROR;
             return; // Stop eksekusi script
         }
 
-        // Menandai bahwa user sudah logout di sessionStorage
+        // Menandai bahwa user sudah logout
         sessionStorage.setItem("userLoggedOut", "true");
 
         // Memberitahu server untuk menghapus session
         fetch(BASE_URL + "components/data/ajax_auth_check.php?action=force_logout", {
             credentials: 'same-origin'
         })
+        .then(res => res.json())    // Mengubah response menjadi format JSON
+        .then(res => {              // Memproses data JSON yang diterima dari server
 
-        // Setelah selesai, maka :
-        .finally(() => {
+            // Kalau ternyata DB mati saat proses logout, maka :
+            if (res.status === 'auto_db_error') {
 
-            // Redirect ke halaman utama dengan pesan
+                // Redirect ke halaman notifikasi error database
+                window.location.href = BASE_URL + PAGE_DB_ERROR;
+                return; // Stop eksekusi script
+            }
+
+            // Selain itu, maka Redirect ke halaman utama dengan pesan
             window.location.href = BASE_URL + "index.php?pesan=" + type;
+        })
+
+        // Kalau request logout ternyata gagal total, maka :
+        .catch(() => {
+
+            // Redirect ke halaman notifikasi error database
+            window.location.href = BASE_URL + PAGE_DB_ERROR;
         });
     }
 

@@ -79,7 +79,7 @@
     }
 
     // Ambil pesan error
-    $error_message = $_SESSION['error_message'];
+    $error_message = $_SESSION['error_message'] ?? NULL;
 
     // Menghapus pesan error dari session setelah digunakan
     // Tujuannya agar pesan error hanya ditampilkan satu kali

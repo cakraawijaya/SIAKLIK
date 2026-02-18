@@ -79,6 +79,9 @@
             // Mencatat detail error ke log server untuk keperluan debugging
             error_log("Database error: " . $e->getMessage());
 
+            // Tandai kalau database sedang error
+            $_SESSION['__db_error'] = true;
+
             // Simpan pesan error ke dalam session
             $_SESSION['error_message'] = $e->getMessage();
 
@@ -95,41 +98,28 @@
     // Jika ada permintaan logout paksa, maka lakukan beberapa hal, yaitu :
     if (isset($_GET['action']) && $_GET['action'] === 'force_logout') {
 
-        // Mencoba untuk memproses :
-        try {
-
-            // Memeriksa apakah koneksi database masih aktif
-            // ping() akan mengembalikan TRUE jika koneksi hidup, FALSE jika terputus
-            if (!$koneksi->ping()) {
-
-                // Jika koneksi terputus, maka lempar Exception secara manual
-                throw new Exception("Koneksi database terputus");
-            }
-
-        // Menangkap exception jika terjadi kesalahan pada proses pengecekan
-        } catch (Throwable $e) {
-
-            // Mencatat detail error ke log server untuk keperluan debugging
-            error_log("Database error: " . $e->getMessage());
-
-            // Simpan pesan error ke dalam session
-            $_SESSION['error_message'] = $e->getMessage();
+        // Jika database sedang error, maka :
+        if (isset($_SESSION['__db_error']) && $_SESSION['__db_error'] === true) {
 
             // Kirim response JSON error
             echo json_encode(['status' => 'auto_db_error']);
             exit; // Menghentikan eksekusi script
         }
 
-        // Format level
-        $level = ucfirst(strtolower($level));
-
-        // Jika Log User: Timeout belum pernah dicatat sama sekali, maka atur :
+        // Jika timeout belum pernah dicatat sama sekali, maka atur :
         if (!isset($_SESSION['__timeout_logged'])) {
 
-            // Log User: Timeout
-            $aksi   = "Timeout";
-            $detail = "$nama telah di Logout paksa oleh Sistem.";
-            logAktivitas($koneksi, $username, $level, $aksi, $detail);
+            // Format level
+            $level = ucfirst(strtolower($level));
+
+            // Jika database tidak error, maka :
+            if (!isset($_SESSION['__db_error'])) {
+
+                // Log User: Timeout
+                $aksi   = "Timeout";
+                $detail = "$nama telah di Logout paksa oleh Sistem.";
+                logAktivitas($koneksi, $username, $level, $aksi, $detail);
+            }
 
             // Penanda Log User: Timeout agar hanya dicatat satu kali
             $_SESSION['__timeout_logged'] = true;
@@ -188,6 +178,9 @@
 
         // Mencatat detail error ke log server untuk keperluan debugging
         error_log("Database error: " . $e->getMessage());
+
+        // Tandai kalau database sedang error
+        $_SESSION['__db_error'] = true;
 
         // Simpan pesan error ke dalam session
         $_SESSION['error_message'] = $e->getMessage();
