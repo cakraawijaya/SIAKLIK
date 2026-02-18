@@ -194,14 +194,20 @@
         <!-- =========================================================================================== -->
         <script>
 
+            // Definisi BASE-URL untuk AJAX
+            var BASE_URL = '<?= BASE_URL ?>';
+
             // Mengambil interval polling AJAX dari <body>
             const CHECK_INTERVAL = parseInt(document.body.dataset.pollInterval);
+
+            // Lokasi halaman yang dituju saat terjadi error pada database
+            const PAGE_DB_ERROR = "components/pages/system/error/database_notification.php";
 
             // Menjalankan polling AJAX secara berkala
             setInterval(() => {
 
                 // Mengirimkan request ke server untuk mengecek status session
-                fetch("<?= BASE_URL ?>components/data/ajax_auth_check.php", {
+                fetch(BASE_URL + "components/data/ajax_auth_check.php", {
                     credentials: 'same-origin'
                 })
                 .then(res => res.json())    // Mengubah response menjadi format JSON
@@ -212,9 +218,7 @@
 
                         // Redirect ke halaman notifikasi error database dengan parameter 'clear=1'
                         // Tujuannya untuk menghapus flag error dan mengembalikan user ke halaman semula
-                        fetch("<?= BASE_URL ?>components/pages/system/error/database_notification.php?clear=1", {
-                            credentials: 'same-origin'
-                        })
+                        window.location.href = BASE_URL + PAGE_DB_ERROR + "?clear=1";
                     }
 
                 })
