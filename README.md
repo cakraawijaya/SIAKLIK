@@ -206,9 +206,9 @@ We have carried out this internship program for approximately six months on a hy
 </tr>
 <tr>
 <th width="210">Patient History</th>
-<th width="210">Users</th>
-<th width="210">Patients</th>
-<th width="210">Queues</th>
+<th width="210">Admin</th>
+<th width="210">Worker</th>
+<th width="210">Patient</th>
 </tr>
 <tr>
 <td><img src="documentation/features/export/riwayat_pasien.jpg" alt="patient-history"></td>
