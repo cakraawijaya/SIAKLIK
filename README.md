@@ -135,6 +135,49 @@ We have carried out this internship program for approximately six months on a hy
 <td><img src="documentation/pages/beranda.jpg" alt="home"></td>
 </tr>
 </table>
+<br>
+<table>
+<tr>
+<th colspan="4" width="840">Statistics</th>
+</tr>
+<tr>
+<th width="210">Options</th>
+<th width="210">Gender</th>
+<th width="210">2013</th>
+<th width="210">2014</th>
+</tr>
+<tr>
+<td><img src="documentation/pages/guest/statistics/grafik_kunjungan.jpg" alt="options"></td>
+<td><img src="documentation/pages/guest/statistics/gender.jpg" alt="gender"></td>
+<td><img src="documentation/pages/guest/statistics/2013.jpg" alt="2013"></td>
+<td><img src="documentation/pages/guest/statistics/2014.jpg" alt="2014"></td>
+</tr>
+<tr>
+<th width="210">2015</th>
+<th width="210">2016</th>
+<th width="210">2017</th>
+<th width="210">2018</th>
+</tr>
+<tr>
+<td><img src="documentation/pages/guest/statistics/2015.jpg" alt="2015"></td>
+<td><img src="documentation/pages/guest/statistics/2016.jpg" alt="2016"></td>
+<td><img src="documentation/pages/guest/statistics/2017.jpg" alt="2017"></td>
+<td><img src="documentation/pages/guest/statistics/2018.jpg" alt="2018"></td>
+</tr>
+<tr>
+<th width="210">2019</th>
+<th width="210">2020</th>
+<th width="210">2021</th>
+<th width="210">2022</th>
+</tr>
+<tr>
+<td><img src="documentation/pages/guest/statistics/2019.jpg" alt="2019"></td>
+<td><img src="documentation/pages/guest/statistics/2020.jpg" alt="2020"></td>
+<td><img src="documentation/pages/guest/statistics/2021.jpg" alt="2021"></td>
+<td><img src="documentation/pages/guest/statistics/2022.jpg" alt="2022"></td>
+</tr>
+</table>
+<br>
 <table>
 <tr>
 <th colspan="2" width="840">Dashboard</th>
@@ -148,6 +191,7 @@ We have carried out this internship program for approximately six months on a hy
 <td><img src="documentation/pages/worker/dashboard.jpg" alt="dashboard-worker"></td>
 </tr>
 </table>
+<br>
 <table>
 <tr>
 <th colspan="4" width="840">Management</th>
@@ -165,6 +209,7 @@ We have carried out this internship program for approximately six months on a hy
 <td><img src="documentation/pages/management/queues.jpg" alt="queues-management"></td>
 </tr>
 </table>
+<br>
 <table>
 <tr>
 <th colspan="2" width="840">Error</th>
