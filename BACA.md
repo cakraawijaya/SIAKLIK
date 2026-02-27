@@ -170,15 +170,15 @@ Program magang ini telah kami laksanakan selama kurang lebih enam bulan secara h
 <br>
 <table>
 <tr>
-<th colspan="2" width="840">Dashboard</th>
+<th colspan="2" width="840">Dasbor</th>
 </tr>
 <tr>
 <th width="420">Admin</th>
-<th width="420">Worker</th>
+<th width="420">Pekerja</th>
 </tr>
 <tr>
-<td><img src="documentation/pages/admin/dashboard.jpg" alt="dashboard-admin"></td>
-<td><img src="documentation/pages/worker/dashboard.jpg" alt="dashboard-worker"></td>
+<td><img src="documentation/pages/admin/dashboard.jpg" alt="dasbor-admin"></td>
+<td><img src="documentation/pages/worker/dashboard.jpg" alt="dasbor-pekerja"></td>
 </tr>
 </table>
 <br>
