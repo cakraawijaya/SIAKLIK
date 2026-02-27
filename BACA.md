@@ -126,6 +126,151 @@ Program magang ini telah kami laksanakan selama kurang lebih enam bulan secara h
 
 <br><br>
 
+## Sorotan
+<table>
+<tr>
+<th width="840">Beranda</th>
+</tr>
+<tr>
+<td><img src="documentation/pages/beranda.jpg" alt="beranda"></td>
+</tr>
+</table>
+<br>
+<table>
+<tr>
+<th colspan="4" width="840">Statistik</th>
+</tr>
+<tr>
+<th width="210">Pilihan</th>
+<th width="210">Jenis Kelamin</th>
+<th width="210">2013</th>
+<th width="210">2014</th>
+</tr>
+<tr>
+<td><img src="documentation/pages/guest/statistics/grafik_kunjungan.jpg" alt="pilihan"></td>
+<td><img src="documentation/pages/guest/statistics/gender.jpg" alt="jenis-kelamin"></td>
+<td><img src="documentation/pages/guest/statistics/2013.jpg" alt="2013"></td>
+<td><img src="documentation/pages/guest/statistics/2014.jpg" alt="2014"></td>
+</tr>
+</table>
+<br>
+<table>
+<tr>
+<th colspan="2" width="840">Antrean</th>
+</tr>
+<tr>
+<th width="420">Registrasi</th>
+<th width="420">Status</th>
+</tr>
+<tr>
+<td><img src="documentation/pages/general/queue/registrasi_antrean.jpg" alt="registrasi-antrean"></td>
+<td><img src="documentation/pages/general/queue/status_antrean.jpg" alt="status-antrean"></td>
+</tr>
+</table>
+<br>
+<table>
+<tr>
+<th colspan="2" width="840">Dashboard</th>
+</tr>
+<tr>
+<th width="420">Admin</th>
+<th width="420">Worker</th>
+</tr>
+<tr>
+<td><img src="documentation/pages/admin/dashboard.jpg" alt="dashboard-admin"></td>
+<td><img src="documentation/pages/worker/dashboard.jpg" alt="dashboard-worker"></td>
+</tr>
+</table>
+<br>
+<table>
+<tr>
+<th colspan="4" width="840">Manajemen</th>
+</tr>
+<tr>
+<th width="210">Catatan</th>
+<th width="210">Pengguna</th>
+<th width="210">Riwayat Pasien</th>
+<th width="210">Antrean</th>
+</tr>
+<tr>
+<td><img src="documentation/pages/management/logs.jpg" alt="manajemen-catatan"></td>
+<td><img src="documentation/pages/management/users.jpg" alt="manajemen-pengguna"></td>
+<td><img src="documentation/pages/management/patients.jpg" alt="manajemen-riwayat-pasien"></td>
+<td><img src="documentation/pages/management/queues.jpg" alt="manajemen-antrean"></td>
+</tr>
+</table>
+<br>
+<table>
+<tr>
+<th colspan="4" width="840">Ekspor</th>
+</tr>
+<tr>
+<th width="210">Riwayat Pasien</th>
+<th width="210">Admin</th>
+<th width="210">Pekerja</th>
+<th width="210">Pasien</th>
+</tr>
+<tr>
+<td><img src="documentation/features/export/riwayat_pasien.jpg" alt="riwayat-pasien"></td>
+<td><img src="documentation/features/export/user_admin.jpg" alt="user-admin"></td>
+<td><img src="documentation/features/export/user_pekerja.jpg" alt="user-pekerja"></td>
+<td><img src="documentation/features/export/user_pasien.jpg" alt="user-pasien"></td>
+</tr>
+</table>
+<br>
+<table>
+<tr>
+<th colspan="4" width="840">Modal</th>
+</tr>
+<tr>
+<th width="210">Masuk</th>
+<th width="210">Edit Akun</th>
+<th width="210">Lupa Kata Sandi</th>
+<th width="210">Konfirmasi Tindakan Antrean</th>
+</tr>
+<tr>
+<td><img src="documentation/features/modal_menu/login/admin.jpg" alt="masuk-admin"></td>
+<td><img src="documentation/features/modal_menu/manajemen_user/admin/edit_akun.jpg" alt="edit-akun"></td>
+<td><img src="documentation/features/modal_menu/lupa_password_pasien.jpg" alt="lupa-kata-sandi"></td>
+<td><img src="documentation/features/modal_menu/antrean_pasien/konfirmasi_aksi_selesai.jpg" alt="tindakan-antrean"></td>
+</tr>
+</table>
+<br>
+<table>
+<tr>
+<th colspan="4" width="840">Peringatan</th>
+</tr>
+<tr>
+<th width="210">Waktu Habis</th>
+<th width="210">Reset Kata Sandi Terkirim</th>
+<th width="210">Foto Berukuran Besar</th>
+<th width="210">Token Tidak Valid</th>
+</tr>
+<tr>
+<td><img src="documentation/features/alert/success/user_timeout.jpg" alt="waktu-habis"></td>
+<td><img src="documentation/features/alert/success/reset_terkirim.jpg" alt="reset-kata-sandi-terkirim"></td>
+<td><img src="documentation/features/alert/failure/foto_over_size.jpg" alt="foto-berukuran-besar"></td>
+<td><img src="documentation/features/alert/failure/token_kadaluarsa.jpg" alt="token-tidak-valid"></td>
+</table>
+<br>
+<table>
+<tr>
+<th colspan="2" width="840">Kesalahan</th>
+</tr>
+<tr>
+<th width="420">Halaman</th>
+<th width="420">Basis Data</th>
+</tr>
+<tr>
+<td><img src="documentation/pages/system/error/page_not_found.jpg" alt="halaman-tidak-ditemukan"></td>
+<td><img src="documentation/pages/system/error/unknown_database.jpg" alt="basis-data-tidak-diketahui"></td>
+</tr>
+</table>
+<br>
+Explore the full documentation <u><a href="https://github.com/cakraawijaya/SIAKLIK/tree/master/documentation">here</a></u>
+
+<br><br>
+
 ## Pengingat
 Jika ingin mengatur ulang auto-increment pada tabel riwayat_antrean / riwayat_aktivitas, cukup ubah nama_tabel melalui phpMyAdmin. Berikut caranya:
 
