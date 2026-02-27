@@ -126,6 +126,61 @@ We have carried out this internship program for approximately six months on a hy
 
 <br><br>
 
+## Highlights
+<table>
+<tr>
+<th width="840">Home</th>
+</tr>
+<tr>
+<td><img src="documentation/pages/beranda.jpg" alt="home"></td>
+</tr>
+</table>
+<table>
+<tr>
+<th colspan="2" width="840">Dashboard</th>
+</tr>
+<tr>
+<th width="420">Admin</th>
+<th width="420">Worker</th>
+</tr>
+<tr>
+<td><img src="documentation/pages/admin/dashboard.jpg" alt="dashboard-admin"></td>
+<td><img src="documentation/pages/worker/dashboard.jpg" alt="dashboard-worker"></td>
+</tr>
+</table>
+<table>
+<tr>
+<th colspan="4" width="840">Management</th>
+</tr>
+<tr>
+<th width="210">Logs</th>
+<th width="210">Users</th>
+<th width="210">Patients</th>
+<th width="210">Queues</th>
+</tr>
+<tr>
+<td><img src="documentation/pages/management/logs.jpg" alt="logs-management"></td>
+<td><img src="documentation/pages/management/users.jpg" alt="users-management"></td>
+<td><img src="documentation/pages/management/patients.jpg" alt="patients-management"></td>
+<td><img src="documentation/pages/management/queues.jpg" alt="queues-management"></td>
+</tr>
+</table>
+<table>
+<tr>
+<th colspan="2" width="840">Error</th>
+</tr>
+<tr>
+<th width="420">Page</th>
+<th width="420">Database</th>
+</tr>
+<tr>
+<td><img src="documentation/pages/system/error/page_not_found.jpg" alt="page-not-found"></td>
+<td><img src="documentation/pages/system/error/unknown_database.jpg" alt="unknown-database"></td>
+</tr>
+</table>
+
+<br><br>
+
 ## Reminder
 If you want to reset the auto-increment on the riwayat_antrean / riwayat aktivitas table, simply change the table_name via phpMyAdmin. Here's how:
 
