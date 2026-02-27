@@ -267,7 +267,7 @@ We have carried out this internship program for approximately six months on a hy
 </tr>
 </table>
 <br>
-See the full documentation: <a href="https://github.com/cakraawijaya/SIAKLIK/tree/master/documentation">Click here</a>
+Explore the full documentation <u><a href="https://github.com/cakraawijaya/SIAKLIK/tree/master/documentation">here</a></u>
 
 <br><br>
 
