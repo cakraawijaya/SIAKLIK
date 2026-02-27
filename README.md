@@ -180,6 +180,20 @@ We have carried out this internship program for approximately six months on a hy
 <br>
 <table>
 <tr>
+<th colspan="2" width="840">Queue</th>
+</tr>
+<tr>
+<th width="420">Queue Registration</th>
+<th width="420">Queue Status</th>
+</tr>
+<tr>
+<td><img src="documentation/pages/general/queue/registrasi_antrean.jpg" alt="queue-registration"></td>
+<td><img src="documentation/pages/general/queue/status_antrean.jpg" alt="queue-status"></td>
+</tr>
+</table>
+<br>
+<table>
+<tr>
 <th colspan="2" width="840">Dashboard</th>
 </tr>
 <tr>
