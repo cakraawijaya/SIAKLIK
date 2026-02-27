@@ -187,22 +187,22 @@ We have carried out this internship program for approximately six months on a hy
 <th colspan="4" width="840">Management</th>
 </tr>
 <tr>
-<th width="210">Logs</th>
-<th width="210">Users</th>
-<th width="210">Patients</th>
-<th width="210">Queues</th>
+<th width="210">Activity Log</th>
+<th width="210">User</th>
+<th width="210">Patient</th>
+<th width="210">Queue</th>
 </tr>
 <tr>
-<td><img src="documentation/pages/management/logs.jpg" alt="logs-management"></td>
-<td><img src="documentation/pages/management/users.jpg" alt="users-management"></td>
-<td><img src="documentation/pages/management/patients.jpg" alt="patients-management"></td>
-<td><img src="documentation/pages/management/queues.jpg" alt="queues-management"></td>
+<td><img src="documentation/pages/management/logs.jpg" alt="activity-log-management"></td>
+<td><img src="documentation/pages/management/users.jpg" alt="user-management"></td>
+<td><img src="documentation/pages/management/patients.jpg" alt="patient-management"></td>
+<td><img src="documentation/pages/management/queues.jpg" alt="queue-management"></td>
 </tr>
 </table>
 <br>
 <table>
 <tr>
-<th colspan="4" width="840">Export</th>
+<th colspan="4" width="840">Export PDF</th>
 </tr>
 <tr>
 <th width="210">Patient History</th>
@@ -211,10 +211,10 @@ We have carried out this internship program for approximately six months on a hy
 <th width="210">Patient</th>
 </tr>
 <tr>
-<td><img src="documentation/features/export/riwayat_pasien.jpg" alt="patient-history"></td>
-<td><img src="documentation/features/export/user_admin.jpg" alt="user-admin"></td>
-<td><img src="documentation/features/export/user_pekerja.jpg" alt="user-worker"></td>
-<td><img src="documentation/features/export/user_pasien.jpg" alt="user-patient"></td>
+<td><img src="documentation/features/export/riwayat_pasien.jpg" alt="export-patient-history"></td>
+<td><img src="documentation/features/export/user_admin.jpg" alt="export-admin-account"></td>
+<td><img src="documentation/features/export/user_pekerja.jpg" alt="export-worker-account"></td>
+<td><img src="documentation/features/export/user_pasien.jpg" alt="export-patient-account"></td>
 </tr>
 </table>
 <br>
@@ -229,10 +229,10 @@ We have carried out this internship program for approximately six months on a hy
 <th width="210">Queue Action Confirmation</th>
 </tr>
 <tr>
-<td><img src="documentation/features/modal_menu/login/admin.jpg" alt="login-admin"></td>
+<td><img src="documentation/features/modal_menu/login/admin.jpg" alt="login"></td>
 <td><img src="documentation/features/modal_menu/manajemen_user/admin/edit_akun.jpg" alt="edit-account"></td>
 <td><img src="documentation/features/modal_menu/lupa_password_pasien.jpg" alt="forgot-password"></td>
-<td><img src="documentation/features/modal_menu/antrean_pasien/konfirmasi_aksi_selesai.jpg" alt="queue-action"></td>
+<td><img src="documentation/features/modal_menu/antrean_pasien/konfirmasi_aksi_selesai.jpg" alt="queue-action-confirmation"></td>
 </tr>
 </table>
 <br>
@@ -248,7 +248,7 @@ We have carried out this internship program for approximately six months on a hy
 </tr>
 <tr>
 <td><img src="documentation/features/alert/success/user_timeout.jpg" alt="timeout"></td>
-<td><img src="documentation/features/alert/success/reset_terkirim.jpg" alt="password-reset-sent"></td>
+<td><img src="documentation/features/alert/success/reset_terkirim.jpg" alt="password-sent"></td>
 <td><img src="documentation/features/alert/failure/foto_over_size.jpg" alt="photo-oversized"></td>
 <td><img src="documentation/features/alert/failure/token_kadaluarsa.jpg" alt="invalid-token"></td>
 </table>
