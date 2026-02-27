@@ -152,30 +152,6 @@ We have carried out this internship program for approximately six months on a hy
 <td><img src="documentation/pages/guest/statistics/2013.jpg" alt="2013"></td>
 <td><img src="documentation/pages/guest/statistics/2014.jpg" alt="2014"></td>
 </tr>
-<tr>
-<th width="210">2015</th>
-<th width="210">2016</th>
-<th width="210">2017</th>
-<th width="210">2018</th>
-</tr>
-<tr>
-<td><img src="documentation/pages/guest/statistics/2015.jpg" alt="2015"></td>
-<td><img src="documentation/pages/guest/statistics/2016.jpg" alt="2016"></td>
-<td><img src="documentation/pages/guest/statistics/2017.jpg" alt="2017"></td>
-<td><img src="documentation/pages/guest/statistics/2018.jpg" alt="2018"></td>
-</tr>
-<tr>
-<th width="210">2019</th>
-<th width="210">2020</th>
-<th width="210">2021</th>
-<th width="210">2022</th>
-</tr>
-<tr>
-<td><img src="documentation/pages/guest/statistics/2019.jpg" alt="2019"></td>
-<td><img src="documentation/pages/guest/statistics/2020.jpg" alt="2020"></td>
-<td><img src="documentation/pages/guest/statistics/2021.jpg" alt="2021"></td>
-<td><img src="documentation/pages/guest/statistics/2022.jpg" alt="2022"></td>
-</tr>
 </table>
 <br>
 <table>
@@ -183,8 +159,8 @@ We have carried out this internship program for approximately six months on a hy
 <th colspan="2" width="840">Queue</th>
 </tr>
 <tr>
-<th width="420">Queue Registration</th>
-<th width="420">Queue Status</th>
+<th width="420">Registration</th>
+<th width="420">Status</th>
 </tr>
 <tr>
 <td><img src="documentation/pages/general/queue/registrasi_antrean.jpg" alt="queue-registration"></td>
@@ -226,6 +202,59 @@ We have carried out this internship program for approximately six months on a hy
 <br>
 <table>
 <tr>
+<th colspan="4" width="840">Export</th>
+</tr>
+<tr>
+<th width="210">Patient History</th>
+<th width="210">Users</th>
+<th width="210">Patients</th>
+<th width="210">Queues</th>
+</tr>
+<tr>
+<td><img src="documentation/features/export/riwayat_pasien.jpg" alt="patient-history"></td>
+<td><img src="documentation/features/export/user_admin.jpg" alt="user-admin"></td>
+<td><img src="documentation/features/export/user_pekerja.jpg" alt="user-worker"></td>
+<td><img src="documentation/features/export/user_pasien.jpg" alt="user-patient"></td>
+</tr>
+</table>
+<br>
+<table>
+<tr>
+<th colspan="4" width="840">Modal</th>
+</tr>
+<tr>
+<th width="210">Login</th>
+<th width="210">Edit Account</th>
+<th width="210">Forgot Password</th>
+<th width="210">Queue Action Confirmation</th>
+</tr>
+<tr>
+<td><img src="documentation/features/modal_menu/login/admin.jpg" alt="login-admin"></td>
+<td><img src="documentation/features/modal_menu/manajemen_user/admin/edit_akun.jpg" alt="edit-account"></td>
+<td><img src="documentation/features/modal_menu/lupa_password_pasien.jpg" alt="forgot-password"></td>
+<td><img src="documentation/features/modal_menu/antrean_pasien/konfirmasi_aksi_selesai.jpg" alt="queue-action"></td>
+</tr>
+</table>
+<br>
+<table>
+<tr>
+<th colspan="4" width="840">Alert</th>
+</tr>
+<tr>
+<th width="210">Timeout</th>
+<th width="210">Password Reset Sent</th>
+<th width="210">Photo Oversized</th>
+<th width="210">Invalid Token</th>
+</tr>
+<tr>
+<td><img src="documentation/features/alert/success/user_timeout.jpg" alt="timeout"></td>
+<td><img src="documentation/features/alert/success/reset_terkirim.jpg" alt="password-reset-sent"></td>
+<td><img src="documentation/features/alert/failure/foto_over_size.jpg" alt="photo-oversized"></td>
+<td><img src="documentation/features/alert/failure/token_kadaluarsa.jpg" alt="invalid-token"></td>
+</table>
+<br>
+<table>
+<tr>
 <th colspan="2" width="840">Error</th>
 </tr>
 <tr>
@@ -237,6 +266,8 @@ We have carried out this internship program for approximately six months on a hy
 <td><img src="documentation/pages/system/error/unknown_database.jpg" alt="unknown-database"></td>
 </tr>
 </table>
+<br>
+See the full documentation: <a href="https://github.com/cakraawijaya/SIAKLIK/tree/master/documentation">Click here</a>
 
 <br><br>
 
