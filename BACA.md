@@ -187,13 +187,13 @@ Program magang ini telah kami laksanakan selama kurang lebih enam bulan secara h
 <th colspan="4" width="840">Manajemen</th>
 </tr>
 <tr>
-<th width="210">Catatan</th>
+<th width="210">Catatan Aktivitas</th>
 <th width="210">Pengguna</th>
 <th width="210">Riwayat Pasien</th>
 <th width="210">Antrean</th>
 </tr>
 <tr>
-<td><img src="documentation/pages/management/logs.jpg" alt="manajemen-catatan"></td>
+<td><img src="documentation/pages/management/logs.jpg" alt="manajemen-catatan-aktivitas"></td>
 <td><img src="documentation/pages/management/users.jpg" alt="manajemen-pengguna"></td>
 <td><img src="documentation/pages/management/patients.jpg" alt="manajemen-riwayat-pasien"></td>
 <td><img src="documentation/pages/management/queues.jpg" alt="manajemen-antrean"></td>
@@ -202,7 +202,7 @@ Program magang ini telah kami laksanakan selama kurang lebih enam bulan secara h
 <br>
 <table>
 <tr>
-<th colspan="4" width="840">Ekspor</th>
+<th colspan="4" width="840">Ekspor PDF</th>
 </tr>
 <tr>
 <th width="210">Riwayat Pasien</th>
@@ -211,10 +211,10 @@ Program magang ini telah kami laksanakan selama kurang lebih enam bulan secara h
 <th width="210">Pasien</th>
 </tr>
 <tr>
-<td><img src="documentation/features/export/riwayat_pasien.jpg" alt="riwayat-pasien"></td>
-<td><img src="documentation/features/export/user_admin.jpg" alt="user-admin"></td>
-<td><img src="documentation/features/export/user_pekerja.jpg" alt="user-pekerja"></td>
-<td><img src="documentation/features/export/user_pasien.jpg" alt="user-pasien"></td>
+<td><img src="documentation/features/export/riwayat_pasien.jpg" alt="ekspor-riwayat-pasien"></td>
+<td><img src="documentation/features/export/user_admin.jpg" alt="ekspor-akun-admin"></td>
+<td><img src="documentation/features/export/user_pekerja.jpg" alt="ekspor-akun-pekerja"></td>
+<td><img src="documentation/features/export/user_pasien.jpg" alt="ekspor-akun-pasien"></td>
 </tr>
 </table>
 <br>
@@ -229,10 +229,10 @@ Program magang ini telah kami laksanakan selama kurang lebih enam bulan secara h
 <th width="210">Konfirmasi Tindakan Antrean</th>
 </tr>
 <tr>
-<td><img src="documentation/features/modal_menu/login/admin.jpg" alt="masuk-admin"></td>
+<td><img src="documentation/features/modal_menu/login/admin.jpg" alt="masuk"></td>
 <td><img src="documentation/features/modal_menu/manajemen_user/admin/edit_akun.jpg" alt="edit-akun"></td>
 <td><img src="documentation/features/modal_menu/lupa_password_pasien.jpg" alt="lupa-kata-sandi"></td>
-<td><img src="documentation/features/modal_menu/antrean_pasien/konfirmasi_aksi_selesai.jpg" alt="tindakan-antrean"></td>
+<td><img src="documentation/features/modal_menu/antrean_pasien/konfirmasi_aksi_selesai.jpg" alt="konfirmasi-tindakan-antrean"></td>
 </tr>
 </table>
 <br>
@@ -242,13 +242,13 @@ Program magang ini telah kami laksanakan selama kurang lebih enam bulan secara h
 </tr>
 <tr>
 <th width="210">Waktu Habis</th>
-<th width="210">Reset Kata Sandi Terkirim</th>
+<th width="210">Reset Terkirim</th>
 <th width="210">Foto Berukuran Besar</th>
 <th width="210">Token Tidak Valid</th>
 </tr>
 <tr>
 <td><img src="documentation/features/alert/success/user_timeout.jpg" alt="waktu-habis"></td>
-<td><img src="documentation/features/alert/success/reset_terkirim.jpg" alt="reset-kata-sandi-terkirim"></td>
+<td><img src="documentation/features/alert/success/reset_terkirim.jpg" alt="reset-terkirim"></td>
 <td><img src="documentation/features/alert/failure/foto_over_size.jpg" alt="foto-berukuran-besar"></td>
 <td><img src="documentation/features/alert/failure/token_kadaluarsa.jpg" alt="token-tidak-valid"></td>
 </table>
@@ -267,7 +267,7 @@ Program magang ini telah kami laksanakan selama kurang lebih enam bulan secara h
 </tr>
 </table>
 <br>
-Explore the full documentation <u><a href="https://github.com/cakraawijaya/SIAKLIK/tree/master/documentation">here</a></u>
+Jelajahi dokumentasi lengkap <u><a href="https://github.com/cakraawijaya/SIAKLIK/tree/master/documentation">di sini</a></u>
 
 <br><br>
 
